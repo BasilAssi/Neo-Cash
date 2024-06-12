@@ -177,145 +177,117 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         dense: false,
                       ),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.credit_card,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 32.0,
-                        ),
-                        title: Text(
-                          FFLocalizations.of(context).getText(
-                            'z44sbop0' /* تفاصيل الحساب */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
+                    ListTile(
+                      leading: Icon(
+                        Icons.credit_card,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 32.0,
                       ),
+                      title: Text(
+                        FFLocalizations.of(context).getText(
+                          'z44sbop0' /* تفاصيل الحساب */,
+                        ),
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleLargeFamily),
+                            ),
+                      ),
+                      tileColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.settings_outlined,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 32.0,
+                      ),
+                      title: Text(
+                        FFLocalizations.of(context).getText(
+                          'dybj5wgt' /* الإعدادات */,
+                        ),
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleLargeFamily),
+                            ),
+                      ),
+                      tileColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
+                    ),
+                    ListTile(
+                      leading: FaIcon(
+                        FontAwesomeIcons.questionCircle,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 32.0,
+                      ),
+                      title: Text(
+                        FFLocalizations.of(context).getText(
+                          '80d86a13' /* مركز المساعدة */,
+                        ),
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleLargeFamily),
+                            ),
+                      ),
+                      tileColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
+                    ),
+                    ListTile(
+                      leading: FaIcon(
+                        FontAwesomeIcons.coins,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 32.0,
+                      ),
+                      title: Text(
+                        FFLocalizations.of(context).getText(
+                          'nq7ri7jv' /* أسعار العملات */,
+                        ),
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleLargeFamily),
+                            ),
+                      ),
+                      tileColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.settings_outlined,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 32.0,
-                        ),
-                        title: Text(
-                          FFLocalizations.of(context).getText(
-                            'dybj5wgt' /* الإعدادات */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: ListTile(
-                        leading: FaIcon(
-                          FontAwesomeIcons.questionCircle,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 32.0,
-                        ),
-                        title: Text(
-                          FFLocalizations.of(context).getText(
-                            '80d86a13' /* مركز المساعدة */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: ListTile(
-                        leading: FaIcon(
-                          FontAwesomeIcons.coins,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 32.0,
-                        ),
-                        title: Text(
-                          FFLocalizations.of(context).getText(
-                            'nq7ri7jv' /* أسعار العملات */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
-                        ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: ListTile(
                         leading: Icon(
                           Icons.atm,
@@ -349,7 +321,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -394,51 +366,47 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          if (FFAppState().isEnglish == true) {
-                            setAppLanguage(context, 'ar');
-                          } else {
-                            setAppLanguage(context, 'en');
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.logout_sharp,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            size: 32.0,
-                          ),
-                          title: Text(
-                            FFLocalizations.of(context).getText(
-                              'j8pno2ex' /* تسجيل الخروج */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleLargeFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleLargeFamily),
-                                ),
-                          ),
-                          tileColor:
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        if (FFAppState().isEnglish == true) {
+                          setAppLanguage(context, 'ar');
+                        } else {
+                          setAppLanguage(context, 'en');
+                        }
+                      },
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.logout_sharp,
+                          color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
+                          size: 32.0,
                         ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'j8pno2ex' /* تسجيل الخروج */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
                       ),
                     ),
                   ],

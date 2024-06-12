@@ -197,7 +197,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
-      'en': 'Change the language to English',
+      'en': 'Change the language to العربية',
     },
     'j8pno2ex': {
       'ar': 'تسجيل الخروج',
