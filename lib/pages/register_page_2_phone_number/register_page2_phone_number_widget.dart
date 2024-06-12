@@ -6,25 +6,27 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'register_page2_model.dart';
-export 'register_page2_model.dart';
+import 'register_page2_phone_number_model.dart';
+export 'register_page2_phone_number_model.dart';
 
-class RegisterPage2Widget extends StatefulWidget {
-  const RegisterPage2Widget({super.key});
+class RegisterPage2PhoneNumberWidget extends StatefulWidget {
+  const RegisterPage2PhoneNumberWidget({super.key});
 
   @override
-  State<RegisterPage2Widget> createState() => _RegisterPage2WidgetState();
+  State<RegisterPage2PhoneNumberWidget> createState() =>
+      _RegisterPage2PhoneNumberWidgetState();
 }
 
-class _RegisterPage2WidgetState extends State<RegisterPage2Widget> {
-  late RegisterPage2Model _model;
+class _RegisterPage2PhoneNumberWidgetState
+    extends State<RegisterPage2PhoneNumberWidget> {
+  late RegisterPage2PhoneNumberModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegisterPage2Model());
+    _model = createModel(context, () => RegisterPage2PhoneNumberModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();

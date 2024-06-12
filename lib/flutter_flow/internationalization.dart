@@ -393,7 +393,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // register_page_2
+  // register_page_2_phone_number
   {
     '621g8xg0': {
       'ar': 'رقم تلفونك ',
@@ -444,7 +444,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // register_page_2Copy
+  // register_page_3_otp
   {
     'cvcns9e8': {
       'ar': 'تأكيد رقم التلفون',

@@ -36,7 +36,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 color: Colors.transparent,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.png',
+                    'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.jpeg',
                     width: MediaQuery.sizeOf(context).width * 0.5,
                     fit: BoxFit.contain,
                   ),
@@ -54,7 +54,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     color: Colors.transparent,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.png',
+                        'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.jpeg',
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         fit: BoxFit.contain,
                       ),
@@ -107,14 +107,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const RegisterPage1Widget(),
             ),
             FFRoute(
-              name: 'register_page_2',
-              path: 'registerPage2',
-              builder: (context, params) => const RegisterPage2Widget(),
+              name: 'register_page_2_phone_number',
+              path: 'registerPage2PhoneNumber',
+              builder: (context, params) => const RegisterPage2PhoneNumberWidget(),
             ),
             FFRoute(
-              name: 'register_page_2Copy',
-              path: 'registerPage2Copy',
-              builder: (context, params) => const RegisterPage2CopyWidget(),
+              name: 'register_page_3_otp',
+              path: 'registerPage3Otp',
+              builder: (context, params) => const RegisterPage3OtpWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

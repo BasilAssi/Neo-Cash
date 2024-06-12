@@ -10,7 +10,7 @@ export '/pages/notification_page/notification_page_widget.dart'
     show NotificationPageWidget;
 export '/pages/register_page_1/register_page1_widget.dart'
     show RegisterPage1Widget;
-export '/pages/register_page_2/register_page2_widget.dart'
-    show RegisterPage2Widget;
-export '/pages/register_page_2_copy/register_page2_copy_widget.dart'
-    show RegisterPage2CopyWidget;
+export '/pages/register_page_2_phone_number/register_page2_phone_number_widget.dart'
+    show RegisterPage2PhoneNumberWidget;
+export '/pages/register_page_3_otp/register_page3_otp_widget.dart'
+    show RegisterPage3OtpWidget;

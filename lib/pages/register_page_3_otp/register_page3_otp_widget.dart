@@ -9,26 +9,25 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'register_page2_copy_model.dart';
-export 'register_page2_copy_model.dart';
+import 'register_page3_otp_model.dart';
+export 'register_page3_otp_model.dart';
 
-class RegisterPage2CopyWidget extends StatefulWidget {
-  const RegisterPage2CopyWidget({super.key});
+class RegisterPage3OtpWidget extends StatefulWidget {
+  const RegisterPage3OtpWidget({super.key});
 
   @override
-  State<RegisterPage2CopyWidget> createState() =>
-      _RegisterPage2CopyWidgetState();
+  State<RegisterPage3OtpWidget> createState() => _RegisterPage3OtpWidgetState();
 }
 
-class _RegisterPage2CopyWidgetState extends State<RegisterPage2CopyWidget> {
-  late RegisterPage2CopyModel _model;
+class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
+  late RegisterPage3OtpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegisterPage2CopyModel());
+    _model = createModel(context, () => RegisterPage3OtpModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -426,8 +425,8 @@ class _RegisterPage2CopyWidgetState extends State<RegisterPage2CopyWidget> {
                         child: FFButtonWidget(
                           onPressed: (_model.isCompleted == false)
                               ? null
-                              : () {
-                                  print('Button pressed ...');
+                              : () async {
+                                  context.pushNamed('home_page');
                                 },
                           text: FFLocalizations.of(context).getText(
                             '8cw85wg1' /* التالي */,
