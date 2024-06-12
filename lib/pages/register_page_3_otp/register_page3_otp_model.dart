@@ -2,10 +2,10 @@ import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'register_page2_copy_widget.dart' show RegisterPage2CopyWidget;
+import 'register_page3_otp_widget.dart' show RegisterPage3OtpWidget;
 import 'package:flutter/material.dart';
 
-class RegisterPage2CopyModel extends FlutterFlowModel<RegisterPage2CopyWidget> {
+class RegisterPage3OtpModel extends FlutterFlowModel<RegisterPage3OtpWidget> {
   ///  Local state fields for this page.
 
   bool isCompleted = true;

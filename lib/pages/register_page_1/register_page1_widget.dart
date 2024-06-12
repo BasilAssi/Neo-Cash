@@ -146,8 +146,8 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 8.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed('register_page_2_phone_number');
                       },
                       text: FFLocalizations.of(context).getText(
                         'esyo1sgz' /* إنشاء حساب  */,

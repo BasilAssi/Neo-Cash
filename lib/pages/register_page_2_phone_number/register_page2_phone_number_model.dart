@@ -1,9 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'register_page2_widget.dart' show RegisterPage2Widget;
+import 'register_page2_phone_number_widget.dart'
+    show RegisterPage2PhoneNumberWidget;
 import 'package:flutter/material.dart';
 
-class RegisterPage2Model extends FlutterFlowModel<RegisterPage2Widget> {
+class RegisterPage2PhoneNumberModel
+    extends FlutterFlowModel<RegisterPage2PhoneNumberWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
