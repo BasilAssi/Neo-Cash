@@ -105,58 +105,114 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // HomePage
+  // home_page
   {
+    'cnx1ihao': {
+      'ar': 'الرصيد',
+      'en': 'Balance',
+    },
+    'sh8gaq69': {
+      'ar': '\$7,630',
+      'en': '\$7,630',
+    },
+    'l2b9vkcr': {
+      'ar': '**** 0149',
+      'en': '**** 0149',
+    },
+    '7w73lynf': {
+      'ar': '05/25',
+      'en': '05/25',
+    },
     'w9lpj0p6': {
       'ar': 'Front',
-      'en': '',
+      'en': 'Front',
     },
     'fchdi5tj': {
       'ar': 'Back',
-      'en': '',
+      'en': 'Back',
+    },
+    'dp5u5is9': {
+      'ar': 'إرسال',
+      'en': 'send',
+    },
+    'gk5d680r': {
+      'ar': 'طلب',
+      'en': 'to request',
+    },
+    '16dokqg5': {
+      'ar': 'سحب',
+      'en': 'to withdraw',
+    },
+    '322bihj5': {
+      'ar': 'إضافة اموال',
+      'en': 'Add money',
+    },
+    'o3jwgyzh': {
+      'ar': 'إضافة اموال',
+      'en': 'Add money',
+    },
+    'qci1tooq': {
+      'ar': 'إضافة اموال',
+      'en': 'Add money',
+    },
+    '3p795s58': {
+      'ar': 'إضافة اموال',
+      'en': 'Add money',
+    },
+    '9ec0j6db': {
+      'ar': 'إضافة اموال',
+      'en': 'Add money',
+    },
+    '0dsvs6im': {
+      'ar': 'الحملات و العروض',
+      'en': 'Campaigns and offers',
+    },
+    'bhm7pnlr': {
+      'ar': 'عرض الكل',
+      'en': 'View all',
     },
     'mvlc1z5y': {
       'ar': 'ملفي الشخصي',
-      'en': '',
+      'en': 'my personal file',
     },
     'z44sbop0': {
       'ar': 'تفاصيل الحساب',
-      'en': '',
+      'en': 'account details',
     },
     'dybj5wgt': {
       'ar': 'الإعدادات',
-      'en': '',
+      'en': 'Settings',
     },
     '80d86a13': {
       'ar': 'مركز المساعدة',
-      'en': '',
+      'en': 'Help Center',
     },
     'nq7ri7jv': {
       'ar': 'أسعار العملات',
-      'en': '',
+      'en': 'Exchange Rates',
     },
     'k2t41utr': {
       'ar': 'أقرب صراف آلي',
-      'en': '',
+      'en': 'The nearest ATM',
     },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
-      'en': 'Change the Language to  العربية',
+      'en': 'Change the language to English',
     },
     'j8pno2ex': {
       'ar': 'تسجيل الخروج',
-      'en': 'Change the Language to  العربية',
+      'en': 'sign out',
     },
     '7qettrhk': {
       'ar': 'مرحبا , Basil',
-      'en': '',
+      'en': 'Hello, Basil',
     },
     'hjejmmsa': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الرئيسية',
+      'en': 'Main',
     },
   },
-  // Login
+  // login
   {
     's57yw88q': {
       'ar': 'الإيميل',
@@ -211,13 +267,229 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
+  // qr_home_page
+  {
+    '58x8yh38': {
+      'ar': 'Page Title',
+      'en': '',
+    },
+    '1t39y3md': {
+      'ar': 'الدفع ب QR',
+      'en': '',
+    },
+  },
+  // transactions_home_page
+  {
+    'dv92jp1j': {
+      'ar': 'Page Title',
+      'en': '',
+    },
+    '1dz4sx9s': {
+      'ar': 'الحركات',
+      'en': '',
+    },
+  },
+  // offers_home_page
+  {
+    'b5t94jyf': {
+      'ar': 'Page Title',
+      'en': '',
+    },
+    'fx3qydw8': {
+      'ar': 'العروض',
+      'en': 'offers',
+    },
+  },
+  // notification_page
+  {
+    'n6fn9m9k': {
+      'ar': 'الإشعارات',
+      'en': '',
+    },
+    'l77of1rz': {
+      'ar': 'الجميع',
+      'en': '',
+    },
+    '7gyeebmx': {
+      'ar': 'العروض',
+      'en': '',
+    },
+    'unb72wpa': {
+      'ar': 'معاملاتي',
+      'en': '',
+    },
+    'b9tcv9w6': {
+      'ar': 'بلشت تحوش لسفرة العيد ؟',
+      'en': '',
+    },
+    'fd8j6p3a': {
+      'ar': ' Jun, 8, 2024',
+      'en': '',
+    },
+    'b1r7vqyn': {
+      'ar': ' ',
+      'en': '',
+    },
+    '92f23h94': {
+      'ar':
+          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
+      'en': '',
+    },
+    '43krzxkt': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+    '5v7wrssv': {
+      'ar': 'بلشت تحوش لسفرة العيد ؟',
+      'en': '',
+    },
+    '1d558j8e': {
+      'ar': ' ',
+      'en': '',
+    },
+    'y73ge7sl': {
+      'ar':
+          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
+      'en': '',
+    },
+    'ckpq355p': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+    'zks01jx1': {
+      'ar': 'بلشت تحوش لسفرة العيد ؟',
+      'en': '',
+    },
+    '4ouibfps': {
+      'ar': ' ',
+      'en': '',
+    },
+    'w5sls8lu': {
+      'ar':
+          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
+      'en': '',
+    },
+    '89vwnktl': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // register_page_1
+  {
+    'qv3v9r6a': {
+      'ar': 'محفظتك\n  بجيبتك ',
+      'en': '',
+    },
+    'esyo1sgz': {
+      'ar': 'إنشاء حساب ',
+      'en': 'sign in',
+    },
+    'k71ncand': {
+      'ar': 'عندك حساب ؟ سجل دخولك الآن',
+      'en': 'sign in',
+    },
+    '1f51n1l6': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // register_page_2
+  {
+    '621g8xg0': {
+      'ar': 'رقم تلفونك ',
+      'en': '',
+    },
+    '5n57g2jq': {
+      'ar': 'راح  يوصلك رمز تحقق على نفس الرقم , الرجاء التأكد وإدخال الرمز',
+      'en': '',
+    },
+    'xoyvv7gu': {
+      'ar': '5xxxxxxxx',
+      'en': '',
+    },
+    'jffuvm1s': {
+      'ar': '',
+      'en': '',
+    },
+    'dk6o1l81': {
+      'ar': '+970',
+      'en': '',
+    },
+    'k890nwac': {
+      'ar': '+972',
+      'en': '',
+    },
+    'gangnkno': {
+      'ar': '+970',
+      'en': '',
+    },
+    'c040sz0r': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'agq6bq8b': {
+      'ar': 'استخدامك لنيو كاش يعني انك \nموافق على  ',
+      'en': '',
+    },
+    'nynwtcbl': {
+      'ar': 'الشروط والأحكام',
+      'en': '',
+    },
+    'ffd17gua': {
+      'ar': 'التالي',
+      'en': 'sign in',
+    },
+    'v04sy0uk': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // register_page_2Copy
+  {
+    'cvcns9e8': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    'qspd8ikt': {
+      'ar': 'بعتنالك رمز تحقق على تليفونك  رقم',
+      'en': '',
+    },
+    'tcup8vos': {
+      'ar': '\n',
+      'en': '',
+    },
+    'mb5yfxcz': {
+      'ar': ' 0569718347 ',
+      'en': '',
+    },
+    'y9am0wim': {
+      'ar': '\n',
+      'en': '',
+    },
+    'tkx75g2g': {
+      'ar': ' ممكن تشوف مسجاتك  وتدخل الرمز؟',
+      'en': '',
+    },
+    'qzqkzusk': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    '8cw85wg1': {
+      'ar': 'التالي',
+      'en': 'sign in',
+    },
+    '1xcx3ocl': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {
       'ar': '',
       'en': '',
     },
-    'jffuvm1s': {
+    'qwiw8hej': {
       'ar': '',
       'en': '',
     },

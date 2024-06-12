@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -63,14 +64,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const LoginWidget(),
           routes: [
             FFRoute(
-              name: 'HomePage',
+              name: 'home_page',
               path: 'homePage',
-              builder: (context, params) => const HomePageWidget(),
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'home_page')
+                  : const HomePageWidget(),
             ),
             FFRoute(
-              name: 'Login',
+              name: 'login',
               path: 'login',
               builder: (context, params) => const LoginWidget(),
+            ),
+            FFRoute(
+              name: 'qr_home_page',
+              path: 'qrHomePage',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'qr_home_page')
+                  : const QrHomePageWidget(),
+            ),
+            FFRoute(
+              name: 'transactions_home_page',
+              path: 'transactionsHomePage',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'transactions_home_page')
+                  : const TransactionsHomePageWidget(),
+            ),
+            FFRoute(
+              name: 'offers_home_page',
+              path: 'offersHomePage',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'offers_home_page')
+                  : const OffersHomePageWidget(),
+            ),
+            FFRoute(
+              name: 'notification_page',
+              path: 'notificationPage',
+              builder: (context, params) => const NotificationPageWidget(),
+            ),
+            FFRoute(
+              name: 'register_page_1',
+              path: 'registerPage1',
+              builder: (context, params) => const RegisterPage1Widget(),
+            ),
+            FFRoute(
+              name: 'register_page_2',
+              path: 'registerPage2',
+              builder: (context, params) => const RegisterPage2Widget(),
+            ),
+            FFRoute(
+              name: 'register_page_2Copy',
+              path: 'registerPage2Copy',
+              builder: (context, params) => const RegisterPage2CopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
