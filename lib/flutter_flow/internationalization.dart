@@ -111,6 +111,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Page Title',
       'en': '',
     },
+    'mvlc1z5y': {
+      'ar': 'ملفي الشخصي',
+      'en': '',
+    },
+    'z44sbop0': {
+      'ar': 'تفاصيل الحساب',
+      'en': '',
+    },
+    'dybj5wgt': {
+      'ar': 'الإعدادات',
+      'en': '',
+    },
+    '80d86a13': {
+      'ar': 'مركز المساعدة',
+      'en': '',
+    },
+    'nq7ri7jv': {
+      'ar': 'أسعار العملات',
+      'en': '',
+    },
+    'k2t41utr': {
+      'ar': 'أقرب صراف آلي',
+      'en': '',
+    },
+    'mcpocoa4': {
+      'ar': 'تغير اللغة الى English',
+      'en': 'Change the Language to  العربية',
+    },
+    'j8pno2ex': {
+      'ar': 'تسجيل الخروج',
+      'en': 'Change the Language to  العربية',
+    },
     'hjejmmsa': {
       'ar': 'Home',
       'en': '',
