@@ -96,8 +96,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                     color: FlutterFlowTheme.of(context).primary,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.safePop();
                   },
                 ),
               ],
