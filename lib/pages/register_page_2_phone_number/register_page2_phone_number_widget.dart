@@ -472,8 +472,8 @@ class _RegisterPage2PhoneNumberWidgetState
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 100.0, 0.0, 8.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('register_page_3_otp');
                           },
                           text: FFLocalizations.of(context).getText(
                             'ffd17gua' /* التالي */,
