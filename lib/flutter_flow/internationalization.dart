@@ -458,10 +458,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '\n',
       'en': '',
     },
-    'mb5yfxcz': {
-      'ar': ' 0569718347 ',
-      'en': '',
-    },
     'y9am0wim': {
       'ar': '\n',
       'en': '',

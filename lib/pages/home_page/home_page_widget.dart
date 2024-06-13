@@ -752,6 +752,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   12.0, 0.0, 24.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
                                     width: 60.0,
@@ -1281,6 +1282,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             mainAxisSpacing: 8.0,
                             childAspectRatio: 1.0,
                           ),
+                          primary: false,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           children: [

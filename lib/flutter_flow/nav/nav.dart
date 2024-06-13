@@ -114,7 +114,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'register_page_3_otp',
               path: 'registerPage3Otp',
-              builder: (context, params) => const RegisterPage3OtpWidget(),
+              builder: (context, params) => RegisterPage3OtpWidget(
+                phoneNumber: params.getParam(
+                  'phoneNumber',
+                  ParamType.String,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
