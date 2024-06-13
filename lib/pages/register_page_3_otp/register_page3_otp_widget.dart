@@ -378,6 +378,8 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                         _model.isTimerEnded = false;
                                         setState(() {});
                                         _model.timerController.onResetTimer();
+
+                                        _model.timerController.onStartTimer();
                                       },
                                       child: Text(
                                         FFLocalizations.of(context).getText(
