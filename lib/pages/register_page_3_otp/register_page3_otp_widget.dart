@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/instant_timer.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,12 @@ import 'register_page3_otp_model.dart';
 export 'register_page3_otp_model.dart';
 
 class RegisterPage3OtpWidget extends StatefulWidget {
-  const RegisterPage3OtpWidget({super.key});
+  const RegisterPage3OtpWidget({
+    super.key,
+    required this.phoneNumber,
+  });
+
+  final String? phoneNumber;
 
   @override
   State<RegisterPage3OtpWidget> createState() => _RegisterPage3OtpWidgetState();
@@ -31,11 +35,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.instantTimer = InstantTimer.periodic(
-        duration: const Duration(milliseconds: 1000),
-        callback: (timer) async {},
-        startImmediately: true,
-      );
+      _model.timerController.onStartTimer();
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -199,10 +199,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'mb5yfxcz' /*  0569718347  */,
-                                        ),
+                                        text: widget.phoneNumber!,
                                         style: TextStyle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -380,13 +377,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       onTap: () async {
                                         _model.isTimerEnded = false;
                                         setState(() {});
-                                        _model.instantTimer =
-                                            InstantTimer.periodic(
-                                          duration:
-                                              const Duration(milliseconds: 1000),
-                                          callback: (timer) async {},
-                                          startImmediately: true,
-                                        );
+                                        _model.timerController.onResetTimer();
                                       },
                                       child: Text(
                                         FFLocalizations.of(context).getText(

@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/instant_timer.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'register_page3_otp_widget.dart' show RegisterPage3OtpWidget;
 import 'package:flutter/material.dart';
@@ -15,7 +14,6 @@ class RegisterPage3OtpModel extends FlutterFlowModel<RegisterPage3OtpWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  InstantTimer? instantTimer;
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
@@ -30,8 +28,6 @@ class RegisterPage3OtpModel extends FlutterFlowModel<RegisterPage3OtpWidget> {
   FlutterFlowTimerController timerController =
       FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countDown));
 
-  InstantTimer? instantTimer;
-
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();
@@ -40,9 +36,7 @@ class RegisterPage3OtpModel extends FlutterFlowModel<RegisterPage3OtpWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    instantTimer?.cancel();
     pinCodeController?.dispose();
     timerController.dispose();
-    instantTimer?.cancel();
   }
 }
