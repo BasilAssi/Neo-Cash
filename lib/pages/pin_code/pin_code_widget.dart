@@ -74,6 +74,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget> {
                             .override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyLargeFamily,
+                              color: FlutterFlowTheme.of(context).primary,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context).bodyLargeFamily),
@@ -102,12 +103,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget> {
                           activeColor: FlutterFlowTheme.of(context).primary,
                           inactiveColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          selectedColor: FlutterFlowTheme.of(context).tertiary,
                           activeFillColor: FlutterFlowTheme.of(context).primary,
                           inactiveFillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          selectedFillColor:
-                              FlutterFlowTheme.of(context).tertiary,
                         ),
                         controller: _model.pinCodeController,
                         onChanged: (_) {},
@@ -514,7 +512,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget> {
                         ),
                         icon: const Icon(
                           Icons.arrow_forward,
-                          size: 32.0,
+                          size: 24.0,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
@@ -596,7 +594,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget> {
                         ),
                         icon: const Icon(
                           Icons.close_rounded,
-                          size: 32.0,
+                          size: 24.0,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
