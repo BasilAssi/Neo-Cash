@@ -33,6 +33,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
       setState(() {
         _model.pinCodeController?.text = '1234';
       });
+      _model.timerController.onStartTimer();
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
