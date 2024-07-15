@@ -41,6 +41,27 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primary,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_ios_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
         body: SafeArea(
           top: true,
           child: ListView(
@@ -48,30 +69,26 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      FFLocalizations.of(context).getText(
-                        'a0y0st45' /* الحساب الاساسي  */,
-                      ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineMediumFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineMediumFamily),
-                              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    FFLocalizations.of(context).getText(
+                      'a0y0st45' /* الحساب الاساسي  */,
                     ),
-                  ],
-                ),
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineMediumFamily,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily),
+                        ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
