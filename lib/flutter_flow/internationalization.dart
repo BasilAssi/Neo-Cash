@@ -679,7 +679,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'hpokmkgb': {
-      'ar': 'basel@blockbuilders.ps    ',
+      'ar': 'basel@blockbuilders.ps ',
       'en': '',
     },
     'g3fbaqeh': {

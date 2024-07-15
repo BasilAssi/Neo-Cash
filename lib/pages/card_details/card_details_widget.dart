@@ -491,7 +491,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                         borderWidth: 2.0,
                                         buttonSize:
                                             MediaQuery.sizeOf(context).width *
-                                                0.14,
+                                                0.16,
                                         fillColor: const Color(0xFF7D5658),
                                         icon: Icon(
                                           Icons.settings_outlined,
@@ -512,7 +512,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                         borderWidth: 2.0,
                                         buttonSize:
                                             MediaQuery.sizeOf(context).width *
-                                                0.14,
+                                                0.16,
                                         fillColor: const Color(0xFF7D5658),
                                         icon: Icon(
                                           Icons.severe_cold_rounded,
