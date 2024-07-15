@@ -223,35 +223,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.person_outline_sharp,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          size: 32.0,
-                        ),
-                        title: Text(
-                          FFLocalizations.of(context).getText(
-                            'mvlc1z5y' /* ملفي الشخصي */,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('user_page');
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.person_outline_sharp,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 32.0,
                           ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
+                          title: Text(
+                            FFLocalizations.of(context).getText(
+                              'mvlc1z5y' /* ملفي الشخصي */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleLargeFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleLargeFamily),
+                                ),
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          dense: false,
                         ),
-                        tileColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
                       ),
                     ),
                     ListTile(
@@ -281,32 +290,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           FlutterFlowTheme.of(context).secondaryBackground,
                       dense: false,
                     ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.settings_outlined,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        size: 32.0,
-                      ),
-                      title: Text(
-                        FFLocalizations.of(context).getText(
-                          'dybj5wgt' /* الإعدادات */,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('settings_page');
+                      },
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.settings_outlined,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          size: 32.0,
                         ),
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              fontSize: 18.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'dybj5wgt' /* الإعدادات */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
                       ),
-                      tileColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      dense: false,
                     ),
                     ListTile(
                       leading: FaIcon(
@@ -449,11 +470,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        if (FFAppState().isEnglish == true) {
-                          setAppLanguage(context, 'ar');
-                        } else {
-                          setAppLanguage(context, 'en');
-                        }
+                        context.pushNamed('login');
                       },
                       child: ListTile(
                         leading: Icon(
@@ -765,7 +782,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
                 Container(
                   width: 100.0,
-                  height: MediaQuery.sizeOf(context).height * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 0.55,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: const BorderRadius.only(
@@ -778,7 +795,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   child: ListView(
                     padding: EdgeInsets.zero,
                     primary: false,
-                    shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: [
                       Padding(
@@ -1111,6 +1127,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               8.0, 0.0, 8.0, 0.0),
                           child: ListView(
                             padding: EdgeInsets.zero,
+                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             children: [
