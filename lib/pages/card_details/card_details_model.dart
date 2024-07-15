@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'qr_home_page_widget.dart' show QrHomePageWidget;
+import 'card_details_widget.dart' show CardDetailsWidget;
 import 'package:flutter/material.dart';
 
-class QrHomePageModel extends FlutterFlowModel<QrHomePageWidget> {
+class CardDetailsModel extends FlutterFlowModel<CardDetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -6,7 +6,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -122,8 +121,6 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'home_page': const HomePageWidget(),
-      'qr_home_page': const QrHomePageWidget(),
-      'offers_home_page': const OffersHomePageWidget(),
       'transactions_home_page': const TransactionsHomePageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -150,26 +147,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'hjejmmsa' /* الرئيسية */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.qr_code_scanner_sharp,
-              size: 32.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              '1t39y3md' /* الدفع ب QR */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const FaIcon(
-              FontAwesomeIcons.percentage,
-              size: 32.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'fx3qydw8' /* العروض */,
             ),
             tooltip: '',
           ),

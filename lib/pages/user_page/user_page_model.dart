@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'offers_home_page_widget.dart' show OffersHomePageWidget;
+import 'user_page_widget.dart' show UserPageWidget;
 import 'package:flutter/material.dart';
 
-class OffersHomePageModel extends FlutterFlowModel<OffersHomePageWidget> {
+class UserPageModel extends FlutterFlowModel<UserPageWidget> {
+  ///  Local state fields for this page.
+
+  bool? selectedValue = true;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

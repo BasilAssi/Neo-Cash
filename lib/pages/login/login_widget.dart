@@ -625,8 +625,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
+                                                  onPressed: () async {
+                                                    context
+                                                        .pushNamed('pin_code');
                                                   },
                                                   text: '',
                                                   icon: Icon(
