@@ -9,7 +9,7 @@ class RegisterPage3OtpModel extends FlutterFlowModel<RegisterPage3OtpWidget> {
 
   bool isCompleted = true;
 
-  bool isTimerEnded = true;
+  bool isTimerEnded = false;
 
   ///  State fields for stateful widgets in this page.
 
