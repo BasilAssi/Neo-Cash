@@ -76,25 +76,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
-              name: 'qr_home_page',
-              path: 'qrHomePage',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'qr_home_page')
-                  : const QrHomePageWidget(),
-            ),
-            FFRoute(
               name: 'transactions_home_page',
               path: 'transactionsHomePage',
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'transactions_home_page')
                   : const TransactionsHomePageWidget(),
-            ),
-            FFRoute(
-              name: 'offers_home_page',
-              path: 'offersHomePage',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'offers_home_page')
-                  : const OffersHomePageWidget(),
             ),
             FFRoute(
               name: 'notification_page',
@@ -120,6 +106,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.String,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'card_details',
+              path: 'cardDetails',
+              builder: (context, params) => const CardDetailsWidget(),
+            ),
+            FFRoute(
+              name: 'user_page',
+              path: 'userPage',
+              builder: (context, params) => const UserPageWidget(),
+            ),
+            FFRoute(
+              name: 'settings_page',
+              path: 'settingsPage',
+              builder: (context, params) => const SettingsPageWidget(),
+            ),
+            FFRoute(
+              name: 'transaction_details_page',
+              path: 'transactionDetailsPage',
+              builder: (context, params) => const TransactionDetailsPageWidget(),
+            ),
+            FFRoute(
+              name: 'card_settings_page',
+              path: 'cardSettingsPage',
+              builder: (context, params) => const CardSettingsPageWidget(),
+            ),
+            FFRoute(
+              name: 'view_pin_code_page',
+              path: 'viewPinCodePage',
+              builder: (context, params) => const ViewPinCodePageWidget(),
+            ),
+            FFRoute(
+              name: 'pin_code',
+              path: 'pinCode',
+              builder: (context, params) => const PinCodeWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
