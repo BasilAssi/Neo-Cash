@@ -357,7 +357,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'hpokmkgb' /* basel@blockbuilders.ps     */,
+                                                  'hpokmkgb' /* basel@blockbuilders.ps  */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -370,7 +370,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
-                                                          fontSize: 14.0,
+                                                          fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -432,6 +432,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
+                                                        fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
