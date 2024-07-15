@@ -174,7 +174,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                             ),
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         enableActiveFill: false,
-                        autoFocus: true,
+                        autoFocus: false,
                         enablePinAutofill: false,
                         errorTextSpace: 16.0,
                         showCursor: false,
