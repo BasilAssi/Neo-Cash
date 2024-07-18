@@ -140,7 +140,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'bp7pe903' /* اسم العرض */,
+                                        'bp7pe903' /* اسم المستخدم */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

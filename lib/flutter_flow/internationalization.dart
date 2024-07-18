@@ -107,37 +107,41 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // home_page
   {
-    'cnx1ihao': {
-      'ar': 'الرصيد',
-      'en': 'Balance',
-    },
-    'sh8gaq69': {
+    'v0wx94fq': {
       'ar': '\$7,630',
-      'en': '\$7,630',
+      'en': '',
     },
-    'l2b9vkcr': {
-      'ar': '**** 0149',
-      'en': '**** 0149',
+    '4hi7ozti': {
+      'ar': '0149 **** ',
+      'en': '',
     },
-    '7w73lynf': {
+    'us0t1qpe': {
       'ar': '05/25',
-      'en': '05/25',
+      'en': '',
     },
-    'dp5u5is9': {
+    '4czyx03p': {
+      'ar': '\$7,630',
+      'en': '',
+    },
+    'rgpxmqoo': {
+      'ar': '0149 **** ',
+      'en': '',
+    },
+    'icr7h69j': {
+      'ar': '05/25',
+      'en': '',
+    },
+    'e5b6cg6i': {
       'ar': 'إرسال',
-      'en': 'send',
+      'en': '',
     },
-    'gk5d680r': {
-      'ar': 'طلب',
-      'en': 'to request',
+    'gnk7m9ar': {
+      'ar': 'تحويل بين  البطاقات',
+      'en': '',
     },
-    '16dokqg5': {
-      'ar': 'سحب',
-      'en': 'to withdraw',
-    },
-    '322bihj5': {
-      'ar': 'إضافة اموال',
-      'en': 'Add money',
+    '2uzm0bfl': {
+      'ar': 'طلب بطاقة',
+      'en': '',
     },
     '0dsvs6im': {
       'ar': 'الحركات',
@@ -187,25 +191,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'ملفي الشخصي',
       'en': 'my personal file',
     },
-    'z44sbop0': {
-      'ar': 'تفاصيل الحساب',
-      'en': 'account details',
-    },
     'dybj5wgt': {
       'ar': 'الإعدادات',
       'en': 'Settings',
     },
     '80d86a13': {
-      'ar': 'مركز المساعدة',
+      'ar': 'تواصل معنا',
       'en': 'Help Center',
     },
     'nq7ri7jv': {
       'ar': 'أسعار العملات',
       'en': 'Exchange Rates',
-    },
-    'k2t41utr': {
-      'ar': 'أقرب صراف آلي',
-      'en': 'The nearest ATM',
     },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
@@ -227,8 +223,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // login
   {
     's57yw88q': {
-      'ar': 'الإيميل',
-      'en': 'Email',
+      'ar': 'اسم المستخدم',
+      'en': 'Username',
     },
     'wjlvy24l': {
       'ar': 'كلمة السر',
@@ -237,6 +233,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '3d2l5lvx': {
       'ar': 'تغير كلمة السر',
       'en': 'Change password',
+    },
+    'nf068v0h': {
+      'ar': 'من نحن',
+      'en': 'About us',
     },
     'd8rj43jr': {
       'ar': 'تسجيل الدخول',
@@ -301,7 +301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    '62u1crji': {
+    'qa3ncv30': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -313,7 +313,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    'l3mf719r': {
+    '62u1crji': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -325,7 +325,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    'u70vwya6': {
+    'l3mf719r': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -337,7 +337,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    'e4vmvyah': {
+    'u70vwya6': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -349,7 +349,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    '450tuma3': {
+    'e4vmvyah': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -373,7 +373,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    'rkfmkwgp': {
+    '450tuma3': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -385,7 +385,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    '6bjseayp': {
+    'rkfmkwgp': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -397,7 +397,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '2921532903099',
       'en': '',
     },
-    'vecnswc0': {
+    '6bjseayp': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -414,18 +414,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'n6fn9m9k': {
       'ar': 'الإشعارات',
-      'en': '',
-    },
-    'l77of1rz': {
-      'ar': 'الجميع',
-      'en': '',
-    },
-    '7gyeebmx': {
-      'ar': 'العروض',
-      'en': '',
-    },
-    'unb72wpa': {
-      'ar': 'معاملاتي',
       'en': '',
     },
     'b9tcv9w6': {
@@ -445,29 +433,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
       'en': '',
     },
-    '43krzxkt': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    '5v7wrssv': {
-      'ar': 'بلشت تحوش لسفرة العيد ؟',
-      'en': '',
-    },
-    '1d558j8e': {
-      'ar': ' ',
-      'en': '',
-    },
-    'y73ge7sl': {
-      'ar':
-          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
+    'zks01jx1': {
+      'ar': ' مبارك، تم تفعيل بطاقتك رقم 4356**',
       'en': '',
     },
     'ckpq355p': {
       'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'zks01jx1': {
-      'ar': 'بلشت تحوش لسفرة العيد ؟',
       'en': '',
     },
     '4ouibfps': {
@@ -476,7 +447,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w5sls8lu': {
       'ar':
-          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
+          ' مبارك، تم تفعيل بطاقتك رقم 4356 **** \nاستمتع بخدمات نيو كاش قد ما بدك',
       'en': '',
     },
     '89vwnktl': {
@@ -490,17 +461,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'محفظتك\n  بجيبتك ',
       'en': '',
     },
-    'esyo1sgz': {
-      'ar': 'إنشاء حساب ',
-      'en': 'sign in',
-    },
     'bkv43rhi': {
       'ar': 'سجل تلفونك واستخدم التطبيق',
       'en': '',
     },
-    'k71ncand': {
-      'ar': 'عندك حساب ؟ سجل دخولك الآن',
+    'esyo1sgz': {
+      'ar': 'إنشاء حساب ',
       'en': 'sign in',
+    },
+    'tdq0z7re': {
+      'ar': 'عندك حساب ؟ سجل دخولك الآن',
+      'en': '',
     },
     '1t39y3md': {
       'ar': 'Home',
@@ -659,7 +630,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'bp7pe903': {
-      'ar': 'اسم العرض',
+      'ar': 'اسم المستخدم',
       'en': '',
     },
     'mgmvykns': {
@@ -713,16 +684,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الإشعارات',
       'en': '',
     },
-    '7jmoj145': {
-      'ar': 'بصمة التعريف',
-      'en': '',
-    },
     'ckdkpn5f': {
-      'ar': 'الرمز السري',
-      'en': '',
-    },
-    '1mb1dqsl': {
-      'ar': 'تغير الرمز السري',
+      'ar': 'بصمة التعريف',
       'en': '',
     },
     '5035sg3i': {
@@ -839,7 +802,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل  الدخول من خلال خاصية التعرف',
       'en': '',
     },
-    'pr4uja06': {
+    '7jmoj145': {
       'ar': 'عمليات الدفع الكترونياً',
       'en': '',
     },
@@ -931,6 +894,131 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ala30aup': {
       'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_01
+  {
+    'cui94pxw': {
+      'ar': 'معلوماتي',
+      'en': '',
+    },
+    'xzg8kesl': {
+      'ar': 'خلينا نبلش بأنك تعرفنا عن حالك',
+      'en': '',
+    },
+    '8vcfnfcx': {
+      'ar': 'اسمك الأول',
+      'en': '',
+    },
+    'p3903a2l': {
+      'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    'qovv7r33': {
+      'ar': 'ذكر',
+      'en': '',
+    },
+    '28h3en66': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'dv2lbmnj': {
+      'ar': 'الجنس',
+      'en': '',
+    },
+    'gis06n00': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'w1bptsif': {
+      'ar': 'إيميلك هو :',
+      'en': '',
+    },
+    '838enfc1': {
+      'ar': 'بمجرد إنشاء حسابك سنرسل لك رابط لتأكيد الايميل',
+      'en': '',
+    },
+    'futstmfr': {
+      'ar': 'كلمة السر',
+      'en': '',
+    },
+    'gvdhmjks': {
+      'ar': 'تأكيد كلمة السر',
+      'en': '',
+    },
+    'gsqk8kbn': {
+      'ar':
+          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+      'en': '',
+    },
+    'e3s0b90l': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    'jftsmhqt': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // enable_notifications
+  {
+    'cd8zk3vb': {
+      'ar': 'تجاهل',
+      'en': '',
+    },
+    'b4gjbauq': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'gdnzw3se': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'bjk3auve': {
+      'ar': 'تفعيل',
+      'en': '',
+    },
+    '225y2xwt': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // testStack
+  {
+    'ygooebk2': {
+      'ar': 'Page Title',
+      'en': '',
+    },
+    'omf5ha9y': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // qr_code_page
+  {
+    'n76z39u6': {
+      'ar': 'الدفع ب QR',
+      'en': '',
+    },
+    'f3wb0j6s': {
+      'ar': 'Scan Qr code',
+      'en': 'Scan Qr code',
+    },
+    'rao1ms25': {
+      'ar': '',
+      'en': 'Cancel',
+    },
+    'wh2cbmu3': {
+      'ar': ' ',
+      'en': '',
+    },
+    'of48qc4f': {
+      'ar': 'My QR code',
+      'en': 'My QR code',
+    },
+    'q065sddi': {
+      'ar': 'الدفع ب QR',
       'en': '',
     },
   },
