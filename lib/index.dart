@@ -21,3 +21,9 @@ export '/pages/card_settings_page/card_settings_page_widget.dart'
 export '/pages/view_pin_code_page/view_pin_code_page_widget.dart'
     show ViewPinCodePageWidget;
 export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
+export '/pages/registeration/registeration_01/registeration01_widget.dart'
+    show Registeration01Widget;
+export '/pages/registeration/enable_notifications/enable_notifications_widget.dart'
+    show EnableNotificationsWidget;
+export '/pages/test_stack/test_stack_widget.dart' show TestStackWidget;
+export '/pages/qr_code_page/qr_code_page_widget.dart' show QrCodePageWidget;

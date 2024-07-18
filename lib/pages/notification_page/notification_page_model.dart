@@ -17,9 +17,6 @@ class NotificationPageModel extends FlutterFlowModel<NotificationPageWidget> {
   // State field(s) for Expandable widget.
   late ExpandableController expandableExpandableController2;
 
-  // State field(s) for Expandable widget.
-  late ExpandableController expandableExpandableController3;
-
   @override
   void initState(BuildContext context) {}
 
@@ -28,6 +25,5 @@ class NotificationPageModel extends FlutterFlowModel<NotificationPageWidget> {
     unfocusNode.dispose();
     expandableExpandableController1.dispose();
     expandableExpandableController2.dispose();
-    expandableExpandableController3.dispose();
   }
 }

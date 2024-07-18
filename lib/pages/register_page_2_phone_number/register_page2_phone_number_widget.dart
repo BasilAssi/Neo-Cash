@@ -477,7 +477,7 @@ class _RegisterPage2PhoneNumberWidgetState
                               'register_page_3_otp',
                               queryParameters: {
                                 'phoneNumber': serializeParam(
-                                  '${_model.textController.text} ${_model.dropDownValue}',
+                                  '${_model.textController.text} ',
                                   ParamType.String,
                                 ),
                               }.withoutNulls,

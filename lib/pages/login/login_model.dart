@@ -7,11 +7,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode1;
-  TextEditingController? passwordTextController1;
-  String? Function(BuildContext, String?)? passwordTextController1Validator;
-  String? _passwordTextController1Validator(BuildContext context, String? val) {
+  // State field(s) for Email widget.
+  FocusNode? emailFocusNode;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
+  String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
     }
@@ -26,25 +26,25 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   }
 
   // State field(s) for password widget.
-  FocusNode? passwordFocusNode2;
-  TextEditingController? passwordTextController2;
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordTextController2Validator;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   bool biometricOutput = false;
 
   @override
   void initState(BuildContext context) {
-    passwordTextController1Validator = _passwordTextController1Validator;
+    emailTextControllerValidator = _emailTextControllerValidator;
     passwordVisibility = false;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
-    passwordFocusNode1?.dispose();
-    passwordTextController1?.dispose();
+    emailFocusNode?.dispose();
+    emailTextController?.dispose();
 
-    passwordFocusNode2?.dispose();
-    passwordTextController2?.dispose();
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
   }
 }

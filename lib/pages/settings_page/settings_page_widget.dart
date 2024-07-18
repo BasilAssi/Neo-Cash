@@ -25,7 +25,6 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
 
     _model.switchValue1 = true;
     _model.switchValue2 = true;
-    _model.switchValue3 = true;
   }
 
   @override
@@ -206,7 +205,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       8.0, 12.0, 8.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '7jmoj145' /* بصمة التعريف */,
+                                      'ckdkpn5f' /* بصمة التعريف */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
@@ -240,143 +239,6 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               inactiveThumbColor:
                                   FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
-                                  Icons.password_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 32.0,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 12.0, 8.0, 8.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ckdkpn5f' /* الرمز السري */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w800,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Switch.adaptive(
-                              value: _model.switchValue3!,
-                              onChanged: (newValue) async {
-                                setState(() => _model.switchValue3 = newValue);
-                              },
-                              activeColor: const Color(0x4CF83B46),
-                              activeTrackColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              inactiveTrackColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              inactiveThumbColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
-                                  Icons.edit_note_sharp,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 32.0,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 12.0, 8.0, 8.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '1mb1dqsl' /* تغير الرمز السري */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w800,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            FlutterFlowIconButton(
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 40.0,
-                              icon: Icon(
-                                Icons.arrow_forward_ios,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
-                              },
                             ),
                           ],
                         ),

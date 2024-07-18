@@ -26,13 +26,18 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   auto_size_text: 3.0.0
+  barcode_widget: 2.0.3
   cached_network_image: 3.3.1
   collection: 1.18.0
   dropdown_button2: 2.3.9
   expandable: 5.0.1
   flip_card: 0.7.0
   flutter_animate: 4.5.0
+  flutter_barcode_scanner: 
+    git:
+      url: https://github.com/FlutterFlow/flutter_barcode_scanner
   flutter_cache_manager: 3.3.1
+  flutter_card_swiper: 6.0.0
   flutter_native_splash: 2.3.1
   flutter_plugin_android_lifecycle: 2.0.20
   font_awesome_flutter: 10.6.0

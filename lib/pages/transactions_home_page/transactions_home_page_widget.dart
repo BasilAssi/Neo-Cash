@@ -112,50 +112,45 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'bs41kbym' /* إجمالي الرصيد  */,
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        'bs41kbym' /* إجمالي الرصيد  */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleLargeFamily,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleLargeFamily),
                           ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
-                              ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
-                          child: Text(
-                            'ILS 100.00',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleLargeFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  fontSize: 32.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleLargeFamily),
-                                ),
-                          ),
-                        ),
-                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                      child: Text(
+                        'ILS 100.00',
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleLargeFamily,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 32.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleLargeFamily),
+                            ),
+                      ),
                     ),
                   ],
                 ),
@@ -404,7 +399,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '62u1crji' /* Jun, 8, 2024 */,
+                                    '2s0j82r6' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -524,7 +519,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'l3mf719r' /* Jun, 8, 2024 */,
+                                    '62u1crji' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -644,7 +639,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'u70vwya6' /* Jun, 8, 2024 */,
+                                    'l3mf719r' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -764,7 +759,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'e4vmvyah' /* Jun, 8, 2024 */,
+                                    'u70vwya6' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -884,7 +879,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '450tuma3' /* Jun, 8, 2024 */,
+                                    'e4vmvyah' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -1124,7 +1119,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'rkfmkwgp' /* Jun, 8, 2024 */,
+                                    '450tuma3' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -1244,7 +1239,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '6bjseayp' /* Jun, 8, 2024 */,
+                                    'rkfmkwgp' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
@@ -1364,7 +1359,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'vecnswc0' /* Jun, 8, 2024 */,
+                                    '6bjseayp' /* Jun, 8, 2024 */,
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)

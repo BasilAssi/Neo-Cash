@@ -32,11 +32,11 @@ class _LoginWidgetState extends State<LoginWidget>
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.passwordTextController1 ??= TextEditingController();
-    _model.passwordFocusNode1 ??= FocusNode();
+    _model.emailTextController ??= TextEditingController();
+    _model.emailFocusNode ??= FocusNode();
 
-    _model.passwordTextController2 ??= TextEditingController();
-    _model.passwordFocusNode2 ??= FocusNode();
+    _model.passwordTextController ??= TextEditingController();
+    _model.passwordFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -264,8 +264,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 0.0, 0.0, 16.0),
                                         child: TextFormField(
                                           controller:
-                                              _model.passwordTextController1,
-                                          focusNode: _model.passwordFocusNode1,
+                                              _model.emailTextController,
+                                          focusNode: _model.emailFocusNode,
                                           autofocus: true,
                                           textCapitalization:
                                               TextCapitalization.sentences,
@@ -274,7 +274,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              's57yw88q' /* الإيميل */,
+                                              's57yw88q' /* اسم المستخدم */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -374,7 +374,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .bodyMediumFamily),
                                               ),
                                           validator: _model
-                                              .passwordTextController1Validator
+                                              .emailTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -383,8 +383,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 0.0, 0.0, 16.0),
                                         child: TextFormField(
                                           controller:
-                                              _model.passwordTextController2,
-                                          focusNode: _model.passwordFocusNode2,
+                                              _model.passwordTextController,
+                                          focusNode: _model.passwordFocusNode,
                                           autofocus: false,
                                           textCapitalization:
                                               TextCapitalization.sentences,
@@ -513,7 +513,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .bodyMediumFamily),
                                               ),
                                           validator: _model
-                                              .passwordTextController2Validator
+                                              .passwordTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -523,7 +523,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 16.0, 0.0, 16.0),
+                                                  0.0, 16.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '3d2l5lvx' /* تغير كلمة السر */,
@@ -551,6 +551,60 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .headlineSmallFamily),
                                                 ),
                                           ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'nf068v0h' /* من نحن */,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 18.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .underline,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
+                                                        ),
+                                              ),
+                                            ),
+                                            Icon(
+                                              Icons.quiz,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                       Align(
@@ -618,71 +672,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
                                           children: [
-                                            Expanded(
-                                              flex: 1,
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    context
-                                                        .pushNamed('pin_code');
-                                                  },
-                                                  text: '',
-                                                  icon: Icon(
-                                                    Icons.password_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 60.0,
-                                                  ),
-                                                  options: FFButtonOptions(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        0.4,
-                                                    height: 80.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmallFamily),
-                                                        ),
-                                                    elevation: 3.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
                                             Expanded(
                                               flex: 1,
                                               child: Align(

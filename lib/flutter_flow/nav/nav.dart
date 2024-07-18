@@ -141,6 +141,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'pin_code',
               path: 'pinCode',
               builder: (context, params) => const PinCodeWidget(),
+            ),
+            FFRoute(
+              name: 'registeration_01',
+              path: 'registeration01',
+              builder: (context, params) => const Registeration01Widget(),
+            ),
+            FFRoute(
+              name: 'enable_notifications',
+              path: 'enableNotifications',
+              builder: (context, params) => const EnableNotificationsWidget(),
+            ),
+            FFRoute(
+              name: 'testStack',
+              path: 'testStack',
+              builder: (context, params) => const TestStackWidget(),
+            ),
+            FFRoute(
+              name: 'qr_code_page',
+              path: 'qrCodePage',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'qr_code_page')
+                  : const QrCodePageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -143,6 +143,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
               ),
               FlipCard(
                 fill: Fill.fillBack,
+                flipOnTouch: false,
                 direction: FlipDirection.HORIZONTAL,
                 speed: 400,
                 front: Align(
