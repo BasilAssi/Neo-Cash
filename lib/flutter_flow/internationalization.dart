@@ -132,7 +132,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'e5b6cg6i': {
-      'ar': 'إرسال',
+      'ar': 'إرسال لصديق',
       'en': '',
     },
     'gnk7m9ar': {
@@ -1001,24 +1001,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الدفع ب QR',
       'en': '',
     },
-    'f3wb0j6s': {
-      'ar': 'Scan Qr code',
-      'en': 'Scan Qr code',
+    'of48qc4f': {
+      'ar': 'امسح لدفع ',
+      'en': 'My QR code',
     },
     'rao1ms25': {
-      'ar': '',
+      'ar': 'إلغاء',
       'en': 'Cancel',
     },
-    'wh2cbmu3': {
-      'ar': ' ',
+    'faufozi7': {
+      'ar': 'QR Code  الخاص بي',
       'en': '',
-    },
-    'of48qc4f': {
-      'ar': 'My QR code',
-      'en': 'My QR code',
     },
     'q065sddi': {
       'ar': 'الدفع ب QR',
+      'en': '',
+    },
+  },
+  // filter_transactions_component
+  {
+    'mf8pyss4': {
+      'ar': 'اليوم',
+      'en': '',
+    },
+    '5uyic31x': {
+      'ar': 'Title',
+      'en': '',
+    },
+    '9s4i8fjp': {
+      'ar': 'Subtitle goes here...',
+      'en': '',
+    },
+    'rv63u0ga': {
+      'ar': 'Title',
+      'en': '',
+    },
+    'w4eee20q': {
+      'ar': 'Subtitle goes here...',
+      'en': '',
+    },
+    '1dkldbcz': {
+      'ar': 'Subtitle goes here...',
+      'en': '',
+    },
+    'fwyejthf': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'it464v1u': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'bv4wif3y': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'saa7276b': {
+      'ar': 'Option 1',
       'en': '',
     },
   },

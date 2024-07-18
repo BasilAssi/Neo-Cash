@@ -1,7 +1,9 @@
+import '/components/filter_transactions_component/filter_transactions_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -86,8 +88,53 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Builder(
+                      builder: (context) => FlutterFlowIconButton(
+                        borderColor: FlutterFlowTheme.of(context).primary,
+                        borderRadius: 20.0,
+                        borderWidth: 1.0,
+                        buttonSize: 50.0,
+                        fillColor: FlutterFlowTheme.of(context).accent1,
+                        icon: Icon(
+                          Icons.calendar_month,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          size: 40.0,
+                        ),
+                        onPressed: () async {
+                          await showAlignedDialog(
+                            context: context,
+                            isGlobal: false,
+                            avoidOverflow: true,
+                            targetAnchor: const AlignmentDirectional(-1.0, 0.0)
+                                .resolve(Directionality.of(context)),
+                            followerAnchor: const AlignmentDirectional(-1.0, 1.0)
+                                .resolve(Directionality.of(context)),
+                            builder: (dialogContext) {
+                              return Material(
+                                color: Colors.transparent,
+                                child: GestureDetector(
+                                  onTap: () =>
+                                      _model.unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                  child: SizedBox(
+                                    height:
+                                        MediaQuery.sizeOf(context).height * 0.4,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.7,
+                                    child: const FilterTransactionsComponentWidget(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ).then((value) => setState(() {}));
+                        },
+                      ),
+                    ),
                     Stack(
                       children: [
                         FlutterFlowIconButton(

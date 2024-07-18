@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:barcode_widget/barcode_widget.dart';
@@ -27,7 +28,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 2,
+      length: 1,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
   }
@@ -109,140 +110,181 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
               children: [
-                SizedBox(
+                Container(
                   height: MediaQuery.sizeOf(context).height * 0.7,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(0.0),
+                      bottomRight: Radius.circular(0.0),
+                      topLeft: Radius.circular(0.0),
+                      topRight: Radius.circular(0.0),
+                    ),
+                  ),
                   child: Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: const Alignment(0.0, 0),
-                          child: TabBar(
-                            labelColor:
-                                FlutterFlowTheme.of(context).primaryText,
-                            unselectedLabelColor:
-                                FlutterFlowTheme.of(context).secondaryText,
-                            labelPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleMediumFamily),
-                                ),
-                            unselectedLabelStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleMediumFamily),
-                                ),
-                            indicatorColor:
-                                FlutterFlowTheme.of(context).primary,
-                            padding: const EdgeInsets.all(4.0),
-                            tabs: [
-                              Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  'f3wb0j6s' /* Scan Qr code */,
-                                ),
-                                icon: const Icon(
-                                  Icons.qr_code_scanner_sharp,
-                                ),
-                              ),
-                              Tab(
-                                text: FFLocalizations.of(context).getText(
-                                  'of48qc4f' /* My QR code */,
-                                ),
-                                icon: const Icon(
-                                  Icons.qr_code_rounded,
-                                ),
-                              ),
-                            ],
-                            controller: _model.tabBarController,
-                            onTap: (i) async {
-                              [
-                                () async {
-                                  _model.qrCodeOutput =
-                                      await FlutterBarcodeScanner.scanBarcode(
-                                    '#C62828', // scanning line color
-                                    FFLocalizations.of(context).getText(
-                                      'rao1ms25' /*  */,
-                                    ), // cancel button text
-                                    true, // whether to show the flash icon
-                                    ScanMode.QR,
-                                  );
-
-                                  setState(() {});
-                                },
-                                () async {}
-                              ][i]();
-                            },
-                          ),
-                        ),
-                        Expanded(
-                          child: TabBarView(
-                            controller: _model.tabBarController,
-                            physics: const NeverScrollableScrollPhysics(),
-                            children: [
-                              KeepAliveWidgetWrapper(
-                                builder: (context) => Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'wh2cbmu3' /*   */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: const Alignment(0.0, 0),
+                            child: FlutterFlowButtonTabBar(
+                              useToggleButtonStyle: false,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleMediumFamily,
+                                    fontSize: 22.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
                                   ),
-                                ),
-                              ),
-                              KeepAliveWidgetWrapper(
-                                builder: (context) => Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        40.0, 80.0, 40.0, 80.0),
-                                    child: BarcodeWidget(
-                                      data: 'Barcode',
-                                      barcode: Barcode.qrCode(),
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              0.8,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      backgroundColor: Colors.transparent,
-                                      errorBuilder: (context, error) =>
-                                          SizedBox(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.8,
+                              unselectedLabelStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleMediumFamily,
+                                    letterSpacing: 0.0,
+                                    shadows: [
+                                      Shadow(
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        offset: const Offset(2.0, 2.0),
+                                        blurRadius: 2.0,
+                                      )
+                                    ],
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                  ),
+                              labelColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              unselectedLabelColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                              backgroundColor: const Color(0xFFF9DCDE),
+                              unselectedBackgroundColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              unselectedBorderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              elevation: 0.0,
+                              buttonMargin: const EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              padding: const EdgeInsets.all(4.0),
+                              tabs: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 8.0, 8.0, 8.0),
+                                      child: Icon(
+                                        Icons.qr_code_scanner,
+                                        size: 40.0,
                                       ),
-                                      drawText: false,
                                     ),
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'of48qc4f' /* امسح لدفع  */,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                              controller: _model.tabBarController,
+                              onTap: (i) async {
+                                [
+                                  () async {
+                                    _model.qrCodeOutput =
+                                        await FlutterBarcodeScanner.scanBarcode(
+                                      '#C62828', // scanning line color
+                                      FFLocalizations.of(context).getText(
+                                        'rao1ms25' /* إلغاء */,
+                                      ), // cancel button text
+                                      true, // whether to show the flash icon
+                                      ScanMode.QR,
+                                    );
+
+                                    setState(() {});
+                                  }
+                                ][i]();
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            child: TabBarView(
+                              controller: _model.tabBarController,
+                              physics: const NeverScrollableScrollPhysics(),
+                              children: [
+                                KeepAliveWidgetWrapper(
+                                  builder: (context) => Stack(
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, -1.0),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  40.0, 80.0, 40.0, 80.0),
+                                          child: BarcodeWidget(
+                                            data: 'Barcode',
+                                            barcode: Barcode.qrCode(),
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.8,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            backgroundColor: Colors.transparent,
+                                            errorBuilder: (context, error) =>
+                                                SizedBox(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.8,
+                                            ),
+                                            drawText: false,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.8),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'faufozi7' /* QR Code  الخاص بي */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

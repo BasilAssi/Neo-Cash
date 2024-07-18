@@ -1031,7 +1031,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'e5b6cg6i' /* إرسال */,
+                                        'e5b6cg6i' /* إرسال لصديق */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
