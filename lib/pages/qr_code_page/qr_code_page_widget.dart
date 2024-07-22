@@ -36,7 +36,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
       initialIndex: 0,
     )..addListener(() => setState(() {}));
     animationsMap.addAll({
-      'listViewOnPageLoadAnimation': AnimationInfo(
+      'stackOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -310,7 +310,8 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
                                         ),
                                       ),
                                     ],
-                                  ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'stackOnPageLoadAnimation']!),
                                 ),
                               ],
                             ),
@@ -321,7 +322,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
                   ),
                 ),
               ],
-            ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
+            ),
           ),
         ),
       ),
