@@ -219,7 +219,7 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.pushNamed(
-                          'register_page_1',
+                          'registeration_01',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
