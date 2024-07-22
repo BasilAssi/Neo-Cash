@@ -172,7 +172,7 @@ class _TransactionDetailsPageWidgetState
                                                   .titleMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          fontSize: 22.0,
+                                          fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w800,
                                           useGoogleFonts: GoogleFonts.asMap()
@@ -241,7 +241,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -300,7 +300,7 @@ class _TransactionDetailsPageWidgetState
                                     8.0, 12.0, 8.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '4tllnzk4' /* نوع الحركة */,
+                                    '6ckysnns' /* نوع الحركة */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -309,7 +309,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -377,7 +377,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -445,7 +445,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -513,7 +513,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -581,7 +581,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -649,7 +649,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -717,7 +717,7 @@ class _TransactionDetailsPageWidgetState
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 22.0,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -811,7 +811,7 @@ class _TransactionDetailsPageWidgetState
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    fontSize: 18.0,
+                                    fontSize: 22.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w800,
                                     useGoogleFonts: GoogleFonts.asMap()
