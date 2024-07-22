@@ -182,11 +182,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'registeration_03',
-              path: 'registeration03',
-              builder: (context, params) => const Registeration03Widget(),
-            ),
-            FFRoute(
               name: 'registeration_02',
               path: 'registeration02',
               builder: (context, params) => const Registeration02Widget(),
@@ -195,6 +190,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'registeration_04',
               path: 'registeration04',
               builder: (context, params) => const Registeration04Widget(),
+            ),
+            FFRoute(
+              name: 'registeration_03',
+              path: 'registeration03',
+              builder: (context, params) => const Registeration03Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

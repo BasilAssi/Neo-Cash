@@ -23,19 +23,14 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   String? Function(BuildContext, String?)?
       fatherNameTextFieldTextControllerValidator;
   // State field(s) for FamilyNameTextField widget.
-  FocusNode? familyNameTextFieldFocusNode1;
-  TextEditingController? familyNameTextFieldTextController1;
+  FocusNode? familyNameTextFieldFocusNode;
+  TextEditingController? familyNameTextFieldTextController;
   String? Function(BuildContext, String?)?
-      familyNameTextFieldTextController1Validator;
+      familyNameTextFieldTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   DateTime? datePicked;
-  // State field(s) for FamilyNameTextField widget.
-  FocusNode? familyNameTextFieldFocusNode2;
-  TextEditingController? familyNameTextFieldTextController2;
-  String? Function(BuildContext, String?)?
-      familyNameTextFieldTextController2Validator;
 
   @override
   void initState(BuildContext context) {}
@@ -49,10 +44,7 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
     fatherNameTextFieldFocusNode?.dispose();
     fatherNameTextFieldTextController?.dispose();
 
-    familyNameTextFieldFocusNode1?.dispose();
-    familyNameTextFieldTextController1?.dispose();
-
-    familyNameTextFieldFocusNode2?.dispose();
-    familyNameTextFieldTextController2?.dispose();
+    familyNameTextFieldFocusNode?.dispose();
+    familyNameTextFieldTextController?.dispose();
   }
 }

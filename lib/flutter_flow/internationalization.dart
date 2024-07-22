@@ -943,14 +943,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    'gsqk8kbn': {
-      'ar': 'اختار تاريخ ميلادك',
-      'en': '',
-    },
-    '3h2flggl': {
-      'ar': 'تاريخ ميلادك',
-      'en': '',
-    },
     'e3s0b90l': {
       'ar': 'تسجيل',
       'en': '',
@@ -1008,6 +1000,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // select_id_page
   {
+    'uiaxgfy6': {
+      'ar': 'نوع الهوية',
+      'en': '',
+    },
     'dxuxhcca': {
       'ar': 'شو نوع هويتك \n الشخصية',
       'en': '',
@@ -1043,6 +1039,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // enter_id_page
   {
+    '77f832vw': {
+      'ar': 'رقم الهوية',
+      'en': '',
+    },
     '31cdhnpq': {
       'ar': 'الرجاء ادخال رقم الهوية \nالشخصية ',
       'en': '',
@@ -1107,17 +1107,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // registeration_03
+  // registeration_02
   {
     '23yolomv': {
       'ar': 'معلوماتي',
       'en': '',
     },
     '4f68isdv': {
-      'ar': '75%',
+      'ar': '50%',
       'en': '',
     },
-    'm7w4y74p': {
+    'fdwm314o': {
       'ar': 'دخل اسمك بالانجليزي',
       'en': '',
     },
@@ -1142,41 +1142,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // registeration_02
-  {
-    'uiaxgfy6': {
-      'ar': 'معلوماتي',
-      'en': '',
-    },
-    'vzs9l521': {
-      'ar': '50%',
-      'en': '',
-    },
-    'fdwm314o': {
-      'ar': 'دخل اسمك بالعربي',
-      'en': '',
-    },
-    'l2j5elrz': {
-      'ar': 'اسمك الأول',
-      'en': '',
-    },
-    '7uyiwggr': {
-      'ar': 'اسم الأب',
-      'en': '',
-    },
-    'w1bptsif': {
-      'ar': 'اسم عائلتك',
-      'en': '',
-    },
-    'ype1jx4m': {
-      'ar': 'تسجيل',
-      'en': '',
-    },
-    '7zhaj7vf': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // registeration_04
   {
     'zu14redj': {
@@ -1187,7 +1152,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '100%',
       'en': '',
     },
-    'v9tyiblp': {
+    'm7w4y74p': {
       'ar': 'دخل باقي المعلومات',
       'en': '',
     },
@@ -1210,6 +1175,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     's0eeyypj': {
       'ar':
           'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+      'en': '',
+    },
+    'ype1jx4m': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    '7zhaj7vf': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_03
+  {
+    'rloraz8k': {
+      'ar': 'معلوماتي',
+      'en': '',
+    },
+    '1kcfuv85': {
+      'ar': '75%',
+      'en': '',
+    },
+    '8q4gcf6d': {
+      'ar': 'اختار شو جنسك',
+      'en': '',
+    },
+    'gm27qxeb': {
+      'ar': 'ذكر',
+      'en': '',
+    },
+    'uph6gyhb': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    's4geuhwe': {
+      'ar': 'الجنس',
+      'en': '',
+    },
+    'n7u4pwl1': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '176tavmw': {
+      'ar': 'اختار تاريخ ميلادك',
+      'en': '',
+    },
+    'lq17gtqs': {
+      'ar': '7/22/2024',
       'en': '',
     },
     'u9z1zlyl': {

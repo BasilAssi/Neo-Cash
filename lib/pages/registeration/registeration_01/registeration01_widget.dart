@@ -34,19 +34,8 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
     _model.fatherNameTextFieldTextController ??= TextEditingController();
     _model.fatherNameTextFieldFocusNode ??= FocusNode();
 
-    _model.familyNameTextFieldTextController1 ??= TextEditingController();
-    _model.familyNameTextFieldFocusNode1 ??= FocusNode();
-
-    _model.familyNameTextFieldTextController2 ??= TextEditingController();
-    _model.familyNameTextFieldFocusNode2 ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.familyNameTextFieldTextController2?.text = dateTimeFormat(
-            'd/M/y',
-            _model.datePicked,
-            locale: FFLocalizations.of(context).languageCode,
-          );
-        }));
+    _model.familyNameTextFieldTextController ??= TextEditingController();
+    _model.familyNameTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -351,8 +340,8 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.familyNameTextFieldTextController1,
-                      focusNode: _model.familyNameTextFieldFocusNode1,
+                      controller: _model.familyNameTextFieldTextController,
+                      focusNode: _model.familyNameTextFieldFocusNode,
                       autofocus: true,
                       textCapitalization: TextCapitalization.sentences,
                       obscureText: false,
@@ -424,7 +413,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                       validator: _model
-                          .familyNameTextFieldTextController1Validator
+                          .familyNameTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -496,23 +485,6 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                       isMultiSelect: false,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'gsqk8kbn' /* اختار تاريخ ميلادك */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleMediumFamily),
-                          ),
-                    ),
-                  ),
                   InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -545,93 +517,6 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                     },
                     child: Container(
                       decoration: const BoxDecoration(),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: TextFormField(
-                          controller: _model.familyNameTextFieldTextController2,
-                          focusNode: _model.familyNameTextFieldFocusNode2,
-                          autofocus: false,
-                          textCapitalization: TextCapitalization.sentences,
-                          readOnly: true,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: FFLocalizations.of(context).getText(
-                              '3h2flggl' /* تاريخ ميلادك */,
-                            ),
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).alternate,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            filled: true,
-                            fillColor: FlutterFlowTheme.of(context).accent4,
-                            suffixIcon: Icon(
-                              Icons.calendar_month_outlined,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 28.0,
-                            ),
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily),
-                              ),
-                          validator: _model
-                              .familyNameTextFieldTextController2Validator
-                              .asValidator(context),
-                        ),
-                      ),
                     ),
                   ),
                   Padding(
@@ -649,7 +534,17 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                 0.0, 36.0, 0.0, 8.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('registeration_02');
+                                context.pushNamed(
+                                  'registeration_02',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.leftToRight,
+                                      duration: Duration(milliseconds: 300),
+                                    ),
+                                  },
+                                );
                               },
                               text: FFLocalizations.of(context).getText(
                                 'e3s0b90l' /* تسجيل */,
