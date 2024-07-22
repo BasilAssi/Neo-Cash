@@ -148,75 +148,8 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        '8q4gcf6d' /* اختار شو جنسك */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleMediumFamily),
-                          ),
-                    ),
-                  ),
-                  Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController ??=
-                          FormFieldController<String>(null),
-                      options: List<String>.from(['MALE', 'FEMALE']),
-                      optionLabels: [
-                        FFLocalizations.of(context).getText(
-                          'gm27qxeb' /* ذكر */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'uph6gyhb' /* أنثى */,
-                        )
-                      ],
-                      onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
-                      width: 300.0,
-                      height: 56.0,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .labelLarge
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).labelLargeFamily,
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).labelLargeFamily),
-                          ),
-                      hintText: FFLocalizations.of(context).getText(
-                        's4geuhwe' /* الجنس */,
-                      ),
-                      icon: Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 24.0,
-                      ),
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      elevation: 2.0,
-                      borderColor: FlutterFlowTheme.of(context).alternate,
-                      borderWidth: 2.0,
-                      borderRadius: 8.0,
-                      margin:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                      hidesUnderline: true,
-                      isOverButton: true,
-                      isSearchable: false,
-                      isMultiSelect: false,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '176tavmw' /* اختار تاريخ ميلادك */,
@@ -311,8 +244,11 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'lq17gtqs' /* 7/22/2024 */,
+                                dateTimeFormat(
+                                  'yMd',
+                                  _model.datePicked,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -344,6 +280,85 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   ),
                   Padding(
                     padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'yfoglq5k' /* اختار مكان سكنك */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: FlutterFlowDropDown<String>(
+                      controller: _model.dropDownValueController ??=
+                          FormFieldController<String>(null),
+                      options:
+                          List<String>.from(['04', '1', '2', '3', 'FEMALE']),
+                      optionLabels: [
+                        FFLocalizations.of(context).getText(
+                          'gm27qxeb' /* رام الله */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '8ez9okhl' /* نابلس */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '54xnhgyx' /* طولكرم */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'd5u35u9r' /* الخليل */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'uph6gyhb' /* أنثى */,
+                        )
+                      ],
+                      onChanged: (val) =>
+                          setState(() => _model.dropDownValue = val),
+                      width: 300.0,
+                      height: 56.0,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .labelLarge
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelLargeFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).labelLargeFamily),
+                          ),
+                      hintText: FFLocalizations.of(context).getText(
+                        's4geuhwe' /* المدينة */,
+                      ),
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 24.0,
+                      ),
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 2.0,
+                      borderColor: FlutterFlowTheme.of(context).alternate,
+                      borderWidth: 2.0,
+                      borderRadius: 8.0,
+                      margin:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                      hidesUnderline: true,
+                      isOverButton: true,
+                      isSearchable: false,
+                      isMultiSelect: false,
+                    ),
+                  ),
+                  Padding(
+                    padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -360,7 +375,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                 context.pushNamed('registeration_04');
                               },
                               text: FFLocalizations.of(context).getText(
-                                'ype1jx4m' /* تسجيل */,
+                                'vq6zsk0n' /* التالي */,
                               ),
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.9,

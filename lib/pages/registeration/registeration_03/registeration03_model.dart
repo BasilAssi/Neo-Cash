@@ -11,10 +11,10 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  DateTime? datePicked;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  DateTime? datePicked;
 
   @override
   void initState(BuildContext context) {}

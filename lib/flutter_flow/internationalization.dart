@@ -944,7 +944,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'e3s0b90l': {
-      'ar': 'تسجيل',
+      'ar': 'التالي',
       'en': '',
     },
     'jftsmhqt': {
@@ -1134,7 +1134,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'dp2tcpmy': {
-      'ar': 'تسجيل',
+      'ar': 'التالي',
       'en': '',
     },
     'd8ktttak': {
@@ -1196,12 +1196,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '75%',
       'en': '',
     },
-    '8q4gcf6d': {
-      'ar': 'اختار شو جنسك',
+    '176tavmw': {
+      'ar': 'اختار تاريخ ميلادك',
+      'en': '',
+    },
+    'yfoglq5k': {
+      'ar': 'اختار مكان سكنك',
       'en': '',
     },
     'gm27qxeb': {
-      'ar': 'ذكر',
+      'ar': 'رام الله',
+      'en': '',
+    },
+    '8ez9okhl': {
+      'ar': 'نابلس',
+      'en': '',
+    },
+    '54xnhgyx': {
+      'ar': 'طولكرم',
+      'en': '',
+    },
+    'd5u35u9r': {
+      'ar': 'الخليل',
       'en': '',
     },
     'uph6gyhb': {
@@ -1209,23 +1225,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     's4geuhwe': {
-      'ar': 'الجنس',
+      'ar': 'المدينة',
       'en': '',
     },
     'n7u4pwl1': {
       'ar': 'Search for an item...',
       'en': '',
     },
-    '176tavmw': {
-      'ar': 'اختار تاريخ ميلادك',
-      'en': '',
-    },
-    'lq17gtqs': {
-      'ar': '7/22/2024',
-      'en': '',
-    },
-    'u9z1zlyl': {
-      'ar': 'تسجيل',
+    'vq6zsk0n': {
+      'ar': 'التالي',
       'en': '',
     },
     'nrngf3v4': {
