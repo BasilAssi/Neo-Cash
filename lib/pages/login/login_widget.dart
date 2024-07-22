@@ -553,60 +553,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'nf068v0h' /* من نحن */,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 18.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .underline,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily),
-                                                        ),
-                                              ),
-                                            ),
-                                            Icon(
-                                              Icons.quiz,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 24.0,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
                                       Align(
                                         alignment:
                                             const AlignmentDirectional(0.0, 0.0),
@@ -667,103 +613,157 @@ class _LoginWidgetState extends State<LoginWidget>
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 16.0, 0.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Expanded(
-                                              flex: 1,
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    final localAuth =
-                                                        LocalAuthentication();
-                                                    bool isBiometricSupported =
-                                                        await localAuth
-                                                            .isDeviceSupported();
-                                                    bool canCheckBiometrics =
-                                                        await localAuth
-                                                            .canCheckBiometrics;
-                                                    if (isBiometricSupported &&
-                                                        canCheckBiometrics) {
-                                                      _model.biometricOutput = await localAuth
-                                                          .authenticate(
-                                                              localizedReason:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'q9ks8jtt' /* مرحبا */,
-                                                              ),
-                                                              options: const AuthenticationOptions(
-                                                                  biometricOnly:
-                                                                      true));
-                                                      setState(() {});
-                                                    }
-
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  final localAuth =
+                                                      LocalAuthentication();
+                                                  bool isBiometricSupported =
+                                                      await localAuth
+                                                          .isDeviceSupported();
+                                                  bool canCheckBiometrics =
+                                                      await localAuth
+                                                          .canCheckBiometrics;
+                                                  if (isBiometricSupported &&
+                                                      canCheckBiometrics) {
+                                                    _model.biometricOutput = await localAuth
+                                                        .authenticate(
+                                                            localizedReason:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'q9ks8jtt' /* مرحبا */,
+                                                            ),
+                                                            options:
+                                                                const AuthenticationOptions(
+                                                                    biometricOnly:
+                                                                        true));
                                                     setState(() {});
-                                                  },
-                                                  text: '',
-                                                  icon: Icon(
-                                                    Icons.fingerprint_sharp,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 70.0,
+                                                  }
+
+                                                  setState(() {});
+                                                },
+                                                text: '',
+                                                icon: Icon(
+                                                  Icons.fingerprint_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 60.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.35,
+                                                  height: 60.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallFamily),
+                                                          ),
+                                                  elevation: 3.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
                                                   ),
-                                                  options: FFButtonOptions(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        0.4,
-                                                    height: 80.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 1.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'nf068v0h' /* من نحن */,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
+                                                        .headlineSmall
                                                         .override(
                                                           fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily,
-                                                          color: Colors.white,
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 18.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .underline,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmallFamily),
+                                                                      .headlineSmallFamily),
                                                         ),
-                                                    elevation: 3.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
                                                   ),
                                                 ),
-                                              ),
+                                                Icon(
+                                                  Icons.quiz,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 24.0,
+                                                ),
+                                              ],
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ].addToEnd(const SizedBox(width: 30.0)),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(

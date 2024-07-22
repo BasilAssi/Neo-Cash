@@ -166,10 +166,19 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 8.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('register_page_2_phone_number');
+                        context.pushNamed(
+                          'select_id_page',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: const TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 300),
+                            ),
+                          },
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
-                        'bkv43rhi' /* سجل تلفونك واستخدم التطبيق */,
+                        'esyo1sgz' /* إنشاء حساب  */,
                       ),
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.9,
@@ -178,7 +187,7 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).secondary,
+                        color: FlutterFlowTheme.of(context).primary,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
                             .override(
@@ -206,13 +215,22 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 8.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 8.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('register_page_2_phone_number');
+                        context.pushNamed(
+                          'register_page_1',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: const TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 300),
+                            ),
+                          },
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
-                        'esyo1sgz' /* إنشاء حساب  */,
+                        'xij3ettk' /* إنشاء حساب  */,
                       ),
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.9,

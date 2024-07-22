@@ -40,18 +40,18 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_ios_rounded,
-              color: Colors.white,
+              color: FlutterFlowTheme.of(context).primary,
               size: 30.0,
             ),
             onPressed: () async {
@@ -80,8 +80,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context)
@@ -109,8 +108,8 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -124,18 +123,18 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                             style: const TextStyle(),
                           )
                         ],
-                        style:
-                            FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineSmallFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  fontSize: 32.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily),
-                                ),
+                        style: FlutterFlowTheme.of(context)
+                            .headlineSmall
+                            .override(
+                              fontFamily: FlutterFlowTheme.of(context)
+                                  .headlineSmallFamily,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontSize: 32.0,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily),
+                            ),
                       ),
                     ),
                   ],
@@ -258,6 +257,10 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                             color: const Color(0xFF7D5658),
                             borderRadius: BorderRadius.circular(25.0),
                             shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(

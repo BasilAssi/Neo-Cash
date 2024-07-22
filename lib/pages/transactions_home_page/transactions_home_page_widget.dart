@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -104,17 +103,15 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                           size: 40.0,
                         ),
                         onPressed: () async {
-                          await showAlignedDialog(
+                          await showDialog(
                             context: context,
-                            isGlobal: false,
-                            avoidOverflow: true,
-                            targetAnchor: const AlignmentDirectional(-1.0, 0.0)
-                                .resolve(Directionality.of(context)),
-                            followerAnchor: const AlignmentDirectional(-1.0, 1.0)
-                                .resolve(Directionality.of(context)),
                             builder: (dialogContext) {
-                              return Material(
-                                color: Colors.transparent,
+                              return Dialog(
+                                elevation: 0,
+                                insetPadding: EdgeInsets.zero,
+                                backgroundColor: Colors.transparent,
+                                alignment: const AlignmentDirectional(-0.0, 0.0)
+                                    .resolve(Directionality.of(context)),
                                 child: GestureDetector(
                                   onTap: () =>
                                       _model.unfocusNode.canRequestFocus

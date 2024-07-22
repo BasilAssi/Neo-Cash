@@ -1,10 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import 'registeration01_widget.dart' show Registeration01Widget;
-import 'package:flutter/cupertino.dart';
+import 'registeration03_widget.dart' show Registeration03Widget;
 import 'package:flutter/material.dart';
 
-class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
+class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
   ///  Local state fields for this page.
 
   bool? selectedValue = true;
@@ -23,19 +21,10 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   String? Function(BuildContext, String?)?
       fatherNameTextFieldTextControllerValidator;
   // State field(s) for FamilyNameTextField widget.
-  FocusNode? familyNameTextFieldFocusNode1;
-  TextEditingController? familyNameTextFieldTextController1;
+  FocusNode? familyNameTextFieldFocusNode;
+  TextEditingController? familyNameTextFieldTextController;
   String? Function(BuildContext, String?)?
-      familyNameTextFieldTextController1Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  DateTime? datePicked;
-  // State field(s) for FamilyNameTextField widget.
-  FocusNode? familyNameTextFieldFocusNode2;
-  TextEditingController? familyNameTextFieldTextController2;
-  String? Function(BuildContext, String?)?
-      familyNameTextFieldTextController2Validator;
+      familyNameTextFieldTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -49,10 +38,7 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
     fatherNameTextFieldFocusNode?.dispose();
     fatherNameTextFieldTextController?.dispose();
 
-    familyNameTextFieldFocusNode1?.dispose();
-    familyNameTextFieldTextController1?.dispose();
-
-    familyNameTextFieldFocusNode2?.dispose();
-    familyNameTextFieldTextController2?.dispose();
+    familyNameTextFieldFocusNode?.dispose();
+    familyNameTextFieldTextController?.dispose();
   }
 }
