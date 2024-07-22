@@ -78,7 +78,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'uiaxgfy6' /* معلوماتي */,
+                      '23yolomv' /* معلوماتي */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -136,7 +136,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         backgroundColor: const Color(0xFFE5D2D3),
                         center: Text(
                           FFLocalizations.of(context).getText(
-                            'gpgo7ond' /* 50% */,
+                            '4f68isdv' /* 50% */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
@@ -159,7 +159,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'fdwm314o' /* دخل اسمك بالعربي */,
+                        'fdwm314o' /* دخل اسمك بالانجليزي */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -182,7 +182,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          'p3903a2l' /* اسمك الأول */,
+                          'x4er24y1' /* اسمك الأول */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -263,7 +263,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          '7uyiwggr' /* اسم الأب */,
+                          'pbmu77lw' /* اسم الأب */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -344,7 +344,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          'w1bptsif' /* اسم عائلتك */,
+                          'iozo3z56' /* اسم عائلتك */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -429,10 +429,20 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                 0.0, 36.0, 0.0, 8.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('registeration_03');
+                                context.pushNamed(
+                                  'registeration_03',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.bottomToTop,
+                                      duration: Duration(milliseconds: 300),
+                                    ),
+                                  },
+                                );
                               },
                               text: FFLocalizations.of(context).getText(
-                                'ype1jx4m' /* تسجيل */,
+                                'dp2tcpmy' /* تسجيل */,
                               ),
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.9,

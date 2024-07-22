@@ -53,7 +53,7 @@ class _SelectIdPageWidgetState extends State<SelectIdPageWidget> {
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     FlutterFlowIconButton(
                       borderColor: Colors.transparent,
@@ -61,13 +61,36 @@ class _SelectIdPageWidgetState extends State<SelectIdPageWidget> {
                       borderWidth: 1.0,
                       buttonSize: 60.0,
                       icon: const Icon(
-                        Icons.arrow_forward_ios,
+                        Icons.arrow_back_ios,
                         color: Colors.white,
                         size: 30.0,
                       ),
                       onPressed: () async {
                         context.pop();
                       },
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'uiaxgfy6' /* نوع الهوية */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineMediumFamily),
+                              ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

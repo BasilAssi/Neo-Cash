@@ -32,9 +32,9 @@ export '/pages/registeration/enter_id_page/enter_id_page_widget.dart'
     show EnterIdPageWidget;
 export '/pages/registeration/otp_exist_person_page/otp_exist_person_page_widget.dart'
     show OtpExistPersonPageWidget;
-export '/pages/registeration/registeration_03/registeration03_widget.dart'
-    show Registeration03Widget;
 export '/pages/registeration/registeration_02/registeration02_widget.dart'
     show Registeration02Widget;
 export '/pages/registeration/registeration_04/registeration04_widget.dart'
     show Registeration04Widget;
+export '/pages/registeration/registeration_03/registeration03_widget.dart'
+    show Registeration03Widget;
