@@ -719,7 +719,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تم القبول',
       'en': '',
     },
-    '4tllnzk4': {
+    '6ckysnns': {
       'ar': 'نوع الحركة',
       'en': '',
     },

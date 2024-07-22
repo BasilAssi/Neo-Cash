@@ -1,8 +1,10 @@
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'qr_code_page_model.dart';
@@ -21,6 +23,8 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final animationsMap = <String, AnimationInfo>{};
+
   @override
   void initState() {
     super.initState();
@@ -31,6 +35,34 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
       length: 1,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
+    animationsMap.addAll({
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -289,7 +321,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
                   ),
                 ),
               ],
-            ),
+            ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
           ),
         ),
       ),
