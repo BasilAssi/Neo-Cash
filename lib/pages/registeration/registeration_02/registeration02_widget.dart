@@ -442,7 +442,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                 );
                               },
                               text: FFLocalizations.of(context).getText(
-                                'dp2tcpmy' /* تسجيل */,
+                                'dp2tcpmy' /* التالي */,
                               ),
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.9,

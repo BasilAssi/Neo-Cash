@@ -547,7 +547,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                 );
                               },
                               text: FFLocalizations.of(context).getText(
-                                'e3s0b90l' /* تسجيل */,
+                                'e3s0b90l' /* التالي */,
                               ),
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
