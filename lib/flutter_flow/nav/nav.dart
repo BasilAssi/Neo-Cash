@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -153,16 +155,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const EnableNotificationsWidget(),
             ),
             FFRoute(
-              name: 'testStack',
-              path: 'testStack',
-              builder: (context, params) => const TestStackWidget(),
-            ),
-            FFRoute(
               name: 'qr_code_page',
               path: 'qrCodePage',
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'qr_code_page')
                   : const QrCodePageWidget(),
+            ),
+            FFRoute(
+              name: 'select_id_page',
+              path: 'selectIdPage',
+              builder: (context, params) => const SelectIdPageWidget(),
+            ),
+            FFRoute(
+              name: 'enter_id_page',
+              path: 'enterIdPage',
+              builder: (context, params) => const EnterIdPageWidget(),
+            ),
+            FFRoute(
+              name: 'otp_exist_person_page',
+              path: 'otpExistPersonPage',
+              builder: (context, params) => OtpExistPersonPageWidget(
+                phoneNumber: params.getParam(
+                  'phoneNumber',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'registeration_03',
+              path: 'registeration03',
+              builder: (context, params) => const Registeration03Widget(),
+            ),
+            FFRoute(
+              name: 'registeration_02',
+              path: 'registeration02',
+              builder: (context, params) => const Registeration02Widget(),
+            ),
+            FFRoute(
+              name: 'registeration_04',
+              path: 'registeration04',
+              builder: (context, params) => const Registeration04Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -236,6 +268,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -253,6 +286,7 @@ class FFParameters {
       param,
       type,
       isList,
+      structBuilder: structBuilder,
     );
   }
 }

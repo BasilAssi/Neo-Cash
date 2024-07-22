@@ -132,7 +132,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'e5b6cg6i': {
-      'ar': 'إرسال',
+      'ar': 'إرسال لصديق',
       'en': '',
     },
     'gnk7m9ar': {
@@ -234,10 +234,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تغير كلمة السر',
       'en': 'Change password',
     },
-    'nf068v0h': {
-      'ar': 'من نحن',
-      'en': 'About us',
-    },
     'd8rj43jr': {
       'ar': 'تسجيل الدخول',
       'en': 'sign in',
@@ -245,6 +241,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'q9ks8jtt': {
       'ar': 'مرحبا',
       'en': 'hello',
+    },
+    'nf068v0h': {
+      'ar': 'من نحن',
+      'en': 'About us',
     },
     '3mc67cej': {
       'ar': 'ما عندك حساب؟',
@@ -461,13 +461,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'محفظتك\n  بجيبتك ',
       'en': '',
     },
-    'bkv43rhi': {
-      'ar': 'سجل تلفونك واستخدم التطبيق',
-      'en': '',
-    },
     'esyo1sgz': {
       'ar': 'إنشاء حساب ',
       'en': 'sign in',
+    },
+    'xij3ettk': {
+      'ar': 'إنشاء حساب ',
+      'en': '',
     },
     'tdq0z7re': {
       'ar': 'عندك حساب ؟ سجل دخولك الآن',
@@ -719,7 +719,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تم القبول',
       'en': '',
     },
-    '5z95uda8': {
+    '4tllnzk4': {
       'ar': 'نوع الحركة',
       'en': '',
     },
@@ -903,6 +903,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'معلوماتي',
       'en': '',
     },
+    'gpgo7ond': {
+      'ar': '25%',
+      'en': '',
+    },
     'xzg8kesl': {
       'ar': 'خلينا نبلش بأنك تعرفنا عن حالك',
       'en': '',
@@ -911,8 +915,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسمك الأول',
       'en': '',
     },
+    'cqn3fqjj': {
+      'ar': 'اسم الأب',
+      'en': '',
+    },
     'p3903a2l': {
       'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    '838enfc1': {
+      'ar': 'اختار شو جنسك',
       'en': '',
     },
     'qovv7r33': {
@@ -931,25 +943,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    'w1bptsif': {
-      'ar': 'إيميلك هو :',
-      'en': '',
-    },
-    '838enfc1': {
-      'ar': 'بمجرد إنشاء حسابك سنرسل لك رابط لتأكيد الايميل',
-      'en': '',
-    },
-    'futstmfr': {
-      'ar': 'كلمة السر',
-      'en': '',
-    },
-    'gvdhmjks': {
-      'ar': 'تأكيد كلمة السر',
-      'en': '',
-    },
     'gsqk8kbn': {
-      'ar':
-          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+      'ar': 'اختار تاريخ ميلادك',
+      'en': '',
+    },
+    '3h2flggl': {
+      'ar': 'تاريخ ميلادك',
       'en': '',
     },
     'e3s0b90l': {
@@ -984,10 +983,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // testStack
+  // qr_code_page
   {
-    'ygooebk2': {
-      'ar': 'Page Title',
+    'n76z39u6': {
+      'ar': 'الدفع ب QR',
+      'en': '',
+    },
+    'of48qc4f': {
+      'ar': 'امسح لدفع ',
+      'en': 'My QR code',
+    },
+    'rao1ms25': {
+      'ar': 'إلغاء',
+      'en': 'Cancel',
+    },
+    'faufozi7': {
+      'ar': 'QR Code  الخاص بي',
+      'en': '',
+    },
+    'q065sddi': {
+      'ar': 'الدفع ب QR',
+      'en': '',
+    },
+  },
+  // select_id_page
+  {
+    'dxuxhcca': {
+      'ar': 'شو نوع هويتك \n الشخصية',
+      'en': '',
+    },
+    'km7wvkc0': {
+      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
+      'en': '',
+    },
+    'ae7282y8': {
+      'ar': 'الهوية  الفلسطينية',
+      'en': '',
+    },
+    'f65mjnl5': {
+      'ar': 'هوية القدس',
+      'en': '',
+    },
+    't6r9nbwf': {
+      'ar': 'اختيار نوع الهوية ',
+      'en': '',
+    },
+    'x4fv8vwx': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'xmfxjamh': {
+      'ar': 'التالي',
       'en': '',
     },
     'omf5ha9y': {
@@ -995,30 +1041,183 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // qr_code_page
+  // enter_id_page
   {
-    'n76z39u6': {
-      'ar': 'الدفع ب QR',
+    '31cdhnpq': {
+      'ar': 'الرجاء ادخال رقم الهوية \nالشخصية ',
       'en': '',
     },
-    'f3wb0j6s': {
-      'ar': 'Scan Qr code',
-      'en': 'Scan Qr code',
-    },
-    'rao1ms25': {
-      'ar': '',
-      'en': 'Cancel',
-    },
-    'wh2cbmu3': {
-      'ar': ' ',
+    'zpzvvdm6': {
+      'ar': '\"الوثيقة\"',
       'en': '',
     },
-    'of48qc4f': {
-      'ar': 'My QR code',
-      'en': 'My QR code',
+    '9s5l9xzz': {
+      'ar': 'الرجاء ادخال رقم الهوية \nالشخصية \"الوثيقة\"',
+      'en': '',
     },
-    'q065sddi': {
-      'ar': 'الدفع ب QR',
+    '9hnsedy0': {
+      'ar': 'الرجاء ادخال رقم الهوية بشكل صحيح',
+      'en': '',
+    },
+    'c42bc1ay': {
+      'ar': 'ادخال رقم الهوية',
+      'en': '',
+    },
+    'avin42p9': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    '20mmouhk': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // otp_exist_person_page
+  {
+    'yz1z1apd': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    'wz31dp5u': {
+      'ar': 'بعتنالك رمز تحقق على تليفونك  رقم',
+      'en': '',
+    },
+    '5xs4gjqu': {
+      'ar': '\n',
+      'en': '',
+    },
+    'jehqu9vd': {
+      'ar': '\n',
+      'en': '',
+    },
+    'x2iqegi0': {
+      'ar': ' ممكن تشوف مسجاتك  وتدخل الرمز؟',
+      'en': '',
+    },
+    '5axqffrl': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    '7k0jbm1l': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'emqmmcve': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_03
+  {
+    '23yolomv': {
+      'ar': 'معلوماتي',
+      'en': '',
+    },
+    '4f68isdv': {
+      'ar': '75%',
+      'en': '',
+    },
+    'm7w4y74p': {
+      'ar': 'دخل اسمك بالانجليزي',
+      'en': '',
+    },
+    'x4er24y1': {
+      'ar': 'اسمك الأول',
+      'en': '',
+    },
+    'pbmu77lw': {
+      'ar': 'اسم الأب',
+      'en': '',
+    },
+    'iozo3z56': {
+      'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    'dp2tcpmy': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    'd8ktttak': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_02
+  {
+    'uiaxgfy6': {
+      'ar': 'معلوماتي',
+      'en': '',
+    },
+    'vzs9l521': {
+      'ar': '50%',
+      'en': '',
+    },
+    'fdwm314o': {
+      'ar': 'دخل اسمك بالعربي',
+      'en': '',
+    },
+    'l2j5elrz': {
+      'ar': 'اسمك الأول',
+      'en': '',
+    },
+    '7uyiwggr': {
+      'ar': 'اسم الأب',
+      'en': '',
+    },
+    'w1bptsif': {
+      'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    'ype1jx4m': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    '7zhaj7vf': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_04
+  {
+    'zu14redj': {
+      'ar': 'معلوماتي',
+      'en': '',
+    },
+    '4o3zpp27': {
+      'ar': '100%',
+      'en': '',
+    },
+    'v9tyiblp': {
+      'ar': 'دخل باقي المعلومات',
+      'en': '',
+    },
+    'jr2dayzi': {
+      'ar': 'إيميلك هو :',
+      'en': '',
+    },
+    '1jb5vlr1': {
+      'ar': 'بمجرد إنشاء حسابك سنرسل لك رابط لتأكيد الايميل',
+      'en': '',
+    },
+    'futstmfr': {
+      'ar': 'كلمة السر',
+      'en': '',
+    },
+    'af8ji769': {
+      'ar': 'تأكيد كلمة السر',
+      'en': '',
+    },
+    's0eeyypj': {
+      'ar':
+          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+      'en': '',
+    },
+    'u9z1zlyl': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    'nrngf3v4': {
+      'ar': 'Home',
       'en': '',
     },
   },

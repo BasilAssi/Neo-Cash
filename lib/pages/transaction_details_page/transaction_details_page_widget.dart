@@ -300,7 +300,7 @@ class _TransactionDetailsPageWidgetState
                                     8.0, 12.0, 8.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '6rh91bf4' /* نوع الحركة */,
+                                    '4tllnzk4' /* نوع الحركة */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium

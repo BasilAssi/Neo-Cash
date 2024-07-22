@@ -393,8 +393,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         highlightColor: Colors.transparent,
                         onTap: () async {
                           if (FFAppState().isEnglish == true) {
+                            FFAppState().isEnglish = false;
+                            setState(() {});
                             setAppLanguage(context, 'ar');
                           } else {
+                            FFAppState().isEnglish = true;
+                            setState(() {});
                             setAppLanguage(context, 'en');
                           }
                         },
@@ -1031,7 +1035,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'e5b6cg6i' /* إرسال */,
+                                        'e5b6cg6i' /* إرسال لصديق */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

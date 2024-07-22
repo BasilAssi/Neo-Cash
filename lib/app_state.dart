@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '/backend/schema/structs/index.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -26,37 +28,39 @@ class FFAppState extends ChangeNotifier {
     _isEnglish = value;
   }
 
-  List<String> _images = [
-    'https://picsum.photos/seed/720/600',
-    'https://picsum.photos/seed/196/600',
-    'https://picsum.photos/seed/329/600',
-    'https://picsum.photos/seed/429/600'
+  List<DateTypeStruct> _DateListLookUp = [
+    DateTypeStruct.fromSerializableMap(jsonDecode(
+        '{\"name\":\"today\",\"start_date\":\"1721558916474\",\"end_date\":\"1721558916474\",\"date_enum\":\"TODAY\"}')),
+    DateTypeStruct.fromSerializableMap(jsonDecode(
+        '{\"name\":\"lastWeek\",\"start_date\":\"1721558951315\",\"end_date\":\"1721558951315\",\"date_enum\":\"LAST_WEEK\"}')),
+    DateTypeStruct.fromSerializableMap(jsonDecode(
+        '{\"name\":\"Hello World\",\"start_date\":\"1721559025960\",\"end_date\":\"1721559025960\",\"date_enum\":\"LAST_MONTH\"}'))
   ];
-  List<String> get images => _images;
-  set images(List<String> value) {
-    _images = value;
+  List<DateTypeStruct> get DateListLookUp => _DateListLookUp;
+  set DateListLookUp(List<DateTypeStruct> value) {
+    _DateListLookUp = value;
   }
 
-  void addToImages(String value) {
-    images.add(value);
+  void addToDateListLookUp(DateTypeStruct value) {
+    DateListLookUp.add(value);
   }
 
-  void removeFromImages(String value) {
-    images.remove(value);
+  void removeFromDateListLookUp(DateTypeStruct value) {
+    DateListLookUp.remove(value);
   }
 
-  void removeAtIndexFromImages(int index) {
-    images.removeAt(index);
+  void removeAtIndexFromDateListLookUp(int index) {
+    DateListLookUp.removeAt(index);
   }
 
-  void updateImagesAtIndex(
+  void updateDateListLookUpAtIndex(
     int index,
-    String Function(String) updateFn,
+    DateTypeStruct Function(DateTypeStruct) updateFn,
   ) {
-    images[index] = updateFn(_images[index]);
+    DateListLookUp[index] = updateFn(_DateListLookUp[index]);
   }
 
-  void insertAtIndexInImages(int index, String value) {
-    images.insert(index, value);
+  void insertAtIndexInDateListLookUp(int index, DateTypeStruct value) {
+    DateListLookUp.insert(index, value);
   }
 }

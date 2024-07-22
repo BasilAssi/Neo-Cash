@@ -8,11 +8,11 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'register_page3_otp_model.dart';
-export 'register_page3_otp_model.dart';
+import 'otp_exist_person_page_model.dart';
+export 'otp_exist_person_page_model.dart';
 
-class RegisterPage3OtpWidget extends StatefulWidget {
-  const RegisterPage3OtpWidget({
+class OtpExistPersonPageWidget extends StatefulWidget {
+  const OtpExistPersonPageWidget({
     super.key,
     required this.phoneNumber,
   });
@@ -20,18 +20,19 @@ class RegisterPage3OtpWidget extends StatefulWidget {
   final String? phoneNumber;
 
   @override
-  State<RegisterPage3OtpWidget> createState() => _RegisterPage3OtpWidgetState();
+  State<OtpExistPersonPageWidget> createState() =>
+      _OtpExistPersonPageWidgetState();
 }
 
-class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
-  late RegisterPage3OtpModel _model;
+class _OtpExistPersonPageWidgetState extends State<OtpExistPersonPageWidget> {
+  late OtpExistPersonPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegisterPage3OtpModel());
+    _model = createModel(context, () => OtpExistPersonPageModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -121,7 +122,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'cvcns9e8' /* تأكيد رقم التلفون */,
+                                      'yz1z1apd' /* تأكيد رقم التلفون */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -162,7 +163,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'qspd8ikt' /* بعتنالك رمز تحقق على تليفونك  ... */,
+                                          'wz31dp5u' /* بعتنالك رمز تحقق على تليفونك  ... */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -187,7 +188,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'tcup8vos' /* 
+                                          '5xs4gjqu' /* 
  */
                                           ,
                                         ),
@@ -210,7 +211,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'y9am0wim' /* 
+                                          'jehqu9vd' /* 
  */
                                           ,
                                         ),
@@ -219,7 +220,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'tkx75g2g' /*  ممكن تشوف مسجاتك  وتدخل الرمز... */,
+                                          'x2iqegi0' /*  ممكن تشوف مسجاتك  وتدخل الرمز... */,
                                         ),
                                         style: const TextStyle(),
                                       )
@@ -383,7 +384,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                                       },
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'qzqkzusk' /* إعادة إرسال رمز التحقق */,
+                                          '5axqffrl' /* إعادة إرسال رمز التحقق */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -419,10 +420,20 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                           onPressed: (_model.isCompleted == false)
                               ? null
                               : () async {
-                                  context.pushNamed('home_page');
+                                  context.pushNamed(
+                                    'home_page',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 300),
+                                      ),
+                                    },
+                                  );
                                 },
                           text: FFLocalizations.of(context).getText(
-                            '8cw85wg1' /* التالي */,
+                            '7k0jbm1l' /* التالي */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.9,
