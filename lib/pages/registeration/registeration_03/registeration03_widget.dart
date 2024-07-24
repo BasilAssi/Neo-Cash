@@ -71,7 +71,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'rloraz8k' /* معلوماتي */,
+                      'uiaxgfy6' /* معلوماتي */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -375,7 +375,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                 context.pushNamed('registeration_04');
                               },
                               text: FFLocalizations.of(context).getText(
-                                'vq6zsk0n' /* التالي */,
+                                'ype1jx4m' /* التالي */,
                               ),
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.9,

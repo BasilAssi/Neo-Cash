@@ -18,3 +18,16 @@ String? removeLastCharacter(String? pinCode) {
   }
   return pinCode.substring(0, pinCode.length - 1);
 }
+
+String? messageId() {
+  // generate randdom string  and make it unquie
+  String randomString = '';
+  var random = math.Random();
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  for (var i = 0; i < 10; i++) {
+    randomString += chars[random.nextInt(chars.length)];
+  }
+  String uniqueString =
+      '${DateTime.now().millisecondsSinceEpoch}-$randomString';
+  return uniqueString;
+}

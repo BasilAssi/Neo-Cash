@@ -1,3 +1,4 @@
 export '/backend/schema/util/schema_util.dart';
 
-export 'date_type_struct.dart';
+export 'device_info_struct.dart';
+export 'response_model_struct.dart';

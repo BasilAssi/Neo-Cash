@@ -419,7 +419,7 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                           onPressed: (_model.isCompleted == false)
                               ? null
                               : () async {
-                                  context.pushNamed('home_page');
+                                  context.pushNamed('registeration_01');
                                 },
                           text: FFLocalizations.of(context).getText(
                             '8cw85wg1' /* التالي */,

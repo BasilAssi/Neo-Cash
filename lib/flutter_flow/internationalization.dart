@@ -293,15 +293,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
-    '1c7iwymx': {
+    'fnrjs91q': {
       'ar': 'شحن رصيد موبايل',
       'en': '',
     },
-    '8aywn5lr': {
+    'es1gcrq5': {
       'ar': '2921532903099',
       'en': '',
     },
-    'qa3ncv30': {
+    '2s0j82r6': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
@@ -524,7 +524,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'sign in',
     },
-    '1f51n1l6': {
+    '1t39y3md': {
       'ar': 'Home',
       'en': '',
     },
@@ -618,7 +618,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '05/28',
       'en': '',
     },
-    'v04sy0uk': {
+    '1dz4sx9s': {
       'ar': 'Home',
       'en': '',
     },
@@ -712,15 +712,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '6rh91bf4': {
-      'ar': 'حالة الطلب',
+      'ar': 'نوع الحركة',
       'en': '',
     },
     'hvz0m2gy': {
       'ar': 'تم القبول',
-      'en': '',
-    },
-    '6ckysnns': {
-      'ar': 'نوع الحركة',
       'en': '',
     },
     'y5yti1b1': {
@@ -904,11 +900,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gpgo7ond': {
-      'ar': '25%',
+      'ar': 'الخطوة الأولى',
       'en': '',
     },
     'xzg8kesl': {
       'ar': 'خلينا نبلش بأنك تعرفنا عن حالك',
+      'en': '',
+    },
+    'ejq0qsaw': {
+      'ar': 'دخل اسمك بالعربي',
       'en': '',
     },
     '8vcfnfcx': {
@@ -919,8 +919,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم الأب',
       'en': '',
     },
-    'p3903a2l': {
+    'zzuwdsgd': {
       'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    'p3903a2l': {
+      'ar': 'اسم الأم',
+      'en': '',
+    },
+    '1xvldsbc': {
+      'ar': 'دخل اسمك بالانجليزي',
+      'en': '',
+    },
+    '2d8uxzee': {
+      'ar': 'اسمك الأول',
+      'en': '',
+    },
+    '1csj5dyy': {
+      'ar': 'اسم الأب',
+      'en': '',
+    },
+    'z3b9hdk2': {
+      'ar': 'اسم عائلتك',
+      'en': '',
+    },
+    '2vcdhosp': {
+      'ar': 'اسم الأم',
       'en': '',
     },
     '838enfc1': {
@@ -1024,7 +1048,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اختيار نوع الهوية ',
       'en': '',
     },
-    'x4fv8vwx': {
+    'gis06n00': {
       'ar': 'Search for an item...',
       'en': '',
     },
@@ -1039,20 +1063,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // enter_id_page
   {
-    '77f832vw': {
-      'ar': 'رقم الهوية',
+    'uiaxgfy6': {
+      'ar': 'نوع  ورقم الهوية',
       'en': '',
     },
-    '31cdhnpq': {
-      'ar': 'الرجاء ادخال رقم الهوية \nالشخصية ',
+    'je18929v': {
+      'ar': 'شو نوع هويتك الشخصية',
       'en': '',
     },
-    'zpzvvdm6': {
-      'ar': '\"الوثيقة\"',
+    'lcpbbpxk': {
+      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
       'en': '',
     },
-    '9s5l9xzz': {
-      'ar': 'الرجاء ادخال رقم الهوية \nالشخصية \"الوثيقة\"',
+    'gx1gtqed': {
+      'ar': 'الهوية  الفلسطينية',
+      'en': '',
+    },
+    'bddgybnm': {
+      'ar': 'هوية القدس',
+      'en': '',
+    },
+    'olbvbygi': {
+      'ar': 'اختيار نوع الهوية ',
+      'en': '',
+    },
+    'f86i9p9t': {
+      'ar': 'Search for an item...',
       'en': '',
     },
     '9hnsedy0': {
@@ -1066,6 +1102,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'avin42p9': {
       'ar': 'التالي',
       'en': '',
+    },
+    '4vmzjxq5': {
+      'ar': 'تأكد إنه الإنترنت عندك شغال على التلفون , \nوحاول مرة ثانية',
+      'en':
+          'Make sure you have internet working on your phone , And try again.',
     },
     '20mmouhk': {
       'ar': 'Home',
@@ -1102,7 +1143,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': '',
     },
-    'emqmmcve': {
+    '1t39y3md': {
       'ar': 'Home',
       'en': '',
     },
@@ -1114,10 +1155,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '4f68isdv': {
-      'ar': '50%',
+      'ar': 'الخطوة الثانية',
       'en': '',
     },
-    'fdwm314o': {
+    '838enfc1': {
       'ar': 'دخل اسمك بالانجليزي',
       'en': '',
     },
@@ -1125,7 +1166,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسمك الأول',
       'en': '',
     },
-    'pbmu77lw': {
+    'p3903a2l': {
       'ar': 'اسم الأب',
       'en': '',
     },
@@ -1137,18 +1178,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': '',
     },
-    'd8ktttak': {
+    '1t39y3md': {
       'ar': 'Home',
       'en': '',
     },
   },
   // registeration_04
   {
-    'zu14redj': {
+    'uiaxgfy6': {
       'ar': 'معلوماتي',
       'en': '',
     },
-    '4o3zpp27': {
+    'gpgo7ond': {
       'ar': '100%',
       'en': '',
     },
@@ -1181,14 +1222,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل',
       'en': '',
     },
-    '7zhaj7vf': {
+    '1t39y3md': {
       'ar': 'Home',
       'en': '',
     },
   },
   // registeration_03
   {
-    'rloraz8k': {
+    'uiaxgfy6': {
       'ar': 'معلوماتي',
       'en': '',
     },
@@ -1228,16 +1269,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'المدينة',
       'en': '',
     },
-    'n7u4pwl1': {
+    'gis06n00': {
       'ar': 'Search for an item...',
       'en': '',
     },
-    'vq6zsk0n': {
+    'ype1jx4m': {
       'ar': 'التالي',
       'en': '',
     },
-    'nrngf3v4': {
+    '1t39y3md': {
       'ar': 'Home',
+      'en': '',
+    },
+  },
+  // error_component
+  {
+    'gzit5wjk': {
+      'ar': 'موافق',
       'en': '',
     },
   },
@@ -1247,7 +1295,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
       'en': '',
     },
-    'qwiw8hej': {
+    'ioukah6f': {
       'ar': '',
       'en': '',
     },
