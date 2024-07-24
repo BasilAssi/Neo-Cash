@@ -136,14 +136,23 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         backgroundColor: const Color(0xFFE5D2D3),
                         center: Text(
                           FFLocalizations.of(context).getText(
-                            '4f68isdv' /* 50% */,
+                            '4f68isdv' /* الخطوة الثانية */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
+                                shadows: [
+                                  Shadow(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    offset: const Offset(2.0, 2.0),
+                                    blurRadius: 2.0,
+                                  )
+                                ],
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
                                         .headlineSmallFamily),
@@ -159,7 +168,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'fdwm314o' /* دخل اسمك بالانجليزي */,
+                        '838enfc1' /* دخل اسمك بالانجليزي */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -263,7 +272,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          'pbmu77lw' /* اسم الأب */,
+                          'p3903a2l' /* اسم الأب */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(

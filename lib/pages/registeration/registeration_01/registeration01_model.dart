@@ -12,21 +12,46 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for FirstNameTextField widget.
-  FocusNode? firstNameTextFieldFocusNode;
-  TextEditingController? firstNameTextFieldTextController;
+  // State field(s) for FirstNameARTextField widget.
+  FocusNode? firstNameARTextFieldFocusNode;
+  TextEditingController? firstNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
-      firstNameTextFieldTextControllerValidator;
-  // State field(s) for FatherNameTextField widget.
-  FocusNode? fatherNameTextFieldFocusNode;
-  TextEditingController? fatherNameTextFieldTextController;
+      firstNameARTextFieldTextControllerValidator;
+  // State field(s) for FatherNameARTextField widget.
+  FocusNode? fatherNameARTextFieldFocusNode;
+  TextEditingController? fatherNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
-      fatherNameTextFieldTextControllerValidator;
-  // State field(s) for FamilyNameTextField widget.
-  FocusNode? familyNameTextFieldFocusNode;
-  TextEditingController? familyNameTextFieldTextController;
+      fatherNameARTextFieldTextControllerValidator;
+  // State field(s) for FamilyNameARTextField widget.
+  FocusNode? familyNameARTextFieldFocusNode;
+  TextEditingController? familyNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
-      familyNameTextFieldTextControllerValidator;
+      familyNameARTextFieldTextControllerValidator;
+  // State field(s) for MotherNameARTextField widget.
+  FocusNode? motherNameARTextFieldFocusNode;
+  TextEditingController? motherNameARTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      motherNameARTextFieldTextControllerValidator;
+  // State field(s) for FirstNameENTextField widget.
+  FocusNode? firstNameENTextFieldFocusNode;
+  TextEditingController? firstNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      firstNameENTextFieldTextControllerValidator;
+  // State field(s) for FatherNameENTextField widget.
+  FocusNode? fatherNameENTextFieldFocusNode;
+  TextEditingController? fatherNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      fatherNameENTextFieldTextControllerValidator;
+  // State field(s) for FamilyNameENTextField widget.
+  FocusNode? familyNameENTextFieldFocusNode;
+  TextEditingController? familyNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      familyNameENTextFieldTextControllerValidator;
+  // State field(s) for MotherNameENTextField widget.
+  FocusNode? motherNameENTextFieldFocusNode;
+  TextEditingController? motherNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      motherNameENTextFieldTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -38,13 +63,28 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    firstNameTextFieldFocusNode?.dispose();
-    firstNameTextFieldTextController?.dispose();
+    firstNameARTextFieldFocusNode?.dispose();
+    firstNameARTextFieldTextController?.dispose();
 
-    fatherNameTextFieldFocusNode?.dispose();
-    fatherNameTextFieldTextController?.dispose();
+    fatherNameARTextFieldFocusNode?.dispose();
+    fatherNameARTextFieldTextController?.dispose();
 
-    familyNameTextFieldFocusNode?.dispose();
-    familyNameTextFieldTextController?.dispose();
+    familyNameARTextFieldFocusNode?.dispose();
+    familyNameARTextFieldTextController?.dispose();
+
+    motherNameARTextFieldFocusNode?.dispose();
+    motherNameARTextFieldTextController?.dispose();
+
+    firstNameENTextFieldFocusNode?.dispose();
+    firstNameENTextFieldTextController?.dispose();
+
+    fatherNameENTextFieldFocusNode?.dispose();
+    fatherNameENTextFieldTextController?.dispose();
+
+    familyNameENTextFieldFocusNode?.dispose();
+    familyNameENTextFieldTextController?.dispose();
+
+    motherNameENTextFieldFocusNode?.dispose();
+    motherNameENTextFieldTextController?.dispose();
   }
 }

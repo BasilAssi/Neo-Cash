@@ -136,7 +136,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                         backgroundColor: const Color(0xFFE5D2D3),
                         center: Text(
                           FFLocalizations.of(context).getText(
-                            '4o3zpp27' /* 100% */,
+                            'gpgo7ond' /* 100% */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
