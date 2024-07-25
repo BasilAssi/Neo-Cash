@@ -1218,10 +1218,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الخطوة الثالثة',
       'en': '',
     },
-    '176tavmw': {
-      'ar': 'اختار تاريخ ميلادك',
-      'en': '',
-    },
     '3ptck3i4': {
       'ar': 'اختار مكان سكنك',
       'en': '',
@@ -1255,15 +1251,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'nixpiac4': {
-      'ar': ' مكان الميلاد ',
+      'ar': 'التجمع السكني',
       'en': '',
     },
-    'gk2vvbu6': {
-      'ar': '',
+    'hqo3yxs0': {
+      'ar': 'رام الله',
       'en': '',
     },
-    'tsjxyth7': {
-      'ar': 'مكان الميلاد',
+    'sdio1sit': {
+      'ar': 'نابلس',
+      'en': '',
+    },
+    'tj7muqn7': {
+      'ar': 'طولكرم',
+      'en': '',
+    },
+    'g4175wca': {
+      'ar': 'الخليل',
+      'en': '',
+    },
+    'ywspq09j': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'vi5yluyt': {
+      'ar': 'التجمع السكني',
+      'en': '',
+    },
+    'ica2i3n1': {
+      'ar': 'Search for an item...',
       'en': '',
     },
     'yfoglq5k': {
