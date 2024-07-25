@@ -40,6 +40,10 @@ class IsRegisteredCall {
       msgId: msgId,
     );
 
+    print('idNumber  $idNumber \n ');
+    print('idType  $idType \n ');
+    print('acceptLanguage  $acceptLanguage \n ');
+    print('msgId  $msgId \n ');
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
       apiUrl: '$baseUrl/api/v1/isRegistered',

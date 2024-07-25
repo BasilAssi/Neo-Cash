@@ -366,9 +366,12 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                   enText: 'EN',
                                 ),
                               );
+                              print('before call api  ');
+
 
                               if ((_model.isRegisteredOutPut?.succeeded ??
                                   true)) {
+                                print('api Succeeded ');
                                 if (ResponseModelStruct.maybeFromMap((_model
                                                 .isRegisteredOutPut?.jsonBody ??
                                             ''))
