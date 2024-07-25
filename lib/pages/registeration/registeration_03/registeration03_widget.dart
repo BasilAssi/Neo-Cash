@@ -27,11 +27,8 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
     super.initState();
     _model = createModel(context, () => Registeration03Model());
 
-    _model.emailTextFieldTextController1 ??= TextEditingController();
-    _model.emailTextFieldFocusNode1 ??= FocusNode();
-
-    _model.emailTextFieldTextController2 ??= TextEditingController();
-    _model.emailTextFieldFocusNode2 ??= FocusNode();
+    _model.emailTextFieldTextController ??= TextEditingController();
+    _model.emailTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -161,137 +158,6 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '176tavmw' /* اختار تاريخ ميلادك */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleMediumFamily),
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: Container(
-                      height: 55.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 2.0,
-                        ),
-                      ),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          final datePickedDate = await showDatePicker(
-                            context: context,
-                            initialDate: getCurrentTimestamp,
-                            firstDate: (DateTime.fromMicrosecondsSinceEpoch(
-                                    17445600000000) ??
-                                DateTime(1900)),
-                            lastDate: (getCurrentTimestamp ?? DateTime(2050)),
-                            builder: (context, child) {
-                              return wrapInMaterialDatePickerTheme(
-                                context,
-                                child!,
-                                headerBackgroundColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                headerForegroundColor:
-                                    FlutterFlowTheme.of(context).info,
-                                headerTextStyle: FlutterFlowTheme.of(context)
-                                    .headlineLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineLargeFamily,
-                                      fontSize: 32.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineLargeFamily),
-                                    ),
-                                pickerBackgroundColor:
-                                    FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                pickerForegroundColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                selectedDateTimeBackgroundColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                selectedDateTimeForegroundColor:
-                                    FlutterFlowTheme.of(context).info,
-                                actionButtonForegroundColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                iconSize: 24.0,
-                              );
-                            },
-                          );
-
-                          if (datePickedDate != null) {
-                            safeSetState(() {
-                              _model.datePicked = DateTime(
-                                datePickedDate.year,
-                                datePickedDate.month,
-                                datePickedDate.day,
-                              );
-                            });
-                          }
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                dateTimeFormat(
-                                  'yMd',
-                                  _model.datePicked,
-                                  locale:
-                                      FFLocalizations.of(context).languageCode,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 8.0, 0.0),
-                              child: Icon(
-                                Icons.calendar_month_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
                         '3ptck3i4' /* اختار مكان سكنك */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -309,7 +175,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController ??=
+                      controller: _model.dropDownValueController1 ??=
                           FormFieldController<String>(null),
                       options:
                           List<String>.from(['04', '1', '2', '3', 'FEMALE']),
@@ -331,7 +197,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
+                          setState(() => _model.dropDownValue1 = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -371,7 +237,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'nixpiac4' /*  مكان الميلاد  */,
+                        'nixpiac4' /* التجمع السكني */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -385,83 +251,64 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: TextFormField(
-                      controller: _model.emailTextFieldTextController1,
-                      focusNode: _model.emailTextFieldFocusNode1,
-                      autofocus: true,
-                      textCapitalization: TextCapitalization.sentences,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'tsjxyth7' /* مكان الميلاد */,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: FlutterFlowDropDown<String>(
+                      controller: _model.dropDownValueController2 ??=
+                          FormFieldController<String>(null),
+                      options:
+                          List<String>.from(['04', '1', '2', '3', 'FEMALE']),
+                      optionLabels: [
+                        FFLocalizations.of(context).getText(
+                          'hqo3yxs0' /* رام الله */,
                         ),
-                        hintStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
+                        FFLocalizations.of(context).getText(
+                          'sdio1sit' /* نابلس */,
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
+                        FFLocalizations.of(context).getText(
+                          'tj7muqn7' /* طولكرم */,
                         ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
+                        FFLocalizations.of(context).getText(
+                          'g4175wca' /* الخليل */,
                         ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor: FlutterFlowTheme.of(context).accent4,
-                        suffixIcon: Icon(
-                          Icons.public,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 28.0,
-                        ),
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        FFLocalizations.of(context).getText(
+                          'ywspq09j' /* أنثى */,
+                        )
+                      ],
+                      onChanged: (val) =>
+                          setState(() => _model.dropDownValue2 = val),
+                      width: 300.0,
+                      height: 56.0,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .labelLarge
+                          .override(
                             fontFamily:
-                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                FlutterFlowTheme.of(context).labelLargeFamily,
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                                FlutterFlowTheme.of(context).labelLargeFamily),
                           ),
-                      validator: _model.emailTextFieldTextController1Validator
-                          .asValidator(context),
+                      hintText: FFLocalizations.of(context).getText(
+                        'vi5yluyt' /* التجمع السكني */,
+                      ),
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 24.0,
+                      ),
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 2.0,
+                      borderColor: FlutterFlowTheme.of(context).alternate,
+                      borderWidth: 2.0,
+                      borderRadius: 8.0,
+                      margin:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                      hidesUnderline: true,
+                      isOverButton: true,
+                      isSearchable: false,
+                      isMultiSelect: false,
                     ),
                   ),
                   Padding(
@@ -485,8 +332,8 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.emailTextFieldTextController2,
-                      focusNode: _model.emailTextFieldFocusNode2,
+                      controller: _model.emailTextFieldTextController,
+                      focusNode: _model.emailTextFieldFocusNode,
                       autofocus: true,
                       textCapitalization: TextCapitalization.sentences,
                       obscureText: false,
@@ -558,7 +405,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
-                      validator: _model.emailTextFieldTextController2Validator
+                      validator: _model.emailTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
                   ),

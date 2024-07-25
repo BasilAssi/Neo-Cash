@@ -20,40 +20,20 @@ Future setDeviceInfo() async {
   final deviceInfo = DeviceInfoPlugin();
   final appState = FFAppState(); // Access the app state
 
+  appState.deviceInformation.OS = Platform.isIOS ? 'iOS' : 'Android';
+
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-
-    appState.Customer.deviceName = androidInfo.model;
-    appState.Customer.brandName = androidInfo.brand;
-    appState.Customer.serialNumber = androidInfo.androidId;
-    var infoMap = {
-      //  'isAndroid?': Platform.isAndroid,
-      'serialNumber': androidInfo
-          .androidId, // Android doesn't have a serial number, but has an Android ID
-      'deviceName': androidInfo.model,
-      'brandName': androidInfo.brand,
-    };
-
-    return jsonEncode(infoMap); // Convert infoMap to a JSON string
+    appState.deviceInformation.deviceName = androidInfo.model;
+    appState.deviceInformation.brandName = androidInfo.brand;
+    appState.deviceInformation.serialNumber = androidInfo.androidId;
   } else if (Platform.isIOS) {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
 
     // Update the Customer object in the app state
-    appState.Customer.deviceName = iosInfo.name;
-    appState.Customer.brandName = iosInfo.model;
-    appState.Customer.serialNumber = iosInfo
+    appState.deviceInformation.deviceName = iosInfo.name;
+    appState.deviceInformation.brandName = iosInfo.model;
+    appState.deviceInformation.serialNumber = iosInfo
         .identifierForVendor; // Identifier for vendor used as serial number
-
-    var infoMap = {
-      // 'isIOS?': Platform.isIOS,
-      'serialNumber': iosInfo
-          .identifierForVendor, // iOS doesn't provide a serial number, but has an identifier for vendor
-      'deviceName': iosInfo.name,
-      'brandName': iosInfo.model,
-    };
-
-    return jsonEncode(infoMap); // Convert infoMap to a JSON string
   }
-
-  return jsonEncode({'error': 'Not supported on this platform'});
 }
