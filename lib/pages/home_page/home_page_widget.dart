@@ -256,7 +256,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('user_page');
+                          context.pushNamed('user_profile');
                         },
                         child: ListTile(
                           leading: Icon(

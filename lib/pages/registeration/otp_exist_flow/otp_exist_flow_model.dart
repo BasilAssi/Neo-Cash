@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'otp_exist_person_page_widget.dart' show OtpExistPersonPageWidget;
+import 'otp_exist_flow_widget.dart' show OtpExistFlowWidget;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 
-class OtpExistPersonPageModel
-    extends FlutterFlowModel<OtpExistPersonPageWidget> {
+class OtpExistFlowModel extends FlutterFlowModel<OtpExistFlowWidget> {
   ///  Local state fields for this page.
 
   bool isCompleted = true;

@@ -461,10 +461,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'محفظتك\n  بجيبتك ',
       'en': '',
     },
-    'esyo1sgz': {
-      'ar': 'إنشاء حساب ',
-      'en': 'sign in',
-    },
     'xij3ettk': {
       'ar': 'إنشاء حساب ',
       'en': '',
@@ -623,7 +619,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // user_page
+  // user_profile
   {
     '897rfc7a': {
       'ar': 'ملفي الشخصي',
@@ -920,6 +916,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'zzuwdsgd': {
+      'ar': 'اسم الجد',
+      'en': '',
+    },
+    'gwx7jr2c': {
       'ar': 'اسم عائلتك',
       'en': '',
     },
@@ -939,32 +939,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم الأب',
       'en': '',
     },
+    '2vcdhosp': {
+      'ar': 'اسم الجد',
+      'en': '',
+    },
     'z3b9hdk2': {
       'ar': 'اسم عائلتك',
-      'en': '',
-    },
-    '2vcdhosp': {
-      'ar': 'اسم الأم',
-      'en': '',
-    },
-    '838enfc1': {
-      'ar': 'اختار شو جنسك',
-      'en': '',
-    },
-    'qovv7r33': {
-      'ar': 'ذكر',
-      'en': '',
-    },
-    '28h3en66': {
-      'ar': 'أنثى',
-      'en': '',
-    },
-    'dv2lbmnj': {
-      'ar': 'الجنس',
-      'en': '',
-    },
-    'gis06n00': {
-      'ar': 'Search for an item...',
       'en': '',
     },
     'e3s0b90l': {
@@ -1022,45 +1002,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // select_id_page
-  {
-    'uiaxgfy6': {
-      'ar': 'نوع الهوية',
-      'en': '',
-    },
-    'dxuxhcca': {
-      'ar': 'شو نوع هويتك \n الشخصية',
-      'en': '',
-    },
-    'km7wvkc0': {
-      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
-      'en': '',
-    },
-    'ae7282y8': {
-      'ar': 'الهوية  الفلسطينية',
-      'en': '',
-    },
-    'f65mjnl5': {
-      'ar': 'هوية القدس',
-      'en': '',
-    },
-    't6r9nbwf': {
-      'ar': 'اختيار نوع الهوية ',
-      'en': '',
-    },
-    'gis06n00': {
-      'ar': 'Search for an item...',
-      'en': '',
-    },
-    'xmfxjamh': {
-      'ar': 'التالي',
-      'en': '',
-    },
-    'omf5ha9y': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // enter_id_page
   {
     'uiaxgfy6': {
@@ -1113,7 +1054,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // otp_exist_person_page
+  // otp_exist_flow
   {
     'yz1z1apd': {
       'ar': 'تأكيد رقم التلفون',
@@ -1139,10 +1080,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إعادة إرسال رمز التحقق',
       'en': '',
     },
-    '7k0jbm1l': {
-      'ar': 'التالي',
-      'en': '',
-    },
     '1t39y3md': {
       'ar': 'Home',
       'en': '',
@@ -1158,20 +1095,60 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الخطوة الثانية',
       'en': '',
     },
-    '838enfc1': {
-      'ar': 'دخل اسمك بالانجليزي',
+    'j1orf7vl': {
+      'ar': 'اختار تاريخ ميلادك',
       'en': '',
     },
-    'x4er24y1': {
-      'ar': 'اسمك الأول',
+    'l0r5ylqb': {
+      'ar': ' مكان الميلاد ',
       'en': '',
     },
-    'p3903a2l': {
-      'ar': 'اسم الأب',
+    'euhreylc': {
+      'ar': '',
       'en': '',
     },
-    'iozo3z56': {
-      'ar': 'اسم عائلتك',
+    'ugc6rowo': {
+      'ar': 'مكان الميلاد',
+      'en': '',
+    },
+    '87900l1f': {
+      'ar': 'اختار شو جنسك',
+      'en': '',
+    },
+    'ogfo2bga': {
+      'ar': 'ذكر',
+      'en': '',
+    },
+    '5bjewnop': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'k1p2swil': {
+      'ar': 'الجنس',
+      'en': '',
+    },
+    'iukrrbu7': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '1gqz1vk4': {
+      'ar': 'اختار شو جنسيتك',
+      'en': '',
+    },
+    'hnomrkxo': {
+      'ar': '',
+      'en': '',
+    },
+    '0j9r8p17': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    '6xgs3e3k': {
+      'ar': 'الجنس',
+      'en': '',
+    },
+    '7shvqcy3': {
+      'ar': 'Search for an item...',
       'en': '',
     },
     'dp2tcpmy': {
@@ -1190,7 +1167,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gpgo7ond': {
-      'ar': '100%',
+      'ar': 'الخطوة الرابعة',
       'en': '',
     },
     'm7w4y74p': {
@@ -1218,6 +1195,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
       'en': '',
     },
+    'wjbn27v2': {
+      'ar': 'دخل ال pin code ',
+      'en': '',
+    },
     'ype1jx4m': {
       'ar': 'تسجيل',
       'en': '',
@@ -1234,14 +1215,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '1kcfuv85': {
-      'ar': '75%',
+      'ar': 'الخطوة الثالثة',
       'en': '',
     },
     '176tavmw': {
       'ar': 'اختار تاريخ ميلادك',
       'en': '',
     },
-    'yfoglq5k': {
+    '3ptck3i4': {
       'ar': 'اختار مكان سكنك',
       'en': '',
     },
@@ -1273,11 +1254,67 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
+    'nixpiac4': {
+      'ar': ' مكان الميلاد ',
+      'en': '',
+    },
+    'gk2vvbu6': {
+      'ar': '',
+      'en': '',
+    },
+    'tsjxyth7': {
+      'ar': 'مكان الميلاد',
+      'en': '',
+    },
+    'yfoglq5k': {
+      'ar': 'سجل عنوانك',
+      'en': '',
+    },
+    '8shompx7': {
+      'ar': '',
+      'en': '',
+    },
+    'x8wk3106': {
+      'ar': 'موقعك: ',
+      'en': '',
+    },
     'ype1jx4m': {
       'ar': 'التالي',
       'en': '',
     },
     '1t39y3md': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // set_password_exist_flow
+  {
+    'kfr81cdk': {
+      'ar': 'كلمة السر',
+      'en': '',
+    },
+    'ysj9ryhy': {
+      'ar': 'دخل كلمة سر ',
+      'en': '',
+    },
+    '8nvn3b9n': {
+      'ar': 'كلمة السر',
+      'en': '',
+    },
+    'i4ur4bxt': {
+      'ar': 'تأكيد كلمة السر',
+      'en': '',
+    },
+    'hhis8fh1': {
+      'ar':
+          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+      'en': '',
+    },
+    'ksod8vm5': {
+      'ar': 'تسجيل',
+      'en': '',
+    },
+    'y2xqsu9a': {
       'ar': 'Home',
       'en': '',
     },

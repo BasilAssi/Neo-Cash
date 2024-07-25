@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/backend/schema/structs/index.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -24,5 +25,15 @@ class FFAppState extends ChangeNotifier {
   bool get isEnglish => _isEnglish;
   set isEnglish(bool value) {
     _isEnglish = value;
+  }
+
+  DeviceInfoStruct _deviceInformation = DeviceInfoStruct();
+  DeviceInfoStruct get deviceInformation => _deviceInformation;
+  set deviceInformation(DeviceInfoStruct value) {
+    _deviceInformation = value;
+  }
+
+  void updateDeviceInformationStruct(Function(DeviceInfoStruct) updateFn) {
+    updateFn(_deviceInformation);
   }
 }

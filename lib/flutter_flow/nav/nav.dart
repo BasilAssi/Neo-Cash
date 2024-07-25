@@ -115,9 +115,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const CardDetailsWidget(),
             ),
             FFRoute(
-              name: 'user_page',
-              path: 'userPage',
-              builder: (context, params) => const UserPageWidget(),
+              name: 'user_profile',
+              path: 'userProfile',
+              builder: (context, params) => const UserProfileWidget(),
             ),
             FFRoute(
               name: 'settings_page',
@@ -162,19 +162,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const QrCodePageWidget(),
             ),
             FFRoute(
-              name: 'select_id_page',
-              path: 'selectIdPage',
-              builder: (context, params) => const SelectIdPageWidget(),
-            ),
-            FFRoute(
               name: 'enter_id_page',
               path: 'enterIdPage',
               builder: (context, params) => const EnterIdPageWidget(),
             ),
             FFRoute(
-              name: 'otp_exist_person_page',
-              path: 'otpExistPersonPage',
-              builder: (context, params) => OtpExistPersonPageWidget(
+              name: 'otp_exist_flow',
+              path: 'otpExistFlow',
+              builder: (context, params) => OtpExistFlowWidget(
                 phoneNumber: params.getParam(
                   'phoneNumber',
                   ParamType.String,
@@ -195,6 +190,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'registeration_03',
               path: 'registeration03',
               builder: (context, params) => const Registeration03Widget(),
+            ),
+            FFRoute(
+              name: 'set_password_exist_flow',
+              path: 'setPasswordExistFlow',
+              builder: (context, params) => const SetPasswordExistFlowWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

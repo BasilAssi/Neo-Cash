@@ -12,7 +12,7 @@ export '/pages/register_page_2_phone_number/register_page2_phone_number_widget.d
 export '/pages/register_page_3_otp/register_page3_otp_widget.dart'
     show RegisterPage3OtpWidget;
 export '/pages/card_details/card_details_widget.dart' show CardDetailsWidget;
-export '/pages/user_page/user_page_widget.dart' show UserPageWidget;
+export '/pages/user_profile/user_profile_widget.dart' show UserProfileWidget;
 export '/pages/settings_page/settings_page_widget.dart' show SettingsPageWidget;
 export '/pages/transaction_details_page/transaction_details_page_widget.dart'
     show TransactionDetailsPageWidget;
@@ -26,15 +26,15 @@ export '/pages/registeration/registeration_01/registeration01_widget.dart'
 export '/pages/registeration/enable_notifications/enable_notifications_widget.dart'
     show EnableNotificationsWidget;
 export '/pages/qr_code_page/qr_code_page_widget.dart' show QrCodePageWidget;
-export '/pages/registeration/select_id_page/select_id_page_widget.dart'
-    show SelectIdPageWidget;
 export '/pages/registeration/enter_id_page/enter_id_page_widget.dart'
     show EnterIdPageWidget;
-export '/pages/registeration/otp_exist_person_page/otp_exist_person_page_widget.dart'
-    show OtpExistPersonPageWidget;
+export '/pages/registeration/otp_exist_flow/otp_exist_flow_widget.dart'
+    show OtpExistFlowWidget;
 export '/pages/registeration/registeration_02/registeration02_widget.dart'
     show Registeration02Widget;
 export '/pages/registeration/registeration_04/registeration04_widget.dart'
     show Registeration04Widget;
 export '/pages/registeration/registeration_03/registeration03_widget.dart'
     show Registeration03Widget;
+export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_widget.dart'
+    show SetPasswordExistFlowWidget;
