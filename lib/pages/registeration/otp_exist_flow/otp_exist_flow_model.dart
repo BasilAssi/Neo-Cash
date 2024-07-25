@@ -17,6 +17,8 @@ class OtpExistFlowModel extends FlutterFlowModel<OtpExistFlowWidget> {
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
+  // Stores action output result for [Custom Action - encodeSHA256] action in PinCode widget.
+  String? encodedOTP;
   // State field(s) for Timer widget.
   final timerInitialTimeMs = 120000;
   int timerMilliseconds = 120000;
