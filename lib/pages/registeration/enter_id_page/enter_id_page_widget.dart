@@ -421,7 +421,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
                                       child: SizedBox(
-                                        height: 30.0,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.3,
                                         child: ErrorComponentWidget(
                                           errorText: FFLocalizations.of(context)
                                               .getText(
