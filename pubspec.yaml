@@ -29,10 +29,10 @@ dependencies:
   barcode_widget: 2.0.3
   cached_network_image: 3.3.1
   collection: 1.18.0
-  connectivity_plus: ^6.0.3
+  connectivity_plus: ^5.0.1
   crypto: ^3.0.3
   custom_date_range_picker: ^1.0.10
-  device_info_plus: ^10.1.0
+  device_info_plus: ^9.0.3
   dropdown_button2: 2.3.9
   equatable: 2.0.5
   expandable: 5.0.1
