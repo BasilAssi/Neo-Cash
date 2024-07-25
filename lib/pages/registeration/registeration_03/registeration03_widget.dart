@@ -26,6 +26,12 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Registeration03Model());
+
+    _model.emailTextFieldTextController1 ??= TextEditingController();
+    _model.emailTextFieldFocusNode1 ??= FocusNode();
+
+    _model.emailTextFieldTextController2 ??= TextEditingController();
+    _model.emailTextFieldFocusNode2 ??= FocusNode();
   }
 
   @override
@@ -129,13 +135,16 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         backgroundColor: const Color(0xFFE5D2D3),
                         center: Text(
                           FFLocalizations.of(context).getText(
-                            '1kcfuv85' /* 75% */,
+                            '1kcfuv85' /* الخطوة الثالثة */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -283,7 +292,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'yfoglq5k' /* اختار مكان سكنك */,
+                        '3ptck3i4' /* اختار مكان سكنك */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -355,6 +364,202 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                       isOverButton: true,
                       isSearchable: false,
                       isMultiSelect: false,
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'nixpiac4' /*  مكان الميلاد  */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.emailTextFieldTextController1,
+                      focusNode: _model.emailTextFieldFocusNode1,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          'tsjxyth7' /* مكان الميلاد */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.public,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      validator: _model.emailTextFieldTextController1Validator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'yfoglq5k' /* سجل عنوانك */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.emailTextFieldTextController2,
+                      focusNode: _model.emailTextFieldFocusNode2,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          'x8wk3106' /* موقعك:  */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.public,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      validator: _model.emailTextFieldTextController2Validator
+                          .asValidator(context),
                     ),
                   ),
                   Padding(

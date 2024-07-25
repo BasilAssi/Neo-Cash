@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'registeration01_widget.dart' show Registeration01Widget;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +21,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? fatherNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       fatherNameARTextFieldTextControllerValidator;
+  // State field(s) for GrandFatherNameARTextField widget.
+  FocusNode? grandFatherNameARTextFieldFocusNode;
+  TextEditingController? grandFatherNameARTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      grandFatherNameARTextFieldTextControllerValidator;
   // State field(s) for FamilyNameARTextField widget.
   FocusNode? familyNameARTextFieldFocusNode;
   TextEditingController? familyNameARTextFieldTextController;
@@ -42,19 +46,16 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? fatherNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       fatherNameENTextFieldTextControllerValidator;
+  // State field(s) for GrandFatherNameENTextField widget.
+  FocusNode? grandFatherNameENTextFieldFocusNode;
+  TextEditingController? grandFatherNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      grandFatherNameENTextFieldTextControllerValidator;
   // State field(s) for FamilyNameENTextField widget.
   FocusNode? familyNameENTextFieldFocusNode;
   TextEditingController? familyNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameENTextFieldTextControllerValidator;
-  // State field(s) for MotherNameENTextField widget.
-  FocusNode? motherNameENTextFieldFocusNode;
-  TextEditingController? motherNameENTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      motherNameENTextFieldTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
   DateTime? datePicked;
 
   @override
@@ -69,6 +70,9 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
     fatherNameARTextFieldFocusNode?.dispose();
     fatherNameARTextFieldTextController?.dispose();
 
+    grandFatherNameARTextFieldFocusNode?.dispose();
+    grandFatherNameARTextFieldTextController?.dispose();
+
     familyNameARTextFieldFocusNode?.dispose();
     familyNameARTextFieldTextController?.dispose();
 
@@ -81,10 +85,10 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
     fatherNameENTextFieldFocusNode?.dispose();
     fatherNameENTextFieldTextController?.dispose();
 
+    grandFatherNameENTextFieldFocusNode?.dispose();
+    grandFatherNameENTextFieldTextController?.dispose();
+
     familyNameENTextFieldFocusNode?.dispose();
     familyNameENTextFieldTextController?.dispose();
-
-    motherNameENTextFieldFocusNode?.dispose();
-    motherNameENTextFieldTextController?.dispose();
   }
 }

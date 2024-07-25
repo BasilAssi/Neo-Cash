@@ -1,9 +1,7 @@
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,6 +32,9 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
     _model.fatherNameARTextFieldTextController ??= TextEditingController();
     _model.fatherNameARTextFieldFocusNode ??= FocusNode();
 
+    _model.grandFatherNameARTextFieldTextController ??= TextEditingController();
+    _model.grandFatherNameARTextFieldFocusNode ??= FocusNode();
+
     _model.familyNameARTextFieldTextController ??= TextEditingController();
     _model.familyNameARTextFieldFocusNode ??= FocusNode();
 
@@ -46,11 +47,11 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
     _model.fatherNameENTextFieldTextController ??= TextEditingController();
     _model.fatherNameENTextFieldFocusNode ??= FocusNode();
 
+    _model.grandFatherNameENTextFieldTextController ??= TextEditingController();
+    _model.grandFatherNameENTextFieldFocusNode ??= FocusNode();
+
     _model.familyNameENTextFieldTextController ??= TextEditingController();
     _model.familyNameENTextFieldFocusNode ??= FocusNode();
-
-    _model.motherNameENTextFieldTextController ??= TextEditingController();
-    _model.motherNameENTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -194,14 +195,6 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                 FlutterFlowTheme.of(context).titleMediumFamily,
                             color: FlutterFlowTheme.of(context).secondaryText,
                             letterSpacing: 0.0,
-                            shadows: [
-                              Shadow(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                offset: const Offset(2.0, 2.0),
-                                blurRadius: 2.0,
-                              )
-                            ],
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
@@ -219,14 +212,6 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                 FlutterFlowTheme.of(context).titleMediumFamily,
                             color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
-                            shadows: [
-                              Shadow(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                offset: const Offset(2.0, 2.0),
-                                blurRadius: 2.0,
-                              )
-                            ],
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
@@ -431,11 +416,105 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 4.0, 0.0),
+                            child: TextFormField(
+                              controller: _model
+                                  .grandFatherNameARTextFieldTextController,
+                              focusNode:
+                                  _model.grandFatherNameARTextFieldFocusNode,
+                              autofocus: true,
+                              textCapitalization: TextCapitalization.sentences,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'zzuwdsgd' /* اسم الجد */,
+                                ),
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily),
+                                    ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily),
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context).accent4,
+                                suffixIcon: Icon(
+                                  Icons.mode_edit_outline_outlined,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 28.0,
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
+                                  ),
+                              validator: _model
+                                  .grandFatherNameARTextFieldTextControllerValidator
+                                  .asValidator(context),
+                            ),
+                          ),
+                        ),
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -449,7 +528,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'zzuwdsgd' /* اسم عائلتك */,
+                                  'gwx7jr2c' /* اسم عائلتك */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -530,101 +609,87 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                             ),
                           ),
                         ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                4.0, 0.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.motherNameARTextFieldTextController,
-                              focusNode: _model.motherNameARTextFieldFocusNode,
-                              autofocus: true,
-                              textCapitalization: TextCapitalization.sentences,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  'p3903a2l' /* اسم الأم */,
-                                ),
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context).accent4,
-                                suffixIcon: Icon(
-                                  Icons.mode_edit_outline_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 28.0,
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                              validator: _model
-                                  .motherNameARTextFieldTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                        ),
                       ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.motherNameARTextFieldTextController,
+                      focusNode: _model.motherNameARTextFieldFocusNode,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'p3903a2l' /* اسم الأم */,
+                        ),
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.mode_edit_outline_outlined,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      validator: _model
+                          .motherNameARTextFieldTextControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                   Padding(
@@ -853,6 +918,101 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 4.0, 0.0),
                             child: TextFormField(
+                              controller: _model
+                                  .grandFatherNameENTextFieldTextController,
+                              focusNode:
+                                  _model.grandFatherNameENTextFieldFocusNode,
+                              autofocus: true,
+                              textCapitalization: TextCapitalization.sentences,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  '2vcdhosp' /* اسم الجد */,
+                                ),
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily),
+                                    ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily),
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context).accent4,
+                                suffixIcon: Icon(
+                                  Icons.mode_edit_outline_outlined,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 28.0,
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
+                                  ),
+                              validator: _model
+                                  .grandFatherNameENTextFieldTextControllerValidator
+                                  .asValidator(context),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                4.0, 0.0, 0.0, 0.0),
+                            child: TextFormField(
                               controller:
                                   _model.familyNameENTextFieldTextController,
                               focusNode: _model.familyNameENTextFieldFocusNode,
@@ -942,178 +1102,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                             ),
                           ),
                         ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                4.0, 0.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller:
-                                  _model.motherNameENTextFieldTextController,
-                              focusNode: _model.motherNameENTextFieldFocusNode,
-                              autofocus: true,
-                              textCapitalization: TextCapitalization.sentences,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  '2vcdhosp' /* اسم الأم */,
-                                ),
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context).accent4,
-                                suffixIcon: Icon(
-                                  Icons.mode_edit_outline_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 28.0,
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                              validator: _model
-                                  .motherNameENTextFieldTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                        ),
                       ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        '838enfc1' /* اختار شو جنسك */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            shadows: [
-                              Shadow(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                offset: const Offset(2.0, 2.0),
-                                blurRadius: 2.0,
-                              )
-                            ],
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleMediumFamily),
-                          ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController ??=
-                          FormFieldController<String>(null),
-                      options: List<String>.from(['M', 'F']),
-                      optionLabels: [
-                        FFLocalizations.of(context).getText(
-                          'qovv7r33' /* ذكر */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          '28h3en66' /* أنثى */,
-                        )
-                      ],
-                      onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
-                      width: 300.0,
-                      height: 56.0,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .labelLarge
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).labelLargeFamily,
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).labelLargeFamily),
-                          ),
-                      hintText: FFLocalizations.of(context).getText(
-                        'dv2lbmnj' /* الجنس */,
-                      ),
-                      icon: Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 24.0,
-                      ),
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      elevation: 2.0,
-                      borderColor: FlutterFlowTheme.of(context).alternate,
-                      borderWidth: 2.0,
-                      borderRadius: 8.0,
-                      margin:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                      hidesUnderline: true,
-                      isOverButton: true,
-                      isSearchable: false,
-                      isMultiSelect: false,
                     ),
                   ),
                   InkWell(

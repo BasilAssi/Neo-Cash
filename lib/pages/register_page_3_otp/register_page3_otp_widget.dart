@@ -293,6 +293,8 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                             onCompleted: (_) async {
                               _model.isCompleted = true;
                               setState(() {});
+
+                              context.pushNamed('registeration_01');
                             },
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -418,8 +420,8 @@ class _RegisterPage3OtpWidgetState extends State<RegisterPage3OtpWidget> {
                         child: FFButtonWidget(
                           onPressed: (_model.isCompleted == false)
                               ? null
-                              : () async {
-                                  context.pushNamed('registeration_01');
+                              : () {
+                                  print('Button pressed ...');
                                 },
                           text: FFLocalizations.of(context).getText(
                             '8cw85wg1' /* التالي */,

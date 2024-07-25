@@ -24,10 +24,10 @@ String? messageId() {
   String randomString = '';
   var random = math.Random();
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 6; i++) {
     randomString += chars[random.nextInt(chars.length)];
   }
   String uniqueString =
-      '${DateTime.now().millisecondsSinceEpoch}-$randomString';
+      'cu-${DateTime.now().millisecondsSinceEpoch}-$randomString';
   return uniqueString;
 }

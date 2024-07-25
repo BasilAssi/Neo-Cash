@@ -4,25 +4,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'user_page_model.dart';
-export 'user_page_model.dart';
+import 'user_profile_model.dart';
+export 'user_profile_model.dart';
 
-class UserPageWidget extends StatefulWidget {
-  const UserPageWidget({super.key});
+class UserProfileWidget extends StatefulWidget {
+  const UserProfileWidget({super.key});
 
   @override
-  State<UserPageWidget> createState() => _UserPageWidgetState();
+  State<UserProfileWidget> createState() => _UserProfileWidgetState();
 }
 
-class _UserPageWidgetState extends State<UserPageWidget> {
-  late UserPageModel _model;
+class _UserProfileWidgetState extends State<UserProfileWidget> {
+  late UserProfileModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UserPageModel());
+    _model = createModel(context, () => UserProfileModel());
   }
 
   @override

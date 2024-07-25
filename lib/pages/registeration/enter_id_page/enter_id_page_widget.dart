@@ -322,6 +322,11 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           ),
                           filled: true,
                           fillColor: FlutterFlowTheme.of(context).accent4,
+                          suffixIcon: Icon(
+                            Icons.content_paste_outlined,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 28.0,
+                          ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
@@ -367,46 +372,36 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 if (ResponseModelStruct.maybeFromMap((_model
                                                 .isRegisteredOutPut?.jsonBody ??
                                             ''))
-                                        ?.hasStatus() ==
-                                    null) {
-                                  if (() {
-                                    if (ResponseModelStruct.maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                            ?.hasStatus() ==
-                                        true) {
-                                      return true;
-                                    } else if (ResponseModelStruct.maybeFromMap(
-                                                (_model.isRegisteredOutPut
-                                                        ?.jsonBody ??
-                                                    ''))
-                                            ?.hasStatus() ==
-                                        false) {
-                                      return true;
-                                    } else {
-                                      return true;
-                                    }
-                                  }()) {
-                                    context.pushNamed(
-                                      'otp_exist_person_page',
-                                      queryParameters: {
-                                        'phoneNumber': serializeParam(
-                                          '******458',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 300),
-                                        ),
-                                      },
-                                    );
-                                  }
+                                        ?.status ==
+                                    true) {
+                                  context.pushNamed(
+                                    'otp_exist_flow',
+                                    queryParameters: {
+                                      'phoneNumber': serializeParam(
+                                        '522222***',
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                } else {
+                                  context.pushNamed(
+                                      'register_page_2_phone_number');
                                 }
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'error',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
                               }
                             } else {
                               await showModalBottomSheet(

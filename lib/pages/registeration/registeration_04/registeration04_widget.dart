@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -136,14 +137,16 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                         backgroundColor: const Color(0xFFE5D2D3),
                         center: Text(
                           FFLocalizations.of(context).getText(
-                            'gpgo7ond' /* 100% */,
+                            'gpgo7ond' /* الخطوة الرابعة */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -157,7 +160,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'm7w4y74p' /* دخل باقي المعلومات */,
@@ -467,6 +470,75 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                   ),
                   Padding(
                     padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'wjbn27v2' /* دخل ال pin code  */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                    child: PinCodeTextField(
+                      autoDisposeControllers: false,
+                      appContext: context,
+                      length: 4,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .bodyLarge
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyLargeFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyLargeFamily),
+                          ),
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      enableActiveFill: false,
+                      autoFocus: true,
+                      enablePinAutofill: false,
+                      errorTextSpace: 16.0,
+                      showCursor: true,
+                      cursorColor: FlutterFlowTheme.of(context).primary,
+                      obscureText: false,
+                      keyboardType: TextInputType.number,
+                      pinTheme: PinTheme(
+                        fieldHeight: 44.0,
+                        fieldWidth: 44.0,
+                        borderWidth: 2.0,
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(12.0),
+                          bottomRight: Radius.circular(12.0),
+                          topLeft: Radius.circular(12.0),
+                          topRight: Radius.circular(12.0),
+                        ),
+                        shape: PinCodeFieldShape.box,
+                        activeColor: FlutterFlowTheme.of(context).primaryText,
+                        inactiveColor: FlutterFlowTheme.of(context).alternate,
+                        selectedColor: FlutterFlowTheme.of(context).primary,
+                        activeFillColor:
+                            FlutterFlowTheme.of(context).primaryText,
+                        inactiveFillColor:
+                            FlutterFlowTheme.of(context).alternate,
+                        selectedFillColor: FlutterFlowTheme.of(context).primary,
+                      ),
+                      controller: _model.pinCodeController,
+                      onChanged: (_) {},
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: _model.pinCodeControllerValidator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -477,7 +549,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 36.0, 0.0, 8.0),
+                                0.0, 16.0, 0.0, 8.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed('home_page');
