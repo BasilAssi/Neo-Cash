@@ -18,9 +18,9 @@ Future setDeviceInfo() async {
   // Add your function code here!
 
   final deviceInfo = DeviceInfoPlugin();
-  final appState = FFAppState(); // Access the app state
+  final appState = FFAppState();
 
-  appState.deviceInformation.OS = Platform.isIOS ? 'iOS' : 'Android';
+  appState.deviceInformation.os = Platform.isIOS ? 'iOS' : 'Android';
 
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
@@ -29,11 +29,9 @@ Future setDeviceInfo() async {
     appState.deviceInformation.serialNumber = androidInfo.androidId;
   } else if (Platform.isIOS) {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-
-    // Update the Customer object in the app state
+    /// Update the deviceInformation object in the app state
     appState.deviceInformation.deviceName = iosInfo.name;
     appState.deviceInformation.brandName = iosInfo.model;
-    appState.deviceInformation.serialNumber = iosInfo
-        .identifierForVendor; // Identifier for vendor used as serial number
+    appState.deviceInformation.serialNumber = iosInfo.identifierForVendor; // Identifier for vendor used as serial number
   }
 }
