@@ -39,7 +39,7 @@ class _FilterTransactionsComponentWidgetState
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25.0),
+        borderRadius: BorderRadius.circular(12.0),
       ),
       child: SizedBox(
         width: MediaQuery.sizeOf(context).width * 0.7,

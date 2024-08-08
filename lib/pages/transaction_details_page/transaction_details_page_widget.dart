@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,28 +70,24 @@ class _TransactionDetailsPageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
                 borderRadius: 20.0,
                 borderWidth: 1.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primary,
                 icon: Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primary,
                   size: 32.0,
                 ),
                 onPressed: () async {
@@ -107,8 +104,8 @@ class _TransactionDetailsPageWidgetState
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).textAppbarColor,
+                          fontSize: 24.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -150,19 +147,19 @@ class _TransactionDetailsPageWidgetState
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 12.0, 8.0, 8.0),
-                                  child: Text(
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
                                     FFLocalizations.of(context).getText(
-                                      'mye4mdo1' /* رمز الحركة */,
+                                      'mye4mdo1' /* رقم البطاقة */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
@@ -171,7 +168,7 @@ class _TransactionDetailsPageWidgetState
                                               FlutterFlowTheme.of(context)
                                                   .titleMediumFamily,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                              .textColor,
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w800,
@@ -181,15 +178,11 @@ class _TransactionDetailsPageWidgetState
                                                       .titleMediumFamily),
                                         ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 12.0, 8.0, 8.0),
-                              child: Text(
+                                ],
+                              ),
+                              Text(
                                 FFLocalizations.of(context).getText(
-                                  'wfnpkxto' /* 2921532903099 */,
+                                  'wfnpkxto' /* 2921 5329 0309 9412 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -197,22 +190,74 @@ class _TransactionDetailsPageWidgetState
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .titleMediumFamily,
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                          .textAppbarColor,
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w800,
+                                      fontWeight: FontWeight.normal,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
                                                   .titleMediumFamily),
                                     ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).secondaryText,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'jbdriiyr' /* رمز الحركة */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w800,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'k3cfquna' /* 2921532903099 */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textAppbarColor,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
+                                    ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -220,17 +265,17 @@ class _TransactionDetailsPageWidgetState
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     '6rh91bf4' /* حالة الطلب */,
                                   ),
@@ -240,7 +285,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -250,13 +295,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'hvz0m2gy' /* تم القبول */,
                               ),
@@ -266,41 +307,37 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
-                                    '6rh91bf4' /* نوع الحركة */,
+                                    'msl1dt85' /* نوع الحركة */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -308,7 +345,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -318,13 +355,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'y5yti1b1' /* شحن رصيد موبايل */,
                               ),
@@ -334,39 +367,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     '8nhwfwiv' /* المفوتر */,
                                   ),
@@ -376,7 +405,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -386,13 +415,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'bpwgutti' /* جّوال */,
                               ),
@@ -402,39 +427,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     'uo770vgi' /* التاريخ  */,
                                   ),
@@ -444,7 +465,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -454,13 +475,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'qfdp2l9l' /* 06/09/2024 */,
                               ),
@@ -470,39 +487,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     'rgp0qex3' /* الوقت */,
                                   ),
@@ -512,7 +525,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -522,13 +535,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'g6ujez0v' /*  04:54  PM */,
                               ),
@@ -538,39 +547,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     'vgu0asxr' /* رقم الوبايل */,
                                   ),
@@ -580,7 +585,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -590,13 +595,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'j3f6mua1' /* 00970598251350 */,
                               ),
@@ -606,39 +607,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     'ot0eesux' /* قيمة الحركة */,
                                   ),
@@ -648,7 +645,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -658,13 +655,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 '222b1j1b' /* 50 ILS */,
                               ),
@@ -674,39 +667,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     '49lig4vu' /* الرسوم */,
                                   ),
@@ -716,7 +705,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -726,13 +715,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'mtbpjg1l' /* 0 ILS */,
                               ),
@@ -742,39 +727,35 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 12.0, 8.0, 8.0),
-                                child: Text(
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 4.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
                                   FFLocalizations.of(context).getText(
                                     'rk80713u' /* المجموع */,
                                   ),
@@ -784,7 +765,7 @@ class _TransactionDetailsPageWidgetState
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleMediumFamily,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .textColor,
                                         fontSize: 22.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
@@ -794,13 +775,9 @@ class _TransactionDetailsPageWidgetState
                                                     .titleMediumFamily),
                                       ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 12.0, 8.0, 8.0),
-                            child: Text(
+                              ],
+                            ),
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'z3i6h5zp' /* 50 ILS */,
                               ),
@@ -810,24 +787,68 @@ class _TransactionDetailsPageWidgetState
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .textAppbarColor,
                                     fontSize: 22.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .titleMediumFamily),
                                   ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.0,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                          ],
+                        ),
                       ),
                     ],
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            '6jyekuwf' /* تنزيل الصورة على الجهاز؟ */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w800,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: FlutterFlowTheme.of(context).primary,
+                            borderRadius: 12.0,
+                            borderWidth: 1.0,
+                            buttonSize: 45.0,
+                            fillColor: FlutterFlowTheme.of(context).accent1,
+                            icon: Icon(
+                              Icons.save_alt_sharp,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 28.0,
+                            ),
+                            showLoadingIndicator: true,
+                            onPressed: () async {
+                              await actions.captureScreenshotOfPage();
+                            },
+                          ),
+                        ),
+                      ].divide(const SizedBox(width: 16.0)),
+                    ),
                   ),
                 ],
               ).animateOnPageLoad(

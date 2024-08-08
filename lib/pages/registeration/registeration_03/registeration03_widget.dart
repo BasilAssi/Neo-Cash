@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'registeration03_model.dart';
 export 'registeration03_model.dart';
 
@@ -27,8 +26,14 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
     super.initState();
     _model = createModel(context, () => Registeration03Model());
 
-    _model.emailTextFieldTextController ??= TextEditingController();
-    _model.emailTextFieldFocusNode ??= FocusNode();
+    _model.emailTextFieldTextController1 ??= TextEditingController();
+    _model.emailTextFieldFocusNode1 ??= FocusNode();
+
+    _model.emailTextFieldTextController2 ??= TextEditingController();
+    _model.emailTextFieldFocusNode2 ??= FocusNode();
+
+    _model.emailTextFieldTextController3 ??= TextEditingController();
+    _model.emailTextFieldFocusNode3 ??= FocusNode();
   }
 
   @override
@@ -41,28 +46,24 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
                 borderRadius: 20.0,
                 borderWidth: 1.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primary,
                 icon: Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primary,
                   size: 32.0,
                 ),
                 onPressed: () async {
@@ -74,13 +75,13 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'uiaxgfy6' /* معلوماتي */,
+                      'bqk6hgnw' /* معلوماتك الشخصية */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).textAppbarColor,
+                          fontSize: 24.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -121,49 +122,490 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                      child: LinearPercentIndicator(
-                        percent: 0.75,
-                        width: MediaQuery.sizeOf(context).width * 0.9,
-                        lineHeight: 30.0,
-                        animation: true,
-                        animateFromLastPercent: true,
-                        progressColor: FlutterFlowTheme.of(context).primary,
-                        backgroundColor: const Color(0xFFE5D2D3),
-                        center: Text(
-                          FFLocalizations.of(context).getText(
-                            '1kcfuv85' /* الخطوة الثالثة */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 16.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                      child: Wrap(
+                        spacing: 0.0,
+                        runSpacing: 0.0,
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.start,
+                        direction: Axis.horizontal,
+                        runAlignment: WrapAlignment.start,
+                        verticalDirection: VerticalDirection.down,
+                        clipBehavior: Clip.none,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'q7ve0j8x' /* 7 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
                               ),
-                        ),
-                        barRadius: const Radius.circular(5.0),
-                        padding: EdgeInsets.zero,
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ewexqkqz' /* 6 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '9dytv4p0' /* 5 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'xurogjlo' /* 4 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 36.0,
+                                height: 36.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).accent1,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'jqv5l81n' /* 3 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).accent1,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'sdeo1sm7' /* 2 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Container(
+                                  width: 20.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .contianerColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        offset: const Offset(
+                                          -2.0,
+                                          0.0,
+                                        ),
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 32.0,
+                                height: 32.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).accent1,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '9ftbo6mx' /* 1 */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '3ptck3i4' /* اختار مكان سكنك */,
+                        'uroujvhf' /* هل أنت مقيم في البلد */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: FlutterFlowTheme.of(context).textColor,
                             fontSize: 16.0,
                             letterSpacing: 0.0,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -178,22 +620,22 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                       controller: _model.dropDownValueController1 ??=
                           FormFieldController<String>(null),
                       options:
-                          List<String>.from(['04', '1', '2', '3', 'FEMALE']),
+                          List<String>.from(['1', '2', '2', '3', 'FEMALE']),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
-                          'gm27qxeb' /* رام الله */,
+                          'afjbsqja' /* نعم */,
                         ),
                         FFLocalizations.of(context).getText(
-                          '8ez9okhl' /* نابلس */,
+                          'f5rjr8oo' /* لا */,
                         ),
                         FFLocalizations.of(context).getText(
-                          '54xnhgyx' /* طولكرم */,
+                          '6o1swgu5' /* طولكرم */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'd5u35u9r' /* الخليل */,
+                          'nmwn1g3c' /* الخليل */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'uph6gyhb' /* أنثى */,
+                          '12065brl' /* أنثى */,
                         )
                       ],
                       onChanged: (val) =>
@@ -211,7 +653,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                 FlutterFlowTheme.of(context).labelLargeFamily),
                           ),
                       hintText: FFLocalizations.of(context).getText(
-                        's4geuhwe' /* المدينة */,
+                        'btro9yps' /* مقيم في البلد؟ */,
                       ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -221,9 +663,9 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       elevation: 2.0,
-                      borderColor: FlutterFlowTheme.of(context).alternate,
-                      borderWidth: 2.0,
-                      borderRadius: 8.0,
+                      borderColor: FlutterFlowTheme.of(context).textFieldBorder,
+                      borderWidth: 1.0,
+                      borderRadius: 12.0,
                       margin:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                       hidesUnderline: true,
@@ -234,15 +676,15 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'nixpiac4' /* التجمع السكني */,
+                        'tv5scspx' /* هل عندك جواز أمريكي */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: FlutterFlowTheme.of(context).textColor,
                             fontSize: 16.0,
                             letterSpacing: 0.0,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -256,23 +698,13 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model.dropDownValueController2 ??=
                           FormFieldController<String>(null),
-                      options:
-                          List<String>.from(['04', '1', '2', '3', 'FEMALE']),
+                      options: List<String>.from(['1', '2']),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
-                          'hqo3yxs0' /* رام الله */,
+                          'rbncbqss' /* نعم */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'sdio1sit' /* نابلس */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'tj7muqn7' /* طولكرم */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'g4175wca' /* الخليل */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'ywspq09j' /* أنثى */,
+                          't62zgocx' /* لا */,
                         )
                       ],
                       onChanged: (val) =>
@@ -290,7 +722,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                 FlutterFlowTheme.of(context).labelLargeFamily),
                           ),
                       hintText: FFLocalizations.of(context).getText(
-                        'vi5yluyt' /* التجمع السكني */,
+                        '8xxpotti' /* عندك جواز سفر أمريكي؟ */,
                       ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -300,9 +732,9 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       elevation: 2.0,
-                      borderColor: FlutterFlowTheme.of(context).alternate,
-                      borderWidth: 2.0,
-                      borderRadius: 8.0,
+                      borderColor: FlutterFlowTheme.of(context).textFieldBorder,
+                      borderWidth: 1.0,
+                      borderRadius: 12.0,
                       margin:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                       hidesUnderline: true,
@@ -313,15 +745,15 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'yfoglq5k' /* سجل عنوانك */,
+                        'fgb7p83i' /* المهنة */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: FlutterFlowTheme.of(context).textColor,
                             fontSize: 16.0,
                             letterSpacing: 0.0,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -330,10 +762,11 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.emailTextFieldTextController,
-                      focusNode: _model.emailTextFieldFocusNode,
+                      controller: _model.emailTextFieldTextController1,
+                      focusNode: _model.emailTextFieldFocusNode1,
                       autofocus: true,
                       textCapitalization: TextCapitalization.sentences,
                       obscureText: false,
@@ -349,7 +782,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                           .labelMediumFamily),
                                 ),
                         hintText: FFLocalizations.of(context).getText(
-                          'x8wk3106' /* موقعك:  */,
+                          '8jw98ap3' /* المهنة */,
                         ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -363,31 +796,130 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
+                            color: FlutterFlowTheme.of(context).textFieldBorder,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.work_sharp,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      validator: _model.emailTextFieldTextController1Validator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '5i8vcalm' /* مكان العمل */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).textColor,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.emailTextFieldTextController2,
+                      focusNode: _model.emailTextFieldFocusNode2,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          '825ld0i8' /* مكان العمل */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).textFieldBorder,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).accent4,
@@ -405,13 +937,113 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
-                      validator: _model.emailTextFieldTextControllerValidator
+                      validator: _model.emailTextFieldTextController2Validator
                           .asValidator(context),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'bvo31zkk' /* دخلك الشهري بالدولار */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).textColor,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.emailTextFieldTextController3,
+                      focusNode: _model.emailTextFieldFocusNode3,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintText: FFLocalizations.of(context).getText(
+                          'cki60vlr' /* الدخل الشهري */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).textFieldBorder,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.monetization_on_outlined,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      keyboardType: TextInputType.number,
+                      validator: _model.emailTextFieldTextController3Validator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 48.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -419,46 +1051,41 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                       children: [
                         Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 36.0, 0.0, 8.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('registeration_04');
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'ype1jx4m' /* التالي */,
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('registeration_07');
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              '4bmwbw9n' /* التالي */,
+                            ),
+                            options: FFButtonOptions(
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: MediaQuery.sizeOf(context).height * 0.06,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
                               ),
-                              options: FFButtonOptions(
-                                width: MediaQuery.sizeOf(context).width * 0.9,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.06,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
-                                      color: Colors.white,
-                                      fontSize: 20.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily),
-                                    ),
-                                elevation: 3.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(16.0),
-                              ),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
                         ),

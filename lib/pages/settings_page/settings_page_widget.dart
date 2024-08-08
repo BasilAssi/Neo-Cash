@@ -23,8 +23,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
     super.initState();
     _model = createModel(context, () => SettingsPageModel());
 
-    _model.switchValue1 = true;
-    _model.switchValue2 = true;
+    _model.switchValue = true;
   }
 
   @override
@@ -37,28 +36,24 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
                 borderRadius: 20.0,
                 borderWidth: 1.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primary,
                 icon: Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primary,
                   size: 32.0,
                 ),
                 onPressed: () async {
@@ -75,8 +70,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).textColor,
+                          fontSize: 24.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -115,74 +110,6 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(
-                                  Icons.notifications_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 32.0,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 12.0, 8.0, 8.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'm43nimhw' /* الإشعارات */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w800,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Switch.adaptive(
-                              value: _model.switchValue1!,
-                              onChanged: (newValue) async {
-                                setState(() => _model.switchValue1 = newValue);
-                              },
-                              activeColor: const Color(0x4CF83B46),
-                              activeTrackColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              inactiveTrackColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              inactiveThumbColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          thickness: 1.0,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -194,11 +121,25 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Icon(
-                                  Icons.fingerprint,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 32.0,
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .iconBackground,
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .textFieldBorder,
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.fingerprint,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 32.0,
+                                    ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -214,10 +155,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleMediumFamily,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 22.0,
+                                              .textColor,
+                                          fontSize: 18.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w800,
+                                          fontWeight: FontWeight.bold,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -228,9 +169,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                               ],
                             ),
                             Switch.adaptive(
-                              value: _model.switchValue2!,
+                              value: _model.switchValue!,
                               onChanged: (newValue) async {
-                                setState(() => _model.switchValue2 = newValue);
+                                setState(() => _model.switchValue = newValue);
                               },
                               activeColor: const Color(0x4CF83B46),
                               activeTrackColor:
@@ -262,11 +203,25 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Icon(
-                                  Icons.question_mark,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 32.0,
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .iconBackground,
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .textFieldBorder,
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Icons.question_mark,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 32.0,
+                                    ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -282,10 +237,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleMediumFamily,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 22.0,
+                                              .textColor,
+                                          fontSize: 18.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w800,
+                                          fontWeight: FontWeight.bold,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)

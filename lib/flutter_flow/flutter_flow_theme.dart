@@ -63,6 +63,13 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
+  late Color customColor1;
+  late Color textAppbarColor;
+  late Color textColor;
+  late Color textFieldBorder;
+  late Color contianerColor;
+  late Color iconBackground;
+
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
   @Deprecated('Use displaySmall instead')
@@ -149,7 +156,7 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFF83B46);
+  late Color primary = const Color(0xFFF05346);
   late Color secondary = const Color(0xFFFF6A73);
   late Color tertiary = const Color(0xFF0299FF);
   late Color alternate = const Color(0xFFE3E7ED);
@@ -165,6 +172,13 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color warning = const Color(0xFFEC9C4B);
   late Color error = const Color(0xFFF83B46);
   late Color info = const Color(0xFFFFFFFF);
+
+  late Color customColor1 = const Color(0xFFBEE3D6);
+  late Color textAppbarColor = const Color(0xFF666666);
+  late Color textColor = const Color(0xFF555555);
+  late Color textFieldBorder = const Color(0xFFC4C4C4);
+  late Color contianerColor = const Color(0xFFF8F6F9);
+  late Color iconBackground = const Color(0xFFFDEEF2);
 }
 
 abstract class Typography {
@@ -205,106 +219,106 @@ class MobileTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Sora';
+  String get displayLargeFamily => 'Cairo';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 56.0,
       );
-  String get displayMediumFamily => 'Sora';
+  String get displayMediumFamily => 'Cairo';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Sora';
+  String get displaySmallFamily => 'Cairo';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Sora';
+  String get headlineLargeFamily => 'Cairo';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Sora';
+  String get headlineMediumFamily => 'Cairo';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineSmallFamily => 'Sora';
+  String get headlineSmallFamily => 'Cairo';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Sora';
+  String get titleLargeFamily => 'Cairo';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Inter';
+  String get titleMediumFamily => 'Cairo';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Inter';
+  String get titleSmallFamily => 'Cairo';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Inter';
+  String get labelLargeFamily => 'Cairo';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Inter';
+  String get labelMediumFamily => 'Cairo';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Inter';
+  String get labelSmallFamily => 'Cairo';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Inter';
+  String get bodyLargeFamily => 'Cairo';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Inter';
+  String get bodyMediumFamily => 'Cairo';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Inter';
+  String get bodySmallFamily => 'Cairo';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -316,106 +330,106 @@ class TabletTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Sora';
+  String get displayLargeFamily => 'Cairo';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 56.0,
       );
-  String get displayMediumFamily => 'Sora';
+  String get displayMediumFamily => 'Cairo';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Sora';
+  String get displaySmallFamily => 'Cairo';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Sora';
+  String get headlineLargeFamily => 'Cairo';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Sora';
+  String get headlineMediumFamily => 'Cairo';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineSmallFamily => 'Sora';
+  String get headlineSmallFamily => 'Cairo';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Sora';
+  String get titleLargeFamily => 'Cairo';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Inter';
+  String get titleMediumFamily => 'Cairo';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Inter';
+  String get titleSmallFamily => 'Cairo';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Inter';
+  String get labelLargeFamily => 'Cairo';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Inter';
+  String get labelMediumFamily => 'Cairo';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Inter';
+  String get labelSmallFamily => 'Cairo';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Inter';
+  String get bodyLargeFamily => 'Cairo';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Inter';
+  String get bodyMediumFamily => 'Cairo';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Inter';
+  String get bodySmallFamily => 'Cairo';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -427,106 +441,106 @@ class DesktopTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Sora';
+  String get displayLargeFamily => 'Cairo';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 56.0,
       );
-  String get displayMediumFamily => 'Sora';
+  String get displayMediumFamily => 'Cairo';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Sora';
+  String get displaySmallFamily => 'Cairo';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Sora';
+  String get headlineLargeFamily => 'Cairo';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Sora';
+  String get headlineMediumFamily => 'Cairo';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineSmallFamily => 'Sora';
+  String get headlineSmallFamily => 'Cairo';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Sora';
+  String get titleLargeFamily => 'Cairo';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Sora',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Inter';
+  String get titleMediumFamily => 'Cairo';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Inter';
+  String get titleSmallFamily => 'Cairo';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Inter';
+  String get labelLargeFamily => 'Cairo';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Inter';
+  String get labelMediumFamily => 'Cairo';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Inter';
+  String get labelSmallFamily => 'Cairo';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Inter';
+  String get bodyLargeFamily => 'Cairo';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Inter';
+  String get bodyMediumFamily => 'Cairo';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Inter';
+  String get bodySmallFamily => 'Cairo';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Inter',
+        'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -557,6 +571,13 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color warning = const Color(0xFFEC9C4B);
   late Color error = const Color(0xFFF83B46);
   late Color info = const Color(0xFFFFFFFF);
+
+  late Color customColor1 = const Color(0xFF736EAD);
+  late Color textAppbarColor = const Color(0xFF0E891C);
+  late Color textColor = const Color(0xFFC07044);
+  late Color textFieldBorder = const Color(0xFF5C0304);
+  late Color contianerColor = const Color(0xFFD8E965);
+  late Color iconBackground = const Color(0xFFD91F69);
 }
 
 extension TextStyleHelper on TextStyle {

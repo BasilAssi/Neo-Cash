@@ -40,14 +40,12 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
@@ -55,33 +53,6 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'n6fn9m9k' /* الإشعارات */,
-                        ),
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .headlineMediumFamily,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .headlineMediumFamily),
-                            ),
-                      ),
-                    ),
-                  ),
-                ),
                 FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).primary,
                   borderRadius: 20.0,
@@ -96,6 +67,29 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                   onPressed: () async {
                     context.safePop();
                   },
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'n6fn9m9k' /* الإشعارات */,
+                      ),
+                      style: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .override(
+                            fontFamily: FlutterFlowTheme.of(context)
+                                .headlineMediumFamily,
+                            color: FlutterFlowTheme.of(context).textAppbarColor,
+                            fontSize: 24.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily),
+                          ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -153,10 +147,11 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .displaySmallFamily,
-                                          color: Colors.black,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
                                           fontSize: 24.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -239,9 +234,6 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                   ),
                   Container(
                     decoration: const BoxDecoration(),
-                  ),
-                  Container(
-                    decoration: const BoxDecoration(),
                     child: Container(
                       width: double.infinity,
                       color: FlutterFlowTheme.of(context).alternate,
@@ -264,10 +256,11 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .displaySmallFamily,
-                                        color: Colors.black,
+                                        color: FlutterFlowTheme.of(context)
+                                            .textColor,
                                         fontSize: 24.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w600,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)

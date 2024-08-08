@@ -11,7 +11,6 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -30,7 +29,6 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     firstNameTextFieldFocusNode?.dispose();
     firstNameTextFieldTextController?.dispose();
   }

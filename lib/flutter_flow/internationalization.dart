@@ -107,6 +107,14 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // home_page
   {
+    'u0aukl6s': {
+      'ar': 'مجموع الأرصدة',
+      'en': '',
+    },
+    '1ib07wec': {
+      'ar': 'Hello World',
+      'en': '',
+    },
     'v0wx94fq': {
       'ar': '\$7,630',
       'en': '',
@@ -127,8 +135,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '0149 **** ',
       'en': '',
     },
-    'icr7h69j': {
+    'y9cj9076': {
+      'ar': '021',
+      'en': '',
+    },
+    'cu6j6f8g': {
+      'ar': 'SECURITY\nCODE',
+      'en': '',
+    },
+    'onhvxo49': {
       'ar': '05/25',
+      'en': '',
+    },
+    '8w7jzo96': {
+      'ar': 'VALID\nTHRU',
       'en': '',
     },
     'e5b6cg6i': {
@@ -139,52 +159,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تحويل بين  البطاقات',
       'en': '',
     },
-    '2uzm0bfl': {
-      'ar': 'طلب بطاقة',
-      'en': '',
-    },
     '0dsvs6im': {
       'ar': 'الحركات',
       'en': 'Campaigns and offers',
     },
     '8xr1drdh': {
       'ar': 'عرض الكل',
-      'en': '',
-    },
-    '2ry21gdf': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'wz8vtv3o': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'iw2o94v0': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'wc5x1bfd': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    '81h20nzo': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    '2s0j82r6': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'fnrjs91q': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'es1gcrq5': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'l8qagz24': {
-      'ar': 'Jun, 8, 2024',
       'en': '',
     },
     'mvlc1z5y': {
@@ -293,116 +273,60 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
-    'fnrjs91q': {
+    'd9yld9um': {
       'ar': 'شحن رصيد موبايل',
       'en': '',
     },
-    'es1gcrq5': {
+    'r9folfee': {
       'ar': '2921532903099',
       'en': '',
     },
-    '2s0j82r6': {
+    'iasjw9mk': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
-    'coj6rbh7': {
+    'r3nuqzac': {
       'ar': 'شحن رصيد موبايل',
       'en': '',
     },
-    'huylt2c1': {
+    'cjdj0uoo': {
       'ar': '2921532903099',
       'en': '',
     },
-    '62u1crji': {
+    'uyq84yuq': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
-    'ih7j8yhr': {
+    '3bmvxbn4': {
       'ar': 'شحن رصيد موبايل',
       'en': '',
     },
-    '5lnbdsoc': {
+    'jpjjjv5g': {
       'ar': '2921532903099',
       'en': '',
     },
-    'l3mf719r': {
+    'zytruqc6': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
-    'l88zj4v1': {
+    'sli1lgre': {
       'ar': 'شحن رصيد موبايل',
       'en': '',
     },
-    '0sb9ya8c': {
+    'zal27fs1': {
       'ar': '2921532903099',
       'en': '',
     },
-    'u70vwya6': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'v2wrcm0a': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'giehio3x': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'e4vmvyah': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'bs2k8vc1': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'q1te9mnv': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'wrmeuj58': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'l71kmf7a': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    '3spkf008': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    '450tuma3': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    '0hdidrmp': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    '69byw3ab': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'rkfmkwgp': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
-    'agzb7eki': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'v8x6lysn': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    '6bjseayp': {
+    'esvddhsh': {
       'ar': 'Jun, 8, 2024',
       'en': '',
     },
     'bs41kbym': {
       'ar': 'إجمالي الرصيد ',
+      'en': '',
+    },
+    '63jl6fbe': {
+      'ar': '08/12/2024 -  08/12/2024 ',
       'en': '',
     },
     '1dz4sx9s': {
@@ -497,7 +421,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'k890nwac': {
-      'ar': '+972',
+      'ar': '+972 ',
       'en': '',
     },
     'gangnkno': {
@@ -520,12 +444,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'sign in',
     },
-    '1t39y3md': {
+    '1f51n1l6': {
       'ar': 'Home',
       'en': '',
     },
   },
-  // register_page_3_otp
+  // otp_does_not_exist_flow
   {
     'cvcns9e8': {
       'ar': 'تأكيد رقم التلفون',
@@ -563,7 +487,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // card_details
   {
     'a0y0st45': {
-      'ar': 'الحساب الاساسي ',
+      'ar': 'رصيد البطاقة ',
       'en': '',
     },
     'dunv88wl': {
@@ -578,43 +502,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحساب الاساسي ',
       'en': '',
     },
-    'blre5d6e': {
-      'ar': 'Neo Cash',
-      'en': '',
-    },
-    'ysdi9pqi': {
-      'ar': 'VISA',
-      'en': '',
-    },
-    '5fildslc': {
+    '7uzfifl2': {
       'ar': 'BASIL ASSI',
       'en': '',
     },
-    'pm2r0kmy': {
-      'ar': 'رقم البطاقة',
+    '7w84f73c': {
+      'ar': '4012 5421 2322 6521',
       'en': '',
     },
-    '61ordqge': {
-      'ar': '4444  4214  4215  4522',
+    'jkurh3hj': {
+      'ar': '021',
       'en': '',
     },
-    'gz4uayjg': {
-      'ar': 'CVV',
+    'e9nhu5rg': {
+      'ar': 'SECURITY\nCODE',
       'en': '',
     },
-    'z8pr40ks': {
-      'ar': 'تاريخ الانتهاء',
+    'pi80izf5': {
+      'ar': '05/25',
       'en': '',
     },
-    'egimiqvx': {
-      'ar': '696',
+    'oc5g9fy5': {
+      'ar': 'VALID\nTHRU',
       'en': '',
     },
-    '5x6mz1oq': {
-      'ar': '05/28',
+    '7wf328ns': {
+      'ar': 'عرض الرمز \nالسري',
       'en': '',
     },
-    '1dz4sx9s': {
+    't26hgabe': {
+      'ar': 'قيود\nالبطاقة',
+      'en': '',
+    },
+    'bmdetv0i': {
+      'ar': 'قفل\nالبطاقة',
+      'en': '',
+    },
+    'ugm1nxce': {
+      'ar': 'إلغاء \nالبطاقة',
+      'en': '',
+    },
+    '9xarkmih': {
+      'ar': 'فك قفل\nالبطاقة',
+      'en': '',
+    },
+    'pbrqcali': {
+      'ar': 'تفاصيل البطاقة',
+      'en': '',
+    },
+    'v04sy0uk': {
       'ar': 'Home',
       'en': '',
     },
@@ -653,16 +589,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تم التحقق  ',
       'en': '',
     },
-    'z15cn135': {
-      'ar': 'رقم الموبايل',
-      'en': '',
-    },
-    '1xrjbpy9': {
-      'ar': '0569718347',
-      'en': '',
-    },
-    'oefdlwk5': {
-      'ar': 'تعديل',
+    '2jt5rwhx': {
+      'ar': 'تغير كلمة المرور',
       'en': '',
     },
     'fx3qydw8': {
@@ -674,10 +602,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'gj4fnvct': {
       'ar': 'الإعدادات',
-      'en': '',
-    },
-    'm43nimhw': {
-      'ar': 'الإشعارات',
       'en': '',
     },
     'ckdkpn5f': {
@@ -700,19 +624,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'mye4mdo1': {
-      'ar': 'رمز الحركة',
+      'ar': 'رقم البطاقة',
       'en': '',
     },
     'wfnpkxto': {
+      'ar': '2921 5329 0309 9412',
+      'en': '',
+    },
+    'jbdriiyr': {
+      'ar': 'رمز الحركة',
+      'en': '',
+    },
+    'k3cfquna': {
       'ar': '2921532903099',
       'en': '',
     },
     '6rh91bf4': {
-      'ar': 'نوع الحركة',
+      'ar': 'حالة الطلب',
       'en': '',
     },
     'hvz0m2gy': {
       'ar': 'تم القبول',
+      'en': '',
+    },
+    'msl1dt85': {
+      'ar': 'نوع الحركة',
       'en': '',
     },
     'y5yti1b1': {
@@ -773,6 +709,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z3i6h5zp': {
       'ar': '50 ILS',
+      'en': '',
+    },
+    '6jyekuwf': {
+      'ar': 'تنزيل الصورة على الجهاز؟',
       'en': '',
     },
     'j5y93gae': {
@@ -892,12 +832,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // registeration_01
   {
     'cui94pxw': {
-      'ar': 'معلوماتي',
+      'ar': 'اسمك',
       'en': '',
     },
-    'gpgo7ond': {
-      'ar': 'الخطوة الأولى',
-      'en': '',
+    '8zu7pt0o': {
+      'ar': '7',
+      'en': '7',
+    },
+    'mvfh9kzv': {
+      'ar': '6',
+      'en': '6',
+    },
+    '3zv73tw8': {
+      'ar': '5',
+      'en': '5',
+    },
+    'ugl2cchw': {
+      'ar': '4',
+      'en': '4',
+    },
+    '3wtypfwt': {
+      'ar': '3',
+      'en': '3',
+    },
+    '34dnfvoe': {
+      'ar': '2',
+      'en': '2',
+    },
+    '533s40y7': {
+      'ar': '1',
+      'en': '1',
     },
     'xzg8kesl': {
       'ar': 'خلينا نبلش بأنك تعرفنا عن حالك',
@@ -921,10 +885,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gwx7jr2c': {
       'ar': 'اسم عائلتك',
-      'en': '',
-    },
-    'p3903a2l': {
-      'ar': 'اسم الأم',
       'en': '',
     },
     '1xvldsbc': {
@@ -956,29 +916,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // enable_notifications
-  {
-    'cd8zk3vb': {
-      'ar': 'تجاهل',
-      'en': '',
-    },
-    'b4gjbauq': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'gdnzw3se': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'bjk3auve': {
-      'ar': 'تفعيل',
-      'en': '',
-    },
-    '225y2xwt': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // qr_code_page
   {
     'n76z39u6': {
@@ -1004,10 +941,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // enter_id_page
   {
-    'uiaxgfy6': {
-      'ar': 'نوع  ورقم الهوية',
-      'en': '',
-    },
     'je18929v': {
       'ar': 'شو نوع هويتك الشخصية',
       'en': '',
@@ -1049,6 +982,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Make sure you have internet working on your phone , And try again.',
     },
+    'n5zjlx3a': {
+      'ar': 'العودة الى الصفحة الرئيسية\n',
+      'en': '',
+    },
     '20mmouhk': {
       'ar': 'Home',
       'en': '',
@@ -1080,7 +1017,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إعادة إرسال رمز التحقق',
       'en': '',
     },
-    '1t39y3md': {
+    'emqmmcve': {
       'ar': 'Home',
       'en': '',
     },
@@ -1088,11 +1025,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // registeration_02
   {
     '23yolomv': {
-      'ar': 'معلوماتي',
+      'ar': 'معلوماتك الشخصية',
       'en': '',
     },
-    '4f68isdv': {
-      'ar': 'الخطوة الثانية',
+    '213i0qjp': {
+      'ar': '7',
+      'en': '',
+    },
+    '808vqhu1': {
+      'ar': '6',
+      'en': '',
+    },
+    's74r4pq0': {
+      'ar': '5',
+      'en': '',
+    },
+    'eiuy8p86': {
+      'ar': '4',
+      'en': '',
+    },
+    'xk8j1fbf': {
+      'ar': '3',
+      'en': '',
+    },
+    'pz0aym10': {
+      'ar': '2',
+      'en': '',
+    },
+    'vohah3vr': {
+      'ar': '1',
       'en': '',
     },
     'j1orf7vl': {
@@ -1103,12 +1064,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': ' مكان الميلاد ',
       'en': '',
     },
-    'euhreylc': {
-      'ar': '',
+    'g3yr3j8z': {
+      'ar': 'رام الله',
       'en': '',
     },
-    'ugc6rowo': {
-      'ar': 'مكان الميلاد',
+    '2st1wesi': {
+      'ar': 'نابلس',
+      'en': '',
+    },
+    'evjbjyze': {
+      'ar': 'طولكرم',
+      'en': '',
+    },
+    '8zsbktyc': {
+      'ar': 'الخليل',
+      'en': '',
+    },
+    'c508z7qg': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'ha0dpmjk': {
+      'ar': 'المدينة',
+      'en': '',
+    },
+    'zsteqakr': {
+      'ar': 'Search for an item...',
       'en': '',
     },
     '87900l1f': {
@@ -1136,15 +1117,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'hnomrkxo': {
-      'ar': '',
+      'ar': 'فلسطيني',
       'en': '',
     },
     '0j9r8p17': {
-      'ar': 'أنثى',
+      'ar': '',
       'en': '',
     },
     '6xgs3e3k': {
-      'ar': 'الجنس',
+      'ar': 'الجنسية',
       'en': '',
     },
     '7shvqcy3': {
@@ -1155,19 +1136,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': '',
     },
-    '1t39y3md': {
+    'd8ktttak': {
       'ar': 'Home',
       'en': '',
     },
   },
-  // registeration_04
+  // registeration_07
   {
     'uiaxgfy6': {
-      'ar': 'معلوماتي',
+      'ar': 'أنشئ حسابك',
       'en': '',
     },
-    'gpgo7ond': {
-      'ar': 'الخطوة الرابعة',
+    'ffavvyxv': {
+      'ar': '7',
+      'en': '',
+    },
+    'fssmlfqt': {
+      'ar': '6',
+      'en': '',
+    },
+    'w6dpnxja': {
+      'ar': '5',
+      'en': '',
+    },
+    'atecu50y': {
+      'ar': '4',
+      'en': '',
+    },
+    'utakl669': {
+      'ar': '3',
+      'en': '',
+    },
+    '8apop96s': {
+      'ar': '2',
+      'en': '',
+    },
+    'uvw9emg0': {
+      'ar': '1',
       'en': '',
     },
     'm7w4y74p': {
@@ -1196,57 +1201,81 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'wjbn27v2': {
-      'ar': 'دخل ال pin code ',
+      'ar': 'دخل الرمز السري  مكون من اربع خانات',
       'en': '',
     },
     'ype1jx4m': {
       'ar': 'تسجيل',
       'en': '',
     },
-    '1t39y3md': {
+    '7zhaj7vf': {
       'ar': 'Home',
       'en': '',
     },
   },
-  // registeration_03
+  // registeration_04
   {
-    'uiaxgfy6': {
-      'ar': 'معلوماتي',
+    'nl00v5wv': {
+      'ar': 'عنوانك',
       'en': '',
     },
-    '1kcfuv85': {
-      'ar': 'الخطوة الثالثة',
+    '0ayded09': {
+      'ar': '7',
       'en': '',
     },
-    '3ptck3i4': {
-      'ar': 'اختار مكان سكنك',
+    'fcu1y098': {
+      'ar': '6',
       'en': '',
     },
-    'gm27qxeb': {
+    'jsjuum27': {
+      'ar': '5',
+      'en': '',
+    },
+    'nkl1lwis': {
+      'ar': '4',
+      'en': '',
+    },
+    '7qeq06zo': {
+      'ar': '3',
+      'en': '',
+    },
+    'mlxvov7q': {
+      'ar': '2',
+      'en': '',
+    },
+    'wi7o68lx': {
+      'ar': '1',
+      'en': '',
+    },
+    'p14tzvud': {
+      'ar': 'اختار المدينة',
+      'en': '',
+    },
+    'dowog7hd': {
       'ar': 'رام الله',
       'en': '',
     },
-    '8ez9okhl': {
+    'datw7s90': {
       'ar': 'نابلس',
       'en': '',
     },
-    '54xnhgyx': {
+    'hpoynkc2': {
       'ar': 'طولكرم',
       'en': '',
     },
-    'd5u35u9r': {
+    'ypyuuid2': {
       'ar': 'الخليل',
       'en': '',
     },
-    'uph6gyhb': {
+    'yl24v67s': {
       'ar': 'أنثى',
       'en': '',
     },
-    's4geuhwe': {
+    'suedt6vn': {
       'ar': 'المدينة',
       'en': '',
     },
-    'gis06n00': {
+    '04g3os27': {
       'ar': 'Search for an item...',
       'en': '',
     },
@@ -1294,43 +1323,1235 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'موقعك: ',
       'en': '',
     },
-    'ype1jx4m': {
+    'vq6zsk0n': {
       'ar': 'التالي',
       'en': '',
     },
-    '1t39y3md': {
+    'nrngf3v4': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // send_money_to_friend
+  {
+    'jbiuuahw': {
+      'ar': '  إرسال لصديق ',
+      'en': '',
+    },
+    '20m44xdy': {
+      'ar': '0149 ',
+      'en': '',
+    },
+    'axen44ml': {
+      'ar': '\$7,630',
+      'en': '',
+    },
+    '114q9k4z': {
+      'ar': 'Mastercard Ending in 4021',
+      'en': '',
+    },
+    'xgm3exrb': {
+      'ar': '\$425.24',
+      'en': '',
+    },
+    'ynmq9egf': {
+      'ar': 'القيمة',
+      'en': '',
+    },
+    '6x2d07fd': {
+      'ar': '',
+      'en': '',
+    },
+    'trb27inb': {
+      'ar': '0.0',
+      'en': '',
+    },
+    'd75eqmgj': {
+      'ar': '5xxxxxxxx',
+      'en': '',
+    },
+    'v1u8v2hp': {
+      'ar': '',
+      'en': '',
+    },
+    'fhwcji5k': {
+      'ar': 'الهدف من التحويل',
+      'en': '',
+    },
+    'jh7ruwuj': {
+      'ar': '',
+      'en': '',
+    },
+    'dr4519ce': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'hlwqlc5j': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // transfer_money_between_cards
+  {
+    'mhiy4xcu': {
+      'ar': 'تحويل بين البطاقات',
+      'en': '',
+    },
+    'gsq7zcfk': {
+      'ar': 'من حساب:',
+      'en': '',
+    },
+    'emfwruah': {
+      'ar': '0149 ',
+      'en': '',
+    },
+    '2bhoxaxr': {
+      'ar': '\$7,630',
+      'en': '',
+    },
+    'mrr7gjmr': {
+      'ar': 'Mastercard Ending in 4021',
+      'en': '',
+    },
+    'xzb0rw26': {
+      'ar': '\$425.24',
+      'en': '',
+    },
+    'tvjgxrqx': {
+      'ar': 'الى حساب:',
+      'en': '',
+    },
+    'go2zpmye': {
+      'ar': '0149 ',
+      'en': '',
+    },
+    'zg0gj56z': {
+      'ar': '\$7,630',
+      'en': '',
+    },
+    'tydwr8ll': {
+      'ar': 'Mastercard Ending in 4021',
+      'en': '',
+    },
+    'x9qkdujl': {
+      'ar': '\$425.24',
+      'en': '',
+    },
+    'r8hxgkfb': {
+      'ar': 'القيمة',
+      'en': '',
+    },
+    '5zdegweg': {
+      'ar': '0.00',
+      'en': '',
+    },
+    '1r5wtr3t': {
+      'ar': 'الناتج',
+      'en': '',
+    },
+    'nknpry4t': {
+      'ar': '',
+      'en': '',
+    },
+    '9d7vx8kw': {
+      'ar': '0.00',
+      'en': '',
+    },
+    'g8ub0m5g': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    's4vsfq3u': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // confirm_transfer_between_cards
+  {
+    'scgd2yef': {
+      'ar': 'تأكيد التحويل بين الحسابات',
+      'en': '',
+    },
+    '9qo8gc6l': {
+      'ar': 'تحويل من حساب ',
+      'en': '',
+    },
+    'glohmjwh': {
+      'ar': 'Mastercard Ending in 4021',
+      'en': '',
+    },
+    'dzynwqi4': {
+      'ar': '\$425.24',
+      'en': '',
+    },
+    '6hukh2tg': {
+      'ar': 'المبلغ: ',
+      'en': '',
+    },
+    'my0bpgqe': {
+      'ar': '\$100',
+      'en': '',
+    },
+    'p5301wne': {
+      'ar': 'الباقي: ',
+      'en': '',
+    },
+    'x8q9zv2v': {
+      'ar': '\$325.24',
+      'en': '',
+    },
+    'bdn0hzbv': {
+      'ar': 'تحويل الى حساب  ',
+      'en': '',
+    },
+    '6915ed9m': {
+      'ar': 'Mastercard Ending in 4123',
+      'en': '',
+    },
+    '7086kl7y': {
+      'ar': 'ILS 4205.29',
+      'en': '',
+    },
+    'of0t09zx': {
+      'ar': 'المبلغ: ',
+      'en': '',
+    },
+    '0wo54mur': {
+      'ar': 'ILS 4205.29',
+      'en': '',
+    },
+    '2theifrp': {
+      'ar': 'الناتج',
+      'en': '',
+    },
+    've6j84mu': {
+      'ar': 'ILS 4565.29',
+      'en': '',
+    },
+    'nekoz6a2': {
+      'ar': 'سعر الصرف',
+      'en': '',
+    },
+    'ef295384': {
+      'ar': 'ILS 3.72 = \$1',
+      'en': '',
+    },
+    '9lqhcuai': {
+      'ar': 'تأكيد ',
+      'en': '',
+    },
+    'kvlrhd8q': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_03
+  {
+    'bqk6hgnw': {
+      'ar': 'معلوماتك الشخصية',
+      'en': '',
+    },
+    'q7ve0j8x': {
+      'ar': '7',
+      'en': '',
+    },
+    'ewexqkqz': {
+      'ar': '6',
+      'en': '',
+    },
+    '9dytv4p0': {
+      'ar': '5',
+      'en': '',
+    },
+    'xurogjlo': {
+      'ar': '4',
+      'en': '',
+    },
+    'jqv5l81n': {
+      'ar': '3',
+      'en': '',
+    },
+    'sdeo1sm7': {
+      'ar': '2',
+      'en': '',
+    },
+    '9ftbo6mx': {
+      'ar': '1',
+      'en': '',
+    },
+    'uroujvhf': {
+      'ar': 'هل أنت مقيم في البلد',
+      'en': '',
+    },
+    'afjbsqja': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    'f5rjr8oo': {
+      'ar': 'لا',
+      'en': '',
+    },
+    '6o1swgu5': {
+      'ar': 'طولكرم',
+      'en': '',
+    },
+    'nmwn1g3c': {
+      'ar': 'الخليل',
+      'en': '',
+    },
+    '12065brl': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'btro9yps': {
+      'ar': 'مقيم في البلد؟',
+      'en': '',
+    },
+    'w8fc26vi': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'tv5scspx': {
+      'ar': 'هل عندك جواز أمريكي',
+      'en': '',
+    },
+    'rbncbqss': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    't62zgocx': {
+      'ar': 'لا',
+      'en': '',
+    },
+    '8xxpotti': {
+      'ar': 'عندك جواز سفر أمريكي؟',
+      'en': '',
+    },
+    '26jpolzb': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'fgb7p83i': {
+      'ar': 'المهنة',
+      'en': '',
+    },
+    '1vskji67': {
+      'ar': '',
+      'en': '',
+    },
+    '8jw98ap3': {
+      'ar': 'المهنة',
+      'en': '',
+    },
+    '5i8vcalm': {
+      'ar': 'مكان العمل',
+      'en': '',
+    },
+    '3wiufgi9': {
+      'ar': '',
+      'en': '',
+    },
+    '825ld0i8': {
+      'ar': 'مكان العمل',
+      'en': '',
+    },
+    'bvo31zkk': {
+      'ar': 'دخلك الشهري بالدولار',
+      'en': '',
+    },
+    '5w21n1s1': {
+      'ar': '',
+      'en': '',
+    },
+    'cki60vlr': {
+      'ar': 'الدخل الشهري',
+      'en': '',
+    },
+    '4bmwbw9n': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    '5g4y5rge': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_05
+  {
+    'tlsedmig': {
+      'ar': 'طبيعة حسابك',
+      'en': '',
+    },
+    '1ctislht': {
+      'ar': '7',
+      'en': '',
+    },
+    'u6yl7pi5': {
+      'ar': '6',
+      'en': '',
+    },
+    '1ulxndzu': {
+      'ar': '5',
+      'en': '',
+    },
+    'dhkwr4c7': {
+      'ar': '4',
+      'en': '',
+    },
+    '7d4pdf2s': {
+      'ar': '3',
+      'en': '',
+    },
+    'idysyybb': {
+      'ar': '2',
+      'en': '',
+    },
+    'j0fegxwu': {
+      'ar': '1',
+      'en': '',
+    },
+    'gdk2t82t': {
+      'ar': 'هل أنت المستفيد الحقيقي من الحساب؟',
+      'en': '',
+    },
+    'n5ifl7pf': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    'do0uczj5': {
+      'ar': 'لا',
+      'en': '',
+    },
+    '0t8zizvu': {
+      'ar': 'هل أنت معرض سياسيا',
+      'en': '',
+    },
+    'bdv4ojpq': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'igttbcem': {
+      'ar': ' اسم المستفيد الحقيقي و طبيعة العلاقة ',
+      'en': '',
+    },
+    '1vatub9u': {
+      'ar': '',
+      'en': '',
+    },
+    'gdczccov': {
+      'ar': ' اسم المستفيد الحقيقي و طبيعة العلاقة ',
+      'en': '',
+    },
+    's0hgt3cz': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'pjy8nseh': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // DetailsReceipt
+  {
+    'rlkgl0jb': {
+      'ar': 'تفاصيل الحوالة',
+      'en': '',
+    },
+    'gwvb64zo': {
+      'ar': 'المبلغ المراد تحويله',
+      'en': '',
+    },
+    'l13k1m3t': {
+      'ar': '\$25,250',
+      'en': '',
+    },
+    '6ghsqz1c': {
+      'ar': 'الرقم :  ',
+      'en': '',
+    },
+    '5tjyfmxy': {
+      'ar': '056982453',
+      'en': '',
+    },
+    'jlnohcyj': {
+      'ar': 'رقم البطاقة :  ',
+      'en': '',
+    },
+    '32nits09': {
+      'ar': '5201',
+      'en': '',
+    },
+    'tskvpav0': {
+      'ar': 'الهدف من التحويل :  ',
+      'en': '',
+    },
+    '06feclzd': {
+      'ar': 'تحويل مبلغ لصديق ',
+      'en': '',
+    },
+    'eb6zsi1i': {
+      'ar': 'تأكيد',
+      'en': '',
+    },
+    'ikp3qll2': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // confirm_transfer_between_friends_old
+  {
+    'truneh6l': {
+      'ar': 'تأكيد التحويل لصديق',
+      'en': '',
+    },
+    'o83ax2uf': {
+      'ar': 'تحويل من حساب ',
+      'en': '',
+    },
+    '5rt9xf5u': {
+      'ar': '4012 5421 2322 6521',
+      'en': '',
+    },
+    '0u697jmf': {
+      'ar': '\$425.24',
+      'en': '',
+    },
+    'sxgsnv5g': {
+      'ar': 'رقم الهاتف: ',
+      'en': '',
+    },
+    'dfulps16': {
+      'ar': '0569718347',
+      'en': '',
+    },
+    'n9vdl0hl': {
+      'ar': 'المبلغ: ',
+      'en': '',
+    },
+    'a0x5ttbz': {
+      'ar': '\$100',
+      'en': '',
+    },
+    'u9kq7zz8': {
+      'ar': 'الباقي: ',
+      'en': '',
+    },
+    'qx08q154': {
+      'ar': '\$325.24',
+      'en': '',
+    },
+    '4qitr4j0': {
+      'ar': 'تحويل الى حساب  ',
+      'en': '',
+    },
+    'u37rv44l': {
+      'ar': 'Mastercard Ending in 4123',
+      'en': '',
+    },
+    '5sg1xdr6': {
+      'ar': 'المبلغ: ',
+      'en': '',
+    },
+    'glywilo3': {
+      'ar': 'ILS 4205.29',
+      'en': '',
+    },
+    'qk31ay10': {
+      'ar': 'الناتج',
+      'en': '',
+    },
+    'psm6l883': {
+      'ar': 'ILS 4565.29',
+      'en': '',
+    },
+    'k1013p9n': {
+      'ar': 'سعر الصرف',
+      'en': '',
+    },
+    '40dc3fyf': {
+      'ar': 'ILS 3.72 = \$1',
+      'en': '',
+    },
+    'g42425zj': {
+      'ar': 'تأكيد ',
+      'en': '',
+    },
+    '3bzww1bw': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // details_receipt_between_freineds
+  {
+    '557qyliz': {
+      'ar': 'إشعار تحويل ',
+      'en': '',
+    },
+    '8u5s3kdp': {
+      'ar': 'من',
+      'en': '',
+    },
+    'bp9j12y6': {
+      'ar': 'محمد علي ربحي حج',
+      'en': '',
+    },
+    'jcodl840': {
+      'ar': '400 دولار أمريكي',
+      'en': '',
+    },
+    'b4rghdc4': {
+      'ar': 'إلى',
+      'en': '',
+    },
+    'j75tx4ic': {
+      'ar': 'احمد عدنان عماد خريوش',
+      'en': '',
+    },
+    'l8prkq3a': {
+      'ar': '1493.65  شيقل',
+      'en': '',
+    },
+    'c1taeylq': {
+      'ar': 'رقم هاتف المستفيد:     ',
+      'en': '',
+    },
+    'klshmt2t': {
+      'ar': '452224444444',
+      'en': '',
+    },
+    '9yc1rnuq': {
+      'ar': 'سعر التحويل    ',
+      'en': '',
+    },
+    'uvwprbrm': {
+      'ar': '0.2678',
+      'en': '',
+    },
+    '55xtsanr': {
+      'ar': 'تاريخ الحركة    ',
+      'en': '',
+    },
+    'lr59zkft': {
+      'ar': '30/07/2024',
+      'en': '',
+    },
+    'i2amd03h': {
+      'ar': 'الرقم المرجعي    ',
+      'en': '',
+    },
+    '1bzkc9tu': {
+      'ar': '985742',
+      'en': '',
+    },
+    'a0gypbn7': {
+      'ar': 'العودة إلى الصفحة الرئيسية ',
+      'en': '',
+    },
+    'oyawx3t8': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // confirm_transfer_between_friends
+  {
+    'd29j6etm': {
+      'ar': 'تأكيد التحويل لصديق',
+      'en': '',
+    },
+    'd2k4fk0b': {
+      'ar': 'من',
+      'en': '',
+    },
+    '25j8ynvt': {
+      'ar': '4012 5421 2322 6521',
+      'en': '',
+    },
+    'xxcnxg3a': {
+      'ar': '\$725.24',
+      'en': '',
+    },
+    'v8skjqoe': {
+      'ar': 'محمد علي ربحي حج',
+      'en': '',
+    },
+    'famtr075': {
+      'ar': '400 دولار أمريكي',
+      'en': '',
+    },
+    'ktpl4i3i': {
+      'ar': 'رقم الهاتف: ',
+      'en': '',
+    },
+    'twcdlx8x': {
+      'ar': '0569718347',
+      'en': '',
+    },
+    '9469oihh': {
+      'ar': 'رصيد البطاقة بعد التحويل:',
+      'en': '',
+    },
+    '2akp7w76': {
+      'ar': '\$325.24',
+      'en': '',
+    },
+    'xglo4xli': {
+      'ar': 'إلى',
+      'en': '',
+    },
+    'hldlatz0': {
+      'ar': 'Mastercard Ending in 4123',
+      'en': '',
+    },
+    'qhuf7lae': {
+      'ar': 'احمد  خريوش',
+      'en': '',
+    },
+    'of136owk': {
+      'ar': '1493.65  شيقل',
+      'en': '',
+    },
+    '911r0zlk': {
+      'ar': 'رقم الهاتف: ',
+      'en': '',
+    },
+    'i2wof63l': {
+      'ar': '0569718347',
+      'en': '',
+    },
+    '7yfdl2ft': {
+      'ar': 'سعر التحويل    ',
+      'en': '',
+    },
+    '7tetyknn': {
+      'ar': '0.2678',
+      'en': '',
+    },
+    '3aqgsgal': {
+      'ar': 'تأكيد ',
+      'en': '',
+    },
+    'ni2f36n1': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // card_limits
+  {
+    'haicrzyo': {
+      'ar': 'قيود البطاقة',
+      'en': '',
+    },
+    '290trq5n': {
+      'ar': 'الشراء عبر الانترنت',
+      'en': '',
+    },
+    'ryd9xzdd': {
+      'ar': 'يوميا',
+      'en': '',
+    },
+    'bsw2hzk3': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'idsetwnf': {
+      'ar': '200  NIS',
+      'en': '',
+    },
+    '87ovu4el': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    'yqlkr8i9': {
+      'ar': '0.00 NIS',
+      'en': '',
+    },
+    'tpxqrxrn': {
+      'ar': 'شهريا',
+      'en': '',
+    },
+    'a9m3ypjl': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'd5698hjb': {
+      'ar': '1000  NIS',
+      'en': '',
+    },
+    'qxr9vybk': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    '9gkf66d5': {
+      'ar': '100.50 NIS',
+      'en': '',
+    },
+    'c28orvgg': {
+      'ar': 'السحب النقدي',
+      'en': '',
+    },
+    'jhqfsb2b': {
+      'ar': 'يوميا',
+      'en': '',
+    },
+    'by3dn7g1': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'zgzocf3t': {
+      'ar': 'Unlimited',
+      'en': '',
+    },
+    'vw9olpky': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    'nchlru8s': {
+      'ar': '0.00 NIS',
+      'en': '',
+    },
+    'xzwtdxo7': {
+      'ar': 'شهريا',
+      'en': '',
+    },
+    'lt14blaa': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'dm5ureoq': {
+      'ar': '200  NIS',
+      'en': '',
+    },
+    'mr8w610x': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    '285yy2fy': {
+      'ar': '50.50 NIS',
+      'en': '',
+    },
+    'j9wdxfqm': {
+      'ar': 'المدفوعات',
+      'en': '',
+    },
+    'oz8wuha5': {
+      'ar': 'يوميا',
+      'en': '',
+    },
+    'yqc515t4': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'bwamgs4d': {
+      'ar': '500  NIS',
+      'en': '',
+    },
+    '52893xaz': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    '4j8cx1cv': {
+      'ar': '150.00 NIS',
+      'en': '',
+    },
+    'igp67d31': {
+      'ar': 'شهريا',
+      'en': '',
+    },
+    'r6xnueov': {
+      'ar': 'الحد',
+      'en': '',
+    },
+    'pg65poul': {
+      'ar': '700  NIS',
+      'en': '',
+    },
+    '720rzu66': {
+      'ar': 'المستخدم',
+      'en': '',
+    },
+    'ftg9bd6x': {
+      'ar': '250.00 NIS',
+      'en': '',
+    },
+    'mm2yzqyl': {
+      'ar': 'تعديل',
+      'en': '',
+    },
+    '0tb6xhcz': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_08
+  {
+    'zwhfi7na': {
+      'ar': 'إرفاق الصور',
+      'en': '',
+    },
+    'mp3k2ofz': {
+      'ar': 'description',
+      'en': '',
+    },
+    'tfom7h4e': {
+      'ar': 'description',
+      'en': '',
+    },
+    '6jkjfkmj': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_06
+  {
+    'sg2jhd5x': {
+      'ar': 'معلوماتك الشخصية',
+      'en': '',
+    },
+    'q0hhs5qv': {
+      'ar': '7',
+      'en': '',
+    },
+    'y1zt6sxo': {
+      'ar': '6',
+      'en': '',
+    },
+    '0bfzx3j8': {
+      'ar': '5',
+      'en': '',
+    },
+    'yppsjt4m': {
+      'ar': '4',
+      'en': '',
+    },
+    'jb44c62z': {
+      'ar': '3',
+      'en': '',
+    },
+    '187c2h58': {
+      'ar': '2',
+      'en': '',
+    },
+    'o90qaw7j': {
+      'ar': '1',
+      'en': '',
+    },
+    '2fczhuql': {
+      'ar': 'هل أنت معرض سياسيا',
+      'en': '',
+    },
+    'p6zgikvq': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    '4r3n20ct': {
+      'ar': 'لا',
+      'en': '',
+    },
+    '3ths88ya': {
+      'ar': 'هل أنت معرض سياسيا',
+      'en': '',
+    },
+    'bey4z88s': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'junmb9xt': {
+      'ar': 'اسم المعرض سياسيا (بالعربي)',
+      'en': '',
+    },
+    'i3huoxzz': {
+      'ar': '',
+      'en': '',
+    },
+    'bcv9kzes': {
+      'ar': 'اسم المعرض سياسيا (بالعربي)',
+      'en': '',
+    },
+    'j4rwrsn3': {
+      'ar': 'اسم المعرض سياسيا (بالانجليزي)',
+      'en': '',
+    },
+    'jrzargp1': {
+      'ar': '',
+      'en': '',
+    },
+    'u7i1idxb': {
+      'ar': 'اسم المعرض سياسيا (بالانجليزي)',
+      'en': '',
+    },
+    'xr0qsc4r': {
+      'ar': 'صلة القرابة مع المعرض سياسيا',
+      'en': '',
+    },
+    'dmrx6uya': {
+      'ar': '',
+      'en': '',
+    },
+    'gagxqvml': {
+      'ar': 'صلة القرابة مع المعرض سياسيا',
+      'en': '',
+    },
+    'u6bu8xfy': {
+      'ar': 'المنصب للمعرض سياسيا',
+      'en': '',
+    },
+    'pq098rwi': {
+      'ar': '',
+      'en': '',
+    },
+    'q5333xki': {
+      'ar': 'المنصب للمعرض سياسيا\n',
+      'en': '',
+    },
+    '0qtinpje': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'irznv3uq': {
       'ar': 'Home',
       'en': '',
     },
   },
   // set_password_exist_flow
   {
-    'kfr81cdk': {
+    'qj8edcp1': {
       'ar': 'كلمة السر',
       'en': '',
     },
-    'ysj9ryhy': {
-      'ar': 'دخل كلمة سر ',
+    '5hbla8hx': {
+      'ar': 'دخل باقي المعلومات',
       'en': '',
     },
-    '8nvn3b9n': {
+    'm6sf741h': {
+      'ar': 'إيميلك هو :',
+      'en': '',
+    },
+    'hlg7j9ky': {
+      'ar': 'بمجرد إنشاء حسابك سنرسل لك رابط لتأكيد الايميل',
+      'en': '',
+    },
+    'pqomtgby': {
       'ar': 'كلمة السر',
       'en': '',
     },
-    'i4ur4bxt': {
+    'b4d362pe': {
       'ar': 'تأكيد كلمة السر',
       'en': '',
     },
-    'hhis8fh1': {
+    'jdfo80hm': {
       'ar':
           'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
       'en': '',
     },
-    'ksod8vm5': {
+    'ah2o7vrj': {
+      'ar': 'دخل الرمز السري  مكون من اربع خانات',
+      'en': '',
+    },
+    'zsckrnmu': {
       'ar': 'تسجيل',
       'en': '',
     },
-    'y2xqsu9a': {
+    'iwe5m9b5': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // about_us
+  {
+    'h2geav6c': {
+      'ar': 'تفاصيل عنا',
+      'en': '',
+    },
+    'oex1z0ns': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // terms_and_conditions
+  {
+    'h9i4rbsx': {
+      'ar': 'الشروط و الأحكام',
+      'en': '',
+    },
+    '96y42bfw': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // phone_reset_password
+  {
+    'fvzfxcqw': {
+      'ar': 'تغير كلمة السر',
+      'en': '',
+    },
+    'wuwr4gcb': {
+      'ar': 'الرجاء ادخال رقم الهوية بشكل صحيح',
+      'en': '',
+    },
+    'v854yanp': {
+      'ar': 'ادخال رقم الهوية',
+      'en': '',
+    },
+    '4ydgmlj5': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'nm2mbj7p': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // confirm_reset_password
+  {
+    '2cug9a5q': {
+      'ar': 'تغير كلمة السر',
+      'en': '',
+    },
+    'ff3upr4v': {
+      'ar': 'كلمة السر الجديدة',
+      'en': '',
+    },
+    'xibhd1bs': {
+      'ar': 'تأكيد كلمة السر',
+      'en': '',
+    },
+    'v4jg8lhr': {
+      'ar': 'تأكيد',
+      'en': '',
+    },
+    'djfdrczz': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // agent_list
+  {
+    '91cfvzqe': {
+      'ar': 'قائمة الوكلاء',
+      'en': '',
+    },
+    'et7esr06': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // otp_email_reset_password
+  {
+    'de1cfdxp': {
+      'ar': 'تأكيد إيميلك',
+      'en': '',
+    },
+    'nyn9hgws': {
+      'ar': 'بعتنالك رمز تحقق على إيميلك',
+      'en': '',
+    },
+    '0u39zzxp': {
+      'ar': '\n',
+      'en': '',
+    },
+    'k2o5twom': {
+      'ar': 'xxxxx@gmail.com',
+      'en': '',
+    },
+    'skza5adf': {
+      'ar': '\n',
+      'en': '',
+    },
+    'l9zv2cch': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    'qh3rq7c0': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // otp_phone_reset_password
+  {
+    'f89lzjja': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    '8870pp45': {
+      'ar': 'بعتنالك رمز تحقق على تليفونك  رقم',
+      'en': '',
+    },
+    'j4stwg16': {
+      'ar': '\n',
+      'en': '',
+    },
+    'a3gk6gid': {
+      'ar': '\n',
+      'en': '',
+    },
+    'pxsjwm17': {
+      'ar': ' ممكن تشوف مسجاتك  وتدخل الرمز؟',
+      'en': '',
+    },
+    '9em721k3': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    '1y0ohfao': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    '0q24e3y0': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // registeration_02Copy
+  {
+    'hfce6qeb': {
+      'ar': 'معلوماتك الشخصية',
+      'en': '',
+    },
+    '237bqagw': {
+      'ar': 'دخل المعلومات بشكل صحيح',
+      'en': '',
+    },
+    'zptptm6s': {
+      'ar': 'اختار تاريخ ميلادك',
+      'en': '',
+    },
+    'vwbeeetc': {
+      'ar': ' مكان الميلاد ',
+      'en': '',
+    },
+    'mr04czpu': {
+      'ar': 'رام الله',
+      'en': '',
+    },
+    '8unec181': {
+      'ar': 'نابلس',
+      'en': '',
+    },
+    'a88vr3st': {
+      'ar': 'طولكرم',
+      'en': '',
+    },
+    'nqv1u0dt': {
+      'ar': 'الخليل',
+      'en': '',
+    },
+    'syi4b462': {
+      'ar': 'أنثى',
+      'en': '',
+    },
+    'a39kpk4q': {
+      'ar': 'المدينة',
+      'en': '',
+    },
+    '1kca2mao': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'takmk9lm': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'aizmi0ii': {
       'ar': 'Home',
       'en': '',
     },
@@ -1342,6 +2563,107 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // error_componentCopy
+  {
+    'w1jz0htw': {
+      'ar': 'لا  يوجد رصيد كافي في\nمحفظتك',
+      'en': '',
+    },
+    'x8w737e8': {
+      'ar': 'موافق',
+      'en': '',
+    },
+  },
+  // Card61TransferDetailsSmall
+  {
+    'cyiq8fob': {
+      'ar': 'يبدو انه الشخص عند أكثر من بطاقة ',
+      'en': '',
+    },
+    'nm3mpspk': {
+      'ar': 'يرجى ادخال اخر اربع ارقام  من البطاقة',
+      'en': '',
+    },
+    'sgku2hqq': {
+      'ar': 'تأكيد',
+      'en': '',
+    },
+    '3zrntypz': {
+      'ar': 'إلغاء',
+      'en': '',
+    },
+  },
+  // block_card_component
+  {
+    '7xsfy4k8': {
+      'ar':
+          'هل أنت متأكد من أنك تريد حظر هذه البطاقة؟ سيتم إيقاف جميع المعاملات المالية فورًا بعد حظر البطاقة',
+      'en': '',
+    },
+    'ec1qwqbv': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    'fn8r00q7': {
+      'ar': 'لا',
+      'en': '',
+    },
+  },
+  // cancel_card_component
+  {
+    'igtr41hr': {
+      'ar':
+          'هل أنت متأكد من أنك تريد إلغاء هذه البطاقة؟ سيتم إلغاء البطاقة بشكل دائم.',
+      'en': '',
+    },
+    '4hr9f17o': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    'jfxi1b37': {
+      'ar': 'لا',
+      'en': '',
+    },
+  },
+  // home_page_list_transaction_component
+  {
+    'nsavudjo': {
+      'ar': 'شحن رصيد موبايل',
+      'en': '',
+    },
+    'ay52o26k': {
+      'ar': '2921532903099',
+      'en': '',
+    },
+    'ca2wtsdn': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+    '3xp6eido': {
+      'ar': 'شحن رصيد موبايل',
+      'en': '',
+    },
+    'jgngh5xx': {
+      'ar': '2921532903099',
+      'en': '',
+    },
+    'ekp45l3e': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+    'qrbttcv9': {
+      'ar': 'شحن رصيد موبايل',
+      'en': '',
+    },
+    'gsajqi1l': {
+      'ar': '2921532903099',
+      'en': '',
+    },
+    'hiemgsju': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {
@@ -1349,6 +2671,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ioukah6f': {
+      'ar': '',
+      'en': '',
+    },
+    'qwiw8hej': {
       'ar': '',
       'en': '',
     },

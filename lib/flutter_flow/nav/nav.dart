@@ -45,7 +45,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const LoginWidget(),
+          : const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -63,7 +63,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const LoginWidget(),
+              : const NavBarPage(),
           routes: [
             FFRoute(
               name: 'home_page',
@@ -100,9 +100,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const RegisterPage2PhoneNumberWidget(),
             ),
             FFRoute(
-              name: 'register_page_3_otp',
-              path: 'registerPage3Otp',
-              builder: (context, params) => RegisterPage3OtpWidget(
+              name: 'otp_does_not_exist_flow',
+              path: 'otpDoesNotExistFlow',
+              builder: (context, params) => OtpDoesNotExistFlowWidget(
                 phoneNumber: params.getParam(
                   'phoneNumber',
                   ParamType.String,
@@ -150,11 +150,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration01Widget(),
             ),
             FFRoute(
-              name: 'enable_notifications',
-              path: 'enableNotifications',
-              builder: (context, params) => const EnableNotificationsWidget(),
-            ),
-            FFRoute(
               name: 'qr_code_page',
               path: 'qrCodePage',
               builder: (context, params) => params.isEmpty
@@ -182,9 +177,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration02Widget(),
             ),
             FFRoute(
+              name: 'registeration_07',
+              path: 'registeration07',
+              builder: (context, params) => const Registeration07Widget(),
+            ),
+            FFRoute(
               name: 'registeration_04',
               path: 'registeration04',
               builder: (context, params) => const Registeration04Widget(),
+            ),
+            FFRoute(
+              name: 'send_money_to_friend',
+              path: 'sendMoneyToFriend',
+              builder: (context, params) => const SendMoneyToFriendWidget(),
+            ),
+            FFRoute(
+              name: 'transfer_money_between_cards',
+              path: 'transferMoneyBetweenCards',
+              builder: (context, params) => const TransferMoneyBetweenCardsWidget(),
+            ),
+            FFRoute(
+              name: 'confirm_transfer_between_cards',
+              path: 'confirmTransferBetweenCards',
+              builder: (context, params) => const ConfirmTransferBetweenCardsWidget(),
             ),
             FFRoute(
               name: 'registeration_03',
@@ -192,9 +207,102 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration03Widget(),
             ),
             FFRoute(
+              name: 'registeration_05',
+              path: 'registeration05',
+              builder: (context, params) => const Registeration05Widget(),
+            ),
+            FFRoute(
+              name: 'DetailsReceipt',
+              path: 'detailsReceipt',
+              builder: (context, params) => const DetailsReceiptWidget(),
+            ),
+            FFRoute(
+              name: 'confirm_transfer_between_friends_old',
+              path: 'confirmTransferBetweenFriendsOld',
+              builder: (context, params) =>
+                  const ConfirmTransferBetweenFriendsOldWidget(),
+            ),
+            FFRoute(
+              name: 'details_receipt_between_freineds',
+              path: 'detailsReceiptBetweenFreineds',
+              builder: (context, params) =>
+                  const DetailsReceiptBetweenFreinedsWidget(),
+            ),
+            FFRoute(
+              name: 'confirm_transfer_between_friends',
+              path: 'confirmTransferBetweenFriends',
+              builder: (context, params) =>
+                  const ConfirmTransferBetweenFriendsWidget(),
+            ),
+            FFRoute(
+              name: 'card_limits',
+              path: 'cardLimits',
+              builder: (context, params) => const CardLimitsWidget(),
+            ),
+            FFRoute(
+              name: 'registeration_08',
+              path: 'registeration08',
+              builder: (context, params) => const Registeration08Widget(),
+            ),
+            FFRoute(
+              name: 'registeration_06',
+              path: 'registeration06',
+              builder: (context, params) => const Registeration06Widget(),
+            ),
+            FFRoute(
               name: 'set_password_exist_flow',
               path: 'setPasswordExistFlow',
               builder: (context, params) => const SetPasswordExistFlowWidget(),
+            ),
+            FFRoute(
+              name: 'about_us',
+              path: 'aboutUs',
+              builder: (context, params) => const AboutUsWidget(),
+            ),
+            FFRoute(
+              name: 'terms_and_conditions',
+              path: 'termsAndConditions',
+              builder: (context, params) => const TermsAndConditionsWidget(),
+            ),
+            FFRoute(
+              name: 'phone_reset_password',
+              path: 'phoneResetPassword',
+              builder: (context, params) => const PhoneResetPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'confirm_reset_password',
+              path: 'confirmResetPassword',
+              builder: (context, params) => const ConfirmResetPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'agent_list',
+              path: 'agentList',
+              builder: (context, params) => const AgentListWidget(),
+            ),
+            FFRoute(
+              name: 'otp_email_reset_password',
+              path: 'otpEmailResetPassword',
+              builder: (context, params) => OtpEmailResetPasswordWidget(
+                phoneNumber: params.getParam(
+                  'phoneNumber',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'otp_phone_reset_password',
+              path: 'otpPhoneResetPassword',
+              builder: (context, params) => OtpPhoneResetPasswordWidget(
+                phoneNumber: params.getParam(
+                  'phoneNumber',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'registeration_02Copy',
+              path: 'registeration02Copy',
+              builder: (context, params) => const Registeration02CopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

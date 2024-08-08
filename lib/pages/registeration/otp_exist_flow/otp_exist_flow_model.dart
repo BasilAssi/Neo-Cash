@@ -13,7 +13,6 @@ class OtpExistFlowModel extends FlutterFlowModel<OtpExistFlowWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
@@ -37,7 +36,6 @@ class OtpExistFlowModel extends FlutterFlowModel<OtpExistFlowWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     pinCodeController?.dispose();
     timerController.dispose();
   }
