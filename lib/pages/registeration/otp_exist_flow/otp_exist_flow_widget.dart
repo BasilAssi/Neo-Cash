@@ -51,23 +51,21 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_ios_rounded,
-              color: Colors.white,
+              color: FlutterFlowTheme.of(context).primary,
               size: 30.0,
             ),
             onPressed: () async {
@@ -76,7 +74,7 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
           ),
           actions: const [],
           centerTitle: true,
-          elevation: 2.0,
+          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
@@ -86,7 +84,7 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 0.5,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
               Container(
@@ -281,7 +279,7 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
                             _model.pinCodeController!.text,
                           );
 
-                          context.pushNamed('set_password_exist_flow');
+                          context.pushNamed('login');
 
                           setState(() {});
                         },

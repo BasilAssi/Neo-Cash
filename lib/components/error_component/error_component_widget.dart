@@ -58,7 +58,7 @@ class _ErrorComponentWidgetState extends State<ErrorComponentWidget> {
                 height: MediaQuery.sizeOf(context).height * 0.7,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(25.0),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Align(
@@ -81,6 +81,8 @@ class _ErrorComponentWidgetState extends State<ErrorComponentWidget> {
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .bodyMediumFamily,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,

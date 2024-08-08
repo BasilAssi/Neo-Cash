@@ -20,7 +20,7 @@ Future setDeviceInfo() async {
   final deviceInfo = DeviceInfoPlugin();
   final appState = FFAppState(); // Access the app state
 
-  appState.deviceInformation.OS = Platform.isIOS ? 'iOS' : 'Android';
+  appState.deviceInformation.os = Platform.isIOS ? 'iOS' : 'Android';
 
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;

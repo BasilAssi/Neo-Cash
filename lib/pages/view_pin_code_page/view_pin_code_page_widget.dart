@@ -49,14 +49,12 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
@@ -65,14 +63,13 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     FlutterFlowIconButton(
                       borderColor: FlutterFlowTheme.of(context).primary,
                       borderRadius: 20.0,
                       borderWidth: 1.0,
                       buttonSize: 40.0,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
                       icon: Icon(
                         Icons.close_sharp,
                         color: FlutterFlowTheme.of(context).primary,
@@ -128,6 +125,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 fontSize: 32.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
@@ -147,7 +145,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleSmallFamily,
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: FlutterFlowTheme.of(context).textColor,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -168,6 +166,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                             .override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyLargeFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context).bodyLargeFamily),
@@ -184,7 +183,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                         pinTheme: PinTheme(
                           fieldHeight: 64.0,
                           fieldWidth: 74.0,
-                          borderWidth: 2.0,
+                          borderWidth: 1.0,
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
@@ -192,10 +191,10 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                             topRight: Radius.circular(12.0),
                           ),
                           shape: PinCodeFieldShape.box,
-                          activeColor: FlutterFlowTheme.of(context).primaryText,
+                          activeColor: FlutterFlowTheme.of(context).textColor,
                           inactiveColor: FlutterFlowTheme.of(context).alternate,
                           activeFillColor:
-                              FlutterFlowTheme.of(context).primaryText,
+                              FlutterFlowTheme.of(context).textColor,
                           inactiveFillColor:
                               FlutterFlowTheme.of(context).alternate,
                         ),
@@ -215,7 +214,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleSmallFamily,
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: FlutterFlowTheme.of(context).textColor,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -255,8 +254,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineSmallFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color: FlutterFlowTheme.of(context).textColor,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -278,10 +276,10 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .titleSmallFamily,
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                          .textColor,
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w800,
+                                      fontWeight: FontWeight.w600,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
@@ -331,7 +329,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                               color: Colors.transparent,
                               width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),

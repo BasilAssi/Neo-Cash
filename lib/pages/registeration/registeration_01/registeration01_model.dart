@@ -10,7 +10,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for FirstNameARTextField widget.
   FocusNode? firstNameARTextFieldFocusNode;
   TextEditingController? firstNameARTextFieldTextController;
@@ -31,11 +30,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? familyNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameARTextFieldTextControllerValidator;
-  // State field(s) for MotherNameARTextField widget.
-  FocusNode? motherNameARTextFieldFocusNode;
-  TextEditingController? motherNameARTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      motherNameARTextFieldTextControllerValidator;
   // State field(s) for FirstNameENTextField widget.
   FocusNode? firstNameENTextFieldFocusNode;
   TextEditingController? firstNameENTextFieldTextController;
@@ -63,7 +57,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     firstNameARTextFieldFocusNode?.dispose();
     firstNameARTextFieldTextController?.dispose();
 
@@ -75,9 +68,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
     familyNameARTextFieldFocusNode?.dispose();
     familyNameARTextFieldTextController?.dispose();
-
-    motherNameARTextFieldFocusNode?.dispose();
-    motherNameARTextFieldTextController?.dispose();
 
     firstNameENTextFieldFocusNode?.dispose();
     firstNameENTextFieldTextController?.dispose();

@@ -8,7 +8,6 @@ class RegisterPage2PhoneNumberModel
     extends FlutterFlowModel<RegisterPage2PhoneNumberWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
@@ -24,7 +23,6 @@ class RegisterPage2PhoneNumberModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

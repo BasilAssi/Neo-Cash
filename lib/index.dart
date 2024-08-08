@@ -1,7 +1,7 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/home/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/pages/transactions_home_page/transactions_home_page_widget.dart'
+export '/pages/home/transactions_home_page/transactions_home_page_widget.dart'
     show TransactionsHomePageWidget;
 export '/pages/notification_page/notification_page_widget.dart'
     show NotificationPageWidget;
@@ -9,32 +9,70 @@ export '/pages/registeration/register_page_1/register_page1_widget.dart'
     show RegisterPage1Widget;
 export '/pages/register_page_2_phone_number/register_page2_phone_number_widget.dart'
     show RegisterPage2PhoneNumberWidget;
-export '/pages/register_page_3_otp/register_page3_otp_widget.dart'
-    show RegisterPage3OtpWidget;
-export '/pages/card_details/card_details_widget.dart' show CardDetailsWidget;
+export '/pages/registeration/otp_does_not_exist_flow/otp_does_not_exist_flow_widget.dart'
+    show OtpDoesNotExistFlowWidget;
+export '/pages/card/card_details/card_details_widget.dart'
+    show CardDetailsWidget;
 export '/pages/user_profile/user_profile_widget.dart' show UserProfileWidget;
 export '/pages/settings_page/settings_page_widget.dart' show SettingsPageWidget;
 export '/pages/transaction_details_page/transaction_details_page_widget.dart'
     show TransactionDetailsPageWidget;
-export '/pages/card_settings_page/card_settings_page_widget.dart'
+export '/pages/card/card_settings_page/card_settings_page_widget.dart'
     show CardSettingsPageWidget;
 export '/pages/view_pin_code_page/view_pin_code_page_widget.dart'
     show ViewPinCodePageWidget;
 export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
 export '/pages/registeration/registeration_01/registeration01_widget.dart'
     show Registeration01Widget;
-export '/pages/registeration/enable_notifications/enable_notifications_widget.dart'
-    show EnableNotificationsWidget;
-export '/pages/qr_code_page/qr_code_page_widget.dart' show QrCodePageWidget;
+export '/pages/home/qr_code_page/qr_code_page_widget.dart'
+    show QrCodePageWidget;
 export '/pages/registeration/enter_id_page/enter_id_page_widget.dart'
     show EnterIdPageWidget;
 export '/pages/registeration/otp_exist_flow/otp_exist_flow_widget.dart'
     show OtpExistFlowWidget;
 export '/pages/registeration/registeration_02/registeration02_widget.dart'
     show Registeration02Widget;
+export '/pages/registeration/registeration_07/registeration07_widget.dart'
+    show Registeration07Widget;
 export '/pages/registeration/registeration_04/registeration04_widget.dart'
     show Registeration04Widget;
+export '/pages/send_money_to_friend/send_money_to_friend_widget.dart'
+    show SendMoneyToFriendWidget;
+export '/pages/transfer_money_between_cards/transfer_money_between_cards_widget.dart'
+    show TransferMoneyBetweenCardsWidget;
+export '/pages/confirm_transfer_between_cards/confirm_transfer_between_cards_widget.dart'
+    show ConfirmTransferBetweenCardsWidget;
 export '/pages/registeration/registeration_03/registeration03_widget.dart'
     show Registeration03Widget;
+export '/pages/registeration/registeration_05/registeration05_widget.dart'
+    show Registeration05Widget;
+export '/pages/details_receipt/details_receipt_widget.dart'
+    show DetailsReceiptWidget;
+export '/pages/confirm_transfer_between_friends_old/confirm_transfer_between_friends_old_widget.dart'
+    show ConfirmTransferBetweenFriendsOldWidget;
+export '/pages/details_receipt_between_freineds/details_receipt_between_freineds_widget.dart'
+    show DetailsReceiptBetweenFreinedsWidget;
+export '/pages/confirm_transfer_between_friends/confirm_transfer_between_friends_widget.dart'
+    show ConfirmTransferBetweenFriendsWidget;
+export '/pages/card/card_limits/card_limits_widget.dart' show CardLimitsWidget;
+export '/pages/registeration/registeration_08/registeration08_widget.dart'
+    show Registeration08Widget;
+export '/pages/registeration/registeration_06/registeration06_widget.dart'
+    show Registeration06Widget;
 export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_widget.dart'
     show SetPasswordExistFlowWidget;
+export '/pages/static_pages/about_us/about_us_widget.dart' show AboutUsWidget;
+export '/pages/static_pages/terms_and_conditions/terms_and_conditions_widget.dart'
+    show TermsAndConditionsWidget;
+export '/pages/reset_password/phone_reset_password/phone_reset_password_widget.dart'
+    show PhoneResetPasswordWidget;
+export '/pages/reset_password/confirm_reset_password/confirm_reset_password_widget.dart'
+    show ConfirmResetPasswordWidget;
+export '/pages/static_pages/agent_list/agent_list_widget.dart'
+    show AgentListWidget;
+export '/pages/reset_password/otp_email_reset_password/otp_email_reset_password_widget.dart'
+    show OtpEmailResetPasswordWidget;
+export '/pages/reset_password/otp_phone_reset_password/otp_phone_reset_password_widget.dart'
+    show OtpPhoneResetPasswordWidget;
+export '/pages/reset_password/registeration_02_copy/registeration02_copy_widget.dart'
+    show Registeration02CopyWidget;

@@ -10,7 +10,6 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -18,18 +17,33 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
   // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
+  FocusNode? emailTextFieldFocusNode1;
+  TextEditingController? emailTextFieldTextController1;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
+      emailTextFieldTextController1Validator;
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode2;
+  TextEditingController? emailTextFieldTextController2;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextController2Validator;
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode3;
+  TextEditingController? emailTextFieldTextController3;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextController3Validator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    unfocusNode.dispose();
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
+    emailTextFieldFocusNode1?.dispose();
+    emailTextFieldTextController1?.dispose();
+
+    emailTextFieldFocusNode2?.dispose();
+    emailTextFieldTextController2?.dispose();
+
+    emailTextFieldFocusNode3?.dispose();
+    emailTextFieldTextController3?.dispose();
   }
 }
