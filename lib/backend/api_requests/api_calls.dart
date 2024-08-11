@@ -270,7 +270,9 @@ class ListCustomersCall {
         'X-Auth-Token': '$token',
         'applicationType': 'BP-V1.0',
       },
-      params: {},
+      params: {
+        'msgId': msgId,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

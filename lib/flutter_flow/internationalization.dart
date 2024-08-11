@@ -907,6 +907,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم عائلتك',
       'en': '',
     },
+    'gcmgcz6y': {
+      'ar': 'اسم الأم',
+      'en': '',
+    },
     'e3s0b90l': {
       'ar': 'التالي',
       'en': '',
@@ -984,6 +988,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n5zjlx3a': {
       'ar': 'العودة الى الصفحة الرئيسية\n',
+      'en': '',
+    },
+    'nuxhazj7': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    '8e3rsbjp': {
+      'ar': 'رقم الهوية اقل من عشرة ارقام',
+      'en': '',
+    },
+    'w3k77fqk': {
+      'ar': 'رقم الهوية اكبر من عشرة ارقام',
+      'en': '',
+    },
+    '2imdgl09': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     '20mmouhk': {
@@ -1580,27 +1600,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'uroujvhf': {
-      'ar': 'هل أنت مقيم في البلد',
-      'en': '',
+      'ar': 'هل أنت مقيم في البلد؟',
+      'en': 'Are you a resident of the country?',
     },
     'afjbsqja': {
       'ar': 'نعم',
       'en': '',
     },
-    'f5rjr8oo': {
-      'ar': 'لا',
-      'en': '',
-    },
     '6o1swgu5': {
-      'ar': 'طولكرم',
-      'en': '',
-    },
-    'nmwn1g3c': {
-      'ar': 'الخليل',
-      'en': '',
-    },
-    '12065brl': {
-      'ar': 'أنثى',
+      'ar': 'لا',
       'en': '',
     },
     'btro9yps': {
@@ -1612,8 +1620,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'tv5scspx': {
-      'ar': 'هل عندك جواز أمريكي',
-      'en': '',
+      'ar': 'هل عندك جواز أمريكي؟',
+      'en': 'Do you have an American passport?',
     },
     'rbncbqss': {
       'ar': 'نعم',
@@ -1633,7 +1641,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fgb7p83i': {
       'ar': 'المهنة',
-      'en': '',
+      'en': 'Profession',
     },
     '1vskji67': {
       'ar': '',
@@ -2378,7 +2386,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // phone_reset_password
+  // id_reset_password
   {
     'fvzfxcqw': {
       'ar': 'تغير كلمة السر',
@@ -2501,7 +2509,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // registeration_02Copy
+  // basic_infi_reset_password
   {
     'hfce6qeb': {
       'ar': 'معلوماتك الشخصية',

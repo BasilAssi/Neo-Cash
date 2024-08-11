@@ -11,6 +11,7 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -19,13 +20,40 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
   TextEditingController? firstNameTextFieldTextController;
   String? Function(BuildContext, String?)?
       firstNameTextFieldTextControllerValidator;
+  String? _firstNameTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'nuxhazj7' /* Field is required */,
+      );
+    }
+
+    if (val.length < 10) {
+      return FFLocalizations.of(context).getText(
+        '8e3rsbjp' /* رقم الهوية اقل من عشرة ارقام */,
+      );
+    }
+    if (val.length > 10) {
+      return FFLocalizations.of(context).getText(
+        'w3k77fqk' /* رقم الهوية اكبر من عشرة ارقام */,
+      );
+    }
+
+    return null;
+  }
+
+  // Stores action output result for [Validate Form] action in Button widget.
+  bool? identityFormOutput;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (isRegistered)] action in Button widget.
   ApiCallResponse? isRegisteredOutPut;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    firstNameTextFieldTextControllerValidator =
+        _firstNameTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {

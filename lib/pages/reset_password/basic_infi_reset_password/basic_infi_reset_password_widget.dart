@@ -6,26 +6,27 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'registeration02_copy_model.dart';
-export 'registeration02_copy_model.dart';
+import 'basic_infi_reset_password_model.dart';
+export 'basic_infi_reset_password_model.dart';
 
-class Registeration02CopyWidget extends StatefulWidget {
-  const Registeration02CopyWidget({super.key});
+class BasicInfiResetPasswordWidget extends StatefulWidget {
+  const BasicInfiResetPasswordWidget({super.key});
 
   @override
-  State<Registeration02CopyWidget> createState() =>
-      _Registeration02CopyWidgetState();
+  State<BasicInfiResetPasswordWidget> createState() =>
+      _BasicInfiResetPasswordWidgetState();
 }
 
-class _Registeration02CopyWidgetState extends State<Registeration02CopyWidget> {
-  late Registeration02CopyModel _model;
+class _BasicInfiResetPasswordWidgetState
+    extends State<BasicInfiResetPasswordWidget> {
+  late BasicInfiResetPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Registeration02CopyModel());
+    _model = createModel(context, () => BasicInfiResetPasswordModel());
   }
 
   @override

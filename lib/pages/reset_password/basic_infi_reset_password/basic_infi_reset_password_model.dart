@@ -1,10 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'registeration02_copy_widget.dart' show Registeration02CopyWidget;
+import 'basic_infi_reset_password_widget.dart'
+    show BasicInfiResetPasswordWidget;
 import 'package:flutter/material.dart';
 
-class Registeration02CopyModel
-    extends FlutterFlowModel<Registeration02CopyWidget> {
+class BasicInfiResetPasswordModel
+    extends FlutterFlowModel<BasicInfiResetPasswordWidget> {
   ///  Local state fields for this page.
 
   bool? selectedValue = true;

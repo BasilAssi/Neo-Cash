@@ -600,7 +600,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'uroujvhf' /* هل أنت مقيم في البلد */,
+                        'uroujvhf' /* هل أنت مقيم في البلد؟ */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -616,26 +616,18 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowDropDown<String>(
+                    child: FlutterFlowDropDown<bool>(
                       controller: _model.dropDownValueController1 ??=
-                          FormFieldController<String>(null),
-                      options:
-                          List<String>.from(['1', '2', '2', '3', 'FEMALE']),
+                          FormFieldController<bool>(
+                        _model.dropDownValue1 ??= true,
+                      ),
+                      options: List<bool>.from([true, false]),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
                           'afjbsqja' /* نعم */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'f5rjr8oo' /* لا */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          '6o1swgu5' /* طولكرم */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'nmwn1g3c' /* الخليل */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          '12065brl' /* أنثى */,
+                          '6o1swgu5' /* لا */,
                         )
                       ],
                       onChanged: (val) =>
@@ -679,7 +671,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'tv5scspx' /* هل عندك جواز أمريكي */,
+                        'tv5scspx' /* هل عندك جواز أمريكي؟ */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -695,10 +687,10 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowDropDown<String>(
+                    child: FlutterFlowDropDown<bool>(
                       controller: _model.dropDownValueController2 ??=
-                          FormFieldController<String>(null),
-                      options: List<String>.from(['1', '2']),
+                          FormFieldController<bool>(null),
+                      options: List<bool>.from([false, false]),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
                           'rbncbqss' /* نعم */,

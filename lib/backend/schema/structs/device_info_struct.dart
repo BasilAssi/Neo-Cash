@@ -7,28 +7,48 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class DeviceInfoStruct extends BaseStruct {
   DeviceInfoStruct({
-    String? serialNumber,
-    String? deviceName,
+    String? serial,
+    String? name,
+    String? osName,
+    String? osVersion,
     String? brandName,
-    String? os,
-  })  : _serialNumber = serialNumber,
-        _deviceName = deviceName,
+    String? brandVersion,
+    String? biometricSupported,
+  })  : _serial = serial,
+        _name = name,
+        _osName = osName,
+        _osVersion = osVersion,
         _brandName = brandName,
-        _os = os;
+        _brandVersion = brandVersion,
+        _biometricSupported = biometricSupported;
 
-  // "serialNumber" field.
-  String? _serialNumber;
-  String get serialNumber => _serialNumber ?? '';
-  set serialNumber(String? val) => _serialNumber = val;
+  // "serial" field.
+  String? _serial;
+  String get serial => _serial ?? '';
+  set serial(String? val) => _serial = val;
 
-  bool hasSerialNumber() => _serialNumber != null;
+  bool hasSerial() => _serial != null;
 
-  // "deviceName" field.
-  String? _deviceName;
-  String get deviceName => _deviceName ?? '';
-  set deviceName(String? val) => _deviceName = val;
+  // "name" field.
+  String? _name;
+  String get name => _name ?? '';
+  set name(String? val) => _name = val;
 
-  bool hasDeviceName() => _deviceName != null;
+  bool hasName() => _name != null;
+
+  // "osName" field.
+  String? _osName;
+  String get osName => _osName ?? '';
+  set osName(String? val) => _osName = val;
+
+  bool hasOsName() => _osName != null;
+
+  // "osVersion" field.
+  String? _osVersion;
+  String get osVersion => _osVersion ?? '';
+  set osVersion(String? val) => _osVersion = val;
+
+  bool hasOsVersion() => _osVersion != null;
 
   // "brandName" field.
   String? _brandName;
@@ -37,19 +57,29 @@ class DeviceInfoStruct extends BaseStruct {
 
   bool hasBrandName() => _brandName != null;
 
-  // "OS" field.
-  String? _os;
-  String get os => _os ?? '';
-  set os(String? val) => _os = val;
+  // "brandVersion" field.
+  String? _brandVersion;
+  String get brandVersion => _brandVersion ?? '';
+  set brandVersion(String? val) => _brandVersion = val;
 
-  bool hasOs() => _os != null;
+  bool hasBrandVersion() => _brandVersion != null;
+
+  // "biometricSupported" field.
+  String? _biometricSupported;
+  String get biometricSupported => _biometricSupported ?? '';
+  set biometricSupported(String? val) => _biometricSupported = val;
+
+  bool hasBiometricSupported() => _biometricSupported != null;
 
   static DeviceInfoStruct fromMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
-        serialNumber: data['serialNumber'] as String?,
-        deviceName: data['deviceName'] as String?,
+        serial: data['serial'] as String?,
+        name: data['name'] as String?,
+        osName: data['osName'] as String?,
+        osVersion: data['osVersion'] as String?,
         brandName: data['brandName'] as String?,
-        os: data['OS'] as String?,
+        brandVersion: data['brandVersion'] as String?,
+        biometricSupported: data['biometricSupported'] as String?,
       );
 
   static DeviceInfoStruct? maybeFromMap(dynamic data) => data is Map
@@ -57,41 +87,66 @@ class DeviceInfoStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'serialNumber': _serialNumber,
-        'deviceName': _deviceName,
+        'serial': _serial,
+        'name': _name,
+        'osName': _osName,
+        'osVersion': _osVersion,
         'brandName': _brandName,
-        'OS': _os,
+        'brandVersion': _brandVersion,
+        'biometricSupported': _biometricSupported,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'serialNumber': serializeParam(
-          _serialNumber,
+        'serial': serializeParam(
+          _serial,
           ParamType.String,
         ),
-        'deviceName': serializeParam(
-          _deviceName,
+        'name': serializeParam(
+          _name,
+          ParamType.String,
+        ),
+        'osName': serializeParam(
+          _osName,
+          ParamType.String,
+        ),
+        'osVersion': serializeParam(
+          _osVersion,
           ParamType.String,
         ),
         'brandName': serializeParam(
           _brandName,
           ParamType.String,
         ),
-        'OS': serializeParam(
-          _os,
+        'brandVersion': serializeParam(
+          _brandVersion,
+          ParamType.String,
+        ),
+        'biometricSupported': serializeParam(
+          _biometricSupported,
           ParamType.String,
         ),
       }.withoutNulls;
 
   static DeviceInfoStruct fromSerializableMap(Map<String, dynamic> data) =>
       DeviceInfoStruct(
-        serialNumber: deserializeParam(
-          data['serialNumber'],
+        serial: deserializeParam(
+          data['serial'],
           ParamType.String,
           false,
         ),
-        deviceName: deserializeParam(
-          data['deviceName'],
+        name: deserializeParam(
+          data['name'],
+          ParamType.String,
+          false,
+        ),
+        osName: deserializeParam(
+          data['osName'],
+          ParamType.String,
+          false,
+        ),
+        osVersion: deserializeParam(
+          data['osVersion'],
           ParamType.String,
           false,
         ),
@@ -100,8 +155,13 @@ class DeviceInfoStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        os: deserializeParam(
-          data['OS'],
+        brandVersion: deserializeParam(
+          data['brandVersion'],
+          ParamType.String,
+          false,
+        ),
+        biometricSupported: deserializeParam(
+          data['biometricSupported'],
           ParamType.String,
           false,
         ),
@@ -113,26 +173,42 @@ class DeviceInfoStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is DeviceInfoStruct &&
-        serialNumber == other.serialNumber &&
-        deviceName == other.deviceName &&
+        serial == other.serial &&
+        name == other.name &&
+        osName == other.osName &&
+        osVersion == other.osVersion &&
         brandName == other.brandName &&
-        os == other.os;
+        brandVersion == other.brandVersion &&
+        biometricSupported == other.biometricSupported;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([serialNumber, deviceName, brandName, os]);
+  int get hashCode => const ListEquality().hash([
+        serial,
+        name,
+        osName,
+        osVersion,
+        brandName,
+        brandVersion,
+        biometricSupported
+      ]);
 }
 
 DeviceInfoStruct createDeviceInfoStruct({
-  String? serialNumber,
-  String? deviceName,
+  String? serial,
+  String? name,
+  String? osName,
+  String? osVersion,
   String? brandName,
-  String? os,
+  String? brandVersion,
+  String? biometricSupported,
 }) =>
     DeviceInfoStruct(
-      serialNumber: serialNumber,
-      deviceName: deviceName,
+      serial: serial,
+      name: name,
+      osName: osName,
+      osVersion: osVersion,
       brandName: brandName,
-      os: os,
+      brandVersion: brandVersion,
+      biometricSupported: biometricSupported,
     );

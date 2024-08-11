@@ -11,15 +11,15 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   ///  State fields for stateful widgets in this page.
 
   DateTime? datePicked;
+  // State field(s) for CitiesDropDown widget.
+  String? citiesDropDownValue;
+  FormFieldController<String>? citiesDropDownValueController;
+  // State field(s) for GenderDropDown widget.
+  String? genderDropDownValue;
+  FormFieldController<String>? genderDropDownValueController;
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
 
   @override
   void initState(BuildContext context) {}

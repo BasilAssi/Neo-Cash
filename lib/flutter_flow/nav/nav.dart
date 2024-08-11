@@ -265,9 +265,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const TermsAndConditionsWidget(),
             ),
             FFRoute(
-              name: 'phone_reset_password',
-              path: 'phoneResetPassword',
-              builder: (context, params) => const PhoneResetPasswordWidget(),
+              name: 'id_reset_password',
+              path: 'idResetPassword',
+              builder: (context, params) => const IdResetPasswordWidget(),
             ),
             FFRoute(
               name: 'confirm_reset_password',
@@ -300,9 +300,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'registeration_02Copy',
-              path: 'registeration02Copy',
-              builder: (context, params) => const Registeration02CopyWidget(),
+              name: 'basic_infi_reset_password',
+              path: 'basicInfiResetPassword',
+              builder: (context, params) => const BasicInfiResetPasswordWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

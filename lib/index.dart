@@ -64,8 +64,8 @@ export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_wid
 export '/pages/static_pages/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/pages/static_pages/terms_and_conditions/terms_and_conditions_widget.dart'
     show TermsAndConditionsWidget;
-export '/pages/reset_password/phone_reset_password/phone_reset_password_widget.dart'
-    show PhoneResetPasswordWidget;
+export '/pages/reset_password/id_reset_password/id_reset_password_widget.dart'
+    show IdResetPasswordWidget;
 export '/pages/reset_password/confirm_reset_password/confirm_reset_password_widget.dart'
     show ConfirmResetPasswordWidget;
 export '/pages/static_pages/agent_list/agent_list_widget.dart'
@@ -74,5 +74,5 @@ export '/pages/reset_password/otp_email_reset_password/otp_email_reset_password_
     show OtpEmailResetPasswordWidget;
 export '/pages/reset_password/otp_phone_reset_password/otp_phone_reset_password_widget.dart'
     show OtpPhoneResetPasswordWidget;
-export '/pages/reset_password/registeration_02_copy/registeration02_copy_widget.dart'
-    show Registeration02CopyWidget;
+export '/pages/reset_password/basic_infi_reset_password/basic_infi_reset_password_widget.dart'
+    show BasicInfiResetPasswordWidget;
