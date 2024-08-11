@@ -49,7 +49,7 @@ class IsRegisteredCall {
     print('msgId  $msgId \n ');
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
-      apiUrl: '$baseUrl/api​/v1​/isRegistered',
+      apiUrl: '$baseUrl/api/v1/isRegistered',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',

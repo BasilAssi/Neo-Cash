@@ -92,16 +92,16 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: WidgetStateProperty.all(false),
-          trackVisibility: WidgetStateProperty.all(false),
+          thumbVisibility: MaterialStateProperty.all(false),
+          trackVisibility: MaterialStateProperty.all(false),
           interactive: false,
         ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: WidgetStateProperty.all(false),
-          trackVisibility: WidgetStateProperty.all(false),
+          thumbVisibility: MaterialStateProperty.all(false),
+          trackVisibility: MaterialStateProperty.all(false),
           interactive: false,
         ),
       ),
