@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'phone_reset_password_widget.dart' show PhoneResetPasswordWidget;
+import 'id_reset_password_widget.dart' show IdResetPasswordWidget;
 import 'package:flutter/material.dart';
 
-class PhoneResetPasswordModel
-    extends FlutterFlowModel<PhoneResetPasswordWidget> {
+class IdResetPasswordModel extends FlutterFlowModel<IdResetPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for FirstNameTextField widget.

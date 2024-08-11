@@ -746,7 +746,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController1 ??=
+                      controller: _model.citiesDropDownValueController ??=
                           FormFieldController<String>(null),
                       options:
                           List<String>.from(['04', '1', '2', '3', 'FEMALE']),
@@ -768,7 +768,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue1 = val),
+                          setState(() => _model.citiesDropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -825,7 +825,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController2 ??=
+                      controller: _model.genderDropDownValueController ??=
                           FormFieldController<String>(null),
                       options: List<String>.from(['M', 'F']),
                       optionLabels: [
@@ -837,7 +837,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue2 = val),
+                          setState(() => _model.genderDropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -894,7 +894,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController3 ??=
+                      controller: _model.dropDownValueController ??=
                           FormFieldController<String>(null),
                       options: List<String>.from(['فلسطيني', 'F']),
                       optionLabels: [
@@ -906,7 +906,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue3 = val),
+                          setState(() => _model.dropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)

@@ -10,6 +10,7 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for FirstNameARTextField widget.
   FocusNode? firstNameARTextFieldFocusNode;
   TextEditingController? firstNameARTextFieldTextController;
@@ -50,6 +51,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? familyNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameENTextFieldTextControllerValidator;
+  // State field(s) for MotherNameENTextField widget.
+  FocusNode? motherNameENTextFieldFocusNode;
+  TextEditingController? motherNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      motherNameENTextFieldTextControllerValidator;
   DateTime? datePicked;
 
   @override
@@ -80,5 +86,8 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
     familyNameENTextFieldFocusNode?.dispose();
     familyNameENTextFieldTextController?.dispose();
+
+    motherNameENTextFieldFocusNode?.dispose();
+    motherNameENTextFieldTextController?.dispose();
   }
 }

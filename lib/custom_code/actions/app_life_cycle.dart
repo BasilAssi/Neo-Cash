@@ -11,22 +11,23 @@ import 'package:flutter/material.dart';
 
 Future appLifeCycle() async {
   // call action when the app life cyclestate is in backgrond  or terminated or active ,  include all states of the app  make them with one state
-  WidgetsBinding.instance.addObserver(AppLifecycleStateObserver(
-    onAppLifecycleStateChanged: (state) {
-      switch (state) {
-        case AppLifecycleState.inactive:
-          // App is inactive
-          break;
-        case AppLifecycleState.paused:
-          // App is paused
-          break;
-        case AppLifecycleState.resumed:
-          // App is resumed
-          break;
-        case AppLifecycleState.detached:
-          // App is detached
-          break;
-      }
-    },
-  ));
+
+  // WidgetsBinding.instance.addObserver(AppLifecycleStateObserver(
+  //   onAppLifecycleStateChanged: (state) {
+  //     switch (state) {
+  //       case AppLifecycleState.inactive:
+  //         // App is inactive
+  //         break;
+  //       case AppLifecycleState.paused:
+  //         // App is paused
+  //         break;
+  //       case AppLifecycleState.resumed:
+  //         // App is resumed
+  //         break;
+  //       case AppLifecycleState.detached:
+  //         // App is detached
+  //         break;
+  //     }
+  //   },
+  // ));
 }

@@ -4,26 +4,25 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'phone_reset_password_model.dart';
-export 'phone_reset_password_model.dart';
+import 'id_reset_password_model.dart';
+export 'id_reset_password_model.dart';
 
-class PhoneResetPasswordWidget extends StatefulWidget {
-  const PhoneResetPasswordWidget({super.key});
+class IdResetPasswordWidget extends StatefulWidget {
+  const IdResetPasswordWidget({super.key});
 
   @override
-  State<PhoneResetPasswordWidget> createState() =>
-      _PhoneResetPasswordWidgetState();
+  State<IdResetPasswordWidget> createState() => _IdResetPasswordWidgetState();
 }
 
-class _PhoneResetPasswordWidgetState extends State<PhoneResetPasswordWidget> {
-  late PhoneResetPasswordModel _model;
+class _IdResetPasswordWidgetState extends State<IdResetPasswordWidget> {
+  late IdResetPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PhoneResetPasswordModel());
+    _model = createModel(context, () => IdResetPasswordModel());
 
     _model.firstNameTextFieldTextController ??= TextEditingController();
     _model.firstNameTextFieldFocusNode ??= FocusNode();

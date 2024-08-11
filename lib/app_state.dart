@@ -36,4 +36,17 @@ class FFAppState extends ChangeNotifier {
   void updateDeviceInformationStruct(Function(DeviceInfoStruct) updateFn) {
     updateFn(_deviceInformation);
   }
+
+  RegisterationFormDataStruct _registerationFormData =
+      RegisterationFormDataStruct();
+  RegisterationFormDataStruct get registerationFormData =>
+      _registerationFormData;
+  set registerationFormData(RegisterationFormDataStruct value) {
+    _registerationFormData = value;
+  }
+
+  void updateRegisterationFormDataStruct(
+      Function(RegisterationFormDataStruct) updateFn) {
+    updateFn(_registerationFormData);
+  }
 }

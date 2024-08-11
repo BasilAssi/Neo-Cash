@@ -9,13 +9,16 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<String?> encodeSHA256(String? str) async {
-  // try {
-  //   List<int> bytes = utf8.encode(str);
-  //   Digest digest = sha256.convert(bytes);
-  //   return base64.encode(digest.bytes).trim();
-  // } catch (e) {
-  // print(e);
-  return null;
+import 'package:fluttertoast/fluttertoast.dart';
+
+Future showToast(String? message) async {
+  //     Fluttertoast.showToast(
+  //       msg: message,
+  //       toastLength: Toast.LENGTH_SHORT,
+  //       gravity: ToastGravity.CENTER,
+  //       timeInSecForIosWeb: 1,
+  //       backgroundColor: Colors.black54,
+  //       textColor: Colors.white,
+  //       fontSize: 15.0);
   // }
 }

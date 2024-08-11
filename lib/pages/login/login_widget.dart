@@ -826,7 +826,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        'register_page_1');
+                                                        'enter_id_page');
                                                   },
                                                   child: Text(
                                                     FFLocalizations.of(context)

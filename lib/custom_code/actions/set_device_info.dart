@@ -15,25 +15,33 @@ import 'package:device_info/device_info.dart';
 import 'dart:io';
 
 Future setDeviceInfo() async {
-  // Add your function code here!
-
   final deviceInfo = DeviceInfoPlugin();
   final appState = FFAppState(); // Access the app state
 
-  appState.deviceInformation.os = Platform.isIOS ? 'iOS' : 'Android';
+  // Check for biometric support
+  final LocalAuthentication auth = LocalAuthentication();
+  bool isBiometricSupported = await auth.isDeviceSupported();
+  bool canCheckBiometrics = await auth.canCheckBiometrics;
+  appState.deviceInformation.biometricSupported =
+      isBiometricSupported && canCheckBiometrics ? 'true' : 'false';
+  appState.deviceInformation.osName = Platform.isIOS ? 'iOS' : 'Android';
 
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    appState.deviceInformation.deviceName = androidInfo.model;
+    appState.deviceInformation.serial = androidInfo.androidId;
+    appState.deviceInformation.name = androidInfo.model;
     appState.deviceInformation.brandName = androidInfo.brand;
-    appState.deviceInformation.serialNumber = androidInfo.androidId;
+    appState.deviceInformation.brandVersion = androidInfo.version.release;
+    appState.deviceInformation.osVersion =
+        androidInfo.version.sdkInt.toString();
+    ;
   } else if (Platform.isIOS) {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-
-    // Update the Customer object in the app state
-    appState.deviceInformation.deviceName = iosInfo.name;
-    appState.deviceInformation.brandName = iosInfo.model;
-    appState.deviceInformation.serialNumber = iosInfo
+    appState.deviceInformation.serial = iosInfo
         .identifierForVendor; // Identifier for vendor used as serial number
+    appState.deviceInformation.name = iosInfo.name;
+    appState.deviceInformation.brandName = iosInfo.systemName;
+    appState.deviceInformation.brandVersion = iosInfo.model;
+    appState.deviceInformation.osVersion = iosInfo.systemVersion;
   }
 }

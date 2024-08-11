@@ -11,11 +11,11 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
+  bool? dropDownValue1;
+  FormFieldController<bool>? dropDownValueController1;
   // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  bool? dropDownValue2;
+  FormFieldController<bool>? dropDownValueController2;
   // State field(s) for EmailTextField widget.
   FocusNode? emailTextFieldFocusNode1;
   TextEditingController? emailTextFieldTextController1;
