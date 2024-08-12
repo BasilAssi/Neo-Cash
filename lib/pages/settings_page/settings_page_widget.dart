@@ -207,7 +207,14 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                             .width *
                                                         0.9,
                                                 child:
-                                                    const EnableBiometricComponentWidget(),
+                                                    EnableBiometricComponentWidget(
+                                                  actionDisable: () async {
+                                                    setState(() {
+                                                      _model.switchValue =
+                                                          false;
+                                                    });
+                                                  },
+                                                ),
                                               ),
                                             ),
                                           ),
