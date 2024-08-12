@@ -816,11 +816,6 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         ),
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).accent4,
-                        suffixIcon: Icon(
-                          Icons.work_sharp,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 28.0,
-                        ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
@@ -915,11 +910,6 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         ),
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).accent4,
-                        suffixIcon: Icon(
-                          Icons.public,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 28.0,
-                        ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
@@ -938,7 +928,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'bvo31zkk' /* دخلك الشهري بالدولار */,
+                        'bvo31zkk' /* الدخل الشهري  */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -972,7 +962,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                           .labelMediumFamily),
                                 ),
                         hintText: FFLocalizations.of(context).getText(
-                          'cki60vlr' /* الدخل الشهري */,
+                          'cki60vlr' /* الدخل الشهري بالدولار */,
                         ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -1014,11 +1004,6 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         ),
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).accent4,
-                        suffixIcon: Icon(
-                          Icons.monetization_on_outlined,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 28.0,
-                        ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:

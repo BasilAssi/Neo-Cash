@@ -656,6 +656,14 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             _model.pinCode =
                                 '${functions.removeLastCharacter(_model.pinCode)}';
                             setState(() {});
+                            if (animationsMap[
+                                    'listViewOnActionTriggerAnimation'] !=
+                                null) {
+                              await animationsMap[
+                                      'listViewOnActionTriggerAnimation']!
+                                  .controller
+                                  .forward(from: 0.0);
+                            }
                           },
                           text: FFLocalizations.of(context).getText(
                             'qggri9hp' /*  */,

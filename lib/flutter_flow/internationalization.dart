@@ -151,14 +151,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'VALID\nTHRU',
       'en': '',
     },
-    'e5b6cg6i': {
-      'ar': 'إرسال لصديق',
-      'en': '',
-    },
-    'gnk7m9ar': {
-      'ar': 'تحويل بين  البطاقات',
-      'en': '',
-    },
     '0dsvs6im': {
       'ar': 'الحركات',
       'en': 'Campaigns and offers',
@@ -202,9 +194,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // login
   {
-    's57yw88q': {
-      'ar': 'اسم المستخدم',
-      'en': 'Username',
+    'kcjciuhj': {
+      'ar': '5xxxxxxxx',
+      'en': '',
+    },
+    'rlu297rm': {
+      'ar': '',
+      'en': '',
+    },
+    'huoga21w': {
+      'ar': '+970',
+      'en': '',
+    },
+    'aptr1z10': {
+      'ar': '+970',
+      'en': '',
+    },
+    'bx2290jy': {
+      'ar': '+972',
+      'en': '',
+    },
+    'bu04m7sg': {
+      'ar': 'Search for an item...',
+      'en': '',
     },
     'wjlvy24l': {
       'ar': 'كلمة السر',
@@ -398,7 +410,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // register_page_2_phone_number
+  // phone_number
   {
     '621g8xg0': {
       'ar': 'رقم تلفونك ',
@@ -432,12 +444,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    'agq6bq8b': {
-      'ar': 'استخدامك لنيو كاش يعني انك \nموافق على  ',
+    'nuxhazj7': {
+      'ar': 'الحقل مطلوب',
       'en': '',
     },
-    'nynwtcbl': {
-      'ar': 'الشروط والأحكام',
+    '20xg27or': {
+      'ar': 'لا يمكن ان يكون الرقم اقل من 8',
+      'en': '',
+    },
+    '2imdgl09': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     'ffd17gua': {
@@ -530,16 +546,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'عرض الرمز \nالسري',
       'en': '',
     },
-    't26hgabe': {
-      'ar': 'قيود\nالبطاقة',
-      'en': '',
-    },
     'bmdetv0i': {
-      'ar': 'قفل\nالبطاقة',
+      'ar': 'عرض حركات\n البطاقة',
       'en': '',
     },
-    'ugm1nxce': {
-      'ar': 'إلغاء \nالبطاقة',
+    'v2p9jewd': {
+      'ar': 'قفل\nالبطاقة',
       'en': '',
     },
     '9xarkmih': {
@@ -569,12 +581,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Basil',
       'en': '',
     },
-    'z1qrqkvj': {
-      'ar': 'تاريخ الميلاد',
+    'dbqmodex': {
+      'ar': 'رقم الموبايل',
       'en': '',
     },
-    'au5atau4': {
-      'ar': '21/07/2001',
+    'ivhvtzdk': {
+      'ar': '0569852',
       'en': '',
     },
     'ag1hrdqa': {
@@ -587,10 +599,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g3fbaqeh': {
       'ar': 'تم التحقق  ',
-      'en': '',
-    },
-    '2jt5rwhx': {
-      'ar': 'تغير كلمة المرور',
       'en': '',
     },
     'fx3qydw8': {
@@ -720,33 +728,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // card_settings_page
-  {
-    '4fvtakhj': {
-      'ar': 'إعدادات البطاقة',
-      'en': '',
-    },
-    'wficmk0f': {
-      'ar': 'عرض الرمز السري',
-      'en': '',
-    },
-    '1srml0uw': {
-      'ar': 'تسجيل  الدخول من خلال خاصية التعرف',
-      'en': '',
-    },
-    '7jmoj145': {
-      'ar': 'عمليات الدفع الكترونياً',
-      'en': '',
-    },
-    '7cmhawhy': {
-      'ar': 'الدفعات اللاتلامسية',
-      'en': '',
-    },
-    '1dzuzjzn': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // view_pin_code_page
   {
     '2o6k2tg3': {
@@ -863,12 +844,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '1',
       'en': '1',
     },
-    'xzg8kesl': {
-      'ar': 'خلينا نبلش بأنك تعرفنا عن حالك',
-      'en': '',
-    },
     'ejq0qsaw': {
-      'ar': 'دخل اسمك بالعربي',
+      'ar': ' اسمك بالعربي',
       'en': '',
     },
     '8vcfnfcx': {
@@ -888,7 +865,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '1xvldsbc': {
-      'ar': 'دخل اسمك بالانجليزي',
+      'ar': ' اسمك بالانجليزي',
       'en': '',
     },
     '2d8uxzee': {
@@ -907,12 +884,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم عائلتك',
       'en': '',
     },
-    'gcmgcz6y': {
-      'ar': 'اسم الأم',
-      'en': '',
-    },
     'e3s0b90l': {
       'ar': 'التالي',
+      'en': '',
+    },
+    'xzymsnvc': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'x3v0m7qw': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'szccmsm4': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'abig6z1g': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'akl1d9zd': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'eizatu2k': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'tfwtgi9v': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'f6mfyluo': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'y7vkhixh': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    '8vucega1': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'xmu2qdk6': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'k6h66wjo': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    't4qqigtg': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'xo316gb5': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '5hpn7ngb': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    '6ln7r1es': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     'jftsmhqt': {
@@ -946,7 +983,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // enter_id_page
   {
     'je18929v': {
-      'ar': 'شو نوع هويتك الشخصية',
+      'ar': '  الهوية الشخصية',
       'en': '',
     },
     'lcpbbpxk': {
@@ -990,8 +1027,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'العودة الى الصفحة الرئيسية\n',
       'en': '',
     },
-    'nuxhazj7': {
-      'ar': 'Field is required',
+    'o8vsd9cs': {
+      'ar': 'رقم الهوية لا يمكن ان يكون فارغ',
       'en': '',
     },
     '8e3rsbjp': {
@@ -1002,7 +1039,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رقم الهوية اكبر من عشرة ارقام',
       'en': '',
     },
-    '2imdgl09': {
+    '9tynz1pf': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1077,7 +1114,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'j1orf7vl': {
-      'ar': 'اختار تاريخ ميلادك',
+      'ar': ' تاريخ ميلادك',
       'en': '',
     },
     'l0r5ylqb': {
@@ -1112,8 +1149,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
+    '1gqz1vk4': {
+      'ar': 'اسم الأم باللغة الانجليزية',
+      'en': '',
+    },
+    'a8pd7lhp': {
+      'ar': 'اسم الأم',
+      'en': '',
+    },
     '87900l1f': {
-      'ar': 'اختار شو جنسك',
+      'ar': 'الجنس',
       'en': '',
     },
     'ogfo2bga': {
@@ -1132,8 +1177,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    '1gqz1vk4': {
-      'ar': 'اختار شو جنسيتك',
+    '320f0ies': {
+      'ar': 'الجنسية',
       'en': '',
     },
     'hnomrkxo': {
@@ -1208,11 +1253,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'futstmfr': {
-      'ar': 'كلمة السر',
+      'ar': 'كلمة المرور',
       'en': '',
     },
     'af8ji769': {
-      'ar': 'تأكيد كلمة السر',
+      'ar': 'تأكيد كلمة المرور',
       'en': '',
     },
     's0eeyypj': {
@@ -1222,6 +1267,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wjbn27v2': {
       'ar': 'دخل الرمز السري  مكون من اربع خانات',
+      'en': '',
+    },
+    't2k8mdj6': {
+      'ar': 'استخدامك لنيو كاش يعني انك \nموافق على  ',
+      'en': '',
+    },
+    'xzwvglof': {
+      'ar': 'الشروط والأحكام',
       'en': '',
     },
     'ype1jx4m': {
@@ -1332,7 +1385,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'yfoglq5k': {
-      'ar': 'سجل عنوانك',
+      'ar': 'العنوان',
       'en': '',
     },
     '8shompx7': {
@@ -1340,7 +1393,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'x8wk3106': {
-      'ar': 'موقعك: ',
+      'ar': 'موقعك: الحي , الشارع  ',
       'en': '',
     },
     'vq6zsk0n': {
@@ -1374,23 +1427,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '\$425.24',
       'en': '',
     },
-    'ynmq9egf': {
-      'ar': 'القيمة',
-      'en': '',
-    },
-    '6x2d07fd': {
-      'ar': '',
-      'en': '',
-    },
-    'trb27inb': {
-      'ar': '0.0',
-      'en': '',
-    },
     'd75eqmgj': {
       'ar': '5xxxxxxxx',
       'en': '',
     },
     'v1u8v2hp': {
+      'ar': '',
+      'en': '',
+    },
+    'sdfxter1': {
+      'ar': '+970',
+      'en': '',
+    },
+    '1uytg858': {
+      'ar': '+972 ',
+      'en': '',
+    },
+    'uf70ikbn': {
+      'ar': '+970',
+      'en': '',
+    },
+    '4soo0d3t': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'ynmq9egf': {
+      'ar': 'القيمة',
+      'en': '',
+    },
+    '6x2d07fd': {
       'ar': '',
       'en': '',
     },
@@ -1407,7 +1472,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'hlwqlc5j': {
-      'ar': 'Home',
+      'ar': 'إرسال لصديق',
       'en': '',
     },
   },
@@ -1664,7 +1729,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'bvo31zkk': {
-      'ar': 'دخلك الشهري بالدولار',
+      'ar': 'الدخل الشهري ',
       'en': '',
     },
     '5w21n1s1': {
@@ -1672,7 +1737,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'cki60vlr': {
-      'ar': 'الدخل الشهري',
+      'ar': 'الدخل الشهري بالدولار',
       'en': '',
     },
     '4bmwbw9n': {
@@ -1739,7 +1804,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'igttbcem': {
-      'ar': ' اسم المستفيد الحقيقي و طبيعة العلاقة ',
+      'ar': ' اسم المستفيد الحقيقي  ',
       'en': '',
     },
     '1vatub9u': {
@@ -1747,7 +1812,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gdczccov': {
-      'ar': ' اسم المستفيد الحقيقي و طبيعة العلاقة ',
+      'ar': 'اسم المستفيد الحقيقي   ',
+      'en': '',
+    },
+    'plzrglhj': {
+      'ar': ' طبيعة العلاقة ',
+      'en': '',
+    },
+    'b6ncsijs': {
+      'ar': '',
+      'en': '',
+    },
+    'kqevx2de': {
+      'ar': 'مثال : أب, ابن , أخ',
       'en': '',
     },
     's0hgt3cz': {
@@ -2272,7 +2349,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'bcv9kzes': {
-      'ar': 'اسم المعرض سياسيا (بالعربي)',
+      'ar': 'الاسم الكامل باللغة العربية',
       'en': '',
     },
     'j4rwrsn3': {
@@ -2284,7 +2361,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'u7i1idxb': {
-      'ar': 'اسم المعرض سياسيا (بالانجليزي)',
+      'ar': 'الاسم الكامل باللغة الانجليزية',
       'en': '',
     },
     'xr0qsc4r': {
@@ -2296,7 +2373,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gagxqvml': {
-      'ar': 'صلة القرابة مع المعرض سياسيا',
+      'ar': 'مثال : أب, ابن , أخ',
       'en': '',
     },
     'u6bu8xfy': {
@@ -2386,10 +2463,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // id_reset_password
+  // id_forgot_pin
   {
     'fvzfxcqw': {
-      'ar': 'تغير كلمة السر',
+      'ar': 'نسيت كلمة المرور',
+      'en': '',
+    },
+    'r6nzurqp': {
+      'ar': 'الهوية  الفلسطينية',
+      'en': '',
+    },
+    'jq2h3kwv': {
+      'ar': 'هوية القدس',
+      'en': '',
+    },
+    'b2r8gjy6': {
+      'ar': 'اختيار نوع الهوية ',
+      'en': '',
+    },
+    'r87qx93n': {
+      'ar': 'Search for an item...',
       'en': '',
     },
     'wuwr4gcb': {
@@ -2398,6 +2491,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'v854yanp': {
       'ar': 'ادخال رقم الهوية',
+      'en': '',
+    },
+    'eh9aeadi': {
+      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
       'en': '',
     },
     '4ydgmlj5': {
@@ -2443,7 +2540,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // otp_email_reset_password
+  // otp_email_forgot_pin
   {
     'de1cfdxp': {
       'ar': 'تأكيد إيميلك',
@@ -2509,7 +2606,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // basic_infi_reset_password
+  // basic_infi_forgot_pin
   {
     'hfce6qeb': {
       'ar': 'معلوماتك الشخصية',
@@ -2574,7 +2671,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // error_componentCopy
   {
     'w1jz0htw': {
-      'ar': 'لا  يوجد رصيد كافي في\nمحفظتك',
+      'ar': 'لا  يوجد رصيد كافي في\nبطاقتك',
       'en': '',
     },
     'x8w737e8': {

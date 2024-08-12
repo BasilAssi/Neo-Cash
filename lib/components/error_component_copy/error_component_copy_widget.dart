@@ -77,7 +77,7 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'w1jz0htw' /* لا  يوجد رصيد كافي في
-محفظتك */
+بطاقتك */
                                 ,
                               ),
                               textAlign: TextAlign.center,

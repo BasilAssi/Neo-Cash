@@ -51,11 +51,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? familyNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameENTextFieldTextControllerValidator;
-  // State field(s) for MotherNameENTextField widget.
-  FocusNode? motherNameENTextFieldFocusNode;
-  TextEditingController? motherNameENTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      motherNameENTextFieldTextControllerValidator;
   DateTime? datePicked;
 
   @override
@@ -86,8 +81,5 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
     familyNameENTextFieldFocusNode?.dispose();
     familyNameENTextFieldTextController?.dispose();
-
-    motherNameENTextFieldFocusNode?.dispose();
-    motherNameENTextFieldTextController?.dispose();
   }
 }

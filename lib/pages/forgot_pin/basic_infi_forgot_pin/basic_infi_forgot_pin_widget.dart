@@ -6,27 +6,26 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'basic_infi_reset_password_model.dart';
-export 'basic_infi_reset_password_model.dart';
+import 'basic_infi_forgot_pin_model.dart';
+export 'basic_infi_forgot_pin_model.dart';
 
-class BasicInfiResetPasswordWidget extends StatefulWidget {
-  const BasicInfiResetPasswordWidget({super.key});
+class BasicInfiForgotPinWidget extends StatefulWidget {
+  const BasicInfiForgotPinWidget({super.key});
 
   @override
-  State<BasicInfiResetPasswordWidget> createState() =>
-      _BasicInfiResetPasswordWidgetState();
+  State<BasicInfiForgotPinWidget> createState() =>
+      _BasicInfiForgotPinWidgetState();
 }
 
-class _BasicInfiResetPasswordWidgetState
-    extends State<BasicInfiResetPasswordWidget> {
-  late BasicInfiResetPasswordModel _model;
+class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
+  late BasicInfiForgotPinModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => BasicInfiResetPasswordModel());
+    _model = createModel(context, () => BasicInfiForgotPinModel());
   }
 
   @override

@@ -25,6 +25,9 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Registeration02Model());
+
+    _model.motherNameENTextFieldTextController ??= TextEditingController();
+    _model.motherNameENTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -593,7 +596,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'j1orf7vl' /* اختار تاريخ ميلادك */,
+                        'j1orf7vl' /*  تاريخ ميلادك */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -808,7 +811,106 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '87900l1f' /* اختار شو جنسك */,
+                        '1gqz1vk4' /* اسم الأم باللغة الانجليزية */,
+                      ),
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: FlutterFlowTheme.of(context).textColor,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.motherNameENTextFieldTextController,
+                      focusNode: _model.motherNameENTextFieldFocusNode,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.sentences,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'a8pd7lhp' /* اسم الأم */,
+                        ),
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).textFieldBorder,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        filled: true,
+                        fillColor: FlutterFlowTheme.of(context).accent4,
+                        suffixIcon: Icon(
+                          Icons.mode_edit_outline_outlined,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 28.0,
+                        ),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                      validator: _model
+                          .motherNameENTextFieldTextControllerValidator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '87900l1f' /* الجنس */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -877,7 +979,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '1gqz1vk4' /* اختار شو جنسيتك */,
+                        '320f0ies' /* الجنسية */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:

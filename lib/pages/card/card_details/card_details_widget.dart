@@ -411,15 +411,9 @@ THRU */
                       if (random_data.randomName(true, true) != '') {
                         return Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Wrap(
-                            spacing: 25.0,
-                            runSpacing: 0.0,
-                            alignment: WrapAlignment.start,
-                            crossAxisAlignment: WrapCrossAlignment.center,
-                            direction: Axis.horizontal,
-                            runAlignment: WrapAlignment.center,
-                            verticalDirection: VerticalDirection.down,
-                            clipBehavior: Clip.none,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               InkWell(
                                 splashColor: Colors.transparent,
@@ -455,14 +449,14 @@ THRU */
                                         borderWidth: 1.0,
                                         buttonSize:
                                             MediaQuery.sizeOf(context).width *
-                                                0.14,
+                                                0.18,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .iconBackground,
                                         icon: Icon(
                                           Icons.remove_red_eye_outlined,
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          size: 28.0,
+                                          size: 32.0,
                                         ),
                                         onPressed: () {
                                           print('IconButton pressed ...');
@@ -473,81 +467,6 @@ THRU */
                                       FFLocalizations.of(context).getText(
                                         '7wf328ns' /* عرض الرمز 
 السري */
-                                        ,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed('card_limits');
-                                },
-                                child: Wrap(
-                                  spacing: 8.0,
-                                  runSpacing: 0.0,
-                                  alignment: WrapAlignment.start,
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  direction: Axis.vertical,
-                                  runAlignment: WrapAlignment.start,
-                                  verticalDirection: VerticalDirection.down,
-                                  clipBehavior: Clip.antiAlias,
-                                  children: [
-                                    Container(
-                                      width: 70.0,
-                                      height: 70.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .textFieldBorder,
-                                        borderRadius: 12.0,
-                                        borderWidth: 1.0,
-                                        buttonSize:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.14,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .iconBackground,
-                                        icon: Icon(
-                                          Icons.construction_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 28.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        't26hgabe' /* قيود
-البطاقة */
                                         ,
                                       ),
                                       textAlign: TextAlign.center,
@@ -596,14 +515,14 @@ THRU */
                                       borderWidth: 1.0,
                                       buttonSize:
                                           MediaQuery.sizeOf(context).width *
-                                              0.14,
+                                              0.18,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .iconBackground,
                                       icon: Icon(
                                         Icons.lock_outlined,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 28.0,
+                                        size: 32.0,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -612,8 +531,8 @@ THRU */
                                   ),
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'bmdetv0i' /* قفل
-البطاقة */
+                                      'bmdetv0i' /* عرض حركات
+ البطاقة */
                                       ,
                                     ),
                                     textAlign: TextAlign.center,
@@ -639,10 +558,10 @@ THRU */
                               Wrap(
                                 spacing: 8.0,
                                 runSpacing: 0.0,
-                                alignment: WrapAlignment.start,
+                                alignment: WrapAlignment.center,
                                 crossAxisAlignment: WrapCrossAlignment.center,
                                 direction: Axis.vertical,
-                                runAlignment: WrapAlignment.start,
+                                runAlignment: WrapAlignment.center,
                                 verticalDirection: VerticalDirection.down,
                                 clipBehavior: Clip.antiAlias,
                                 children: [
@@ -661,14 +580,14 @@ THRU */
                                       borderWidth: 1.0,
                                       buttonSize:
                                           MediaQuery.sizeOf(context).width *
-                                              0.12,
+                                              0.18,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .iconBackground,
                                       icon: Icon(
-                                        Icons.delete_outline_sharp,
+                                        Icons.lock_outlined,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 28.0,
+                                        size: 32.0,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -677,7 +596,7 @@ THRU */
                                   ),
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'ugm1nxce' /* إلغاء 
+                                      'v2p9jewd' /* قفل
 البطاقة */
                                       ,
                                     ),

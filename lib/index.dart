@@ -7,8 +7,8 @@ export '/pages/notification_page/notification_page_widget.dart'
     show NotificationPageWidget;
 export '/pages/registeration/register_page_1/register_page1_widget.dart'
     show RegisterPage1Widget;
-export '/pages/register_page_2_phone_number/register_page2_phone_number_widget.dart'
-    show RegisterPage2PhoneNumberWidget;
+export '/pages/registeration/phone_number/phone_number_widget.dart'
+    show PhoneNumberWidget;
 export '/pages/registeration/otp_does_not_exist_flow/otp_does_not_exist_flow_widget.dart'
     show OtpDoesNotExistFlowWidget;
 export '/pages/card/card_details/card_details_widget.dart'
@@ -17,8 +17,6 @@ export '/pages/user_profile/user_profile_widget.dart' show UserProfileWidget;
 export '/pages/settings_page/settings_page_widget.dart' show SettingsPageWidget;
 export '/pages/transaction_details_page/transaction_details_page_widget.dart'
     show TransactionDetailsPageWidget;
-export '/pages/card/card_settings_page/card_settings_page_widget.dart'
-    show CardSettingsPageWidget;
 export '/pages/view_pin_code_page/view_pin_code_page_widget.dart'
     show ViewPinCodePageWidget;
 export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
@@ -36,7 +34,7 @@ export '/pages/registeration/registeration_07/registeration07_widget.dart'
     show Registeration07Widget;
 export '/pages/registeration/registeration_04/registeration04_widget.dart'
     show Registeration04Widget;
-export '/pages/send_money_to_friend/send_money_to_friend_widget.dart'
+export '/pages/home/send_money_to_friend/send_money_to_friend_widget.dart'
     show SendMoneyToFriendWidget;
 export '/pages/transfer_money_between_cards/transfer_money_between_cards_widget.dart'
     show TransferMoneyBetweenCardsWidget;
@@ -64,15 +62,15 @@ export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_wid
 export '/pages/static_pages/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/pages/static_pages/terms_and_conditions/terms_and_conditions_widget.dart'
     show TermsAndConditionsWidget;
-export '/pages/reset_password/id_reset_password/id_reset_password_widget.dart'
-    show IdResetPasswordWidget;
+export '/pages/forgot_pin/id_forgot_pin/id_forgot_pin_widget.dart'
+    show IdForgotPinWidget;
 export '/pages/reset_password/confirm_reset_password/confirm_reset_password_widget.dart'
     show ConfirmResetPasswordWidget;
 export '/pages/static_pages/agent_list/agent_list_widget.dart'
     show AgentListWidget;
-export '/pages/reset_password/otp_email_reset_password/otp_email_reset_password_widget.dart'
-    show OtpEmailResetPasswordWidget;
+export '/pages/forgot_pin/otp_email_forgot_pin/otp_email_forgot_pin_widget.dart'
+    show OtpEmailForgotPinWidget;
 export '/pages/reset_password/otp_phone_reset_password/otp_phone_reset_password_widget.dart'
     show OtpPhoneResetPasswordWidget;
-export '/pages/reset_password/basic_infi_reset_password/basic_infi_reset_password_widget.dart'
-    show BasicInfiResetPasswordWidget;
+export '/pages/forgot_pin/basic_infi_forgot_pin/basic_infi_forgot_pin_widget.dart'
+    show BasicInfiForgotPinWidget;

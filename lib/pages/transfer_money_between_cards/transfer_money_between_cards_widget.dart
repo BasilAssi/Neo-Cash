@@ -1051,7 +1051,7 @@ class _TransferMoneyBetweenCardsWidgetState
                                         .bodyMediumFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    fontSize: 32.0,
+                                    fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                     useGoogleFonts: GoogleFonts.asMap()
