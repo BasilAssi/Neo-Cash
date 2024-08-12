@@ -8,10 +8,11 @@ import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
 
 import 'dart:convert';
+import 'package:crypto/crypto.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<String?> encodeSHA256(String? str) async {
+Future<String?> encodeSHA256(String str) async {
   try {
     List<int> bytes = utf8.encode(str);
     Digest digest = sha256.convert(bytes);
@@ -19,5 +20,5 @@ Future<String?> encodeSHA256(String? str) async {
   } catch (e) {
     print(e);
     return null;
-  }
+ }
 }

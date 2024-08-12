@@ -13,6 +13,8 @@ import 'dart:convert';
 
 import 'package:device_info/device_info.dart';
 import 'dart:io';
+import 'package:local_auth/local_auth.dart';
+
 
 Future setDeviceInfo() async {
   final deviceInfo = DeviceInfoPlugin();

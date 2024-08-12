@@ -104,7 +104,7 @@ dependency_overrides:
   http: 1.2.1
   pointer_interceptor: 0.10.1
   uuid: ^4.0.0
-  win32: 5.5.1
+  #win32: 5.5.1
 
 dev_dependencies:
   flutter_launcher_icons: 0.13.1
