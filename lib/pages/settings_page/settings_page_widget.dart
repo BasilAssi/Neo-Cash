@@ -1,8 +1,11 @@
+import '/components/enable_biometric_component/enable_biometric_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'settings_page_model.dart';
 export 'settings_page_model.dart';
 
@@ -23,7 +26,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
     super.initState();
     _model = createModel(context, () => SettingsPageModel());
 
-    _model.switchValue = true;
+    _model.switchValue = FFAppState().AppSettings.biometricEnabled;
   }
 
   @override
@@ -35,6 +38,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -168,18 +173,57 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                 ),
                               ],
                             ),
-                            Switch.adaptive(
-                              value: _model.switchValue!,
-                              onChanged: (newValue) async {
-                                setState(() => _model.switchValue = newValue);
-                              },
-                              activeColor: const Color(0x4CF83B46),
-                              activeTrackColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              inactiveTrackColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              inactiveThumbColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
+                            Builder(
+                              builder: (context) => Switch.adaptive(
+                                value: _model.switchValue!,
+                                onChanged: (newValue) async {
+                                  setState(
+                                      () => _model.switchValue = newValue);
+                                  if (newValue) {
+                                    await showDialog(
+                                      barrierDismissible: false,
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: const AlignmentDirectional(
+                                                  -0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(dialogContext)
+                                                      .unfocus(),
+                                              child: SizedBox(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.4,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.9,
+                                                child:
+                                                    const EnableBiometricComponentWidget(),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  }
+                                },
+                                activeColor: const Color(0x4CF83B46),
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                              ),
                             ),
                           ],
                         ),

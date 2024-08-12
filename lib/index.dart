@@ -74,3 +74,5 @@ export '/pages/reset_password/otp_phone_reset_password/otp_phone_reset_password_
     show OtpPhoneResetPasswordWidget;
 export '/pages/forgot_pin/basic_infi_forgot_pin/basic_infi_forgot_pin_widget.dart'
     show BasicInfiForgotPinWidget;
+export '/pages/registeration/success_page/success_page_widget.dart'
+    show SuccessPageWidget;

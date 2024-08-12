@@ -433,11 +433,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'k890nwac': {
-      'ar': '+972 ',
+      'ar': '+970',
       'en': '',
     },
     'gangnkno': {
-      'ar': '+970',
+      'ar': '+972',
       'en': '',
     },
     'c040sz0r': {
@@ -599,6 +599,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g3fbaqeh': {
       'ar': 'تم التحقق  ',
+      'en': '',
+    },
+    'uemhjyul': {
+      'ar': 'التحقق من\n البريد الإلكتروني',
       'en': '',
     },
     'fx3qydw8': {
@@ -1262,12 +1266,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's0eeyypj': {
       'ar':
-          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
-      'en': '',
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف ويحتوي على حرف واحد كبير، حرف واحد صغير، ورقم واحد',
+      'en':
+          'The password must be at least 7 characters long and include one uppercase letter, one lowercase letter, and one number.',
     },
     'wjbn27v2': {
       'ar': 'دخل الرمز السري  مكون من اربع خانات',
       'en': '',
+    },
+    'jixxx7a7': {
+      'ar':
+          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+      'en':
+          '4-digit PIN will be used to authorize financial transactions within the app',
     },
     't2k8mdj6': {
       'ar': 'استخدامك لنيو كاش يعني انك \nموافق على  ',
@@ -2277,8 +2288,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'description',
       'en': '',
     },
-    'tfom7h4e': {
+    '8r06p8xt': {
       'ar': 'description',
+      'en': '',
+    },
+    'c4fvj91y': {
+      'ar': 'إنشاء حساب',
       'en': '',
     },
     '6jkjfkmj': {
@@ -2425,11 +2440,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jdfo80hm': {
       'ar':
-          'لازم تكون كلمة السر مكونة من 8 خانات على \nالاقل , ورمز واحد  وحرف كبير ',
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف ويحتوي على حرف واحد كبير، حرف واحد صغير، ورقم واحد',
+      'en':
+          'The password must be at least 7 characters long and include one uppercase letter, one lowercase letter, and one number.',
+    },
+    'h8w9gxlk': {
+      'ar': 'دخل الرمز السري  مكون من اربع خانات',
       'en': '',
     },
-    'ah2o7vrj': {
-      'ar': 'دخل الرمز السري  مكون من اربع خانات',
+    '7accpmyt': {
+      'ar':
+          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
       'en': '',
     },
     'zsckrnmu': {
@@ -2661,6 +2682,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // success_page
+  {
+    'kh49fpqs': {
+      'ar': 'مبااارك!',
+      'en': 'Congrats!',
+    },
+    '7uvhtze5': {
+      'ar':
+          'تهانينا! تم تقديم طلبك بنجاح ستتمكن من استخدام حسابك في غضون بضعة أيام عمل بعد الموافقة على الحساب',
+      'en':
+          'Congratulations! Your application has been successfully submitted. You will be able to use your account within a few business days once it is approved',
+    },
+    'pm7u8x69': {
+      'ar': 'الصفحة الرئيسية ',
+      'en': '',
+    },
+    'bk5yl1fb': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // error_component
   {
     'gzit5wjk': {
@@ -2766,6 +2808,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hiemgsju': {
       'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+  },
+  // enable_biometric_component
+  {
+    'svta24mk': {
+      'ar':
+          'تفعيل البصمة غير آمن إذا كان جهازك يحتوي على عدة بصمات. عند تفعيل البصمة يمكن استخدامها كبديل لكلمة المرورعند تسجيل الدخول و بديل للرمز السري المستخدم لتأكيد الحركات المالية.',
+      'en':
+          'This can be risky if your device has multiple Touch IDs. Touch ID will replace your password on the login screen and will also replace the 4-digit PIN required for authorizing financial transactions',
+    },
+    '9mp6qdlx': {
+      'ar': 'تفعيل',
+      'en': '',
+    },
+    'vewvjana': {
+      'ar': 'إغلاق',
       'en': '',
     },
   },

@@ -2,8 +2,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'set_password_exist_flow_model.dart';
 export 'set_password_exist_flow_model.dart';
@@ -128,17 +130,16 @@ class _SetPasswordExistFlowWidgetState
                         FFLocalizations.of(context).getText(
                           '5hbla8hx' /* دخل باقي المعلومات */,
                         ),
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .titleMediumFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleMediumFamily),
-                            ),
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color: FlutterFlowTheme.of(context).textColor,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
                       ),
                     ),
                     Padding(
@@ -159,6 +160,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -170,6 +172,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -185,7 +188,8 @@ class _SetPasswordExistFlowWidgetState
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),
@@ -215,6 +219,7 @@ class _SetPasswordExistFlowWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
                               fontSize: 18.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -232,18 +237,17 @@ class _SetPasswordExistFlowWidgetState
                         FFLocalizations.of(context).getText(
                           'hlg7j9ky' /* بمجرد إنشاء حسابك سنرسل لك راب... */,
                         ),
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .titleMediumFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleMediumFamily),
-                            ),
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color: FlutterFlowTheme.of(context).textColor,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
                       ),
                     ),
                     Padding(
@@ -264,6 +268,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -275,6 +280,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -290,7 +296,7 @@ class _SetPasswordExistFlowWidgetState
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).textColor,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),
@@ -321,7 +327,7 @@ class _SetPasswordExistFlowWidgetState
                               _model.firstNameTextFieldVisibility1
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: FlutterFlowTheme.of(context).textColor,
                               size: 28.0,
                             ),
                           ),
@@ -358,6 +364,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -369,6 +376,7 @@ class _SetPasswordExistFlowWidgetState
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -384,7 +392,8 @@ class _SetPasswordExistFlowWidgetState
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),
@@ -415,7 +424,7 @@ class _SetPasswordExistFlowWidgetState
                               _model.firstNameTextFieldVisibility2
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: FlutterFlowTheme.of(context).textColor,
                               size: 28.0,
                             ),
                           ),
@@ -439,40 +448,93 @@ class _SetPasswordExistFlowWidgetState
                           const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'jdfo80hm' /* لازم تكون كلمة السر مكونة من 8... */,
+                          'jdfo80hm' /* يجب أن تكون كلمة المرور بطول ل... */,
                         ),
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .titleMediumFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleMediumFamily),
-                            ),
+                        style:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color: FlutterFlowTheme.of(context).textColor,
+                                  fontSize: 14.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
                       ),
                     ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'ah2o7vrj' /* دخل الرمز السري  مكون من اربع ... */,
-                        ),
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .titleMediumFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleMediumFamily),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'h8w9gxlk' /* دخل الرمز السري  مكون من اربع ... */,
                             ),
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
+                          ),
+                          AlignedTooltip(
+                            content: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '7accpmyt' /* الرمز المكون من 4 أرقام سيستخد... */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyLargeFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily),
+                                    ),
+                              ),
+                            ),
+                            offset: 4.0,
+                            preferredDirection: AxisDirection.down,
+                            borderRadius: BorderRadius.circular(8.0),
+                            backgroundColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 4.0,
+                            tailBaseWidth: 24.0,
+                            tailLength: 12.0,
+                            waitDuration: const Duration(milliseconds: 100),
+                            showDuration: const Duration(milliseconds: 1500),
+                            triggerMode: TooltipTriggerMode.tap,
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 20.0,
+                              borderWidth: 1.0,
+                              buttonSize: 40.0,
+                              fillColor: FlutterFlowTheme.of(context).accent1,
+                              icon: FaIcon(
+                                FontAwesomeIcons.exclamation,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 24.0,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(

@@ -579,7 +579,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .accent4,
+                                                    .secondaryBackground,
                                             prefixIcon: const Icon(
                                               Icons.key_rounded,
                                             ),
