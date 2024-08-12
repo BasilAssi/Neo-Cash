@@ -286,16 +286,16 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     controller:
                                         _model.dropDownValueController ??=
                                             FormFieldController<String>(
-                                      _model.dropDownValue ??= '1',
+                                      _model.dropDownValue ??= '+970',
                                     ),
                                     options:
-                                        List<String>.from(['Option 1', '1']),
+                                        List<String>.from(['+970', '+972 ']),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
-                                        'k890nwac' /* +972  */,
+                                        'k890nwac' /* +970 */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        'gangnkno' /* +970 */,
+                                        'gangnkno' /* +972 */,
                                       )
                                     ],
                                     onChanged: (val) => setState(

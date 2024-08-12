@@ -633,10 +633,10 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                     controller:
                                         _model.dropDownValueController ??=
                                             FormFieldController<String>(
-                                      _model.dropDownValue ??= '1',
+                                      _model.dropDownValue ??= '+970',
                                     ),
                                     options:
-                                        List<String>.from(['Option 1', '1']),
+                                        List<String>.from(['+970', '+972']),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         '1uytg858' /* +972  */,
@@ -886,46 +886,53 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                   .asValidator(context),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.8),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          context.pushNamed('confirm_transfer_between_friends');
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'dr4519ce' /* التالي */,
-                        ),
-                        options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 0.9,
-                          height: MediaQuery.sizeOf(context).height * 0.06,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleSmallFamily,
-                                color: Colors.white,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleSmallFamily),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.8),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 48.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                      'confirm_transfer_between_friends');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'dr4519ce' /* التالي */,
+                                ),
+                                options: FFButtonOptions(
+                                  width: MediaQuery.sizeOf(context).width * 0.9,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.06,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
                               ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
+                        ],
                       ),
                     ),
                   ],

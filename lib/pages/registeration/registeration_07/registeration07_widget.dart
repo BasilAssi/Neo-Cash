@@ -2,8 +2,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'registeration07_model.dart';
 export 'registeration07_model.dart';
@@ -942,7 +944,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          's0eeyypj' /* لازم تكون كلمة السر مكونة من 8... */,
+                          's0eeyypj' /* يجب أن تكون كلمة المرور بطول ل... */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
@@ -961,21 +963,74 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'wjbn27v2' /* دخل الرمز السري  مكون من اربع ... */,
-                        ),
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: FlutterFlowTheme.of(context)
-                                  .titleMediumFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleMediumFamily),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'wjbn27v2' /* دخل الرمز السري  مكون من اربع ... */,
                             ),
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
+                                ),
+                          ),
+                          AlignedTooltip(
+                            content: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'jixxx7a7' /* الرمز المكون من 4 أرقام سيستخد... */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyLargeFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily),
+                                    ),
+                              ),
+                            ),
+                            offset: 4.0,
+                            preferredDirection: AxisDirection.down,
+                            borderRadius: BorderRadius.circular(8.0),
+                            backgroundColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 4.0,
+                            tailBaseWidth: 24.0,
+                            tailLength: 12.0,
+                            waitDuration: const Duration(milliseconds: 100),
+                            showDuration: const Duration(milliseconds: 1500),
+                            triggerMode: TooltipTriggerMode.tap,
+                            child: FlutterFlowIconButton(
+                              borderRadius: 20.0,
+                              borderWidth: 1.0,
+                              buttonSize: 40.0,
+                              fillColor: FlutterFlowTheme.of(context).accent1,
+                              icon: FaIcon(
+                                FontAwesomeIcons.exclamation,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 24.0,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(

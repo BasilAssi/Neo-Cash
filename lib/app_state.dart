@@ -49,4 +49,14 @@ class FFAppState extends ChangeNotifier {
       Function(RegisterationFormDataStruct) updateFn) {
     updateFn(_registerationFormData);
   }
+
+  SettingsAppStruct _AppSettings = SettingsAppStruct();
+  SettingsAppStruct get AppSettings => _AppSettings;
+  set AppSettings(SettingsAppStruct value) {
+    _AppSettings = value;
+  }
+
+  void updateAppSettingsStruct(Function(SettingsAppStruct) updateFn) {
+    updateFn(_AppSettings);
+  }
 }

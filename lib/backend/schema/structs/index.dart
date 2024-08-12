@@ -7,3 +7,4 @@ export 'is_registered_a_p_i_response_struct.dart';
 export 'is_registered_data_struct.dart';
 export 'records_struct.dart';
 export 'registeration_form_data_struct.dart';
+export 'settings_app_struct.dart';
