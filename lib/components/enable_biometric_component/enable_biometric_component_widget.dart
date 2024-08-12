@@ -104,7 +104,10 @@ class _EnableBiometricComponentWidgetState
                                     alignment: const AlignmentDirectional(0.0, 1.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        Navigator.pop(context);
+                                        FFAppState().updateAppSettingsStruct(
+                                          (e) => e..biometricEnabled = true,
+                                        );
+                                        setState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         '9mp6qdlx' /* تفعيل */,
@@ -150,6 +153,10 @@ class _EnableBiometricComponentWidgetState
                                 Expanded(
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      FFAppState().updateAppSettingsStruct(
+                                        (e) => e..biometricEnabled = false,
+                                      );
+                                      setState(() {});
                                       Navigator.pop(context);
                                     },
                                     text: FFLocalizations.of(context).getText(
