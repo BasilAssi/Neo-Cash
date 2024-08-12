@@ -1,3 +1,4 @@
+import '/components/disable_biometric_component/disable_biometric_component_widget.dart';
 import '/components/enable_biometric_component/enable_biometric_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -212,6 +213,47 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                     setState(() {
                                                       _model.switchValue =
                                                           false;
+                                                    });
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  } else {
+                                    await showDialog(
+                                      barrierDismissible: false,
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: const AlignmentDirectional(
+                                                  -0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(dialogContext)
+                                                      .unfocus(),
+                                              child: SizedBox(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.35,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.9,
+                                                child:
+                                                    DisableBiometricComponentWidget(
+                                                  actionDisable: () async {
+                                                    setState(() {
+                                                      _model.switchValue = true;
                                                     });
                                                   },
                                                 ),

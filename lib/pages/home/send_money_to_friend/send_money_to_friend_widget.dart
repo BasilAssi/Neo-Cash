@@ -356,7 +356,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 12.0, 0.0, 12.0),
+                                                        8.0, 12.0, 8.0, 12.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -370,91 +370,93 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                                   0.0,
                                                                   0.0),
                                                       child: Image.asset(
-                                                        'assets/images/masterCard@2x.png',
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        'assets/images/visa_1.png',
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         fit: BoxFit.fitWidth,
                                                       ),
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        4.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '114q9k4z' /* Mastercard Ending in 4021 */,
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                              child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '114q9k4z' /* Mastercard Ending in 4021 */,
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                    ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyLargeFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
-                                                                  ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        4.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'xgm3exrb' /* $425.24 */,
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                              child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'xgm3exrb' /* $425.24 */,
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                    ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMediumFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                  ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -571,16 +573,16 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .textFieldBorder,
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -589,7 +591,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -598,12 +600,14 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      contentPadding: const EdgeInsets.all(12.0),
+                                      contentPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 20.0, 20.0, 20.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -736,34 +740,35 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                         .textFieldBorder,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 100.0, 0.0),
+                                    16.0, 20.0, 100.0, 0.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -781,7 +786,6 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                 .bodyMediumFamily),
                                   ),
                               textAlign: TextAlign.start,
-                              maxLines: 2,
                               keyboardType: TextInputType.number,
                               validator: _model.textController2Validator
                                   .asValidator(context),
@@ -809,7 +813,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .labelMediumFamily,
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
+                                          .textColor,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
@@ -823,6 +827,8 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .labelMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
@@ -836,41 +842,42 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                         .textFieldBorder,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: const EdgeInsets.all(12.0),
+                                contentPadding: const EdgeInsets.all(20.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .bodyMediumFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: GoogleFonts.asMap()
@@ -879,7 +886,6 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                 .bodyMediumFamily),
                                   ),
                               textAlign: TextAlign.start,
-                              maxLines: 2,
                               keyboardType: TextInputType.phone,
                               validator: _model
                                   .textFieldDescriptionTextControllerValidator
@@ -927,7 +933,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                               ),
                             ),

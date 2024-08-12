@@ -2815,7 +2815,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'svta24mk': {
       'ar':
-          'تفعيل البصمة غير آمن إذا كان جهازك يحتوي على عدة بصمات. عند تفعيل البصمة يمكن استخدامها كبديل لكلمة المرورعند تسجيل الدخول و بديل للرمز السري المستخدم لتأكيد الحركات المالية.',
+          'تفعيل البصمة غير آمن إذا كان جهازك يحتوي على عدة بصمات. عند تفعيل البصمة يمكن استخدامها كبديل لكلمة المرور عند تسجيل الدخول و بديل للرمز السري المستخدم لتأكيد الحركات المالية.',
       'en':
           'This can be risky if your device has multiple Touch IDs. Touch ID will replace your password on the login screen and will also replace the 4-digit PIN required for authorizing financial transactions',
     },
@@ -2825,6 +2825,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vewvjana': {
       'ar': 'إغلاق',
+      'en': '',
+    },
+  },
+  // disable_biometric_component
+  {
+    'tkt5qtwo': {
+      'ar': 'هل أنت متأكد أنك تريد تعطيل بصمة الاصبع؟',
+      'en': 'Are you sure you want to disable the Touch ID',
+    },
+    'hoxhpkmm': {
+      'ar': 'نعم',
+      'en': '',
+    },
+    'hmwblstk': {
+      'ar': 'لا',
       'en': '',
     },
   },
