@@ -1032,7 +1032,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '8e3rsbjp': {
-      'ar': 'رقم الهوية اقل من عشرة ارقام',
+      'ar': 'رقم الهوية اقل من 7  ارقام',
       'en': '',
     },
     'w3k77fqk': {

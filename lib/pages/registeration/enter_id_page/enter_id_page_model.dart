@@ -28,9 +28,9 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
       );
     }
 
-    if (val.length < 10) {
+    if (val.length < 7) {
       return FFLocalizations.of(context).getText(
-        '8e3rsbjp' /* رقم الهوية اقل من عشرة ارقام */,
+        '8e3rsbjp' /* رقم الهوية اقل من 7  ارقام */,
       );
     }
     if (val.length > 10) {

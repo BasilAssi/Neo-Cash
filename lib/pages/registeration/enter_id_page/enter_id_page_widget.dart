@@ -253,8 +253,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Color(0x00000000),
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).textFieldBorder,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
