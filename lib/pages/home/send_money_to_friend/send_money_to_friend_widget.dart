@@ -621,7 +621,6 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                       .bodyMediumFamily),
                                         ),
                                     textAlign: TextAlign.start,
-                                    maxLines: 2,
                                     keyboardType: TextInputType.phone,
                                     validator: _model
                                         .textFieldValueTextControllerValidator

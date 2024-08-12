@@ -336,8 +336,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0x00000000),
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .textFieldBorder,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -544,8 +546,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textFieldBorder,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
