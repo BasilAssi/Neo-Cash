@@ -3,12 +3,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'enable_biometric_component_model.dart';
-export 'enable_biometric_component_model.dart';
+import 'disable_biometric_component_model.dart';
+export 'disable_biometric_component_model.dart';
 
-class EnableBiometricComponentWidget extends StatefulWidget {
+class DisableBiometricComponentWidget extends StatefulWidget {
   /// this component used  for confirm to block the card
-  const EnableBiometricComponentWidget({
+  const DisableBiometricComponentWidget({
     super.key,
     required this.actionDisable,
   });
@@ -16,13 +16,13 @@ class EnableBiometricComponentWidget extends StatefulWidget {
   final Future Function()? actionDisable;
 
   @override
-  State<EnableBiometricComponentWidget> createState() =>
-      _EnableBiometricComponentWidgetState();
+  State<DisableBiometricComponentWidget> createState() =>
+      _DisableBiometricComponentWidgetState();
 }
 
-class _EnableBiometricComponentWidgetState
-    extends State<EnableBiometricComponentWidget> {
-  late EnableBiometricComponentModel _model;
+class _DisableBiometricComponentWidgetState
+    extends State<DisableBiometricComponentWidget> {
+  late DisableBiometricComponentModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -33,7 +33,7 @@ class _EnableBiometricComponentWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EnableBiometricComponentModel());
+    _model = createModel(context, () => DisableBiometricComponentModel());
   }
 
   @override
@@ -77,7 +77,7 @@ class _EnableBiometricComponentWidgetState
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'svta24mk' /* تفعيل البصمة غير آمن إذا كان ج... */,
+                                'tkt5qtwo' /* هل أنت متأكد أنك تريد تعطيل بص... */,
                               ),
                               textAlign: TextAlign.justify,
                               style: FlutterFlowTheme.of(context)
@@ -110,13 +110,13 @@ class _EnableBiometricComponentWidgetState
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         FFAppState().updateAppSettingsStruct(
-                                          (e) => e..biometricEnabled = true,
+                                          (e) => e..biometricEnabled = false,
                                         );
                                         setState(() {});
                                         Navigator.pop(context);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '9mp6qdlx' /* تفعيل */,
+                                        'hoxhpkmm' /* نعم */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 250.0,
@@ -160,14 +160,14 @@ class _EnableBiometricComponentWidgetState
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       FFAppState().updateAppSettingsStruct(
-                                        (e) => e..biometricEnabled = false,
+                                        (e) => e..biometricEnabled = true,
                                       );
                                       setState(() {});
                                       await widget.actionDisable?.call();
                                       Navigator.pop(context);
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'vewvjana' /* إغلاق */,
+                                      'hmwblstk' /* لا */,
                                     ),
                                     options: FFButtonOptions(
                                       width: 250.0,
