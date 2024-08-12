@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -14,12 +16,29 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      if (prefs.containsKey('ff_registerationFormData')) {
+        try {
+          final serializedData =
+              prefs.getString('ff_registerationFormData') ?? '{}';
+          _registerationFormData =
+              RegisterationFormDataStruct.fromSerializableMap(
+                  jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   bool _isEnglish = false;
   bool get isEnglish => _isEnglish;
@@ -43,11 +62,14 @@ class FFAppState extends ChangeNotifier {
       _registerationFormData;
   set registerationFormData(RegisterationFormDataStruct value) {
     _registerationFormData = value;
+    prefs.setString('ff_registerationFormData', value.serialize());
   }
 
   void updateRegisterationFormDataStruct(
       Function(RegisterationFormDataStruct) updateFn) {
     updateFn(_registerationFormData);
+    prefs.setString(
+        'ff_registerationFormData', _registerationFormData.serialize());
   }
 
   SettingsAppStruct _AppSettings = SettingsAppStruct();
@@ -59,4 +81,16 @@ class FFAppState extends ChangeNotifier {
   void updateAppSettingsStruct(Function(SettingsAppStruct) updateFn) {
     updateFn(_AppSettings);
   }
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }
