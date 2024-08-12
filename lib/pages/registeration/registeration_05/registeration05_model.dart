@@ -14,17 +14,25 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
+  FocusNode? emailTextFieldFocusNode1;
+  TextEditingController? emailTextFieldTextController1;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
+      emailTextFieldTextController1Validator;
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode2;
+  TextEditingController? emailTextFieldTextController2;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextController2Validator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
+    emailTextFieldFocusNode1?.dispose();
+    emailTextFieldTextController1?.dispose();
+
+    emailTextFieldFocusNode2?.dispose();
+    emailTextFieldTextController2?.dispose();
   }
 }

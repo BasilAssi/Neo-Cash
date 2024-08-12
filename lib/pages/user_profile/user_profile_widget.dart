@@ -261,7 +261,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
+                                    16.0, 0.0, 16.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -362,7 +362,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
+                                    16.0, 0.0, 16.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -371,7 +371,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'z1qrqkvj' /* تاريخ الميلاد */,
+                                        'dbqmodex' /* رقم الموبايل */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -395,7 +395,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                           0.0, 12.0, 0.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'au5atau4' /* 21/07/2001 */,
+                                          'ivhvtzdk' /* 0569852 */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -609,89 +609,6 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                           ),
                         ],
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).iconBackground,
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color:
-                                  FlutterFlowTheme.of(context).textFieldBorder,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.password_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 28.0,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            decoration: const BoxDecoration(),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 8.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '2jt5rwhx' /* تغير كلمة المرور */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily),
-                                          ),
-                                    ),
-                                  ),
-                                  FlutterFlowIconButton(
-                                    borderColor: Colors.transparent,
-                                    borderRadius: 20.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 48.0,
-                                    icon: Icon(
-                                      Icons.edit,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ],

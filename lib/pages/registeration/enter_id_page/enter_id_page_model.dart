@@ -24,7 +24,7 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'nuxhazj7' /* Field is required */,
+        'o8vsd9cs' /* رقم الهوية لا يمكن ان يكون فار... */,
       );
     }
 

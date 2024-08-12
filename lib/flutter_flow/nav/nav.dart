@@ -95,9 +95,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const RegisterPage1Widget(),
             ),
             FFRoute(
-              name: 'register_page_2_phone_number',
-              path: 'registerPage2PhoneNumber',
-              builder: (context, params) => const RegisterPage2PhoneNumberWidget(),
+              name: 'phone_number',
+              path: 'phoneNumber',
+              builder: (context, params) => const PhoneNumberWidget(),
             ),
             FFRoute(
               name: 'otp_does_not_exist_flow',
@@ -130,11 +130,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const TransactionDetailsPageWidget(),
             ),
             FFRoute(
-              name: 'card_settings_page',
-              path: 'cardSettingsPage',
-              builder: (context, params) => const CardSettingsPageWidget(),
-            ),
-            FFRoute(
               name: 'view_pin_code_page',
               path: 'viewPinCodePage',
               builder: (context, params) => const ViewPinCodePageWidget(),
@@ -152,9 +147,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'qr_code_page',
               path: 'qrCodePage',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'qr_code_page')
-                  : const QrCodePageWidget(),
+              builder: (context, params) => const QrCodePageWidget(),
             ),
             FFRoute(
               name: 'enter_id_page',
@@ -189,7 +182,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'send_money_to_friend',
               path: 'sendMoneyToFriend',
-              builder: (context, params) => const SendMoneyToFriendWidget(),
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'send_money_to_friend')
+                  : const SendMoneyToFriendWidget(),
             ),
             FFRoute(
               name: 'transfer_money_between_cards',
@@ -265,9 +260,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const TermsAndConditionsWidget(),
             ),
             FFRoute(
-              name: 'id_reset_password',
-              path: 'idResetPassword',
-              builder: (context, params) => const IdResetPasswordWidget(),
+              name: 'id_forgot_pin',
+              path: 'idForgotPin',
+              builder: (context, params) => const IdForgotPinWidget(),
             ),
             FFRoute(
               name: 'confirm_reset_password',
@@ -280,9 +275,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AgentListWidget(),
             ),
             FFRoute(
-              name: 'otp_email_reset_password',
-              path: 'otpEmailResetPassword',
-              builder: (context, params) => OtpEmailResetPasswordWidget(
+              name: 'otp_email_forgot_pin',
+              path: 'otpEmailForgotPin',
+              builder: (context, params) => OtpEmailForgotPinWidget(
                 phoneNumber: params.getParam(
                   'phoneNumber',
                   ParamType.String,
@@ -300,9 +295,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'basic_infi_reset_password',
-              path: 'basicInfiResetPassword',
-              builder: (context, params) => const BasicInfiResetPasswordWidget(),
+              name: 'basic_infi_forgot_pin',
+              path: 'basicInfiForgotPin',
+              builder: (context, params) => const BasicInfiForgotPinWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

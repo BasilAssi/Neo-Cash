@@ -8,11 +8,11 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'otp_email_reset_password_model.dart';
-export 'otp_email_reset_password_model.dart';
+import 'otp_email_forgot_pin_model.dart';
+export 'otp_email_forgot_pin_model.dart';
 
-class OtpEmailResetPasswordWidget extends StatefulWidget {
-  const OtpEmailResetPasswordWidget({
+class OtpEmailForgotPinWidget extends StatefulWidget {
+  const OtpEmailForgotPinWidget({
     super.key,
     required this.phoneNumber,
   });
@@ -20,20 +20,19 @@ class OtpEmailResetPasswordWidget extends StatefulWidget {
   final String? phoneNumber;
 
   @override
-  State<OtpEmailResetPasswordWidget> createState() =>
-      _OtpEmailResetPasswordWidgetState();
+  State<OtpEmailForgotPinWidget> createState() =>
+      _OtpEmailForgotPinWidgetState();
 }
 
-class _OtpEmailResetPasswordWidgetState
-    extends State<OtpEmailResetPasswordWidget> {
-  late OtpEmailResetPasswordModel _model;
+class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
+  late OtpEmailForgotPinModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OtpEmailResetPasswordModel());
+    _model = createModel(context, () => OtpEmailForgotPinModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {

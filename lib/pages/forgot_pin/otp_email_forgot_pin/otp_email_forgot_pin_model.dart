@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'otp_email_reset_password_widget.dart' show OtpEmailResetPasswordWidget;
+import 'otp_email_forgot_pin_widget.dart' show OtpEmailForgotPinWidget;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 
-class OtpEmailResetPasswordModel
-    extends FlutterFlowModel<OtpEmailResetPasswordWidget> {
+class OtpEmailForgotPinModel extends FlutterFlowModel<OtpEmailForgotPinWidget> {
   ///  Local state fields for this page.
 
   bool isCompleted = true;

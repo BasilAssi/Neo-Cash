@@ -137,7 +137,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'home_page': const HomePageWidget(),
-      'qr_code_page': const QrCodePageWidget(),
+      'send_money_to_friend': const SendMoneyToFriendWidget(),
       'transactions_home_page': const TransactionsHomePageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -169,15 +169,11 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(
-              Icons.qr_code_scanner,
-              size: 48.0,
-            ),
-            activeIcon: const Icon(
-              Icons.qr_code_scanner,
-              size: 48.0,
+              Icons.screen_share_outlined,
+              size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'q065sddi' /* الدفع ب QR */,
+              'hlwqlc5j' /* إرسال لصديق */,
             ),
             tooltip: '',
           ),

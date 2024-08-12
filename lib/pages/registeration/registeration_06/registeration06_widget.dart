@@ -710,7 +710,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           .labelMediumFamily),
                                 ),
                             hintText: FFLocalizations.of(context).getText(
-                              'bcv9kzes' /* اسم المعرض سياسيا (بالعربي) */,
+                              'bcv9kzes' /* الاسم الكامل باللغة العربية */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -814,7 +814,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           .labelMediumFamily),
                                 ),
                             hintText: FFLocalizations.of(context).getText(
-                              'u7i1idxb' /* اسم المعرض سياسيا (بالانجليزي) */,
+                              'u7i1idxb' /* الاسم الكامل باللغة الانجليزية */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -918,7 +918,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           .labelMediumFamily),
                                 ),
                             hintText: FFLocalizations.of(context).getText(
-                              'gagxqvml' /* صلة القرابة مع المعرض سياسيا */,
+                              'gagxqvml' /* مثال : أب, ابن , أخ */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium

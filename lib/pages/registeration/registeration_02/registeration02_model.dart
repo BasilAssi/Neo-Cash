@@ -14,6 +14,11 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   // State field(s) for CitiesDropDown widget.
   String? citiesDropDownValue;
   FormFieldController<String>? citiesDropDownValueController;
+  // State field(s) for MotherNameENTextField widget.
+  FocusNode? motherNameENTextFieldFocusNode;
+  TextEditingController? motherNameENTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      motherNameENTextFieldTextControllerValidator;
   // State field(s) for GenderDropDown widget.
   String? genderDropDownValue;
   FormFieldController<String>? genderDropDownValueController;
@@ -25,5 +30,8 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    motherNameENTextFieldFocusNode?.dispose();
+    motherNameENTextFieldTextController?.dispose();
+  }
 }

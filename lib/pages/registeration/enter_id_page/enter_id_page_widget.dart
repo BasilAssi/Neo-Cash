@@ -102,7 +102,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'je18929v' /* شو نوع هويتك الشخصية */,
+                      'je18929v' /*   الهوية الشخصية */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -253,8 +253,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
+                          borderSide: const BorderSide(
+                            color: Color(0x00000000),
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
@@ -290,6 +290,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
+                      keyboardType: TextInputType.number,
                       validator: _model
                           .firstNameTextFieldTextControllerValidator
                           .asValidator(context),
@@ -343,18 +344,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                           ''))
                                       ?.status ==
                                   true) {
-                                context.pushNamed(
-                                  'otp_exist_flow',
-                                  queryParameters: {
-                                    'phoneNumber': serializeParam(
-                                      '522222***',
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                );
+                                context.pushNamed('registeration_01');
                               } else {
-                                context
-                                    .pushNamed('register_page_2_phone_number');
+                                context.pushNamed('phone_number');
                               }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(

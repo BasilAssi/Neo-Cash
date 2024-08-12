@@ -760,7 +760,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                         obscureText: !_model.firstNameTextFieldVisibility1,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'futstmfr' /* كلمة السر */,
+                            'futstmfr' /* كلمة المرور */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
@@ -854,7 +854,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                         obscureText: !_model.firstNameTextFieldVisibility2,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'af8ji769' /* تأكيد كلمة السر */,
+                            'af8ji769' /* تأكيد كلمة المرور */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
@@ -1030,6 +1030,105 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: _model.pinCodeControllerValidator
                             .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                      child: Wrap(
+                        spacing: 0.0,
+                        runSpacing: 0.0,
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.start,
+                        direction: Axis.horizontal,
+                        runAlignment: WrapAlignment.start,
+                        verticalDirection: VerticalDirection.down,
+                        clipBehavior: Clip.none,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 12.0, 0.0),
+                            child: Theme(
+                              data: ThemeData(
+                                checkboxTheme: CheckboxThemeData(
+                                  visualDensity: VisualDensity.standard,
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.padded,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ),
+                                unselectedWidgetColor:
+                                    FlutterFlowTheme.of(context).primary,
+                              ),
+                              child: Checkbox(
+                                value: _model.checkboxValue ??= false,
+                                onChanged: (newValue) async {
+                                  setState(
+                                      () => _model.checkboxValue = newValue!);
+                                },
+                                side: BorderSide(
+                                  width: 2,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                ),
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                checkColor: FlutterFlowTheme.of(context).info,
+                              ),
+                            ),
+                          ),
+                          RichText(
+                            textScaler: MediaQuery.of(context).textScaler,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: FFLocalizations.of(context).getText(
+                                    't2k8mdj6' /* استخدامك لنيو كاش يعني انك 
+مو... */
+                                    ,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .textColor,
+                                        fontSize: 17.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                                TextSpan(
+                                  text: FFLocalizations.of(context).getText(
+                                    'xzwvglof' /* الشروط والأحكام */,
+                                  ),
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 17.0,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                )
+                              ],
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyMediumFamily),
+                                  ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(

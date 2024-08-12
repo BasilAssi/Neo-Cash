@@ -29,6 +29,8 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
 
   @override
   void initState(BuildContext context) {

@@ -763,7 +763,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'yfoglq5k' /* سجل عنوانك */,
+                          'yfoglq5k' /* العنوان */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
@@ -800,7 +800,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                                         .labelMediumFamily),
                               ),
                           hintText: FFLocalizations.of(context).getText(
-                            'x8wk3106' /* موقعك:  */,
+                            'x8wk3106' /* موقعك: الحي , الشارع   */,
                           ),
                           hintStyle: FlutterFlowTheme.of(context)
                               .labelMedium
