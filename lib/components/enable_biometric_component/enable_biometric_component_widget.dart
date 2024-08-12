@@ -8,7 +8,12 @@ export 'enable_biometric_component_model.dart';
 
 class EnableBiometricComponentWidget extends StatefulWidget {
   /// this component used  for confirm to block the card
-  const EnableBiometricComponentWidget({super.key});
+  const EnableBiometricComponentWidget({
+    super.key,
+    required this.actionDisable,
+  });
+
+  final Future Function()? actionDisable;
 
   @override
   State<EnableBiometricComponentWidget> createState() =>
@@ -157,6 +162,7 @@ class _EnableBiometricComponentWidgetState
                                         (e) => e..biometricEnabled = false,
                                       );
                                       setState(() {});
+                                      await widget.actionDisable?.call();
                                       Navigator.pop(context);
                                     },
                                     text: FFLocalizations.of(context).getText(
