@@ -15,18 +15,18 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
   TextEditingController? emailTextFieldTextController;
   String? Function(BuildContext, String?)?
       emailTextFieldTextControllerValidator;
-  // State field(s) for FirstNameTextField widget.
-  FocusNode? firstNameTextFieldFocusNode1;
-  TextEditingController? firstNameTextFieldTextController1;
-  late bool firstNameTextFieldVisibility1;
+  // State field(s) for PasswordTextField widget.
+  FocusNode? passwordTextFieldFocusNode;
+  TextEditingController? passwordTextFieldTextController;
+  late bool passwordTextFieldVisibility;
   String? Function(BuildContext, String?)?
-      firstNameTextFieldTextController1Validator;
-  // State field(s) for FirstNameTextField widget.
-  FocusNode? firstNameTextFieldFocusNode2;
-  TextEditingController? firstNameTextFieldTextController2;
-  late bool firstNameTextFieldVisibility2;
+      passwordTextFieldTextControllerValidator;
+  // State field(s) for ConfirmTextField widget.
+  FocusNode? confirmTextFieldFocusNode;
+  TextEditingController? confirmTextFieldTextController;
+  late bool confirmTextFieldVisibility;
   String? Function(BuildContext, String?)?
-      firstNameTextFieldTextController2Validator;
+      confirmTextFieldTextControllerValidator;
   // State field(s) for Expandable widget.
   late ExpandableController expandableExpandableController;
 
@@ -38,8 +38,8 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
 
   @override
   void initState(BuildContext context) {
-    firstNameTextFieldVisibility1 = false;
-    firstNameTextFieldVisibility2 = false;
+    passwordTextFieldVisibility = false;
+    confirmTextFieldVisibility = false;
     pinCodeController = TextEditingController();
   }
 
@@ -48,11 +48,11 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
     emailTextFieldFocusNode?.dispose();
     emailTextFieldTextController?.dispose();
 
-    firstNameTextFieldFocusNode1?.dispose();
-    firstNameTextFieldTextController1?.dispose();
+    passwordTextFieldFocusNode?.dispose();
+    passwordTextFieldTextController?.dispose();
 
-    firstNameTextFieldFocusNode2?.dispose();
-    firstNameTextFieldTextController2?.dispose();
+    confirmTextFieldFocusNode?.dispose();
+    confirmTextFieldTextController?.dispose();
 
     expandableExpandableController.dispose();
     pinCodeController?.dispose();

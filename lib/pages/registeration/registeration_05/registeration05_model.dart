@@ -10,29 +10,56 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode1;
-  TextEditingController? emailTextFieldTextController1;
+  // State field(s) for trueBeneficiaryNameTextField widget.
+  FocusNode? trueBeneficiaryNameTextFieldFocusNode;
+  TextEditingController? trueBeneficiaryNameTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController1Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode2;
-  TextEditingController? emailTextFieldTextController2;
+      trueBeneficiaryNameTextFieldTextControllerValidator;
+  String? _trueBeneficiaryNameTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'yqzok9cw' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for relationShipWithTrueBeneficiaryTextField widget.
+  FocusNode? relationShipWithTrueBeneficiaryTextFieldFocusNode;
+  TextEditingController? relationShipWithTrueBeneficiaryTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController2Validator;
+      relationShipWithTrueBeneficiaryTextFieldTextControllerValidator;
+  String? _relationShipWithTrueBeneficiaryTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'caq9antt' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    trueBeneficiaryNameTextFieldTextControllerValidator =
+        _trueBeneficiaryNameTextFieldTextControllerValidator;
+    relationShipWithTrueBeneficiaryTextFieldTextControllerValidator =
+        _relationShipWithTrueBeneficiaryTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {
-    emailTextFieldFocusNode1?.dispose();
-    emailTextFieldTextController1?.dispose();
+    trueBeneficiaryNameTextFieldFocusNode?.dispose();
+    trueBeneficiaryNameTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode2?.dispose();
-    emailTextFieldTextController2?.dispose();
+    relationShipWithTrueBeneficiaryTextFieldFocusNode?.dispose();
+    relationShipWithTrueBeneficiaryTextFieldTextController?.dispose();
   }
 }

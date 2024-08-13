@@ -11,6 +11,8 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in registeration_02 widget.
+  bool? isNetworkAvaiableOutput;
   DateTime? datePicked;
   // State field(s) for CitiesDropDown widget.
   String? citiesDropDownValue;

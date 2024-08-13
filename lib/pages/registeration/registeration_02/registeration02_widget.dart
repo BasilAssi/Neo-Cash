@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'registeration02_model.dart';
@@ -30,6 +31,11 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Registeration02Model());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.isNetworkAvaiableOutput = await actions.isNetworkAvailable();
+    });
 
     _model.motherNameENTextFieldTextController ??= TextEditingController(
         text: FFAppState().registerationFormData.hasMotherNameEN()
@@ -806,9 +812,12 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
-                        future: AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
-                          msgId: functions.messageId(),
-                          type: 'CITY',
+                        future: FFAppState().citesAPIResponse(
+                          requestFn: () =>
+                              AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                            msgId: functions.messageId(),
+                            type: 'CITY',
+                          ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -839,28 +848,46 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       .birthOfPlace
                                   : '',
                             ),
-                            options: List<String>.from(
-                                LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        citiesDropDownLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.encodedId)
-                                    .toList()),
-                            optionLabels: FFLocalizations.of(context)
-                                        .languageCode ==
-                                    'ar'
+                            options: List<
+                                String>.from(LookupCitiesAPIResponseStruct
+                                            .maybeFromMap(
+                                                citiesDropDownLOOKUPsAPIsResponse
+                                                    .jsonBody)
+                                        ?.hasRecords() ==
+                                    true
                                 ? LookupCitiesAPIResponseStruct.maybeFromMap(
                                         citiesDropDownLOOKUPsAPIsResponse
                                             .jsonBody)!
                                     .records
-                                    .map((e) => e.localName)
+                                    .map((e) => e.encodedId)
                                     .toList()
-                                : LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        citiesDropDownLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.latinName)
-                                    .toList(),
+                                : FFAppConstants.emptyListStrings),
+                            optionLabels: FFLocalizations.of(context)
+                                        .languageCode ==
+                                    'ar'
+                                ? (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                citiesDropDownLOOKUPsAPIsResponse
+                                                    .jsonBody)
+                                            ?.hasRecords() ==
+                                        true
+                                    ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                            citiesDropDownLOOKUPsAPIsResponse
+                                                .jsonBody)!
+                                        .records
+                                        .map((e) => e.localName)
+                                        .toList()
+                                    : FFAppConstants.emptyListStrings)
+                                : (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                citiesDropDownLOOKUPsAPIsResponse
+                                                    .jsonBody)
+                                            ?.hasRecords() ==
+                                        true
+                                    ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                            citiesDropDownLOOKUPsAPIsResponse.jsonBody)!
+                                        .records
+                                        .map((e) => e.latinName)
+                                        .toList()
+                                    : FFAppConstants.emptyListStrings),
                             onChanged: (val) => setState(
                                 () => _model.citiesDropDownValue = val),
                             width: 300.0,

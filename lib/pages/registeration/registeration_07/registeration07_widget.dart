@@ -29,11 +29,11 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
     _model.emailTextFieldTextController ??= TextEditingController();
     _model.emailTextFieldFocusNode ??= FocusNode();
 
-    _model.firstNameTextFieldTextController1 ??= TextEditingController();
-    _model.firstNameTextFieldFocusNode1 ??= FocusNode();
+    _model.passwordTextFieldTextController ??= TextEditingController();
+    _model.passwordTextFieldFocusNode ??= FocusNode();
 
-    _model.firstNameTextFieldTextController2 ??= TextEditingController();
-    _model.firstNameTextFieldFocusNode2 ??= FocusNode();
+    _model.confirmTextFieldTextController ??= TextEditingController();
+    _model.confirmTextFieldFocusNode ??= FocusNode();
 
     _model.expandableExpandableController =
         ExpandableController(initialExpanded: false);
@@ -757,11 +757,11 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: TextFormField(
-                        controller: _model.firstNameTextFieldTextController1,
-                        focusNode: _model.firstNameTextFieldFocusNode1,
+                        controller: _model.passwordTextFieldTextController,
+                        focusNode: _model.passwordTextFieldFocusNode,
                         autofocus: true,
                         textCapitalization: TextCapitalization.sentences,
-                        obscureText: !_model.firstNameTextFieldVisibility1,
+                        obscureText: !_model.passwordTextFieldVisibility,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
                             'futstmfr' /* كلمة المرور */,
@@ -820,12 +820,12 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                           fillColor: FlutterFlowTheme.of(context).accent4,
                           suffixIcon: InkWell(
                             onTap: () => setState(
-                              () => _model.firstNameTextFieldVisibility1 =
-                                  !_model.firstNameTextFieldVisibility1,
+                              () => _model.passwordTextFieldVisibility =
+                                  !_model.passwordTextFieldVisibility,
                             ),
                             focusNode: FocusNode(skipTraversal: true),
                             child: Icon(
-                              _model.firstNameTextFieldVisibility1
+                              _model.passwordTextFieldVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -843,7 +843,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                       .bodyMediumFamily),
                             ),
                         validator: _model
-                            .firstNameTextFieldTextController1Validator
+                            .passwordTextFieldTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -851,11 +851,11 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
-                        controller: _model.firstNameTextFieldTextController2,
-                        focusNode: _model.firstNameTextFieldFocusNode2,
+                        controller: _model.confirmTextFieldTextController,
+                        focusNode: _model.confirmTextFieldFocusNode,
                         autofocus: true,
                         textCapitalization: TextCapitalization.sentences,
-                        obscureText: !_model.firstNameTextFieldVisibility2,
+                        obscureText: !_model.confirmTextFieldVisibility,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
                             'af8ji769' /* تأكيد كلمة المرور */,
@@ -914,12 +914,12 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                           fillColor: FlutterFlowTheme.of(context).accent4,
                           suffixIcon: InkWell(
                             onTap: () => setState(
-                              () => _model.firstNameTextFieldVisibility2 =
-                                  !_model.firstNameTextFieldVisibility2,
+                              () => _model.confirmTextFieldVisibility =
+                                  !_model.confirmTextFieldVisibility,
                             ),
                             focusNode: FocusNode(skipTraversal: true),
                             child: Icon(
-                              _model.firstNameTextFieldVisibility2
+                              _model.confirmTextFieldVisibility
                                   ? Icons.visibility_outlined
                                   : Icons.visibility_off_outlined,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -937,7 +937,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                       .bodyMediumFamily),
                             ),
                         validator: _model
-                            .firstNameTextFieldTextController2Validator
+                            .confirmTextFieldTextControllerValidator
                             .asValidator(context),
                       ),
                     ),

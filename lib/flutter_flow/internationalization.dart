@@ -1857,6 +1857,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مثال : أب, ابن , أخ',
       'en': '',
     },
+    'yqzok9cw': {
+      'ar': 'الحقل مطلوب',
+      'en': '',
+    },
+    'emd08oiv': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'caq9antt': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
+    },
+    'sn1ac2pa': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
     's0hgt3cz': {
       'ar': 'التالي',
       'en': '',
@@ -2430,7 +2446,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': 'Field is required',
     },
-    'emd08oiv': {
+    'rc19rnrm': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -2438,7 +2454,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': 'Field is required',
     },
-    'sn1ac2pa': {
+    'bcmiiojk': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -2446,7 +2462,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': '',
     },
-    'rc19rnrm': {
+    'iw5fw6si': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },

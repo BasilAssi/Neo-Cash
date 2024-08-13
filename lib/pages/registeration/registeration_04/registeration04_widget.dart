@@ -961,7 +961,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                                   );
                                   setState(() {});
 
-                                  context.pushNamed('registeration_06');
+                                  context.pushNamed('registeration_05');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'vq6zsk0n' /* التالي */,

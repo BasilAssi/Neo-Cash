@@ -1175,16 +1175,15 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                   0.0, 24.0, 0.0, 24.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('registeration_07');
-
                                   if (_model.isPEPDropDownValue == 'true') {
+                                    _model.validateOutPut = true;
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
-                                      return;
+                                      _model.validateOutPut = false;
                                     }
                                     if (_model.isPEPDropDownValue == null) {
-                                      return;
+                                      _model.validateOutPut = false;
                                     }
                                     FFAppState()
                                         .updateRegisterationFormDataStruct(
@@ -1217,6 +1216,8 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
 
                                     context.pushNamed('registeration_07');
                                   }
+
+                                  setState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   '0qtinpje' /* التالي */,
