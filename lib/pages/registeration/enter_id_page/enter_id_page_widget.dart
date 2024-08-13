@@ -11,6 +11,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'enter_id_page_model.dart';
 export 'enter_id_page_model.dart';
@@ -45,6 +46,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -341,6 +344,10 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 arText: 'AR',
                                 enText: 'EN',
                               ),
+                              deviceSerial:
+                                  FFAppState().deviceInformation.hasSerial()
+                                      ? FFAppState().deviceInformation.serial
+                                      : '',
                             );
 
                             if ((_model.isRegisteredOutPut?.succeeded ??

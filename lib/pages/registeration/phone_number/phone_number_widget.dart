@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'phone_number_model.dart';
 export 'phone_number_model.dart';
 
@@ -39,6 +40,8 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -332,6 +335,10 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
+                                    disabled: FFAppState()
+                                            .registerationFormData
+                                            .idType ==
+                                        'NATIONAL',
                                     isSearchable: false,
                                     isMultiSelect: false,
                                   ),

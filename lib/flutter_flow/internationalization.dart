@@ -550,7 +550,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'قفل\nالبطاقة',
       'en': '',
     },
-    '9xarkmih': {
+    '6rfifwnu': {
       'ar': 'فك قفل\nالبطاقة',
       'en': '',
     },
@@ -1262,15 +1262,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'The password must be at least 7 characters long and include one uppercase letter, one lowercase letter, and one number.',
     },
-    'wjbn27v2': {
+    'soi78980': {
       'ar': 'دخل الرمز السري  مكون من اربع خانات',
       'en': '',
     },
-    'jixxx7a7': {
+    'lebp0vdv': {
+      'ar': ' ',
+      'en': '',
+    },
+    '7y0c9wrt': {
       'ar':
           'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
-      'en':
-          '4-digit PIN will be used to authorize financial transactions within the app',
+      'en': '',
     },
     't2k8mdj6': {
       'ar': 'استخدامك لنيو كاش يعني انك \nموافق على  ',

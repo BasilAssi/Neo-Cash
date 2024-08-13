@@ -204,7 +204,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 0.0, 0.0),
                                         child: Image.asset(
-                                          'assets/images/masterCard@2x.png',
+                                          'assets/images/visa_1.png',
                                           width: 40.0,
                                           height: 40.0,
                                           fit: BoxFit.fitWidth,
@@ -673,7 +673,7 @@ THRU */
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                '9xarkmih' /* فك قفل
+                                '6rfifwnu' /* فك قفل
 البطاقة */
                                 ,
                               ),
