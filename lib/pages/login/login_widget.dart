@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,6 +35,11 @@ class _LoginWidgetState extends State<LoginWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.setDeviceInfo();
+    });
 
     _model.textFieldValueTextController ??= TextEditingController();
     _model.textFieldValueFocusNode ??= FocusNode();

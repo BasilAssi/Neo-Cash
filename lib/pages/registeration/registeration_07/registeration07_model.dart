@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registeration07_widget.dart' show Registeration07Widget;
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 
 class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
@@ -26,6 +27,9 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
   late bool firstNameTextFieldVisibility2;
   String? Function(BuildContext, String?)?
       firstNameTextFieldTextController2Validator;
+  // State field(s) for Expandable widget.
+  late ExpandableController expandableExpandableController;
+
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
@@ -50,6 +54,7 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
     firstNameTextFieldFocusNode2?.dispose();
     firstNameTextFieldTextController2?.dispose();
 
+    expandableExpandableController.dispose();
     pinCodeController?.dispose();
   }
 }
