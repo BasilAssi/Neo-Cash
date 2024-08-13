@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'otp_does_not_exist_flow_widget.dart' show OtpDoesNotExistFlowWidget;
@@ -17,6 +18,12 @@ class OtpDoesNotExistFlowModel
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
+  // Stores action output result for [Custom Action - encodeSHA256] action in PinCode widget.
+  String? oTPHashedSHA256base64;
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in PinCode widget.
+  bool? isNetworkAvailableOutput;
+  // Stores action output result for [Backend Call - API (Verify OTP)] action in PinCode widget.
+  ApiCallResponse? verifyOTPOutput;
   // State field(s) for Timer widget.
   final timerInitialTimeMs = 120000;
   int timerMilliseconds = 120000;

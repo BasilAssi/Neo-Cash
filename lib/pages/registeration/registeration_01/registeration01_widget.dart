@@ -38,22 +38,40 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
             : '');
     _model.fatherNameARTextFieldFocusNode ??= FocusNode();
 
-    _model.grandFatherNameARTextFieldTextController ??= TextEditingController();
+    _model.grandFatherNameARTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasGrandFatherNameAR()
+            ? FFAppState().registerationFormData.grandFatherNameAR
+            : '');
     _model.grandFatherNameARTextFieldFocusNode ??= FocusNode();
 
-    _model.familyNameARTextFieldTextController ??= TextEditingController();
+    _model.familyNameARTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasFamilyNameAR()
+            ? FFAppState().registerationFormData.familyNameAR
+            : '');
     _model.familyNameARTextFieldFocusNode ??= FocusNode();
 
-    _model.firstNameENTextFieldTextController ??= TextEditingController();
+    _model.firstNameENTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasFirstNameEN()
+            ? FFAppState().registerationFormData.firstNameEN
+            : '');
     _model.firstNameENTextFieldFocusNode ??= FocusNode();
 
-    _model.fatherNameENTextFieldTextController ??= TextEditingController();
+    _model.fatherNameENTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasFatherNameEN()
+            ? FFAppState().registerationFormData.fatherNameEN
+            : '');
     _model.fatherNameENTextFieldFocusNode ??= FocusNode();
 
-    _model.grandFatherNameENTextFieldTextController ??= TextEditingController();
+    _model.grandFatherNameENTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasGrandFatherNameEN()
+            ? FFAppState().registerationFormData.grandFatherNameEN
+            : '');
     _model.grandFatherNameENTextFieldFocusNode ??= FocusNode();
 
-    _model.familyNameENTextFieldTextController ??= TextEditingController();
+    _model.familyNameENTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasFamilyNameEN()
+            ? FFAppState().registerationFormData.familyNameEN
+            : '');
     _model.familyNameENTextFieldFocusNode ??= FocusNode();
   }
 
@@ -138,6 +156,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Row(
                               mainAxisSize: MainAxisSize.min,
@@ -1488,6 +1507,23 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                         .firstNameARTextFieldTextController.text
                                     ..fatherNameAR = _model
                                         .fatherNameARTextFieldTextController
+                                        .text
+                                    ..grandFatherNameAR = _model
+                                        .grandFatherNameARTextFieldTextController
+                                        .text
+                                    ..familyNameAR = _model
+                                        .familyNameARTextFieldTextController
+                                        .text
+                                    ..firstNameEN = _model
+                                        .firstNameENTextFieldTextController.text
+                                    ..fatherNameEN = _model
+                                        .fatherNameENTextFieldTextController
+                                        .text
+                                    ..grandFatherNameEN = _model
+                                        .grandFatherNameENTextFieldTextController
+                                        .text
+                                    ..familyNameEN = _model
+                                        .familyNameENTextFieldTextController
                                         .text,
                                 );
                                 setState(() {});

@@ -12,15 +12,15 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for FirstNameTextField widget.
-  FocusNode? firstNameTextFieldFocusNode;
-  TextEditingController? firstNameTextFieldTextController;
+  // State field(s) for idTypeDropDown widget.
+  String? idTypeDropDownValue;
+  FormFieldController<String>? idTypeDropDownValueController;
+  // State field(s) for idNumberTextField widget.
+  FocusNode? idNumberTextFieldFocusNode;
+  TextEditingController? idNumberTextFieldTextController;
   String? Function(BuildContext, String?)?
-      firstNameTextFieldTextControllerValidator;
-  String? _firstNameTextFieldTextControllerValidator(
+      idNumberTextFieldTextControllerValidator;
+  String? _idNumberTextFieldTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
@@ -51,13 +51,13 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
 
   @override
   void initState(BuildContext context) {
-    firstNameTextFieldTextControllerValidator =
-        _firstNameTextFieldTextControllerValidator;
+    idNumberTextFieldTextControllerValidator =
+        _idNumberTextFieldTextControllerValidator;
   }
 
   @override
   void dispose() {
-    firstNameTextFieldFocusNode?.dispose();
-    firstNameTextFieldTextController?.dispose();
+    idNumberTextFieldFocusNode?.dispose();
+    idNumberTextFieldTextController?.dispose();
   }
 }

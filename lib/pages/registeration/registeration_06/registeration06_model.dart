@@ -10,45 +10,98 @@ class Registeration06Model extends FlutterFlowModel<Registeration06Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode1;
-  TextEditingController? emailTextFieldTextController1;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for isPEPDropDown widget.
+  String? isPEPDropDownValue;
+  FormFieldController<String>? isPEPDropDownValueController;
+  // State field(s) for localPepFullNameTextField widget.
+  FocusNode? localPepFullNameTextFieldFocusNode;
+  TextEditingController? localPepFullNameTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController1Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode2;
-  TextEditingController? emailTextFieldTextController2;
+      localPepFullNameTextFieldTextControllerValidator;
+  String? _localPepFullNameTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'szccmsm4' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for latinPepFullNameTextField widget.
+  FocusNode? latinPepFullNameTextFieldFocusNode;
+  TextEditingController? latinPepFullNameTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController2Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode3;
-  TextEditingController? emailTextFieldTextController3;
+      latinPepFullNameTextFieldTextControllerValidator;
+  String? _latinPepFullNameTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '8693qu5v' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for relationshipWithPepTextField widget.
+  FocusNode? relationshipWithPepTextFieldFocusNode;
+  TextEditingController? relationshipWithPepTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController3Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode4;
-  TextEditingController? emailTextFieldTextController4;
+      relationshipWithPepTextFieldTextControllerValidator;
+  String? _relationshipWithPepTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'eggopym5' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for pepPositionTextField widget.
+  FocusNode? pepPositionTextFieldFocusNode;
+  TextEditingController? pepPositionTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController4Validator;
+      pepPositionTextFieldTextControllerValidator;
+  String? _pepPositionTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'eggopym5' /* Field is required */,
+      );
+    }
+
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    localPepFullNameTextFieldTextControllerValidator =
+        _localPepFullNameTextFieldTextControllerValidator;
+    latinPepFullNameTextFieldTextControllerValidator =
+        _latinPepFullNameTextFieldTextControllerValidator;
+    relationshipWithPepTextFieldTextControllerValidator =
+        _relationshipWithPepTextFieldTextControllerValidator;
+    pepPositionTextFieldTextControllerValidator =
+        _pepPositionTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {
-    emailTextFieldFocusNode1?.dispose();
-    emailTextFieldTextController1?.dispose();
+    localPepFullNameTextFieldFocusNode?.dispose();
+    localPepFullNameTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode2?.dispose();
-    emailTextFieldTextController2?.dispose();
+    latinPepFullNameTextFieldFocusNode?.dispose();
+    latinPepFullNameTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode3?.dispose();
-    emailTextFieldTextController3?.dispose();
+    relationshipWithPepTextFieldFocusNode?.dispose();
+    relationshipWithPepTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode4?.dispose();
-    emailTextFieldTextController4?.dispose();
+    pepPositionTextFieldFocusNode?.dispose();
+    pepPositionTextFieldTextController?.dispose();
   }
 }

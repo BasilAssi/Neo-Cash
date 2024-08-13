@@ -16,7 +16,7 @@ class AuthAndRegisterGroup {
     String? msgId = '',
     String? token = '',
   }) =>
-      'http://185.57.122.58:7777/customer';
+      'http://185.57.122.58:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'X-Auth-Token': '[token]',
@@ -27,6 +27,7 @@ class AuthAndRegisterGroup {
   static VerifyOTPCall verifyOTPCall = VerifyOTPCall();
   static RegisterACustomerCall registerACustomerCall = RegisterACustomerCall();
   static ListCustomersCall listCustomersCall = ListCustomersCall();
+  static LOOKUPsAPIsCall lOOKUPsAPIsCall = LOOKUPsAPIsCall();
 }
 
 class IsRegisteredCall {
@@ -45,7 +46,7 @@ class IsRegisteredCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
-      apiUrl: '$baseUrl/api/v1/isRegistered',
+      apiUrl: '$baseUrl/customer/api/v1/isRegistered',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -95,7 +96,7 @@ class SendOTPToCustomerCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send OTP to customer',
-      apiUrl: '$baseUrl/api/v1/sendOtp',
+      apiUrl: '$baseUrl/customer/api/v1/sendOtp',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -147,7 +148,7 @@ class VerifyOTPCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Verify OTP',
-      apiUrl: '$baseUrl/api/v1/verifyOtp',
+      apiUrl: '$baseUrl/customer/api/v1/verifyOtp',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -225,7 +226,7 @@ class RegisterACustomerCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Register a customer',
-      apiUrl: '$baseUrl/api/v1/register',
+      apiUrl: '$baseUrl/customer/api/v1/register',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -259,7 +260,7 @@ class ListCustomersCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'list customers',
-      apiUrl: '$baseUrl/api/v1/list',
+      apiUrl: '$baseUrl/customer/api/v1/list',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -268,6 +269,45 @@ class ListCustomersCall {
       },
       params: {
         'msgId': msgId,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class LOOKUPsAPIsCall {
+  Future<ApiCallResponse> call({
+    String? countryId = 'Mzk2MA==',
+    String? cityId = '',
+    String? type = '',
+    String? acceptLanguage = 'EN',
+    String? msgId = '',
+    String? token = '',
+  }) async {
+    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
+      acceptLanguage: acceptLanguage,
+      msgId: msgId,
+      token: token,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'LOOK UPs APIs',
+      apiUrl: '$baseUrl/lookup/api/v1/list',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'X-Auth-Token': '$token',
+        'applicationType': 'BP-V1.0',
+      },
+      params: {
+        'countryId': countryId,
+        'cityId': cityId,
+        'type': type,
       },
       returnBody: true,
       encodeBodyUtf8: false,
