@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -81,6 +83,21 @@ class FFAppState extends ChangeNotifier {
   void updateAppSettingsStruct(Function(SettingsAppStruct) updateFn) {
     updateFn(_AppSettings);
   }
+
+  final _citesAPIResponseManager = FutureRequestManager<ApiCallResponse>();
+  Future<ApiCallResponse> citesAPIResponse({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<ApiCallResponse> Function() requestFn,
+  }) =>
+      _citesAPIResponseManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearCitesAPIResponseCache() => _citesAPIResponseManager.clear();
+  void clearCitesAPIResponseCacheKey(String? uniqueKey) =>
+      _citesAPIResponseManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

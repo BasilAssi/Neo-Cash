@@ -32,6 +32,7 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? addressText,
     String? areYouTheRealBeneficiaryOfAccount,
     String? nameOfTheBeneficialOwner,
+    String? relationShipWithTrueBeneficiary,
     String? isPEP,
     String? localPepFullName,
     String? latinPepFullName,
@@ -63,6 +64,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         _addressText = addressText,
         _areYouTheRealBeneficiaryOfAccount = areYouTheRealBeneficiaryOfAccount,
         _nameOfTheBeneficialOwner = nameOfTheBeneficialOwner,
+        _relationShipWithTrueBeneficiary = relationShipWithTrueBeneficiary,
         _isPEP = isPEP,
         _localPepFullName = localPepFullName,
         _latinPepFullName = latinPepFullName,
@@ -248,6 +250,16 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasNameOfTheBeneficialOwner() => _nameOfTheBeneficialOwner != null;
 
+  // "relationShipWithTrueBeneficiary" field.
+  String? _relationShipWithTrueBeneficiary;
+  String get relationShipWithTrueBeneficiary =>
+      _relationShipWithTrueBeneficiary ?? '';
+  set relationShipWithTrueBeneficiary(String? val) =>
+      _relationShipWithTrueBeneficiary = val;
+
+  bool hasRelationShipWithTrueBeneficiary() =>
+      _relationShipWithTrueBeneficiary != null;
+
   // "isPEP" field.
   String? _isPEP;
   String get isPEP => _isPEP ?? '';
@@ -318,6 +330,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         areYouTheRealBeneficiaryOfAccount:
             data['AreYouTheRealBeneficiaryOfAccount'] as String?,
         nameOfTheBeneficialOwner: data['NameOfTheBeneficialOwner'] as String?,
+        relationShipWithTrueBeneficiary:
+            data['relationShipWithTrueBeneficiary'] as String?,
         isPEP: data['isPEP'] as String?,
         localPepFullName: data['localPepFullName'] as String?,
         latinPepFullName: data['latinPepFullName'] as String?,
@@ -356,6 +370,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         'AddressText': _addressText,
         'AreYouTheRealBeneficiaryOfAccount': _areYouTheRealBeneficiaryOfAccount,
         'NameOfTheBeneficialOwner': _nameOfTheBeneficialOwner,
+        'relationShipWithTrueBeneficiary': _relationShipWithTrueBeneficiary,
         'isPEP': _isPEP,
         'localPepFullName': _localPepFullName,
         'latinPepFullName': _latinPepFullName,
@@ -464,6 +479,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'NameOfTheBeneficialOwner': serializeParam(
           _nameOfTheBeneficialOwner,
+          ParamType.String,
+        ),
+        'relationShipWithTrueBeneficiary': serializeParam(
+          _relationShipWithTrueBeneficiary,
           ParamType.String,
         ),
         'isPEP': serializeParam(
@@ -620,6 +639,11 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        relationShipWithTrueBeneficiary: deserializeParam(
+          data['relationShipWithTrueBeneficiary'],
+          ParamType.String,
+          false,
+        ),
         isPEP: deserializeParam(
           data['isPEP'],
           ParamType.String,
@@ -684,6 +708,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         areYouTheRealBeneficiaryOfAccount ==
             other.areYouTheRealBeneficiaryOfAccount &&
         nameOfTheBeneficialOwner == other.nameOfTheBeneficialOwner &&
+        relationShipWithTrueBeneficiary ==
+            other.relationShipWithTrueBeneficiary &&
         isPEP == other.isPEP &&
         localPepFullName == other.localPepFullName &&
         latinPepFullName == other.latinPepFullName &&
@@ -719,6 +745,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         addressText,
         areYouTheRealBeneficiaryOfAccount,
         nameOfTheBeneficialOwner,
+        relationShipWithTrueBeneficiary,
         isPEP,
         localPepFullName,
         latinPepFullName,
@@ -754,6 +781,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? addressText,
   String? areYouTheRealBeneficiaryOfAccount,
   String? nameOfTheBeneficialOwner,
+  String? relationShipWithTrueBeneficiary,
   String? isPEP,
   String? localPepFullName,
   String? latinPepFullName,
@@ -787,6 +815,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       addressText: addressText,
       areYouTheRealBeneficiaryOfAccount: areYouTheRealBeneficiaryOfAccount,
       nameOfTheBeneficialOwner: nameOfTheBeneficialOwner,
+      relationShipWithTrueBeneficiary: relationShipWithTrueBeneficiary,
       isPEP: isPEP,
       localPepFullName: localPepFullName,
       latinPepFullName: latinPepFullName,
