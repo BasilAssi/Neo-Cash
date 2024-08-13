@@ -10,24 +10,25 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for CityDropDown widget.
+  String? cityDropDownValue;
+  FormFieldController<String>? cityDropDownValueController;
+  // State field(s) for PopulationDropDown widget.
+  String? populationDropDownValue;
+  FormFieldController<String>? populationDropDownValueController;
+  // State field(s) for AddresslTextField widget.
+  FocusNode? addresslTextFieldFocusNode;
+  TextEditingController? addresslTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
+      addresslTextFieldTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
+    addresslTextFieldFocusNode?.dispose();
+    addresslTextFieldTextController?.dispose();
   }
 }

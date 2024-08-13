@@ -10,6 +10,7 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   DateTime? datePicked;
   // State field(s) for CitiesDropDown widget.
   String? citiesDropDownValue;
@@ -19,15 +20,34 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   TextEditingController? motherNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       motherNameENTextFieldTextControllerValidator;
+  String? _motherNameENTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'm9cfiyyb' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'd9xrc6bn' /* اسم الام يجب ان يكون باللغة ال... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for GenderDropDown widget.
   String? genderDropDownValue;
   FormFieldController<String>? genderDropDownValueController;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for DropDownNationalty widget.
+  String? dropDownNationaltyValue;
+  FormFieldController<String>? dropDownNationaltyValueController;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    motherNameENTextFieldTextControllerValidator =
+        _motherNameENTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {

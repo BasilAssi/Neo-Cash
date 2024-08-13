@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/error_component/error_component_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -6,7 +7,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
@@ -32,8 +32,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
     super.initState();
     _model = createModel(context, () => EnterIdPageModel());
 
-    _model.firstNameTextFieldTextController ??= TextEditingController();
-    _model.firstNameTextFieldFocusNode ??= FocusNode();
+    _model.idNumberTextFieldTextController ??= TextEditingController();
+    _model.idNumberTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -141,9 +141,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController ??=
+                      controller: _model.idTypeDropDownValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue ??= 'NATIONAL',
+                        _model.idTypeDropDownValue ??= 'NATIONAL',
                       ),
                       options: List<String>.from(['NATIONAL', 'NATIONAL1']),
                       optionLabels: [
@@ -155,7 +155,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
+                          setState(() => _model.idTypeDropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -217,8 +217,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
-                      controller: _model.firstNameTextFieldTextController,
-                      focusNode: _model.firstNameTextFieldFocusNode,
+                      controller: _model.idNumberTextFieldTextController,
+                      focusNode: _model.idNumberTextFieldFocusNode,
                       autofocus: true,
                       textCapitalization: TextCapitalization.sentences,
                       obscureText: false,
@@ -291,8 +291,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                       keyboardType: TextInputType.number,
-                      validator: _model
-                          .firstNameTextFieldTextControllerValidator
+                      validator: _model.idNumberTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
                   ),
@@ -309,7 +308,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             setState(() => _model.identityFormOutput = false);
                             return;
                           }
-                          if (_model.dropDownValue == null) {
+                          if (_model.idTypeDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
                                 arText: 'يجب اختيار الهوية',
@@ -320,6 +319,13 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             setState(() {});
                             return;
                           }
+                          FFAppState().updateRegisterationFormDataStruct(
+                            (e) => e
+                              ..idNumber =
+                                  _model.idNumberTextFieldTextController.text
+                              ..idType = _model.idTypeDropDownValue,
+                          );
+                          setState(() {});
                           _model.isNetworkAvailableOutput =
                               await actions.isNetworkAvailable();
                           if (_model.isNetworkAvailableOutput == true) {
@@ -328,8 +334,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                     .call(
                               msgId: functions.messageId(),
                               idNumber:
-                                  _model.firstNameTextFieldTextController.text,
-                              idType: _model.dropDownValue,
+                                  _model.idNumberTextFieldTextController.text,
+                              idType: _model.idTypeDropDownValue,
                               acceptLanguage:
                                   FFLocalizations.of(context).getVariableText(
                                 arText: 'AR',

@@ -333,15 +333,7 @@ class _IdForgotPinWidgetState extends State<IdForgotPinWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(
-                            'otp_does_not_exist_flow',
-                            queryParameters: {
-                              'phoneNumber': serializeParam(
-                                '000',
-                                ParamType.String,
-                              ),
-                            }.withoutNulls,
-                          );
+                          context.pushNamed('otp_does_not_exist_flow');
                         },
                         text: FFLocalizations.of(context).getText(
                           '4ydgmlj5' /* التالي */,

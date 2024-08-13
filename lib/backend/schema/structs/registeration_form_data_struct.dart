@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class RegisterationFormDataStruct extends BaseStruct {
   RegisterationFormDataStruct({
+    String? idNumber,
+    String? idType,
     String? firstNameAR,
     String? fatherNameAR,
     String? grandFatherNameAR,
@@ -20,17 +22,25 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? birthOfPlace,
     String? gender,
     String? nationality,
-    bool? residentOfTheCountry,
-    bool? haveAnAmericanPassport,
+    String? residentOfTheCountry,
+    String? haveAnAmericanPassport,
     String? profession,
     String? placeOfWork,
     String? monthlyInComeDollar,
     String? city,
     String? population,
     String? addressText,
-    bool? areYouTheRealBeneficiaryOfAccount,
+    String? areYouTheRealBeneficiaryOfAccount,
     String? nameOfTheBeneficialOwner,
-  })  : _firstNameAR = firstNameAR,
+    String? isPEP,
+    String? localPepFullName,
+    String? latinPepFullName,
+    String? relationshipWithPep,
+    String? pepPosition,
+    String? mobileNumber,
+  })  : _idNumber = idNumber,
+        _idType = idType,
+        _firstNameAR = firstNameAR,
         _fatherNameAR = fatherNameAR,
         _grandFatherNameAR = grandFatherNameAR,
         _familyNameAR = familyNameAR,
@@ -52,7 +62,27 @@ class RegisterationFormDataStruct extends BaseStruct {
         _population = population,
         _addressText = addressText,
         _areYouTheRealBeneficiaryOfAccount = areYouTheRealBeneficiaryOfAccount,
-        _nameOfTheBeneficialOwner = nameOfTheBeneficialOwner;
+        _nameOfTheBeneficialOwner = nameOfTheBeneficialOwner,
+        _isPEP = isPEP,
+        _localPepFullName = localPepFullName,
+        _latinPepFullName = latinPepFullName,
+        _relationshipWithPep = relationshipWithPep,
+        _pepPosition = pepPosition,
+        _mobileNumber = mobileNumber;
+
+  // "idNumber" field.
+  String? _idNumber;
+  String get idNumber => _idNumber ?? '';
+  set idNumber(String? val) => _idNumber = val;
+
+  bool hasIdNumber() => _idNumber != null;
+
+  // "idType" field.
+  String? _idType;
+  String get idType => _idType ?? '';
+  set idType(String? val) => _idType = val;
+
+  bool hasIdType() => _idType != null;
 
   // "FirstNameAR" field.
   String? _firstNameAR;
@@ -146,16 +176,16 @@ class RegisterationFormDataStruct extends BaseStruct {
   bool hasNationality() => _nationality != null;
 
   // "ResidentOfTheCountry" field.
-  bool? _residentOfTheCountry;
-  bool get residentOfTheCountry => _residentOfTheCountry ?? false;
-  set residentOfTheCountry(bool? val) => _residentOfTheCountry = val;
+  String? _residentOfTheCountry;
+  String get residentOfTheCountry => _residentOfTheCountry ?? '';
+  set residentOfTheCountry(String? val) => _residentOfTheCountry = val;
 
   bool hasResidentOfTheCountry() => _residentOfTheCountry != null;
 
   // "HaveAnAmericanPassport" field.
-  bool? _haveAnAmericanPassport;
-  bool get haveAnAmericanPassport => _haveAnAmericanPassport ?? false;
-  set haveAnAmericanPassport(bool? val) => _haveAnAmericanPassport = val;
+  String? _haveAnAmericanPassport;
+  String get haveAnAmericanPassport => _haveAnAmericanPassport ?? '';
+  set haveAnAmericanPassport(String? val) => _haveAnAmericanPassport = val;
 
   bool hasHaveAnAmericanPassport() => _haveAnAmericanPassport != null;
 
@@ -202,10 +232,10 @@ class RegisterationFormDataStruct extends BaseStruct {
   bool hasAddressText() => _addressText != null;
 
   // "AreYouTheRealBeneficiaryOfAccount" field.
-  bool? _areYouTheRealBeneficiaryOfAccount;
-  bool get areYouTheRealBeneficiaryOfAccount =>
-      _areYouTheRealBeneficiaryOfAccount ?? false;
-  set areYouTheRealBeneficiaryOfAccount(bool? val) =>
+  String? _areYouTheRealBeneficiaryOfAccount;
+  String get areYouTheRealBeneficiaryOfAccount =>
+      _areYouTheRealBeneficiaryOfAccount ?? '';
+  set areYouTheRealBeneficiaryOfAccount(String? val) =>
       _areYouTheRealBeneficiaryOfAccount = val;
 
   bool hasAreYouTheRealBeneficiaryOfAccount() =>
@@ -218,8 +248,52 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasNameOfTheBeneficialOwner() => _nameOfTheBeneficialOwner != null;
 
+  // "isPEP" field.
+  String? _isPEP;
+  String get isPEP => _isPEP ?? '';
+  set isPEP(String? val) => _isPEP = val;
+
+  bool hasIsPEP() => _isPEP != null;
+
+  // "localPepFullName" field.
+  String? _localPepFullName;
+  String get localPepFullName => _localPepFullName ?? '';
+  set localPepFullName(String? val) => _localPepFullName = val;
+
+  bool hasLocalPepFullName() => _localPepFullName != null;
+
+  // "latinPepFullName" field.
+  String? _latinPepFullName;
+  String get latinPepFullName => _latinPepFullName ?? '';
+  set latinPepFullName(String? val) => _latinPepFullName = val;
+
+  bool hasLatinPepFullName() => _latinPepFullName != null;
+
+  // "relationshipWithPep" field.
+  String? _relationshipWithPep;
+  String get relationshipWithPep => _relationshipWithPep ?? '';
+  set relationshipWithPep(String? val) => _relationshipWithPep = val;
+
+  bool hasRelationshipWithPep() => _relationshipWithPep != null;
+
+  // "pepPosition" field.
+  String? _pepPosition;
+  String get pepPosition => _pepPosition ?? '';
+  set pepPosition(String? val) => _pepPosition = val;
+
+  bool hasPepPosition() => _pepPosition != null;
+
+  // "mobileNumber" field.
+  String? _mobileNumber;
+  String get mobileNumber => _mobileNumber ?? '';
+  set mobileNumber(String? val) => _mobileNumber = val;
+
+  bool hasMobileNumber() => _mobileNumber != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
+        idNumber: data['idNumber'] as String?,
+        idType: data['idType'] as String?,
         firstNameAR: data['FirstNameAR'] as String?,
         fatherNameAR: data['FatherNameAR'] as String?,
         grandFatherNameAR: data['GrandFatherNameAR'] as String?,
@@ -233,8 +307,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         birthOfPlace: data['BirthOfPlace'] as String?,
         gender: data['Gender'] as String?,
         nationality: data['Nationality'] as String?,
-        residentOfTheCountry: data['ResidentOfTheCountry'] as bool?,
-        haveAnAmericanPassport: data['HaveAnAmericanPassport'] as bool?,
+        residentOfTheCountry: data['ResidentOfTheCountry'] as String?,
+        haveAnAmericanPassport: data['HaveAnAmericanPassport'] as String?,
         profession: data['Profession'] as String?,
         placeOfWork: data['PlaceOfWork'] as String?,
         monthlyInComeDollar: data['MonthlyInComeDollar'] as String?,
@@ -242,8 +316,14 @@ class RegisterationFormDataStruct extends BaseStruct {
         population: data['Population'] as String?,
         addressText: data['AddressText'] as String?,
         areYouTheRealBeneficiaryOfAccount:
-            data['AreYouTheRealBeneficiaryOfAccount'] as bool?,
+            data['AreYouTheRealBeneficiaryOfAccount'] as String?,
         nameOfTheBeneficialOwner: data['NameOfTheBeneficialOwner'] as String?,
+        isPEP: data['isPEP'] as String?,
+        localPepFullName: data['localPepFullName'] as String?,
+        latinPepFullName: data['latinPepFullName'] as String?,
+        relationshipWithPep: data['relationshipWithPep'] as String?,
+        pepPosition: data['pepPosition'] as String?,
+        mobileNumber: data['mobileNumber'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -251,6 +331,8 @@ class RegisterationFormDataStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
+        'idNumber': _idNumber,
+        'idType': _idType,
         'FirstNameAR': _firstNameAR,
         'FatherNameAR': _fatherNameAR,
         'GrandFatherNameAR': _grandFatherNameAR,
@@ -274,10 +356,24 @@ class RegisterationFormDataStruct extends BaseStruct {
         'AddressText': _addressText,
         'AreYouTheRealBeneficiaryOfAccount': _areYouTheRealBeneficiaryOfAccount,
         'NameOfTheBeneficialOwner': _nameOfTheBeneficialOwner,
+        'isPEP': _isPEP,
+        'localPepFullName': _localPepFullName,
+        'latinPepFullName': _latinPepFullName,
+        'relationshipWithPep': _relationshipWithPep,
+        'pepPosition': _pepPosition,
+        'mobileNumber': _mobileNumber,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
+        'idNumber': serializeParam(
+          _idNumber,
+          ParamType.String,
+        ),
+        'idType': serializeParam(
+          _idType,
+          ParamType.String,
+        ),
         'FirstNameAR': serializeParam(
           _firstNameAR,
           ParamType.String,
@@ -332,11 +428,11 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'ResidentOfTheCountry': serializeParam(
           _residentOfTheCountry,
-          ParamType.bool,
+          ParamType.String,
         ),
         'HaveAnAmericanPassport': serializeParam(
           _haveAnAmericanPassport,
-          ParamType.bool,
+          ParamType.String,
         ),
         'Profession': serializeParam(
           _profession,
@@ -364,10 +460,34 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'AreYouTheRealBeneficiaryOfAccount': serializeParam(
           _areYouTheRealBeneficiaryOfAccount,
-          ParamType.bool,
+          ParamType.String,
         ),
         'NameOfTheBeneficialOwner': serializeParam(
           _nameOfTheBeneficialOwner,
+          ParamType.String,
+        ),
+        'isPEP': serializeParam(
+          _isPEP,
+          ParamType.String,
+        ),
+        'localPepFullName': serializeParam(
+          _localPepFullName,
+          ParamType.String,
+        ),
+        'latinPepFullName': serializeParam(
+          _latinPepFullName,
+          ParamType.String,
+        ),
+        'relationshipWithPep': serializeParam(
+          _relationshipWithPep,
+          ParamType.String,
+        ),
+        'pepPosition': serializeParam(
+          _pepPosition,
+          ParamType.String,
+        ),
+        'mobileNumber': serializeParam(
+          _mobileNumber,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -375,6 +495,16 @@ class RegisterationFormDataStruct extends BaseStruct {
   static RegisterationFormDataStruct fromSerializableMap(
           Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
+        idNumber: deserializeParam(
+          data['idNumber'],
+          ParamType.String,
+          false,
+        ),
+        idType: deserializeParam(
+          data['idType'],
+          ParamType.String,
+          false,
+        ),
         firstNameAR: deserializeParam(
           data['FirstNameAR'],
           ParamType.String,
@@ -442,12 +572,12 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         residentOfTheCountry: deserializeParam(
           data['ResidentOfTheCountry'],
-          ParamType.bool,
+          ParamType.String,
           false,
         ),
         haveAnAmericanPassport: deserializeParam(
           data['HaveAnAmericanPassport'],
-          ParamType.bool,
+          ParamType.String,
           false,
         ),
         profession: deserializeParam(
@@ -482,11 +612,41 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         areYouTheRealBeneficiaryOfAccount: deserializeParam(
           data['AreYouTheRealBeneficiaryOfAccount'],
-          ParamType.bool,
+          ParamType.String,
           false,
         ),
         nameOfTheBeneficialOwner: deserializeParam(
           data['NameOfTheBeneficialOwner'],
+          ParamType.String,
+          false,
+        ),
+        isPEP: deserializeParam(
+          data['isPEP'],
+          ParamType.String,
+          false,
+        ),
+        localPepFullName: deserializeParam(
+          data['localPepFullName'],
+          ParamType.String,
+          false,
+        ),
+        latinPepFullName: deserializeParam(
+          data['latinPepFullName'],
+          ParamType.String,
+          false,
+        ),
+        relationshipWithPep: deserializeParam(
+          data['relationshipWithPep'],
+          ParamType.String,
+          false,
+        ),
+        pepPosition: deserializeParam(
+          data['pepPosition'],
+          ParamType.String,
+          false,
+        ),
+        mobileNumber: deserializeParam(
+          data['mobileNumber'],
           ParamType.String,
           false,
         ),
@@ -498,6 +658,8 @@ class RegisterationFormDataStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is RegisterationFormDataStruct &&
+        idNumber == other.idNumber &&
+        idType == other.idType &&
         firstNameAR == other.firstNameAR &&
         fatherNameAR == other.fatherNameAR &&
         grandFatherNameAR == other.grandFatherNameAR &&
@@ -521,11 +683,19 @@ class RegisterationFormDataStruct extends BaseStruct {
         addressText == other.addressText &&
         areYouTheRealBeneficiaryOfAccount ==
             other.areYouTheRealBeneficiaryOfAccount &&
-        nameOfTheBeneficialOwner == other.nameOfTheBeneficialOwner;
+        nameOfTheBeneficialOwner == other.nameOfTheBeneficialOwner &&
+        isPEP == other.isPEP &&
+        localPepFullName == other.localPepFullName &&
+        latinPepFullName == other.latinPepFullName &&
+        relationshipWithPep == other.relationshipWithPep &&
+        pepPosition == other.pepPosition &&
+        mobileNumber == other.mobileNumber;
   }
 
   @override
   int get hashCode => const ListEquality().hash([
+        idNumber,
+        idType,
         firstNameAR,
         fatherNameAR,
         grandFatherNameAR,
@@ -548,11 +718,19 @@ class RegisterationFormDataStruct extends BaseStruct {
         population,
         addressText,
         areYouTheRealBeneficiaryOfAccount,
-        nameOfTheBeneficialOwner
+        nameOfTheBeneficialOwner,
+        isPEP,
+        localPepFullName,
+        latinPepFullName,
+        relationshipWithPep,
+        pepPosition,
+        mobileNumber
       ]);
 }
 
 RegisterationFormDataStruct createRegisterationFormDataStruct({
+  String? idNumber,
+  String? idType,
   String? firstNameAR,
   String? fatherNameAR,
   String? grandFatherNameAR,
@@ -566,18 +744,26 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? birthOfPlace,
   String? gender,
   String? nationality,
-  bool? residentOfTheCountry,
-  bool? haveAnAmericanPassport,
+  String? residentOfTheCountry,
+  String? haveAnAmericanPassport,
   String? profession,
   String? placeOfWork,
   String? monthlyInComeDollar,
   String? city,
   String? population,
   String? addressText,
-  bool? areYouTheRealBeneficiaryOfAccount,
+  String? areYouTheRealBeneficiaryOfAccount,
   String? nameOfTheBeneficialOwner,
+  String? isPEP,
+  String? localPepFullName,
+  String? latinPepFullName,
+  String? relationshipWithPep,
+  String? pepPosition,
+  String? mobileNumber,
 }) =>
     RegisterationFormDataStruct(
+      idNumber: idNumber,
+      idType: idType,
       firstNameAR: firstNameAR,
       fatherNameAR: fatherNameAR,
       grandFatherNameAR: grandFatherNameAR,
@@ -601,4 +787,10 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       addressText: addressText,
       areYouTheRealBeneficiaryOfAccount: areYouTheRealBeneficiaryOfAccount,
       nameOfTheBeneficialOwner: nameOfTheBeneficialOwner,
+      isPEP: isPEP,
+      localPepFullName: localPepFullName,
+      latinPepFullName: latinPepFullName,
+      relationshipWithPep: relationshipWithPep,
+      pepPosition: pepPosition,
+      mobileNumber: mobileNumber,
     );

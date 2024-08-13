@@ -10,40 +10,80 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropDown widget.
-  bool? dropDownValue1;
-  FormFieldController<bool>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  bool? dropDownValue2;
-  FormFieldController<bool>? dropDownValueController2;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode1;
-  TextEditingController? emailTextFieldTextController1;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for DropDownRESIDENT widget.
+  String? dropDownRESIDENTValue;
+  FormFieldController<String>? dropDownRESIDENTValueController;
+  // State field(s) for DropDownisUsPassportHolder widget.
+  String? dropDownisUsPassportHolderValue;
+  FormFieldController<String>? dropDownisUsPassportHolderValueController;
+  // State field(s) for ProfissionTextField widget.
+  FocusNode? profissionTextFieldFocusNode;
+  TextEditingController? profissionTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController1Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode2;
-  TextEditingController? emailTextFieldTextController2;
+      profissionTextFieldTextControllerValidator;
+  String? _profissionTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'fg9qljcu' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for PlaceOfWorkTextField widget.
+  FocusNode? placeOfWorkTextFieldFocusNode;
+  TextEditingController? placeOfWorkTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController2Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode3;
-  TextEditingController? emailTextFieldTextController3;
+      placeOfWorkTextFieldTextControllerValidator;
+  String? _placeOfWorkTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'r8ss9mpo' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for MontlyIncomeTextField widget.
+  FocusNode? montlyIncomeTextFieldFocusNode;
+  TextEditingController? montlyIncomeTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController3Validator;
+      montlyIncomeTextFieldTextControllerValidator;
+  String? _montlyIncomeTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '8693qu5v' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    profissionTextFieldTextControllerValidator =
+        _profissionTextFieldTextControllerValidator;
+    placeOfWorkTextFieldTextControllerValidator =
+        _placeOfWorkTextFieldTextControllerValidator;
+    montlyIncomeTextFieldTextControllerValidator =
+        _montlyIncomeTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {
-    emailTextFieldFocusNode1?.dispose();
-    emailTextFieldTextController1?.dispose();
+    profissionTextFieldFocusNode?.dispose();
+    profissionTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode2?.dispose();
-    emailTextFieldTextController2?.dispose();
+    placeOfWorkTextFieldFocusNode?.dispose();
+    placeOfWorkTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode3?.dispose();
-    emailTextFieldTextController3?.dispose();
+    montlyIncomeTextFieldFocusNode?.dispose();
+    montlyIncomeTextFieldTextController?.dispose();
   }
 }

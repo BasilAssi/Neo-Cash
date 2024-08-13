@@ -369,15 +369,7 @@ class _ConfirmResetPasswordWidgetState
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(
-                            'otp_does_not_exist_flow',
-                            queryParameters: {
-                              'phoneNumber': serializeParam(
-                                ' 500',
-                                ParamType.String,
-                              ),
-                            }.withoutNulls,
-                          );
+                          context.pushNamed('otp_does_not_exist_flow');
                         },
                         text: FFLocalizations.of(context).getText(
                           'v4jg8lhr' /* تأكيد */,

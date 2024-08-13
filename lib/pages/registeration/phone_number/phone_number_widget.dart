@@ -286,10 +286,9 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     controller:
                                         _model.dropDownValueController ??=
                                             FormFieldController<String>(
-                                      _model.dropDownValue ??= '+970',
+                                      _model.dropDownValue ??= '970',
                                     ),
-                                    options:
-                                        List<String>.from(['+970', '+972 ']),
+                                    options: List<String>.from(['970', '972 ']),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         'k890nwac' /* +970 */,
@@ -351,15 +350,16 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(
-                            'otp_does_not_exist_flow',
-                            queryParameters: {
-                              'phoneNumber': serializeParam(
-                                '${_model.textController.text} ',
-                                ParamType.String,
-                              ),
-                            }.withoutNulls,
+                          if (_model.formKey.currentState == null ||
+                              !_model.formKey.currentState!.validate()) {
+                            return;
+                          }
+                          FFAppState().updateRegisterationFormDataStruct(
+                            (e) => e..mobileNumber = _model.textController.text,
                           );
+                          setState(() {});
+
+                          context.pushNamed('otp_does_not_exist_flow');
                         },
                         text: FFLocalizations.of(context).getText(
                           'ffd17gua' /* التالي */,
