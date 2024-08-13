@@ -839,44 +839,28 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       .birthOfPlace
                                   : '',
                             ),
-                            options:
-                                List<String>.from(
-                                    (citiesDropDownLOOKUPsAPIsResponse.jsonBody
-                                                .toList()
-                                                .map<LookupCitesDataStruct?>(
-                                                    LookupCitesDataStruct
-                                                        .maybeFromMap)
-                                                .toList()
-                                            as Iterable<LookupCitesDataStruct?>)
-                                        .withoutNulls
-                                        .map((e) => e.encodedId)
-                                        .toList()),
-                            optionLabels:
-                                FFLocalizations.of(context)
-                                            .languageCode ==
-                                        'ar'
-                                    ? (citiesDropDownLOOKUPsAPIsResponse
-                                                .jsonBody
-                                                .toList()
-                                                .map<LookupCitesDataStruct?>(
-                                                    LookupCitesDataStruct
-                                                        .maybeFromMap)
-                                                .toList()
-                                            as Iterable<LookupCitesDataStruct?>)
-                                        .withoutNulls
-                                        .map((e) => e.localName)
-                                        .toList()
-                                    : (citiesDropDownLOOKUPsAPIsResponse
-                                                .jsonBody
-                                                .toList()
-                                                .map<LookupCitesDataStruct?>(
-                                                    LookupCitesDataStruct
-                                                        .maybeFromMap)
-                                                .toList()
-                                            as Iterable<LookupCitesDataStruct?>)
-                                        .withoutNulls
-                                        .map((e) => e.latinName)
-                                        .toList(),
+                            options: List<String>.from(
+                                LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        citiesDropDownLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.encodedId)
+                                    .toList()),
+                            optionLabels: FFLocalizations.of(context)
+                                        .languageCode ==
+                                    'ar'
+                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        citiesDropDownLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.localName)
+                                    .toList()
+                                : LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        citiesDropDownLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.latinName)
+                                    .toList(),
                             onChanged: (val) => setState(
                                 () => _model.citiesDropDownValue = val),
                             width: 300.0,
