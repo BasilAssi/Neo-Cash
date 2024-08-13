@@ -813,6 +813,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: FFAppState().citesAPIResponse(
+                          overrideCache: _model.citiesDropDownValue ==
+                              FFAppConstants.emptyListStrings.first,
                           requestFn: () =>
                               AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                             msgId: functions.messageId(),
