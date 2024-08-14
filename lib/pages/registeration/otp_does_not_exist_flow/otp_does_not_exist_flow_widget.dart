@@ -236,7 +236,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                       PinCodeTextField(
                         autoDisposeControllers: false,
                         appContext: context,
-                        length: 6,
+                        length: 5,
                         textStyle: FlutterFlowTheme.of(context)
                             .bodyLarge
                             .override(
