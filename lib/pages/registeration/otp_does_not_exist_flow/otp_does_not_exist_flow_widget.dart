@@ -309,6 +309,13 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
 
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
                               context.pushNamed('registeration_01');
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'خطأ',
+                                  enText: 'please check internet connection',
+                                ),
+                              );
                             }
                           } else {
                             await actions.showToast(
