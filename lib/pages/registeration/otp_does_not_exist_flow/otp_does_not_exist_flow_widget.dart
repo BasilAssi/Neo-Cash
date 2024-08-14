@@ -290,7 +290,8 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                           if (_model.isNetworkAvailableOutput!) {
                             _model.verifyOTPOutput =
                                 await AuthAndRegisterGroup.verifyOTPCall.call(
-                              destination: 'customer mobileNumber',
+                              destination:
+                                  FFAppState().registerationFormData.mobileNumber,
                               destinationType: 'VERIFY_DESTINATION',
                               msgId: functions.messageId(),
                               otp: _model.oTPHashedSHA256base64,

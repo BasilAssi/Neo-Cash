@@ -39,6 +39,7 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? relationshipWithPep,
     String? pepPosition,
     String? mobileNumber,
+    String? prefixMobile,
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -70,7 +71,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         _latinPepFullName = latinPepFullName,
         _relationshipWithPep = relationshipWithPep,
         _pepPosition = pepPosition,
-        _mobileNumber = mobileNumber;
+        _mobileNumber = mobileNumber,
+        _prefixMobile = prefixMobile;
 
   // "idNumber" field.
   String? _idNumber;
@@ -302,6 +304,13 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasMobileNumber() => _mobileNumber != null;
 
+  // "prefixMobile" field.
+  String? _prefixMobile;
+  String get prefixMobile => _prefixMobile ?? '+970';
+  set prefixMobile(String? val) => _prefixMobile = val;
+
+  bool hasPrefixMobile() => _prefixMobile != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
         idNumber: data['idNumber'] as String?,
@@ -338,6 +347,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         relationshipWithPep: data['relationshipWithPep'] as String?,
         pepPosition: data['pepPosition'] as String?,
         mobileNumber: data['mobileNumber'] as String?,
+        prefixMobile: data['prefixMobile'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -377,6 +387,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         'relationshipWithPep': _relationshipWithPep,
         'pepPosition': _pepPosition,
         'mobileNumber': _mobileNumber,
+        'prefixMobile': _prefixMobile,
       }.withoutNulls;
 
   @override
@@ -507,6 +518,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'mobileNumber': serializeParam(
           _mobileNumber,
+          ParamType.String,
+        ),
+        'prefixMobile': serializeParam(
+          _prefixMobile,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -674,6 +689,11 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        prefixMobile: deserializeParam(
+          data['prefixMobile'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -715,7 +735,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         latinPepFullName == other.latinPepFullName &&
         relationshipWithPep == other.relationshipWithPep &&
         pepPosition == other.pepPosition &&
-        mobileNumber == other.mobileNumber;
+        mobileNumber == other.mobileNumber &&
+        prefixMobile == other.prefixMobile;
   }
 
   @override
@@ -751,7 +772,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         latinPepFullName,
         relationshipWithPep,
         pepPosition,
-        mobileNumber
+        mobileNumber,
+        prefixMobile
       ]);
 }
 
@@ -788,6 +810,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? relationshipWithPep,
   String? pepPosition,
   String? mobileNumber,
+  String? prefixMobile,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -822,4 +845,5 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       relationshipWithPep: relationshipWithPep,
       pepPosition: pepPosition,
       mobileNumber: mobileNumber,
+      prefixMobile: prefixMobile,
     );

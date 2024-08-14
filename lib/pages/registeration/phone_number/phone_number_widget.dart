@@ -286,10 +286,11 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 Expanded(
                                   flex: 1,
                                   child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropDownValueController ??=
-                                            FormFieldController<String>(
-                                      _model.dropDownValue ??= '970',
+                                    controller: _model
+                                            .prefixMobileNumberDropDownValueController ??=
+                                        FormFieldController<String>(
+                                      _model.prefixMobileNumberDropDownValue ??=
+                                          '970',
                                     ),
                                     options: List<String>.from(['970', '972 ']),
                                     optionLabels: [
@@ -300,8 +301,8 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                         'gangnkno' /* +972 */,
                                       )
                                     ],
-                                    onChanged: (val) => setState(
-                                        () => _model.dropDownValue = val),
+                                    onChanged: (val) => setState(() => _model
+                                        .prefixMobileNumberDropDownValue = val),
                                     width: 100.0,
                                     height: 50.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -362,7 +363,10 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                             return;
                           }
                           FFAppState().updateRegisterationFormDataStruct(
-                            (e) => e..mobileNumber = _model.textController.text,
+                            (e) => e
+                              ..mobileNumber = _model.textController.text
+                              ..prefixMobile =
+                                  _model.prefixMobileNumberDropDownValue,
                           );
                           setState(() {});
 
