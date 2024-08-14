@@ -1330,56 +1330,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اختار المدينة',
       'en': '',
     },
-    'dowog7hd': {
-      'ar': 'رام الله',
+    'm37d1181': {
+      'ar': '',
       'en': '',
     },
-    'datw7s90': {
-      'ar': 'نابلس',
-      'en': '',
-    },
-    'hpoynkc2': {
-      'ar': 'طولكرم',
-      'en': '',
-    },
-    'ypyuuid2': {
-      'ar': 'الخليل',
-      'en': '',
-    },
-    'yl24v67s': {
-      'ar': 'أنثى',
-      'en': '',
-    },
-    'suedt6vn': {
+    '4zyjb59r': {
       'ar': 'المدينة',
       'en': '',
     },
-    '04g3os27': {
+    'fvcq8d1v': {
       'ar': 'Search for an item...',
       'en': '',
     },
     'nixpiac4': {
       'ar': 'التجمع السكني',
-      'en': '',
-    },
-    'hqo3yxs0': {
-      'ar': 'رام الله',
-      'en': '',
-    },
-    'sdio1sit': {
-      'ar': 'نابلس',
-      'en': '',
-    },
-    'tj7muqn7': {
-      'ar': 'طولكرم',
-      'en': '',
-    },
-    'g4175wca': {
-      'ar': 'الخليل',
-      'en': '',
-    },
-    'ywspq09j': {
-      'ar': 'أنثى',
       'en': '',
     },
     'vi5yluyt': {

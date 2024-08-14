@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registeration01_widget.dart' show Registeration01Widget;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
@@ -51,7 +50,6 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? familyNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameENTextFieldTextControllerValidator;
-  DateTime? datePicked;
 
   @override
   void initState(BuildContext context) {}

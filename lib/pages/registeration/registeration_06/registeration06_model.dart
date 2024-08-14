@@ -78,9 +78,6 @@ class Registeration06Model extends FlutterFlowModel<Registeration06Widget> {
     return null;
   }
 
-  // Stores action output result for [Validate Form] action in Button widget.
-  bool? validateOutPut;
-
   @override
   void initState(BuildContext context) {
     localPepFullNameTextFieldTextControllerValidator =

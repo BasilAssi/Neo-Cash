@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1446,40 +1445,6 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                           ),
                         ),
                       ].divide(const SizedBox(width: 16.0)),
-                    ),
-                  ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await showModalBottomSheet<bool>(
-                          context: context,
-                          builder: (context) {
-                            return SizedBox(
-                              height: MediaQuery.of(context).size.height / 3,
-                              width: MediaQuery.of(context).size.width,
-                              child: CupertinoDatePicker(
-                                mode: CupertinoDatePickerMode.date,
-                                minimumDate:
-                                    (DateTime.fromMicrosecondsSinceEpoch(
-                                            17445600000000) ??
-                                        DateTime(1900)),
-                                initialDateTime: getCurrentTimestamp,
-                                maximumDate:
-                                    (getCurrentTimestamp ?? DateTime(2050)),
-                                use24hFormat: false,
-                                onDateTimeChanged: (newDateTime) =>
-                                    safeSetState(() {
-                                  _model.datePicked = newDateTime;
-                                }),
-                              ),
-                            );
-                          });
-                    },
-                    child: Container(
-                      decoration: const BoxDecoration(),
                     ),
                   ),
                   Padding(

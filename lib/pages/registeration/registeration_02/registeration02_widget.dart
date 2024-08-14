@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/error_component_copy/error_component_copy_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'registeration02_model.dart';
 export 'registeration02_model.dart';
 
@@ -681,7 +683,14 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             onTap: () async {
                               final datePickedDate = await showDatePicker(
                                 context: context,
-                                initialDate: getCurrentTimestamp,
+                                initialDate: ((FFAppState()
+                                            .registerationFormData
+                                            .hasDateOfBirth()
+                                        ? FFAppState()
+                                            .registerationFormData
+                                            .dateOfBirth
+                                        : getCurrentTimestamp) ??
+                                    DateTime.now()),
                                 firstDate: (DateTime.fromMicrosecondsSinceEpoch(
                                         17445600000000) ??
                                     DateTime(1900)),
@@ -1206,12 +1215,32 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             return;
                           }
                           if (_model.datePicked == null) {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل مطلوب',
-                                enText: 'Field is required',
-                              ),
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: const AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: WebViewAware(
+                                    child: GestureDetector(
+                                      onTap: () => FocusScope.of(dialogContext)
+                                          .unfocus(),
+                                      child: ErrorComponentCopyWidget(
+                                        errorText: FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'الحقل مطلوب',
+                                          enText: ' ',
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                             );
+
                             return;
                           }
                           if (_model.citiesDropDownValue == null) {
@@ -1264,13 +1293,36 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       return;
                                     }
                                     if (_model.datePicked == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: 'Field is required',
-                                        ),
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: const AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(dialogContext)
+                                                        .unfocus(),
+                                                child: ErrorComponentCopyWidget(
+                                                  errorText: FFLocalizations.of(
+                                                          context)
+                                                      .getVariableText(
+                                                    arText: 'الحقل مطلوب',
+                                                    enText: ' ',
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
                                       );
+
                                       return;
                                     }
                                     if (_model.citiesDropDownValue == null) {

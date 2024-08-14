@@ -11,9 +11,9 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for CityDropDown widget.
-  String? cityDropDownValue;
-  FormFieldController<String>? cityDropDownValueController;
+  // State field(s) for CitiesDropDown widget.
+  String? citiesDropDownValue;
+  FormFieldController<String>? citiesDropDownValueController;
   // State field(s) for PopulationDropDown widget.
   String? populationDropDownValue;
   FormFieldController<String>? populationDropDownValueController;
