@@ -1152,7 +1152,6 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                             FlutterFlowTheme.of(context)
                                                 .bodyMediumFamily),
                                   ),
-                              keyboardType: TextInputType.number,
                               validator: _model
                                   .pepPositionTextFieldTextControllerValidator
                                   .asValidator(context),

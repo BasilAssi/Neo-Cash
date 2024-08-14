@@ -826,7 +826,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                             requestFn: () =>
                                 AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                               msgId: functions.messageId(),
-                              type: 'CITY',
+                              type: 'AREA',
                               cityId: valueOrDefault<String>(
                                 _model.citiesDropDownValue,
                                 'Mzk2Mg==',
