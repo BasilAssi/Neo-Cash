@@ -27,9 +27,9 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
     return null;
   }
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for prefixMobileNumberDropDown widget.
+  String? prefixMobileNumberDropDownValue;
+  FormFieldController<String>? prefixMobileNumberDropDownValueController;
 
   @override
   void initState(BuildContext context) {
