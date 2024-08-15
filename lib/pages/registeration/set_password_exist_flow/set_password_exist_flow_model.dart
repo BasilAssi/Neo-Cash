@@ -44,7 +44,9 @@ class SetPasswordExistFlowModel
     }
 
     if (!RegExp('((?=.\\d)(?=.[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
-      return 'Invalid text';
+      return FFLocalizations.of(context).getText(
+        'a9l80f02' /* يجب أن تكون كلمة المرور بطول ل... */,
+      );
     }
     return null;
   }
@@ -86,6 +88,10 @@ class SetPasswordExistFlowModel
     return null;
   }
 
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+  bool? isNetworkAvailableOutput1;
+  // Stores action output result for [Backend Call - API (Register a customer Device)] action in Button widget.
+  ApiCallResponse? apiResultCustomerRegisterDevice1;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Register a customer Device)] action in Button widget.
