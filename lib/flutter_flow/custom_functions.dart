@@ -37,3 +37,10 @@ DateTime? calculateAge18Year() {
   final age18 = DateTime(now.year - 18, now.month, now.day);
   return age18;
 }
+
+DateTime? formatDate(DateTime? date) {
+  // format the date as dd/MM/yyyy  and return it
+  if (date == null) return null;
+  final formatter = DateFormat('dd/MM/yyyy');
+  return DateTime.parse(formatter.format(date));
+}
