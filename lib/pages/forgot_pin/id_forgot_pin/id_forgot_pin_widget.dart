@@ -128,6 +128,32 @@ class _IdForgotPinWidgetState extends State<IdForgotPinWidget> {
                             ),
                           ),
                         ),
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 24.0, 0.0, 8.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'eh9aeadi' /* الرجاء اختيار نوع وثيقتك  الشخ... */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
+                                  ),
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
@@ -295,32 +321,6 @@ class _IdForgotPinWidgetState extends State<IdForgotPinWidget> {
                             validator: _model
                                 .firstNameTextFieldTextControllerValidator
                                 .asValidator(context),
-                          ),
-                        ),
-                        Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 24.0, 0.0, 8.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'eh9aeadi' /* الرجاء اختيار نوع وثيقتك  الشخ... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleSmallFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleSmallFamily),
-                                  ),
-                            ),
                           ),
                         ),
                       ],

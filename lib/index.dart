@@ -32,8 +32,8 @@ export '/pages/registeration/registeration_02/registeration02_widget.dart'
     show Registeration02Widget;
 export '/pages/registeration/registeration_07/registeration07_widget.dart'
     show Registeration07Widget;
-export '/pages/registeration/registeration_04/registeration04_widget.dart'
-    show Registeration04Widget;
+export '/pages/registeration/registeration_06/registeration06_widget.dart'
+    show Registeration06Widget;
 export '/pages/home/send_money_to_friend/send_money_to_friend_widget.dart'
     show SendMoneyToFriendWidget;
 export '/pages/transfer_money_between_cards/transfer_money_between_cards_widget.dart'
@@ -55,8 +55,8 @@ export '/pages/confirm_transfer_between_friends/confirm_transfer_between_friends
 export '/pages/card/card_limits/card_limits_widget.dart' show CardLimitsWidget;
 export '/pages/registeration/registeration_08/registeration08_widget.dart'
     show Registeration08Widget;
-export '/pages/registeration/registeration_06/registeration06_widget.dart'
-    show Registeration06Widget;
+export '/pages/registeration/registeration_04/registeration04_widget.dart'
+    show Registeration04Widget;
 export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_widget.dart'
     show SetPasswordExistFlowWidget;
 export '/pages/static_pages/about_us/about_us_widget.dart' show AboutUsWidget;

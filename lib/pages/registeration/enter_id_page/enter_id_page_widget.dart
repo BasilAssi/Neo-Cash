@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/error_component/error_component_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,7 +11,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'enter_id_page_model.dart';
 export 'enter_id_page_model.dart';
 
@@ -105,7 +103,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'je18929v' /*   الهوية الشخصية */,
+                      'je18929v' /*   هويتك الشخصية */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -148,13 +146,20 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           FormFieldController<String>(
                         _model.idTypeDropDownValue ??= 'NATIONAL',
                       ),
-                      options: List<String>.from(['NATIONAL', 'NATIONAL1']),
+                      options: List<String>.from(
+                          ['NATIONAL', 'JERUSALEM', 'OCCUPIED_ID', 'PASSPORT']),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
                           'gx1gtqed' /* الهوية  الفلسطينية */,
                         ),
                         FFLocalizations.of(context).getText(
                           'bddgybnm' /* هوية القدس */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'hnmksn50' /* هوية 48 */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'gbfbw5q5' /* جواز السفر */,
                         )
                       ],
                       onChanged: (val) =>
@@ -202,7 +207,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          '9hnsedy0' /* الرجاء ادخال رقم الهوية بشكل ص... */,
+                          '9hnsedy0' /* الرجاء إدخال رقم الهوية بشكل ص... */,
                         ),
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily:
@@ -227,7 +232,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          'c42bc1ay' /* ادخال رقم الهوية */,
+                          'c42bc1ay' /*  رقم الهوية */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -357,7 +362,54 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                           ''))
                                       ?.status ==
                                   true) {
-                                context.pushNamed('registeration_01');
+                                FFAppState().updateRegisterationFormDataStruct(
+                                  (e) => e
+                                    ..isRegisteredStatus = true
+                                    ..email = AuthAndRegisterGroup
+                                        .isRegisteredCall
+                                        .emailAddress(
+                                      (_model.isRegisteredOutPut?.jsonBody ??
+                                          ''),
+                                    ),
+                                );
+                                setState(() {});
+                                _model.apiResultSendOTP =
+                                    await AuthAndRegisterGroup
+                                        .sendOTPToCustomerCall
+                                        .call(
+                                  msgId: functions.messageId(),
+                                  idNumber: FFAppState()
+                                      .registerationFormData
+                                      .idNumber,
+                                  idType:
+                                      FFAppState().registerationFormData.idType,
+                                  mobileNumber: FFAppState()
+                                      .registerationFormData
+                                      .mobileNumber,
+                                  destinationType: 'MOBILE_NUMBER',
+                                  operationType: 'REGISTER_DEVICE',
+                                );
+
+                                if ((_model.apiResultSendOTP?.succeeded ??
+                                    true)) {
+                                  context.pushNamed('otp_does_not_exist_flow');
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'error',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                    ),
+                                  );
+                                }
                               } else {
                                 context.pushNamed('phone_number');
                               }
@@ -378,36 +430,12 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                               );
                             }
                           } else {
-                            await showModalBottomSheet(
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              isDismissible: false,
-                              enableDrag: false,
-                              useSafeArea: true,
-                              context: context,
-                              builder: (context) {
-                                return WebViewAware(
-                                  child: GestureDetector(
-                                    onTap: () =>
-                                        FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: SizedBox(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.3,
-                                        child: ErrorComponentWidget(
-                                          errorText: FFLocalizations.of(context)
-                                              .getText(
-                                            '4vmzjxq5' /* تأكد إنه الإنترنت عندك شغال عل... */,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            ).then((value) => safeSetState(() {}));
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                enText: 'Sorry, no internet connection.',
+                              ),
+                            );
                           }
 
                           setState(() {});

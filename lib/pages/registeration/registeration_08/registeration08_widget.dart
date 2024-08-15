@@ -544,7 +544,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                   child: FFButtonWidget(
                     onPressed: () async {},
                     text: FFLocalizations.of(context).getText(
-                      'c4fvj91y' /* إنشاء حساب */,
+                      'c4fvj91y' /* حفظ */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

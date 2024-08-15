@@ -23,15 +23,15 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? gender,
     String? nationality,
     String? residentOfTheCountry,
-    String? haveAnAmericanPassport,
+    String? isUSPassportHolder,
     String? profession,
     String? placeOfWork,
     String? monthlyInComeDollar,
-    String? city,
-    String? population,
+    String? cityCode,
+    String? areaCode,
     String? addressText,
-    String? areYouTheRealBeneficiaryOfAccount,
-    String? nameOfTheBeneficialOwner,
+    String? isTrueBeneficiaryAccount,
+    String? trueBeneficiaryName,
     String? relationShipWithTrueBeneficiary,
     String? isPEP,
     String? localPepFullName,
@@ -40,6 +40,9 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? pepPosition,
     String? mobileNumber,
     String? prefixMobile,
+    bool? isRegisteredStatus,
+    String? email,
+    String? hashedOTP,
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -56,15 +59,15 @@ class RegisterationFormDataStruct extends BaseStruct {
         _gender = gender,
         _nationality = nationality,
         _residentOfTheCountry = residentOfTheCountry,
-        _haveAnAmericanPassport = haveAnAmericanPassport,
+        _isUSPassportHolder = isUSPassportHolder,
         _profession = profession,
         _placeOfWork = placeOfWork,
         _monthlyInComeDollar = monthlyInComeDollar,
-        _city = city,
-        _population = population,
+        _cityCode = cityCode,
+        _areaCode = areaCode,
         _addressText = addressText,
-        _areYouTheRealBeneficiaryOfAccount = areYouTheRealBeneficiaryOfAccount,
-        _nameOfTheBeneficialOwner = nameOfTheBeneficialOwner,
+        _isTrueBeneficiaryAccount = isTrueBeneficiaryAccount,
+        _trueBeneficiaryName = trueBeneficiaryName,
         _relationShipWithTrueBeneficiary = relationShipWithTrueBeneficiary,
         _isPEP = isPEP,
         _localPepFullName = localPepFullName,
@@ -72,7 +75,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         _relationshipWithPep = relationshipWithPep,
         _pepPosition = pepPosition,
         _mobileNumber = mobileNumber,
-        _prefixMobile = prefixMobile;
+        _prefixMobile = prefixMobile,
+        _isRegisteredStatus = isRegisteredStatus,
+        _email = email,
+        _hashedOTP = hashedOTP;
 
   // "idNumber" field.
   String? _idNumber;
@@ -186,12 +192,12 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasResidentOfTheCountry() => _residentOfTheCountry != null;
 
-  // "HaveAnAmericanPassport" field.
-  String? _haveAnAmericanPassport;
-  String get haveAnAmericanPassport => _haveAnAmericanPassport ?? '';
-  set haveAnAmericanPassport(String? val) => _haveAnAmericanPassport = val;
+  // "IsUSPassportHolder" field.
+  String? _isUSPassportHolder;
+  String get isUSPassportHolder => _isUSPassportHolder ?? '';
+  set isUSPassportHolder(String? val) => _isUSPassportHolder = val;
 
-  bool hasHaveAnAmericanPassport() => _haveAnAmericanPassport != null;
+  bool hasIsUSPassportHolder() => _isUSPassportHolder != null;
 
   // "Profession" field.
   String? _profession;
@@ -214,19 +220,19 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasMonthlyInComeDollar() => _monthlyInComeDollar != null;
 
-  // "City" field.
-  String? _city;
-  String get city => _city ?? '';
-  set city(String? val) => _city = val;
+  // "cityCode" field.
+  String? _cityCode;
+  String get cityCode => _cityCode ?? '';
+  set cityCode(String? val) => _cityCode = val;
 
-  bool hasCity() => _city != null;
+  bool hasCityCode() => _cityCode != null;
 
-  // "Population" field.
-  String? _population;
-  String get population => _population ?? '';
-  set population(String? val) => _population = val;
+  // "areaCode" field.
+  String? _areaCode;
+  String get areaCode => _areaCode ?? '';
+  set areaCode(String? val) => _areaCode = val;
 
-  bool hasPopulation() => _population != null;
+  bool hasAreaCode() => _areaCode != null;
 
   // "AddressText" field.
   String? _addressText;
@@ -235,22 +241,19 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasAddressText() => _addressText != null;
 
-  // "AreYouTheRealBeneficiaryOfAccount" field.
-  String? _areYouTheRealBeneficiaryOfAccount;
-  String get areYouTheRealBeneficiaryOfAccount =>
-      _areYouTheRealBeneficiaryOfAccount ?? '';
-  set areYouTheRealBeneficiaryOfAccount(String? val) =>
-      _areYouTheRealBeneficiaryOfAccount = val;
+  // "IsTrueBeneficiaryAccount" field.
+  String? _isTrueBeneficiaryAccount;
+  String get isTrueBeneficiaryAccount => _isTrueBeneficiaryAccount ?? '';
+  set isTrueBeneficiaryAccount(String? val) => _isTrueBeneficiaryAccount = val;
 
-  bool hasAreYouTheRealBeneficiaryOfAccount() =>
-      _areYouTheRealBeneficiaryOfAccount != null;
+  bool hasIsTrueBeneficiaryAccount() => _isTrueBeneficiaryAccount != null;
 
-  // "NameOfTheBeneficialOwner" field.
-  String? _nameOfTheBeneficialOwner;
-  String get nameOfTheBeneficialOwner => _nameOfTheBeneficialOwner ?? '';
-  set nameOfTheBeneficialOwner(String? val) => _nameOfTheBeneficialOwner = val;
+  // "TrueBeneficiaryName" field.
+  String? _trueBeneficiaryName;
+  String get trueBeneficiaryName => _trueBeneficiaryName ?? '';
+  set trueBeneficiaryName(String? val) => _trueBeneficiaryName = val;
 
-  bool hasNameOfTheBeneficialOwner() => _nameOfTheBeneficialOwner != null;
+  bool hasTrueBeneficiaryName() => _trueBeneficiaryName != null;
 
   // "relationShipWithTrueBeneficiary" field.
   String? _relationShipWithTrueBeneficiary;
@@ -311,6 +314,27 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasPrefixMobile() => _prefixMobile != null;
 
+  // "isRegisteredStatus" field.
+  bool? _isRegisteredStatus;
+  bool get isRegisteredStatus => _isRegisteredStatus ?? false;
+  set isRegisteredStatus(bool? val) => _isRegisteredStatus = val;
+
+  bool hasIsRegisteredStatus() => _isRegisteredStatus != null;
+
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  set email(String? val) => _email = val;
+
+  bool hasEmail() => _email != null;
+
+  // "hashedOTP" field.
+  String? _hashedOTP;
+  String get hashedOTP => _hashedOTP ?? '';
+  set hashedOTP(String? val) => _hashedOTP = val;
+
+  bool hasHashedOTP() => _hashedOTP != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
         idNumber: data['idNumber'] as String?,
@@ -329,16 +353,15 @@ class RegisterationFormDataStruct extends BaseStruct {
         gender: data['Gender'] as String?,
         nationality: data['Nationality'] as String?,
         residentOfTheCountry: data['ResidentOfTheCountry'] as String?,
-        haveAnAmericanPassport: data['HaveAnAmericanPassport'] as String?,
+        isUSPassportHolder: data['IsUSPassportHolder'] as String?,
         profession: data['Profession'] as String?,
         placeOfWork: data['PlaceOfWork'] as String?,
         monthlyInComeDollar: data['MonthlyInComeDollar'] as String?,
-        city: data['City'] as String?,
-        population: data['Population'] as String?,
+        cityCode: data['cityCode'] as String?,
+        areaCode: data['areaCode'] as String?,
         addressText: data['AddressText'] as String?,
-        areYouTheRealBeneficiaryOfAccount:
-            data['AreYouTheRealBeneficiaryOfAccount'] as String?,
-        nameOfTheBeneficialOwner: data['NameOfTheBeneficialOwner'] as String?,
+        isTrueBeneficiaryAccount: data['IsTrueBeneficiaryAccount'] as String?,
+        trueBeneficiaryName: data['TrueBeneficiaryName'] as String?,
         relationShipWithTrueBeneficiary:
             data['relationShipWithTrueBeneficiary'] as String?,
         isPEP: data['isPEP'] as String?,
@@ -348,6 +371,9 @@ class RegisterationFormDataStruct extends BaseStruct {
         pepPosition: data['pepPosition'] as String?,
         mobileNumber: data['mobileNumber'] as String?,
         prefixMobile: data['prefixMobile'] as String?,
+        isRegisteredStatus: data['isRegisteredStatus'] as bool?,
+        email: data['email'] as String?,
+        hashedOTP: data['hashedOTP'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -371,15 +397,15 @@ class RegisterationFormDataStruct extends BaseStruct {
         'Gender': _gender,
         'Nationality': _nationality,
         'ResidentOfTheCountry': _residentOfTheCountry,
-        'HaveAnAmericanPassport': _haveAnAmericanPassport,
+        'IsUSPassportHolder': _isUSPassportHolder,
         'Profession': _profession,
         'PlaceOfWork': _placeOfWork,
         'MonthlyInComeDollar': _monthlyInComeDollar,
-        'City': _city,
-        'Population': _population,
+        'cityCode': _cityCode,
+        'areaCode': _areaCode,
         'AddressText': _addressText,
-        'AreYouTheRealBeneficiaryOfAccount': _areYouTheRealBeneficiaryOfAccount,
-        'NameOfTheBeneficialOwner': _nameOfTheBeneficialOwner,
+        'IsTrueBeneficiaryAccount': _isTrueBeneficiaryAccount,
+        'TrueBeneficiaryName': _trueBeneficiaryName,
         'relationShipWithTrueBeneficiary': _relationShipWithTrueBeneficiary,
         'isPEP': _isPEP,
         'localPepFullName': _localPepFullName,
@@ -388,6 +414,9 @@ class RegisterationFormDataStruct extends BaseStruct {
         'pepPosition': _pepPosition,
         'mobileNumber': _mobileNumber,
         'prefixMobile': _prefixMobile,
+        'isRegisteredStatus': _isRegisteredStatus,
+        'email': _email,
+        'hashedOTP': _hashedOTP,
       }.withoutNulls;
 
   @override
@@ -456,8 +485,8 @@ class RegisterationFormDataStruct extends BaseStruct {
           _residentOfTheCountry,
           ParamType.String,
         ),
-        'HaveAnAmericanPassport': serializeParam(
-          _haveAnAmericanPassport,
+        'IsUSPassportHolder': serializeParam(
+          _isUSPassportHolder,
           ParamType.String,
         ),
         'Profession': serializeParam(
@@ -472,24 +501,24 @@ class RegisterationFormDataStruct extends BaseStruct {
           _monthlyInComeDollar,
           ParamType.String,
         ),
-        'City': serializeParam(
-          _city,
+        'cityCode': serializeParam(
+          _cityCode,
           ParamType.String,
         ),
-        'Population': serializeParam(
-          _population,
+        'areaCode': serializeParam(
+          _areaCode,
           ParamType.String,
         ),
         'AddressText': serializeParam(
           _addressText,
           ParamType.String,
         ),
-        'AreYouTheRealBeneficiaryOfAccount': serializeParam(
-          _areYouTheRealBeneficiaryOfAccount,
+        'IsTrueBeneficiaryAccount': serializeParam(
+          _isTrueBeneficiaryAccount,
           ParamType.String,
         ),
-        'NameOfTheBeneficialOwner': serializeParam(
-          _nameOfTheBeneficialOwner,
+        'TrueBeneficiaryName': serializeParam(
+          _trueBeneficiaryName,
           ParamType.String,
         ),
         'relationShipWithTrueBeneficiary': serializeParam(
@@ -522,6 +551,18 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'prefixMobile': serializeParam(
           _prefixMobile,
+          ParamType.String,
+        ),
+        'isRegisteredStatus': serializeParam(
+          _isRegisteredStatus,
+          ParamType.bool,
+        ),
+        'email': serializeParam(
+          _email,
+          ParamType.String,
+        ),
+        'hashedOTP': serializeParam(
+          _hashedOTP,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -609,8 +650,8 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        haveAnAmericanPassport: deserializeParam(
-          data['HaveAnAmericanPassport'],
+        isUSPassportHolder: deserializeParam(
+          data['IsUSPassportHolder'],
           ParamType.String,
           false,
         ),
@@ -629,13 +670,13 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        city: deserializeParam(
-          data['City'],
+        cityCode: deserializeParam(
+          data['cityCode'],
           ParamType.String,
           false,
         ),
-        population: deserializeParam(
-          data['Population'],
+        areaCode: deserializeParam(
+          data['areaCode'],
           ParamType.String,
           false,
         ),
@@ -644,13 +685,13 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        areYouTheRealBeneficiaryOfAccount: deserializeParam(
-          data['AreYouTheRealBeneficiaryOfAccount'],
+        isTrueBeneficiaryAccount: deserializeParam(
+          data['IsTrueBeneficiaryAccount'],
           ParamType.String,
           false,
         ),
-        nameOfTheBeneficialOwner: deserializeParam(
-          data['NameOfTheBeneficialOwner'],
+        trueBeneficiaryName: deserializeParam(
+          data['TrueBeneficiaryName'],
           ParamType.String,
           false,
         ),
@@ -694,6 +735,21 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        isRegisteredStatus: deserializeParam(
+          data['isRegisteredStatus'],
+          ParamType.bool,
+          false,
+        ),
+        email: deserializeParam(
+          data['email'],
+          ParamType.String,
+          false,
+        ),
+        hashedOTP: deserializeParam(
+          data['hashedOTP'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -718,16 +774,15 @@ class RegisterationFormDataStruct extends BaseStruct {
         gender == other.gender &&
         nationality == other.nationality &&
         residentOfTheCountry == other.residentOfTheCountry &&
-        haveAnAmericanPassport == other.haveAnAmericanPassport &&
+        isUSPassportHolder == other.isUSPassportHolder &&
         profession == other.profession &&
         placeOfWork == other.placeOfWork &&
         monthlyInComeDollar == other.monthlyInComeDollar &&
-        city == other.city &&
-        population == other.population &&
+        cityCode == other.cityCode &&
+        areaCode == other.areaCode &&
         addressText == other.addressText &&
-        areYouTheRealBeneficiaryOfAccount ==
-            other.areYouTheRealBeneficiaryOfAccount &&
-        nameOfTheBeneficialOwner == other.nameOfTheBeneficialOwner &&
+        isTrueBeneficiaryAccount == other.isTrueBeneficiaryAccount &&
+        trueBeneficiaryName == other.trueBeneficiaryName &&
         relationShipWithTrueBeneficiary ==
             other.relationShipWithTrueBeneficiary &&
         isPEP == other.isPEP &&
@@ -736,7 +791,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         relationshipWithPep == other.relationshipWithPep &&
         pepPosition == other.pepPosition &&
         mobileNumber == other.mobileNumber &&
-        prefixMobile == other.prefixMobile;
+        prefixMobile == other.prefixMobile &&
+        isRegisteredStatus == other.isRegisteredStatus &&
+        email == other.email &&
+        hashedOTP == other.hashedOTP;
   }
 
   @override
@@ -757,15 +815,15 @@ class RegisterationFormDataStruct extends BaseStruct {
         gender,
         nationality,
         residentOfTheCountry,
-        haveAnAmericanPassport,
+        isUSPassportHolder,
         profession,
         placeOfWork,
         monthlyInComeDollar,
-        city,
-        population,
+        cityCode,
+        areaCode,
         addressText,
-        areYouTheRealBeneficiaryOfAccount,
-        nameOfTheBeneficialOwner,
+        isTrueBeneficiaryAccount,
+        trueBeneficiaryName,
         relationShipWithTrueBeneficiary,
         isPEP,
         localPepFullName,
@@ -773,7 +831,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         relationshipWithPep,
         pepPosition,
         mobileNumber,
-        prefixMobile
+        prefixMobile,
+        isRegisteredStatus,
+        email,
+        hashedOTP
       ]);
 }
 
@@ -794,15 +855,15 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? gender,
   String? nationality,
   String? residentOfTheCountry,
-  String? haveAnAmericanPassport,
+  String? isUSPassportHolder,
   String? profession,
   String? placeOfWork,
   String? monthlyInComeDollar,
-  String? city,
-  String? population,
+  String? cityCode,
+  String? areaCode,
   String? addressText,
-  String? areYouTheRealBeneficiaryOfAccount,
-  String? nameOfTheBeneficialOwner,
+  String? isTrueBeneficiaryAccount,
+  String? trueBeneficiaryName,
   String? relationShipWithTrueBeneficiary,
   String? isPEP,
   String? localPepFullName,
@@ -811,6 +872,9 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? pepPosition,
   String? mobileNumber,
   String? prefixMobile,
+  bool? isRegisteredStatus,
+  String? email,
+  String? hashedOTP,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -829,15 +893,15 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       gender: gender,
       nationality: nationality,
       residentOfTheCountry: residentOfTheCountry,
-      haveAnAmericanPassport: haveAnAmericanPassport,
+      isUSPassportHolder: isUSPassportHolder,
       profession: profession,
       placeOfWork: placeOfWork,
       monthlyInComeDollar: monthlyInComeDollar,
-      city: city,
-      population: population,
+      cityCode: cityCode,
+      areaCode: areaCode,
       addressText: addressText,
-      areYouTheRealBeneficiaryOfAccount: areYouTheRealBeneficiaryOfAccount,
-      nameOfTheBeneficialOwner: nameOfTheBeneficialOwner,
+      isTrueBeneficiaryAccount: isTrueBeneficiaryAccount,
+      trueBeneficiaryName: trueBeneficiaryName,
       relationShipWithTrueBeneficiary: relationShipWithTrueBeneficiary,
       isPEP: isPEP,
       localPepFullName: localPepFullName,
@@ -846,4 +910,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       pepPosition: pepPosition,
       mobileNumber: mobileNumber,
       prefixMobile: prefixMobile,
+      isRegisteredStatus: isRegisteredStatus,
+      email: email,
+      hashedOTP: hashedOTP,
     );

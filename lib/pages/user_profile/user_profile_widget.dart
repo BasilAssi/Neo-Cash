@@ -70,7 +70,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color: FlutterFlowTheme.of(context).textColor,
+                          color: FlutterFlowTheme.of(context).textAppbarColor,
                           fontSize: 24.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,

@@ -59,16 +59,32 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(25.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).secondary,
+            automaticallyImplyLeading: false,
+            actions: const [],
+            toolbarHeight: 10.0,
+            elevation: 0.0,
+          ),
+        ),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            scrollDirection: Axis.vertical,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondary,
+                  border: Border.all(
+                    color: FlutterFlowTheme.of(context).secondary,
+                    width: 2.0,
+                  ),
+                ),
+                child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
@@ -80,95 +96,110 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget>
                         height: 200.0,
                         fit: BoxFit.cover,
                         frameRate: FrameRate(60.0),
+                        repeat: false,
                         animate: true,
                       ),
                     ],
                   ),
                 ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'kh49fpqs' /* مبااارك! */,
-                  ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).headlineMediumFamily,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        fontSize: 32.0,
-                        letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).headlineMediumFamily),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 32.0, 16.0, 0.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        'kh49fpqs' /* مبااارك! */,
                       ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      '7uvhtze5' /* تهانينا! تم تقديم طلبك بنجاح س... */,
-                    ),
-                    textAlign: TextAlign.justify,
-                    style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).titleSmallFamily,
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          fontSize: 20.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w300,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).titleSmallFamily),
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed(
-                        'login',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.leftToRight,
-                          ),
-                        },
-                      );
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      'pm7u8x69' /* الصفحة الرئيسية  */,
-                    ),
-                    options: FFButtonOptions(
-                      width: MediaQuery.sizeOf(context).width * 0.5,
-                      height: 50.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).textColor,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
+                      style: FlutterFlowTheme.of(context)
+                          .headlineMedium
                           .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleSmallFamily,
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            fontSize: 20.0,
+                            fontFamily: FlutterFlowTheme.of(context)
+                                .headlineMediumFamily,
+                            color: FlutterFlowTheme.of(context).textAppbarColor,
+                            fontSize: 32.0,
                             letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleSmallFamily),
+                                FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily),
                           ),
-                      elevation: 3.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
                     ),
-                  ).animateOnPageLoad(
-                      animationsMap['buttonOnPageLoadAnimation']!),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          '7uvhtze5' /* تهانينا! تم تقديم طلبك بنجاح س... */,
+                        ),
+                        textAlign: TextAlign.justify,
+                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w300,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
+                            ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed(
+                            'login',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: const TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.leftToRight,
+                              ),
+                            },
+                          );
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'pm7u8x69' /* الصفحة الرئيسية  */,
+                        ),
+                        options: FFButtonOptions(
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          height: 50.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).textColor,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation']!),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

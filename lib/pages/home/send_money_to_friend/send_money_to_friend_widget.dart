@@ -370,7 +370,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                                   0.0,
                                                                   0.0),
                                                       child: Image.asset(
-                                                        'assets/images/visa_1.png',
+                                                        'assets/images/aa9na3zzj.webp',
                                                         width: 50.0,
                                                         height: 50.0,
                                                         fit: BoxFit.fitWidth,

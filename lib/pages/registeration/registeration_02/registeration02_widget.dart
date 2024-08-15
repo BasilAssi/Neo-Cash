@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/error_component_copy/error_component_copy_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -13,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'registeration02_model.dart';
 export 'registeration02_model.dart';
 
@@ -645,7 +643,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'j1orf7vl' /*  تاريخ ميلادك */,
+                          'j1orf7vl' /*  تاريخ الميلاد */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
@@ -689,13 +687,11 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                         ? FFAppState()
                                             .registerationFormData
                                             .dateOfBirth
-                                        : getCurrentTimestamp) ??
+                                        : functions.calculateAge18Year()) ??
                                     DateTime.now()),
-                                firstDate: (DateTime.fromMicrosecondsSinceEpoch(
-                                        17445600000000) ??
-                                    DateTime(1900)),
-                                lastDate:
-                                    (getCurrentTimestamp ?? DateTime(2050)),
+                                firstDate: DateTime(1900),
+                                lastDate: (functions.calculateAge18Year() ??
+                                    DateTime(2050)),
                                 builder: (context, child) {
                                   return wrapInMaterialDatePickerTheme(
                                     context,
@@ -730,8 +726,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     selectedDateTimeForegroundColor:
                                         FlutterFlowTheme.of(context).info,
                                     actionButtonForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        FlutterFlowTheme.of(context).textColor,
                                     iconSize: 24.0,
                                   );
                                 },
@@ -762,10 +757,14 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     FFAppState()
                                             .registerationFormData
                                             .hasDateOfBirth()
-                                        ? FFAppState()
-                                            .registerationFormData
-                                            .dateOfBirth!
-                                            .toString()
+                                        ? dateTimeFormat(
+                                            "dd/MM/yyyy",
+                                            FFAppState()
+                                                .registerationFormData
+                                                .dateOfBirth!,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          )
                                         : '',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1145,60 +1144,93 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownNationaltyValueController ??=
-                            FormFieldController<String>(
-                          _model.dropDownNationaltyValue ??= FFAppState()
-                                  .registerationFormData
-                                  .hasNationality()
-                              ? FFAppState().registerationFormData.nationality
-                              : '',
-                        ),
-                        options: List<String>.from(['فلسطيني', 'F']),
-                        optionLabels: [
-                          FFLocalizations.of(context).getText(
-                            'hnomrkxo' /* فلسطيني */,
+                      child: FutureBuilder<ApiCallResponse>(
+                        future: FFAppState().nationaltiesAPIResponse(
+                          overrideCache: _model.dropDownNationaltyValue ==
+                              FFAppConstants.emptyListStrings.first,
+                          requestFn: () =>
+                              AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                            msgId: functions.messageId(),
+                            type: 'NATIONALITY',
                           ),
-                          FFLocalizations.of(context).getText(
-                            '0j9r8p17' /*  */,
-                          )
-                        ],
-                        onChanged: (val) => setState(
-                            () => _model.dropDownNationaltyValue = val),
-                        width: 300.0,
-                        height: 56.0,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .labelLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).labelLargeFamily,
-                              fontSize: 18.0,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .labelLargeFamily),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 40.0,
+                                height: 40.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          final dropDownNationaltyLOOKUPsAPIsResponse =
+                              snapshot.data!;
+
+                          return FlutterFlowDropDown<String>(
+                            controller:
+                                _model.dropDownNationaltyValueController ??=
+                                    FormFieldController<String>(
+                              _model.dropDownNationaltyValue ??= FFAppState()
+                                      .registerationFormData
+                                      .hasNationality()
+                                  ? FFAppState()
+                                      .registerationFormData
+                                      .nationality
+                                  : '',
                             ),
-                        hintText: FFLocalizations.of(context).getText(
-                          '6xgs3e3k' /* الجنسية */,
-                        ),
-                        icon: Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 24.0,
-                        ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        elevation: 2.0,
-                        borderColor:
-                            FlutterFlowTheme.of(context).textFieldBorder,
-                        borderWidth: 1.0,
-                        borderRadius: 12.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 4.0, 16.0, 4.0),
-                        hidesUnderline: true,
-                        isOverButton: true,
-                        isSearchable: false,
-                        isMultiSelect: false,
+                            options: List<String>.from(['فلسطيني', 'F']),
+                            optionLabels: [
+                              FFLocalizations.of(context).getText(
+                                'hnomrkxo' /* فلسطيني */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '0j9r8p17' /*  */,
+                              )
+                            ],
+                            onChanged: (val) => setState(
+                                () => _model.dropDownNationaltyValue = val),
+                            width: 300.0,
+                            height: 56.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelLargeFamily),
+                                ),
+                            hintText: FFLocalizations.of(context).getText(
+                              '6xgs3e3k' /* الجنسية */,
+                            ),
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor:
+                                FlutterFlowTheme.of(context).textFieldBorder,
+                            borderWidth: 1.0,
+                            borderRadius: 12.0,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 4.0, 16.0, 4.0),
+                            hidesUnderline: true,
+                            isOverButton: true,
+                            isSearchable: false,
+                            isMultiSelect: false,
+                          );
+                        },
                       ),
                     ),
                     Padding(
@@ -1215,32 +1247,12 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             return;
                           }
                           if (_model.datePicked == null) {
-                            await showDialog(
-                              context: context,
-                              builder: (dialogContext) {
-                                return Dialog(
-                                  elevation: 0,
-                                  insetPadding: EdgeInsets.zero,
-                                  backgroundColor: Colors.transparent,
-                                  alignment: const AlignmentDirectional(0.0, 0.0)
-                                      .resolve(Directionality.of(context)),
-                                  child: WebViewAware(
-                                    child: GestureDetector(
-                                      onTap: () => FocusScope.of(dialogContext)
-                                          .unfocus(),
-                                      child: ErrorComponentCopyWidget(
-                                        errorText: FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: ' ',
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'الحقل مطلوب',
+                                enText: '',
+                              ),
                             );
-
                             return;
                           }
                           if (_model.citiesDropDownValue == null) {
@@ -1293,36 +1305,13 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       return;
                                     }
                                     if (_model.datePicked == null) {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment: const AlignmentDirectional(
-                                                    0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                            child: WebViewAware(
-                                              child: GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(dialogContext)
-                                                        .unfocus(),
-                                                child: ErrorComponentCopyWidget(
-                                                  errorText: FFLocalizations.of(
-                                                          context)
-                                                      .getVariableText(
-                                                    arText: 'الحقل مطلوب',
-                                                    enText: ' ',
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        },
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'الحقل مطلوب',
+                                          enText: '',
+                                        ),
                                       );
-
                                       return;
                                     }
                                     if (_model.citiesDropDownValue == null) {

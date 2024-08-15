@@ -129,7 +129,7 @@ class _ConfirmTransferBetweenCardsWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Image.asset(
-                            'assets/images/masterCard@2x.png',
+                            'assets/images/aa9na3zzj.webp',
                             width: 40.0,
                             height: 40.0,
                             fit: BoxFit.fitWidth,
@@ -361,7 +361,7 @@ class _ConfirmTransferBetweenCardsWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Image.asset(
-                            'assets/images/masterCard@2x.png',
+                            'assets/images/aa9na3zzj.webp',
                             width: 40.0,
                             height: 40.0,
                             fit: BoxFit.fitWidth,

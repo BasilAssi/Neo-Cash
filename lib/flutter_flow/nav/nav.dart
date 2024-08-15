@@ -45,7 +45,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const NavBarPage(),
+          : const Registeration06Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -63,7 +63,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const NavBarPage(),
+              : const Registeration06Widget(),
           routes: [
             FFRoute(
               name: 'home_page',
@@ -170,9 +170,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration07Widget(),
             ),
             FFRoute(
-              name: 'registeration_04',
-              path: 'registeration04',
-              builder: (context, params) => const Registeration04Widget(),
+              name: 'registeration_06',
+              path: 'registeration06',
+              builder: (context, params) => const Registeration06Widget(),
             ),
             FFRoute(
               name: 'send_money_to_friend',
@@ -235,9 +235,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration08Widget(),
             ),
             FFRoute(
-              name: 'registeration_06',
-              path: 'registeration06',
-              builder: (context, params) => const Registeration06Widget(),
+              name: 'registeration_04',
+              path: 'registeration04',
+              builder: (context, params) => const Registeration04Widget(),
             ),
             FFRoute(
               name: 'set_password_exist_flow',

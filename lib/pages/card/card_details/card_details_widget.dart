@@ -204,9 +204,9 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 0.0, 0.0),
                                         child: Image.asset(
-                                          'assets/images/visa_1.png',
-                                          width: 40.0,
-                                          height: 40.0,
+                                          'assets/images/aa9na3zzj.webp',
+                                          width: 63.0,
+                                          height: 45.0,
                                           fit: BoxFit.fitWidth,
                                         ),
                                       ),
@@ -409,219 +409,281 @@ THRU */
                   Builder(
                     builder: (context) {
                       if (random_data.randomName(true, true) != '') {
-                        return Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed('view_pin_code_page');
-                                },
-                                child: Wrap(
-                                  spacing: 8.0,
-                                  runSpacing: 0.0,
-                                  alignment: WrapAlignment.start,
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  direction: Axis.vertical,
-                                  runAlignment: WrapAlignment.start,
-                                  verticalDirection: VerticalDirection.down,
-                                  clipBehavior: Clip.antiAlias,
-                                  children: [
-                                    Container(
-                                      width: 70.0,
-                                      height: 70.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .textFieldBorder,
-                                        borderRadius: 12.0,
-                                        borderWidth: 1.0,
-                                        buttonSize:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.18,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .iconBackground,
-                                        icon: Icon(
-                                          Icons.remove_red_eye_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 32.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '7wf328ns' /* عرض الرمز 
-السري */
-                                        ,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed('transactions_home_page');
-                                },
-                                child: Wrap(
-                                  spacing: 8.0,
-                                  runSpacing: 0.0,
-                                  alignment: WrapAlignment.center,
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  direction: Axis.vertical,
-                                  runAlignment: WrapAlignment.center,
-                                  verticalDirection: VerticalDirection.down,
-                                  clipBehavior: Clip.antiAlias,
-                                  children: [
-                                    Container(
-                                      width: 70.0,
-                                      height: 70.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: FlutterFlowIconButton(
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .textFieldBorder,
-                                        borderRadius: 12.0,
-                                        borderWidth: 1.0,
-                                        buttonSize:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.18,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .iconBackground,
-                                        icon: Icon(
-                                          Icons.stacked_bar_chart,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 32.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'bmdetv0i' /* عرض حركات
- البطاقة */
-                                        ,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Wrap(
-                                spacing: 8.0,
-                                runSpacing: 0.0,
-                                alignment: WrapAlignment.center,
-                                crossAxisAlignment: WrapCrossAlignment.center,
-                                direction: Axis.vertical,
-                                runAlignment: WrapAlignment.center,
-                                verticalDirection: VerticalDirection.down,
-                                clipBehavior: Clip.antiAlias,
+                        return Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Container(
-                                    width: 70.0,
-                                    height: 70.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: FlutterFlowIconButton(
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .textFieldBorder,
-                                      borderRadius: 12.0,
-                                      borderWidth: 1.0,
-                                      buttonSize:
-                                          MediaQuery.sizeOf(context).width *
-                                              0.18,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .iconBackground,
-                                      icon: Icon(
-                                        Icons.lock_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 32.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('view_pin_code_page');
+                                    },
+                                    child: Wrap(
+                                      spacing: 8.0,
+                                      runSpacing: 0.0,
+                                      alignment: WrapAlignment.start,
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.center,
+                                      direction: Axis.vertical,
+                                      runAlignment: WrapAlignment.start,
+                                      verticalDirection: VerticalDirection.down,
+                                      clipBehavior: Clip.antiAlias,
+                                      children: [
+                                        Container(
+                                          width: 70.0,
+                                          height: 70.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: FlutterFlowIconButton(
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .textFieldBorder,
+                                            borderRadius: 12.0,
+                                            borderWidth: 1.0,
+                                            buttonSize:
+                                                MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.18,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .iconBackground,
+                                            icon: Icon(
+                                              Icons.remove_red_eye_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 32.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '7wf328ns' /* عرض الرمز 
+السري */
+                                            ,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textColor,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
+                                      ],
                                     ),
                                   ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context
+                                          .pushNamed('transactions_home_page');
+                                    },
+                                    child: Wrap(
+                                      spacing: 8.0,
+                                      runSpacing: 0.0,
+                                      alignment: WrapAlignment.center,
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.center,
+                                      direction: Axis.vertical,
+                                      runAlignment: WrapAlignment.center,
+                                      verticalDirection: VerticalDirection.down,
+                                      clipBehavior: Clip.antiAlias,
+                                      children: [
+                                        Container(
+                                          width: 70.0,
+                                          height: 70.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: FlutterFlowIconButton(
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .textFieldBorder,
+                                            borderRadius: 12.0,
+                                            borderWidth: 1.0,
+                                            buttonSize:
+                                                MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.18,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .iconBackground,
+                                            icon: Icon(
+                                              Icons.stacked_bar_chart,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 32.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'bmdetv0i' /* عرض حركات
+ البطاقة */
+                                            ,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textColor,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Wrap(
+                                    spacing: 8.0,
+                                    runSpacing: 0.0,
+                                    alignment: WrapAlignment.center,
+                                    crossAxisAlignment:
+                                        WrapCrossAlignment.center,
+                                    direction: Axis.vertical,
+                                    runAlignment: WrapAlignment.center,
+                                    verticalDirection: VerticalDirection.down,
+                                    clipBehavior: Clip.antiAlias,
+                                    children: [
+                                      Container(
+                                        width: 70.0,
+                                        height: 70.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: FlutterFlowIconButton(
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .textFieldBorder,
+                                          borderRadius: 12.0,
+                                          borderWidth: 1.0,
+                                          buttonSize:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.18,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .iconBackground,
+                                          icon: Icon(
+                                            Icons.lock_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 32.0,
+                                          ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
+                                        ),
+                                      ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'v2p9jewd' /* قفل
+البطاقة */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .textColor,
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 36.0, 0.0, 0.0),
+                              child: Wrap(
+                                spacing: 0.0,
+                                runSpacing: 0.0,
+                                alignment: WrapAlignment.center,
+                                crossAxisAlignment: WrapCrossAlignment.start,
+                                direction: Axis.horizontal,
+                                runAlignment: WrapAlignment.center,
+                                verticalDirection: VerticalDirection.down,
+                                clipBehavior: Clip.none,
+                                children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'v2p9jewd' /* قفل
-البطاقة */
-                                      ,
+                                      '509evjxa' /* عند قفل البطاقة سيتم إيقاف جمي... */,
                                     ),
-                                    textAlign: TextAlign.center,
+                                    textAlign: TextAlign.justify,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .textColor,
-                                          fontSize: 14.0,
+                                          fontSize: 12.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -630,8 +692,8 @@ THRU */
                                   ),
                                 ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         );
                       } else {
                         return Wrap(

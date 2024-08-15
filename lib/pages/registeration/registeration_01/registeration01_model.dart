@@ -15,44 +15,188 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
   TextEditingController? firstNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       firstNameARTextFieldTextControllerValidator;
+  String? _firstNameARTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'm9cfiyyb' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'q00zvrwj' /* الاسم يجب ان يكون باللغة العرب... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for FatherNameARTextField widget.
   FocusNode? fatherNameARTextFieldFocusNode;
   TextEditingController? fatherNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       fatherNameARTextFieldTextControllerValidator;
+  String? _fatherNameARTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'szccmsm4' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'a5kpo2rp' /* الاسم يجب ان يكون باللغة العرب... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for GrandFatherNameARTextField widget.
   FocusNode? grandFatherNameARTextFieldFocusNode;
   TextEditingController? grandFatherNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       grandFatherNameARTextFieldTextControllerValidator;
+  String? _grandFatherNameARTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'akl1d9zd' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'e62e5k8n' /* الاسم يجب ان يكون باللغة العرب... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for FamilyNameARTextField widget.
   FocusNode? familyNameARTextFieldFocusNode;
   TextEditingController? familyNameARTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameARTextFieldTextControllerValidator;
+  String? _familyNameARTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'tfwtgi9v' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'e62e5k8n' /* الاسم يجب ان يكون باللغة العرب... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for FirstNameENTextField widget.
   FocusNode? firstNameENTextFieldFocusNode;
   TextEditingController? firstNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       firstNameENTextFieldTextControllerValidator;
+  String? _firstNameENTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'y7vkhixh' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '6e7r5kul' /* الاسم يجب ان يكون باللغة الانج... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for FatherNameENTextField widget.
   FocusNode? fatherNameENTextFieldFocusNode;
   TextEditingController? fatherNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       fatherNameENTextFieldTextControllerValidator;
+  String? _fatherNameENTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'xmu2qdk6' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '7go408ld' /* الاسم يجب ان يكون باللغة الانج... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for GrandFatherNameENTextField widget.
   FocusNode? grandFatherNameENTextFieldFocusNode;
   TextEditingController? grandFatherNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       grandFatherNameENTextFieldTextControllerValidator;
+  String? _grandFatherNameENTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        't4qqigtg' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '6e7r5kul' /* الاسم يجب ان يكون باللغة الانج... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for FamilyNameENTextField widget.
   FocusNode? familyNameENTextFieldFocusNode;
   TextEditingController? familyNameENTextFieldTextController;
   String? Function(BuildContext, String?)?
       familyNameENTextFieldTextControllerValidator;
+  String? _familyNameENTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '5hpn7ngb' /* الحقل مطلوب */,
+      );
+    }
+
+    if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'a7t0jgxg' /* الاسم يجب ان يكون باللغة الانج... */,
+      );
+    }
+    return null;
+  }
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    firstNameARTextFieldTextControllerValidator =
+        _firstNameARTextFieldTextControllerValidator;
+    fatherNameARTextFieldTextControllerValidator =
+        _fatherNameARTextFieldTextControllerValidator;
+    grandFatherNameARTextFieldTextControllerValidator =
+        _grandFatherNameARTextFieldTextControllerValidator;
+    familyNameARTextFieldTextControllerValidator =
+        _familyNameARTextFieldTextControllerValidator;
+    firstNameENTextFieldTextControllerValidator =
+        _firstNameENTextFieldTextControllerValidator;
+    fatherNameENTextFieldTextControllerValidator =
+        _fatherNameENTextFieldTextControllerValidator;
+    grandFatherNameENTextFieldTextControllerValidator =
+        _grandFatherNameENTextFieldTextControllerValidator;
+    familyNameENTextFieldTextControllerValidator =
+        _familyNameENTextFieldTextControllerValidator;
+  }
 
   @override
   void dispose() {

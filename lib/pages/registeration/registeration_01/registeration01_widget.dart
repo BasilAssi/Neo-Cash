@@ -102,7 +102,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'cui94pxw' /* اسمك */,
+                      'cui94pxw' /* معلوماتك الشخصية */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -630,7 +630,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'ejq0qsaw' /*  اسمك بالعربي */,
+                        'ejq0qsaw' /*  الاسم باللغة العربية */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -1042,7 +1042,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '1xvldsbc' /*  اسمك بالانجليزي */,
+                        '1xvldsbc' /*  الاسم باللغة الإنجليزية */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:

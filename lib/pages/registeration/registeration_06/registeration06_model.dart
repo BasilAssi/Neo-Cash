@@ -11,97 +11,24 @@ class Registeration06Model extends FlutterFlowModel<Registeration06Widget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for isPEPDropDown widget.
-  String? isPEPDropDownValue;
-  FormFieldController<String>? isPEPDropDownValueController;
-  // State field(s) for localPepFullNameTextField widget.
-  FocusNode? localPepFullNameTextFieldFocusNode;
-  TextEditingController? localPepFullNameTextFieldTextController;
+  // State field(s) for CitiesDropDown widget.
+  String? citiesDropDownValue;
+  FormFieldController<String>? citiesDropDownValueController;
+  // State field(s) for PopulationDropDown widget.
+  String? populationDropDownValue;
+  FormFieldController<String>? populationDropDownValueController;
+  // State field(s) for AddresslTextField widget.
+  FocusNode? addresslTextFieldFocusNode;
+  TextEditingController? addresslTextFieldTextController;
   String? Function(BuildContext, String?)?
-      localPepFullNameTextFieldTextControllerValidator;
-  String? _localPepFullNameTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'szccmsm4' /* Field is required */,
-      );
-    }
-
-    return null;
-  }
-
-  // State field(s) for latinPepFullNameTextField widget.
-  FocusNode? latinPepFullNameTextFieldFocusNode;
-  TextEditingController? latinPepFullNameTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      latinPepFullNameTextFieldTextControllerValidator;
-  String? _latinPepFullNameTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        '8693qu5v' /* Field is required */,
-      );
-    }
-
-    return null;
-  }
-
-  // State field(s) for relationshipWithPepTextField widget.
-  FocusNode? relationshipWithPepTextFieldFocusNode;
-  TextEditingController? relationshipWithPepTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      relationshipWithPepTextFieldTextControllerValidator;
-  String? _relationshipWithPepTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'eggopym5' /* Field is required */,
-      );
-    }
-
-    return null;
-  }
-
-  // State field(s) for pepPositionTextField widget.
-  FocusNode? pepPositionTextFieldFocusNode;
-  TextEditingController? pepPositionTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      pepPositionTextFieldTextControllerValidator;
-  String? _pepPositionTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'eggopym5' /* Field is required */,
-      );
-    }
-
-    return null;
-  }
+      addresslTextFieldTextControllerValidator;
 
   @override
-  void initState(BuildContext context) {
-    localPepFullNameTextFieldTextControllerValidator =
-        _localPepFullNameTextFieldTextControllerValidator;
-    latinPepFullNameTextFieldTextControllerValidator =
-        _latinPepFullNameTextFieldTextControllerValidator;
-    relationshipWithPepTextFieldTextControllerValidator =
-        _relationshipWithPepTextFieldTextControllerValidator;
-    pepPositionTextFieldTextControllerValidator =
-        _pepPositionTextFieldTextControllerValidator;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    localPepFullNameTextFieldFocusNode?.dispose();
-    localPepFullNameTextFieldTextController?.dispose();
-
-    latinPepFullNameTextFieldFocusNode?.dispose();
-    latinPepFullNameTextFieldTextController?.dispose();
-
-    relationshipWithPepTextFieldFocusNode?.dispose();
-    relationshipWithPepTextFieldTextController?.dispose();
-
-    pepPositionTextFieldFocusNode?.dispose();
-    pepPositionTextFieldTextController?.dispose();
+    addresslTextFieldFocusNode?.dispose();
+    addresslTextFieldTextController?.dispose();
   }
 }

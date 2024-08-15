@@ -155,7 +155,7 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'wz31dp5u' /* بعتنالك رمز تحقق على تليفونك  ... */,
+                                      'wz31dp5u' /* أرسلنالك رمز تحقق على تليفونك ... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -206,7 +206,7 @@ class _OtpExistFlowWidgetState extends State<OtpExistFlowWidget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'x2iqegi0' /*  ممكن تشوف مسجاتك  وتدخل الرمز... */,
+                                      'x2iqegi0' /*  الرجاء إدخال الرمز */,
                                     ),
                                     style: const TextStyle(),
                                   )
