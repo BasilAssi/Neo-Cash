@@ -1205,14 +1205,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الجنسية',
       'en': '',
     },
-    'hnomrkxo': {
-      'ar': 'فلسطيني',
-      'en': '',
-    },
-    '0j9r8p17': {
-      'ar': '',
-      'en': '',
-    },
     '6xgs3e3k': {
       'ar': 'الجنسية',
       'en': '',
