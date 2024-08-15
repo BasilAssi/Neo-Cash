@@ -23,7 +23,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'szccmsm4' /* Field is required */,
+        'cva7bxnb' /* الحقل مطلوب */,
       );
     }
 
@@ -39,7 +39,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '8693qu5v' /* Field is required */,
+        'ckc46hur' /* الحقل مطلوب */,
       );
     }
 
@@ -55,7 +55,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'eggopym5' /* Field is required */,
+        'bp5kq706' /* الحقل مطلوب */,
       );
     }
 
@@ -71,7 +71,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'eggopym5' /* Field is required */,
+        'eggopym5' /* الحقل مطلوب */,
       );
     }
 

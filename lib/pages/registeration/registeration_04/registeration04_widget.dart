@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -1196,6 +1197,15 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                                       return;
                                     }
                                     if (_model.isPEPDropDownValue == null) {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'حقل هل أنت معرض سياسيا مطلوب',
+                                          enText:
+                                              'Field Are you politically exposed? Required',
+                                        ),
+                                      );
                                       return;
                                     }
                                     FFAppState()

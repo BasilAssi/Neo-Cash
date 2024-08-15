@@ -59,7 +59,8 @@ class FFAppState extends ChangeNotifier {
   }
 
   RegisterationFormDataStruct _registerationFormData =
-      RegisterationFormDataStruct();
+      RegisterationFormDataStruct.fromSerializableMap(
+          jsonDecode('{\"isPEP\":\"false\"}'));
   RegisterationFormDataStruct get registerationFormData =>
       _registerationFormData;
   set registerationFormData(RegisterationFormDataStruct value) {

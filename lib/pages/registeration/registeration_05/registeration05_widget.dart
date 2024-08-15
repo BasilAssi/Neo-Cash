@@ -630,9 +630,12 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                         _model.dropDownValue ??= FFAppState()
                                 .registerationFormData
                                 .hasIsTrueBeneficiaryAccount()
-                            ? FFAppState()
-                                .registerationFormData
-                                .isTrueBeneficiaryAccount
+                            ? valueOrDefault<String>(
+                                FFAppState()
+                                    .registerationFormData
+                                    .isTrueBeneficiaryAccount,
+                                'true',
+                              )
                             : '',
                       ),
                       options: List<String>.from(['true', 'false']),
