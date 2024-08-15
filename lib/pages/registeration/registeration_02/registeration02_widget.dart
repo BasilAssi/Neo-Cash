@@ -1137,7 +1137,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: FFAppState().nationaltiesAPIResponse(
-                          overrideCache: _model.dropDownNationaltyValue == ' ',
+                          overrideCache: _model.dropDownNationaltyValue ==
+                              FFAppConstants.emptyListStrings.first,
                           requestFn: () =>
                               AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                             msgId: functions.messageId(),
