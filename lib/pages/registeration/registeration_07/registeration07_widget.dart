@@ -1208,9 +1208,9 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                 mobileNumber: FFAppState()
                                                     .registerationFormData
                                                     .mobileNumber,
-                                                emailAddress: FFAppState()
-                                                    .registerationFormData
-                                                    .email,
+                                                emailAddress: _model
+                                                    .emailTextFieldTextController
+                                                    .text,
                                                 firstName: FFAppState()
                                                     .registerationFormData
                                                     .firstNameEN,
