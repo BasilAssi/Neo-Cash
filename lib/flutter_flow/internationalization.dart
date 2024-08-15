@@ -2718,7 +2718,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // basic_infi_forgot_pin
   {
     'hfce6qeb': {
-      'ar': 'معلوماتك الشخصية',
+      'ar': 'تأكيد معلوماتك الشخصية',
       'en': '',
     },
     'zptptm6s': {
@@ -2729,31 +2729,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': ' مكان الميلاد ',
       'en': '',
     },
-    'mr04czpu': {
-      'ar': 'رام الله',
+    'mh8eec57': {
+      'ar': '',
       'en': '',
     },
-    '8unec181': {
-      'ar': 'نابلس',
-      'en': '',
-    },
-    'a88vr3st': {
-      'ar': 'طولكرم',
-      'en': '',
-    },
-    'nqv1u0dt': {
-      'ar': 'الخليل',
-      'en': '',
-    },
-    'syi4b462': {
-      'ar': 'أنثى',
-      'en': '',
-    },
-    'a39kpk4q': {
+    'axjjzo1w': {
       'ar': 'المدينة',
       'en': '',
     },
-    '1kca2mao': {
+    '35hkijz2': {
       'ar': 'Search for an item...',
       'en': '',
     },

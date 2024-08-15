@@ -1146,8 +1146,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: FFAppState().nationaltiesAPIResponse(
-                          overrideCache: _model.dropDownNationaltyValue ==
-                              FFAppConstants.emptyListStrings.first,
+                          overrideCache: _model.dropDownNationaltyValue == '',
                           requestFn: () =>
                               AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                             msgId: functions.messageId(),
@@ -1184,15 +1183,35 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       .nationality
                                   : '',
                             ),
-                            options: List<String>.from(['فلسطيني', 'F']),
-                            optionLabels: [
-                              FFLocalizations.of(context).getText(
-                                'hnomrkxo' /* فلسطيني */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '0j9r8p17' /*  */,
-                              )
-                            ],
+                            options: List<
+                                String>.from(LookupCitiesAPIResponseStruct
+                                            .maybeFromMap(
+                                                dropDownNationaltyLOOKUPsAPIsResponse
+                                                    .jsonBody)
+                                        ?.hasRecords() ==
+                                    true
+                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        dropDownNationaltyLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.encodedId)
+                                    .toList()
+                                : FFAppConstants.emptyListStrings),
+                            optionLabels: FFLocalizations.of(context)
+                                        .languageCode ==
+                                    'ar'
+                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        dropDownNationaltyLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.localName)
+                                    .toList()
+                                : LookupCitiesAPIResponseStruct.maybeFromMap(
+                                        dropDownNationaltyLOOKUPsAPIsResponse
+                                            .jsonBody)!
+                                    .records
+                                    .map((e) => e.latinName)
+                                    .toList(),
                             onChanged: (val) => setState(
                                 () => _model.dropDownNationaltyValue = val),
                             width: 300.0,

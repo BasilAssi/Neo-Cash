@@ -1,11 +1,15 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'basic_infi_forgot_pin_model.dart';
 export 'basic_infi_forgot_pin_model.dart';
 
@@ -37,6 +41,8 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -67,7 +73,7 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'hfce6qeb' /* معلوماتك الشخصية */,
+                      'hfce6qeb' /* تأكيد معلوماتك الشخصية */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -267,62 +273,119 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowDropDown<String>(
-                      controller: _model.dropDownValueController ??=
-                          FormFieldController<String>(null),
-                      options:
-                          List<String>.from(['04', '1', '2', '3', 'FEMALE']),
-                      optionLabels: [
-                        FFLocalizations.of(context).getText(
-                          'mr04czpu' /* رام الله */,
+                    child: FutureBuilder<ApiCallResponse>(
+                      future: FFAppState().citesAPIResponse(
+                        overrideCache: _model.citiesDropDownValue ==
+                            FFAppConstants.emptyListStrings.first,
+                        requestFn: () =>
+                            AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                          msgId: functions.messageId(),
+                          type: 'CITY',
                         ),
-                        FFLocalizations.of(context).getText(
-                          '8unec181' /* نابلس */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'a88vr3st' /* طولكرم */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'nqv1u0dt' /* الخليل */,
-                        ),
-                        FFLocalizations.of(context).getText(
-                          'syi4b462' /* أنثى */,
-                        )
-                      ],
-                      onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
-                      width: 300.0,
-                      height: 56.0,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .labelLarge
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).labelLargeFamily,
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).labelLargeFamily),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 40.0,
+                              height: 40.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        final citiesDropDownLOOKUPsAPIsResponse =
+                            snapshot.data!;
+
+                        return FlutterFlowDropDown<String>(
+                          controller: _model.citiesDropDownValueController ??=
+                              FormFieldController<String>(
+                            _model.citiesDropDownValue ??= FFAppState()
+                                    .registerationFormData
+                                    .hasCityCode()
+                                ? FFAppState().registerationFormData.cityCode
+                                : '',
                           ),
-                      hintText: FFLocalizations.of(context).getText(
-                        'a39kpk4q' /* المدينة */,
-                      ),
-                      icon: Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 24.0,
-                      ),
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      elevation: 2.0,
-                      borderColor: FlutterFlowTheme.of(context).textFieldBorder,
-                      borderWidth: 1.0,
-                      borderRadius: 12.0,
-                      margin:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                      hidesUnderline: true,
-                      isOverButton: true,
-                      isSearchable: false,
-                      isMultiSelect: false,
+                          options: List<String>.from(
+                              LookupCitiesAPIResponseStruct.maybeFromMap(
+                                              citiesDropDownLOOKUPsAPIsResponse
+                                                  .jsonBody)
+                                          ?.hasRecords() ==
+                                      true
+                                  ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                          citiesDropDownLOOKUPsAPIsResponse
+                                              .jsonBody)!
+                                      .records
+                                      .map((e) => e.encodedId)
+                                      .toList()
+                                  : FFAppConstants.emptyListStrings),
+                          optionLabels: FFLocalizations.of(context).languageCode ==
+                                  'ar'
+                              ? (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                              citiesDropDownLOOKUPsAPIsResponse
+                                                  .jsonBody)
+                                          ?.hasRecords() ==
+                                      true
+                                  ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                          citiesDropDownLOOKUPsAPIsResponse
+                                              .jsonBody)!
+                                      .records
+                                      .map((e) => e.localName)
+                                      .toList()
+                                  : FFAppConstants.emptyListStrings)
+                              : (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                              citiesDropDownLOOKUPsAPIsResponse
+                                                  .jsonBody)
+                                          ?.hasRecords() ==
+                                      true
+                                  ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                          citiesDropDownLOOKUPsAPIsResponse.jsonBody)!
+                                      .records
+                                      .map((e) => e.latinName)
+                                      .toList()
+                                  : FFAppConstants.emptyListStrings),
+                          onChanged: (val) =>
+                              setState(() => _model.citiesDropDownValue = val),
+                          width: 300.0,
+                          height: 56.0,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .labelLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelLargeFamily,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelLargeFamily),
+                              ),
+                          hintText: FFLocalizations.of(context).getText(
+                            'axjjzo1w' /* المدينة */,
+                          ),
+                          icon: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          elevation: 2.0,
+                          borderColor:
+                              FlutterFlowTheme.of(context).textFieldBorder,
+                          borderWidth: 1.0,
+                          borderRadius: 12.0,
+                          margin: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 4.0, 16.0, 4.0),
+                          hidesUnderline: true,
+                          isOverButton: true,
+                          isSearchable: false,
+                          isMultiSelect: false,
+                        );
+                      },
                     ),
                   ),
                   Padding(
