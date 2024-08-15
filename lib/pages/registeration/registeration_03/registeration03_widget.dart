@@ -674,15 +674,16 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                   .residentOfTheCountry
                               : '',
                         ),
-                        options:
-                            List<String>.from(['RESIDENT', 'NON_RESIDENT']),
+                        options: List<String>.from(
+                            ['RESIDENT', 'NON_RESIDENT', '2']),
                         optionLabels: [
                           FFLocalizations.of(context).getText(
                             'afjbsqja' /* نعم */,
                           ),
                           FFLocalizations.of(context).getText(
                             '6o1swgu5' /* لا */,
-                          )
+                          ),
+                          ''
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownRESIDENTValue = val),
@@ -752,10 +753,10 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                           _model.dropDownisUsPassportHolderValue ??=
                               FFAppState()
                                       .registerationFormData
-                                      .hasHaveAnAmericanPassport()
+                                      .hasIsUSPassportHolder()
                                   ? FFAppState()
                                       .registerationFormData
-                                      .haveAnAmericanPassport
+                                      .isUSPassportHolder
                                   : '',
                         ),
                         options: List<String>.from(['true', 'false']),
@@ -1137,7 +1138,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                   (e) => e
                                     ..residentOfTheCountry =
                                         _model.dropDownRESIDENTValue
-                                    ..haveAnAmericanPassport =
+                                    ..isUSPassportHolder =
                                         _model.dropDownisUsPassportHolderValue
                                     ..profession = _model
                                         .profissionTextFieldTextController.text

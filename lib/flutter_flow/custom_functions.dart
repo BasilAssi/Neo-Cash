@@ -31,3 +31,9 @@ String? messageId() {
       'cu-${DateTime.now().millisecondsSinceEpoch}-$randomString';
   return uniqueString;
 }
+
+DateTime? calculateAge18Year() {
+  final now = DateTime.now();
+  final age18 = DateTime(now.year - 18, now.month, now.day);
+  return age18;
+}

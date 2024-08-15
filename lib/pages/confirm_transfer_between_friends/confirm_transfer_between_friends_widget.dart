@@ -147,7 +147,7 @@ class _ConfirmTransferBetweenFriendsWidgetState
                             ),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 12.0, 0.0, 12.0),
+                                  8.0, 12.0, 8.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -155,7 +155,7 @@ class _ConfirmTransferBetweenFriendsWidgetState
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 0.0),
                                     child: Image.asset(
-                                      'assets/images/masterCard@2x.png',
+                                      'assets/images/aa9na3zzj.webp',
                                       width: 40.0,
                                       height: 40.0,
                                       fit: BoxFit.fitWidth,
@@ -477,7 +477,7 @@ class _ConfirmTransferBetweenFriendsWidgetState
                               ),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 0.0, 12.0),
+                                    8.0, 12.0, 8.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -485,7 +485,7 @@ class _ConfirmTransferBetweenFriendsWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Image.asset(
-                                        'assets/images/masterCard@2x.png',
+                                        'assets/images/aa9na3zzj.webp',
                                         width: 40.0,
                                         height: 40.0,
                                         fit: BoxFit.fitWidth,

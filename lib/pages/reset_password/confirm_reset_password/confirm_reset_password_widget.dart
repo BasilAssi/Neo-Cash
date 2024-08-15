@@ -114,7 +114,7 @@ class _ConfirmResetPasswordWidgetState
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '2cug9a5q' /* تغير كلمة السر */,
+                                        '2cug9a5q' /* تغيير كلمة السر */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

@@ -110,33 +110,12 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 children: [
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        '237bqagw' /* دخل المعلومات بشكل صحيح */,
-                      ),
-                      style: FlutterFlowTheme.of(context)
-                          .headlineMedium
-                          .override(
-                            fontFamily: FlutterFlowTheme.of(context)
-                                .headlineMediumFamily,
-                            color: FlutterFlowTheme.of(context).textAppbarColor,
-                            fontSize: 18.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context)
-                                    .headlineMediumFamily),
-                          ),
-                    ),
-                  ),
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'zptptm6s' /* اختار تاريخ ميلادك */,
+                        'zptptm6s' /* تاريخ الميلاد */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -362,7 +341,7 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
-                                  'registeration_04',
+                                  'registeration_06',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,

@@ -119,7 +119,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                           .bodyMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .textColor,
-                                      fontSize: 36.0,
+                                      fontSize: 24.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       useGoogleFonts: GoogleFonts.asMap()
@@ -151,7 +151,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'qspd8ikt' /* بعتنالك رمز تحقق على تليفونك  ... */,
+                                      'qspd8ikt' /* أرسلنالك رمز تحقق على تليفونك ... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -208,7 +208,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'tkx75g2g' /*  ممكن تشوف مسجاتك  وتدخل الرمز... */,
+                                      'tkx75g2g' /*  الرجاء إدخال الرمز */,
                                     ),
                                     style: TextStyle(
                                       color: FlutterFlowTheme.of(context)
@@ -283,6 +283,10 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                               await actions.encodeSHA256(
                             _model.pinCodeController!.text,
                           );
+                          FFAppState().updateRegisterationFormDataStruct(
+                            (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
+                          );
+                          setState(() {});
                           _model.isCompleted = true;
                           setState(() {});
                           _model.isNetworkAvailableOutput =
@@ -294,7 +298,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                   '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                               destinationType: ' MOBILE_NUMBER',
                               msgId: functions.messageId(),
-                              otp: _model.oTPHashedSHA256base64,
+                              otp: FFAppState().registerationFormData.hashedOTP,
                               setConfirmed: 'false',
                               idType: FFAppState()
                                       .registerationFormData
@@ -306,11 +310,21 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                       .hasIdNumber()
                                   ? FFAppState().registerationFormData.idNumber
                                   : '',
-                              operationType: 'VERIFY_DESTINATION',
+                              operationType: FFAppState()
+                                          .registerationFormData
+                                          .isRegisteredStatus ==
+                                      false
+                                  ? 'VERIFY_DESTINATION'
+                                  : 'REGISTER_DEVICE',
                             );
 
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
-                              context.pushNamed('registeration_01');
+                              if (FFAppState()
+                                      .registerationFormData
+                                      .isRegisteredStatus !=
+                                  true) {
+                                context.pushNamed('registeration_01');
+                              }
                             } else {
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(

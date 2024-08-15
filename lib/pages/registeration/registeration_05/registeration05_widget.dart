@@ -28,8 +28,8 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
     _model = createModel(context, () => Registeration05Model());
 
     _model.trueBeneficiaryNameTextFieldTextController ??= TextEditingController(
-        text: FFAppState().registerationFormData.hasNameOfTheBeneficialOwner()
-            ? FFAppState().registerationFormData.nameOfTheBeneficialOwner
+        text: FFAppState().registerationFormData.hasTrueBeneficiaryName()
+            ? FFAppState().registerationFormData.trueBeneficiaryName
             : '');
     _model.trueBeneficiaryNameTextFieldFocusNode ??= FocusNode();
 
@@ -86,7 +86,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'tlsedmig' /* طبيعة حسابك */,
+                      'tlsedmig' /* معلومات حسابك */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -629,11 +629,11 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                           FormFieldController<String>(
                         _model.dropDownValue ??= FFAppState()
                                 .registerationFormData
-                                .hasAreYouTheRealBeneficiaryOfAccount()
+                                .hasIsTrueBeneficiaryAccount()
                             ? FFAppState()
                                 .registerationFormData
-                                .areYouTheRealBeneficiaryOfAccount
-                            : 'true',
+                                .isTrueBeneficiaryAccount
+                            : '',
                       ),
                       options: List<String>.from(['true', 'false']),
                       optionLabels: [
@@ -939,9 +939,9 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                                   FFAppState()
                                       .updateRegisterationFormDataStruct(
                                     (e) => e
-                                      ..areYouTheRealBeneficiaryOfAccount =
+                                      ..isTrueBeneficiaryAccount =
                                           _model.dropDownValue
-                                      ..nameOfTheBeneficialOwner = _model
+                                      ..trueBeneficiaryName = _model
                                           .trueBeneficiaryNameTextFieldTextController
                                           .text
                                       ..relationShipWithTrueBeneficiary = _model
@@ -955,7 +955,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                                   FFAppState()
                                       .updateRegisterationFormDataStruct(
                                     (e) => e
-                                      ..areYouTheRealBeneficiaryOfAccount =
+                                      ..isTrueBeneficiaryAccount =
                                           _model.dropDownValue,
                                   );
                                   setState(() {});

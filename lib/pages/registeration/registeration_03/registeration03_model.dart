@@ -26,7 +26,7 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'fg9qljcu' /* الحقل مطلوب */,
+        'r8ss9mpo' /* الحقل مطلوب */,
       );
     }
 
@@ -42,7 +42,7 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'r8ss9mpo' /* الحقل مطلوب */,
+        'yqzok9cw' /* الحقل مطلوب */,
       );
     }
 

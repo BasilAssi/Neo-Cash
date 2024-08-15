@@ -66,7 +66,7 @@ class _Card61TransferDetailsSmallWidgetState
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        'cyiq8fob' /* يبدو انه الشخص عند أكثر من بطا... */,
+                        'cyiq8fob' /* يبدو أن الصديق  لديه أكثر من ب... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelLarge.override(
                             fontFamily:
@@ -83,7 +83,7 @@ class _Card61TransferDetailsSmallWidgetState
                       FFLocalizations.of(context).getText(
                         'nm3mpspk' /* يرجى ادخال اخر اربع ارقام  من ... */,
                       ),
-                      textAlign: TextAlign.end,
+                      textAlign: TextAlign.justify,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).displaySmallFamily,

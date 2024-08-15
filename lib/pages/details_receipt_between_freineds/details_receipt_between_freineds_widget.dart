@@ -1,6 +1,8 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'details_receipt_between_freineds_model.dart';
@@ -490,6 +492,54 @@ class _DetailsReceiptBetweenFreinedsWidgetState
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                       ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'zs5rbl31' /* تنزيل الصورة على الجهاز؟ */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w800,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: FlutterFlowTheme.of(context).primary,
+                            borderRadius: 12.0,
+                            borderWidth: 1.0,
+                            buttonSize: 45.0,
+                            fillColor: FlutterFlowTheme.of(context).accent1,
+                            icon: Icon(
+                              Icons.save_alt_sharp,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 28.0,
+                            ),
+                            showLoadingIndicator: true,
+                            onPressed: () async {
+                              await actions.captureScreenshotOfPage();
+                            },
+                          ),
+                        ),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                   ),
                 ].addToEnd(const SizedBox(height: 44.0)),
