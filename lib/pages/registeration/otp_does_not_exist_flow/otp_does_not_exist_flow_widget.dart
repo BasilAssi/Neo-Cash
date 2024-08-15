@@ -321,8 +321,10 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
                               if (FFAppState()
                                       .registerationFormData
-                                      .isRegisteredStatus !=
+                                      .isRegisteredStatus ==
                                   true) {
+                                context.pushNamed('set_password_exist_flow');
+                              } else {
                                 context.pushNamed('registeration_01');
                               }
                             } else {
