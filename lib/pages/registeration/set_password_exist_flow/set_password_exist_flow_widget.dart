@@ -609,17 +609,17 @@ class _SetPasswordExistFlowWidgetState
                                           .registerationFormData
                                           .hasEmail() ==
                                       true) {
-                                    if (_model.formKey2.currentState == null ||
-                                        !_model.formKey2.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
                                     if (_model.formKey1.currentState == null ||
                                         !_model.formKey1.currentState!
                                             .validate()) {
                                       return;
                                     }
                                   } else {
+                                    if (_model.formKey2.currentState == null ||
+                                        !_model.formKey2.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
                                     if (_model.formKey1.currentState == null ||
                                         !_model.formKey1.currentState!
                                             .validate()) {
