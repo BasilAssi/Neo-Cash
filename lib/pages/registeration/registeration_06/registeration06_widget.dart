@@ -868,10 +868,11 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                               options: List<
                                   String>.from(LookupCitiesAPIResponseStruct
-                                          .maybeFromMap(
-                                              populationDropDownLOOKUPsAPIsResponse
-                                                  .jsonBody)!
-                                      .hasRecords()
+                                              .maybeFromMap(
+                                                  populationDropDownLOOKUPsAPIsResponse
+                                                      .jsonBody)
+                                          ?.hasRecords() ==
+                                      true
                                   ? LookupCitiesAPIResponseStruct.maybeFromMap(
                                           populationDropDownLOOKUPsAPIsResponse
                                               .jsonBody)!
@@ -879,27 +880,30 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       .map((e) => e.encodedId)
                                       .toList()
                                   : FFAppConstants.emptyListStrings),
-                              optionLabels: FFLocalizations.of(context)
-                                          .languageCode ==
-                                      'ar'
-                                  ? (LookupCitiesAPIResponseStruct.maybeFromMap(
+                              optionLabels: LookupCitiesAPIResponseStruct.maybeFromMap(
+                                              populationDropDownLOOKUPsAPIsResponse
+                                                  .jsonBody)
+                                          ?.hasRecords() ==
+                                      true
+                                  ? (FFLocalizations.of(context).languageCode ==
+                                          'ar'
+                                      ? (LookupCitiesAPIResponseStruct.maybeFromMap(populationDropDownLOOKUPsAPIsResponse.jsonBody)
+                                                  ?.hasRecords() ==
+                                              true
+                                          ? LookupCitiesAPIResponseStruct.maybeFromMap(
                                                   populationDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)
-                                              ?.hasRecords() ==
-                                          true
-                                      ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                      .jsonBody)!
+                                              .records
+                                              .map((e) => e.localName)
+                                              .toList()
+                                          : FFAppConstants.emptyListStrings)
+                                      : LookupCitiesAPIResponseStruct.maybeFromMap(
                                               populationDropDownLOOKUPsAPIsResponse
                                                   .jsonBody)!
                                           .records
-                                          .map((e) => e.localName)
-                                          .toList()
-                                      : FFAppConstants.emptyListStrings)
-                                  : LookupCitiesAPIResponseStruct.maybeFromMap(
-                                          populationDropDownLOOKUPsAPIsResponse
-                                              .jsonBody)!
-                                      .records
-                                      .map((e) => e.latinName)
-                                      .toList(),
+                                          .map((e) => e.latinName)
+                                          .toList())
+                                  : FFAppConstants.emptyListStrings,
                               onChanged: (val) => setState(
                                   () => _model.populationDropDownValue = val),
                               width: 300.0,
