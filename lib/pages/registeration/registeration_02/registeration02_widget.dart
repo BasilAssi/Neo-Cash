@@ -1167,35 +1167,15 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             controller:
                                 _model.dropDownNationaltyValueController ??=
                                     FormFieldController<String>(null),
-                            options: List<
-                                String>.from(LookupCitiesAPIResponseStruct
-                                            .maybeFromMap(
-                                                dropDownNationaltyLOOKUPsAPIsResponse
-                                                    .jsonBody)
-                                        ?.hasRecords() ==
-                                    true
-                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        dropDownNationaltyLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.code)
-                                    .toList()
-                                : FFAppConstants.emptyListStrings),
-                            optionLabels: FFLocalizations.of(context)
-                                        .languageCode ==
-                                    'ar'
-                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        dropDownNationaltyLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.localName)
-                                    .toList()
-                                : LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        dropDownNationaltyLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.latinName)
-                                    .toList(),
+                            options: List<String>.from(['فلسطيني', 'F']),
+                            optionLabels: [
+                              FFLocalizations.of(context).getText(
+                                'hnomrkxo' /* فلسطيني */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '0j9r8p17' /*  */,
+                              )
+                            ],
                             onChanged: (val) => setState(
                                 () => _model.dropDownNationaltyValue = val),
                             width: 300.0,
