@@ -11,14 +11,14 @@ import 'package:flutter/material.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
-Future showToast(String? message) async {
-  //     Fluttertoast.showToast(
-  //       msg: message,
-  //       toastLength: Toast.LENGTH_SHORT,
-  //       gravity: ToastGravity.CENTER,
-  //       timeInSecForIosWeb: 1,
-  //       backgroundColor: Colors.black54,
-  //       textColor: Colors.white,
-  //       fontSize: 15.0);
-  // }
-}
+Future showToast(String message) async {
+      Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.black54,
+        textColor: Colors.white,
+        fontSize: 18.0);
+  }
+

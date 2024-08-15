@@ -292,7 +292,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                 await AuthAndRegisterGroup.verifyOTPCall.call(
                               destination:
                                   '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
-                              destinationType: ' MOBILE_NUMBER',
+                              destinationType: 'MOBILE_NUMBER',
                               msgId: functions.messageId(),
                               otp: _model.oTPHashedSHA256base64,
                               setConfirmed: 'false',
