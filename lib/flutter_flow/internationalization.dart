@@ -2787,6 +2787,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // set_pin_forgot_pin
+  {
+    'wwmjyqx9': {
+      'ar': ' نسيت الرمز السري',
+      'en': '',
+    },
+    'pfhb06nu': {
+      'ar': 'أدخل الرمز السري الجديد الخاص  بحركاتك المالية  ',
+      'en': '',
+    },
+    '82drjyts': {
+      'ar':
+          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+      'en': '',
+    },
+    'ijhz7zxu': {
+      'ar': 'الحقل مطلوب',
+      'en': '',
+    },
+    'fh31bdqg': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '2g5fsj83': {
+      'ar': 'الحقل مطلوب',
+      'en': '',
+    },
+    'rddnpd8l': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف ويحتوي على حرف واحد كبير، حرف واحد صغير، ورقم واحد',
+      'en': '',
+    },
+    '1beiicvo': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '2jt0d9nr': {
+      'ar': 'الحقل مطلوب',
+      'en': '',
+    },
+    'ju2oiiam': {
+      'ar': 'تأكيد',
+      'en': '',
+    },
+    'utcofzjq': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // error_component
   {
     'gzit5wjk': {

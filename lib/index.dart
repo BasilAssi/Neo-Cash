@@ -76,3 +76,5 @@ export '/pages/forgot_pin/basic_infi_forgot_pin/basic_infi_forgot_pin_widget.dar
     show BasicInfiForgotPinWidget;
 export '/pages/registeration/success_page/success_page_widget.dart'
     show SuccessPageWidget;
+export '/pages/forgot_pin/set_pin_forgot_pin/set_pin_forgot_pin_widget.dart'
+    show SetPinForgotPinWidget;

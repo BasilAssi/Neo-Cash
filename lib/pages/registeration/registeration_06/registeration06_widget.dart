@@ -823,17 +823,12 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
-                          future: FFAppState().populationAPIResponse(
-                            overrideCache: _model.populationDropDownValue ==
-                                FFAppConstants.emptyListStrings.first,
-                            requestFn: () =>
-                                AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
-                              msgId: functions.messageId(),
-                              type: 'AREA',
-                              cityId: valueOrDefault<String>(
-                                _model.citiesDropDownValue,
-                                'Mzk2Mg==',
-                              ),
+                          future: AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                            msgId: functions.messageId(),
+                            type: 'AREA',
+                            cityId: valueOrDefault<String>(
+                              _model.citiesDropDownValue,
+                              'Mzk2Mg==',
                             ),
                           ),
                           builder: (context, snapshot) {
