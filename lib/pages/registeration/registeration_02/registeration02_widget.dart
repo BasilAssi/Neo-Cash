@@ -669,13 +669,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         onTap: () async {
                           final datePickedDate = await showDatePicker(
                             context: context,
-                            initialDate: ((FFAppState()
-                                        .registerationFormData
-                                        .hasDateOfBirth()
-                                    ? FFAppState()
-                                        .registerationFormData
-                                        .dateOfBirth
-                                    : functions.calculateAge18Year()) ??
+                            initialDate: (functions.calculateAge18Year() ??
                                 DateTime.now()),
                             firstDate: DateTime(1900),
                             lastDate: (functions.calculateAge18Year() ??
@@ -757,14 +751,9 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     FFAppState()
                                             .registerationFormData
                                             .hasDateOfBirth()
-                                        ? dateTimeFormat(
-                                            "dd/MM/yyyy",
-                                            FFAppState()
-                                                .registerationFormData
-                                                .dateOfBirth!,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
-                                          )
+                                        ? FFAppState()
+                                            .registerationFormData
+                                            .dateOfBirth
                                         : '',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
