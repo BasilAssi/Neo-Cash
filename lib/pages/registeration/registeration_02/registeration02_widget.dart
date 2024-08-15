@@ -1166,15 +1166,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           return FlutterFlowDropDown<String>(
                             controller:
                                 _model.dropDownNationaltyValueController ??=
-                                    FormFieldController<String>(
-                              _model.dropDownNationaltyValue ??= FFAppState()
-                                      .registerationFormData
-                                      .hasNationality()
-                                  ? FFAppState()
-                                      .registerationFormData
-                                      .nationality
-                                  : '',
-                            ),
+                                    FormFieldController<String>(null),
                             options: List<
                                 String>.from(LookupCitiesAPIResponseStruct
                                             .maybeFromMap(
