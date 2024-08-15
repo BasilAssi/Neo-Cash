@@ -38,9 +38,11 @@ DateTime? calculateAge18Year() {
   return age18;
 }
 
-DateTime? formatDate(DateTime? date) {
-  // format the date as dd/MM/yyyy  and return it
+String? formatDate(DateTime? date) {
+// Check if the date is null
   if (date == null) return null;
+
+  // Format the DateTime object as dd/MM/yyyy and return the string
   final formatter = DateFormat('dd/MM/yyyy');
-  return DateTime.parse(formatter.format(date));
+  return formatter.format(date);
 }

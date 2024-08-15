@@ -1225,8 +1225,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                     .grandFatherNameEN,
                                                 birthdate: FFAppState()
                                                     .registerationFormData
-                                                    .dateOfBirth
-                                                    ?.toString(),
+                                                    .dateOfBirth,
                                                 cityCode: FFAppState()
                                                     .registerationFormData
                                                     .cityCode,

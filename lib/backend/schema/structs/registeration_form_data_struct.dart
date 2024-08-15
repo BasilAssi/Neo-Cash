@@ -18,7 +18,6 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? grandFatherNameEN,
     String? familyNameEN,
     String? motherNameEN,
-    DateTime? dateOfBirth,
     String? birthOfPlace,
     String? gender,
     String? nationality,
@@ -43,6 +42,7 @@ class RegisterationFormDataStruct extends BaseStruct {
     bool? isRegisteredStatus,
     String? email,
     String? hashedOTP,
+    String? dateOfBirth,
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -54,7 +54,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         _grandFatherNameEN = grandFatherNameEN,
         _familyNameEN = familyNameEN,
         _motherNameEN = motherNameEN,
-        _dateOfBirth = dateOfBirth,
         _birthOfPlace = birthOfPlace,
         _gender = gender,
         _nationality = nationality,
@@ -78,7 +77,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         _prefixMobile = prefixMobile,
         _isRegisteredStatus = isRegisteredStatus,
         _email = email,
-        _hashedOTP = hashedOTP;
+        _hashedOTP = hashedOTP,
+        _dateOfBirth = dateOfBirth;
 
   // "idNumber" field.
   String? _idNumber;
@@ -156,13 +156,6 @@ class RegisterationFormDataStruct extends BaseStruct {
   set motherNameEN(String? val) => _motherNameEN = val;
 
   bool hasMotherNameEN() => _motherNameEN != null;
-
-  // "DateOfBirth" field.
-  DateTime? _dateOfBirth;
-  DateTime? get dateOfBirth => _dateOfBirth;
-  set dateOfBirth(DateTime? val) => _dateOfBirth = val;
-
-  bool hasDateOfBirth() => _dateOfBirth != null;
 
   // "BirthOfPlace" field.
   String? _birthOfPlace;
@@ -335,6 +328,13 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasHashedOTP() => _hashedOTP != null;
 
+  // "DateOfBirth" field.
+  String? _dateOfBirth;
+  String get dateOfBirth => _dateOfBirth ?? '';
+  set dateOfBirth(String? val) => _dateOfBirth = val;
+
+  bool hasDateOfBirth() => _dateOfBirth != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
         idNumber: data['idNumber'] as String?,
@@ -348,7 +348,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         grandFatherNameEN: data['GrandFatherNameEN'] as String?,
         familyNameEN: data['FamilyNameEN'] as String?,
         motherNameEN: data['MotherNameEN'] as String?,
-        dateOfBirth: data['DateOfBirth'] as DateTime?,
         birthOfPlace: data['BirthOfPlace'] as String?,
         gender: data['Gender'] as String?,
         nationality: data['Nationality'] as String?,
@@ -374,6 +373,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         isRegisteredStatus: data['isRegisteredStatus'] as bool?,
         email: data['email'] as String?,
         hashedOTP: data['hashedOTP'] as String?,
+        dateOfBirth: data['DateOfBirth'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -392,7 +392,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         'GrandFatherNameEN': _grandFatherNameEN,
         'FamilyNameEN': _familyNameEN,
         'MotherNameEN': _motherNameEN,
-        'DateOfBirth': _dateOfBirth,
         'BirthOfPlace': _birthOfPlace,
         'Gender': _gender,
         'Nationality': _nationality,
@@ -417,6 +416,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         'isRegisteredStatus': _isRegisteredStatus,
         'email': _email,
         'hashedOTP': _hashedOTP,
+        'DateOfBirth': _dateOfBirth,
       }.withoutNulls;
 
   @override
@@ -464,10 +464,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         'MotherNameEN': serializeParam(
           _motherNameEN,
           ParamType.String,
-        ),
-        'DateOfBirth': serializeParam(
-          _dateOfBirth,
-          ParamType.DateTime,
         ),
         'BirthOfPlace': serializeParam(
           _birthOfPlace,
@@ -565,6 +561,10 @@ class RegisterationFormDataStruct extends BaseStruct {
           _hashedOTP,
           ParamType.String,
         ),
+        'DateOfBirth': serializeParam(
+          _dateOfBirth,
+          ParamType.String,
+        ),
       }.withoutNulls;
 
   static RegisterationFormDataStruct fromSerializableMap(
@@ -623,11 +623,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         motherNameEN: deserializeParam(
           data['MotherNameEN'],
           ParamType.String,
-          false,
-        ),
-        dateOfBirth: deserializeParam(
-          data['DateOfBirth'],
-          ParamType.DateTime,
           false,
         ),
         birthOfPlace: deserializeParam(
@@ -750,6 +745,11 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        dateOfBirth: deserializeParam(
+          data['DateOfBirth'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -769,7 +769,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         grandFatherNameEN == other.grandFatherNameEN &&
         familyNameEN == other.familyNameEN &&
         motherNameEN == other.motherNameEN &&
-        dateOfBirth == other.dateOfBirth &&
         birthOfPlace == other.birthOfPlace &&
         gender == other.gender &&
         nationality == other.nationality &&
@@ -794,7 +793,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         prefixMobile == other.prefixMobile &&
         isRegisteredStatus == other.isRegisteredStatus &&
         email == other.email &&
-        hashedOTP == other.hashedOTP;
+        hashedOTP == other.hashedOTP &&
+        dateOfBirth == other.dateOfBirth;
   }
 
   @override
@@ -810,7 +810,6 @@ class RegisterationFormDataStruct extends BaseStruct {
         grandFatherNameEN,
         familyNameEN,
         motherNameEN,
-        dateOfBirth,
         birthOfPlace,
         gender,
         nationality,
@@ -834,7 +833,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         prefixMobile,
         isRegisteredStatus,
         email,
-        hashedOTP
+        hashedOTP,
+        dateOfBirth
       ]);
 }
 
@@ -850,7 +850,6 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? grandFatherNameEN,
   String? familyNameEN,
   String? motherNameEN,
-  DateTime? dateOfBirth,
   String? birthOfPlace,
   String? gender,
   String? nationality,
@@ -875,6 +874,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   bool? isRegisteredStatus,
   String? email,
   String? hashedOTP,
+  String? dateOfBirth,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -888,7 +888,6 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       grandFatherNameEN: grandFatherNameEN,
       familyNameEN: familyNameEN,
       motherNameEN: motherNameEN,
-      dateOfBirth: dateOfBirth,
       birthOfPlace: birthOfPlace,
       gender: gender,
       nationality: nationality,
@@ -913,4 +912,5 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       isRegisteredStatus: isRegisteredStatus,
       email: email,
       hashedOTP: hashedOTP,
+      dateOfBirth: dateOfBirth,
     );
