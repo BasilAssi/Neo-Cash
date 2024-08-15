@@ -987,6 +987,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -1032,6 +1033,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
                               fontSize: 18.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -1268,8 +1270,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           if (_model.datePicked == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل مطلوب',
-                                enText: '',
+                                arText: 'تاريخ الميلاد مطلوب',
+                                enText: 'Date of birth is required',
                               ),
                             );
                             return;
@@ -1277,8 +1279,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           if (_model.citiesDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل مطلوب',
-                                enText: 'Field is required',
+                                arText: 'حقل مكان الميلاد مطلوب',
+                                enText: 'Place of birth field is required.',
                               ),
                             );
                             return;
@@ -1286,8 +1288,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           if (_model.genderDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل مطلوب',
-                                enText: 'Field is required',
+                                arText: 'حقل الجنس مطلوب',
+                                enText: 'Gender field is required',
                               ),
                             );
                             return;
@@ -1327,8 +1329,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       await actions.showToast(
                                         FFLocalizations.of(context)
                                             .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: '',
+                                          arText: 'تاريخ الميلاد مطلوب',
+                                          enText: 'Date of birth is required',
                                         ),
                                       );
                                       return;
@@ -1337,8 +1339,9 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       await actions.showToast(
                                         FFLocalizations.of(context)
                                             .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: 'Field is required',
+                                          arText: 'حقل مكان الميلاد مطلوب',
+                                          enText:
+                                              'Place of birth field is required.',
                                         ),
                                       );
                                       return;
@@ -1347,8 +1350,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       await actions.showToast(
                                         FFLocalizations.of(context)
                                             .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: 'Field is required',
+                                          arText: 'حقل الجنس مطلوب',
+                                          enText: 'Gender field is required',
                                         ),
                                       );
                                       return;
