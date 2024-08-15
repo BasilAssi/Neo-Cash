@@ -2444,33 +2444,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': '',
     },
-    'lboxqnwa': {
-      'ar': 'Field is required',
+    'cva7bxnb': {
+      'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
     'bcmiiojk': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'wu1u3yv7': {
-      'ar': 'Field is required',
+    'ckc46hur': {
+      'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
     'iw5fw6si': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'eggopym5': {
-      'ar': 'Field is required',
+    'bp5kq706': {
+      'ar': 'الحقل مطلوب',
       'en': '',
     },
     'wqglt18i': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '6vimgdj6': {
-      'ar': 'Field is required',
-      'en': '',
+    'eggopym5': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
     },
     '691jtwsm': {
       'ar': 'Please choose an option from the dropdown',
@@ -2495,7 +2495,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الإيميل',
       'en': '',
     },
-    'cva7bxnb': {
+    '7193jimg': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2520,7 +2520,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
       'en': '',
     },
-    'ckc46hur': {
+    '0ny3hsku': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2533,7 +2533,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '7193jimg': {
+    '9la124ib': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2546,7 +2546,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '0ny3hsku': {
+    'ot9dvbxc': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
