@@ -1185,7 +1185,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                         dropDownNationaltyLOOKUPsAPIsResponse
                                             .jsonBody)!
                                     .records
-                                    .map((e) => e.encodedId)
+                                    .map((e) => e.code)
                                     .toList()
                                 : FFAppConstants.emptyListStrings),
                             optionLabels: FFLocalizations.of(context)
