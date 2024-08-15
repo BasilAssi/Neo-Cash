@@ -2524,6 +2524,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'a9l80f02': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
+      'en': '',
+    },
     '6b8ufb9o': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
@@ -2534,7 +2539,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0hz9033c': {
       'ar':
-          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف ويحتوي على حرف واحد كبير، حرف واحد صغير، ورقم واحد',
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
       'en': '',
     },
     'nrirvjsc': {
