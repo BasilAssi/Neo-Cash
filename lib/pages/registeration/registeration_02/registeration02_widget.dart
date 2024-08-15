@@ -661,91 +661,92 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: Container(
-                        height: 55.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
-                          border: Border.all(
-                            color: FlutterFlowTheme.of(context).textFieldBorder,
-                            width: 1.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 8.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              final datePickedDate = await showDatePicker(
-                                context: context,
-                                initialDate: ((FFAppState()
-                                            .registerationFormData
-                                            .hasDateOfBirth()
-                                        ? FFAppState()
-                                            .registerationFormData
-                                            .dateOfBirth
-                                        : functions.calculateAge18Year()) ??
-                                    DateTime.now()),
-                                firstDate: DateTime(1900),
-                                lastDate: (functions.calculateAge18Year() ??
-                                    DateTime(2050)),
-                                builder: (context, child) {
-                                  return wrapInMaterialDatePickerTheme(
-                                    context,
-                                    child!,
-                                    headerBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    headerForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    headerTextStyle: FlutterFlowTheme.of(
-                                            context)
-                                        .headlineLarge
-                                        .override(
-                                          fontFamily:
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          final datePickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: ((FFAppState()
+                                        .registerationFormData
+                                        .hasDateOfBirth()
+                                    ? FFAppState()
+                                        .registerationFormData
+                                        .dateOfBirth
+                                    : functions.calculateAge18Year()) ??
+                                DateTime.now()),
+                            firstDate: DateTime(1900),
+                            lastDate: (functions.calculateAge18Year() ??
+                                DateTime(2050)),
+                            builder: (context, child) {
+                              return wrapInMaterialDatePickerTheme(
+                                context,
+                                child!,
+                                headerBackgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                headerForegroundColor:
+                                    FlutterFlowTheme.of(context).info,
+                                headerTextStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineLargeFamily,
+                                      fontSize: 32.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
                                               FlutterFlowTheme.of(context)
-                                                  .headlineLargeFamily,
-                                          fontSize: 32.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLargeFamily),
-                                        ),
-                                    pickerBackgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                    pickerForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    selectedDateTimeBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    selectedDateTimeForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    actionButtonForegroundColor:
-                                        FlutterFlowTheme.of(context).textColor,
-                                    iconSize: 24.0,
-                                  );
-                                },
+                                                  .headlineLargeFamily),
+                                    ),
+                                pickerBackgroundColor:
+                                    FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                pickerForegroundColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                selectedDateTimeBackgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                selectedDateTimeForegroundColor:
+                                    FlutterFlowTheme.of(context).info,
+                                actionButtonForegroundColor:
+                                    FlutterFlowTheme.of(context).textColor,
+                                iconSize: 24.0,
                               );
-
-                              if (datePickedDate != null) {
-                                safeSetState(() {
-                                  _model.datePicked = DateTime(
-                                    datePickedDate.year,
-                                    datePickedDate.month,
-                                    datePickedDate.day,
-                                  );
-                                });
-                              }
-                              FFAppState().updateRegisterationFormDataStruct(
-                                (e) => e..dateOfBirth = _model.datePicked,
-                              );
-                              setState(() {});
                             },
+                          );
+
+                          if (datePickedDate != null) {
+                            safeSetState(() {
+                              _model.datePicked = DateTime(
+                                datePickedDate.year,
+                                datePickedDate.month,
+                                datePickedDate.day,
+                              );
+                            });
+                          }
+                          FFAppState().updateRegisterationFormDataStruct(
+                            (e) => e
+                              ..dateOfBirth = FFAppState()
+                                  .registerationFormData
+                                  .dateOfBirth,
+                          );
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: 55.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                            border: Border.all(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              width: 1.0,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1148,7 +1149,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: FFAppState().nationaltiesAPIResponse(
-                          overrideCache: _model.dropDownNationaltyValue == '',
+                          overrideCache: _model.dropDownNationaltyValue == ' ',
                           requestFn: () =>
                               AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                             msgId: functions.messageId(),
@@ -1267,15 +1268,6 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
-                          if (_model.datePicked == null) {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'تاريخ الميلاد مطلوب',
-                                enText: 'Date of birth is required',
-                              ),
-                            );
-                            return;
-                          }
                           if (_model.citiesDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
@@ -1323,16 +1315,6 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
-                                      return;
-                                    }
-                                    if (_model.datePicked == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'تاريخ الميلاد مطلوب',
-                                          enText: 'Date of birth is required',
-                                        ),
-                                      );
                                       return;
                                     }
                                     if (_model.citiesDropDownValue == null) {
