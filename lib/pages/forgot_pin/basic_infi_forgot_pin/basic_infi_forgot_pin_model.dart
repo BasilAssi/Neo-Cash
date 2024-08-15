@@ -12,9 +12,9 @@ class BasicInfiForgotPinModel
   ///  State fields for stateful widgets in this page.
 
   DateTime? datePicked;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for CitiesDropDown widget.
+  String? citiesDropDownValue;
+  FormFieldController<String>? citiesDropDownValueController;
 
   @override
   void initState(BuildContext context) {}

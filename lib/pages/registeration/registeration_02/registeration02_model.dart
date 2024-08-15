@@ -8,6 +8,15 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
 
   bool? selectedValue = true;
 
+  List<String> emptyList = [];
+  void addToEmptyList(String item) => emptyList.add(item);
+  void removeFromEmptyList(String item) => emptyList.remove(item);
+  void removeAtIndexFromEmptyList(int index) => emptyList.removeAt(index);
+  void insertAtIndexInEmptyList(int index, String item) =>
+      emptyList.insert(index, item);
+  void updateEmptyListAtIndex(int index, Function(String) updateFn) =>
+      emptyList[index] = updateFn(emptyList[index]);
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
