@@ -727,7 +727,9 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             });
                           }
                           FFAppState().updateRegisterationFormDataStruct(
-                            (e) => e..dateOfBirth = _model.datePicked,
+                            (e) => e
+                              ..dateOfBirth =
+                                  functions.formatDate(_model.datePicked),
                           );
                           setState(() {});
                         },
