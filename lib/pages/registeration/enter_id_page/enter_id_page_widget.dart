@@ -411,6 +411,11 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                   );
                                 }
                               } else {
+                                FFAppState().updateRegisterationFormDataStruct(
+                                  (e) => e..isRegisteredStatus = false,
+                                );
+                                setState(() {});
+
                                 context.pushNamed('phone_number');
                               }
                             } else {
