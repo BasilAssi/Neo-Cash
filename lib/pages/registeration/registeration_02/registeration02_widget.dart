@@ -1166,7 +1166,15 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           return FlutterFlowDropDown<String>(
                             controller:
                                 _model.dropDownNationaltyValueController ??=
-                                    FormFieldController<String>(null),
+                                    FormFieldController<String>(
+                              _model.dropDownNationaltyValue ??= FFAppState()
+                                      .registerationFormData
+                                      .hasNationality()
+                                  ? FFAppState()
+                                      .registerationFormData
+                                      .nationality
+                                  : '',
+                            ),
                             options: List<
                                 String>.from(LookupCitiesAPIResponseStruct
                                             .maybeFromMap(
@@ -1286,111 +1294,107 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 3.0, 0.0, 8.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
-                                    if (_model.citiesDropDownValue == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'حقل مكان الميلاد مطلوب',
-                                          enText:
-                                              'Place of birth field is required.',
-                                        ),
-                                      );
-                                      return;
-                                    }
-                                    if (_model.genderDropDownValue == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'حقل الجنس مطلوب',
-                                          enText: 'Gender field is required',
-                                        ),
-                                      );
-                                      return;
-                                    }
-                                    if (_model.dropDownNationaltyValue ==
-                                        null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'الحقل مطلوب',
-                                          enText: 'Field is required',
-                                        ),
-                                      );
-                                      return;
-                                    }
-                                    FFAppState()
-                                        .updateRegisterationFormDataStruct(
-                                      (e) => e
-                                        ..birthOfPlace =
-                                            _model.citiesDropDownValue
-                                        ..motherNameEN = _model
-                                            .motherNameENTextFieldTextController
-                                            .text
-                                        ..gender = _model.genderDropDownValue
-                                        ..nationality =
-                                            _model.dropDownNationaltyValue,
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 3.0, 0.0, 8.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  if (_model.formKey.currentState == null ||
+                                      !_model.formKey.currentState!
+                                          .validate()) {
+                                    return;
+                                  }
+                                  if (_model.citiesDropDownValue == null) {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'حقل مكان الميلاد مطلوب',
+                                        enText:
+                                            'Place of birth field is required.',
+                                      ),
                                     );
-                                    setState(() {});
+                                    return;
+                                  }
+                                  if (_model.genderDropDownValue == null) {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'حقل الجنس مطلوب',
+                                        enText: 'Gender field is required',
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  if (_model.dropDownNationaltyValue == null) {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'الحقل مطلوب',
+                                        enText: 'Field is required',
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  FFAppState()
+                                      .updateRegisterationFormDataStruct(
+                                    (e) => e
+                                      ..birthOfPlace =
+                                          _model.citiesDropDownValue
+                                      ..motherNameEN = _model
+                                          .motherNameENTextFieldTextController
+                                          .text
+                                      ..gender = _model.genderDropDownValue
+                                      ..nationality =
+                                          _model.dropDownNationaltyValue,
+                                  );
+                                  setState(() {});
 
-                                    context.pushNamed(
-                                      'registeration_03',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.bottomToTop,
-                                          duration: Duration(milliseconds: 300),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'dp2tcpmy' /* التالي */,
+                                  context.pushNamed(
+                                    'registeration_03',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.bottomToTop,
+                                        duration: Duration(milliseconds: 300),
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'dp2tcpmy' /* التالي */,
+                                ),
+                                options: FFButtonOptions(
+                                  width: MediaQuery.sizeOf(context).width * 0.9,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.06,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: functions.gradientColor(
+                                      FlutterFlowTheme.of(context).primary,
+                                      FlutterFlowTheme.of(context).alternate),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  options: FFButtonOptions(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.9,
-                                    height: MediaQuery.sizeOf(context).height *
-                                        0.06,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                               ),
                             ),
