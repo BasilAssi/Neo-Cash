@@ -184,7 +184,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Out',
     },
     '7qettrhk': {
-      'ar': 'مرحبا , ب',
+      'ar': 'مرحبا , باسل',
       'en': 'Hello, Basil',
     },
     'hjejmmsa': {

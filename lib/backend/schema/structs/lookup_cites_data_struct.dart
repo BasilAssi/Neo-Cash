@@ -5,8 +5,8 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LookupDataStruct extends BaseStruct {
-  LookupDataStruct({
+class LookupCitesDataStruct extends BaseStruct {
+  LookupCitesDataStruct({
     String? encodedId,
     String? code,
     String? localName,
@@ -71,8 +71,8 @@ class LookupDataStruct extends BaseStruct {
 
   bool hasRecordStatus() => _recordStatus != null;
 
-  static LookupDataStruct fromMap(Map<String, dynamic> data) =>
-      LookupDataStruct(
+  static LookupCitesDataStruct fromMap(Map<String, dynamic> data) =>
+      LookupCitesDataStruct(
         encodedId: data['encodedId'] as String?,
         code: data['code'] as String?,
         localName: data['localName'] as String?,
@@ -82,8 +82,8 @@ class LookupDataStruct extends BaseStruct {
         recordStatus: data['recordStatus'] as String?,
       );
 
-  static LookupDataStruct? maybeFromMap(dynamic data) => data is Map
-      ? LookupDataStruct.fromMap(data.cast<String, dynamic>())
+  static LookupCitesDataStruct? maybeFromMap(dynamic data) => data is Map
+      ? LookupCitesDataStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
@@ -128,8 +128,8 @@ class LookupDataStruct extends BaseStruct {
         ),
       }.withoutNulls;
 
-  static LookupDataStruct fromSerializableMap(Map<String, dynamic> data) =>
-      LookupDataStruct(
+  static LookupCitesDataStruct fromSerializableMap(Map<String, dynamic> data) =>
+      LookupCitesDataStruct(
         encodedId: deserializeParam(
           data['encodedId'],
           ParamType.String,
@@ -168,11 +168,11 @@ class LookupDataStruct extends BaseStruct {
       );
 
   @override
-  String toString() => 'LookupDataStruct(${toMap()})';
+  String toString() => 'LookupCitesDataStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is LookupDataStruct &&
+    return other is LookupCitesDataStruct &&
         encodedId == other.encodedId &&
         code == other.code &&
         localName == other.localName &&
@@ -194,7 +194,7 @@ class LookupDataStruct extends BaseStruct {
       ]);
 }
 
-LookupDataStruct createLookupDataStruct({
+LookupCitesDataStruct createLookupCitesDataStruct({
   String? encodedId,
   String? code,
   String? localName,
@@ -203,7 +203,7 @@ LookupDataStruct createLookupDataStruct({
   String? moduleType,
   String? recordStatus,
 }) =>
-    LookupDataStruct(
+    LookupCitesDataStruct(
       encodedId: encodedId,
       code: code,
       localName: localName,

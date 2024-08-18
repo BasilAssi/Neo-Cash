@@ -412,7 +412,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      '7qettrhk' /* مرحبا , ب */,
+                      '7qettrhk' /* مرحبا , باسل */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
