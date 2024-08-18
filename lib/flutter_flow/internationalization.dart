@@ -1813,11 +1813,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Are you the real beneficiary of the account?',
     },
     'n5ifl7pf': {
-      'ar': 'نعم',
+      'ar': 'لا',
       'en': 'Yes',
     },
     'do0uczj5': {
-      'ar': 'لا',
+      'ar': 'نعم',
       'en': 'No',
     },
     '0t8zizvu': {
