@@ -728,7 +728,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           citiesDropDownLOOKUPsAPIsResponse
                                               .jsonBody)!
                                       .records
-                                      .map((e) => e.encodedId)
+                                      .map((e) => e.code)
                                       .toList()
                                   : FFAppConstants.emptyListStrings),
                               optionLabels: FFLocalizations.of(context).languageCode ==

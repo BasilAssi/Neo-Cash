@@ -636,7 +636,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                                     .isTrueBeneficiaryAccount,
                                 'true',
                               )
-                            : '',
+                            : 'true',
                       ),
                       options: List<String>.from(['true', 'false']),
                       optionLabels: [
