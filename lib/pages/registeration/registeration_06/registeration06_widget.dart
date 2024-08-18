@@ -119,13 +119,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
               child: Form(
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
-                  child: ListView(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
@@ -654,478 +650,506 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'p14tzvud' /*  المدينة */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleMediumFamily,
-                                color: FlutterFlowTheme.of(context).textColor,
-                                fontSize: 16.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleMediumFamily),
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                        child: FutureBuilder<ApiCallResponse>(
-                          future: FFAppState().citesAPIResponse(
-                            overrideCache: _model.citiesDropDownValue ==
-                                FFAppConstants.emptyListStrings.first,
-                            requestFn: () =>
-                                AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
-                              msgId: functions.messageId(),
-                              type: 'CITY',
-                            ),
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final citiesDropDownLOOKUPsAPIsResponse =
-                                snapshot.data!;
-
-                            return FlutterFlowDropDown<String>(
-                              controller:
-                                  _model.citiesDropDownValueController ??=
-                                      FormFieldController<String>(
-                                _model.citiesDropDownValue ??= FFAppState()
-                                        .registerationFormData
-                                        .hasCityCode()
-                                    ? FFAppState()
-                                        .registerationFormData
-                                        .cityCode
-                                    : '',
-                              ),
-                              options: List<
-                                  String>.from(LookupCitiesAPIResponseStruct
-                                              .maybeFromMap(
-                                                  citiesDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)
-                                          ?.hasRecords() ==
-                                      true
-                                  ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                          citiesDropDownLOOKUPsAPIsResponse
-                                              .jsonBody)!
-                                      .records
-                                      .map((e) => e.encodedId)
-                                      .toList()
-                                  : FFAppConstants.emptyListStrings),
-                              optionLabels: FFLocalizations.of(context).languageCode ==
-                                      'ar'
-                                  ? (LookupCitiesAPIResponseStruct.maybeFromMap(
-                                                  citiesDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)
-                                              ?.hasRecords() ==
-                                          true
-                                      ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                              citiesDropDownLOOKUPsAPIsResponse
-                                                  .jsonBody)!
-                                          .records
-                                          .map((e) => e.localName)
-                                          .toList()
-                                      : FFAppConstants.emptyListStrings)
-                                  : (LookupCitiesAPIResponseStruct.maybeFromMap(
-                                                  citiesDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)
-                                              ?.hasRecords() ==
-                                          true
-                                      ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                              citiesDropDownLOOKUPsAPIsResponse.jsonBody)!
-                                          .records
-                                          .map((e) => e.latinName)
-                                          .toList()
-                                      : FFAppConstants.emptyListStrings),
-                              onChanged: (val) async {
-                                setState(
-                                    () => _model.citiesDropDownValue = val);
-                                FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e
-                                    ..cityCode =
-                                        LookupCitesDataStruct.maybeFromMap(
-                                                citiesDropDownLOOKUPsAPIsResponse
-                                                    .jsonBody)
-                                            ?.code,
-                                );
-                                setState(() {});
-                              },
-                              width: 300.0,
-                              height: 56.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                '4zyjb59r' /* المدينة */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).textFieldBorder,
-                              borderWidth: 1.0,
-                              borderRadius: 12.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 4.0, 16.0, 4.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            );
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'nixpiac4' /* التجمع السكني */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleMediumFamily,
-                                color: FlutterFlowTheme.of(context).textColor,
-                                fontSize: 16.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleMediumFamily),
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                        child: FutureBuilder<ApiCallResponse>(
-                          future: AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
-                            msgId: functions.messageId(),
-                            type: 'AREA',
-                            cityId: valueOrDefault<String>(
-                              _model.citiesDropDownValue,
-                              'Mzk2Mg==',
-                            ),
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final populationDropDownLOOKUPsAPIsResponse =
-                                snapshot.data!;
-
-                            return FlutterFlowDropDown<String>(
-                              controller:
-                                  _model.populationDropDownValueController ??=
-                                      FormFieldController<String>(
-                                _model.populationDropDownValue ??= FFAppState()
-                                        .registerationFormData
-                                        .hasAreaCode()
-                                    ? FFAppState()
-                                        .registerationFormData
-                                        .areaCode
-                                    : '',
-                              ),
-                              options: List<
-                                  String>.from(LookupCitiesAPIResponseStruct
-                                              .maybeFromMap(
-                                                  populationDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)
-                                          ?.hasRecords() ==
-                                      true
-                                  ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                          populationDropDownLOOKUPsAPIsResponse
-                                              .jsonBody)!
-                                      .records
-                                      .map((e) => e.encodedId)
-                                      .toList()
-                                  : FFAppConstants.emptyListStrings),
-                              optionLabels: LookupCitiesAPIResponseStruct.maybeFromMap(
-                                              populationDropDownLOOKUPsAPIsResponse
-                                                  .jsonBody)
-                                          ?.hasRecords() ==
-                                      true
-                                  ? (FFLocalizations.of(context).languageCode ==
-                                          'ar'
-                                      ? (LookupCitiesAPIResponseStruct.maybeFromMap(populationDropDownLOOKUPsAPIsResponse.jsonBody)
-                                                  ?.hasRecords() ==
-                                              true
-                                          ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                                  populationDropDownLOOKUPsAPIsResponse
-                                                      .jsonBody)!
-                                              .records
-                                              .map((e) => e.localName)
-                                              .toList()
-                                          : FFAppConstants.emptyListStrings)
-                                      : LookupCitiesAPIResponseStruct.maybeFromMap(
-                                              populationDropDownLOOKUPsAPIsResponse
-                                                  .jsonBody)!
-                                          .records
-                                          .map((e) => e.latinName)
-                                          .toList())
-                                  : FFAppConstants.emptyListStrings,
-                              onChanged: (val) async {
-                                setState(
-                                    () => _model.populationDropDownValue = val);
-                                FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e
-                                    ..areaCode = LookupCitesDataStruct.maybeFromMap(
-                                            populationDropDownLOOKUPsAPIsResponse
-                                                .jsonBody)
-                                        ?.code,
-                                );
-                                setState(() {});
-                              },
-                              width: 300.0,
-                              height: 56.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'vi5yluyt' /* التجمع السكني */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).textFieldBorder,
-                              borderWidth: 1.0,
-                              borderRadius: 12.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 4.0, 16.0, 4.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                            );
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'yfoglq5k' /* العنوان  */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleMediumFamily,
-                                color: FlutterFlowTheme.of(context).textColor,
-                                fontSize: 16.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleMediumFamily),
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                        child: TextFormField(
-                          controller: _model.addresslTextFieldTextController,
-                          focusNode: _model.addresslTextFieldFocusNode,
-                          autofocus: true,
-                          textCapitalization: TextCapitalization.sentences,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'x8wk3106' /*  الحي , الشارع   */,
-                            ),
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context)
-                                    .textFieldBorder,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            filled: true,
-                            fillColor: FlutterFlowTheme.of(context).accent4,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily),
-                              ),
-                          validator: _model
-                              .addresslTextFieldTextControllerValidator
-                              .asValidator(context),
-                        ),
-                      ),
-                      Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 24.0, 0.0, 24.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                            16.0, 0.0, 16.0, 30.0),
+                        child: ListView(
+                          padding: EdgeInsets.zero,
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
                           children: [
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  if (_model.formKey.currentState == null ||
-                                      !_model.formKey.currentState!
-                                          .validate()) {
-                                    return;
-                                  }
-                                  FFAppState()
-                                      .updateRegisterationFormDataStruct(
-                                    (e) => e
-                                      ..addressText = _model
-                                          .addresslTextFieldTextController.text,
-                                  );
-                                  setState(() {});
-
-                                  context.pushNamed('registeration_07');
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'vq6zsk0n' /* التالي */,
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'p14tzvud' /*  المدينة */,
                                 ),
-                                options: FFButtonOptions(
-                                  width: MediaQuery.sizeOf(context).width * 0.9,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.06,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: FutureBuilder<ApiCallResponse>(
+                                future: FFAppState().citesAPIResponse(
+                                  overrideCache: _model.citiesDropDownValue ==
+                                      FFAppConstants.emptyListStrings.first,
+                                  requestFn: () =>
+                                      AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                                    msgId: functions.messageId(),
+                                    type: 'CITY',
+                                  ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 40.0,
+                                        height: 40.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final citiesDropDownLOOKUPsAPIsResponse =
+                                      snapshot.data!;
+
+                                  return FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.citiesDropDownValueController ??=
+                                            FormFieldController<String>(
+                                      _model.citiesDropDownValue ??=
+                                          FFAppState()
+                                                  .registerationFormData
+                                                  .hasCityCode()
+                                              ? FFAppState()
+                                                  .registerationFormData
+                                                  .cityCode
+                                              : '',
+                                    ),
+                                    options: List<
+                                        String>.from(LookupCitiesAPIResponseStruct
+                                                    .maybeFromMap(
+                                                        citiesDropDownLOOKUPsAPIsResponse
+                                                            .jsonBody)
+                                                ?.hasRecords() ==
+                                            true
+                                        ? LookupCitiesAPIResponseStruct
+                                                .maybeFromMap(
+                                                    citiesDropDownLOOKUPsAPIsResponse
+                                                        .jsonBody)!
+                                            .records
+                                            .map((e) => e.encodedId)
+                                            .toList()
+                                        : FFAppConstants.emptyListStrings),
+                                    optionLabels: FFLocalizations.of(context).languageCode ==
+                                            'ar'
+                                        ? (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                        citiesDropDownLOOKUPsAPIsResponse
+                                                            .jsonBody)
+                                                    ?.hasRecords() ==
+                                                true
+                                            ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                    citiesDropDownLOOKUPsAPIsResponse
+                                                        .jsonBody)!
+                                                .records
+                                                .map((e) => e.localName)
+                                                .toList()
+                                            : FFAppConstants.emptyListStrings)
+                                        : (LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                        citiesDropDownLOOKUPsAPIsResponse
+                                                            .jsonBody)
+                                                    ?.hasRecords() ==
+                                                true
+                                            ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                    citiesDropDownLOOKUPsAPIsResponse.jsonBody)!
+                                                .records
+                                                .map((e) => e.latinName)
+                                                .toList()
+                                            : FFAppConstants.emptyListStrings),
+                                    onChanged: (val) => setState(
+                                        () => _model.citiesDropDownValue = val),
+                                    width: 300.0,
+                                    height: 56.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLargeFamily,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily),
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      '4zyjb59r' /* المدينة */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    borderWidth: 1.0,
+                                    borderRadius: 12.0,
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isOverButton: true,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  );
+                                },
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'nixpiac4' /* التجمع السكني */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: FutureBuilder<ApiCallResponse>(
+                                future:
+                                    AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
+                                  msgId: functions.messageId(),
+                                  type: 'AREA',
+                                  cityId: valueOrDefault<String>(
+                                    _model.citiesDropDownValue,
+                                    'Mzk2Mg==',
+                                  ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 40.0,
+                                        height: 40.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final populationDropDownLOOKUPsAPIsResponse =
+                                      snapshot.data!;
+
+                                  return FlutterFlowDropDown<String>(
+                                    controller: _model
+                                            .populationDropDownValueController ??=
+                                        FormFieldController<String>(
+                                      _model.populationDropDownValue ??=
+                                          FFAppState()
+                                                  .registerationFormData
+                                                  .hasAreaCode()
+                                              ? FFAppState()
+                                                  .registerationFormData
+                                                  .areaCode
+                                              : '',
+                                    ),
+                                    options: List<
+                                        String>.from(LookupCitiesAPIResponseStruct
+                                                    .maybeFromMap(
+                                                        populationDropDownLOOKUPsAPIsResponse
+                                                            .jsonBody)
+                                                ?.hasRecords() ==
+                                            true
+                                        ? LookupCitiesAPIResponseStruct
+                                                .maybeFromMap(
+                                                    populationDropDownLOOKUPsAPIsResponse
+                                                        .jsonBody)!
+                                            .records
+                                            .map((e) => e.encodedId)
+                                            .toList()
+                                        : _model.emptyList),
+                                    optionLabels: LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                    populationDropDownLOOKUPsAPIsResponse
+                                                        .jsonBody)
+                                                ?.hasRecords() ==
+                                            true
+                                        ? (FFLocalizations.of(context).languageCode == 'ar'
+                                            ? (LookupCitiesAPIResponseStruct.maybeFromMap(populationDropDownLOOKUPsAPIsResponse.jsonBody)
+                                                        ?.hasRecords() ==
+                                                    true
+                                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                        populationDropDownLOOKUPsAPIsResponse
+                                                            .jsonBody)!
+                                                    .records
+                                                    .map((e) => e.localName)
+                                                    .toList()
+                                                : FFAppConstants
+                                                    .emptyListStrings)
+                                            : LookupCitiesAPIResponseStruct.maybeFromMap(
+                                                    populationDropDownLOOKUPsAPIsResponse
+                                                        .jsonBody)!
+                                                .records
+                                                .map((e) => e.latinName)
+                                                .toList())
+                                        : _model.emptyList,
+                                    onChanged: (val) => setState(() =>
+                                        _model.populationDropDownValue = val),
+                                    width: 300.0,
+                                    height: 56.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLargeFamily,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily),
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'vi5yluyt' /* التجمع السكني */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor: FlutterFlowTheme.of(context)
+                                        .textFieldBorder,
+                                    borderWidth: 1.0,
+                                    borderRadius: 12.0,
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isOverButton: true,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  );
+                                },
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'yfoglq5k' /* العنوان  */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: TextFormField(
+                                controller:
+                                    _model.addresslTextFieldTextController,
+                                focusNode: _model.addresslTextFieldFocusNode,
+                                autofocus: true,
+                                textCapitalization:
+                                    TextCapitalization.sentences,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
-                                        color: Colors.white,
-                                        fontSize: 20.0,
+                                            .labelMediumFamily,
+                                        fontSize: 18.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
                                                 FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
+                                                    .labelMediumFamily),
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'x8wk3106' /*  الحي , الشارع   */,
                                   ),
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .textFieldBorder,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  filled: true,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).accent4,
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                                validator: _model
+                                    .addresslTextFieldTextControllerValidator
+                                    .asValidator(context),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 24.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        if (_model.formKey.currentState ==
+                                                null ||
+                                            !_model.formKey.currentState!
+                                                .validate()) {
+                                          return;
+                                        }
+                                        FFAppState()
+                                            .updateRegisterationFormDataStruct(
+                                          (e) => e
+                                            ..addressText = _model
+                                                .addresslTextFieldTextController
+                                                .text,
+                                        );
+                                        setState(() {});
+
+                                        context.pushNamed('registeration_07');
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'vq6zsk0n' /* التالي */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.9,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.06,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
+                                              color: Colors.white,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
