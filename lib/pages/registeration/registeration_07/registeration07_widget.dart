@@ -1340,6 +1340,23 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                 context
                                                     .pushNamed('success_page');
                                               } else {
+                                                print('apiResultCustomerRegister ${_model.apiResultCustomerRegister?.jsonBody}');
+                                                print('apiResultCustomerRegister ${FFAppState()
+                                                    .registerationFormData
+                                                    .dateOfBirth}');
+
+                                                print('city code ${FFAppState()
+                                                    .registerationFormData
+                                                    .cityCode}');
+
+
+                                                print('nationality ${FFAppState()
+                                                    .registerationFormData
+                                                    .nationality}');
+                                                print('nationality ${FFAppState()
+                                                    .registerationFormData
+                                                    .mobileNumber}');
+
                                                 await actions.showToast(
                                                   FFLocalizations.of(context)
                                                       .getVariableText(
@@ -1349,6 +1366,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                 );
                                               }
                                             } else {
+
                                               await actions.showToast(
                                                 FFLocalizations.of(context)
                                                     .getVariableText(

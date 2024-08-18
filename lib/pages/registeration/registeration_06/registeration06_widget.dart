@@ -767,8 +767,35 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                 .map((e) => e.latinName)
                                                 .toList()
                                             : FFAppConstants.emptyListStrings),
-                                    onChanged: (val) => setState(
-                                        () => _model.citiesDropDownValue = val),
+                                    onChanged: (val) async {
+                                      setState(() => _model.citiesDropDownValue = val);
+
+                                      // Find the city data corresponding to the selected encodedId
+                                      setState(() {
+                                        final selectedCity = LookupCitiesAPIResponseStruct
+                                            .maybeFromMap(
+                                          citiesDropDownLOOKUPsAPIsResponse
+                                              .jsonBody,
+                                        )
+                                            ?.records
+                                            .firstWhere(
+                                              (city) => city.encodedId == val,
+                                        );
+
+                                        if (selectedCity != null) {
+                                          FFAppState()
+                                              .updateRegisterationFormDataStruct(
+                                                (e) =>
+                                            e
+                                              ..cityCode = selectedCity.code,
+                                          );
+                                        }
+
+                                        print('cityCode ${FFAppState()
+                                            .registerationFormData
+                                            .cityCode}');
+                                      });
+                                    },
                                     width: 300.0,
                                     height: 56.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -919,8 +946,33 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                 .map((e) => e.latinName)
                                                 .toList())
                                         : _model.emptyList,
-                                    onChanged: (val) => setState(() =>
-                                        _model.populationDropDownValue = val),
+                                    onChanged: (val) async {
+                                      setState(() => _model.populationDropDownValue = val);
+                                      // Find the city data corresponding to the selected encodedId
+                                      setState(() {
+                                        final selectedArea = LookupCitiesAPIResponseStruct
+                                            .maybeFromMap(
+                                          populationDropDownLOOKUPsAPIsResponse
+                                              .jsonBody,
+                                        )
+                                            ?.records
+                                            .firstWhere(
+                                              (area) => area.encodedId == val,
+                                        );
+
+                                        if (selectedArea != null) {
+                                          FFAppState()
+                                              .updateRegisterationFormDataStruct(
+                                                (e) =>
+                                            e
+                                              ..areaCode = selectedArea.code,
+                                          );
+                                        }
+                                      });
+                                      print('areaCode ${FFAppState()
+                                          .registerationFormData
+                                          .areaCode}');
+                                    },
                                     width: 300.0,
                                     height: 56.0,
                                     textStyle: FlutterFlowTheme.of(context)

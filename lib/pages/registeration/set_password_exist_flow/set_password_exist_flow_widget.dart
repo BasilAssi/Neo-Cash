@@ -679,6 +679,8 @@ class _SetPasswordExistFlowWidgetState
 
                                           context.pushNamed('login');
                                         } else {
+                                          print('11111apiResultCustomerRegisterDevice1 ${_model.apiResultCustomerRegisterDevice1?.jsonBody}');
+
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
@@ -783,6 +785,8 @@ class _SetPasswordExistFlowWidgetState
 
                                           context.pushNamed('login');
                                         } else {
+                                          print('2222apiResultCustomerRegisterDevice1 ${_model.apiResultCustomerRegisterDevice1?.jsonBody}');
+
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(

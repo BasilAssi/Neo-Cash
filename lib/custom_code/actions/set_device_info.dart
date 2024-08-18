@@ -34,8 +34,7 @@ Future setDeviceInfo() async {
     appState.deviceInformation.name = androidInfo.model;
     appState.deviceInformation.brandName = androidInfo.brand;
     appState.deviceInformation.brandVersion = androidInfo.version.release;
-    appState.deviceInformation.osVersion =
-        androidInfo.version.sdkInt.toString();
+    appState.deviceInformation.osVersion = androidInfo.version.release;
     ;
   } else if (Platform.isIOS) {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
