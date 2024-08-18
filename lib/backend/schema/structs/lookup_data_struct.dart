@@ -5,17 +5,21 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LookupCitesDataStruct extends BaseStruct {
-  LookupCitesDataStruct({
+class LookupDataStruct extends BaseStruct {
+  LookupDataStruct({
     String? encodedId,
     String? code,
     String? localName,
     String? latinName,
+    String? description,
+    String? moduleType,
     String? recordStatus,
   })  : _encodedId = encodedId,
         _code = code,
         _localName = localName,
         _latinName = latinName,
+        _description = description,
+        _moduleType = moduleType,
         _recordStatus = recordStatus;
 
   // "encodedId" field.
@@ -46,6 +50,20 @@ class LookupCitesDataStruct extends BaseStruct {
 
   bool hasLatinName() => _latinName != null;
 
+  // "description" field.
+  String? _description;
+  String get description => _description ?? '';
+  set description(String? val) => _description = val;
+
+  bool hasDescription() => _description != null;
+
+  // "moduleType" field.
+  String? _moduleType;
+  String get moduleType => _moduleType ?? '';
+  set moduleType(String? val) => _moduleType = val;
+
+  bool hasModuleType() => _moduleType != null;
+
   // "recordStatus" field.
   String? _recordStatus;
   String get recordStatus => _recordStatus ?? '';
@@ -53,17 +71,19 @@ class LookupCitesDataStruct extends BaseStruct {
 
   bool hasRecordStatus() => _recordStatus != null;
 
-  static LookupCitesDataStruct fromMap(Map<String, dynamic> data) =>
-      LookupCitesDataStruct(
+  static LookupDataStruct fromMap(Map<String, dynamic> data) =>
+      LookupDataStruct(
         encodedId: data['encodedId'] as String?,
         code: data['code'] as String?,
         localName: data['localName'] as String?,
         latinName: data['latinName'] as String?,
+        description: data['description'] as String?,
+        moduleType: data['moduleType'] as String?,
         recordStatus: data['recordStatus'] as String?,
       );
 
-  static LookupCitesDataStruct? maybeFromMap(dynamic data) => data is Map
-      ? LookupCitesDataStruct.fromMap(data.cast<String, dynamic>())
+  static LookupDataStruct? maybeFromMap(dynamic data) => data is Map
+      ? LookupDataStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
@@ -71,6 +91,8 @@ class LookupCitesDataStruct extends BaseStruct {
         'code': _code,
         'localName': _localName,
         'latinName': _latinName,
+        'description': _description,
+        'moduleType': _moduleType,
         'recordStatus': _recordStatus,
       }.withoutNulls;
 
@@ -92,14 +114,22 @@ class LookupCitesDataStruct extends BaseStruct {
           _latinName,
           ParamType.String,
         ),
+        'description': serializeParam(
+          _description,
+          ParamType.String,
+        ),
+        'moduleType': serializeParam(
+          _moduleType,
+          ParamType.String,
+        ),
         'recordStatus': serializeParam(
           _recordStatus,
           ParamType.String,
         ),
       }.withoutNulls;
 
-  static LookupCitesDataStruct fromSerializableMap(Map<String, dynamic> data) =>
-      LookupCitesDataStruct(
+  static LookupDataStruct fromSerializableMap(Map<String, dynamic> data) =>
+      LookupDataStruct(
         encodedId: deserializeParam(
           data['encodedId'],
           ParamType.String,
@@ -120,6 +150,16 @@ class LookupCitesDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        description: deserializeParam(
+          data['description'],
+          ParamType.String,
+          false,
+        ),
+        moduleType: deserializeParam(
+          data['moduleType'],
+          ParamType.String,
+          false,
+        ),
         recordStatus: deserializeParam(
           data['recordStatus'],
           ParamType.String,
@@ -128,34 +168,47 @@ class LookupCitesDataStruct extends BaseStruct {
       );
 
   @override
-  String toString() => 'LookupCitesDataStruct(${toMap()})';
+  String toString() => 'LookupDataStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is LookupCitesDataStruct &&
+    return other is LookupDataStruct &&
         encodedId == other.encodedId &&
         code == other.code &&
         localName == other.localName &&
         latinName == other.latinName &&
+        description == other.description &&
+        moduleType == other.moduleType &&
         recordStatus == other.recordStatus;
   }
 
   @override
-  int get hashCode => const ListEquality()
-      .hash([encodedId, code, localName, latinName, recordStatus]);
+  int get hashCode => const ListEquality().hash([
+        encodedId,
+        code,
+        localName,
+        latinName,
+        description,
+        moduleType,
+        recordStatus
+      ]);
 }
 
-LookupCitesDataStruct createLookupCitesDataStruct({
+LookupDataStruct createLookupDataStruct({
   String? encodedId,
   String? code,
   String? localName,
   String? latinName,
+  String? description,
+  String? moduleType,
   String? recordStatus,
 }) =>
-    LookupCitesDataStruct(
+    LookupDataStruct(
       encodedId: encodedId,
       code: code,
       localName: localName,
       latinName: latinName,
+      description: description,
+      moduleType: moduleType,
       recordStatus: recordStatus,
     );

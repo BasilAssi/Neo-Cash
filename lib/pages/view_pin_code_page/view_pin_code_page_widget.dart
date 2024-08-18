@@ -268,7 +268,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'dxq8c0aa' /*    ثانية  */,
+                                  'dxq8c0aa' /* ثوان */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall

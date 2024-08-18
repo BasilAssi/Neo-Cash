@@ -321,7 +321,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       8.0, 12.0, 8.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '5035sg3i' /* نسيت الرمز السري */,
+                                      '5035sg3i' /* نسيت الرمز السري؟ */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium

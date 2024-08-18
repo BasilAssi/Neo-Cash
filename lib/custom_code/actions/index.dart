@@ -5,3 +5,4 @@ export 'lock_orientation.dart' show lockOrientation;
 export 'app_life_cycle.dart' show appLifeCycle;
 export 'capture_screenshot_of_page.dart' show captureScreenshotOfPage;
 export 'show_toast.dart' show showToast;
+export 'set_user_info.dart' show setUserInfo;

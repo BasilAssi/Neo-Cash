@@ -106,7 +106,7 @@ class _IdForgotPinWidgetState extends State<IdForgotPinWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'fvzfxcqw' /* نسيت كلمة المرور */,
+                                    'fvzfxcqw' /* نسيت كلمة المرور؟ */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium

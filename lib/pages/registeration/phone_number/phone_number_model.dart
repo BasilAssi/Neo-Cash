@@ -20,7 +20,7 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
 
     if (val.length < 8) {
       return FFLocalizations.of(context).getText(
-        '20xg27or' /* لا يمكن ان يكون الرقم اقل من 8 */,
+        '20xg27or' /* لا يمكن ان يكون الرقم اقل من 8... */,
       );
     }
 

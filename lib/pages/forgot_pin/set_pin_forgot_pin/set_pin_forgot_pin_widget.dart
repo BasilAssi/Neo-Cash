@@ -65,7 +65,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'wwmjyqx9' /*  نسيت الرمز السري */,
+                      'wwmjyqx9' /*  نسيت الرمز السري؟ */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
