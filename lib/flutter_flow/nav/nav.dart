@@ -45,7 +45,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const Registeration08Widget(),
+          : const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -63,7 +63,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const Registeration08Widget(),
+              : const NavBarPage(),
           routes: [
             FFRoute(
               name: 'home_page',
