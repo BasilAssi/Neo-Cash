@@ -371,18 +371,18 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       (_model.isRegisteredOutPut?.jsonBody ??
                                           ''),
                                     )
-                                    ..mobileNumber = RegisterationFormDataStruct
-                                            .maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                        ?.mobileNumber
-                                    ..prefixMobile = RegisterationFormDataStruct
-                                            .maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                        ?.prefixMobile,
+                                    ..mobileNumber = AuthAndRegisterGroup
+                                        .isRegisteredCall
+                                        .mobileNumber(
+                                      (_model.isRegisteredOutPut?.jsonBody ??
+                                          ''),
+                                    )
+                                    ..prefixMobile = AuthAndRegisterGroup
+                                        .isRegisteredCall
+                                        .mobileNumberPrefix(
+                                      (_model.isRegisteredOutPut?.jsonBody ??
+                                          ''),
+                                    ),
                                 );
                                 setState(() {});
                                 _model.apiResultSendOTP =
@@ -423,7 +423,20 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 }
                               } else {
                                 FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e..isRegisteredStatus = false,
+                                  (e) => e
+                                    ..isRegisteredStatus = false
+                                    ..mobileNumber = AuthAndRegisterGroup
+                                        .isRegisteredCall
+                                        .mobileNumber(
+                                      (_model.isRegisteredOutPut?.jsonBody ??
+                                          ''),
+                                    )
+                                    ..prefixMobile = AuthAndRegisterGroup
+                                        .isRegisteredCall
+                                        .mobileNumberPrefix(
+                                      (_model.isRegisteredOutPut?.jsonBody ??
+                                          ''),
+                                    ),
                                 );
                                 setState(() {});
                                 _model.apiResultSendOTPSelfReg =
