@@ -370,7 +370,19 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         .emailAddress(
                                       (_model.isRegisteredOutPut?.jsonBody ??
                                           ''),
-                                    ),
+                                    )
+                                    ..mobileNumber = RegisterationFormDataStruct
+                                            .maybeFromMap((_model
+                                                    .isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                        ?.mobileNumber
+                                    ..prefixMobile = RegisterationFormDataStruct
+                                            .maybeFromMap((_model
+                                                    .isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                        ?.prefixMobile,
                                 );
                                 setState(() {});
                                 _model.apiResultSendOTP =
