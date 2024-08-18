@@ -99,7 +99,6 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
           child: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: SingleChildScrollView(
-              primary: false,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -145,6 +144,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
 
                           return ListView.builder(
                             padding: EdgeInsets.zero,
+                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: documentTypes.length,
