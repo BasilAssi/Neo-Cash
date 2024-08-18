@@ -1,8 +1,8 @@
 export '/backend/schema/util/schema_util.dart';
 
 export 'device_info_struct.dart';
-export 'lookup_cites_data_struct.dart';
-export 'lookup_cities_a_p_i_response_struct.dart';
+export 'lookup_a_p_i_response_struct.dart';
+export 'lookup_data_struct.dart';
 export 'response_model_struct.dart';
 export 'is_registered_a_p_i_response_struct.dart';
 export 'is_registered_data_struct.dart';

@@ -71,7 +71,7 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '7xsfy4k8' /* هل أنت متأكد من أنك تريد حظر ه... */,
+                                '7xsfy4k8' /* هل أنت متأكد من أنك تريد قفل ه... */,
                               ),
                               textAlign: TextAlign.justify,
                               style: FlutterFlowTheme.of(context)

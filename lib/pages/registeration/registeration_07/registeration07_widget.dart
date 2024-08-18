@@ -1106,9 +1106,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      't2k8mdj6' /* استخدامك لنيو كاش يعني انك 
-مو... */
-                                      ,
+                                      't2k8mdj6' /* الرجاء الموافقة على   */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium

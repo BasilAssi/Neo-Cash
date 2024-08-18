@@ -4,12 +4,12 @@
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LookupCitiesAPIResponseStruct extends BaseStruct {
-  LookupCitiesAPIResponseStruct({
+class LookupAPIResponseStruct extends BaseStruct {
+  LookupAPIResponseStruct({
     String? code,
     String? message,
     String? offset,
-    List<LookupCitesDataStruct>? records,
+    List<LookupDataStruct>? records,
     String? referenceId,
     bool? status,
     String? totalCount,
@@ -43,11 +43,11 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
   bool hasOffset() => _offset != null;
 
   // "records" field.
-  List<LookupCitesDataStruct>? _records;
-  List<LookupCitesDataStruct> get records => _records ?? const [];
-  set records(List<LookupCitesDataStruct>? val) => _records = val;
+  List<LookupDataStruct>? _records;
+  List<LookupDataStruct> get records => _records ?? const [];
+  set records(List<LookupDataStruct>? val) => _records = val;
 
-  void updateRecords(Function(List<LookupCitesDataStruct>) updateFn) {
+  void updateRecords(Function(List<LookupDataStruct>) updateFn) {
     updateFn(_records ??= []);
   }
 
@@ -74,24 +74,23 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
 
   bool hasTotalCount() => _totalCount != null;
 
-  static LookupCitiesAPIResponseStruct fromMap(Map<String, dynamic> data) =>
-      LookupCitiesAPIResponseStruct(
+  static LookupAPIResponseStruct fromMap(Map<String, dynamic> data) =>
+      LookupAPIResponseStruct(
         code: data['code'] as String?,
         message: data['message'] as String?,
         offset: data['offset'] as String?,
         records: getStructList(
           data['records'],
-          LookupCitesDataStruct.fromMap,
+          LookupDataStruct.fromMap,
         ),
         referenceId: data['referenceId'] as String?,
         status: data['status'] as bool?,
         totalCount: data['totalCount'] as String?,
       );
 
-  static LookupCitiesAPIResponseStruct? maybeFromMap(dynamic data) =>
-      data is Map
-          ? LookupCitiesAPIResponseStruct.fromMap(data.cast<String, dynamic>())
-          : null;
+  static LookupAPIResponseStruct? maybeFromMap(dynamic data) => data is Map
+      ? LookupAPIResponseStruct.fromMap(data.cast<String, dynamic>())
+      : null;
 
   Map<String, dynamic> toMap() => {
         'code': _code,
@@ -136,9 +135,9 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
         ),
       }.withoutNulls;
 
-  static LookupCitiesAPIResponseStruct fromSerializableMap(
+  static LookupAPIResponseStruct fromSerializableMap(
           Map<String, dynamic> data) =>
-      LookupCitiesAPIResponseStruct(
+      LookupAPIResponseStruct(
         code: deserializeParam(
           data['code'],
           ParamType.String,
@@ -154,11 +153,11 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        records: deserializeStructParam<LookupCitesDataStruct>(
+        records: deserializeStructParam<LookupDataStruct>(
           data['records'],
           ParamType.DataStruct,
           true,
-          structBuilder: LookupCitesDataStruct.fromSerializableMap,
+          structBuilder: LookupDataStruct.fromSerializableMap,
         ),
         referenceId: deserializeParam(
           data['referenceId'],
@@ -178,12 +177,12 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
       );
 
   @override
-  String toString() => 'LookupCitiesAPIResponseStruct(${toMap()})';
+  String toString() => 'LookupAPIResponseStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
     const listEquality = ListEquality();
-    return other is LookupCitiesAPIResponseStruct &&
+    return other is LookupAPIResponseStruct &&
         code == other.code &&
         message == other.message &&
         offset == other.offset &&
@@ -198,7 +197,7 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
       .hash([code, message, offset, records, referenceId, status, totalCount]);
 }
 
-LookupCitiesAPIResponseStruct createLookupCitiesAPIResponseStruct({
+LookupAPIResponseStruct createLookupAPIResponseStruct({
   String? code,
   String? message,
   String? offset,
@@ -206,7 +205,7 @@ LookupCitiesAPIResponseStruct createLookupCitiesAPIResponseStruct({
   bool? status,
   String? totalCount,
 }) =>
-    LookupCitiesAPIResponseStruct(
+    LookupAPIResponseStruct(
       code: code,
       message: message,
       offset: offset,

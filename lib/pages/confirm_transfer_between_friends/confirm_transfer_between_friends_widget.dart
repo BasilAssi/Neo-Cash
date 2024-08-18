@@ -671,7 +671,7 @@ class _ConfirmTransferBetweenFriendsWidgetState
                               children: [
                                 TextSpan(
                                   text: FFLocalizations.of(context).getText(
-                                    '7yfdl2ft' /* سعر التحويل     */,
+                                    '7yfdl2ft' /* سعر التحويل      */,
                                   ),
                                   style: TextStyle(
                                     color: FlutterFlowTheme.of(context).primary,

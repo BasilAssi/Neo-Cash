@@ -839,7 +839,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'nf068v0h' /* من نحن */,
+                                                      'nf068v0h' /* من نحن؟ */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
