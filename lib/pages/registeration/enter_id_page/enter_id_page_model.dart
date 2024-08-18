@@ -50,6 +50,8 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
   ApiCallResponse? isRegisteredOutPut;
   // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
   ApiCallResponse? apiResultSendOTP;
+  // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
+  ApiCallResponse? apiResultSendOTPSelfReg;
 
   @override
   void initState(BuildContext context) {
