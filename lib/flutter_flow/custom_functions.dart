@@ -47,3 +47,24 @@ String? formatDate(DateTime? date) {
   final formatter = DateFormat('dd/MM/yyyy');
   return formatter.format(date);
 }
+
+Color? gradientColor(
+  Color? color1,
+  Color? color2,
+) {
+  // // i need function that  take two colors and return gradient color
+  // if (color1 == null || color2 == null) {
+  //   return null;
+  // }
+  // final hexColor = color2.replaceAll('#', '');
+  // final r = int.parse(hexColor.substring(0, 2), radix: 16);
+  // final g = int.parse(hexColor.substring(2, 4), radix: 16);
+  // final b = int.parse(hexColor.substring(4, 6), radix: 16);
+  // final color2Value = Color.fromRGBO(r, g, b, 1.0);
+  // return LinearGradient(
+  //   colors: [color1, color2Value],
+  //   begin: Alignment.topCenter,
+  //   end: Alignment.bottomCenter,
+  // ).createShader(Rect.fromLTRB(0, 0, 0, 200));
+  return color1;
+}
