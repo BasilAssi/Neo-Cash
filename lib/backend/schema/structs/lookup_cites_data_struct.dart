@@ -14,13 +14,15 @@ class LookupCitesDataStruct extends BaseStruct {
     String? description,
     String? moduleType,
     String? recordStatus,
+    String? isoAlpha,
   })  : _encodedId = encodedId,
         _code = code,
         _localName = localName,
         _latinName = latinName,
         _description = description,
         _moduleType = moduleType,
-        _recordStatus = recordStatus;
+        _recordStatus = recordStatus,
+        _isoAlpha = isoAlpha;
 
   // "encodedId" field.
   String? _encodedId;
@@ -71,6 +73,13 @@ class LookupCitesDataStruct extends BaseStruct {
 
   bool hasRecordStatus() => _recordStatus != null;
 
+  // "isoAlpha" field.
+  String? _isoAlpha;
+  String get isoAlpha => _isoAlpha ?? '';
+  set isoAlpha(String? val) => _isoAlpha = val;
+
+  bool hasIsoAlpha() => _isoAlpha != null;
+
   static LookupCitesDataStruct fromMap(Map<String, dynamic> data) =>
       LookupCitesDataStruct(
         encodedId: data['encodedId'] as String?,
@@ -80,6 +89,7 @@ class LookupCitesDataStruct extends BaseStruct {
         description: data['description'] as String?,
         moduleType: data['moduleType'] as String?,
         recordStatus: data['recordStatus'] as String?,
+        isoAlpha: data['isoAlpha'] as String?,
       );
 
   static LookupCitesDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -94,6 +104,7 @@ class LookupCitesDataStruct extends BaseStruct {
         'description': _description,
         'moduleType': _moduleType,
         'recordStatus': _recordStatus,
+        'isoAlpha': _isoAlpha,
       }.withoutNulls;
 
   @override
@@ -124,6 +135,10 @@ class LookupCitesDataStruct extends BaseStruct {
         ),
         'recordStatus': serializeParam(
           _recordStatus,
+          ParamType.String,
+        ),
+        'isoAlpha': serializeParam(
+          _isoAlpha,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -165,6 +180,11 @@ class LookupCitesDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        isoAlpha: deserializeParam(
+          data['isoAlpha'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -179,7 +199,8 @@ class LookupCitesDataStruct extends BaseStruct {
         latinName == other.latinName &&
         description == other.description &&
         moduleType == other.moduleType &&
-        recordStatus == other.recordStatus;
+        recordStatus == other.recordStatus &&
+        isoAlpha == other.isoAlpha;
   }
 
   @override
@@ -190,7 +211,8 @@ class LookupCitesDataStruct extends BaseStruct {
         latinName,
         description,
         moduleType,
-        recordStatus
+        recordStatus,
+        isoAlpha
       ]);
 }
 
@@ -202,6 +224,7 @@ LookupCitesDataStruct createLookupCitesDataStruct({
   String? description,
   String? moduleType,
   String? recordStatus,
+  String? isoAlpha,
 }) =>
     LookupCitesDataStruct(
       encodedId: encodedId,
@@ -211,4 +234,5 @@ LookupCitesDataStruct createLookupCitesDataStruct({
       description: description,
       moduleType: moduleType,
       recordStatus: recordStatus,
+      isoAlpha: isoAlpha,
     );
