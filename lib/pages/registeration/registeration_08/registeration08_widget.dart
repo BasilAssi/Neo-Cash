@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/schema/structs/index.dart';
 import '/components/upload_documents_component/upload_documents_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -139,7 +138,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                               LookupAPIResponseStruct.maybeFromMap(
                                           listViewLOOKUPsAPIsResponse.jsonBody)
                                       ?.records
-                                      .toList() ??
+                                      ?.toList() ??
                                   [];
 
                           return ListView.builder(
