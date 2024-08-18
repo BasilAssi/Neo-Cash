@@ -10,6 +10,7 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
+import '/auth/custom_auth/auth_util.dart';
 
 String? removeLastCharacter(String? pinCode) {
   // remove last Character from string
