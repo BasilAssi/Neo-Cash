@@ -114,6 +114,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                           arText: 'AR',
                           enText: 'EN',
                         ),
+                        moduleType: 'CUSTOMER_REGISTRATION',
                       ),
                     ),
                     builder: (context, snapshot) {
