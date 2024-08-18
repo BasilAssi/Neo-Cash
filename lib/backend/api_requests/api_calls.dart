@@ -80,6 +80,15 @@ class IsRegisteredCall {
         response,
         r'''$.records[:].emailAddress''',
       ));
+  String? mobileNumberPrefix(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.records[:].mobileNumberPrefix''',
+      ));
+  String? mobileNumber(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.records[:].mobileNumber''',
+      ));
 }
 
 class SendOTPToCustomerCall {
