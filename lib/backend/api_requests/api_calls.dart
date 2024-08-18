@@ -467,6 +467,7 @@ class LOOKUPsAPIsCall {
     String? countryId = 'Mzk2MA==',
     String? cityId = '',
     String? type = '',
+    String? moduleType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
     String? token =
@@ -491,6 +492,7 @@ class LOOKUPsAPIsCall {
         'countryId': countryId,
         'cityId': cityId,
         'type': type,
+        'moduleType': moduleType,
       },
       returnBody: true,
       encodeBodyUtf8: false,
