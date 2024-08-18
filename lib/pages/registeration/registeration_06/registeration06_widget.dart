@@ -728,7 +728,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           citiesDropDownLOOKUPsAPIsResponse
                                               .jsonBody)!
                                       .records
-                                      .map((e) => e.code)
+                                      .map((e) => e.encodedId)
                                       .toList()
                                   : FFAppConstants.emptyListStrings),
                               optionLabels: FFLocalizations.of(context).languageCode ==
@@ -756,8 +756,19 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           .map((e) => e.latinName)
                                           .toList()
                                       : FFAppConstants.emptyListStrings),
-                              onChanged: (val) => setState(
-                                  () => _model.citiesDropDownValue = val),
+                              onChanged: (val) async {
+                                setState(
+                                    () => _model.citiesDropDownValue = val);
+                                FFAppState().updateRegisterationFormDataStruct(
+                                  (e) => e
+                                    ..cityCode =
+                                        LookupCitesDataStruct.maybeFromMap(
+                                                citiesDropDownLOOKUPsAPIsResponse
+                                                    .jsonBody)
+                                            ?.code,
+                                );
+                                setState(() {});
+                              },
                               width: 300.0,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
@@ -872,7 +883,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           populationDropDownLOOKUPsAPIsResponse
                                               .jsonBody)!
                                       .records
-                                      .map((e) => e.code)
+                                      .map((e) => e.encodedId)
                                       .toList()
                                   : FFAppConstants.emptyListStrings),
                               optionLabels: LookupCitiesAPIResponseStruct.maybeFromMap(
@@ -899,8 +910,18 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           .map((e) => e.latinName)
                                           .toList())
                                   : FFAppConstants.emptyListStrings,
-                              onChanged: (val) => setState(
-                                  () => _model.populationDropDownValue = val),
+                              onChanged: (val) async {
+                                setState(
+                                    () => _model.populationDropDownValue = val);
+                                FFAppState().updateRegisterationFormDataStruct(
+                                  (e) => e
+                                    ..areaCode = LookupCitesDataStruct.maybeFromMap(
+                                            populationDropDownLOOKUPsAPIsResponse
+                                                .jsonBody)
+                                        ?.code,
+                                );
+                                setState(() {});
+                              },
                               width: 300.0,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
