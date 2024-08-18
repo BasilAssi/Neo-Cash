@@ -872,7 +872,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           populationDropDownLOOKUPsAPIsResponse
                                               .jsonBody)!
                                       .records
-                                      .map((e) => e.encodedId)
+                                      .map((e) => e.code)
                                       .toList()
                                   : FFAppConstants.emptyListStrings),
                               optionLabels: LookupCitiesAPIResponseStruct.maybeFromMap(

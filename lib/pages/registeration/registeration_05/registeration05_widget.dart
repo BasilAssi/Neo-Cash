@@ -638,13 +638,13 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                               )
                             : 'true',
                       ),
-                      options: List<String>.from(['true', 'false']),
+                      options: List<String>.from(['false', 'true']),
                       optionLabels: [
                         FFLocalizations.of(context).getText(
-                          'n5ifl7pf' /* نعم */,
+                          'n5ifl7pf' /* لا */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'do0uczj5' /* لا */,
+                          'do0uczj5' /* نعم */,
                         )
                       ],
                       onChanged: (val) =>
