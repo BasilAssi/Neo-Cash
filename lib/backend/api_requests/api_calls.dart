@@ -400,7 +400,7 @@ class RegisterACustomerDeviceCall {
   "otp": "$hashedOTP",
   "deviceInfo": {
     "serial": "$serial",
-    "deviceName": "$deviceName",
+    "name": "$deviceName",
     "osName": "$osName",
     "osVersion": "$osVersion",
     "brandName": "$brandName",
