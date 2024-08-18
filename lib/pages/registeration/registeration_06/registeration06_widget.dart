@@ -1086,9 +1086,6 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                   FFAppState()
                                       .updateRegisterationFormDataStruct(
                                     (e) => e
-                                      ..cityCode = _model.citiesDropDownValue
-                                      ..areaCode =
-                                          _model.populationDropDownValue
                                       ..addressText = _model
                                           .addresslTextFieldTextController.text,
                                   );
