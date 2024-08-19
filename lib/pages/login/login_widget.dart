@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -708,6 +709,15 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 if ((_model.apiResultLogin
                                                         ?.succeeded ??
                                                     true)) {
+                                                  _model.parsedJWT =
+                                                      await actions.parseJWT(
+                                                    LoginAPIResponseStruct
+                                                            .maybeFromMap((_model
+                                                                    .apiResultLogin
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.accessToken,
+                                                  );
                                                   FFAppState()
                                                       .updateAuthenticatedUserStruct(
                                                     (e) => e
