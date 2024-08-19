@@ -14,6 +14,9 @@ import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 
 Future<dynamic> parseJWT(String? token) async {
   // Add your function code here!
+  if (token == null) {
+    throw Exception('Token cannot be null');
+  }
 
   // Split the token by periods (.)
   final parts = token.split('.');
@@ -28,6 +31,6 @@ Future<dynamic> parseJWT(String? token) async {
 
   // Convert the decoded string to a JSON object
   final payloadMap = json.decode(decodedJson) as Map<String, dynamic>;
-  print(payloadMap);
+  print('payloadMap:  $payloadMap');
   return payloadMap;
 }

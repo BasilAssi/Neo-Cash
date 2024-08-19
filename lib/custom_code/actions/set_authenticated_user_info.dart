@@ -72,4 +72,6 @@ Future setAuthenticatedUserInfo(dynamic payloadMap) async {
       ..monthlyIncomeUsd = customerInfo['monthlyIncomeUsd'] ?? '0'
       ..residencyType = customerInfo['residencyType'] ?? '',
   );
+
+  print('updated feilds ${FFAppState().AuthenticatedUser.toMap().toString()}');
 }
