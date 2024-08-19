@@ -662,6 +662,9 @@ class _SetPasswordExistFlowWidgetState
                                           password: _model
                                               .passwordTextFieldTextController
                                               .text,
+                                          token: FFAppState()
+                                              .AuthenticatedUser
+                                              .accessToken,
                                         );
 
                                         if ((_model
@@ -768,6 +771,9 @@ class _SetPasswordExistFlowWidgetState
                                           password: _model
                                               .passwordTextFieldTextController
                                               .text,
+                                          token: FFAppState()
+                                              .AuthenticatedUser
+                                              .accessToken,
                                         );
 
                                         if ((_model
