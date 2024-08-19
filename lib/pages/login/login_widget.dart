@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,6 +6,7 @@ import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -718,12 +718,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 ''))
                                                         ?.accessToken,
                                                   );
-                                                  FFAppState()
-                                                      .updateAuthenticatedUserStruct(
-                                                    (e) => e
-                                                      ..firstNameAR = 'basil',
+                                                  await actions
+                                                      .setAuthenticatedUserInfo(
+                                                    _model.parsedJWT!,
                                                   );
-                                                  setState(() {});
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
                                                         .getVariableText(
