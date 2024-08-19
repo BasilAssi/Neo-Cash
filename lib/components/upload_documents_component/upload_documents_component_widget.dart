@@ -1,9 +1,13 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -201,7 +205,71 @@ class _UploadDocumentsComponentWidgetState
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
             child: FFButtonWidget(
-              onPressed: () async {},
+              onPressed: () async {
+                _model.isNetworkAvailableOutput =
+                    await actions.isNetworkAvailable();
+                if (_model.isNetworkAvailableOutput == true) {
+                  final selectedMedia = await selectMediaWithSourceBottomSheet(
+                    context: context,
+                    imageQuality: 100,
+                    allowPhoto: true,
+                    includeDimensions: true,
+                  );
+                  if (selectedMedia != null &&
+                      selectedMedia.every(
+                          (m) => validateFileFormat(m.storagePath, context))) {
+                    setState(() => _model.isDataUploading = true);
+                    var selectedUploadedFiles = <FFUploadedFile>[];
+
+                    try {
+                      showUploadMessage(
+                        context,
+                        'Uploading file...',
+                        showLoading: true,
+                      );
+                      selectedUploadedFiles = selectedMedia
+                          .map((m) => FFUploadedFile(
+                                name: m.storagePath.split('/').last,
+                                bytes: m.bytes,
+                                height: m.dimensions?.height,
+                                width: m.dimensions?.width,
+                                blurHash: m.blurHash,
+                              ))
+                          .toList();
+                    } finally {
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                      _model.isDataUploading = false;
+                    }
+                    if (selectedUploadedFiles.length == selectedMedia.length) {
+                      setState(() {
+                        _model.uploadedLocalFile = selectedUploadedFiles.first;
+                      });
+                      showUploadMessage(context, 'Success!');
+                    } else {
+                      setState(() {});
+                      showUploadMessage(context, 'Failed to upload data');
+                      return;
+                    }
+                  }
+
+                  _model.apiResult551 =
+                      await AuthAndRegisterGroup.uploadDocumentCall.call(
+                    customerId: FFAppState().AuthenticatedUser.encodedId,
+                    file: _model.uploadedLocalFile,
+                    msgId: functions.messageId(),
+                    documentTypeId: widget.encodedId,
+                  );
+                } else {
+                  await actions.showToast(
+                    FFLocalizations.of(context).getVariableText(
+                      arText: 'عذرا لا يوجد اتصال بالانترنت',
+                      enText: 'Sorry, no internet connection.',
+                    ),
+                  );
+                }
+
+                setState(() {});
+              },
               text: 'Upload ',
               icon: const Icon(
                 Icons.upload,
