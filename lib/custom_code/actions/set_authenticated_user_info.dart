@@ -11,4 +11,8 @@ import 'package:flutter/material.dart';
 
 Future setAuthenticatedUserInfo(dynamic var1) async {
   // Add your function code here!
+
+  FFAppState().updateAuthenticatedUserStruct(
+    (e) => e..firstNameAR = 'basil',
+  );
 }
