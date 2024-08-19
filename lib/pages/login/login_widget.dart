@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,7 +7,6 @@ import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -709,31 +709,59 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 if ((_model.apiResultLogin
                                                         ?.succeeded ??
                                                     true)) {
+                                                  FFAppState()
+                                                      .updateAuthenticatedUserStruct(
+                                                    (e) => e
+                                                      ..accessToken = LoginAPIResponseStruct
+                                                              .maybeFromMap((_model
+                                                                      .apiResultLogin
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.accessToken,
+                                                  );
+                                                  setState(() {});
                                                   _model.parsedJWT =
                                                       await actions.parseJWT(
-                                                    LoginAPIResponseStruct
-                                                            .maybeFromMap((_model
-                                                                    .apiResultLogin
-                                                                    ?.jsonBody ??
-                                                                ''))
-                                                        ?.accessToken,
+                                                    FFAppState()
+                                                        .AuthenticatedUser
+                                                        .accessToken,
                                                   );
                                                   await actions
                                                       .setAuthenticatedUserInfo(
                                                     _model.parsedJWT!,
                                                   );
-                                                  await actions.showToast(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                      arText:
-                                                          'تم تسجيل دخولك بنجاح ',
-                                                      enText:
-                                                          'You have successfully logged in.',
-                                                    ),
-                                                  );
+                                                  if (FFAppState()
+                                                          .AuthenticatedUser
+                                                          .isMissingDocuments ==
+                                                      true) {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'تم تسجيل دخولك بنجاح ',
+                                                        enText:
+                                                            'You have successfully logged in.',
+                                                      ),
+                                                    );
 
-                                                  context
-                                                      .pushNamed('home_page');
+                                                    context
+                                                        .pushNamed('home_page');
+                                                  } else {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'اكمل نسجيل حسابك',
+                                                        enText:
+                                                            'Complete your account registration',
+                                                      ),
+                                                    );
+
+                                                    context.pushNamed(
+                                                        'registeration_08');
+                                                  }
                                                 } else {
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
