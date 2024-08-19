@@ -23,7 +23,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'cva7bxnb' /* الحقل مطلوب */,
+        '7193jimg' /* الحقل مطلوب */,
       );
     }
 
@@ -39,7 +39,7 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'ckc46hur' /* الحقل مطلوب */,
+        '0ny3hsku' /* الحقل مطلوب */,
       );
     }
 

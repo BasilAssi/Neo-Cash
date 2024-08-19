@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -678,7 +679,77 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   0.0, 16.0, 0.0, 24.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              context.pushNamed('home_page');
+                                              if (_model.formKey.currentState ==
+                                                      null ||
+                                                  !_model.formKey.currentState!
+                                                      .validate()) {
+                                                return;
+                                              }
+                                              _model.isNetworkAvailableOutput =
+                                                  await actions
+                                                      .isNetworkAvailable();
+                                              if (_model
+                                                      .isNetworkAvailableOutput ==
+                                                  true) {
+                                                _model.apiResultLogin =
+                                                    await AuthAndRegisterGroup
+                                                        .loginCall
+                                                        .call(
+                                                  deviceSerial: FFAppState()
+                                                      .deviceInformation
+                                                      .serial,
+                                                  mobileWithPrefix:
+                                                      '${_model.dropDownValue}${_model.textFieldValueTextController.text}',
+                                                  password: _model
+                                                      .passwordTextController
+                                                      .text,
+                                                );
+
+                                                if ((_model.apiResultLogin
+                                                        ?.succeeded ??
+                                                    true)) {
+                                                  FFAppState()
+                                                      .updateAuthenticatedUserStruct(
+                                                    (e) => e
+                                                      ..firstNameAR = 'basil',
+                                                  );
+                                                  setState(() {});
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'عذرا لا يوجد اتصال بالانترنت',
+                                                      enText:
+                                                          'Sorry, no internet connection.',
+                                                    ),
+                                                  );
+
+                                                  context
+                                                      .pushNamed('home_page');
+                                                } else {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'عملية المصادقة غير صحيحة',
+                                                      enText:
+                                                          'Sorry, no internet connection.',
+                                                    ),
+                                                  );
+                                                }
+                                              } else {
+                                                await actions.showToast(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                    arText:
+                                                        'عذرا لا يوجد اتصال بالانترنت',
+                                                    enText:
+                                                        'Sorry, no internet connection.',
+                                                  ),
+                                                );
+                                              }
+
+                                              setState(() {});
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
