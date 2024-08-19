@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'phone_number_widget.dart' show PhoneNumberWidget;
@@ -30,6 +31,10 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
   // State field(s) for prefixMobileNumberDropDown widget.
   String? prefixMobileNumberDropDownValue;
   FormFieldController<String>? prefixMobileNumberDropDownValueController;
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+  bool? isNetworkAvaiableOutPut;
+  // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
+  ApiCallResponse? apiResultSendOTPSelfReg;
 
   @override
   void initState(BuildContext context) {

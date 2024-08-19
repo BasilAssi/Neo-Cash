@@ -426,62 +426,11 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 }
                               } else {
                                 FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e
-                                    ..isRegisteredStatus = false
-                                    ..mobileNumber = AuthAndRegisterGroup
-                                        .isRegisteredCall
-                                        .mobileNumber(
-                                      (_model.isRegisteredOutPut?.jsonBody ??
-                                          ''),
-                                    )
-                                    ..prefixMobile = AuthAndRegisterGroup
-                                        .isRegisteredCall
-                                        .mobileNumberPrefix(
-                                      (_model.isRegisteredOutPut?.jsonBody ??
-                                          ''),
-                                    ),
+                                  (e) => e..isRegisteredStatus = false,
                                 );
                                 setState(() {});
-                                _model.apiResultSendOTPSelfReg =
-                                    await AuthAndRegisterGroup
-                                        .sendOTPToCustomerCall
-                                        .call(
-                                  msgId: functions.messageId(),
-                                  idNumber: FFAppState()
-                                      .registerationFormData
-                                      .idNumber,
-                                  idType:
-                                      FFAppState().registerationFormData.idType,
-                                  mobileNumber:
-                                      '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
-                                  destinationType: 'MOBILE_NUMBER',
-                                  operationType: 'VERIFY_DESTINATION',
-                                  token: FFAppState()
-                                      .AuthenticatedUser
-                                      .accessToken,
-                                );
 
-                                if ((_model
-                                        .apiResultSendOTPSelfReg?.succeeded ??
-                                    true)) {
-                                  context.pushNamed('phone_number');
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'error',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: const Duration(milliseconds: 4000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
-                                    ),
-                                  );
-                                }
+                                context.pushNamed('phone_number');
                               }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(

@@ -1,9 +1,12 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -369,8 +372,33 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                   _model.prefixMobileNumberDropDownValue,
                           );
                           setState(() {});
+                          _model.isNetworkAvaiableOutPut =
+                              await actions.isNetworkAvailable();
+                          if (_model.isNetworkAvaiableOutPut == true) {
+                            _model.apiResultSendOTPSelfReg =
+                                await AuthAndRegisterGroup.sendOTPToCustomerCall
+                                    .call(
+                              msgId: functions.messageId(),
+                              idNumber:
+                                  FFAppState().registerationFormData.idNumber,
+                              idType: FFAppState().registerationFormData.idType,
+                              mobileNumber:
+                                  '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                              destinationType: 'MOBILE_NUMBER',
+                              operationType: 'VERIFY_DESTINATION',
+                            );
 
-                          context.pushNamed('otp_does_not_exist_flow');
+                            context.pushNamed('otp_does_not_exist_flow');
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                enText: 'Sorry, no internet connection.',
+                              ),
+                            );
+                          }
+
+                          setState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'ffd17gua' /* التالي */,
