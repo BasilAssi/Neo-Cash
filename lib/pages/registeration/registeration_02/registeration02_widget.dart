@@ -816,7 +816,6 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                             msgId: functions.messageId(),
                             type: 'CITY',
-                            token: FFAppState().AuthenticatedUser.accessToken,
                           ),
                         ),
                         builder: (context, snapshot) {
