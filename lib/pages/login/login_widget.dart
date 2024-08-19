@@ -733,7 +733,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   if (FFAppState()
                                                           .AuthenticatedUser
                                                           .isMissingDocuments ==
-                                                      true) {
+                                                      false) {
                                                     await actions.showToast(
                                                       FFLocalizations.of(
                                                               context)

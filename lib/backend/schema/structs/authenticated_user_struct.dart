@@ -14,7 +14,6 @@ class AuthenticatedUserStruct extends BaseStruct {
     String? mobileNumber,
     String? cityCode,
     List<CustomerDocumentsStruct>? customerDocuments,
-    String? mobileNumberVerified,
     String? thirdName,
     String? idNumber,
     String? countryId,
@@ -40,9 +39,7 @@ class AuthenticatedUserStruct extends BaseStruct {
     String? mobileNumberPrefix,
     bool? isPEP,
     String? encodedId,
-    String? birthDate,
     String? firstName,
-    String? emailVerified,
     String? areaCode,
     bool? isTrueAccountBeneficiary,
     bool? isDeviceRegistered,
@@ -51,6 +48,9 @@ class AuthenticatedUserStruct extends BaseStruct {
     String? monthlyIncomeUsd,
     String? residencyType,
     String? accessToken,
+    bool? emailVerified,
+    bool? mobileNumberVerified,
+    DateTime? birthDate,
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
         _thirdNameAr = thirdNameAr,
@@ -59,7 +59,6 @@ class AuthenticatedUserStruct extends BaseStruct {
         _mobileNumber = mobileNumber,
         _cityCode = cityCode,
         _customerDocuments = customerDocuments,
-        _mobileNumberVerified = mobileNumberVerified,
         _thirdName = thirdName,
         _idNumber = idNumber,
         _countryId = countryId,
@@ -85,9 +84,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         _mobileNumberPrefix = mobileNumberPrefix,
         _isPEP = isPEP,
         _encodedId = encodedId,
-        _birthDate = birthDate,
         _firstName = firstName,
-        _emailVerified = emailVerified,
         _areaCode = areaCode,
         _isTrueAccountBeneficiary = isTrueAccountBeneficiary,
         _isDeviceRegistered = isDeviceRegistered,
@@ -95,7 +92,10 @@ class AuthenticatedUserStruct extends BaseStruct {
         _firstNameAr = firstNameAr,
         _monthlyIncomeUsd = monthlyIncomeUsd,
         _residencyType = residencyType,
-        _accessToken = accessToken;
+        _accessToken = accessToken,
+        _emailVerified = emailVerified,
+        _mobileNumberVerified = mobileNumberVerified,
+        _birthDate = birthDate;
 
   // "correctionReason" field.
   String? _correctionReason;
@@ -159,13 +159,6 @@ class AuthenticatedUserStruct extends BaseStruct {
   }
 
   bool hasCustomerDocuments() => _customerDocuments != null;
-
-  // "mobileNumberVerified" field.
-  String? _mobileNumberVerified;
-  String get mobileNumberVerified => _mobileNumberVerified ?? '';
-  set mobileNumberVerified(String? val) => _mobileNumberVerified = val;
-
-  bool hasMobileNumberVerified() => _mobileNumberVerified != null;
 
   // "thirdName" field.
   String? _thirdName;
@@ -345,26 +338,12 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasEncodedId() => _encodedId != null;
 
-  // "birthDate" field.
-  String? _birthDate;
-  String get birthDate => _birthDate ?? '';
-  set birthDate(String? val) => _birthDate = val;
-
-  bool hasBirthDate() => _birthDate != null;
-
   // "firstName" field.
   String? _firstName;
   String get firstName => _firstName ?? '';
   set firstName(String? val) => _firstName = val;
 
   bool hasFirstName() => _firstName != null;
-
-  // "emailVerified" field.
-  String? _emailVerified;
-  String get emailVerified => _emailVerified ?? '';
-  set emailVerified(String? val) => _emailVerified = val;
-
-  bool hasEmailVerified() => _emailVerified != null;
 
   // "areaCode" field.
   String? _areaCode;
@@ -422,6 +401,27 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasAccessToken() => _accessToken != null;
 
+  // "emailVerified" field.
+  bool? _emailVerified;
+  bool get emailVerified => _emailVerified ?? false;
+  set emailVerified(bool? val) => _emailVerified = val;
+
+  bool hasEmailVerified() => _emailVerified != null;
+
+  // "mobileNumberVerified" field.
+  bool? _mobileNumberVerified;
+  bool get mobileNumberVerified => _mobileNumberVerified ?? false;
+  set mobileNumberVerified(bool? val) => _mobileNumberVerified = val;
+
+  bool hasMobileNumberVerified() => _mobileNumberVerified != null;
+
+  // "birthDate" field.
+  DateTime? _birthDate;
+  DateTime? get birthDate => _birthDate;
+  set birthDate(DateTime? val) => _birthDate = val;
+
+  bool hasBirthDate() => _birthDate != null;
+
   static AuthenticatedUserStruct fromMap(Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
         correctionReason: data['correctionReason'] as String?,
@@ -435,7 +435,6 @@ class AuthenticatedUserStruct extends BaseStruct {
           data['customerDocuments'],
           CustomerDocumentsStruct.fromMap,
         ),
-        mobileNumberVerified: data['mobileNumberVerified'] as String?,
         thirdName: data['thirdName'] as String?,
         idNumber: data['idNumber'] as String?,
         countryId: data['countryId'] as String?,
@@ -462,9 +461,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         mobileNumberPrefix: data['mobileNumberPrefix'] as String?,
         isPEP: data['isPEP'] as bool?,
         encodedId: data['encodedId'] as String?,
-        birthDate: data['birthDate'] as String?,
         firstName: data['firstName'] as String?,
-        emailVerified: data['emailVerified'] as String?,
         areaCode: data['areaCode'] as String?,
         isTrueAccountBeneficiary: data['isTrueAccountBeneficiary'] as bool?,
         isDeviceRegistered: data['isDeviceRegistered'] as bool?,
@@ -473,6 +470,9 @@ class AuthenticatedUserStruct extends BaseStruct {
         monthlyIncomeUsd: data['monthlyIncomeUsd'] as String?,
         residencyType: data['residencyType'] as String?,
         accessToken: data['accessToken'] as String?,
+        emailVerified: data['emailVerified'] as bool?,
+        mobileNumberVerified: data['mobileNumberVerified'] as bool?,
+        birthDate: data['birthDate'] as DateTime?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -488,7 +488,6 @@ class AuthenticatedUserStruct extends BaseStruct {
         'mobileNumber': _mobileNumber,
         'cityCode': _cityCode,
         'customerDocuments': _customerDocuments?.map((e) => e.toMap()).toList(),
-        'mobileNumberVerified': _mobileNumberVerified,
         'thirdName': _thirdName,
         'idNumber': _idNumber,
         'countryId': _countryId,
@@ -514,9 +513,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         'mobileNumberPrefix': _mobileNumberPrefix,
         'isPEP': _isPEP,
         'encodedId': _encodedId,
-        'birthDate': _birthDate,
         'firstName': _firstName,
-        'emailVerified': _emailVerified,
         'areaCode': _areaCode,
         'isTrueAccountBeneficiary': _isTrueAccountBeneficiary,
         'isDeviceRegistered': _isDeviceRegistered,
@@ -525,6 +522,9 @@ class AuthenticatedUserStruct extends BaseStruct {
         'monthlyIncomeUsd': _monthlyIncomeUsd,
         'residencyType': _residencyType,
         'accessToken': _accessToken,
+        'emailVerified': _emailVerified,
+        'mobileNumberVerified': _mobileNumberVerified,
+        'birthDate': _birthDate,
       }.withoutNulls;
 
   @override
@@ -561,10 +561,6 @@ class AuthenticatedUserStruct extends BaseStruct {
           _customerDocuments,
           ParamType.DataStruct,
           isList: true,
-        ),
-        'mobileNumberVerified': serializeParam(
-          _mobileNumberVerified,
-          ParamType.String,
         ),
         'thirdName': serializeParam(
           _thirdName,
@@ -666,16 +662,8 @@ class AuthenticatedUserStruct extends BaseStruct {
           _encodedId,
           ParamType.String,
         ),
-        'birthDate': serializeParam(
-          _birthDate,
-          ParamType.String,
-        ),
         'firstName': serializeParam(
           _firstName,
-          ParamType.String,
-        ),
-        'emailVerified': serializeParam(
-          _emailVerified,
           ParamType.String,
         ),
         'areaCode': serializeParam(
@@ -709,6 +697,18 @@ class AuthenticatedUserStruct extends BaseStruct {
         'accessToken': serializeParam(
           _accessToken,
           ParamType.String,
+        ),
+        'emailVerified': serializeParam(
+          _emailVerified,
+          ParamType.bool,
+        ),
+        'mobileNumberVerified': serializeParam(
+          _mobileNumberVerified,
+          ParamType.bool,
+        ),
+        'birthDate': serializeParam(
+          _birthDate,
+          ParamType.DateTime,
         ),
       }.withoutNulls;
 
@@ -755,11 +755,6 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.DataStruct,
           true,
           structBuilder: CustomerDocumentsStruct.fromSerializableMap,
-        ),
-        mobileNumberVerified: deserializeParam(
-          data['mobileNumberVerified'],
-          ParamType.String,
-          false,
         ),
         thirdName: deserializeParam(
           data['thirdName'],
@@ -886,18 +881,8 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        birthDate: deserializeParam(
-          data['birthDate'],
-          ParamType.String,
-          false,
-        ),
         firstName: deserializeParam(
           data['firstName'],
-          ParamType.String,
-          false,
-        ),
-        emailVerified: deserializeParam(
-          data['emailVerified'],
           ParamType.String,
           false,
         ),
@@ -941,6 +926,21 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        emailVerified: deserializeParam(
+          data['emailVerified'],
+          ParamType.bool,
+          false,
+        ),
+        mobileNumberVerified: deserializeParam(
+          data['mobileNumberVerified'],
+          ParamType.bool,
+          false,
+        ),
+        birthDate: deserializeParam(
+          data['birthDate'],
+          ParamType.DateTime,
+          false,
+        ),
       );
 
   @override
@@ -958,7 +958,6 @@ class AuthenticatedUserStruct extends BaseStruct {
         mobileNumber == other.mobileNumber &&
         cityCode == other.cityCode &&
         listEquality.equals(customerDocuments, other.customerDocuments) &&
-        mobileNumberVerified == other.mobileNumberVerified &&
         thirdName == other.thirdName &&
         idNumber == other.idNumber &&
         countryId == other.countryId &&
@@ -985,9 +984,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         mobileNumberPrefix == other.mobileNumberPrefix &&
         isPEP == other.isPEP &&
         encodedId == other.encodedId &&
-        birthDate == other.birthDate &&
         firstName == other.firstName &&
-        emailVerified == other.emailVerified &&
         areaCode == other.areaCode &&
         isTrueAccountBeneficiary == other.isTrueAccountBeneficiary &&
         isDeviceRegistered == other.isDeviceRegistered &&
@@ -995,7 +992,10 @@ class AuthenticatedUserStruct extends BaseStruct {
         firstNameAr == other.firstNameAr &&
         monthlyIncomeUsd == other.monthlyIncomeUsd &&
         residencyType == other.residencyType &&
-        accessToken == other.accessToken;
+        accessToken == other.accessToken &&
+        emailVerified == other.emailVerified &&
+        mobileNumberVerified == other.mobileNumberVerified &&
+        birthDate == other.birthDate;
   }
 
   @override
@@ -1008,7 +1008,6 @@ class AuthenticatedUserStruct extends BaseStruct {
         mobileNumber,
         cityCode,
         customerDocuments,
-        mobileNumberVerified,
         thirdName,
         idNumber,
         countryId,
@@ -1034,9 +1033,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         mobileNumberPrefix,
         isPEP,
         encodedId,
-        birthDate,
         firstName,
-        emailVerified,
         areaCode,
         isTrueAccountBeneficiary,
         isDeviceRegistered,
@@ -1044,7 +1041,10 @@ class AuthenticatedUserStruct extends BaseStruct {
         firstNameAr,
         monthlyIncomeUsd,
         residencyType,
-        accessToken
+        accessToken,
+        emailVerified,
+        mobileNumberVerified,
+        birthDate
       ]);
 }
 
@@ -1056,7 +1056,6 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   String? middleNameAr,
   String? mobileNumber,
   String? cityCode,
-  String? mobileNumberVerified,
   String? thirdName,
   String? idNumber,
   String? countryId,
@@ -1082,9 +1081,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   String? mobileNumberPrefix,
   bool? isPEP,
   String? encodedId,
-  String? birthDate,
   String? firstName,
-  String? emailVerified,
   String? areaCode,
   bool? isTrueAccountBeneficiary,
   bool? isDeviceRegistered,
@@ -1093,6 +1090,9 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   String? monthlyIncomeUsd,
   String? residencyType,
   String? accessToken,
+  bool? emailVerified,
+  bool? mobileNumberVerified,
+  DateTime? birthDate,
 }) =>
     AuthenticatedUserStruct(
       correctionReason: correctionReason,
@@ -1102,7 +1102,6 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       middleNameAr: middleNameAr,
       mobileNumber: mobileNumber,
       cityCode: cityCode,
-      mobileNumberVerified: mobileNumberVerified,
       thirdName: thirdName,
       idNumber: idNumber,
       countryId: countryId,
@@ -1128,9 +1127,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       mobileNumberPrefix: mobileNumberPrefix,
       isPEP: isPEP,
       encodedId: encodedId,
-      birthDate: birthDate,
       firstName: firstName,
-      emailVerified: emailVerified,
       areaCode: areaCode,
       isTrueAccountBeneficiary: isTrueAccountBeneficiary,
       isDeviceRegistered: isDeviceRegistered,
@@ -1139,4 +1136,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       monthlyIncomeUsd: monthlyIncomeUsd,
       residencyType: residencyType,
       accessToken: accessToken,
+      emailVerified: emailVerified,
+      mobileNumberVerified: mobileNumberVerified,
+      birthDate: birthDate,
     );
