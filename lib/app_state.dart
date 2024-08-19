@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
 import 'backend/api_requests/api_manager.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:csv/csv.dart';
+import 'package:synchronized/synchronized.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -19,15 +21,27 @@ class FFAppState extends ChangeNotifier {
   }
 
   Future initializePersistedState() async {
-    prefs = await SharedPreferences.getInstance();
-    _safeInit(() {
-      if (prefs.containsKey('ff_registerationFormData')) {
+    secureStorage = const FlutterSecureStorage();
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_registerationFormData') != null) {
         try {
           final serializedData =
-              prefs.getString('ff_registerationFormData') ?? '{}';
+              await secureStorage.getString('ff_registerationFormData') ?? '{}';
           _registerationFormData =
               RegisterationFormDataStruct.fromSerializableMap(
                   jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_AuthenticatedUser') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_AuthenticatedUser') ?? '{}';
+          _AuthenticatedUser = AuthenticatedUserStruct.fromSerializableMap(
+              jsonDecode(serializedData));
         } catch (e) {
           print("Can't decode persisted data type. Error: $e.");
         }
@@ -40,7 +54,7 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  late SharedPreferences prefs;
+  late FlutterSecureStorage secureStorage;
 
   bool _isEnglish = false;
   bool get isEnglish => _isEnglish;
@@ -65,13 +79,17 @@ class FFAppState extends ChangeNotifier {
       _registerationFormData;
   set registerationFormData(RegisterationFormDataStruct value) {
     _registerationFormData = value;
-    prefs.setString('ff_registerationFormData', value.serialize());
+    secureStorage.setString('ff_registerationFormData', value.serialize());
+  }
+
+  void deleteRegisterationFormData() {
+    secureStorage.delete(key: 'ff_registerationFormData');
   }
 
   void updateRegisterationFormDataStruct(
       Function(RegisterationFormDataStruct) updateFn) {
     updateFn(_registerationFormData);
-    prefs.setString(
+    secureStorage.setString(
         'ff_registerationFormData', _registerationFormData.serialize());
   }
 
@@ -83,6 +101,24 @@ class FFAppState extends ChangeNotifier {
 
   void updateAppSettingsStruct(Function(SettingsAppStruct) updateFn) {
     updateFn(_AppSettings);
+  }
+
+  AuthenticatedUserStruct _AuthenticatedUser = AuthenticatedUserStruct();
+  AuthenticatedUserStruct get AuthenticatedUser => _AuthenticatedUser;
+  set AuthenticatedUser(AuthenticatedUserStruct value) {
+    _AuthenticatedUser = value;
+    secureStorage.setString('ff_AuthenticatedUser', value.serialize());
+  }
+
+  void deleteAuthenticatedUser() {
+    secureStorage.delete(key: 'ff_AuthenticatedUser');
+  }
+
+  void updateAuthenticatedUserStruct(
+      Function(AuthenticatedUserStruct) updateFn) {
+    updateFn(_AuthenticatedUser);
+    secureStorage.setString(
+        'ff_AuthenticatedUser', _AuthenticatedUser.serialize());
   }
 
   final _citesAPIResponseManager = FutureRequestManager<ApiCallResponse>();
@@ -145,4 +181,47 @@ Future _safeInitAsync(Function() initializeField) async {
   try {
     await initializeField();
   } catch (_) {}
+}
+
+extension FlutterSecureStorageExtensions on FlutterSecureStorage {
+  static final _lock = Lock();
+
+  Future<void> writeSync({required String key, String? value}) async =>
+      await _lock.synchronized(() async {
+        await write(key: key, value: value);
+      });
+
+  void remove(String key) => delete(key: key);
+
+  Future<String?> getString(String key) async => await read(key: key);
+  Future<void> setString(String key, String value) async =>
+      await writeSync(key: key, value: value);
+
+  Future<bool?> getBool(String key) async => (await read(key: key)) == 'true';
+  Future<void> setBool(String key, bool value) async =>
+      await writeSync(key: key, value: value.toString());
+
+  Future<int?> getInt(String key) async =>
+      int.tryParse(await read(key: key) ?? '');
+  Future<void> setInt(String key, int value) async =>
+      await writeSync(key: key, value: value.toString());
+
+  Future<double?> getDouble(String key) async =>
+      double.tryParse(await read(key: key) ?? '');
+  Future<void> setDouble(String key, double value) async =>
+      await writeSync(key: key, value: value.toString());
+
+  Future<List<String>?> getStringList(String key) async =>
+      await read(key: key).then((result) {
+        if (result == null || result.isEmpty) {
+          return null;
+        }
+        return const CsvToListConverter()
+            .convert(result)
+            .first
+            .map((e) => e.toString())
+            .toList();
+      });
+  Future<void> setStringList(String key, List<String> value) async =>
+      await writeSync(key: key, value: const ListToCsvConverter().convert([value]));
 }
