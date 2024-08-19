@@ -419,18 +419,18 @@ class _LoginWidgetState extends State<LoginWidget>
                                               controller: _model
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
-                                                _model.dropDownValue ??= '+970',
+                                                _model.dropDownValue ??= '970',
                                               ),
                                               options: List<String>.from(
-                                                  ['+970', '+972']),
+                                                  ['970', '972']),
                                               optionLabels: [
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'aptr1z10' /* +970 */,
+                                                  'mydegl1b' /* +970 */,
                                                 ),
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'bx2290jy' /* +972 */,
+                                                  'mydegl1b' /* +972 */,
                                                 )
                                               ],
                                               onChanged: (val) => setState(() =>
