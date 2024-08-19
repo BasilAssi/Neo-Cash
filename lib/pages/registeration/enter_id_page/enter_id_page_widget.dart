@@ -355,6 +355,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       : '',
                             );
 
+                            print('_model.isRegisteredOutPut ${_model.isRegisteredOutPut?.jsonBody}');
                             if ((_model.isRegisteredOutPut?.succeeded ??
                                 true)) {
                               if (ResponseModelStruct.maybeFromMap((_model
