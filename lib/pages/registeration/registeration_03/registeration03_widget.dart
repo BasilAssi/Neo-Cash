@@ -674,16 +674,15 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                   .residentOfTheCountry
                               : '',
                         ),
-                        options: List<String>.from(
-                            ['RESIDENT', 'NON_RESIDENT', '2']),
+                        options:
+                            List<String>.from(['RESIDENT', 'NON_RESIDENT']),
                         optionLabels: [
                           FFLocalizations.of(context).getText(
-                            'afjbsqja' /* نعم */,
+                            'bg1z8bxj' /* نعم */,
                           ),
                           FFLocalizations.of(context).getText(
-                            '6o1swgu5' /* لا */,
-                          ),
-                          ''
+                            'g5scq0d2' /* لا */,
+                          )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownRESIDENTValue = val),
@@ -694,6 +693,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                             .override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).labelLargeFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
                               fontSize: 18.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -705,7 +705,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
-                          color: FlutterFlowTheme.of(context).secondaryText,
+                          color: FlutterFlowTheme.of(context).textColor,
                           size: 24.0,
                         ),
                         fillColor:

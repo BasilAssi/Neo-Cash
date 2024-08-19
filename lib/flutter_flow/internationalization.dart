@@ -206,13 +206,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '+970',
       'en': '+970',
     },
-    'aptr1z10': {
+    'mydegl1b': {
       'ar': '+970',
-      'en': '+970',
+      'en': '',
     },
-    'bx2290jy': {
+    '5vvawxxx': {
       'ar': '+972',
-      'en': '+972',
+      'en': '',
     },
     'bu04m7sg': {
       'ar': 'Search for an item...',
@@ -1665,13 +1665,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'هل أنت مقيم في البلد؟',
       'en': 'Are you resident?',
     },
-    'afjbsqja': {
+    'bg1z8bxj': {
       'ar': 'نعم',
-      'en': 'Yes',
+      'en': '',
     },
-    '6o1swgu5': {
+    'g5scq0d2': {
       'ar': 'لا',
-      'en': 'No',
+      'en': '',
     },
     'btro9yps': {
       'ar': 'مقيم في البلد؟',
