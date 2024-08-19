@@ -577,7 +577,7 @@ class LoginCall {
         'applicationType': 'BP-V1.0',
         'Device-Serial': '$deviceSerial',
         'authorization':
-            'Basic  + base64Encode(utf8.encode($mobileWithPrefix:$password)',
+            'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
       },
       params: {},
       bodyType: BodyType.NONE,
