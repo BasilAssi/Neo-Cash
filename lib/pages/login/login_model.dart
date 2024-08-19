@@ -46,6 +46,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Login)] action in Button widget.
   ApiCallResponse? apiResultLogin;
+  // Stores action output result for [Custom Action - parseJWT] action in Button widget.
+  dynamic parsedJWT;
   bool biometricOutput = false;
 
   @override
