@@ -69,7 +69,7 @@ Future setAuthenticatedUserInfo(dynamic payloadMap) async {
       ..isDeviceRegistered = customerInfo['isDeviceRegistered'] ?? false
       ..middleName = customerInfo['middleName'] ?? ''
       ..firstNameAr = customerInfo['firstNameAr'] ?? ''
-      ..monthlyIncomeUsd = customerInfo['monthlyIncomeUsd'] ?? 0
+      ..monthlyIncomeUsd = customerInfo['monthlyIncomeUsd'] ?? '0'
       ..residencyType = customerInfo['residencyType'] ?? '',
   );
 }
