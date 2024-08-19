@@ -353,7 +353,6 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                   FFAppState().deviceInformation.hasSerial()
                                       ? FFAppState().deviceInformation.serial
                                       : '',
-                              token: FFAppState().AuthenticatedUser.accessToken,
                             );
 
                             if ((_model.isRegisteredOutPut?.succeeded ??

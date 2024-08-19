@@ -692,9 +692,6 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
                                     msgId: functions.messageId(),
                                     type: 'CITY',
-                                    token: FFAppState()
-                                        .AuthenticatedUser
-                                        .accessToken,
                                   ),
                                 ),
                                 builder: (context, snapshot) {
@@ -876,9 +873,6 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     _model.citiesDropDownValue,
                                     'Mzk2Mg==',
                                   ),
-                                  token: FFAppState()
-                                      .AuthenticatedUser
-                                      .accessToken,
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.

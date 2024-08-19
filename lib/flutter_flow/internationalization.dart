@@ -1651,8 +1651,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search for an item...',
     },
     'tv5scspx': {
-      'ar': 'هل عندك جواز أمريكي؟',
-      'en': 'Do you have a US passport?',
+      'ar': 'هل لديك وثيقة أمريكية (جواز سفر أو جربن كارد على سبيل المثال)؟',
+      'en': 'Do you have any US documents, such as a passport or green card?',
     },
     'rbncbqss': {
       'ar': 'نعم',
