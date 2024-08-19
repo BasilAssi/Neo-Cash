@@ -26,8 +26,6 @@ export '/pages/home/qr_code_page/qr_code_page_widget.dart'
     show QrCodePageWidget;
 export '/pages/registeration/enter_id_page/enter_id_page_widget.dart'
     show EnterIdPageWidget;
-export '/pages/registeration/otp_exist_flow/otp_exist_flow_widget.dart'
-    show OtpExistFlowWidget;
 export '/pages/registeration/registeration_02/registeration02_widget.dart'
     show Registeration02Widget;
 export '/pages/registeration/registeration_07/registeration07_widget.dart'

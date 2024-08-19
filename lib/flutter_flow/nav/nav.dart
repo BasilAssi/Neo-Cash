@@ -167,16 +167,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const EnterIdPageWidget(),
             ),
             FFRoute(
-              name: 'otp_exist_flow',
-              path: 'otpExistFlow',
-              builder: (context, params) => OtpExistFlowWidget(
-                phoneNumber: params.getParam(
-                  'phoneNumber',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'registeration_02',
               path: 'registeration02',
               builder: (context, params) => const Registeration02Widget(),

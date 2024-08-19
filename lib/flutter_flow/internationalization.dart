@@ -1088,37 +1088,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // otp_exist_flow
-  {
-    'yz1z1apd': {
-      'ar': 'تأكيد رقم التلفون',
-      'en': 'Confirm Phone Number',
-    },
-    'wz31dp5u': {
-      'ar': 'أرسلنالك رمز تحقق على تليفونك  رقم',
-      'en': 'We have sent you a verification code on your phone number',
-    },
-    '5xs4gjqu': {
-      'ar': '\n',
-      'en': '',
-    },
-    'jehqu9vd': {
-      'ar': '\n',
-      'en': '',
-    },
-    'x2iqegi0': {
-      'ar': ' الرجاء إدخال الرمز',
-      'en': 'Please enter the verification code',
-    },
-    '5axqffrl': {
-      'ar': 'إعادة إرسال رمز التحقق',
-      'en': 'Resend verification code',
-    },
-    'emqmmcve': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
   // registeration_02
   {
     '23yolomv': {
@@ -2759,7 +2728,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الصفحة الرئيسية ',
       'en': 'Home',
     },
-    '7tx36t9x': {
+    'emqmmcve': {
       'ar': 'الصفحة الرئيسية ',
       'en': 'Home',
     },

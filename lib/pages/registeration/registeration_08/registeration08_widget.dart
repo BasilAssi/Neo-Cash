@@ -114,6 +114,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                           enText: 'EN',
                         ),
                         moduleType: 'CUSTOMER_REGISTRATION',
+                        token: FFAppState().AuthenticatedUser.accessToken,
                       ),
                     ),
                     builder: (context, snapshot) {

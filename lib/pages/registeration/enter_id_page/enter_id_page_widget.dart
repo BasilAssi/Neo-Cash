@@ -353,6 +353,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                   FFAppState().deviceInformation.hasSerial()
                                       ? FFAppState().deviceInformation.serial
                                       : '',
+                              token: FFAppState().AuthenticatedUser.accessToken,
                             );
 
                             if ((_model.isRegisteredOutPut?.succeeded ??
@@ -399,6 +400,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                   destinationType: 'MOBILE_NUMBER',
                                   operationType: 'REGISTER_DEVICE',
+                                  token: FFAppState()
+                                      .AuthenticatedUser
+                                      .accessToken,
                                 );
 
                                 if ((_model.apiResultSendOTP?.succeeded ??
@@ -453,6 +457,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                   destinationType: 'MOBILE_NUMBER',
                                   operationType: 'VERIFY_DESTINATION',
+                                  token: FFAppState()
+                                      .AuthenticatedUser
+                                      .accessToken,
                                 );
 
                                 if ((_model
