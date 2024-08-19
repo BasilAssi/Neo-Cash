@@ -1329,9 +1329,6 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                     .text,
                                                 pin: _model
                                                     .pinCodeController!.text,
-                                                token: FFAppState()
-                                                    .AuthenticatedUser
-                                                    .accessToken,
                                               );
 
                                               if ((_model

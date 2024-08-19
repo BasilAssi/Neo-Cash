@@ -316,7 +316,6 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                       false
                                   ? 'VERIFY_DESTINATION'
                                   : 'REGISTER_DEVICE',
-                              token: FFAppState().AuthenticatedUser.accessToken,
                             );
 
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {

@@ -728,7 +728,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'tv5scspx' /* هل عندك جواز أمريكي؟ */,
+                          'tv5scspx' /* هل لديك وثيقة أمريكية (جواز سف... */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
