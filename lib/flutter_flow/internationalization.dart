@@ -246,24 +246,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '  أنشئ حساب',
       'en': 'Create New Account',
     },
-    '6xbm4scs': {
+    'nuxhazj7': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'frtzehgk': {
-      'ar': '',
+    '2imdgl09': {
+      'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'e0zfluii': {
-      'ar': '',
+    'szccmsm4': {
+      'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    '8aj5u3ep': {
-      'ar': 'ادخل كلمة مرور على الاقل من 6 احرف',
-      'en': 'Enter a password of at least 6 characters',
-    },
-    'kzzt2ep3': {
-      'ar': '',
+    'abig6z1g': {
+      'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
     'klhdzxhy': {
@@ -447,7 +443,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'nuxhazj7': {
+    'm9cfiyyb': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -455,7 +451,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'لا يمكن ان يكون الرقم اقل من 8 خانات',
       'en': 'The number cannot be less than 8 digits.',
     },
-    '2imdgl09': {
+    'frtzehgk': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -897,7 +893,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'm9cfiyyb': {
+    'fg9qljcu': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -905,11 +901,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم يجب ان يكون باللغة العربية',
       'en': 'Name must be in Arabic',
     },
-    'x3v0m7qw': {
+    'kzzt2ep3': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'szccmsm4': {
+    'r8ss9mpo': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -917,7 +913,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم يجب ان يكون باللغة العربية',
       'en': 'Name must be in Arabic',
     },
-    'abig6z1g': {
+    '90so78ix': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1083,7 +1079,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رقم الهوية اكبر من عشرة ارقام',
       'en': 'ID number is greater than ten digits',
     },
-    '9tynz1pf': {
+    'rqwfk1m3': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1221,7 +1217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'fg9qljcu': {
+    'yqzok9cw': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -1229,7 +1225,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم الام يجب ان يكون باللغة الانجليزية',
       'en': 'Mother\'s name must be in English',
     },
-    '90so78ix': {
+    'my2ri9k8': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1397,7 +1393,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'لحقل مطلوب',
       'en': 'Field is required',
     },
-    'rqwfk1m3': {
+    'x3v0m7qw': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1745,19 +1741,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'r8ss9mpo': {
+    'caq9antt': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'waw6vcko': {
+    'emd08oiv': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'yqzok9cw': {
+    'tt0swmgt': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'my2ri9k8': {
+    'sn1ac2pa': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1765,7 +1761,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    '691jtwsm': {
+    '9tynz1pf': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1852,19 +1848,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مثال : أب, ابن , أخ',
       'en': 'Example: father, son, brother',
     },
-    'caq9antt': {
+    'cva7bxnb': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'emd08oiv': {
+    'rc19rnrm': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'tt0swmgt': {
+    'ckc46hur': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'sn1ac2pa': {
+    'bcmiiojk': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2433,23 +2429,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'cva7bxnb': {
-      'ar': 'الحقل مطلوب',
-      'en': 'Field is required',
-    },
-    'rc19rnrm': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': 'Please choose an option from the dropdown',
-    },
-    'ckc46hur': {
-      'ar': 'الحقل مطلوب',
-      'en': 'Field is required',
-    },
-    'bcmiiojk': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': 'Please choose an option from the dropdown',
-    },
-    'bp5kq706': {
+    '7193jimg': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2457,11 +2437,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'eggopym5': {
+    '0ny3hsku': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
     'wqglt18i': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
+    },
+    'bp5kq706': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
+    },
+    'ff20u9xu': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
+    },
+    'eggopym5': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
+    },
+    '6b8ufb9o': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2484,11 +2480,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الإيميل',
       'en': 'Email',
     },
-    '7193jimg': {
+    '9la124ib': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'ff20u9xu': {
+    'nrirvjsc': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2510,7 +2506,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },
-    '0ny3hsku': {
+    'ot9dvbxc': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2520,11 +2516,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'The password must be at least 7 characters long and include one uppercase letter, one lowercase letter, and one number',
     },
-    '6b8ufb9o': {
+    'ukwnlenj': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    '9la124ib': {
+    '77xgtb0q': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
@@ -2534,11 +2530,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    'nrirvjsc': {
+    'pljieomh': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'ot9dvbxc': {
+    'tjiw19nd': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },

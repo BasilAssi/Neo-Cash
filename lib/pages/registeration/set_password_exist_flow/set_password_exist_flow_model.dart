@@ -22,7 +22,7 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '7193jimg' /* الحقل مطلوب */,
+        '9la124ib' /* الحقل مطلوب */,
       );
     }
 
@@ -39,7 +39,7 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '0ny3hsku' /* الحقل مطلوب */,
+        'ot9dvbxc' /* الحقل مطلوب */,
       );
     }
 
@@ -61,7 +61,7 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '9la124ib' /* الحقل مطلوب */,
+        '77xgtb0q' /* الحقل مطلوب */,
       );
     }
 
@@ -79,7 +79,7 @@ class SetPasswordExistFlowModel
   String? _pinCodeControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'ot9dvbxc' /* الحقل مطلوب */,
+        'tjiw19nd' /* الحقل مطلوب */,
       );
     }
     if (val.length < 4) {

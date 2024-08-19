@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'login_widget.dart' show LoginWidget;
@@ -12,6 +13,17 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? textFieldValueTextController;
   String? Function(BuildContext, String?)?
       textFieldValueTextControllerValidator;
+  String? _textFieldValueTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'nuxhazj7' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -20,11 +32,28 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'szccmsm4' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+  bool? isNetworkAvailableOutput;
+  // Stores action output result for [Backend Call - API (Login)] action in Button widget.
+  ApiCallResponse? apiResultLogin;
   bool biometricOutput = false;
 
   @override
   void initState(BuildContext context) {
+    textFieldValueTextControllerValidator =
+        _textFieldValueTextControllerValidator;
     passwordVisibility = false;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
   }
 
   @override

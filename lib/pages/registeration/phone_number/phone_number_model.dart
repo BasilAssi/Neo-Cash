@@ -14,7 +14,7 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
   String? _textControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'nuxhazj7' /* الحقل مطلوب */,
+        'm9cfiyyb' /* الحقل مطلوب */,
       );
     }
 

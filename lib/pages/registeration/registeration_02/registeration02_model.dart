@@ -35,7 +35,7 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'fg9qljcu' /* الحقل مطلوب */,
+        'yqzok9cw' /* الحقل مطلوب */,
       );
     }
 
