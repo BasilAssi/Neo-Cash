@@ -718,9 +718,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     FFLocalizations.of(context)
                                                         .getVariableText(
                                                       arText:
-                                                          'عذرا لا يوجد اتصال بالانترنت',
+                                                          'تم تسجيل دخولك بنجاح ',
                                                       enText:
-                                                          'Sorry, no internet connection.',
+                                                          'You have successfully logged in.',
                                                     ),
                                                   );
 
