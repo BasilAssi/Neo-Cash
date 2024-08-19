@@ -621,7 +621,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .textColor,
-                                                fontSize: 18.0,
+                                                fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
