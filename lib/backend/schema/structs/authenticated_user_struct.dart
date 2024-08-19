@@ -50,7 +50,7 @@ class AuthenticatedUserStruct extends BaseStruct {
     String? accessToken,
     bool? emailVerified,
     bool? mobileNumberVerified,
-    DateTime? birthDate,
+    String? birthDate,
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
         _thirdNameAr = thirdNameAr,
@@ -416,9 +416,9 @@ class AuthenticatedUserStruct extends BaseStruct {
   bool hasMobileNumberVerified() => _mobileNumberVerified != null;
 
   // "birthDate" field.
-  DateTime? _birthDate;
-  DateTime? get birthDate => _birthDate;
-  set birthDate(DateTime? val) => _birthDate = val;
+  String? _birthDate;
+  String get birthDate => _birthDate ?? '';
+  set birthDate(String? val) => _birthDate = val;
 
   bool hasBirthDate() => _birthDate != null;
 
@@ -472,7 +472,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         accessToken: data['accessToken'] as String?,
         emailVerified: data['emailVerified'] as bool?,
         mobileNumberVerified: data['mobileNumberVerified'] as bool?,
-        birthDate: data['birthDate'] as DateTime?,
+        birthDate: data['birthDate'] as String?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -708,7 +708,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         ),
         'birthDate': serializeParam(
           _birthDate,
-          ParamType.DateTime,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -938,7 +938,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         ),
         birthDate: deserializeParam(
           data['birthDate'],
-          ParamType.DateTime,
+          ParamType.String,
           false,
         ),
       );
@@ -1092,7 +1092,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   String? accessToken,
   bool? emailVerified,
   bool? mobileNumberVerified,
-  DateTime? birthDate,
+  String? birthDate,
 }) =>
     AuthenticatedUserStruct(
       correctionReason: correctionReason,
