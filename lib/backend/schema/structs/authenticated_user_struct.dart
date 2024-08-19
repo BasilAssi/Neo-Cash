@@ -1,217 +1,141 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class AuthenticatedUserStruct extends BaseStruct {
   AuthenticatedUserStruct({
-    String? idNumber,
-    String? idType,
-    String? firstNameAR,
-    String? fatherNameAR,
-    String? grandFatherNameAR,
-    String? familyNameAR,
-    String? firstNameEN,
-    String? fatherNameEN,
-    String? grandFatherNameEN,
-    String? familyNameEN,
-    String? motherNameEN,
-    String? birthOfPlace,
-    String? gender,
-    String? nationality,
-    String? residentOfTheCountry,
-    String? isUSPassportHolder,
-    String? profession,
-    String? placeOfWork,
-    String? monthlyInComeDollar,
-    String? cityCode,
-    String? areaCode,
-    String? addressText,
-    String? isTrueBeneficiaryAccount,
-    String? trueBeneficiaryName,
-    String? relationShipWithTrueBeneficiary,
-    String? isPEP,
-    String? localPepFullName,
-    String? latinPepFullName,
-    String? relationshipWithPep,
+    String? correctionReason,
     String? pepPosition,
+    String? thirdNameAr,
+    String? gender,
+    String? middleNameAr,
     String? mobileNumber,
-    String? prefixMobile,
-    bool? isRegisteredStatus,
-    String? email,
-    String? hashedOTP,
-    String? dateOfBirth,
-  })  : _idNumber = idNumber,
-        _idType = idType,
-        _firstNameAR = firstNameAR,
-        _fatherNameAR = fatherNameAR,
-        _grandFatherNameAR = grandFatherNameAR,
-        _familyNameAR = familyNameAR,
-        _firstNameEN = firstNameEN,
-        _fatherNameEN = fatherNameEN,
-        _grandFatherNameEN = grandFatherNameEN,
-        _familyNameEN = familyNameEN,
-        _motherNameEN = motherNameEN,
-        _birthOfPlace = birthOfPlace,
-        _gender = gender,
-        _nationality = nationality,
-        _residentOfTheCountry = residentOfTheCountry,
-        _isUSPassportHolder = isUSPassportHolder,
-        _profession = profession,
-        _placeOfWork = placeOfWork,
-        _monthlyInComeDollar = monthlyInComeDollar,
-        _cityCode = cityCode,
-        _areaCode = areaCode,
-        _addressText = addressText,
-        _isTrueBeneficiaryAccount = isTrueBeneficiaryAccount,
-        _trueBeneficiaryName = trueBeneficiaryName,
-        _relationShipWithTrueBeneficiary = relationShipWithTrueBeneficiary,
-        _isPEP = isPEP,
-        _localPepFullName = localPepFullName,
-        _latinPepFullName = latinPepFullName,
-        _relationshipWithPep = relationshipWithPep,
+    String? cityCode,
+    List<CustomerDocumentsStruct>? customerDocuments,
+    String? mobileNumberVerified,
+    String? thirdName,
+    String? idNumber,
+    String? countryId,
+    String? customerStatus,
+    String? trueBeneficiaryName,
+    String? birthPlace,
+    String? emailAddress,
+    String? nationalityCode,
+    String? localPepFullName,
+    bool? isUsPassportHolder,
+    String? motherNameEn,
+    String? relationShipWithTrueBeneficiary,
+    String? familyName,
+    String? relationshipWithPep,
+    String? placeOfWork,
+    String? familyNameAr,
+    String? latinPepFullName,
+    String? profession,
+    bool? isMissingDocuments,
+    String? idType,
+    String? address,
+    String? mobileNumber2,
+    String? mobileNumberPrefix,
+    bool? isPEP,
+    String? encodedId,
+    String? birthDate,
+    String? firstName,
+    String? emailVerified,
+    String? areaCode,
+    bool? isTrueAccountBeneficiary,
+    bool? isDeviceRegistered,
+    String? middleName,
+    String? firstNameAr,
+    String? monthlyIncomeUsd,
+    String? residencyType,
+  })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
+        _thirdNameAr = thirdNameAr,
+        _gender = gender,
+        _middleNameAr = middleNameAr,
         _mobileNumber = mobileNumber,
-        _prefixMobile = prefixMobile,
-        _isRegisteredStatus = isRegisteredStatus,
-        _email = email,
-        _hashedOTP = hashedOTP,
-        _dateOfBirth = dateOfBirth;
+        _cityCode = cityCode,
+        _customerDocuments = customerDocuments,
+        _mobileNumberVerified = mobileNumberVerified,
+        _thirdName = thirdName,
+        _idNumber = idNumber,
+        _countryId = countryId,
+        _customerStatus = customerStatus,
+        _trueBeneficiaryName = trueBeneficiaryName,
+        _birthPlace = birthPlace,
+        _emailAddress = emailAddress,
+        _nationalityCode = nationalityCode,
+        _localPepFullName = localPepFullName,
+        _isUsPassportHolder = isUsPassportHolder,
+        _motherNameEn = motherNameEn,
+        _relationShipWithTrueBeneficiary = relationShipWithTrueBeneficiary,
+        _familyName = familyName,
+        _relationshipWithPep = relationshipWithPep,
+        _placeOfWork = placeOfWork,
+        _familyNameAr = familyNameAr,
+        _latinPepFullName = latinPepFullName,
+        _profession = profession,
+        _isMissingDocuments = isMissingDocuments,
+        _idType = idType,
+        _address = address,
+        _mobileNumber2 = mobileNumber2,
+        _mobileNumberPrefix = mobileNumberPrefix,
+        _isPEP = isPEP,
+        _encodedId = encodedId,
+        _birthDate = birthDate,
+        _firstName = firstName,
+        _emailVerified = emailVerified,
+        _areaCode = areaCode,
+        _isTrueAccountBeneficiary = isTrueAccountBeneficiary,
+        _isDeviceRegistered = isDeviceRegistered,
+        _middleName = middleName,
+        _firstNameAr = firstNameAr,
+        _monthlyIncomeUsd = monthlyIncomeUsd,
+        _residencyType = residencyType;
 
-  // "idNumber" field.
-  String? _idNumber;
-  String get idNumber => _idNumber ?? '';
-  set idNumber(String? val) => _idNumber = val;
+  // "correctionReason" field.
+  String? _correctionReason;
+  String get correctionReason => _correctionReason ?? '';
+  set correctionReason(String? val) => _correctionReason = val;
 
-  bool hasIdNumber() => _idNumber != null;
+  bool hasCorrectionReason() => _correctionReason != null;
 
-  // "idType" field.
-  String? _idType;
-  String get idType => _idType ?? '';
-  set idType(String? val) => _idType = val;
+  // "pepPosition" field.
+  String? _pepPosition;
+  String get pepPosition => _pepPosition ?? '';
+  set pepPosition(String? val) => _pepPosition = val;
 
-  bool hasIdType() => _idType != null;
+  bool hasPepPosition() => _pepPosition != null;
 
-  // "FirstNameAR" field.
-  String? _firstNameAR;
-  String get firstNameAR => _firstNameAR ?? '';
-  set firstNameAR(String? val) => _firstNameAR = val;
+  // "thirdNameAr" field.
+  String? _thirdNameAr;
+  String get thirdNameAr => _thirdNameAr ?? '';
+  set thirdNameAr(String? val) => _thirdNameAr = val;
 
-  bool hasFirstNameAR() => _firstNameAR != null;
+  bool hasThirdNameAr() => _thirdNameAr != null;
 
-  // "FatherNameAR" field.
-  String? _fatherNameAR;
-  String get fatherNameAR => _fatherNameAR ?? '';
-  set fatherNameAR(String? val) => _fatherNameAR = val;
-
-  bool hasFatherNameAR() => _fatherNameAR != null;
-
-  // "GrandFatherNameAR" field.
-  String? _grandFatherNameAR;
-  String get grandFatherNameAR => _grandFatherNameAR ?? '';
-  set grandFatherNameAR(String? val) => _grandFatherNameAR = val;
-
-  bool hasGrandFatherNameAR() => _grandFatherNameAR != null;
-
-  // "FamilyNameAR" field.
-  String? _familyNameAR;
-  String get familyNameAR => _familyNameAR ?? '';
-  set familyNameAR(String? val) => _familyNameAR = val;
-
-  bool hasFamilyNameAR() => _familyNameAR != null;
-
-  // "FirstNameEN" field.
-  String? _firstNameEN;
-  String get firstNameEN => _firstNameEN ?? '';
-  set firstNameEN(String? val) => _firstNameEN = val;
-
-  bool hasFirstNameEN() => _firstNameEN != null;
-
-  // "FatherNameEN" field.
-  String? _fatherNameEN;
-  String get fatherNameEN => _fatherNameEN ?? '';
-  set fatherNameEN(String? val) => _fatherNameEN = val;
-
-  bool hasFatherNameEN() => _fatherNameEN != null;
-
-  // "GrandFatherNameEN" field.
-  String? _grandFatherNameEN;
-  String get grandFatherNameEN => _grandFatherNameEN ?? '';
-  set grandFatherNameEN(String? val) => _grandFatherNameEN = val;
-
-  bool hasGrandFatherNameEN() => _grandFatherNameEN != null;
-
-  // "FamilyNameEN" field.
-  String? _familyNameEN;
-  String get familyNameEN => _familyNameEN ?? '';
-  set familyNameEN(String? val) => _familyNameEN = val;
-
-  bool hasFamilyNameEN() => _familyNameEN != null;
-
-  // "MotherNameEN" field.
-  String? _motherNameEN;
-  String get motherNameEN => _motherNameEN ?? '';
-  set motherNameEN(String? val) => _motherNameEN = val;
-
-  bool hasMotherNameEN() => _motherNameEN != null;
-
-  // "BirthOfPlace" field.
-  String? _birthOfPlace;
-  String get birthOfPlace => _birthOfPlace ?? '';
-  set birthOfPlace(String? val) => _birthOfPlace = val;
-
-  bool hasBirthOfPlace() => _birthOfPlace != null;
-
-  // "Gender" field.
+  // "gender" field.
   String? _gender;
   String get gender => _gender ?? '';
   set gender(String? val) => _gender = val;
 
   bool hasGender() => _gender != null;
 
-  // "Nationality" field.
-  String? _nationality;
-  String get nationality => _nationality ?? '';
-  set nationality(String? val) => _nationality = val;
+  // "middleNameAr" field.
+  String? _middleNameAr;
+  String get middleNameAr => _middleNameAr ?? '';
+  set middleNameAr(String? val) => _middleNameAr = val;
 
-  bool hasNationality() => _nationality != null;
+  bool hasMiddleNameAr() => _middleNameAr != null;
 
-  // "ResidentOfTheCountry" field.
-  String? _residentOfTheCountry;
-  String get residentOfTheCountry => _residentOfTheCountry ?? '';
-  set residentOfTheCountry(String? val) => _residentOfTheCountry = val;
+  // "mobileNumber" field.
+  String? _mobileNumber;
+  String get mobileNumber => _mobileNumber ?? '';
+  set mobileNumber(String? val) => _mobileNumber = val;
 
-  bool hasResidentOfTheCountry() => _residentOfTheCountry != null;
-
-  // "IsUSPassportHolder" field.
-  String? _isUSPassportHolder;
-  String get isUSPassportHolder => _isUSPassportHolder ?? '';
-  set isUSPassportHolder(String? val) => _isUSPassportHolder = val;
-
-  bool hasIsUSPassportHolder() => _isUSPassportHolder != null;
-
-  // "Profession" field.
-  String? _profession;
-  String get profession => _profession ?? '';
-  set profession(String? val) => _profession = val;
-
-  bool hasProfession() => _profession != null;
-
-  // "PlaceOfWork" field.
-  String? _placeOfWork;
-  String get placeOfWork => _placeOfWork ?? '';
-  set placeOfWork(String? val) => _placeOfWork = val;
-
-  bool hasPlaceOfWork() => _placeOfWork != null;
-
-  // "MonthlyInComeDollar" field.
-  String? _monthlyInComeDollar;
-  String get monthlyInComeDollar => _monthlyInComeDollar ?? '';
-  set monthlyInComeDollar(String? val) => _monthlyInComeDollar = val;
-
-  bool hasMonthlyInComeDollar() => _monthlyInComeDollar != null;
+  bool hasMobileNumber() => _mobileNumber != null;
 
   // "cityCode" field.
   String? _cityCode;
@@ -220,33 +144,103 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasCityCode() => _cityCode != null;
 
-  // "areaCode" field.
-  String? _areaCode;
-  String get areaCode => _areaCode ?? '';
-  set areaCode(String? val) => _areaCode = val;
+  // "customerDocuments" field.
+  List<CustomerDocumentsStruct>? _customerDocuments;
+  List<CustomerDocumentsStruct> get customerDocuments =>
+      _customerDocuments ?? const [];
+  set customerDocuments(List<CustomerDocumentsStruct>? val) =>
+      _customerDocuments = val;
 
-  bool hasAreaCode() => _areaCode != null;
+  void updateCustomerDocuments(
+      Function(List<CustomerDocumentsStruct>) updateFn) {
+    updateFn(_customerDocuments ??= []);
+  }
 
-  // "AddressText" field.
-  String? _addressText;
-  String get addressText => _addressText ?? '';
-  set addressText(String? val) => _addressText = val;
+  bool hasCustomerDocuments() => _customerDocuments != null;
 
-  bool hasAddressText() => _addressText != null;
+  // "mobileNumberVerified" field.
+  String? _mobileNumberVerified;
+  String get mobileNumberVerified => _mobileNumberVerified ?? '';
+  set mobileNumberVerified(String? val) => _mobileNumberVerified = val;
 
-  // "IsTrueBeneficiaryAccount" field.
-  String? _isTrueBeneficiaryAccount;
-  String get isTrueBeneficiaryAccount => _isTrueBeneficiaryAccount ?? '';
-  set isTrueBeneficiaryAccount(String? val) => _isTrueBeneficiaryAccount = val;
+  bool hasMobileNumberVerified() => _mobileNumberVerified != null;
 
-  bool hasIsTrueBeneficiaryAccount() => _isTrueBeneficiaryAccount != null;
+  // "thirdName" field.
+  String? _thirdName;
+  String get thirdName => _thirdName ?? '';
+  set thirdName(String? val) => _thirdName = val;
 
-  // "TrueBeneficiaryName" field.
+  bool hasThirdName() => _thirdName != null;
+
+  // "idNumber" field.
+  String? _idNumber;
+  String get idNumber => _idNumber ?? '';
+  set idNumber(String? val) => _idNumber = val;
+
+  bool hasIdNumber() => _idNumber != null;
+
+  // "countryId" field.
+  String? _countryId;
+  String get countryId => _countryId ?? '';
+  set countryId(String? val) => _countryId = val;
+
+  bool hasCountryId() => _countryId != null;
+
+  // "customerStatus" field.
+  String? _customerStatus;
+  String get customerStatus => _customerStatus ?? '';
+  set customerStatus(String? val) => _customerStatus = val;
+
+  bool hasCustomerStatus() => _customerStatus != null;
+
+  // "trueBeneficiaryName" field.
   String? _trueBeneficiaryName;
   String get trueBeneficiaryName => _trueBeneficiaryName ?? '';
   set trueBeneficiaryName(String? val) => _trueBeneficiaryName = val;
 
   bool hasTrueBeneficiaryName() => _trueBeneficiaryName != null;
+
+  // "birthPlace" field.
+  String? _birthPlace;
+  String get birthPlace => _birthPlace ?? '';
+  set birthPlace(String? val) => _birthPlace = val;
+
+  bool hasBirthPlace() => _birthPlace != null;
+
+  // "emailAddress" field.
+  String? _emailAddress;
+  String get emailAddress => _emailAddress ?? '';
+  set emailAddress(String? val) => _emailAddress = val;
+
+  bool hasEmailAddress() => _emailAddress != null;
+
+  // "nationalityCode" field.
+  String? _nationalityCode;
+  String get nationalityCode => _nationalityCode ?? '';
+  set nationalityCode(String? val) => _nationalityCode = val;
+
+  bool hasNationalityCode() => _nationalityCode != null;
+
+  // "localPepFullName" field.
+  String? _localPepFullName;
+  String get localPepFullName => _localPepFullName ?? '';
+  set localPepFullName(String? val) => _localPepFullName = val;
+
+  bool hasLocalPepFullName() => _localPepFullName != null;
+
+  // "isUsPassportHolder" field.
+  bool? _isUsPassportHolder;
+  bool get isUsPassportHolder => _isUsPassportHolder ?? false;
+  set isUsPassportHolder(bool? val) => _isUsPassportHolder = val;
+
+  bool hasIsUsPassportHolder() => _isUsPassportHolder != null;
+
+  // "motherNameEn" field.
+  String? _motherNameEn;
+  String get motherNameEn => _motherNameEn ?? '';
+  set motherNameEn(String? val) => _motherNameEn = val;
+
+  bool hasMotherNameEn() => _motherNameEn != null;
 
   // "relationShipWithTrueBeneficiary" field.
   String? _relationShipWithTrueBeneficiary;
@@ -258,26 +252,12 @@ class AuthenticatedUserStruct extends BaseStruct {
   bool hasRelationShipWithTrueBeneficiary() =>
       _relationShipWithTrueBeneficiary != null;
 
-  // "isPEP" field.
-  String? _isPEP;
-  String get isPEP => _isPEP ?? '';
-  set isPEP(String? val) => _isPEP = val;
+  // "familyName" field.
+  String? _familyName;
+  String get familyName => _familyName ?? '';
+  set familyName(String? val) => _familyName = val;
 
-  bool hasIsPEP() => _isPEP != null;
-
-  // "localPepFullName" field.
-  String? _localPepFullName;
-  String get localPepFullName => _localPepFullName ?? '';
-  set localPepFullName(String? val) => _localPepFullName = val;
-
-  bool hasLocalPepFullName() => _localPepFullName != null;
-
-  // "latinPepFullName" field.
-  String? _latinPepFullName;
-  String get latinPepFullName => _latinPepFullName ?? '';
-  set latinPepFullName(String? val) => _latinPepFullName = val;
-
-  bool hasLatinPepFullName() => _latinPepFullName != null;
+  bool hasFamilyName() => _familyName != null;
 
   // "relationshipWithPep" field.
   String? _relationshipWithPep;
@@ -286,94 +266,203 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasRelationshipWithPep() => _relationshipWithPep != null;
 
-  // "pepPosition" field.
-  String? _pepPosition;
-  String get pepPosition => _pepPosition ?? '';
-  set pepPosition(String? val) => _pepPosition = val;
+  // "placeOfWork" field.
+  String? _placeOfWork;
+  String get placeOfWork => _placeOfWork ?? '';
+  set placeOfWork(String? val) => _placeOfWork = val;
 
-  bool hasPepPosition() => _pepPosition != null;
+  bool hasPlaceOfWork() => _placeOfWork != null;
 
-  // "mobileNumber" field.
-  String? _mobileNumber;
-  String get mobileNumber => _mobileNumber ?? '';
-  set mobileNumber(String? val) => _mobileNumber = val;
+  // "familyNameAr" field.
+  String? _familyNameAr;
+  String get familyNameAr => _familyNameAr ?? '';
+  set familyNameAr(String? val) => _familyNameAr = val;
 
-  bool hasMobileNumber() => _mobileNumber != null;
+  bool hasFamilyNameAr() => _familyNameAr != null;
 
-  // "prefixMobile" field.
-  String? _prefixMobile;
-  String get prefixMobile => _prefixMobile ?? '+970';
-  set prefixMobile(String? val) => _prefixMobile = val;
+  // "latinPepFullName" field.
+  String? _latinPepFullName;
+  String get latinPepFullName => _latinPepFullName ?? '';
+  set latinPepFullName(String? val) => _latinPepFullName = val;
 
-  bool hasPrefixMobile() => _prefixMobile != null;
+  bool hasLatinPepFullName() => _latinPepFullName != null;
 
-  // "isRegisteredStatus" field.
-  bool? _isRegisteredStatus;
-  bool get isRegisteredStatus => _isRegisteredStatus ?? false;
-  set isRegisteredStatus(bool? val) => _isRegisteredStatus = val;
+  // "profession" field.
+  String? _profession;
+  String get profession => _profession ?? '';
+  set profession(String? val) => _profession = val;
 
-  bool hasIsRegisteredStatus() => _isRegisteredStatus != null;
+  bool hasProfession() => _profession != null;
 
-  // "email" field.
-  String? _email;
-  String get email => _email ?? '';
-  set email(String? val) => _email = val;
+  // "isMissingDocuments" field.
+  bool? _isMissingDocuments;
+  bool get isMissingDocuments => _isMissingDocuments ?? false;
+  set isMissingDocuments(bool? val) => _isMissingDocuments = val;
 
-  bool hasEmail() => _email != null;
+  bool hasIsMissingDocuments() => _isMissingDocuments != null;
 
-  // "hashedOTP" field.
-  String? _hashedOTP;
-  String get hashedOTP => _hashedOTP ?? '';
-  set hashedOTP(String? val) => _hashedOTP = val;
+  // "idType" field.
+  String? _idType;
+  String get idType => _idType ?? '';
+  set idType(String? val) => _idType = val;
 
-  bool hasHashedOTP() => _hashedOTP != null;
+  bool hasIdType() => _idType != null;
 
-  // "DateOfBirth" field.
-  String? _dateOfBirth;
-  String get dateOfBirth => _dateOfBirth ?? '';
-  set dateOfBirth(String? val) => _dateOfBirth = val;
+  // "address" field.
+  String? _address;
+  String get address => _address ?? '';
+  set address(String? val) => _address = val;
 
-  bool hasDateOfBirth() => _dateOfBirth != null;
+  bool hasAddress() => _address != null;
+
+  // "mobileNumber2" field.
+  String? _mobileNumber2;
+  String get mobileNumber2 => _mobileNumber2 ?? '';
+  set mobileNumber2(String? val) => _mobileNumber2 = val;
+
+  bool hasMobileNumber2() => _mobileNumber2 != null;
+
+  // "mobileNumberPrefix" field.
+  String? _mobileNumberPrefix;
+  String get mobileNumberPrefix => _mobileNumberPrefix ?? '';
+  set mobileNumberPrefix(String? val) => _mobileNumberPrefix = val;
+
+  bool hasMobileNumberPrefix() => _mobileNumberPrefix != null;
+
+  // "isPEP" field.
+  bool? _isPEP;
+  bool get isPEP => _isPEP ?? false;
+  set isPEP(bool? val) => _isPEP = val;
+
+  bool hasIsPEP() => _isPEP != null;
+
+  // "encodedId" field.
+  String? _encodedId;
+  String get encodedId => _encodedId ?? '';
+  set encodedId(String? val) => _encodedId = val;
+
+  bool hasEncodedId() => _encodedId != null;
+
+  // "birthDate" field.
+  String? _birthDate;
+  String get birthDate => _birthDate ?? '';
+  set birthDate(String? val) => _birthDate = val;
+
+  bool hasBirthDate() => _birthDate != null;
+
+  // "firstName" field.
+  String? _firstName;
+  String get firstName => _firstName ?? '';
+  set firstName(String? val) => _firstName = val;
+
+  bool hasFirstName() => _firstName != null;
+
+  // "emailVerified" field.
+  String? _emailVerified;
+  String get emailVerified => _emailVerified ?? '';
+  set emailVerified(String? val) => _emailVerified = val;
+
+  bool hasEmailVerified() => _emailVerified != null;
+
+  // "areaCode" field.
+  String? _areaCode;
+  String get areaCode => _areaCode ?? '';
+  set areaCode(String? val) => _areaCode = val;
+
+  bool hasAreaCode() => _areaCode != null;
+
+  // "isTrueAccountBeneficiary" field.
+  bool? _isTrueAccountBeneficiary;
+  bool get isTrueAccountBeneficiary => _isTrueAccountBeneficiary ?? false;
+  set isTrueAccountBeneficiary(bool? val) => _isTrueAccountBeneficiary = val;
+
+  bool hasIsTrueAccountBeneficiary() => _isTrueAccountBeneficiary != null;
+
+  // "isDeviceRegistered" field.
+  bool? _isDeviceRegistered;
+  bool get isDeviceRegistered => _isDeviceRegistered ?? false;
+  set isDeviceRegistered(bool? val) => _isDeviceRegistered = val;
+
+  bool hasIsDeviceRegistered() => _isDeviceRegistered != null;
+
+  // "middleName" field.
+  String? _middleName;
+  String get middleName => _middleName ?? '';
+  set middleName(String? val) => _middleName = val;
+
+  bool hasMiddleName() => _middleName != null;
+
+  // "firstNameAr" field.
+  String? _firstNameAr;
+  String get firstNameAr => _firstNameAr ?? '';
+  set firstNameAr(String? val) => _firstNameAr = val;
+
+  bool hasFirstNameAr() => _firstNameAr != null;
+
+  // "monthlyIncomeUsd" field.
+  String? _monthlyIncomeUsd;
+  String get monthlyIncomeUsd => _monthlyIncomeUsd ?? '';
+  set monthlyIncomeUsd(String? val) => _monthlyIncomeUsd = val;
+
+  bool hasMonthlyIncomeUsd() => _monthlyIncomeUsd != null;
+
+  // "residencyType" field.
+  String? _residencyType;
+  String get residencyType => _residencyType ?? '';
+  set residencyType(String? val) => _residencyType = val;
+
+  bool hasResidencyType() => _residencyType != null;
 
   static AuthenticatedUserStruct fromMap(Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
-        idNumber: data['idNumber'] as String?,
-        idType: data['idType'] as String?,
-        firstNameAR: data['FirstNameAR'] as String?,
-        fatherNameAR: data['FatherNameAR'] as String?,
-        grandFatherNameAR: data['GrandFatherNameAR'] as String?,
-        familyNameAR: data['FamilyNameAR'] as String?,
-        firstNameEN: data['FirstNameEN'] as String?,
-        fatherNameEN: data['FatherNameEN'] as String?,
-        grandFatherNameEN: data['GrandFatherNameEN'] as String?,
-        familyNameEN: data['FamilyNameEN'] as String?,
-        motherNameEN: data['MotherNameEN'] as String?,
-        birthOfPlace: data['BirthOfPlace'] as String?,
-        gender: data['Gender'] as String?,
-        nationality: data['Nationality'] as String?,
-        residentOfTheCountry: data['ResidentOfTheCountry'] as String?,
-        isUSPassportHolder: data['IsUSPassportHolder'] as String?,
-        profession: data['Profession'] as String?,
-        placeOfWork: data['PlaceOfWork'] as String?,
-        monthlyInComeDollar: data['MonthlyInComeDollar'] as String?,
+        correctionReason: data['correctionReason'] as String?,
+        pepPosition: data['pepPosition'] as String?,
+        thirdNameAr: data['thirdNameAr'] as String?,
+        gender: data['gender'] as String?,
+        middleNameAr: data['middleNameAr'] as String?,
+        mobileNumber: data['mobileNumber'] as String?,
         cityCode: data['cityCode'] as String?,
-        areaCode: data['areaCode'] as String?,
-        addressText: data['AddressText'] as String?,
-        isTrueBeneficiaryAccount: data['IsTrueBeneficiaryAccount'] as String?,
-        trueBeneficiaryName: data['TrueBeneficiaryName'] as String?,
+        customerDocuments: getStructList(
+          data['customerDocuments'],
+          CustomerDocumentsStruct.fromMap,
+        ),
+        mobileNumberVerified: data['mobileNumberVerified'] as String?,
+        thirdName: data['thirdName'] as String?,
+        idNumber: data['idNumber'] as String?,
+        countryId: data['countryId'] as String?,
+        customerStatus: data['customerStatus'] as String?,
+        trueBeneficiaryName: data['trueBeneficiaryName'] as String?,
+        birthPlace: data['birthPlace'] as String?,
+        emailAddress: data['emailAddress'] as String?,
+        nationalityCode: data['nationalityCode'] as String?,
+        localPepFullName: data['localPepFullName'] as String?,
+        isUsPassportHolder: data['isUsPassportHolder'] as bool?,
+        motherNameEn: data['motherNameEn'] as String?,
         relationShipWithTrueBeneficiary:
             data['relationShipWithTrueBeneficiary'] as String?,
-        isPEP: data['isPEP'] as String?,
-        localPepFullName: data['localPepFullName'] as String?,
-        latinPepFullName: data['latinPepFullName'] as String?,
+        familyName: data['familyName'] as String?,
         relationshipWithPep: data['relationshipWithPep'] as String?,
-        pepPosition: data['pepPosition'] as String?,
-        mobileNumber: data['mobileNumber'] as String?,
-        prefixMobile: data['prefixMobile'] as String?,
-        isRegisteredStatus: data['isRegisteredStatus'] as bool?,
-        email: data['email'] as String?,
-        hashedOTP: data['hashedOTP'] as String?,
-        dateOfBirth: data['DateOfBirth'] as String?,
+        placeOfWork: data['placeOfWork'] as String?,
+        familyNameAr: data['familyNameAr'] as String?,
+        latinPepFullName: data['latinPepFullName'] as String?,
+        profession: data['profession'] as String?,
+        isMissingDocuments: data['isMissingDocuments'] as bool?,
+        idType: data['idType'] as String?,
+        address: data['address'] as String?,
+        mobileNumber2: data['mobileNumber2'] as String?,
+        mobileNumberPrefix: data['mobileNumberPrefix'] as String?,
+        isPEP: data['isPEP'] as bool?,
+        encodedId: data['encodedId'] as String?,
+        birthDate: data['birthDate'] as String?,
+        firstName: data['firstName'] as String?,
+        emailVerified: data['emailVerified'] as String?,
+        areaCode: data['areaCode'] as String?,
+        isTrueAccountBeneficiary: data['isTrueAccountBeneficiary'] as bool?,
+        isDeviceRegistered: data['isDeviceRegistered'] as bool?,
+        middleName: data['middleName'] as String?,
+        firstNameAr: data['firstNameAr'] as String?,
+        monthlyIncomeUsd: data['monthlyIncomeUsd'] as String?,
+        residencyType: data['residencyType'] as String?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -381,188 +470,229 @@ class AuthenticatedUserStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'idNumber': _idNumber,
-        'idType': _idType,
-        'FirstNameAR': _firstNameAR,
-        'FatherNameAR': _fatherNameAR,
-        'GrandFatherNameAR': _grandFatherNameAR,
-        'FamilyNameAR': _familyNameAR,
-        'FirstNameEN': _firstNameEN,
-        'FatherNameEN': _fatherNameEN,
-        'GrandFatherNameEN': _grandFatherNameEN,
-        'FamilyNameEN': _familyNameEN,
-        'MotherNameEN': _motherNameEN,
-        'BirthOfPlace': _birthOfPlace,
-        'Gender': _gender,
-        'Nationality': _nationality,
-        'ResidentOfTheCountry': _residentOfTheCountry,
-        'IsUSPassportHolder': _isUSPassportHolder,
-        'Profession': _profession,
-        'PlaceOfWork': _placeOfWork,
-        'MonthlyInComeDollar': _monthlyInComeDollar,
-        'cityCode': _cityCode,
-        'areaCode': _areaCode,
-        'AddressText': _addressText,
-        'IsTrueBeneficiaryAccount': _isTrueBeneficiaryAccount,
-        'TrueBeneficiaryName': _trueBeneficiaryName,
-        'relationShipWithTrueBeneficiary': _relationShipWithTrueBeneficiary,
-        'isPEP': _isPEP,
-        'localPepFullName': _localPepFullName,
-        'latinPepFullName': _latinPepFullName,
-        'relationshipWithPep': _relationshipWithPep,
+        'correctionReason': _correctionReason,
         'pepPosition': _pepPosition,
+        'thirdNameAr': _thirdNameAr,
+        'gender': _gender,
+        'middleNameAr': _middleNameAr,
         'mobileNumber': _mobileNumber,
-        'prefixMobile': _prefixMobile,
-        'isRegisteredStatus': _isRegisteredStatus,
-        'email': _email,
-        'hashedOTP': _hashedOTP,
-        'DateOfBirth': _dateOfBirth,
+        'cityCode': _cityCode,
+        'customerDocuments': _customerDocuments?.map((e) => e.toMap()).toList(),
+        'mobileNumberVerified': _mobileNumberVerified,
+        'thirdName': _thirdName,
+        'idNumber': _idNumber,
+        'countryId': _countryId,
+        'customerStatus': _customerStatus,
+        'trueBeneficiaryName': _trueBeneficiaryName,
+        'birthPlace': _birthPlace,
+        'emailAddress': _emailAddress,
+        'nationalityCode': _nationalityCode,
+        'localPepFullName': _localPepFullName,
+        'isUsPassportHolder': _isUsPassportHolder,
+        'motherNameEn': _motherNameEn,
+        'relationShipWithTrueBeneficiary': _relationShipWithTrueBeneficiary,
+        'familyName': _familyName,
+        'relationshipWithPep': _relationshipWithPep,
+        'placeOfWork': _placeOfWork,
+        'familyNameAr': _familyNameAr,
+        'latinPepFullName': _latinPepFullName,
+        'profession': _profession,
+        'isMissingDocuments': _isMissingDocuments,
+        'idType': _idType,
+        'address': _address,
+        'mobileNumber2': _mobileNumber2,
+        'mobileNumberPrefix': _mobileNumberPrefix,
+        'isPEP': _isPEP,
+        'encodedId': _encodedId,
+        'birthDate': _birthDate,
+        'firstName': _firstName,
+        'emailVerified': _emailVerified,
+        'areaCode': _areaCode,
+        'isTrueAccountBeneficiary': _isTrueAccountBeneficiary,
+        'isDeviceRegistered': _isDeviceRegistered,
+        'middleName': _middleName,
+        'firstNameAr': _firstNameAr,
+        'monthlyIncomeUsd': _monthlyIncomeUsd,
+        'residencyType': _residencyType,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'idNumber': serializeParam(
-          _idNumber,
-          ParamType.String,
-        ),
-        'idType': serializeParam(
-          _idType,
-          ParamType.String,
-        ),
-        'FirstNameAR': serializeParam(
-          _firstNameAR,
-          ParamType.String,
-        ),
-        'FatherNameAR': serializeParam(
-          _fatherNameAR,
-          ParamType.String,
-        ),
-        'GrandFatherNameAR': serializeParam(
-          _grandFatherNameAR,
-          ParamType.String,
-        ),
-        'FamilyNameAR': serializeParam(
-          _familyNameAR,
-          ParamType.String,
-        ),
-        'FirstNameEN': serializeParam(
-          _firstNameEN,
-          ParamType.String,
-        ),
-        'FatherNameEN': serializeParam(
-          _fatherNameEN,
-          ParamType.String,
-        ),
-        'GrandFatherNameEN': serializeParam(
-          _grandFatherNameEN,
-          ParamType.String,
-        ),
-        'FamilyNameEN': serializeParam(
-          _familyNameEN,
-          ParamType.String,
-        ),
-        'MotherNameEN': serializeParam(
-          _motherNameEN,
-          ParamType.String,
-        ),
-        'BirthOfPlace': serializeParam(
-          _birthOfPlace,
-          ParamType.String,
-        ),
-        'Gender': serializeParam(
-          _gender,
-          ParamType.String,
-        ),
-        'Nationality': serializeParam(
-          _nationality,
-          ParamType.String,
-        ),
-        'ResidentOfTheCountry': serializeParam(
-          _residentOfTheCountry,
-          ParamType.String,
-        ),
-        'IsUSPassportHolder': serializeParam(
-          _isUSPassportHolder,
-          ParamType.String,
-        ),
-        'Profession': serializeParam(
-          _profession,
-          ParamType.String,
-        ),
-        'PlaceOfWork': serializeParam(
-          _placeOfWork,
-          ParamType.String,
-        ),
-        'MonthlyInComeDollar': serializeParam(
-          _monthlyInComeDollar,
-          ParamType.String,
-        ),
-        'cityCode': serializeParam(
-          _cityCode,
-          ParamType.String,
-        ),
-        'areaCode': serializeParam(
-          _areaCode,
-          ParamType.String,
-        ),
-        'AddressText': serializeParam(
-          _addressText,
-          ParamType.String,
-        ),
-        'IsTrueBeneficiaryAccount': serializeParam(
-          _isTrueBeneficiaryAccount,
-          ParamType.String,
-        ),
-        'TrueBeneficiaryName': serializeParam(
-          _trueBeneficiaryName,
-          ParamType.String,
-        ),
-        'relationShipWithTrueBeneficiary': serializeParam(
-          _relationShipWithTrueBeneficiary,
-          ParamType.String,
-        ),
-        'isPEP': serializeParam(
-          _isPEP,
-          ParamType.String,
-        ),
-        'localPepFullName': serializeParam(
-          _localPepFullName,
-          ParamType.String,
-        ),
-        'latinPepFullName': serializeParam(
-          _latinPepFullName,
-          ParamType.String,
-        ),
-        'relationshipWithPep': serializeParam(
-          _relationshipWithPep,
+        'correctionReason': serializeParam(
+          _correctionReason,
           ParamType.String,
         ),
         'pepPosition': serializeParam(
           _pepPosition,
           ParamType.String,
         ),
+        'thirdNameAr': serializeParam(
+          _thirdNameAr,
+          ParamType.String,
+        ),
+        'gender': serializeParam(
+          _gender,
+          ParamType.String,
+        ),
+        'middleNameAr': serializeParam(
+          _middleNameAr,
+          ParamType.String,
+        ),
         'mobileNumber': serializeParam(
           _mobileNumber,
           ParamType.String,
         ),
-        'prefixMobile': serializeParam(
-          _prefixMobile,
+        'cityCode': serializeParam(
+          _cityCode,
           ParamType.String,
         ),
-        'isRegisteredStatus': serializeParam(
-          _isRegisteredStatus,
+        'customerDocuments': serializeParam(
+          _customerDocuments,
+          ParamType.DataStruct,
+          isList: true,
+        ),
+        'mobileNumberVerified': serializeParam(
+          _mobileNumberVerified,
+          ParamType.String,
+        ),
+        'thirdName': serializeParam(
+          _thirdName,
+          ParamType.String,
+        ),
+        'idNumber': serializeParam(
+          _idNumber,
+          ParamType.String,
+        ),
+        'countryId': serializeParam(
+          _countryId,
+          ParamType.String,
+        ),
+        'customerStatus': serializeParam(
+          _customerStatus,
+          ParamType.String,
+        ),
+        'trueBeneficiaryName': serializeParam(
+          _trueBeneficiaryName,
+          ParamType.String,
+        ),
+        'birthPlace': serializeParam(
+          _birthPlace,
+          ParamType.String,
+        ),
+        'emailAddress': serializeParam(
+          _emailAddress,
+          ParamType.String,
+        ),
+        'nationalityCode': serializeParam(
+          _nationalityCode,
+          ParamType.String,
+        ),
+        'localPepFullName': serializeParam(
+          _localPepFullName,
+          ParamType.String,
+        ),
+        'isUsPassportHolder': serializeParam(
+          _isUsPassportHolder,
           ParamType.bool,
         ),
-        'email': serializeParam(
-          _email,
+        'motherNameEn': serializeParam(
+          _motherNameEn,
           ParamType.String,
         ),
-        'hashedOTP': serializeParam(
-          _hashedOTP,
+        'relationShipWithTrueBeneficiary': serializeParam(
+          _relationShipWithTrueBeneficiary,
           ParamType.String,
         ),
-        'DateOfBirth': serializeParam(
-          _dateOfBirth,
+        'familyName': serializeParam(
+          _familyName,
+          ParamType.String,
+        ),
+        'relationshipWithPep': serializeParam(
+          _relationshipWithPep,
+          ParamType.String,
+        ),
+        'placeOfWork': serializeParam(
+          _placeOfWork,
+          ParamType.String,
+        ),
+        'familyNameAr': serializeParam(
+          _familyNameAr,
+          ParamType.String,
+        ),
+        'latinPepFullName': serializeParam(
+          _latinPepFullName,
+          ParamType.String,
+        ),
+        'profession': serializeParam(
+          _profession,
+          ParamType.String,
+        ),
+        'isMissingDocuments': serializeParam(
+          _isMissingDocuments,
+          ParamType.bool,
+        ),
+        'idType': serializeParam(
+          _idType,
+          ParamType.String,
+        ),
+        'address': serializeParam(
+          _address,
+          ParamType.String,
+        ),
+        'mobileNumber2': serializeParam(
+          _mobileNumber2,
+          ParamType.String,
+        ),
+        'mobileNumberPrefix': serializeParam(
+          _mobileNumberPrefix,
+          ParamType.String,
+        ),
+        'isPEP': serializeParam(
+          _isPEP,
+          ParamType.bool,
+        ),
+        'encodedId': serializeParam(
+          _encodedId,
+          ParamType.String,
+        ),
+        'birthDate': serializeParam(
+          _birthDate,
+          ParamType.String,
+        ),
+        'firstName': serializeParam(
+          _firstName,
+          ParamType.String,
+        ),
+        'emailVerified': serializeParam(
+          _emailVerified,
+          ParamType.String,
+        ),
+        'areaCode': serializeParam(
+          _areaCode,
+          ParamType.String,
+        ),
+        'isTrueAccountBeneficiary': serializeParam(
+          _isTrueAccountBeneficiary,
+          ParamType.bool,
+        ),
+        'isDeviceRegistered': serializeParam(
+          _isDeviceRegistered,
+          ParamType.bool,
+        ),
+        'middleName': serializeParam(
+          _middleName,
+          ParamType.String,
+        ),
+        'firstNameAr': serializeParam(
+          _firstNameAr,
+          ParamType.String,
+        ),
+        'monthlyIncomeUsd': serializeParam(
+          _monthlyIncomeUsd,
+          ParamType.String,
+        ),
+        'residencyType': serializeParam(
+          _residencyType,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -570,148 +700,8 @@ class AuthenticatedUserStruct extends BaseStruct {
   static AuthenticatedUserStruct fromSerializableMap(
           Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
-        idNumber: deserializeParam(
-          data['idNumber'],
-          ParamType.String,
-          false,
-        ),
-        idType: deserializeParam(
-          data['idType'],
-          ParamType.String,
-          false,
-        ),
-        firstNameAR: deserializeParam(
-          data['FirstNameAR'],
-          ParamType.String,
-          false,
-        ),
-        fatherNameAR: deserializeParam(
-          data['FatherNameAR'],
-          ParamType.String,
-          false,
-        ),
-        grandFatherNameAR: deserializeParam(
-          data['GrandFatherNameAR'],
-          ParamType.String,
-          false,
-        ),
-        familyNameAR: deserializeParam(
-          data['FamilyNameAR'],
-          ParamType.String,
-          false,
-        ),
-        firstNameEN: deserializeParam(
-          data['FirstNameEN'],
-          ParamType.String,
-          false,
-        ),
-        fatherNameEN: deserializeParam(
-          data['FatherNameEN'],
-          ParamType.String,
-          false,
-        ),
-        grandFatherNameEN: deserializeParam(
-          data['GrandFatherNameEN'],
-          ParamType.String,
-          false,
-        ),
-        familyNameEN: deserializeParam(
-          data['FamilyNameEN'],
-          ParamType.String,
-          false,
-        ),
-        motherNameEN: deserializeParam(
-          data['MotherNameEN'],
-          ParamType.String,
-          false,
-        ),
-        birthOfPlace: deserializeParam(
-          data['BirthOfPlace'],
-          ParamType.String,
-          false,
-        ),
-        gender: deserializeParam(
-          data['Gender'],
-          ParamType.String,
-          false,
-        ),
-        nationality: deserializeParam(
-          data['Nationality'],
-          ParamType.String,
-          false,
-        ),
-        residentOfTheCountry: deserializeParam(
-          data['ResidentOfTheCountry'],
-          ParamType.String,
-          false,
-        ),
-        isUSPassportHolder: deserializeParam(
-          data['IsUSPassportHolder'],
-          ParamType.String,
-          false,
-        ),
-        profession: deserializeParam(
-          data['Profession'],
-          ParamType.String,
-          false,
-        ),
-        placeOfWork: deserializeParam(
-          data['PlaceOfWork'],
-          ParamType.String,
-          false,
-        ),
-        monthlyInComeDollar: deserializeParam(
-          data['MonthlyInComeDollar'],
-          ParamType.String,
-          false,
-        ),
-        cityCode: deserializeParam(
-          data['cityCode'],
-          ParamType.String,
-          false,
-        ),
-        areaCode: deserializeParam(
-          data['areaCode'],
-          ParamType.String,
-          false,
-        ),
-        addressText: deserializeParam(
-          data['AddressText'],
-          ParamType.String,
-          false,
-        ),
-        isTrueBeneficiaryAccount: deserializeParam(
-          data['IsTrueBeneficiaryAccount'],
-          ParamType.String,
-          false,
-        ),
-        trueBeneficiaryName: deserializeParam(
-          data['TrueBeneficiaryName'],
-          ParamType.String,
-          false,
-        ),
-        relationShipWithTrueBeneficiary: deserializeParam(
-          data['relationShipWithTrueBeneficiary'],
-          ParamType.String,
-          false,
-        ),
-        isPEP: deserializeParam(
-          data['isPEP'],
-          ParamType.String,
-          false,
-        ),
-        localPepFullName: deserializeParam(
-          data['localPepFullName'],
-          ParamType.String,
-          false,
-        ),
-        latinPepFullName: deserializeParam(
-          data['latinPepFullName'],
-          ParamType.String,
-          false,
-        ),
-        relationshipWithPep: deserializeParam(
-          data['relationshipWithPep'],
+        correctionReason: deserializeParam(
+          data['correctionReason'],
           ParamType.String,
           false,
         ),
@@ -720,33 +710,214 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        thirdNameAr: deserializeParam(
+          data['thirdNameAr'],
+          ParamType.String,
+          false,
+        ),
+        gender: deserializeParam(
+          data['gender'],
+          ParamType.String,
+          false,
+        ),
+        middleNameAr: deserializeParam(
+          data['middleNameAr'],
+          ParamType.String,
+          false,
+        ),
         mobileNumber: deserializeParam(
           data['mobileNumber'],
           ParamType.String,
           false,
         ),
-        prefixMobile: deserializeParam(
-          data['prefixMobile'],
+        cityCode: deserializeParam(
+          data['cityCode'],
           ParamType.String,
           false,
         ),
-        isRegisteredStatus: deserializeParam(
-          data['isRegisteredStatus'],
+        customerDocuments: deserializeStructParam<CustomerDocumentsStruct>(
+          data['customerDocuments'],
+          ParamType.DataStruct,
+          true,
+          structBuilder: CustomerDocumentsStruct.fromSerializableMap,
+        ),
+        mobileNumberVerified: deserializeParam(
+          data['mobileNumberVerified'],
+          ParamType.String,
+          false,
+        ),
+        thirdName: deserializeParam(
+          data['thirdName'],
+          ParamType.String,
+          false,
+        ),
+        idNumber: deserializeParam(
+          data['idNumber'],
+          ParamType.String,
+          false,
+        ),
+        countryId: deserializeParam(
+          data['countryId'],
+          ParamType.String,
+          false,
+        ),
+        customerStatus: deserializeParam(
+          data['customerStatus'],
+          ParamType.String,
+          false,
+        ),
+        trueBeneficiaryName: deserializeParam(
+          data['trueBeneficiaryName'],
+          ParamType.String,
+          false,
+        ),
+        birthPlace: deserializeParam(
+          data['birthPlace'],
+          ParamType.String,
+          false,
+        ),
+        emailAddress: deserializeParam(
+          data['emailAddress'],
+          ParamType.String,
+          false,
+        ),
+        nationalityCode: deserializeParam(
+          data['nationalityCode'],
+          ParamType.String,
+          false,
+        ),
+        localPepFullName: deserializeParam(
+          data['localPepFullName'],
+          ParamType.String,
+          false,
+        ),
+        isUsPassportHolder: deserializeParam(
+          data['isUsPassportHolder'],
           ParamType.bool,
           false,
         ),
-        email: deserializeParam(
-          data['email'],
+        motherNameEn: deserializeParam(
+          data['motherNameEn'],
           ParamType.String,
           false,
         ),
-        hashedOTP: deserializeParam(
-          data['hashedOTP'],
+        relationShipWithTrueBeneficiary: deserializeParam(
+          data['relationShipWithTrueBeneficiary'],
           ParamType.String,
           false,
         ),
-        dateOfBirth: deserializeParam(
-          data['DateOfBirth'],
+        familyName: deserializeParam(
+          data['familyName'],
+          ParamType.String,
+          false,
+        ),
+        relationshipWithPep: deserializeParam(
+          data['relationshipWithPep'],
+          ParamType.String,
+          false,
+        ),
+        placeOfWork: deserializeParam(
+          data['placeOfWork'],
+          ParamType.String,
+          false,
+        ),
+        familyNameAr: deserializeParam(
+          data['familyNameAr'],
+          ParamType.String,
+          false,
+        ),
+        latinPepFullName: deserializeParam(
+          data['latinPepFullName'],
+          ParamType.String,
+          false,
+        ),
+        profession: deserializeParam(
+          data['profession'],
+          ParamType.String,
+          false,
+        ),
+        isMissingDocuments: deserializeParam(
+          data['isMissingDocuments'],
+          ParamType.bool,
+          false,
+        ),
+        idType: deserializeParam(
+          data['idType'],
+          ParamType.String,
+          false,
+        ),
+        address: deserializeParam(
+          data['address'],
+          ParamType.String,
+          false,
+        ),
+        mobileNumber2: deserializeParam(
+          data['mobileNumber2'],
+          ParamType.String,
+          false,
+        ),
+        mobileNumberPrefix: deserializeParam(
+          data['mobileNumberPrefix'],
+          ParamType.String,
+          false,
+        ),
+        isPEP: deserializeParam(
+          data['isPEP'],
+          ParamType.bool,
+          false,
+        ),
+        encodedId: deserializeParam(
+          data['encodedId'],
+          ParamType.String,
+          false,
+        ),
+        birthDate: deserializeParam(
+          data['birthDate'],
+          ParamType.String,
+          false,
+        ),
+        firstName: deserializeParam(
+          data['firstName'],
+          ParamType.String,
+          false,
+        ),
+        emailVerified: deserializeParam(
+          data['emailVerified'],
+          ParamType.String,
+          false,
+        ),
+        areaCode: deserializeParam(
+          data['areaCode'],
+          ParamType.String,
+          false,
+        ),
+        isTrueAccountBeneficiary: deserializeParam(
+          data['isTrueAccountBeneficiary'],
+          ParamType.bool,
+          false,
+        ),
+        isDeviceRegistered: deserializeParam(
+          data['isDeviceRegistered'],
+          ParamType.bool,
+          false,
+        ),
+        middleName: deserializeParam(
+          data['middleName'],
+          ParamType.String,
+          false,
+        ),
+        firstNameAr: deserializeParam(
+          data['firstNameAr'],
+          ParamType.String,
+          false,
+        ),
+        monthlyIncomeUsd: deserializeParam(
+          data['monthlyIncomeUsd'],
+          ParamType.String,
+          false,
+        ),
+        residencyType: deserializeParam(
+          data['residencyType'],
           ParamType.String,
           false,
         ),
@@ -757,160 +928,191 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   @override
   bool operator ==(Object other) {
+    const listEquality = ListEquality();
     return other is AuthenticatedUserStruct &&
-        idNumber == other.idNumber &&
-        idType == other.idType &&
-        firstNameAR == other.firstNameAR &&
-        fatherNameAR == other.fatherNameAR &&
-        grandFatherNameAR == other.grandFatherNameAR &&
-        familyNameAR == other.familyNameAR &&
-        firstNameEN == other.firstNameEN &&
-        fatherNameEN == other.fatherNameEN &&
-        grandFatherNameEN == other.grandFatherNameEN &&
-        familyNameEN == other.familyNameEN &&
-        motherNameEN == other.motherNameEN &&
-        birthOfPlace == other.birthOfPlace &&
+        correctionReason == other.correctionReason &&
+        pepPosition == other.pepPosition &&
+        thirdNameAr == other.thirdNameAr &&
         gender == other.gender &&
-        nationality == other.nationality &&
-        residentOfTheCountry == other.residentOfTheCountry &&
-        isUSPassportHolder == other.isUSPassportHolder &&
-        profession == other.profession &&
-        placeOfWork == other.placeOfWork &&
-        monthlyInComeDollar == other.monthlyInComeDollar &&
+        middleNameAr == other.middleNameAr &&
+        mobileNumber == other.mobileNumber &&
         cityCode == other.cityCode &&
-        areaCode == other.areaCode &&
-        addressText == other.addressText &&
-        isTrueBeneficiaryAccount == other.isTrueBeneficiaryAccount &&
+        listEquality.equals(customerDocuments, other.customerDocuments) &&
+        mobileNumberVerified == other.mobileNumberVerified &&
+        thirdName == other.thirdName &&
+        idNumber == other.idNumber &&
+        countryId == other.countryId &&
+        customerStatus == other.customerStatus &&
         trueBeneficiaryName == other.trueBeneficiaryName &&
+        birthPlace == other.birthPlace &&
+        emailAddress == other.emailAddress &&
+        nationalityCode == other.nationalityCode &&
+        localPepFullName == other.localPepFullName &&
+        isUsPassportHolder == other.isUsPassportHolder &&
+        motherNameEn == other.motherNameEn &&
         relationShipWithTrueBeneficiary ==
             other.relationShipWithTrueBeneficiary &&
-        isPEP == other.isPEP &&
-        localPepFullName == other.localPepFullName &&
-        latinPepFullName == other.latinPepFullName &&
+        familyName == other.familyName &&
         relationshipWithPep == other.relationshipWithPep &&
-        pepPosition == other.pepPosition &&
-        mobileNumber == other.mobileNumber &&
-        prefixMobile == other.prefixMobile &&
-        isRegisteredStatus == other.isRegisteredStatus &&
-        email == other.email &&
-        hashedOTP == other.hashedOTP &&
-        dateOfBirth == other.dateOfBirth;
+        placeOfWork == other.placeOfWork &&
+        familyNameAr == other.familyNameAr &&
+        latinPepFullName == other.latinPepFullName &&
+        profession == other.profession &&
+        isMissingDocuments == other.isMissingDocuments &&
+        idType == other.idType &&
+        address == other.address &&
+        mobileNumber2 == other.mobileNumber2 &&
+        mobileNumberPrefix == other.mobileNumberPrefix &&
+        isPEP == other.isPEP &&
+        encodedId == other.encodedId &&
+        birthDate == other.birthDate &&
+        firstName == other.firstName &&
+        emailVerified == other.emailVerified &&
+        areaCode == other.areaCode &&
+        isTrueAccountBeneficiary == other.isTrueAccountBeneficiary &&
+        isDeviceRegistered == other.isDeviceRegistered &&
+        middleName == other.middleName &&
+        firstNameAr == other.firstNameAr &&
+        monthlyIncomeUsd == other.monthlyIncomeUsd &&
+        residencyType == other.residencyType;
   }
 
   @override
   int get hashCode => const ListEquality().hash([
-        idNumber,
-        idType,
-        firstNameAR,
-        fatherNameAR,
-        grandFatherNameAR,
-        familyNameAR,
-        firstNameEN,
-        fatherNameEN,
-        grandFatherNameEN,
-        familyNameEN,
-        motherNameEN,
-        birthOfPlace,
-        gender,
-        nationality,
-        residentOfTheCountry,
-        isUSPassportHolder,
-        profession,
-        placeOfWork,
-        monthlyInComeDollar,
-        cityCode,
-        areaCode,
-        addressText,
-        isTrueBeneficiaryAccount,
-        trueBeneficiaryName,
-        relationShipWithTrueBeneficiary,
-        isPEP,
-        localPepFullName,
-        latinPepFullName,
-        relationshipWithPep,
+        correctionReason,
         pepPosition,
+        thirdNameAr,
+        gender,
+        middleNameAr,
         mobileNumber,
-        prefixMobile,
-        isRegisteredStatus,
-        email,
-        hashedOTP,
-        dateOfBirth
+        cityCode,
+        customerDocuments,
+        mobileNumberVerified,
+        thirdName,
+        idNumber,
+        countryId,
+        customerStatus,
+        trueBeneficiaryName,
+        birthPlace,
+        emailAddress,
+        nationalityCode,
+        localPepFullName,
+        isUsPassportHolder,
+        motherNameEn,
+        relationShipWithTrueBeneficiary,
+        familyName,
+        relationshipWithPep,
+        placeOfWork,
+        familyNameAr,
+        latinPepFullName,
+        profession,
+        isMissingDocuments,
+        idType,
+        address,
+        mobileNumber2,
+        mobileNumberPrefix,
+        isPEP,
+        encodedId,
+        birthDate,
+        firstName,
+        emailVerified,
+        areaCode,
+        isTrueAccountBeneficiary,
+        isDeviceRegistered,
+        middleName,
+        firstNameAr,
+        monthlyIncomeUsd,
+        residencyType
       ]);
 }
 
 AuthenticatedUserStruct createAuthenticatedUserStruct({
-  String? idNumber,
-  String? idType,
-  String? firstNameAR,
-  String? fatherNameAR,
-  String? grandFatherNameAR,
-  String? familyNameAR,
-  String? firstNameEN,
-  String? fatherNameEN,
-  String? grandFatherNameEN,
-  String? familyNameEN,
-  String? motherNameEN,
-  String? birthOfPlace,
-  String? gender,
-  String? nationality,
-  String? residentOfTheCountry,
-  String? isUSPassportHolder,
-  String? profession,
-  String? placeOfWork,
-  String? monthlyInComeDollar,
-  String? cityCode,
-  String? areaCode,
-  String? addressText,
-  String? isTrueBeneficiaryAccount,
-  String? trueBeneficiaryName,
-  String? relationShipWithTrueBeneficiary,
-  String? isPEP,
-  String? localPepFullName,
-  String? latinPepFullName,
-  String? relationshipWithPep,
+  String? correctionReason,
   String? pepPosition,
+  String? thirdNameAr,
+  String? gender,
+  String? middleNameAr,
   String? mobileNumber,
-  String? prefixMobile,
-  bool? isRegisteredStatus,
-  String? email,
-  String? hashedOTP,
-  String? dateOfBirth,
+  String? cityCode,
+  String? mobileNumberVerified,
+  String? thirdName,
+  String? idNumber,
+  String? countryId,
+  String? customerStatus,
+  String? trueBeneficiaryName,
+  String? birthPlace,
+  String? emailAddress,
+  String? nationalityCode,
+  String? localPepFullName,
+  bool? isUsPassportHolder,
+  String? motherNameEn,
+  String? relationShipWithTrueBeneficiary,
+  String? familyName,
+  String? relationshipWithPep,
+  String? placeOfWork,
+  String? familyNameAr,
+  String? latinPepFullName,
+  String? profession,
+  bool? isMissingDocuments,
+  String? idType,
+  String? address,
+  String? mobileNumber2,
+  String? mobileNumberPrefix,
+  bool? isPEP,
+  String? encodedId,
+  String? birthDate,
+  String? firstName,
+  String? emailVerified,
+  String? areaCode,
+  bool? isTrueAccountBeneficiary,
+  bool? isDeviceRegistered,
+  String? middleName,
+  String? firstNameAr,
+  String? monthlyIncomeUsd,
+  String? residencyType,
 }) =>
     AuthenticatedUserStruct(
-      idNumber: idNumber,
-      idType: idType,
-      firstNameAR: firstNameAR,
-      fatherNameAR: fatherNameAR,
-      grandFatherNameAR: grandFatherNameAR,
-      familyNameAR: familyNameAR,
-      firstNameEN: firstNameEN,
-      fatherNameEN: fatherNameEN,
-      grandFatherNameEN: grandFatherNameEN,
-      familyNameEN: familyNameEN,
-      motherNameEN: motherNameEN,
-      birthOfPlace: birthOfPlace,
-      gender: gender,
-      nationality: nationality,
-      residentOfTheCountry: residentOfTheCountry,
-      isUSPassportHolder: isUSPassportHolder,
-      profession: profession,
-      placeOfWork: placeOfWork,
-      monthlyInComeDollar: monthlyInComeDollar,
-      cityCode: cityCode,
-      areaCode: areaCode,
-      addressText: addressText,
-      isTrueBeneficiaryAccount: isTrueBeneficiaryAccount,
-      trueBeneficiaryName: trueBeneficiaryName,
-      relationShipWithTrueBeneficiary: relationShipWithTrueBeneficiary,
-      isPEP: isPEP,
-      localPepFullName: localPepFullName,
-      latinPepFullName: latinPepFullName,
-      relationshipWithPep: relationshipWithPep,
+      correctionReason: correctionReason,
       pepPosition: pepPosition,
+      thirdNameAr: thirdNameAr,
+      gender: gender,
+      middleNameAr: middleNameAr,
       mobileNumber: mobileNumber,
-      prefixMobile: prefixMobile,
-      isRegisteredStatus: isRegisteredStatus,
-      email: email,
-      hashedOTP: hashedOTP,
-      dateOfBirth: dateOfBirth,
+      cityCode: cityCode,
+      mobileNumberVerified: mobileNumberVerified,
+      thirdName: thirdName,
+      idNumber: idNumber,
+      countryId: countryId,
+      customerStatus: customerStatus,
+      trueBeneficiaryName: trueBeneficiaryName,
+      birthPlace: birthPlace,
+      emailAddress: emailAddress,
+      nationalityCode: nationalityCode,
+      localPepFullName: localPepFullName,
+      isUsPassportHolder: isUsPassportHolder,
+      motherNameEn: motherNameEn,
+      relationShipWithTrueBeneficiary: relationShipWithTrueBeneficiary,
+      familyName: familyName,
+      relationshipWithPep: relationshipWithPep,
+      placeOfWork: placeOfWork,
+      familyNameAr: familyNameAr,
+      latinPepFullName: latinPepFullName,
+      profession: profession,
+      isMissingDocuments: isMissingDocuments,
+      idType: idType,
+      address: address,
+      mobileNumber2: mobileNumber2,
+      mobileNumberPrefix: mobileNumberPrefix,
+      isPEP: isPEP,
+      encodedId: encodedId,
+      birthDate: birthDate,
+      firstName: firstName,
+      emailVerified: emailVerified,
+      areaCode: areaCode,
+      isTrueAccountBeneficiary: isTrueAccountBeneficiary,
+      isDeviceRegistered: isDeviceRegistered,
+      middleName: middleName,
+      firstNameAr: firstNameAr,
+      monthlyIncomeUsd: monthlyIncomeUsd,
+      residencyType: residencyType,
     );
