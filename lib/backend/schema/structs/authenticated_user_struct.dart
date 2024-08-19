@@ -50,6 +50,7 @@ class AuthenticatedUserStruct extends BaseStruct {
     String? firstNameAr,
     String? monthlyIncomeUsd,
     String? residencyType,
+    String? accessToken,
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
         _thirdNameAr = thirdNameAr,
@@ -93,7 +94,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         _middleName = middleName,
         _firstNameAr = firstNameAr,
         _monthlyIncomeUsd = monthlyIncomeUsd,
-        _residencyType = residencyType;
+        _residencyType = residencyType,
+        _accessToken = accessToken;
 
   // "correctionReason" field.
   String? _correctionReason;
@@ -413,6 +415,13 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasResidencyType() => _residencyType != null;
 
+  // "accessToken" field.
+  String? _accessToken;
+  String get accessToken => _accessToken ?? '';
+  set accessToken(String? val) => _accessToken = val;
+
+  bool hasAccessToken() => _accessToken != null;
+
   static AuthenticatedUserStruct fromMap(Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
         correctionReason: data['correctionReason'] as String?,
@@ -463,6 +472,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         firstNameAr: data['firstNameAr'] as String?,
         monthlyIncomeUsd: data['monthlyIncomeUsd'] as String?,
         residencyType: data['residencyType'] as String?,
+        accessToken: data['accessToken'] as String?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -514,6 +524,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         'firstNameAr': _firstNameAr,
         'monthlyIncomeUsd': _monthlyIncomeUsd,
         'residencyType': _residencyType,
+        'accessToken': _accessToken,
       }.withoutNulls;
 
   @override
@@ -693,6 +704,10 @@ class AuthenticatedUserStruct extends BaseStruct {
         ),
         'residencyType': serializeParam(
           _residencyType,
+          ParamType.String,
+        ),
+        'accessToken': serializeParam(
+          _accessToken,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -921,6 +936,11 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        accessToken: deserializeParam(
+          data['accessToken'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -974,7 +994,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         middleName == other.middleName &&
         firstNameAr == other.firstNameAr &&
         monthlyIncomeUsd == other.monthlyIncomeUsd &&
-        residencyType == other.residencyType;
+        residencyType == other.residencyType &&
+        accessToken == other.accessToken;
   }
 
   @override
@@ -1022,7 +1043,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         middleName,
         firstNameAr,
         monthlyIncomeUsd,
-        residencyType
+        residencyType,
+        accessToken
       ]);
 }
 
@@ -1070,6 +1092,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   String? firstNameAr,
   String? monthlyIncomeUsd,
   String? residencyType,
+  String? accessToken,
 }) =>
     AuthenticatedUserStruct(
       correctionReason: correctionReason,
@@ -1115,4 +1138,5 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       firstNameAr: firstNameAr,
       monthlyIncomeUsd: monthlyIncomeUsd,
       residencyType: residencyType,
+      accessToken: accessToken,
     );
