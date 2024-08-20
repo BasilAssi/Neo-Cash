@@ -1,6 +1,7 @@
 export '/backend/schema/util/schema_util.dart';
 
 export 'authenticated_user_struct.dart';
+export 'customer_uploaded_documents_struct.dart';
 export 'device_info_struct.dart';
 export 'lookup_cites_data_struct.dart';
 export 'lookup_cities_a_p_i_response_struct.dart';

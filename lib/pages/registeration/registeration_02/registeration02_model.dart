@@ -23,9 +23,27 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
   // Stores action output result for [Custom Action - isNetworkAvailable] action in registeration_02 widget.
   bool? isNetworkAvaiableOutput;
   DateTime? datePicked;
-  // State field(s) for CitiesDropDown widget.
-  String? citiesDropDownValue;
-  FormFieldController<String>? citiesDropDownValueController;
+  // State field(s) for CityTextField widget.
+  FocusNode? cityTextFieldFocusNode;
+  TextEditingController? cityTextFieldTextController;
+  String? Function(BuildContext, String?)? cityTextFieldTextControllerValidator;
+  String? _cityTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'yqzok9cw' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '2z8oap5p' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for MotherNameENTextField widget.
   FocusNode? motherNameENTextFieldFocusNode;
   TextEditingController? motherNameENTextFieldTextController;
@@ -35,10 +53,15 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'yqzok9cw' /* الحقل مطلوب */,
+        'caq9antt' /* الحقل مطلوب */,
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'wiu3u5p7' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'd9xrc6bn' /* اسم الام يجب ان يكون باللغة ال... */,
@@ -56,12 +79,17 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
 
   @override
   void initState(BuildContext context) {
+    cityTextFieldTextControllerValidator =
+        _cityTextFieldTextControllerValidator;
     motherNameENTextFieldTextControllerValidator =
         _motherNameENTextFieldTextControllerValidator;
   }
 
   @override
   void dispose() {
+    cityTextFieldFocusNode?.dispose();
+    cityTextFieldTextController?.dispose();
+
     motherNameENTextFieldFocusNode?.dispose();
     motherNameENTextFieldTextController?.dispose();
   }

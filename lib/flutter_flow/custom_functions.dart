@@ -68,3 +68,35 @@ Color? gradientColor(
   // ).createShader(Rect.fromLTRB(0, 0, 0, 200));
   return color1;
 }
+
+String isValidPIN1(
+  String pin,
+  String language,
+) {
+  if (pin.length != 4) {
+    return language == 'ar'
+        ? 'يجب أن يتكون الرمز السري من 4 أرقام فقط.'
+        : 'PIN must be exactly 4 digits long.';
+  }
+
+  // Check for full repetition (e.g., 1111, 2222, 3333)
+  if (pin[0] == pin[1] && pin[1] == pin[2] && pin[2] == pin[3]) {
+    return language == 'ar'
+        ? 'يجب ألا يحتوي الرمز السري على نفس الرقم مكرر أربع مرات.'
+        : 'PIN should not contain the same digit repeated four times.';
+  }
+
+  // Check for full ascending or descending sequences (e.g., 1234, 4321)
+  if ((int.parse(pin[1]) == int.parse(pin[0]) + 1 &&
+          int.parse(pin[2]) == int.parse(pin[1]) + 1 &&
+          int.parse(pin[3]) == int.parse(pin[2]) + 1) ||
+      (int.parse(pin[1]) == int.parse(pin[0]) - 1 &&
+          int.parse(pin[2]) == int.parse(pin[1]) - 1 &&
+          int.parse(pin[3]) == int.parse(pin[2]) - 1)) {
+    return language == 'ar'
+        ? 'يجب ألا يحتوي الرمز السري على أرقام تصاعدية أو تنازلية متتالية.'
+        : 'PIN should not contain fully consecutive ascending or descending digits.';
+  }
+
+  return 'true';
+}

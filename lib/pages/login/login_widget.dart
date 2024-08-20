@@ -498,6 +498,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                           obscureText:
                                               !_model.passwordVisibility,
                                           decoration: InputDecoration(
+                                            isDense: false,
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -760,18 +761,83 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     );
 
                                                     context.pushNamed(
-                                                        'registeration_08');
+                                                      'registeration_08',
+                                                      queryParameters: {
+                                                        'fromPage':
+                                                            serializeParam(
+                                                          'loginMisDoc',
+                                                          ParamType.String,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
                                                   }
                                                 } else {
-                                                  await actions.showToast(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                      arText:
-                                                          'عملية المصادقة غير صحيحة',
-                                                      enText:
-                                                          'Sorry, no internet connection.',
-                                                    ),
-                                                  );
+                                                  if (LoginAPIResponseStruct
+                                                              .maybeFromMap((_model
+                                                                      .apiResultLogin
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '401') {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'عملية المصادقة غير صحيحة',
+                                                        enText:
+                                                            'Sorry, no internet connection.',
+                                                      ),
+                                                    );
+                                                  } else if (LoginAPIResponseStruct
+                                                              .maybeFromMap((_model
+                                                                      .apiResultLogin
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '1522') {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'جهازك غير مفعل ',
+                                                        enText:
+                                                            'Your device is not activated',
+                                                      ),
+                                                    );
+
+                                                    context.pushNamed(
+                                                        'enter_id_page');
+                                                  } else if (LoginAPIResponseStruct
+                                                              .maybeFromMap((_model
+                                                                      .apiResultLogin
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '1523') {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش.',
+                                                        enText:
+                                                            'Your account is closed, please contact neocash.',
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'عملية المصادقة غير صحيحة',
+                                                        enText:
+                                                            'Sorry, no internet connection.',
+                                                      ),
+                                                    );
+                                                  }
                                                 }
                                               } else {
                                                 await actions.showToast(

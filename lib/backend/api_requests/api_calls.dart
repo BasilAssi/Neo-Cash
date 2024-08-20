@@ -35,6 +35,8 @@ class AuthAndRegisterGroup {
   static LOOKUPsAPIsCall lOOKUPsAPIsCall = LOOKUPsAPIsCall();
   static UploadDocumentCall uploadDocumentCall = UploadDocumentCall();
   static LoginCall loginCall = LoginCall();
+  static DeleteUploadedDocumentCall deleteUploadedDocumentCall =
+      DeleteUploadedDocumentCall();
 }
 
 class IsRegisteredCall {
@@ -515,6 +517,7 @@ class UploadDocumentCall {
     String? customerId = '',
     String? documentTypeId = '',
     FFUploadedFile? file,
+    String? forceUpload = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
     String? token =
@@ -539,6 +542,7 @@ class UploadDocumentCall {
         'customerId': customerId,
         'documentTypeId': documentTypeId,
         'file': file,
+        'forceUpload': forceUpload,
       },
       bodyType: BodyType.MULTIPART,
       returnBody: true,
@@ -581,6 +585,45 @@ class LoginCall {
       },
       params: {},
       bodyType: BodyType.NONE,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic code(dynamic response) => getJsonField(
+        response,
+        r'''$.code''',
+      );
+}
+
+class DeleteUploadedDocumentCall {
+  Future<ApiCallResponse> call({
+    String? deleteURL = '',
+    String? acceptLanguage = 'EN',
+    String? msgId = '',
+    String? token =
+        'eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZWUzBcL1VVQlMrTTBEUWtBd01pb2dLbWdnN0xZbnVaR1BwM0JtcWZReDlEQUVUSjZWekdRdWR0dDYyTUd3TUsxMnd3S2drSnY0Rlwvb2x1XC9BRkdGMjVadVwvWGV6cVB0VEpIWVJUTTUzM2UrODV6VHMzTXc1bVB3dUlrTnlcL1laenc2YmxzUDRIcmFjcG9cL01FRnZCSVJQNkNEZFFFREVxRVZFbkZ0QjVjbm1RRTBEZWFnUmdXdGcxOW8xbDIzQ2F5XC9MMkxqS0RsVFlHajF6YzdDcnVZS09GRGx5OHhcL1MxVFJlalZJQllPdjhrRDhhM1FORXdUVGQwQXNsMVlOdXpNR3BzZ2FuWUpyam1IalhObUFSQlRtQVp0cCtramlQSDJMWlJRd0FUUmhpOGNrbFVDXC9rQm1Pd2tHd2FXdmF5aVlFVUFWenpEOTBsMkE1V29BVTJkNGpSTmgxVHdHcndCbzIwdlJ4N1N1eVZLWmFnT3c3bTJUYXEyWE1kZjFKMlcyN0IyTEJxYzZCXC9OZlwvaCs4dVZJendOQWV2TGdjcFwvWVByY0tqcjYrXC9MTVFOVHBuQnVCR0l2V1l0dEwyU0RiRldGbkRpRWIrOGJuNjhmVDgzWXNSRXBreXl2OFwvajBXMjI3bER6bTE1QmpZQ056RWpJbnN3U240dkVmSFZ5OFY3VXpoa1ZLdmwyWWhzbEJPZ1JqOUVMRXpLSGNXdTNlczNLVnlSQlZoblJhSE82dHBhbmROVlRSYWg0bE5DSVFDekVjekpTbFZXV0kwUVBRKzcrMlFmdXZqY0FDNGFqdEZFTGJJMFBjYTFBVWFOaHhzOTdHWUg2OGFzaTZ6RVZxQUlKYTFIdUpNbXFKd0NvY1JMbFpUS3pBQkpGMFZXMmV5aDAyazA2WGc3Z2dTWlkwbjExYW9pMStBRkRSQmsrYmxlVlRNeUxLYndwSHFuczVLczhXV2VZelZlbGxKd3B5ODBLRitDeXIyTXZ2U3dDNlAyQ2JvSzA2NEt1MUV2c1JxYjRUcWRKZ3ozUTRIck9sUTE0bHJOY0o4WjRpUVZiblZRK3Fvb3NwNGxjSDJRa3ZSUGdNT2VoUmdjemxyVlZcLyt4cHZNWm5PRlZuYzFnSlNOTmRmRXFhVGxiRW5tcEJ5eDBnRTFWZzJKZGhacEdWM1M0Z05rczJ0RHNCdkJrQW5jamdxYVFIWVdsZWduV2VBNW1MZVhWaUVlVWxmVFlxQ1dMUDVsQTFUVjVJOHVlektQWXQ5TWRMUE1DVEErd0JoVyt2Tm5cL0w5RTdVekFhTGN0NVdpWTlsUjZ1clpPN1Zvak9LdjBlTUlKTHZnYkh2OTlcL083blwvazl5b1oyQ016QzVFNUtwUHhTUXBiRzBqXC9QYnNkSDdpMDZcL2o2RVoydjVjamZ3R0g0VXpsY3djQUFBPT0iLCJzdWIiOiJhZG1pbkBGQVRFTi1IUSIsInJvbGVzIjpbIlJPTEVfQU1MX0FVVEhfQ1VTVE9NRVIiLCJST0xFX0NPUlBPUkFURV9BcHByb3ZhbCIsIlJPTEVfQ09SUE9SQVRFX01hbmFnZW1lbnQiLCJST0xFX0NPUlBPUkFURV9WSUVXIiwiUk9MRV9DVVNUT01FUl9NQU5BR0VNRU5UIiwiUk9MRV9DVVNUT01FUl9TQ1JFRU5JTkdfVklFVyIsIlJPTEVfQ1VTVE9NRVJfU1VNTUFSWSIsIlJPTEVfQ1VTVE9NRVJfVklFVyIsIlJPTEVfTE9DQUxfQVBQUk9WRV9DVVNUT01FUiIsIlJPTEVfTE9PS1VQU19NQU5BR0VNRU5UIiwiUk9MRV9MT09LVVBTX1ZJRVciLCJST0xFX05PVElGSUNBVElPTl9WSUVXIiwiUk9MRV9QUk9WSURFUiBfVklFVyIsIlJPTEVfUFJPVklERVJfTUFOQUdFTUVOVCIsIlJPTEVfUFJPVklERVJfVVNFIiwiUk9MRV9SQVdfREFUQV9NQU5BR0VNRU5UIiwiUk9MRV9SQVdfREFUQV9WSUVXIiwiUk9MRV9SRVFVRVNUX01BUF9NQU5BR0VNRU5UIiwiUk9MRV9SRVFVRVNUX01BUF9WSUVXIiwiUk9MRV9ST0xFX0dST1VQX01BTkFHRU1FTlQiLCJST0xFX1JPTEVfR1JPVVBfVklFVyIsIlJPTEVfUk9MRV9NQU5BR0VNRU5UIiwiUk9MRV9ST0xFX1ZJRVciLCJST0xFX1NVQl9DT1JQT1JBVEVfQXBwcm92YWwiLCJST0xFX1NVQl9DT1JQT1JBVEVfTWFuYWdlbWVudCIsIlJPTEVfU1VCX0NPUlBPUkFURV9WSUVXIiwiUk9MRV9TVVBFUl9BRE1JTiIsIlJPTEVfU1lTVEVNX1NFVFRJTkdfTUFOQUdFTUVOVCIsIlJPTEVfU1lTVEVNX1NFVFRJTkdfVVNFIiwiUk9MRV9TWVNURU1fU0VUVElOR19WSUVXIiwiUk9MRV9UUlVTVEVEX0RFVklDRVNfTUFOQUdFTUVOVCIsIlJPTEVfVVNFUiIsIlJPTEVfVVNFUlNfTUFOQUdFTUVOVCIsIlJPTEVfVVNFUlNfU0hPVyIsIlJPTEVfVVNFUlNfVklFVyIsIlJPTEVfVVNFUl9QUk9GSUxFIiwiUk9MRV9WRVJJRllfQ1VTVE9NRVIiXSwiaXNzIjoiU3ByaW5nIFNlY3VyaXR5IFJFU1QgR3JhaWxzIFBsdWdpbiIsImV4cCI6MTcyNDA3ODgwNCwiaWF0IjoxNzI0MDc1MjA0fQ.mfLsEoSHnTn5GOU0u_JkmuhlOqqodWXpdYhmT6Ty6cI',
+  }) async {
+    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
+      acceptLanguage: acceptLanguage,
+      msgId: msgId,
+      token: token,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Delete Uploaded Document',
+      apiUrl: '$baseUrl/$deleteURL',
+      callType: ApiCallType.DELETE,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'X-Auth-Token': '$token',
+        'applicationType': 'BP-V1.0',
+      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

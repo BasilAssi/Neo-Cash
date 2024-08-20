@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +14,12 @@ import 'registeration08_model.dart';
 export 'registeration08_model.dart';
 
 class Registeration08Widget extends StatefulWidget {
-  const Registeration08Widget({super.key});
+  const Registeration08Widget({
+    super.key,
+    this.fromPage,
+  });
+
+  final String? fromPage;
 
   @override
   State<Registeration08Widget> createState() => _Registeration08WidgetState();
@@ -183,7 +189,45 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 32.0),
                     child: FFButtonWidget(
-                      onPressed: () async {},
+                      onPressed: () async {
+                        _model.isNetworkAvailableOutput =
+                            await actions.isNetworkAvailable();
+                        if (_model.isNetworkAvailableOutput == true) {
+                          _model.apiResultSendToApproval =
+                              await AuthAndRegisterGroup.sendToApprovalCall
+                                  .call(
+                            idNumber:
+                                FFAppState().registerationFormData.idNumber,
+                            idType: FFAppState().registerationFormData.idType,
+                            msgId: functions.messageId(),
+                          );
+
+                          if ((_model.apiResultSendToApproval?.succeeded ??
+                              true)) {
+                            if (widget.fromPage == 'loginMisDoc') {
+                              context.pushNamed('success_page');
+                            } else {
+                              context.pushNamed('login');
+                            }
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'خطأ',
+                                enText: 'Error',
+                              ),
+                            );
+                          }
+                        } else {
+                          await actions.showToast(
+                            FFLocalizations.of(context).getVariableText(
+                              arText: 'عذرا لا يوجد اتصال بالانترنت',
+                              enText: 'Sorry, no internet connection.',
+                            ),
+                          );
+                        }
+
+                        setState(() {});
+                      },
                       text: FFLocalizations.of(context).getText(
                         'c4fvj91y' /* حفظ */,
                       ),

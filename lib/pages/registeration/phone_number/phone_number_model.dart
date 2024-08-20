@@ -19,9 +19,14 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
       );
     }
 
-    if (val.length < 8) {
+    if (val.length < 9) {
       return FFLocalizations.of(context).getText(
-        '20xg27or' /* لا يمكن ان يكون الرقم اقل من 8... */,
+        '20xg27or' /* لا يمكن ان يكون الرقم اقل من 9... */,
+      );
+    }
+    if (val.length > 9) {
+      return FFLocalizations.of(context).getText(
+        'o3pcr58o' /* لا يمكن ان يكون الرقم أكبر من ... */,
       );
     }
 

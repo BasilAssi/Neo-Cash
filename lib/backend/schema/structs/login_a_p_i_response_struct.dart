@@ -10,9 +10,11 @@ class LoginAPIResponseStruct extends BaseStruct {
     String? accessToken,
     String? message,
     bool? status,
+    String? code,
   })  : _accessToken = accessToken,
         _message = message,
-        _status = status;
+        _status = status,
+        _code = code;
 
   // "access_token" field.
   String? _accessToken;
@@ -35,11 +37,19 @@ class LoginAPIResponseStruct extends BaseStruct {
 
   bool hasStatus() => _status != null;
 
+  // "code" field.
+  String? _code;
+  String get code => _code ?? '';
+  set code(String? val) => _code = val;
+
+  bool hasCode() => _code != null;
+
   static LoginAPIResponseStruct fromMap(Map<String, dynamic> data) =>
       LoginAPIResponseStruct(
         accessToken: data['access_token'] as String?,
         message: data['message'] as String?,
         status: data['status'] as bool?,
+        code: data['code'] as String?,
       );
 
   static LoginAPIResponseStruct? maybeFromMap(dynamic data) => data is Map
@@ -50,6 +60,7 @@ class LoginAPIResponseStruct extends BaseStruct {
         'access_token': _accessToken,
         'message': _message,
         'status': _status,
+        'code': _code,
       }.withoutNulls;
 
   @override
@@ -65,6 +76,10 @@ class LoginAPIResponseStruct extends BaseStruct {
         'status': serializeParam(
           _status,
           ParamType.bool,
+        ),
+        'code': serializeParam(
+          _code,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -86,6 +101,11 @@ class LoginAPIResponseStruct extends BaseStruct {
           ParamType.bool,
           false,
         ),
+        code: deserializeParam(
+          data['code'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -96,20 +116,24 @@ class LoginAPIResponseStruct extends BaseStruct {
     return other is LoginAPIResponseStruct &&
         accessToken == other.accessToken &&
         message == other.message &&
-        status == other.status;
+        status == other.status &&
+        code == other.code;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([accessToken, message, status]);
+  int get hashCode =>
+      const ListEquality().hash([accessToken, message, status, code]);
 }
 
 LoginAPIResponseStruct createLoginAPIResponseStruct({
   String? accessToken,
   String? message,
   bool? status,
+  String? code,
 }) =>
     LoginAPIResponseStruct(
       accessToken: accessToken,
       message: message,
       status: status,
+      code: code,
     );

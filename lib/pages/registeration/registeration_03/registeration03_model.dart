@@ -26,7 +26,13 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'caq9antt' /* الحقل مطلوب */,
+        'ckc46hur' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'wnf2fraw' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 
@@ -42,7 +48,13 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'tt0swmgt' /* الحقل مطلوب */,
+        '7193jimg' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'rn5wudke' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 
@@ -58,7 +70,13 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '8693qu5v' /* الحقل مطلوب */,
+        '0ny3hsku' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '3emqfmua' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 

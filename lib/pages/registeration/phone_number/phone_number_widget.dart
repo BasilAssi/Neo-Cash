@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'phone_number_model.dart';
@@ -181,6 +182,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
                                   flex: 2,
@@ -281,6 +283,9 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMediumFamily),
                                         ),
+                                    maxLength: 9,
+                                    maxLengthEnforcement:
+                                        MaxLengthEnforcement.enforced,
                                     keyboardType: TextInputType.phone,
                                     validator: _model.textControllerValidator
                                         .asValidator(context),
