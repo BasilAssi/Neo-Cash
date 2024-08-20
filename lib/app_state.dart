@@ -73,8 +73,8 @@ class FFAppState extends ChangeNotifier {
   }
 
   RegisterationFormDataStruct _registerationFormData =
-      RegisterationFormDataStruct.fromSerializableMap(
-          jsonDecode('{\"isPEP\":\"false\"}'));
+      RegisterationFormDataStruct.fromSerializableMap(jsonDecode(
+          '{\"ResidentOfTheCountry\":\"RESIDENT\",\"IsUSPassportHolder\":\"false\",\"IsTrueBeneficiaryAccount\":\"true\",\"isPEP\":\"false\"}'));
   RegisterationFormDataStruct get registerationFormData =>
       _registerationFormData;
   set registerationFormData(RegisterationFormDataStruct value) {

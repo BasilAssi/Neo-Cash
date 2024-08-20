@@ -22,7 +22,7 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '9la124ib' /* الحقل مطلوب */,
+        'f3jdv1tf' /* الحقل مطلوب */,
       );
     }
 
@@ -39,11 +39,12 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'ot9dvbxc' /* الحقل مطلوب */,
+        'l0dw1urg' /* الحقل مطلوب */,
       );
     }
 
-    if (RegExp('((?=.\\d)(?=.[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
+    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
+        .hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'a9l80f02' /* يجب أن تكون كلمة المرور بطول ل... */,
       );
@@ -61,11 +62,12 @@ class SetPasswordExistFlowModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '77xgtb0q' /* الحقل مطلوب */,
+        't31v2sxc' /* الحقل مطلوب */,
       );
     }
 
-    if (RegExp('((?=.\\d)(?=.[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
+    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
+        .hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '0hz9033c' /* يجب أن تكون كلمة المرور بطول ل... */,
       );
@@ -79,7 +81,7 @@ class SetPasswordExistFlowModel
   String? _pinCodeControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'tjiw19nd' /* الحقل مطلوب */,
+        'w5wdtbjl' /* الحقل مطلوب */,
       );
     }
     if (val.length < 4) {
@@ -88,10 +90,14 @@ class SetPasswordExistFlowModel
     return null;
   }
 
+  // Stores action output result for [Custom Action - isValidPIN] action in Button widget.
+  String? isValidPINResult1;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput1;
   // Stores action output result for [Backend Call - API (Register a customer Device)] action in Button widget.
   ApiCallResponse? apiResultCustomerRegisterDevice1;
+  // Stores action output result for [Custom Action - isValidPIN] action in Button widget.
+  String? isValidPINResult;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Register a customer Device)] action in Button widget.

@@ -239,7 +239,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'registeration_08',
               path: 'registeration08',
-              builder: (context, params) => const Registeration08Widget(),
+              builder: (context, params) => Registeration08Widget(
+                fromPage: params.getParam(
+                  'fromPage',
+                  ParamType.String,
+                ),
+              ),
             ),
             FFRoute(
               name: 'registeration_04',

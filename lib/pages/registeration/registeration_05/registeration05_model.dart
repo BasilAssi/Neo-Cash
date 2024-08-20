@@ -23,7 +23,13 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'cva7bxnb' /* الحقل مطلوب */,
+        '9la124ib' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '0snrq15l' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 
@@ -39,8 +45,12 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'ckc46hur' /* الحقل مطلوب */,
+        'ot9dvbxc' /* الحقل مطلوب */,
       );
+    }
+
+    if (val.length > 25) {
+      return 'Maximum 25 characters allowed, currently ${val.length}.';
     }
 
     return null;

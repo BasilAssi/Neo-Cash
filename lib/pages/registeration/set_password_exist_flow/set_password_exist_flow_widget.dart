@@ -614,78 +614,95 @@ class _SetPasswordExistFlowWidgetState
                                             .validate()) {
                                       return;
                                     }
-                                    if (_model.passwordTextFieldTextController
-                                            .text ==
-                                        _model
-                                            .confirmPasswordTextFieldTextController
-                                            .text) {
-                                      _model.isNetworkAvailableOutput1 =
-                                          await actions.isNetworkAvailable();
-                                      if (_model.isNetworkAvailableOutput1 ==
-                                          true) {
-                                        _model.apiResultCustomerRegisterDevice1 =
-                                            await AuthAndRegisterGroup
-                                                .registerACustomerDeviceCall
-                                                .call(
-                                          msgId: functions.messageId(),
-                                          idNumber: FFAppState()
-                                              .registerationFormData
-                                              .idNumber,
-                                          idType: FFAppState()
-                                              .registerationFormData
-                                              .idType,
-                                          hashedOTP: FFAppState()
-                                              .registerationFormData
-                                              .hashedOTP,
-                                          serial: FFAppState()
-                                              .deviceInformation
-                                              .serial,
-                                          deviceName: FFAppState()
-                                              .deviceInformation
-                                              .name,
-                                          osName: FFAppState()
-                                              .deviceInformation
-                                              .osName,
-                                          osVersion: FFAppState()
-                                              .deviceInformation
-                                              .osVersion,
-                                          brandName: FFAppState()
-                                              .deviceInformation
-                                              .brandName,
-                                          brandVersion: FFAppState()
-                                              .deviceInformation
-                                              .brandVersion,
-                                          biometricSupported: FFAppState()
-                                              .deviceInformation
-                                              .biometricSupported,
-                                          pin: _model.pinCodeController!.text,
-                                          password: _model
-                                              .passwordTextFieldTextController
-                                              .text,
-                                        );
-
-                                        if ((_model
-                                                .apiResultCustomerRegisterDevice1
-                                                ?.succeeded ??
-                                            true)) {
-                                          await actions.showToast(
-                                            FFLocalizations.of(context)
-                                                .getVariableText(
-                                              arText: 'تم تسجيل جهازك  بنجاح',
-                                              enText:
-                                                  'Your device has been successfully registered.',
-                                            ),
+                                    _model.isValidPINResult1 =
+                                        await actions.isValidPIN(
+                                      _model.pinCodeController!.text,
+                                      FFLocalizations.of(context).languageCode,
+                                    );
+                                    if (_model.isValidPINResult1 == 'true') {
+                                      if (_model.passwordTextFieldTextController
+                                              .text ==
+                                          _model
+                                              .confirmPasswordTextFieldTextController
+                                              .text) {
+                                        _model.isNetworkAvailableOutput1 =
+                                            await actions.isNetworkAvailable();
+                                        if (_model.isNetworkAvailableOutput1 ==
+                                            true) {
+                                          _model.apiResultCustomerRegisterDevice1 =
+                                              await AuthAndRegisterGroup
+                                                  .registerACustomerDeviceCall
+                                                  .call(
+                                            msgId: functions.messageId(),
+                                            idNumber: FFAppState()
+                                                .registerationFormData
+                                                .idNumber,
+                                            idType: FFAppState()
+                                                .registerationFormData
+                                                .idType,
+                                            hashedOTP: FFAppState()
+                                                .registerationFormData
+                                                .hashedOTP,
+                                            serial: FFAppState()
+                                                .deviceInformation
+                                                .serial,
+                                            deviceName: FFAppState()
+                                                .deviceInformation
+                                                .name,
+                                            osName: FFAppState()
+                                                .deviceInformation
+                                                .osName,
+                                            osVersion: FFAppState()
+                                                .deviceInformation
+                                                .osVersion,
+                                            brandName: FFAppState()
+                                                .deviceInformation
+                                                .brandName,
+                                            brandVersion: FFAppState()
+                                                .deviceInformation
+                                                .brandVersion,
+                                            biometricSupported: FFAppState()
+                                                .deviceInformation
+                                                .biometricSupported,
+                                            pin: _model.pinCodeController!.text,
+                                            password: _model
+                                                .passwordTextFieldTextController
+                                                .text,
                                           );
 
-                                          context.pushNamed('login');
+                                          if ((_model
+                                                  .apiResultCustomerRegisterDevice1
+                                                  ?.succeeded ??
+                                              true)) {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'تم تسجيل جهازك  بنجاح',
+                                                enText:
+                                                    'Your device has been successfully registered.',
+                                              ),
+                                            );
+
+                                            context.pushNamed('login');
+                                          } else {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'خطأ',
+                                                enText: 'error',
+                                              ),
+                                            );
+                                          }
                                         } else {
                                           print('11111apiResultCustomerRegisterDevice1 ${_model.apiResultCustomerRegisterDevice1?.jsonBody}');
 
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
-                                              arText: 'خطأ',
-                                              enText: 'error',
+                                              arText:
+                                                  'عذرا لا يوجد اتصال بالانترنت',
+                                              enText:
+                                                  'Sorry, no internet connection.',
                                             ),
                                           );
                                         }
@@ -693,20 +710,14 @@ class _SetPasswordExistFlowWidgetState
                                         await actions.showToast(
                                           FFLocalizations.of(context)
                                               .getVariableText(
-                                            arText:
-                                                'عذرا لا يوجد اتصال بالانترنت',
-                                            enText:
-                                                'Sorry, no internet connection.',
+                                            arText: 'كلمات المرور غير متطابقة',
+                                            enText: 'passwords do not match.',
                                           ),
                                         );
                                       }
                                     } else {
                                       await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'كلمات المرور غير متطابقة',
-                                          enText: 'passwords do not match.',
-                                        ),
+                                        _model.isValidPINResult1,
                                       );
                                     }
                                   } else {
@@ -720,78 +731,95 @@ class _SetPasswordExistFlowWidgetState
                                             .validate()) {
                                       return;
                                     }
-                                    if (_model.passwordTextFieldTextController
-                                            .text ==
-                                        _model
-                                            .confirmPasswordTextFieldTextController
-                                            .text) {
-                                      _model.isNetworkAvailableOutput =
-                                          await actions.isNetworkAvailable();
-                                      if (_model.isNetworkAvailableOutput ==
-                                          true) {
-                                        _model.apiResultCustomerRegisterDevice =
-                                            await AuthAndRegisterGroup
-                                                .registerACustomerDeviceCall
-                                                .call(
-                                          msgId: functions.messageId(),
-                                          idNumber: FFAppState()
-                                              .registerationFormData
-                                              .idNumber,
-                                          idType: FFAppState()
-                                              .registerationFormData
-                                              .idType,
-                                          hashedOTP: FFAppState()
-                                              .registerationFormData
-                                              .hashedOTP,
-                                          serial: FFAppState()
-                                              .deviceInformation
-                                              .serial,
-                                          deviceName: FFAppState()
-                                              .deviceInformation
-                                              .name,
-                                          osName: FFAppState()
-                                              .deviceInformation
-                                              .osName,
-                                          osVersion: FFAppState()
-                                              .deviceInformation
-                                              .osVersion,
-                                          brandName: FFAppState()
-                                              .deviceInformation
-                                              .brandName,
-                                          brandVersion: FFAppState()
-                                              .deviceInformation
-                                              .brandVersion,
-                                          biometricSupported: FFAppState()
-                                              .deviceInformation
-                                              .biometricSupported,
-                                          pin: _model.pinCodeController!.text,
-                                          password: _model
-                                              .passwordTextFieldTextController
-                                              .text,
-                                        );
-
-                                        if ((_model
-                                                .apiResultCustomerRegisterDevice
-                                                ?.succeeded ??
-                                            true)) {
-                                          await actions.showToast(
-                                            FFLocalizations.of(context)
-                                                .getVariableText(
-                                              arText: 'تم تسجيل جهازك  بنجاح',
-                                              enText:
-                                                  'Your device has been successfully registered.',
-                                            ),
+                                    _model.isValidPINResult =
+                                        await actions.isValidPIN(
+                                      _model.pinCodeController!.text,
+                                      FFLocalizations.of(context).languageCode,
+                                    );
+                                    if (_model.isValidPINResult == 'true') {
+                                      if (_model.passwordTextFieldTextController
+                                              .text ==
+                                          _model
+                                              .confirmPasswordTextFieldTextController
+                                              .text) {
+                                        _model.isNetworkAvailableOutput =
+                                            await actions.isNetworkAvailable();
+                                        if (_model.isNetworkAvailableOutput ==
+                                            true) {
+                                          _model.apiResultCustomerRegisterDevice =
+                                              await AuthAndRegisterGroup
+                                                  .registerACustomerDeviceCall
+                                                  .call(
+                                            msgId: functions.messageId(),
+                                            idNumber: FFAppState()
+                                                .registerationFormData
+                                                .idNumber,
+                                            idType: FFAppState()
+                                                .registerationFormData
+                                                .idType,
+                                            hashedOTP: FFAppState()
+                                                .registerationFormData
+                                                .hashedOTP,
+                                            serial: FFAppState()
+                                                .deviceInformation
+                                                .serial,
+                                            deviceName: FFAppState()
+                                                .deviceInformation
+                                                .name,
+                                            osName: FFAppState()
+                                                .deviceInformation
+                                                .osName,
+                                            osVersion: FFAppState()
+                                                .deviceInformation
+                                                .osVersion,
+                                            brandName: FFAppState()
+                                                .deviceInformation
+                                                .brandName,
+                                            brandVersion: FFAppState()
+                                                .deviceInformation
+                                                .brandVersion,
+                                            biometricSupported: FFAppState()
+                                                .deviceInformation
+                                                .biometricSupported,
+                                            pin: _model.pinCodeController!.text,
+                                            password: _model
+                                                .passwordTextFieldTextController
+                                                .text,
                                           );
 
-                                          context.pushNamed('login');
+                                          if ((_model
+                                                  .apiResultCustomerRegisterDevice
+                                                  ?.succeeded ??
+                                              true)) {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'تم تسجيل جهازك  بنجاح',
+                                                enText:
+                                                    'Your device has been successfully registered.',
+                                              ),
+                                            );
+
+                                            context.pushNamed('login');
+                                          } else {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'خطأ',
+                                                enText: 'error',
+                                              ),
+                                            );
+                                          }
                                         } else {
                                           print('2222apiResultCustomerRegisterDevice1 ${_model.apiResultCustomerRegisterDevice1?.jsonBody}');
 
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
-                                              arText: 'خطأ',
-                                              enText: 'error',
+                                              arText:
+                                                  'عذرا لا يوجد اتصال بالانترنت',
+                                              enText:
+                                                  'Sorry, no internet connection.',
                                             ),
                                           );
                                         }
@@ -799,20 +827,14 @@ class _SetPasswordExistFlowWidgetState
                                         await actions.showToast(
                                           FFLocalizations.of(context)
                                               .getVariableText(
-                                            arText:
-                                                'عذرا لا يوجد اتصال بالانترنت',
-                                            enText:
-                                                'Sorry, no internet connection.',
+                                            arText: 'كلمات المرور غير متطابقة',
+                                            enText: 'passwords do not match.',
                                           ),
                                         );
                                       }
                                     } else {
                                       await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'كلمات المرور غير متطابقة',
-                                          enText: 'passwords do not match.',
-                                        ),
+                                        _model.isValidPINResult,
                                       );
                                     }
                                   }

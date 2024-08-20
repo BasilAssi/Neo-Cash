@@ -231,6 +231,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                       textCapitalization: TextCapitalization.sentences,
                       obscureText: false,
                       decoration: InputDecoration(
+                        isDense: false,
                         labelText: FFLocalizations.of(context).getText(
                           'c42bc1ay' /*  رقم الهوية */,
                         ),

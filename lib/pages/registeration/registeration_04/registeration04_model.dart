@@ -23,7 +23,13 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '7193jimg' /* الحقل مطلوب */,
+        '77xgtb0q' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '8uyk2yx4' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 
@@ -39,7 +45,13 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '0ny3hsku' /* الحقل مطلوب */,
+        'tjiw19nd' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'gjmeocq2' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 
@@ -59,6 +71,12 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'bs15x86c' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
+
     return null;
   }
 
@@ -71,7 +89,13 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'eggopym5' /* الحقل مطلوب */,
+        '8cxs6xh6' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '988ahozd' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
 

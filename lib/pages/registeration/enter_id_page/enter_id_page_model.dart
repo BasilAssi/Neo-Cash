@@ -24,18 +24,18 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'o8vsd9cs' /* رقم الهوية لا يمكن ان يكون فار... */,
+        'o8vsd9cs' /* الحقل لا يمكن ان يكون أقل من 1... */,
       );
     }
 
-    if (val.length < 7) {
+    if (val.length < 10) {
       return FFLocalizations.of(context).getText(
-        '8e3rsbjp' /* رقم الهوية اقل من 7  ارقام */,
+        '8e3rsbjp' /* رقم الهوية اقل من 9  ارقام */,
       );
     }
     if (val.length > 10) {
       return FFLocalizations.of(context).getText(
-        'w3k77fqk' /* رقم الهوية اكبر من عشرة ارقام */,
+        'haww7dt2' /* الحقل لا يمكن ان يكون أكبر من ... */,
       );
     }
 

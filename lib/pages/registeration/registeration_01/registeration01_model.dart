@@ -23,6 +23,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '4qyygkkl' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'q00zvrwj' /* الاسم يجب ان يكون باللغة العرب... */,
@@ -44,6 +49,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'unpl269b' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'a5kpo2rp' /* الاسم يجب ان يكون باللغة العرب... */,
@@ -65,6 +75,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'unpl269b' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'e62e5k8n' /* الاسم يجب ان يكون باللغة العرب... */,
@@ -86,6 +101,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        '28alnuln' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'e62e5k8n' /* الاسم يجب ان يكون باللغة العرب... */,
@@ -107,6 +127,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'pjcomu85' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '6e7r5kul' /* الاسم يجب ان يكون باللغة الانج... */,
@@ -128,6 +153,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'sh8ve8ex' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '7go408ld' /* الاسم يجب ان يكون باللغة الانج... */,
@@ -149,6 +179,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'vhf4dh58' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '6e7r5kul' /* الاسم يجب ان يكون باللغة الانج... */,
@@ -170,6 +205,11 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
       );
     }
 
+    if (val.length > 25) {
+      return FFLocalizations.of(context).getText(
+        'agkzy9t0' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
+    }
     if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'a7t0jgxg' /* الاسم يجب ان يكون باللغة الانج... */,

@@ -43,6 +43,7 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? email,
     String? hashedOTP,
     String? dateOfBirth,
+    String? customerId,
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -78,7 +79,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         _isRegisteredStatus = isRegisteredStatus,
         _email = email,
         _hashedOTP = hashedOTP,
-        _dateOfBirth = dateOfBirth;
+        _dateOfBirth = dateOfBirth,
+        _customerId = customerId;
 
   // "idNumber" field.
   String? _idNumber;
@@ -335,6 +337,13 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasDateOfBirth() => _dateOfBirth != null;
 
+  // "customerId" field.
+  String? _customerId;
+  String get customerId => _customerId ?? '';
+  set customerId(String? val) => _customerId = val;
+
+  bool hasCustomerId() => _customerId != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
         idNumber: data['idNumber'] as String?,
@@ -374,6 +383,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         email: data['email'] as String?,
         hashedOTP: data['hashedOTP'] as String?,
         dateOfBirth: data['DateOfBirth'] as String?,
+        customerId: data['customerId'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -417,6 +427,7 @@ class RegisterationFormDataStruct extends BaseStruct {
         'email': _email,
         'hashedOTP': _hashedOTP,
         'DateOfBirth': _dateOfBirth,
+        'customerId': _customerId,
       }.withoutNulls;
 
   @override
@@ -563,6 +574,10 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'DateOfBirth': serializeParam(
           _dateOfBirth,
+          ParamType.String,
+        ),
+        'customerId': serializeParam(
+          _customerId,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -750,6 +765,11 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        customerId: deserializeParam(
+          data['customerId'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -794,7 +814,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         isRegisteredStatus == other.isRegisteredStatus &&
         email == other.email &&
         hashedOTP == other.hashedOTP &&
-        dateOfBirth == other.dateOfBirth;
+        dateOfBirth == other.dateOfBirth &&
+        customerId == other.customerId;
   }
 
   @override
@@ -834,7 +855,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         isRegisteredStatus,
         email,
         hashedOTP,
-        dateOfBirth
+        dateOfBirth,
+        customerId
       ]);
 }
 
@@ -875,6 +897,7 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? email,
   String? hashedOTP,
   String? dateOfBirth,
+  String? customerId,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -913,4 +936,5 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       email: email,
       hashedOTP: hashedOTP,
       dateOfBirth: dateOfBirth,
+      customerId: customerId,
     );

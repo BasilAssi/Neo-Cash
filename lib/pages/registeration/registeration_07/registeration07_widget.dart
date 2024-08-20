@@ -1177,166 +1177,186 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                   .validate()) {
                                             return;
                                           }
-                                          if (_model
-                                                  .passwordTextFieldTextController
-                                                  .text ==
-                                              _model
-                                                  .confirmTextFieldTextController
-                                                  .text) {
-                                            _model.isNetworkAvailableOutput =
-                                                await actions
-                                                    .isNetworkAvailable();
+                                          _model.isValidPINResult =
+                                              await actions.isValidPIN(
+                                            _model.pinCodeController!.text,
+                                            FFLocalizations.of(context)
+                                                .languageCode,
+                                          );
+                                          if (_model.isValidPINResult ==
+                                              'true') {
                                             if (_model
-                                                    .isNetworkAvailableOutput ==
-                                                true) {
-                                              _model.apiResultCustomerRegister =
-                                                  await AuthAndRegisterGroup
-                                                      .registerACustomerCall
-                                                      .call(
-                                                msgId: functions.messageId(),
-                                                idNumber: FFAppState()
-                                                    .registerationFormData
-                                                    .idNumber,
-                                                idType: FFAppState()
-                                                    .registerationFormData
-                                                    .idType,
-                                                nationalityCode: FFAppState()
-                                                    .registerationFormData
-                                                    .nationality,
-                                                mobileNumber: FFAppState()
-                                                    .registerationFormData
-                                                    .mobileNumber,
-                                                emailAddress: _model
-                                                    .emailTextFieldTextController
-                                                    .text,
-                                                firstName: FFAppState()
-                                                    .registerationFormData
-                                                    .firstNameEN,
-                                                middleName: FFAppState()
-                                                    .registerationFormData
-                                                    .fatherNameEN,
-                                                thirdName: FFAppState()
-                                                    .registerationFormData
-                                                    .grandFatherNameEN,
-                                                familyName: FFAppState()
-                                                    .registerationFormData
-                                                    .grandFatherNameEN,
-                                                birthdate: FFAppState()
-                                                    .registerationFormData
-                                                    .dateOfBirth,
-                                                cityCode: FFAppState()
-                                                    .registerationFormData
-                                                    .cityCode,
-                                                areaCode: FFAppState()
-                                                    .registerationFormData
-                                                    .areaCode,
-                                                address: FFAppState()
-                                                    .registerationFormData
-                                                    .addressText,
-                                                firstNameAr: FFAppState()
-                                                    .registerationFormData
-                                                    .firstNameAR,
-                                                middleNameAr: FFAppState()
-                                                    .registerationFormData
-                                                    .fatherNameAR,
-                                                thirdNameAr: FFAppState()
-                                                    .registerationFormData
-                                                    .grandFatherNameAR,
-                                                familyNameAr: FFAppState()
-                                                    .registerationFormData
-                                                    .familyNameAR,
-                                                gender: FFAppState()
-                                                    .registerationFormData
-                                                    .gender,
-                                                motherNameEn: FFAppState()
-                                                    .registerationFormData
-                                                    .motherNameEN,
-                                                birthPlace: FFAppState()
-                                                    .registerationFormData
-                                                    .birthOfPlace,
-                                                mobileNumberPrefix: FFAppState()
-                                                    .registerationFormData
-                                                    .prefixMobile,
-                                                hashedOTP: FFAppState()
-                                                    .registerationFormData
-                                                    .hashedOTP,
-                                                residencyType: FFAppState()
-                                                    .registerationFormData
-                                                    .residentOfTheCountry,
-                                                profession: FFAppState()
-                                                    .registerationFormData
-                                                    .profession,
-                                                placeOfWork: FFAppState()
-                                                    .registerationFormData
-                                                    .placeOfWork,
-                                                monthlyIncomeUsd: FFAppState()
-                                                    .registerationFormData
-                                                    .monthlyInComeDollar,
-                                                isPEP: FFAppState()
-                                                    .registerationFormData
-                                                    .isPEP,
-                                                localPepFullName: FFAppState()
-                                                    .registerationFormData
-                                                    .localPepFullName,
-                                                latinPepFullName: FFAppState()
-                                                    .registerationFormData
-                                                    .latinPepFullName,
-                                                relationshipWithPep:
-                                                    FFAppState()
-                                                        .registerationFormData
-                                                        .relationshipWithPep,
-                                                pepPosition: FFAppState()
-                                                    .registerationFormData
-                                                    .pepPosition,
-                                                isUsPassportHolder: FFAppState()
-                                                    .registerationFormData
-                                                    .isUSPassportHolder,
-                                                isTrueAccountBeneficiary:
-                                                    FFAppState()
-                                                        .registerationFormData
-                                                        .isTrueBeneficiaryAccount,
-                                                trueBeneficiaryName:
-                                                    FFAppState()
-                                                        .registerationFormData
-                                                        .trueBeneficiaryName,
-                                                relationShipWithTrueBeneficiary:
-                                                    FFAppState()
-                                                        .registerationFormData
-                                                        .relationShipWithTrueBeneficiary,
-                                                serial: FFAppState()
-                                                    .deviceInformation
-                                                    .serial,
-                                                name: FFAppState()
-                                                    .deviceInformation
-                                                    .name,
-                                                osName: FFAppState()
-                                                    .deviceInformation
-                                                    .osName,
-                                                osVersion: FFAppState()
-                                                    .deviceInformation
-                                                    .osVersion,
-                                                brandName: FFAppState()
-                                                    .deviceInformation
-                                                    .brandName,
-                                                brandVersion: FFAppState()
-                                                    .deviceInformation
-                                                    .brandVersion,
-                                                biometricSupported: FFAppState()
-                                                    .deviceInformation
-                                                    .biometricSupported,
-                                                password: _model
+                                                    .passwordTextFieldTextController
+                                                    .text ==
+                                                _model
                                                     .confirmTextFieldTextController
-                                                    .text,
-                                                pin: _model
-                                                    .pinCodeController!.text,
-                                              );
+                                                    .text) {
+                                              _model.isNetworkAvailableOutput =
+                                                  await actions
+                                                      .isNetworkAvailable();
+                                              if (_model
+                                                      .isNetworkAvailableOutput ==
+                                                  true) {
+                                                _model.apiResultCustomerRegister =
+                                                    await AuthAndRegisterGroup
+                                                        .registerACustomerCall
+                                                        .call(
+                                                  msgId: functions.messageId(),
+                                                  idNumber: FFAppState()
+                                                      .registerationFormData
+                                                      .idNumber,
+                                                  idType: FFAppState()
+                                                      .registerationFormData
+                                                      .idType,
+                                                  nationalityCode: FFAppState()
+                                                      .registerationFormData
+                                                      .nationality,
+                                                  mobileNumber: FFAppState()
+                                                      .registerationFormData
+                                                      .mobileNumber,
+                                                  emailAddress: _model
+                                                      .emailTextFieldTextController
+                                                      .text,
+                                                  firstName: FFAppState()
+                                                      .registerationFormData
+                                                      .firstNameEN,
+                                                  middleName: FFAppState()
+                                                      .registerationFormData
+                                                      .fatherNameEN,
+                                                  thirdName: FFAppState()
+                                                      .registerationFormData
+                                                      .grandFatherNameEN,
+                                                  familyName: FFAppState()
+                                                      .registerationFormData
+                                                      .grandFatherNameEN,
+                                                  birthdate: FFAppState()
+                                                      .registerationFormData
+                                                      .dateOfBirth,
+                                                  cityCode: FFAppState()
+                                                      .registerationFormData
+                                                      .cityCode,
+                                                  areaCode: FFAppState()
+                                                      .registerationFormData
+                                                      .areaCode,
+                                                  address: FFAppState()
+                                                      .registerationFormData
+                                                      .addressText,
+                                                  firstNameAr: FFAppState()
+                                                      .registerationFormData
+                                                      .firstNameAR,
+                                                  middleNameAr: FFAppState()
+                                                      .registerationFormData
+                                                      .fatherNameAR,
+                                                  thirdNameAr: FFAppState()
+                                                      .registerationFormData
+                                                      .grandFatherNameAR,
+                                                  familyNameAr: FFAppState()
+                                                      .registerationFormData
+                                                      .familyNameAR,
+                                                  gender: FFAppState()
+                                                      .registerationFormData
+                                                      .gender,
+                                                  motherNameEn: FFAppState()
+                                                      .registerationFormData
+                                                      .motherNameEN,
+                                                  birthPlace: FFAppState()
+                                                      .registerationFormData
+                                                      .birthOfPlace,
+                                                  mobileNumberPrefix:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .prefixMobile,
+                                                  hashedOTP: FFAppState()
+                                                      .registerationFormData
+                                                      .hashedOTP,
+                                                  residencyType: FFAppState()
+                                                      .registerationFormData
+                                                      .residentOfTheCountry,
+                                                  profession: FFAppState()
+                                                      .registerationFormData
+                                                      .profession,
+                                                  placeOfWork: FFAppState()
+                                                      .registerationFormData
+                                                      .placeOfWork,
+                                                  monthlyIncomeUsd: FFAppState()
+                                                      .registerationFormData
+                                                      .monthlyInComeDollar,
+                                                  isPEP: FFAppState()
+                                                      .registerationFormData
+                                                      .isPEP,
+                                                  localPepFullName: FFAppState()
+                                                      .registerationFormData
+                                                      .localPepFullName,
+                                                  latinPepFullName: FFAppState()
+                                                      .registerationFormData
+                                                      .latinPepFullName,
+                                                  relationshipWithPep:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .relationshipWithPep,
+                                                  pepPosition: FFAppState()
+                                                      .registerationFormData
+                                                      .pepPosition,
+                                                  isUsPassportHolder:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .isUSPassportHolder,
+                                                  isTrueAccountBeneficiary:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .isTrueBeneficiaryAccount,
+                                                  trueBeneficiaryName:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .trueBeneficiaryName,
+                                                  relationShipWithTrueBeneficiary:
+                                                      FFAppState()
+                                                          .registerationFormData
+                                                          .relationShipWithTrueBeneficiary,
+                                                  serial: FFAppState()
+                                                      .deviceInformation
+                                                      .serial,
+                                                  name: FFAppState()
+                                                      .deviceInformation
+                                                      .name,
+                                                  osName: FFAppState()
+                                                      .deviceInformation
+                                                      .osName,
+                                                  osVersion: FFAppState()
+                                                      .deviceInformation
+                                                      .osVersion,
+                                                  brandName: FFAppState()
+                                                      .deviceInformation
+                                                      .brandName,
+                                                  brandVersion: FFAppState()
+                                                      .deviceInformation
+                                                      .brandVersion,
+                                                  biometricSupported:
+                                                      FFAppState()
+                                                          .deviceInformation
+                                                          .biometricSupported,
+                                                  password: _model
+                                                      .confirmTextFieldTextController
+                                                      .text,
+                                                  pin: _model
+                                                      .pinCodeController!.text,
+                                                );
 
-                                              if ((_model
-                                                      .apiResultCustomerRegister
-                                                      ?.succeeded ??
-                                                  true)) {
-                                                context
-                                                    .pushNamed('success_page');
+                                                if ((_model
+                                                        .apiResultCustomerRegister
+                                                        ?.succeeded ??
+                                                    true)) {
+                                                  context.pushNamed(
+                                                      'registeration_08');
+                                                } else {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText: 'خطأ',
+                                                      enText: 'error',
+                                                    ),
+                                                  );
+                                                }
                                               } else {
                                                 print('apiResultCustomerRegister ${_model.apiResultCustomerRegister?.jsonBody}');
                                                 print('apiResultCustomerRegister ${FFAppState()
@@ -1358,8 +1378,10 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                 await actions.showToast(
                                                   FFLocalizations.of(context)
                                                       .getVariableText(
-                                                    arText: 'خطأ',
-                                                    enText: 'error',
+                                                    arText:
+                                                        'عذرا لا يوجد اتصال بالانترنت',
+                                                    enText:
+                                                        'Sorry, no internet connection.',
                                                   ),
                                                 );
                                               }
@@ -1369,21 +1391,15 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                 FFLocalizations.of(context)
                                                     .getVariableText(
                                                   arText:
-                                                      'عذرا لا يوجد اتصال بالانترنت',
+                                                      'كلمات المرور غير متطابقة',
                                                   enText:
-                                                      'Sorry, no internet connection.',
+                                                      'passwords do not match.',
                                                 ),
                                               );
                                             }
                                           } else {
                                             await actions.showToast(
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                                arText:
-                                                    'كلمات المرور غير متطابقة',
-                                                enText:
-                                                    'passwords do not match.',
-                                              ),
+                                              _model.isValidPINResult,
                                             );
                                           }
 

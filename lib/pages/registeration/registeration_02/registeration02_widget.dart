@@ -37,6 +37,12 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
       _model.isNetworkAvaiableOutput = await actions.isNetworkAvailable();
     });
 
+    _model.cityTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasBirthOfPlace()
+            ? FFAppState().registerationFormData.birthOfPlace
+            : '');
+    _model.cityTextFieldFocusNode ??= FocusNode();
+
     _model.motherNameENTextFieldTextController ??= TextEditingController(
         text: FFAppState().registerationFormData.hasMotherNameEN()
             ? FFAppState().registerationFormData.motherNameEN
@@ -808,123 +814,89 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: FutureBuilder<ApiCallResponse>(
-                        future: FFAppState().citesAPIResponse(
-                          overrideCache: _model.citiesDropDownValue ==
-                              FFAppConstants.emptyListStrings.first,
-                          requestFn: () =>
-                              AuthAndRegisterGroup.lOOKUPsAPIsCall.call(
-                            msgId: functions.messageId(),
-                            type: 'CITY',
+                      child: TextFormField(
+                        controller: _model.cityTextFieldTextController,
+                        focusNode: _model.cityTextFieldFocusNode,
+                        autofocus: true,
+                        textCapitalization: TextCapitalization.sentences,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
+                          hintText: FFLocalizations.of(context).getText(
+                            '7n7qut9f' /* المدينة */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                color: FlutterFlowTheme.of(context).textColor,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          filled: true,
+                          fillColor: FlutterFlowTheme.of(context).accent4,
+                          suffixIcon: Icon(
+                            Icons.mode_edit_outlined,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 28.0,
                           ),
                         ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          final citiesDropDownLOOKUPsAPIsResponse =
-                              snapshot.data!;
-
-                          return FlutterFlowDropDown<String>(
-                            controller: _model.citiesDropDownValueController ??=
-                                FormFieldController<String>(
-                              _model.citiesDropDownValue ??= FFAppState()
-                                      .registerationFormData
-                                      .hasBirthOfPlace()
-                                  ? FFAppState()
-                                      .registerationFormData
-                                      .birthOfPlace
-                                  : '',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: FlutterFlowTheme.of(context).textColor,
+                              fontSize: 18.0,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
-                            options: List<
-                                String>.from(LookupCitiesAPIResponseStruct
-                                            .maybeFromMap(
-                                                citiesDropDownLOOKUPsAPIsResponse
-                                                    .jsonBody)
-                                        ?.hasRecords() ==
-                                    true
-                                ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                        citiesDropDownLOOKUPsAPIsResponse
-                                            .jsonBody)!
-                                    .records
-                                    .map((e) => e.code)
-                                    .toList()
-                                : FFAppConstants.emptyListStrings),
-                            optionLabels: FFLocalizations.of(context)
-                                        .languageCode ==
-                                    'ar'
-                                ? (LookupCitiesAPIResponseStruct.maybeFromMap(
-                                                citiesDropDownLOOKUPsAPIsResponse
-                                                    .jsonBody)
-                                            ?.hasRecords() ==
-                                        true
-                                    ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                            citiesDropDownLOOKUPsAPIsResponse
-                                                .jsonBody)!
-                                        .records
-                                        .map((e) => e.localName)
-                                        .toList()
-                                    : FFAppConstants.emptyListStrings)
-                                : (LookupCitiesAPIResponseStruct.maybeFromMap(
-                                                citiesDropDownLOOKUPsAPIsResponse
-                                                    .jsonBody)
-                                            ?.hasRecords() ==
-                                        true
-                                    ? LookupCitiesAPIResponseStruct.maybeFromMap(
-                                            citiesDropDownLOOKUPsAPIsResponse.jsonBody)!
-                                        .records
-                                        .map((e) => e.latinName)
-                                        .toList()
-                                    : FFAppConstants.emptyListStrings),
-                            onChanged: (val) => setState(
-                                () => _model.citiesDropDownValue = val),
-                            width: 300.0,
-                            height: 56.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .labelLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelLargeFamily,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelLargeFamily),
-                                ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'ha0dpmjk' /* المدينة */,
-                            ),
-                            icon: Icon(
-                              Icons.keyboard_arrow_down_rounded,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor:
-                                FlutterFlowTheme.of(context).textFieldBorder,
-                            borderWidth: 1.0,
-                            borderRadius: 12.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
-                            hidesUnderline: true,
-                            isOverButton: true,
-                            isSearchable: false,
-                            isMultiSelect: false,
-                          );
-                        },
+                        validator: _model.cityTextFieldTextControllerValidator
+                            .asValidator(context),
                       ),
                     ),
                     Padding(
@@ -1257,15 +1229,6 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
-                          if (_model.citiesDropDownValue == null) {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'حقل مكان الميلاد مطلوب',
-                                enText: 'Place of birth field is required.',
-                              ),
-                            );
-                            return;
-                          }
                           if (_model.genderDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
@@ -1285,7 +1248,9 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             return;
                           }
                           FFAppState().updateRegisterationFormDataStruct(
-                            (e) => e..birthOfPlace = _model.citiesDropDownValue,
+                            (e) => e
+                              ..birthOfPlace =
+                                  _model.cityTextFieldTextController.text,
                           );
                           setState(() {});
                         },
@@ -1302,17 +1267,6 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                   if (_model.formKey.currentState == null ||
                                       !_model.formKey.currentState!
                                           .validate()) {
-                                    return;
-                                  }
-                                  if (_model.citiesDropDownValue == null) {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'حقل مكان الميلاد مطلوب',
-                                        enText:
-                                            'Place of birth field is required.',
-                                      ),
-                                    );
                                     return;
                                   }
                                   if (_model.genderDropDownValue == null) {
@@ -1338,8 +1292,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                   FFAppState()
                                       .updateRegisterationFormDataStruct(
                                     (e) => e
-                                      ..birthOfPlace =
-                                          _model.citiesDropDownValue
+                                      ..birthOfPlace = _model
+                                          .cityTextFieldTextController.text
                                       ..motherNameEN = _model
                                           .motherNameENTextFieldTextController
                                           .text
