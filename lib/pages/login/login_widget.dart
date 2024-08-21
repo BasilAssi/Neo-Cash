@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -673,13 +672,25 @@ class _LoginWidgetState extends State<LoginWidget>
                                           ),
                                         ),
                                       ),
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 16.0, 0.0, 24.0),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 16.0, 0.0, 24.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            gradient: const LinearGradient(
+                                              colors: [
+                                                Color(0xFFF36B23),
+                                                Color(0xFFF05346),
+                                                Color(0xFFFA7A48)
+                                              ],
+                                              stops: [0.0, 0.0, 1.0],
+                                              begin: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              end: AlignmentDirectional(0, 1.0),
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               if (_model.formKey.currentState ==
@@ -767,6 +778,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         'fromPage':
                                                             serializeParam(
                                                           'loginMisDoc',
+                                                          ParamType.String,
+                                                        ),
+                                                        'customerId':
+                                                            serializeParam(
+                                                          FFAppState()
+                                                              .AuthenticatedUser
+                                                              .encodedId,
                                                           ParamType.String,
                                                         ),
                                                       }.withoutNulls,
@@ -869,13 +887,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: valueOrDefault<Color>(
-                                                functions.gradientColor(
-                                                    const Color(0x00000000),
-                                                    const Color(0x00000000)),
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
+                                              color: Colors.transparent,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall

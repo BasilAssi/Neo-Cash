@@ -52,20 +52,27 @@ Color? gradientColor(
   Color? color1,
   Color? color2,
 ) {
-  // // i need function that  take two colors and return gradient color
-  // if (color1 == null || color2 == null) {
-  //   return null;
+  // position = position.clamp(0.0, 1.0);
+
+  // // Define the gradient colors
+  // List<Color> colors = [
+  //   Color(0xFFF05346), // #F05346
+  //   Color(0xFFF36B23), // #F36B23
+  //   Color(0xFFFA7A48), // #FA7A48
+  // ];
+
+  // // Define the gradient stops
+  // List<double> stops = [0.0, 0.15, 0.54];
+
+  // // Find the color at the given position
+  // for (int i = 0; i < stops.length - 1; i++) {
+  //   if (position >= stops[i] && position <= stops[i + 1]) {
+  //     double localPosition = (position - stops[i]) / (stops[i + 1] - stops[i]);
+  //     return Color.lerp(colors[i], colors[i + 1], localPosition)!;
+  //   }
   // }
-  // final hexColor = color2.replaceAll('#', '');
-  // final r = int.parse(hexColor.substring(0, 2), radix: 16);
-  // final g = int.parse(hexColor.substring(2, 4), radix: 16);
-  // final b = int.parse(hexColor.substring(4, 6), radix: 16);
-  // final color2Value = Color.fromRGBO(r, g, b, 1.0);
-  // return LinearGradient(
-  //   colors: [color1, color2Value],
-  //   begin: Alignment.topCenter,
-  //   end: Alignment.bottomCenter,
-  // ).createShader(Rect.fromLTRB(0, 0, 0, 200));
+
+  // Return the last color if position is at the end of the gradient
   return color1;
 }
 

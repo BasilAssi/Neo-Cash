@@ -244,6 +244,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   'fromPage',
                   ParamType.String,
                 ),
+                customerId: params.getParam(
+                  'customerId',
+                  ParamType.String,
+                ),
               ),
             ),
             FFRoute(

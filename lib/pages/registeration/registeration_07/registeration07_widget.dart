@@ -1341,7 +1341,17 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                         ?.succeeded ??
                                                     true)) {
                                                   context.pushNamed(
-                                                      'registeration_08');
+                                                    'registeration_08',
+                                                    queryParameters: {
+                                                      'customerId':
+                                                          serializeParam(
+                                                        FFAppState()
+                                                            .registerationFormData
+                                                            .customerId,
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
                                                 } else {
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
