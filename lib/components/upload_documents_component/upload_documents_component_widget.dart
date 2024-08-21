@@ -12,7 +12,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'upload_documents_component_model.dart';
 export 'upload_documents_component_model.dart';
 
@@ -23,12 +22,14 @@ class UploadDocumentsComponentWidget extends StatefulWidget {
     this.name,
     this.description,
     required this.moduleType,
+    required this.customerId,
   });
 
   final String? encodedId;
   final String? name;
   final String? description;
   final String? moduleType;
+  final String? customerId;
 
   @override
   State<UploadDocumentsComponentWidget> createState() =>
@@ -60,8 +61,6 @@ class _UploadDocumentsComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
       child: Column(
@@ -306,7 +305,7 @@ class _UploadDocumentsComponentWidgetState
 
                   _model.apiResultUploadDocument =
                       await AuthAndRegisterGroup.uploadDocumentCall.call(
-                    customerId: FFAppState().AuthenticatedUser.encodedId,
+                    customerId: widget.customerId,
                     file: _model.uploadedLocalFile,
                     msgId: functions.messageId(),
                     documentTypeId: widget.encodedId,

@@ -17,9 +17,11 @@ class Registeration08Widget extends StatefulWidget {
   const Registeration08Widget({
     super.key,
     this.fromPage,
+    required this.customerId,
   });
 
   final String? fromPage;
+  final String? customerId;
 
   @override
   State<Registeration08Widget> createState() => _Registeration08WidgetState();
@@ -178,6 +180,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                                 moduleType: documentTypesItem.hasModuleType()
                                     ? documentTypesItem.moduleType
                                     : ' ',
+                                customerId: widget.customerId!,
                               );
                             },
                           );
