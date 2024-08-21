@@ -426,7 +426,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               optionLabels: [
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'mydegl1b' /* +970 */,
+                                                  'ke1w6n59' /* +970 */,
                                                 ),
                                                 FFLocalizations.of(context)
                                                     .getText(

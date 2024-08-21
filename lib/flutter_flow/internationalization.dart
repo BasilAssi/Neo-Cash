@@ -206,11 +206,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '+970',
       'en': '+970',
     },
-    'mydegl1b': {
+    'ke1w6n59': {
       'ar': '+970',
       'en': '',
     },
-    '5vvawxxx': {
+    'mydegl1b': {
       'ar': '+972',
       'en': '',
     },
