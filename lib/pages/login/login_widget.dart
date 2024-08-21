@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -868,9 +869,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              color: valueOrDefault<Color>(
+                                                functions.gradientColor(
+                                                    const Color(0x00000000),
+                                                    const Color(0x00000000)),
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
