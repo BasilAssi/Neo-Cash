@@ -193,10 +193,6 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                           shape: PinCodeFieldShape.box,
                           activeColor: FlutterFlowTheme.of(context).textColor,
                           inactiveColor: FlutterFlowTheme.of(context).alternate,
-                          activeFillColor:
-                              FlutterFlowTheme.of(context).textColor,
-                          inactiveFillColor:
-                              FlutterFlowTheme.of(context).alternate,
                         ),
                         controller: _model.pinCodeController,
                         onChanged: (_) {},

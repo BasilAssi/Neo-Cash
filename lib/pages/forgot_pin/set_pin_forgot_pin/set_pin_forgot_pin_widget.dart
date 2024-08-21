@@ -206,14 +206,6 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                               .textFieldBorder,
                                       selectedColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      activeFillColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      inactiveFillColor:
-                                          FlutterFlowTheme.of(context)
-                                              .textFieldBorder,
-                                      selectedFillColor:
-                                          FlutterFlowTheme.of(context).primary,
                                     ),
                                     controller: _model.pinCodeController,
                                     onChanged: (_) {},

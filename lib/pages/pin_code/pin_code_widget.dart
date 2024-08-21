@@ -209,10 +209,6 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             activeColor: FlutterFlowTheme.of(context).primary,
                             inactiveColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            activeFillColor:
-                                FlutterFlowTheme.of(context).primary,
-                            inactiveFillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
                           ),
                           controller: _model.pinCodeController,
                           onChanged: (_) {},
