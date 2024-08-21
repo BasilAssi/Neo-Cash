@@ -92,6 +92,10 @@ class IsRegisteredCall {
         response,
         r'''$.records[:].mobileNumber''',
       ));
+  dynamic customerId(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].encodedId''',
+      );
 }
 
 class SendOTPToCustomerCall {
