@@ -1345,9 +1345,14 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                     queryParameters: {
                                                       'customerId':
                                                           serializeParam(
-                                                        FFAppState()
-                                                            .registerationFormData
-                                                            .customerId,
+                                                        AuthAndRegisterGroup
+                                                            .registerACustomerCall
+                                                            .customerId(
+                                                              (_model.apiResultCustomerRegister
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            )
+                                                            .toString(),
                                                         ParamType.String,
                                                       ),
                                                     }.withoutNulls,

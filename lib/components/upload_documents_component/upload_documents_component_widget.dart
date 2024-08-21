@@ -70,7 +70,10 @@ class _UploadDocumentsComponentWidgetState
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
             child: Text(
-              'Upload  ${widget.name}',
+              '${FFLocalizations.of(context).getVariableText(
+                arText: 'ارفق',
+                enText: 'Upload ',
+              )}${widget.name}',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily:
                         FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -341,7 +344,10 @@ class _UploadDocumentsComponentWidgetState
 
                 setState(() {});
               },
-              text: 'Upload ',
+              text: FFLocalizations.of(context).getVariableText(
+                arText: 'ارفق',
+                enText: 'Upload ',
+              ),
               icon: const Icon(
                 Icons.upload,
                 size: 15.0,
