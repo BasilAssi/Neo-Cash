@@ -627,12 +627,13 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                     child: FlutterFlowDropDown<String>(
                       controller: _model.dropDownValueController ??=
                           FormFieldController<String>(
-                        _model.dropDownValue ??= valueOrDefault<String>(
-                          FFAppState()
-                              .registerationFormData
-                              .isTrueBeneficiaryAccount,
-                          'true',
-                        ),
+                        _model.dropDownValue ??= FFAppState()
+                                .registerationFormData
+                                .hasIsTrueBeneficiaryAccount()
+                            ? FFAppState()
+                                .registerationFormData
+                                .isTrueBeneficiaryAccount
+                            : '',
                       ),
                       options: List<String>.from(['false', 'true']),
                       optionLabels: [

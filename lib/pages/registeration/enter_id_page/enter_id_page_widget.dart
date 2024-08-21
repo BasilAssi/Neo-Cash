@@ -384,7 +384,15 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         .mobileNumberPrefix(
                                       (_model.isRegisteredOutPut?.jsonBody ??
                                           ''),
-                                    ),
+                                    )
+                                    ..customerId =
+                                        AuthAndRegisterGroup.isRegisteredCall
+                                            .customerId(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            .toString(),
                                 );
                                 setState(() {});
                                 _model.apiResultSendOTP =
@@ -428,7 +436,16 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 }
                               } else {
                                 FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e..isRegisteredStatus = false,
+                                  (e) => e
+                                    ..isRegisteredStatus = false
+                                    ..customerId =
+                                        AuthAndRegisterGroup.isRegisteredCall
+                                            .customerId(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            .toString(),
                                 );
                                 setState(() {});
 

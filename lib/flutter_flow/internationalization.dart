@@ -1881,7 +1881,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gdk2t82t': {
       'ar': 'هل أنت المستفيد الحقيقي من الحساب؟',
-      'en': 'Are you the real beneficiary of the account?',
+      'en': 'Are you the beneficiary of the account?',
     },
     'n5ifl7pf': {
       'ar': 'لا',
