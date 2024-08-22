@@ -1789,8 +1789,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Workplace',
     },
     'bvo31zkk': {
-      'ar': 'الدخل الشهري ',
-      'en': 'Monthly income',
+      'ar': 'الدخل الشهري (بالدولار)  ',
+      'en': 'Monthly Income (USD)',
     },
     '5w21n1s1': {
       'ar': '',

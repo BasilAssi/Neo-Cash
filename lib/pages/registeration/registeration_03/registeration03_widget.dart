@@ -1014,7 +1014,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'bvo31zkk' /* الدخل الشهري  */,
+                          'bvo31zkk' /* الدخل الشهري (بالدولار)   */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
