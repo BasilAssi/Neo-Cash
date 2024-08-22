@@ -207,11 +207,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
 
                           if ((_model.apiResultSendToApproval?.succeeded ??
                               true)) {
-                            if (widget.fromPage == 'loginMisDoc') {
-                              context.pushNamed('success_page');
-                            } else {
-                              context.pushNamed('login');
-                            }
+                            context.pushNamed('success_page');
                           } else {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
