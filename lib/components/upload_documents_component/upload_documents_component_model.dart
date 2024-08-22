@@ -6,10 +6,6 @@ import 'package:flutter/material.dart';
 
 class UploadDocumentsComponentModel
     extends FlutterFlowModel<UploadDocumentsComponentWidget> {
-  ///  Local state fields for this component.
-
-  String imageURL = ' ';
-
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Custom Action - isNetworkAvailable] action in IconButton widget.

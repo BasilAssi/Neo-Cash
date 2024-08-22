@@ -903,7 +903,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4qyygkkl': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'q00zvrwj': {
       'ar': 'الاسم يجب ان يكون باللغة العربية',
@@ -919,7 +919,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'unpl269b': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'a5kpo2rp': {
       'ar': 'الاسم يجب ان يكون باللغة العربية',
@@ -935,7 +935,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x802qk9b': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'e62e5k8n': {
       'ar': 'الاسم يجب ان يكون باللغة العربية',
@@ -951,7 +951,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '28alnuln': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     '972ziqbl': {
       'ar': 'الاسم يجب ان يكون باللغة العربية',
@@ -967,7 +967,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pjcomu85': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     '6e7r5kul': {
       'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
@@ -983,7 +983,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sh8ve8ex': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     '7go408ld': {
       'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
@@ -999,7 +999,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vhf4dh58': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'x114xo5o': {
       'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
@@ -1015,7 +1015,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'agkzy9t0': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'a7t0jgxg': {
       'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
@@ -1172,7 +1172,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7n7qut9f': {
       'ar': 'المدينة',
-      'en': '',
+      'en': 'City',
     },
     '1gqz1vk4': {
       'ar': 'اسم الأم باللغة الانجليزية',
@@ -1224,7 +1224,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2z8oap5p': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'my2ri9k8': {
       'ar': 'Please choose an option from the dropdown',
@@ -1236,7 +1236,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wiu3u5p7': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'd9xrc6bn': {
       'ar': 'اسم الام يجب ان يكون باللغة الانجليزية',
@@ -1329,7 +1329,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qbk4zj7i': {
       'ar': 'الرجاء إدخال بريد إلكتروني صحيح.',
-      'en': '',
+      'en': 'Please enter a valid email.',
     },
     'sn1ac2pa': {
       'ar': 'Please choose an option from the dropdown',
@@ -1342,7 +1342,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '6q1dfoo5': {
       'ar':
           'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
-      'en': '',
+      'en':
+          'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
     'rc19rnrm': {
       'ar': 'Please choose an option from the dropdown',
@@ -1355,7 +1356,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'sh8pcgv7': {
       'ar':
           'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
-      'en': '',
+      'en':
+          'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
     'x3v0m7qw': {
       'ar': 'Please choose an option from the dropdown',
@@ -1453,8 +1455,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Field is required',
     },
     'v4bkyj9y': {
-      'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'ar': 'يجب ألا يتجاوز النص 100 حرفًا.',
+      'en': 'Text must not exceed 100 characters.',
     },
     '9tynz1pf': {
       'ar': 'Please choose an option from the dropdown',
@@ -1730,11 +1732,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bg1z8bxj': {
       'ar': 'نعم',
-      'en': '',
+      'en': 'Yes',
     },
     'g5scq0d2': {
       'ar': 'لا',
-      'en': '',
+      'en': 'No',
     },
     'btro9yps': {
       'ar': 'مقيم في البلد؟',
@@ -1810,7 +1812,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wnf2fraw': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'bcmiiojk': {
       'ar': 'Please choose an option from the dropdown',
@@ -1822,7 +1824,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rn5wudke': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'iw5fw6si': {
       'ar': 'Please choose an option from the dropdown',
@@ -1834,7 +1836,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3emqfmua': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'wqglt18i': {
       'ar': 'Please choose an option from the dropdown',
@@ -1929,7 +1931,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0snrq15l': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'ff20u9xu': {
       'ar': 'Please choose an option from the dropdown',
@@ -2514,7 +2516,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8uyk2yx4': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'nrirvjsc': {
       'ar': 'Please choose an option from the dropdown',
@@ -2526,7 +2528,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gjmeocq2': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'ukwnlenj': {
       'ar': 'Please choose an option from the dropdown',
@@ -2538,7 +2540,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bs15x86c': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     'pljieomh': {
       'ar': 'Please choose an option from the dropdown',
@@ -2550,7 +2552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '988ahozd': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
-      'en': '',
+      'en': 'Text must not exceed 25 characters.',
     },
     '2dzzz8zd': {
       'ar': 'Please choose an option from the dropdown',
@@ -3060,6 +3062,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ioukah6f': {
+      'ar': '',
+      'en': '',
+    },
+    'pg4entmg': {
       'ar': '',
       'en': '',
     },

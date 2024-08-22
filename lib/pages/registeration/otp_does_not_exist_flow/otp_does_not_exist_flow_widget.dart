@@ -194,7 +194,9 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                             ? functions.maskMobileNumber(
                                                 FFAppState()
                                                     .registerationFormData
-                                                    .mobileNumber)!
+                                                    .mobileNumber,
+                                                FFLocalizations.of(context)
+                                                    .languageCode)!
                                             : FFAppState()
                                                 .registerationFormData
                                                 .mobileNumber)
