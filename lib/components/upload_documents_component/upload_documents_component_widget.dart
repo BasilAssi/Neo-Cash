@@ -9,7 +9,6 @@ import 'dart:ui';
 import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'upload_documents_component_model.dart';
@@ -137,27 +136,26 @@ class _UploadDocumentsComponentWidgetState
                               PageTransition(
                                 type: PageTransitionType.fade,
                                 child: FlutterFlowExpandedImageView(
-                                  image: CachedNetworkImage(
-                                    fadeInDuration: const Duration(milliseconds: 500),
-                                    fadeOutDuration:
-                                        const Duration(milliseconds: 500),
-                                    imageUrl: _model.imageURL,
+                                  image: Image.memory(
+                                    _model.uploadedLocalFile.bytes ??
+                                        Uint8List.fromList([]),
                                     fit: BoxFit.contain,
-                                    errorWidget: (context, error, stackTrace) =>
-                                        Image.asset(
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Image.asset(
                                       'assets/images/error_image.jpeg',
                                       fit: BoxFit.contain,
                                     ),
                                   ),
                                   allowRotation: false,
-                                  tag: _model.imageURL,
+                                  tag: 'imageTag',
                                   useHeroAnimation: true,
                                 ),
                               ),
                             );
                           },
                           child: Hero(
-                            tag: _model.imageURL,
+                            tag: 'imageTag',
                             transitionOnUserGestures: true,
                             child: ClipRRect(
                               borderRadius: const BorderRadius.only(
@@ -166,14 +164,13 @@ class _UploadDocumentsComponentWidgetState
                                 topLeft: Radius.circular(16.0),
                                 topRight: Radius.circular(16.0),
                               ),
-                              child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
-                                imageUrl: _model.imageURL,
+                              child: Image.memory(
+                                _model.uploadedLocalFile.bytes ??
+                                    Uint8List.fromList([]),
                                 width: MediaQuery.sizeOf(context).width * 0.5,
                                 height: 180.0,
                                 fit: BoxFit.cover,
-                                errorWidget: (context, error, stackTrace) =>
+                                errorBuilder: (context, error, stackTrace) =>
                                     Image.asset(
                                   'assets/images/error_image.jpeg',
                                   width: MediaQuery.sizeOf(context).width * 0.5,
@@ -223,8 +220,12 @@ class _UploadDocumentsComponentWidgetState
                         if ((_model
                                 .apiResultDeleteUploadedDocument?.succeeded ??
                             true)) {
-                          _model.imageURL = ' ';
-                          setState(() {});
+                          setState(() {
+                            _model.isDataUploading = false;
+                            _model.uploadedLocalFile =
+                                FFUploadedFile(bytes: Uint8List.fromList([]));
+                          });
+
                           await actions.showToast(
                             FFLocalizations.of(context).getVariableText(
                               arText: 'تم حذف الصورة بنجاح',
@@ -316,9 +317,6 @@ class _UploadDocumentsComponentWidgetState
                   );
 
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {
-                    _model.imageURL =
-                        '${FFAppConstants.baseURL}${CustomerUploadedDocumentsStruct.maybeFromMap((_model.apiResultUploadDocument?.jsonBody ?? ''))?.url}';
-                    setState(() {});
                     await actions.showToast(
                       FFLocalizations.of(context).getVariableText(
                         arText: 'تم إضافة الصورة بنجاح',

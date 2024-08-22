@@ -108,7 +108,10 @@ String isValidPIN1(
   return 'true';
 }
 
-String? maskMobileNumber(String? mobileNumber) {
+String? maskMobileNumber(
+  String? mobileNumber,
+  String language,
+) {
   if (mobileNumber == null || mobileNumber.isEmpty) {
     return '';
   }
@@ -119,8 +122,11 @@ String? maskMobileNumber(String? mobileNumber) {
 
   int visibleDigits = 3;
   String maskedSection = '*' * (mobileNumber.length - visibleDigits);
+
   String visibleSection =
       mobileNumber.substring(mobileNumber.length - visibleDigits);
-
-  return maskedSection + visibleSection;
+  if (language == 'en') {
+    return maskedSection + visibleSection;
+  }
+  return visibleSection + maskedSection;
 }

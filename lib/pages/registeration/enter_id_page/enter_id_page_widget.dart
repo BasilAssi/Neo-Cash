@@ -408,9 +408,6 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                   destinationType: 'MOBILE_NUMBER',
                                   operationType: 'REGISTER_DEVICE',
-                                  token: FFAppState()
-                                      .AuthenticatedUser
-                                      .accessToken,
                                 );
 
                                 if ((_model.apiResultSendOTP?.succeeded ??

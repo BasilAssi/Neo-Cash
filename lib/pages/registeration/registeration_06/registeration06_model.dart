@@ -41,7 +41,7 @@ class Registeration06Model extends FlutterFlowModel<Registeration06Widget> {
 
     if (val.length > 100) {
       return FFLocalizations.of(context).getText(
-        'v4bkyj9y' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+        'v4bkyj9y' /* يجب ألا يتجاوز النص 100 حرفًا. */,
       );
     }
 

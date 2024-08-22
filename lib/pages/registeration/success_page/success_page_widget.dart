@@ -96,7 +96,6 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget>
                         height: 200.0,
                         fit: BoxFit.cover,
                         frameRate: FrameRate(60.0),
-                        repeat: false,
                         animate: true,
                       ),
                     ],
