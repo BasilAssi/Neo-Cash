@@ -227,7 +227,7 @@ class SendToApprovalCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send to Approval',
-      apiUrl: '$baseUrl/api/v1/sendToApproval',
+      apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -631,7 +631,7 @@ class DeleteUploadedDocumentCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
-      apiUrl: '$baseUrl/customer/$deleteURL',
+      apiUrl: '$baseUrl/$deleteURL',
       callType: ApiCallType.DELETE,
       headers: {
         'Accept-Language': '$acceptLanguage',

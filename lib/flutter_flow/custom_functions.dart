@@ -107,3 +107,20 @@ String isValidPIN1(
 
   return 'true';
 }
+
+String? maskMobileNumber(String? mobileNumber) {
+  if (mobileNumber == null || mobileNumber.isEmpty) {
+    return '';
+  }
+
+  if (mobileNumber.length <= 3) {
+    return mobileNumber;
+  }
+
+  int visibleDigits = 3;
+  String maskedSection = '*' * (mobileNumber.length - visibleDigits);
+  String visibleSection =
+      mobileNumber.substring(mobileNumber.length - visibleDigits);
+
+  return maskedSection + visibleSection;
+}
