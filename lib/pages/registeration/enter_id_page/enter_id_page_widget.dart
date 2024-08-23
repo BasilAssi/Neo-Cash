@@ -364,7 +364,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                           ''))
                                       ?.status ==
                                   true) {
-                                if ((ResponseModelStruct.maybeFromMap((_model
+                                if (!((ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
                                                 ''))
@@ -375,7 +375,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                     ?.jsonBody ??
                                                 ''))
                                             ?.customerStatus ==
-                                        'Rejected')) {
+                                        'Rejected'))) {
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut
                                                   ?.jsonBody ??
