@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -369,14 +368,13 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                     ?.jsonBody ??
                                                 ''))
                                             ?.customerStatus ==
-                                        EnumCustomerStatus
-                                            .REJECTED_BY_CARD_PROCESSOR.name) ||
+                                        'DEACTIVATED') ||
                                     (ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
                                                 ''))
                                             ?.customerStatus ==
-                                        EnumCustomerStatus.REJECTED.name)) {
+                                        'Rejected')) {
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut
                                                   ?.jsonBody ??
