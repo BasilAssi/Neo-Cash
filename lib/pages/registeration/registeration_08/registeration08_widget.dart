@@ -211,8 +211,8 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                           } else {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'خطأ',
-                                enText: 'Error',
+                                arText: 'الرجاء إكمال تحميل الصور',
+                                enText: 'Please Complete uploading photos',
                               ),
                             );
                           }
