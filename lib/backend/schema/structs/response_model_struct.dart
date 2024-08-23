@@ -11,10 +11,14 @@ class ResponseModelStruct extends BaseStruct {
     String? message,
     String? code,
     String? referenceId,
+    String? isDeviceRegistered,
+    String? customerStatus,
   })  : _status = status,
         _message = message,
         _code = code,
-        _referenceId = referenceId;
+        _referenceId = referenceId,
+        _isDeviceRegistered = isDeviceRegistered,
+        _customerStatus = customerStatus;
 
   // "status" field.
   bool? _status;
@@ -44,12 +48,28 @@ class ResponseModelStruct extends BaseStruct {
 
   bool hasReferenceId() => _referenceId != null;
 
+  // "isDeviceRegistered" field.
+  String? _isDeviceRegistered;
+  String get isDeviceRegistered => _isDeviceRegistered ?? '';
+  set isDeviceRegistered(String? val) => _isDeviceRegistered = val;
+
+  bool hasIsDeviceRegistered() => _isDeviceRegistered != null;
+
+  // "customerStatus" field.
+  String? _customerStatus;
+  String get customerStatus => _customerStatus ?? '';
+  set customerStatus(String? val) => _customerStatus = val;
+
+  bool hasCustomerStatus() => _customerStatus != null;
+
   static ResponseModelStruct fromMap(Map<String, dynamic> data) =>
       ResponseModelStruct(
         status: data['status'] as bool?,
         message: data['message'] as String?,
         code: data['code'] as String?,
         referenceId: data['referenceId'] as String?,
+        isDeviceRegistered: data['isDeviceRegistered'] as String?,
+        customerStatus: data['customerStatus'] as String?,
       );
 
   static ResponseModelStruct? maybeFromMap(dynamic data) => data is Map
@@ -61,6 +81,8 @@ class ResponseModelStruct extends BaseStruct {
         'message': _message,
         'code': _code,
         'referenceId': _referenceId,
+        'isDeviceRegistered': _isDeviceRegistered,
+        'customerStatus': _customerStatus,
       }.withoutNulls;
 
   @override
@@ -79,6 +101,14 @@ class ResponseModelStruct extends BaseStruct {
         ),
         'referenceId': serializeParam(
           _referenceId,
+          ParamType.String,
+        ),
+        'isDeviceRegistered': serializeParam(
+          _isDeviceRegistered,
+          ParamType.String,
+        ),
+        'customerStatus': serializeParam(
+          _customerStatus,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -105,6 +135,16 @@ class ResponseModelStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        isDeviceRegistered: deserializeParam(
+          data['isDeviceRegistered'],
+          ParamType.String,
+          false,
+        ),
+        customerStatus: deserializeParam(
+          data['customerStatus'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -116,12 +156,14 @@ class ResponseModelStruct extends BaseStruct {
         status == other.status &&
         message == other.message &&
         code == other.code &&
-        referenceId == other.referenceId;
+        referenceId == other.referenceId &&
+        isDeviceRegistered == other.isDeviceRegistered &&
+        customerStatus == other.customerStatus;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([status, message, code, referenceId]);
+  int get hashCode => const ListEquality().hash(
+      [status, message, code, referenceId, isDeviceRegistered, customerStatus]);
 }
 
 ResponseModelStruct createResponseModelStruct({
@@ -129,10 +171,14 @@ ResponseModelStruct createResponseModelStruct({
   String? message,
   String? code,
   String? referenceId,
+  String? isDeviceRegistered,
+  String? customerStatus,
 }) =>
     ResponseModelStruct(
       status: status,
       message: message,
       code: code,
       referenceId: referenceId,
+      isDeviceRegistered: isDeviceRegistered,
+      customerStatus: customerStatus,
     );
