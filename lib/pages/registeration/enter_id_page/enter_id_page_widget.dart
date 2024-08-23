@@ -368,14 +368,14 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
                                                 ''))
-                                            ?.customerStatus ==
-                                        'Rejected') ||
+                                            ?.customerStatus !=
+                                        'DEACTIVATED') &&
                                     (ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
                                                 ''))
                                             ?.customerStatus !=
-                                        'DEACTIVATED')) {
+                                        'REJECTED')) {
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut
                                                   ?.jsonBody ??
