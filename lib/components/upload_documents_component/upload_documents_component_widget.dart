@@ -324,6 +324,12 @@ class _UploadDocumentsComponentWidgetState
                       ),
                     );
                   } else {
+                    setState(() {
+                      _model.isDataUploading = false;
+                      _model.uploadedLocalFile =
+                          FFUploadedFile(bytes: Uint8List.fromList([]));
+                    });
+
                     await actions.showToast(
                       FFLocalizations.of(context).getVariableText(
                         arText: 'خطأ',
