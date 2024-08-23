@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -363,70 +364,121 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                           ''))
                                       ?.status ==
                                   true) {
-                                FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e
-                                    ..isRegisteredStatus = true
-                                    ..email = AuthAndRegisterGroup
-                                        .isRegisteredCall
-                                        .emailAddress(
-                                      (_model.isRegisteredOutPut?.jsonBody ??
-                                          ''),
-                                    )
-                                    ..mobileNumber = AuthAndRegisterGroup
-                                        .isRegisteredCall
-                                        .mobileNumber(
-                                      (_model.isRegisteredOutPut?.jsonBody ??
-                                          ''),
-                                    )
-                                    ..prefixMobile = AuthAndRegisterGroup
-                                        .isRegisteredCall
-                                        .mobileNumberPrefix(
-                                      (_model.isRegisteredOutPut?.jsonBody ??
-                                          ''),
-                                    )
-                                    ..customerId =
-                                        AuthAndRegisterGroup.isRegisteredCall
+                                if ((ResponseModelStruct.maybeFromMap((_model
+                                                    .isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                            ?.customerStatus ==
+                                        EnumCustomerStatus
+                                            .REJECTED_BY_CARD_PROCESSOR.name) ||
+                                    (ResponseModelStruct.maybeFromMap((_model
+                                                    .isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                            ?.customerStatus ==
+                                        EnumCustomerStatus.REJECTED.name)) {
+                                  if (ResponseModelStruct.maybeFromMap((_model
+                                                  .isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''))
+                                          ?.isDeviceRegistered ==
+                                      'false') {
+                                    FFAppState()
+                                        .updateRegisterationFormDataStruct(
+                                      (e) => e
+                                        ..isRegisteredStatus = true
+                                        ..email = AuthAndRegisterGroup
+                                            .isRegisteredCall
+                                            .emailAddress(
+                                          (_model.isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        ..mobileNumber = AuthAndRegisterGroup
+                                            .isRegisteredCall
+                                            .mobileNumber(
+                                          (_model.isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        ..prefixMobile = AuthAndRegisterGroup
+                                            .isRegisteredCall
+                                            .mobileNumberPrefix(
+                                          (_model.isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        ..customerId = AuthAndRegisterGroup
+                                            .isRegisteredCall
                                             .customerId(
                                               (_model.isRegisteredOutPut
                                                       ?.jsonBody ??
                                                   ''),
                                             )
                                             .toString(),
-                                );
-                                setState(() {});
-                                _model.apiResultSendOTP =
-                                    await AuthAndRegisterGroup
-                                        .sendOTPToCustomerCall
-                                        .call(
-                                  msgId: functions.messageId(),
-                                  idNumber: FFAppState()
-                                      .registerationFormData
-                                      .idNumber,
-                                  idType:
-                                      FFAppState().registerationFormData.idType,
-                                  mobileNumber:
-                                      '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
-                                  destinationType: 'MOBILE_NUMBER',
-                                  operationType: 'REGISTER_DEVICE',
-                                );
+                                    );
+                                    setState(() {});
+                                    _model.apiResultSendOTP =
+                                        await AuthAndRegisterGroup
+                                            .sendOTPToCustomerCall
+                                            .call(
+                                      msgId: functions.messageId(),
+                                      idNumber: FFAppState()
+                                          .registerationFormData
+                                          .idNumber,
+                                      idType: FFAppState()
+                                          .registerationFormData
+                                          .idType,
+                                      mobileNumber:
+                                          '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                                      destinationType: 'MOBILE_NUMBER',
+                                      operationType: 'REGISTER_DEVICE',
+                                    );
 
-                                if ((_model.apiResultSendOTP?.succeeded ??
-                                    true)) {
-                                  context.pushNamed('otp_does_not_exist_flow');
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'error',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                    if ((_model.apiResultSendOTP?.succeeded ??
+                                        true)) {
+                                      context
+                                          .pushNamed('otp_does_not_exist_flow');
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'error',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
                                         ),
+                                      );
+                                    }
+                                  } else {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText:
+                                            'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
+                                        enText:
+                                            'please login .. did you forget your password?',
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
+                                    );
+
+                                    context.pushNamed('login');
+                                  }
+                                } else {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText:
+                                          'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش',
+                                      enText:
+                                          'Your account is closed, please contact neocash.',
                                     ),
                                   );
                                 }
