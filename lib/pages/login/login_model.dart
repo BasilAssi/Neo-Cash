@@ -39,6 +39,17 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       );
     }
 
+    if (val.length < 9) {
+      return FFLocalizations.of(context).getText(
+        'mmnenext' /* لا يمكن ان يكون الرقم اقل من 9... */,
+      );
+    }
+    if (val.length > 9) {
+      return FFLocalizations.of(context).getText(
+        '9u91qgdo' /* لا يمكن ان يكون الرقم أكبر من ... */,
+      );
+    }
+
     return null;
   }
 
