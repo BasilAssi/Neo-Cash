@@ -44,7 +44,7 @@ dependencies:
   flutter_animate: 4.5.0
   flutter_barcode_scanner: 
     git:
-      url: https://github.com/FlutterFlow/flutter_barcode_scanner
+      url: http://github.com/FlutterFlow/flutter_barcode_scanner
   flutter_cache_manager: 3.3.1
   flutter_card_swiper: 6.0.0
   flutter_native_splash: 2.3.1
