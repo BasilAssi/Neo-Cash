@@ -8,6 +8,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -277,6 +279,28 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .textFieldValueTextController,
                                               focusNode: _model
                                                   .textFieldValueFocusNode,
+                                              onChanged: (_) =>
+                                                  EasyDebounce.debounce(
+                                                '_model.textFieldValueTextController',
+                                                const Duration(milliseconds: 300),
+                                                () async {
+                                                  setState(() {
+                                                    _model.textFieldValueTextController
+                                                            ?.text =
+                                                        functions.updateTextfield(
+                                                            _model
+                                                                .textFieldValueTextController
+                                                                .text)!;
+                                                    _model.textFieldValueTextController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textFieldValueTextController!
+                                                                .text
+                                                                .length);
+                                                  });
+                                                },
+                                              ),
                                               autofocus: true,
                                               autofillHints: const [
                                                 AutofillHints.telephoneNumber

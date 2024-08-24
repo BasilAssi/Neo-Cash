@@ -192,7 +192,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
-                                      const Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 300),
                                       () async {
                                         setState(() {
                                           _model.textController?.text =
