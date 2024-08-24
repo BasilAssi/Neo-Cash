@@ -12,6 +12,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -431,6 +432,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     .bodyMediumFamily),
                                                       ),
                                               textAlign: TextAlign.start,
+                                              maxLength: 9,
+                                              maxLengthEnforcement:
+                                                  MaxLengthEnforcement.enforced,
+                                              buildCounter: (context,
+                                                      {required currentLength,
+                                                      required isFocused,
+                                                      maxLength}) =>
+                                                  null,
                                               keyboardType: TextInputType.phone,
                                               validator: _model
                                                   .textFieldValueTextControllerValidator
