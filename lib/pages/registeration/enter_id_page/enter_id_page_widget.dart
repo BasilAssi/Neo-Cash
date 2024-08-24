@@ -357,6 +357,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             );
 
                             print('_model.isRegisteredOutPut ${_model.isRegisteredOutPut?.jsonBody}');
+                            print('customerStatus ${ IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) }');
+                            print('isDeviceRegistered ${IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody)}');
+
                             if ((_model.isRegisteredOutPut?.succeeded ??
                                 true)) {
                               if (ResponseModelStruct.maybeFromMap((_model
@@ -368,24 +371,12 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 //                                         'DEACTIVATED') &&
                                 //                                     (IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) !=
                                 //                                         'REJECTED')) {
-                                if ((ResponseModelStruct.maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                            ?.customerStatus !=
+                                if ((IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) !=
                                         'DEACTIVATED') &&
-                                    (ResponseModelStruct.maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                            ?.customerStatus !=
+                                    (IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) !=
                                         'REJECTED')) {
-                                  if (ResponseModelStruct.maybeFromMap((_model
-                                                  .isRegisteredOutPut
-                                                  ?.jsonBody ??
-                                              ''))
-                                          ?.isDeviceRegistered ==
-                                      'false') {
+                                  if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                      false) {
                                     FFAppState()
                                         .updateRegisterationFormDataStruct(
                                       (e) => e

@@ -1339,6 +1339,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'emailMax25': {
+      'ar': 'الحد الأقصى المسموح به هو 25 حرفًا حاليًا',
+      'en': 'Maximum 25 characters allowed, currently',
+    },
     'qbk4zj7i': {
       'ar': 'الرجاء إدخال بريد إلكتروني صحيح.',
       'en': 'Please enter a valid email.',
@@ -2646,6 +2650,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'w5wdtbjl': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
+    },
+    'Requires4characters': {
+      'ar': 'يتطلب 4 أحرف.',
+      'en': 'Requires 4 characters.',
     },
     'zsckrnmu': {
       'ar': 'تسجيل',

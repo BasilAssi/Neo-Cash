@@ -679,6 +679,8 @@ class _SetPasswordExistFlowWidgetState
 
                                             context.pushNamed('login');
                                           } else {
+                                            print('11111apiResultCustomerRegisterDevice1 ${_model.apiResultCustomerRegisterDevice1?.jsonBody}');
+
                                             await actions.showToast(
                                               FFLocalizations.of(context)
                                                   .getVariableText(
@@ -711,7 +713,7 @@ class _SetPasswordExistFlowWidgetState
                                       }
                                     } else {
                                       await actions.showToast(
-                                        _model.isValidPINResult1,
+                                        _model.isValidPINResult1 ?? '',
                                       );
                                     }
                                   } else {
@@ -828,7 +830,7 @@ class _SetPasswordExistFlowWidgetState
                                       }
                                     } else {
                                       await actions.showToast(
-                                        _model.isValidPINResult,
+                                        _model.isValidPINResult?? '',
                                       );
                                     }
                                   }

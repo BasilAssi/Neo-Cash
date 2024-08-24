@@ -16,7 +16,7 @@ Future showToast(String message) async {
         msg: message,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 2,
+        timeInSecForIosWeb: 3,
         backgroundColor: Colors.black54,
         textColor: Colors.white,
         fontSize: 18.0);

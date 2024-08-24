@@ -299,7 +299,7 @@ class _UploadDocumentsComponentWidgetState
                       setState(() {
                         _model.uploadedLocalFile = selectedUploadedFiles.first;
                       });
-                      showUploadMessage(context, 'Success!');
+                     // showUploadMessage(context, 'Success!');
                     } else {
                       setState(() {});
                       showUploadMessage(context, 'Failed to upload data');
@@ -313,7 +313,7 @@ class _UploadDocumentsComponentWidgetState
                     file: _model.uploadedLocalFile,
                     msgId: functions.messageId(),
                     documentTypeId: widget.encodedId,
-                    forceUpload: 'false',
+                    forceUpload: 'true',
                   );
 
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {

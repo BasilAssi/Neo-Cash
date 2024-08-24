@@ -43,7 +43,7 @@ class SetPasswordExistFlowModel
       );
     }
 
-    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
+    if (!RegExp( r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000}')
         .hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         'a9l80f02' /* يجب أن تكون كلمة المرور بطول ل... */,
@@ -66,7 +66,8 @@ class SetPasswordExistFlowModel
       );
     }
 
-    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
+
+    if (!RegExp( r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000}')
         .hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '0hz9033c' /* يجب أن تكون كلمة المرور بطول ل... */,
@@ -85,7 +86,9 @@ class SetPasswordExistFlowModel
       );
     }
     if (val.length < 4) {
-      return 'Requires 4 characters.';
+      return FFLocalizations.of(context).getText(
+        'Requires4characters' /* يتطلب 4 أحرف. */,
+      );
     }
     return null;
   }

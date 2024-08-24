@@ -1335,11 +1335,14 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                   pin: _model
                                                       .pinCodeController!.text,
                                                 );
+                                                print('apiResultCustomerRegister1 ${_model.apiResultCustomerRegister?.jsonBody}');
 
                                                 if ((_model
                                                         .apiResultCustomerRegister
                                                         ?.succeeded ??
                                                     true)) {
+                                                  print('apiResultCustomerRegister2 ${_model.apiResultCustomerRegister?.jsonBody}');
+
                                                   context.pushNamed(
                                                     'registeration_08',
                                                     queryParameters: {
@@ -1365,6 +1368,8 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                       enText: 'error',
                                                     ),
                                                   );
+                                                  print('apiResultCustomerRegister ${_model.apiResultCustomerRegister?.jsonBody}');
+
                                                 }
                                               } else {
                                                 print('apiResultCustomerRegister ${_model.apiResultCustomerRegister?.jsonBody}');
@@ -1408,7 +1413,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                             }
                                           } else {
                                             await actions.showToast(
-                                              _model.isValidPINResult,
+                                              _model.isValidPINResult?? '',
                                             );
                                           }
 

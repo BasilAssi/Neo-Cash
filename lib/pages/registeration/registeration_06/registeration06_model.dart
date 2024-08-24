@@ -33,16 +33,17 @@ class Registeration06Model extends FlutterFlowModel<Registeration06Widget> {
       addresslTextFieldTextControllerValidator;
   String? _addresslTextFieldTextControllerValidator(
       BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'cva7bxnb' /* الحقل مطلوب */,
-      );
-    }
-
-    if (val.length > 100) {
-      return FFLocalizations.of(context).getText(
-        'v4bkyj9y' /* يجب ألا يتجاوز النص 100 حرفًا. */,
-      );
+    // if (val == null || val.isEmpty) {
+    //   return FFLocalizations.of(context).getText(
+    //     'cva7bxnb' /* الحقل مطلوب */,
+    //   );
+    // }
+    if (val != null) {
+      if (val.length > 100) {
+        return FFLocalizations.of(context).getText(
+          'v4bkyj9y' /* يجب ألا يتجاوز النص 100 حرفًا. */,
+        );
+      }
     }
 
     return null;
