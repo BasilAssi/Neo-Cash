@@ -1408,7 +1408,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                             }
                                           } else {
                                             await actions.showToast(
-                                              _model.isValidPINResult,
+                                              _model.isValidPINResult?? '',
                                             );
                                           }
 
