@@ -12,11 +12,14 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:device_info/device_info.dart';
+import 'package:device_marketing_names/device_marketing_names.dart';
 import 'dart:io';
 
 Future setDeviceInfo() async {
   final deviceInfo = DeviceInfoPlugin();
   final appState = FFAppState(); // Access the app state
+  final deviceNames = DeviceMarketingNames();
+  final singleDeviceName = await deviceNames.getSingleName();
 
   // Check for biometric support
   final LocalAuthentication auth = LocalAuthentication();
@@ -25,11 +28,12 @@ Future setDeviceInfo() async {
   appState.deviceInformation.biometricSupported =
       isBiometricSupported && canCheckBiometrics ? 'true' : 'false';
   appState.deviceInformation.osName = Platform.isIOS ? 'iOS' : 'Android';
+  appState.deviceInformation.name = singleDeviceName;
 
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     appState.deviceInformation.serial = androidInfo.androidId;
-    appState.deviceInformation.name = androidInfo.model;
+    // appState.deviceInformation.name = androidInfo.model;
     appState.deviceInformation.brandName = androidInfo.brand;
     appState.deviceInformation.brandVersion = androidInfo.version.release;
     appState.deviceInformation.osVersion =
@@ -39,7 +43,7 @@ Future setDeviceInfo() async {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
     appState.deviceInformation.serial = iosInfo
         .identifierForVendor; // Identifier for vendor used as serial number
-    appState.deviceInformation.name = iosInfo.name;
+    // appState.deviceInformation.name = iosInfo.name;
     appState.deviceInformation.brandName = iosInfo.systemName;
     appState.deviceInformation.brandVersion = iosInfo.model;
     appState.deviceInformation.osVersion = iosInfo.systemVersion;
