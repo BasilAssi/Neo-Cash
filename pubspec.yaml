@@ -103,7 +103,7 @@ dependencies:
   url_launcher_ios: 6.2.5
   url_launcher_platform_interface: 2.3.2
   uuid: ^4.0.0
-  video_player: 2.8.6
+  video_player: ^2.9.1
   video_player_android: any
   video_player_avfoundation: 2.6.1
   video_player_platform_interface: 6.2.2
