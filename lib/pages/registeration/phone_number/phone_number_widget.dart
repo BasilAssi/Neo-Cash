@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -189,6 +190,21 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                   child: TextFormField(
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.textController',
+                                      const Duration(milliseconds: 2000),
+                                      () async {
+                                        setState(() {
+                                          _model.textController?.text =
+                                              functions.updateTextfield(
+                                                  _model.textController.text)!;
+                                          _model.textController?.selection =
+                                              TextSelection.collapsed(
+                                                  offset: _model.textController!
+                                                      .text.length);
+                                        });
+                                      },
+                                    ),
                                     autofocus: true,
                                     autofillHints: const [
                                       AutofillHints.telephoneNumber
