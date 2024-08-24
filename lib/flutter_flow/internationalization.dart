@@ -258,6 +258,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'mmnenext': {
+      'ar': 'لا يمكن ان يكون الرقم اقل من 9 خانات',
+      'en': '',
+    },
+    '9u91qgdo': {
+      'ar': 'لا يمكن ان يكون الرقم أكبر من 9 خانات',
+      'en': '',
+    },
     'abig6z1g': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
@@ -453,7 +461,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o3pcr58o': {
       'ar': 'لا يمكن ان يكون الرقم أكبر من 9 خانات',
-      'en': '',
+      'en': 'The number cannot be greater than 9 digits.',
     },
     'frtzehgk': {
       'ar': 'Please choose an option from the dropdown',
