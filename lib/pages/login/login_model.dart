@@ -21,6 +21,15 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       );
     }
 
+    if (val.length < 9) {
+      return FFLocalizations.of(context).getText(
+        'mmnenext' /* لا يمكن ان يكون الرقم اقل من 9... */,
+      );
+    }
+    if (val.length > 9) {
+      return 'Maximum 9 characters allowed, currently ${val.length}.';
+    }
+
     return null;
   }
 
@@ -36,17 +45,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'szccmsm4' /* الحقل مطلوب */,
-      );
-    }
-
-    if (val.length < 9) {
-      return FFLocalizations.of(context).getText(
-        'mmnenext' /* لا يمكن ان يكون الرقم اقل من 9... */,
-      );
-    }
-    if (val.length > 9) {
-      return FFLocalizations.of(context).getText(
-        '9u91qgdo' /* لا يمكن ان يكون الرقم أكبر من ... */,
       );
     }
 

@@ -250,6 +250,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'mmnenext': {
+      'ar': 'لا يمكن ان يكون الرقم اقل من 9 خانات',
+      'en': '',
+    },
     '2imdgl09': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
@@ -258,7 +262,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'mmnenext': {
+    'xg9pxhd2': {
       'ar': 'لا يمكن ان يكون الرقم اقل من 9 خانات',
       'en': '',
     },
