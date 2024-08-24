@@ -36,6 +36,7 @@ dependencies:
   dart_jsonwebtoken: ^2.14.0
   device_info: ^2.0.3
   dropdown_button2: 2.3.9
+  easy_debounce: 2.0.1
   equatable: 2.0.5
   expandable: 5.0.1
   file_picker: 8.0.3

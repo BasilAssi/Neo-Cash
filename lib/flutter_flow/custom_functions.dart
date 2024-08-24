@@ -130,3 +130,12 @@ String? maskMobileNumber(
   }
   return visibleSection + maskedSection;
 }
+
+String? updateTextfield(String? val) {
+  if (val == null || val == null) return '';
+
+  if (val.startsWith('0')) {
+    val = val.substring(1);
+  }
+  return val;
+}
