@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
@@ -323,13 +324,26 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                             );
 
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
-                              if (FFAppState()
-                                      .registerationFormData
-                                      .isRegisteredStatus ==
-                                  true) {
-                                context.pushNamed('set_password_exist_flow');
+                              if (ResponseModelStruct.maybeFromMap(
+                                          (_model.verifyOTPOutput?.jsonBody ??
+                                              ''))
+                                      ?.code ==
+                                  '00') {
+                                if (FFAppState()
+                                        .registerationFormData
+                                        .isRegisteredStatus ==
+                                    true) {
+                                  context.pushNamed('set_password_exist_flow');
+                                } else {
+                                  context.pushNamed('registeration_01');
+                                }
                               } else {
-                                context.pushNamed('registeration_01');
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'خطأ',
+                                    enText: 'please check internet connection',
+                                  ),
+                                );
                               }
                             } else {
                               await actions.showToast(
