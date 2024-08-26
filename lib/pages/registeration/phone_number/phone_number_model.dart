@@ -36,6 +36,8 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
   // State field(s) for prefixMobileNumberDropDown widget.
   String? prefixMobileNumberDropDownValue;
   FormFieldController<String>? prefixMobileNumberDropDownValueController;
+  // Stores action output result for [Custom Action - validateMobileNumber] action in Button widget.
+  String? validateMobileNumberOutput;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvaiableOutPut;
   // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
