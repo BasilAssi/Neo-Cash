@@ -340,8 +340,8 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                               } else {
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
-                                    arText: 'خطأ',
-                                    enText: 'please check internet connection',
+                                    arText: 'رمز المصادقة غير صحيح',
+                                    enText: 'Invalid authentication code',
                                   ),
                                 );
                               }
@@ -349,7 +349,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(
                                   arText: 'خطأ',
-                                  enText: 'please check internet connection',
+                                  enText: 'Error',
                                 ),
                               );
                             }
