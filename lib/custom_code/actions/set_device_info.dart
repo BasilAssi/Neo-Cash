@@ -12,17 +12,17 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:device_info/device_info.dart';
-import 'package:device_marketing_names/device_marketing_names.dart';
 import 'dart:io';
 import 'package:local_auth/local_auth.dart';
+import 'package:device_friendly_name/device_friendly_name.dart';
+
 
 
 Future setDeviceInfo() async {
   final deviceInfo = DeviceInfoPlugin();
   final appState = FFAppState(); // Access the app state
-  final deviceNames = DeviceMarketingNames();
-  final singleDeviceName = await deviceNames.getSingleName();
-
+  final _deviceFriendlyNamePlugin = DeviceFriendlyName();
+  final deviceName = await _deviceFriendlyNamePlugin.getDeviceFriendlyName() ?? 'Unknown';
   // Check for biometric support
   final LocalAuthentication auth = LocalAuthentication();
   bool isBiometricSupported = await auth.isDeviceSupported();
@@ -30,8 +30,7 @@ Future setDeviceInfo() async {
   appState.deviceInformation.biometricSupported =
       isBiometricSupported && canCheckBiometrics ? 'true' : 'false';
   appState.deviceInformation.osName = Platform.isIOS ? 'iOS' : 'Android';
-  appState.deviceInformation.name = singleDeviceName;
-
+  appState.deviceInformation.name = deviceName ?? 'Unknown';
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     appState.deviceInformation.serial = androidInfo.androidId;
