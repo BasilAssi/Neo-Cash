@@ -322,7 +322,10 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                   ? 'VERIFY_DESTINATION'
                                   : 'REGISTER_DEVICE',
                             );
-
+print(' code ${ResponseModelStruct.maybeFromMap(
+    (_model.verifyOTPOutput?.jsonBody ??
+        ''))
+    ?.code}');
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
                               if (ResponseModelStruct.maybeFromMap(
                                           (_model.verifyOTPOutput?.jsonBody ??
