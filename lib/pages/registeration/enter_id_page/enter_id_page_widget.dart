@@ -380,6 +380,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                 ''))
                                             ?.customerStatus !=
                                         'REJECTED')) {
+                                  // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                  //                                       false)
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut
                                                   ?.jsonBody ??

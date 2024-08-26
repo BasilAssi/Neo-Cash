@@ -1229,6 +1229,15 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
+                          if (_model.datePicked == null) {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'حقل تاريخ الميلاد مطلوب',
+                                enText: 'Date of Birth field is required.',
+                              ),
+                            );
+                            return;
+                          }
                           if (_model.genderDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
@@ -1267,6 +1276,17 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                   if (_model.formKey.currentState == null ||
                                       !_model.formKey.currentState!
                                           .validate()) {
+                                    return;
+                                  }
+                                  if (_model.datePicked == null) {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'حقل تاريخ الميلاد مطلوب',
+                                        enText:
+                                            'Date of Birth field is required.',
+                                      ),
+                                    );
                                     return;
                                   }
                                   if (_model.genderDropDownValue == null) {
