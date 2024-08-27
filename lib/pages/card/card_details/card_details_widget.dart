@@ -554,8 +554,35 @@ THRU */
                                                         ),
                                                       }.withoutNulls,
                                                     );
+                                                  } else {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText: 'خطأ',
+                                                        enText: 'error',
+                                                      ),
+                                                    );
                                                   }
+                                                } else {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText: 'خطأ',
+                                                      enText: 'error',
+                                                    ),
+                                                  );
                                                 }
+                                              } else {
+                                                await actions.showToast(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                    arText:
+                                                        'عذرا لا يوجد اتصال بالانترنت',
+                                                    enText:
+                                                        'Sorry, no internet connection.',
+                                                  ),
+                                                );
                                               }
 
                                               setState(() {});
