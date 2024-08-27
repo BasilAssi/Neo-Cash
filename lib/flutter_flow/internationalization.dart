@@ -115,42 +115,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Hello World',
       'en': 'Hello World',
     },
-    'v0wx94fq': {
-      'ar': '\$7,630',
-      'en': '\$7,630',
-    },
-    '4hi7ozti': {
-      'ar': '0149 **** ',
-      'en': '0149 ****',
-    },
-    'us0t1qpe': {
-      'ar': '05/25',
-      'en': '05/25',
-    },
-    '4czyx03p': {
-      'ar': '\$7,630',
-      'en': '\$7,630',
-    },
-    'rgpxmqoo': {
-      'ar': '0149 **** ',
-      'en': '0149 ****',
-    },
-    'y9cj9076': {
-      'ar': '021',
-      'en': '021',
-    },
-    'cu6j6f8g': {
-      'ar': 'SECURITY\nCODE',
-      'en': 'SECURITY\nCODE',
-    },
-    'onhvxo49': {
-      'ar': '05/25',
-      'en': '05/25',
-    },
-    '8w7jzo96': {
-      'ar': 'VALID\nTHRU',
-      'en': 'VALID\nTHRU',
-    },
     '0dsvs6im': {
       'ar': 'الحركات',
       'en': 'Transactions',
@@ -182,10 +146,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'j8pno2ex': {
       'ar': 'تسجيل الخروج',
       'en': 'Sign Out',
-    },
-    '7qettrhk': {
-      'ar': 'مرحبا , باسل',
-      'en': 'Hello, Basil',
     },
     'hjejmmsa': {
       'ar': 'الرئيسية',
@@ -487,8 +447,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm Phone Number',
     },
     'qspd8ikt': {
-      'ar': 'أرسلنالك رمز تحقق على تليفونك  رقم',
-      'en': 'We have sent you a verification code on your phone number.',
+      'ar': 'أرسلنالك رمز تحقق على تليفونك  رقم:  ',
+      'en': 'We have sent you a verification code on your phone number:  ',
     },
     'tcup8vos': {
       'ar': '\n',
@@ -518,36 +478,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Card balance',
     },
     'dunv88wl': {
-      'ar': 'ILS',
+      'ar': '0.00 ILS',
       'en': 'ILS',
-    },
-    '0qulq80w': {
-      'ar': ' 0.00',
-      'en': '0.00',
     },
     'kbbahzti': {
       'ar': 'الحساب الاساسي ',
       'en': 'Basic account',
     },
-    '7uzfifl2': {
-      'ar': 'BASIL ASSI',
-      'en': 'BASIL ASSI',
-    },
-    '7w84f73c': {
-      'ar': '4012 5421 2322 6521',
-      'en': '4012 5421 2322 6521',
-    },
-    'jkurh3hj': {
-      'ar': '021',
-      'en': '021',
-    },
     'e9nhu5rg': {
       'ar': 'SECURITY\nCODE',
       'en': 'SECURITY\nCODE',
-    },
-    'pi80izf5': {
-      'ar': '05/25',
-      'en': '05/25',
     },
     'oc5g9fy5': {
       'ar': 'VALID\nTHRU',
@@ -594,25 +534,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم المستخدم',
       'en': 'User Name',
     },
-    'mgmvykns': {
-      'ar': 'Basil',
-      'en': 'Basil',
-    },
     'dbqmodex': {
       'ar': 'رقم الموبايل',
       'en': 'Mobile Number',
     },
-    'ivhvtzdk': {
-      'ar': '0569852',
-      'en': '0569852',
-    },
     'ag1hrdqa': {
       'ar': 'الإيميل',
       'en': 'Email',
-    },
-    'hpokmkgb': {
-      'ar': 'basel@blockbuilders.ps ',
-      'en': 'basel@blockbuilders.ps',
     },
     'g3fbaqeh': {
       'ar': 'تم التحقق  ',
@@ -1299,7 +1227,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm7w4y74p': {
       'ar': 'أدخل باقي المعلومات',
-      'en': 'Complete youer information',
+      'en': 'Complete your information',
     },
     'jr2dayzi': {
       'ar': 'الإيميل',
@@ -1315,7 +1243,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kcvjgihf': {
       'ar': 'أدخل الرمز السري الخاص بحركاتك المالية  ',
-      'en': 'Enter your PIN for finalcial transactions authorization',
+      'en': 'Enter your PIN for financial transactions authorization',
     },
     'k2kbci2a': {
       'ar':
@@ -1899,11 +1827,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n5ifl7pf': {
       'ar': 'لا',
-      'en': 'Yes',
+      'en': 'No',
     },
     'do0uczj5': {
       'ar': 'نعم',
-      'en': 'No',
+      'en': 'Yes',
     },
     '0t8zizvu': {
       'ar': 'هل أنت معرض سياسيا',
@@ -1915,7 +1843,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'igttbcem': {
       'ar': ' اسم المستفيد الحقيقي  ',
-      'en': 'Real Beneficiary Name',
+      'en': 'Real beneficiary name',
     },
     '1vatub9u': {
       'ar': '',
@@ -1927,7 +1855,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'plzrglhj': {
       'ar': ' طبيعة العلاقة ',
-      'en': 'Nature of the relationship with the Beneficiary',
+      'en': 'Nature of the relationship with the beneficiary',
     },
     'b6ncsijs': {
       'ar': '',

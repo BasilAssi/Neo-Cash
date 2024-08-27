@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_profile_model.dart';
 export 'user_profile_model.dart';
 
@@ -35,6 +36,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -293,8 +296,22 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'mgmvykns' /* Basil */,
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: FFAppState()
+                                                  .AuthenticatedUser
+                                                  .hasFirstNameAr()
+                                              ? FFAppState()
+                                                  .AuthenticatedUser
+                                                  .firstNameAr
+                                              : ' ',
+                                          enText: FFAppState()
+                                                  .AuthenticatedUser
+                                                  .hasFirstName()
+                                              ? FFAppState()
+                                                  .AuthenticatedUser
+                                                  .firstName
+                                              : '  ',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -394,9 +411,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ivhvtzdk' /* 0569852 */,
-                                        ),
+                                        FFAppState()
+                                                .AuthenticatedUser
+                                                .hasMobileNumber()
+                                            ? FFAppState()
+                                                .AuthenticatedUser
+                                                .mobileNumber
+                                            : ' ',
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -501,9 +522,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 8.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'hpokmkgb' /* basel@blockbuilders.ps  */,
-                                            ),
+                                            FFAppState()
+                                                    .AuthenticatedUser
+                                                    .hasEmailAddress()
+                                                ? FFAppState()
+                                                    .AuthenticatedUser
+                                                    .emailAddress
+                                                : ' ',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
@@ -533,68 +558,135 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               Builder(
                                 builder: (context) {
-                                  return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        4.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      height: 40.0,
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xB2E9E4E4),
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
-                                        shape: BoxShape.rectangle,
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.check_outlined,
-                                            color:
-                                                FlutterFlowTheme.of(context)
-                                                    .success,
-                                            size: 28.0,
-                                          ),
-                                          Align(
-                                            alignment: const AlignmentDirectional(
-                                                0.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      8.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'g3fbaqeh' /* تم التحقق   */,
+                                  if ((FFAppState()
+                                              .AuthenticatedUser
+                                              .hasEmailVerified()
+                                          ? FFAppState()
+                                              .AuthenticatedUser
+                                              .emailVerified
+                                          : false) ==
+                                      true) {
+                                    return Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          4.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        height: 40.0,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xB2E9E4E4),
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Icon(
+                                              Icons.check_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              size: 28.0,
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'g3fbaqeh' /* تم التحقق   */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily),
+                                                      ),
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMediumFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .success,
-                                                      fontSize: 14.0,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily),
-                                                    ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                                                },
+                                    );
+                                  } else {
+                                    return Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          4.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        height: 45.0,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xB2E9E4E4),
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'uemhjyul' /* التحقق من
+ البريد الإلكتروني */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily),
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                },
                               ),
                               FlutterFlowIconButton(
                                 borderRadius: 20.0,

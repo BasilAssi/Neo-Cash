@@ -610,6 +610,260 @@ class DeleteUploadedDocumentCall {
 
 /// End Auth  and Register  Group Code
 
+/// Start Card Group Code
+
+class CardGroup {
+  static String getBaseUrl({
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) =>
+      'http://185.57.122.58:7777';
+  static Map<String, String> headers = {
+    'Accept-Language': '[acceptLanguage]',
+    'applicationType': 'BP-V1.0',
+    'X-Auth-Token': '[token]',
+  };
+  static ListCardsCall listCardsCall = ListCardsCall();
+  static GetCustomerBalancesCall getCustomerBalancesCall =
+      GetCustomerBalancesCall();
+  static GetCardAccountInfoCall getCardAccountInfoCall =
+      GetCardAccountInfoCall();
+  static ListCardTransactionsCall listCardTransactionsCall =
+      ListCardTransactionsCall();
+  static ChangeCardStatusCall changeCardStatusCall = ChangeCardStatusCall();
+  static GetCardPINCall getCardPINCall = GetCardPINCall();
+}
+
+class ListCardsCall {
+  Future<ApiCallResponse> call({
+    String? idNumber = '',
+    String? cardToken = '',
+    String? currencyCode = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'List Cards',
+      apiUrl: '$baseUrl/customer/api/v1/cardList',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'msgId': msgId,
+        'idNumber': idNumber,
+        'cardToken': cardToken,
+        'currencyCode': currencyCode,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCustomerBalancesCall {
+  Future<ApiCallResponse> call({
+    String? idNumber = '',
+    String? currencyCode = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get Customer Balances',
+      apiUrl: '$baseUrl/customer/api/v1/customerBalances',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'msgId': msgId,
+        'idNumber': idNumber,
+        'currencyCode': currencyCode,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCardAccountInfoCall {
+  Future<ApiCallResponse> call({
+    String? idNumber = '',
+    String? cardToken = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get Card Account Info',
+      apiUrl: '$baseUrl/customer/api/v1/cardAccountInfo',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'msgId': msgId,
+        'cardToken': cardToken,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ListCardTransactionsCall {
+  Future<ApiCallResponse> call({
+    String? cardToken = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'List Card Transactions',
+      apiUrl: '$baseUrl/customer/api/v1/cardTransList',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'msgId': msgId,
+        'cardToken ': cardToken,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ChangeCardStatusCall {
+  Future<ApiCallResponse> call({
+    String? cardToken = '',
+    String? status = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "msgId": "$msgId",
+  "cardToken": "$cardToken",
+  "status": "$status"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Change Card Status',
+      apiUrl: '$baseUrl/customer/api/v1/cardChangeStatus',
+      callType: ApiCallType.POST,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetCardPINCall {
+  Future<ApiCallResponse> call({
+    String? cardToken = '',
+    String? cardCvv2 = '222',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get Card PIN',
+      apiUrl: '$baseUrl/customer/api/v1/cardPin',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+/// End Card Group Code
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

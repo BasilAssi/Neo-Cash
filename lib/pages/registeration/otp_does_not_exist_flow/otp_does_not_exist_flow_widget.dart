@@ -343,8 +343,8 @@ print(' code ${ResponseModelStruct.maybeFromMap(
                               } else {
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
-                                    arText: 'خطأ',
-                                    enText: 'please check internet connection',
+                                    arText: 'رمز المصادقة غير صحيح',
+                                    enText: 'Invalid authentication code',
                                   ),
                                 );
                               }
@@ -352,7 +352,7 @@ print(' code ${ResponseModelStruct.maybeFromMap(
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(
                                   arText: 'خطأ',
-                                  enText: 'please check internet connection',
+                                  enText: 'Error',
                                 ),
                               );
                             }
