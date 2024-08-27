@@ -10,7 +10,6 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
-import '/auth/custom_auth/auth_util.dart';
 
 String? removeLastCharacter(String? pinCode) {
   // remove last Character from string
@@ -169,4 +168,46 @@ String? validatePhoneNumber(
     }
   }
   return 'true';
+}
+
+String? getLast4Digits(String? cardNumber) {
+  // get Last 4 Digits
+  if (cardNumber == null || cardNumber.length < 4) {
+    return '';
+  }
+  return cardNumber.substring(cardNumber.length - 4);
+}
+
+String? spliteExpiryDate(String? expiryDate) {
+  // take the value as 4 characters  0228 return it as 02/28
+  if (expiryDate == null || expiryDate.length != 4) {
+    return '';
+  }
+  final month = expiryDate.substring(0, 2);
+  final year = expiryDate.substring(2);
+  return '$month/$year';
+}
+
+String? addSpaceBtnCardNumber(String? cardNumber) {
+  // add space between card number  every 4 characther  401242123226521 must be 4012 5421 2322 6521
+  if (cardNumber == null || cardNumber.isEmpty) {
+    return '';
+  }
+  final regex = RegExp(r'.{1,4}');
+  return regex.allMatches(cardNumber).map((match) => match.group(0)).join(' ');
+}
+
+String? getCardToken(
+  String? customerId,
+  String? cardExpiryDate,
+  String? cardLastFourDigits,
+) {
+  // return the sum of them
+  if (customerId == null ||
+      cardExpiryDate == null ||
+      cardLastFourDigits == null) {
+    return null;
+  }
+  final sum = customerId + cardExpiryDate + cardLastFourDigits;
+  return sum.toString();
 }

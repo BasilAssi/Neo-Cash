@@ -47,6 +47,18 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_cardData') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_cardData') ?? '{}';
+          _cardData =
+              CardDataStruct.fromSerializableMap(jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
   }
 
   void update(VoidCallback callback) {
@@ -119,6 +131,22 @@ class FFAppState extends ChangeNotifier {
     updateFn(_AuthenticatedUser);
     secureStorage.setString(
         'ff_AuthenticatedUser', _AuthenticatedUser.serialize());
+  }
+
+  CardDataStruct _cardData = CardDataStruct();
+  CardDataStruct get cardData => _cardData;
+  set cardData(CardDataStruct value) {
+    _cardData = value;
+    secureStorage.setString('ff_cardData', value.serialize());
+  }
+
+  void deleteCardData() {
+    secureStorage.delete(key: 'ff_cardData');
+  }
+
+  void updateCardDataStruct(Function(CardDataStruct) updateFn) {
+    updateFn(_cardData);
+    secureStorage.setString('ff_cardData', _cardData.serialize());
   }
 
   final _citesAPIResponseManager = FutureRequestManager<ApiCallResponse>();

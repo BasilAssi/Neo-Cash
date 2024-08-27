@@ -1,8 +1,13 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'block_card_component_model.dart';
 export 'block_card_component_model.dart';
 
@@ -39,6 +44,8 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: SizedBox(
@@ -51,7 +58,7 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.7,
+                height: MediaQuery.sizeOf(context).height * 0.45,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.circular(12.0),
@@ -103,7 +110,94 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
                                     alignment: const AlignmentDirectional(0.0, 1.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        Navigator.pop(context);
+                                        _model.isNetworkAvailableOutput =
+                                            await actions.isNetworkAvailable();
+                                        if (_model.isNetworkAvailableOutput ==
+                                            true) {
+                                          _model.apiResultBlockCard =
+                                              await CardGroup
+                                                  .changeCardStatusCall
+                                                  .call(
+                                            msgId: functions.messageId(),
+                                            cardToken: functions.getCardToken(
+                                                FFAppState()
+                                                    .AuthenticatedUser
+                                                    .idNumber,
+                                                FFAppState()
+                                                    .cardData
+                                                    .expiryDate,
+                                                functions.getLast4Digits(
+                                                    FFAppState()
+                                                        .cardData
+                                                        .cardNumber)),
+                                            status: 'BLOCKED',
+                                            token: FFAppState()
+                                                .AuthenticatedUser
+                                                .accessToken,
+                                            acceptLanguage:
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              arText: 'AR',
+                                              enText: 'EN',
+                                            ),
+                                          );
+
+                                          if ((_model.apiResultBlockCard
+                                                  ?.succeeded ??
+                                              true)) {
+                                            if (ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultBlockCard
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '00') {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'تم قفل البطاقة بنجاح ',
+                                                  enText:
+                                                      'Card has been successfully locked.',
+                                                ),
+                                              );
+                                              FFAppState().updateCardDataStruct(
+                                                (e) => e..status = 'BLOCKED',
+                                              );
+                                              _model.updatePage(() {});
+                                              Navigator.pop(context);
+                                            } else {
+                                              Navigator.pop(context);
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText: 'خطأ',
+                                                  enText: 'error',
+                                                ),
+                                              );
+                                            }
+                                          } else {
+                                            Navigator.pop(context);
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'خطأ',
+                                                enText: 'error',
+                                              ),
+                                            );
+                                          }
+                                        } else {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'عذرا لا يوجد اتصال بالانترنت',
+                                              enText:
+                                                  'Sorry, no internet connection.',
+                                            ),
+                                          );
+                                        }
+
+                                        setState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'ec1qwqbv' /* نعم */,
