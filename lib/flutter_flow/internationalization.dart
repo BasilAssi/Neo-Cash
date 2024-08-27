@@ -253,54 +253,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Jun, 8, 2024',
       'en': 'Jun, 8, 2024',
     },
-    'd9yld9um': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'r9folfee': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'iasjw9mk': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    'r3nuqzac': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'cjdj0uoo': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'uyq84yuq': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    '3bmvxbn4': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'jpjjjv5g': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'zytruqc6': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    'sli1lgre': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'zal27fs1': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'esvddhsh': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
     'bs41kbym': {
       'ar': 'إجمالي الرصيد ',
       'en': 'Total Balance',
@@ -2850,6 +2802,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'utcofzjq': {
       'ar': 'Home',
       'en': 'Home',
+    },
+  },
+  // transactions_page
+  {
+    'ep94svt3': {
+      'ar': 'شحن رصيد موبايل',
+      'en': '',
+    },
+    'ry73pybn': {
+      'ar': '2921532903099',
+      'en': '',
+    },
+    'bamtcmdo': {
+      'ar': 'Jun, 8, 2024',
+      'en': '',
+    },
+    '983o6iht': {
+      'ar': '08/12/2024 -  08/12/2024 ',
+      'en': '',
+    },
+    'ht9cg4jd': {
+      'ar': 'الحركات',
+      'en': '',
     },
   },
   // error_component

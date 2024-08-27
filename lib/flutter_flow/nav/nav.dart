@@ -302,6 +302,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'set_pin_forgot_pin',
               path: 'setPinForgotPin',
               builder: (context, params) => const SetPinForgotPinWidget(),
+            ),
+            FFRoute(
+              name: 'transactions_page',
+              path: 'transactionsPage',
+              builder: (context, params) => const TransactionsPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

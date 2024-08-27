@@ -11,15 +11,15 @@ class ListCustomerCardsStruct extends BaseStruct {
     String? offset,
     List<CardDataStruct>? records,
     String? referenceId,
-    String? status,
     String? totalCount,
+    bool? status,
   })  : _code = code,
         _message = message,
         _offset = offset,
         _records = records,
         _referenceId = referenceId,
-        _status = status,
-        _totalCount = totalCount;
+        _totalCount = totalCount,
+        _status = status;
 
   // "code" field.
   String? _code;
@@ -60,19 +60,19 @@ class ListCustomerCardsStruct extends BaseStruct {
 
   bool hasReferenceId() => _referenceId != null;
 
-  // "status" field.
-  String? _status;
-  String get status => _status ?? '';
-  set status(String? val) => _status = val;
-
-  bool hasStatus() => _status != null;
-
   // "totalCount" field.
   String? _totalCount;
   String get totalCount => _totalCount ?? '';
   set totalCount(String? val) => _totalCount = val;
 
   bool hasTotalCount() => _totalCount != null;
+
+  // "status" field.
+  bool? _status;
+  bool get status => _status ?? false;
+  set status(bool? val) => _status = val;
+
+  bool hasStatus() => _status != null;
 
   static ListCustomerCardsStruct fromMap(Map<String, dynamic> data) =>
       ListCustomerCardsStruct(
@@ -84,8 +84,8 @@ class ListCustomerCardsStruct extends BaseStruct {
           CardDataStruct.fromMap,
         ),
         referenceId: data['referenceId'] as String?,
-        status: data['status'] as String?,
         totalCount: data['totalCount'] as String?,
+        status: data['status'] as bool?,
       );
 
   static ListCustomerCardsStruct? maybeFromMap(dynamic data) => data is Map
@@ -98,8 +98,8 @@ class ListCustomerCardsStruct extends BaseStruct {
         'offset': _offset,
         'records': _records?.map((e) => e.toMap()).toList(),
         'referenceId': _referenceId,
-        'status': _status,
         'totalCount': _totalCount,
+        'status': _status,
       }.withoutNulls;
 
   @override
@@ -125,13 +125,13 @@ class ListCustomerCardsStruct extends BaseStruct {
           _referenceId,
           ParamType.String,
         ),
-        'status': serializeParam(
-          _status,
-          ParamType.String,
-        ),
         'totalCount': serializeParam(
           _totalCount,
           ParamType.String,
+        ),
+        'status': serializeParam(
+          _status,
+          ParamType.bool,
         ),
       }.withoutNulls;
 
@@ -164,14 +164,14 @@ class ListCustomerCardsStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        status: deserializeParam(
-          data['status'],
-          ParamType.String,
-          false,
-        ),
         totalCount: deserializeParam(
           data['totalCount'],
           ParamType.String,
+          false,
+        ),
+        status: deserializeParam(
+          data['status'],
+          ParamType.bool,
           false,
         ),
       );
@@ -188,13 +188,13 @@ class ListCustomerCardsStruct extends BaseStruct {
         offset == other.offset &&
         listEquality.equals(records, other.records) &&
         referenceId == other.referenceId &&
-        status == other.status &&
-        totalCount == other.totalCount;
+        totalCount == other.totalCount &&
+        status == other.status;
   }
 
   @override
   int get hashCode => const ListEquality()
-      .hash([code, message, offset, records, referenceId, status, totalCount]);
+      .hash([code, message, offset, records, referenceId, totalCount, status]);
 }
 
 ListCustomerCardsStruct createListCustomerCardsStruct({
@@ -202,14 +202,14 @@ ListCustomerCardsStruct createListCustomerCardsStruct({
   String? message,
   String? offset,
   String? referenceId,
-  String? status,
   String? totalCount,
+  bool? status,
 }) =>
     ListCustomerCardsStruct(
       code: code,
       message: message,
       offset: offset,
       referenceId: referenceId,
-      status: status,
       totalCount: totalCount,
+      status: status,
     );
