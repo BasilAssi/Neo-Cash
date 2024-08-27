@@ -3,9 +3,11 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'transaction_details_page_model.dart';
 export 'transaction_details_page_model.dart';
 
@@ -69,6 +71,8 @@ class _TransactionDetailsPageWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -181,9 +185,8 @@ class _TransactionDetailsPageWidgetState
                                 ],
                               ),
                               Text(
-                                FFLocalizations.of(context).getText(
-                                  'wfnpkxto' /* 2921 5329 0309 9412 */,
-                                ),
+                                functions.addSpaceBtnCardNumber(
+                                    FFAppState().cardData.cardNumber)!,
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(

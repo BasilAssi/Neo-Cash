@@ -1,0 +1,216 @@
+// ignore_for_file: unnecessary_getters_setters
+
+
+import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+
+class ListCustomerTransactionsStruct extends BaseStruct {
+  ListCustomerTransactionsStruct({
+    String? code,
+    String? message,
+    String? offset,
+    List<TransactionDataStruct>? records,
+    String? referenceId,
+    String? totalCount,
+    bool? status,
+  })  : _code = code,
+        _message = message,
+        _offset = offset,
+        _records = records,
+        _referenceId = referenceId,
+        _totalCount = totalCount,
+        _status = status;
+
+  // "code" field.
+  String? _code;
+  String get code => _code ?? '';
+  set code(String? val) => _code = val;
+
+  bool hasCode() => _code != null;
+
+  // "message" field.
+  String? _message;
+  String get message => _message ?? '';
+  set message(String? val) => _message = val;
+
+  bool hasMessage() => _message != null;
+
+  // "offset" field.
+  String? _offset;
+  String get offset => _offset ?? '';
+  set offset(String? val) => _offset = val;
+
+  bool hasOffset() => _offset != null;
+
+  // "records" field.
+  List<TransactionDataStruct>? _records;
+  List<TransactionDataStruct> get records => _records ?? const [];
+  set records(List<TransactionDataStruct>? val) => _records = val;
+
+  void updateRecords(Function(List<TransactionDataStruct>) updateFn) {
+    updateFn(_records ??= []);
+  }
+
+  bool hasRecords() => _records != null;
+
+  // "referenceId" field.
+  String? _referenceId;
+  String get referenceId => _referenceId ?? '';
+  set referenceId(String? val) => _referenceId = val;
+
+  bool hasReferenceId() => _referenceId != null;
+
+  // "totalCount" field.
+  String? _totalCount;
+  String get totalCount => _totalCount ?? '';
+  set totalCount(String? val) => _totalCount = val;
+
+  bool hasTotalCount() => _totalCount != null;
+
+  // "status" field.
+  bool? _status;
+  bool get status => _status ?? false;
+  set status(bool? val) => _status = val;
+
+  bool hasStatus() => _status != null;
+
+  static ListCustomerTransactionsStruct fromMap(Map<String, dynamic> data) =>
+      ListCustomerTransactionsStruct(
+        code: data['code'] as String?,
+        message: data['message'] as String?,
+        offset: data['offset'] as String?,
+        records: getStructList(
+          data['records'],
+          TransactionDataStruct.fromMap,
+        ),
+        referenceId: data['referenceId'] as String?,
+        totalCount: data['totalCount'] as String?,
+        status: data['status'] as bool?,
+      );
+
+  static ListCustomerTransactionsStruct? maybeFromMap(dynamic data) =>
+      data is Map
+          ? ListCustomerTransactionsStruct.fromMap(data.cast<String, dynamic>())
+          : null;
+
+  Map<String, dynamic> toMap() => {
+        'code': _code,
+        'message': _message,
+        'offset': _offset,
+        'records': _records?.map((e) => e.toMap()).toList(),
+        'referenceId': _referenceId,
+        'totalCount': _totalCount,
+        'status': _status,
+      }.withoutNulls;
+
+  @override
+  Map<String, dynamic> toSerializableMap() => {
+        'code': serializeParam(
+          _code,
+          ParamType.String,
+        ),
+        'message': serializeParam(
+          _message,
+          ParamType.String,
+        ),
+        'offset': serializeParam(
+          _offset,
+          ParamType.String,
+        ),
+        'records': serializeParam(
+          _records,
+          ParamType.DataStruct,
+          isList: true,
+        ),
+        'referenceId': serializeParam(
+          _referenceId,
+          ParamType.String,
+        ),
+        'totalCount': serializeParam(
+          _totalCount,
+          ParamType.String,
+        ),
+        'status': serializeParam(
+          _status,
+          ParamType.bool,
+        ),
+      }.withoutNulls;
+
+  static ListCustomerTransactionsStruct fromSerializableMap(
+          Map<String, dynamic> data) =>
+      ListCustomerTransactionsStruct(
+        code: deserializeParam(
+          data['code'],
+          ParamType.String,
+          false,
+        ),
+        message: deserializeParam(
+          data['message'],
+          ParamType.String,
+          false,
+        ),
+        offset: deserializeParam(
+          data['offset'],
+          ParamType.String,
+          false,
+        ),
+        records: deserializeStructParam<TransactionDataStruct>(
+          data['records'],
+          ParamType.DataStruct,
+          true,
+          structBuilder: TransactionDataStruct.fromSerializableMap,
+        ),
+        referenceId: deserializeParam(
+          data['referenceId'],
+          ParamType.String,
+          false,
+        ),
+        totalCount: deserializeParam(
+          data['totalCount'],
+          ParamType.String,
+          false,
+        ),
+        status: deserializeParam(
+          data['status'],
+          ParamType.bool,
+          false,
+        ),
+      );
+
+  @override
+  String toString() => 'ListCustomerTransactionsStruct(${toMap()})';
+
+  @override
+  bool operator ==(Object other) {
+    const listEquality = ListEquality();
+    return other is ListCustomerTransactionsStruct &&
+        code == other.code &&
+        message == other.message &&
+        offset == other.offset &&
+        listEquality.equals(records, other.records) &&
+        referenceId == other.referenceId &&
+        totalCount == other.totalCount &&
+        status == other.status;
+  }
+
+  @override
+  int get hashCode => const ListEquality()
+      .hash([code, message, offset, records, referenceId, totalCount, status]);
+}
+
+ListCustomerTransactionsStruct createListCustomerTransactionsStruct({
+  String? code,
+  String? message,
+  String? offset,
+  String? referenceId,
+  String? totalCount,
+  bool? status,
+}) =>
+    ListCustomerTransactionsStruct(
+      code: code,
+      message: message,
+      offset: offset,
+      referenceId: referenceId,
+      totalCount: totalCount,
+      status: status,
+    );

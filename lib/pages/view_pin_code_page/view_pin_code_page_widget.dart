@@ -12,7 +12,12 @@ import 'view_pin_code_page_model.dart';
 export 'view_pin_code_page_model.dart';
 
 class ViewPinCodePageWidget extends StatefulWidget {
-  const ViewPinCodePageWidget({super.key});
+  const ViewPinCodePageWidget({
+    super.key,
+    required this.pinCode,
+  });
+
+  final String? pinCode;
 
   @override
   State<ViewPinCodePageWidget> createState() => _ViewPinCodePageWidgetState();
@@ -31,7 +36,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       setState(() {
-        _model.pinCodeController?.text = '1234';
+        _model.pinCodeController?.text = widget.pinCode!;
       });
       _model.timerController.onStartTimer();
     });
@@ -226,36 +231,42 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FlutterFlowTimer(
-                            initialTime: _model.timerInitialTimeMs,
-                            getDisplayTime: (value) =>
-                                StopWatchTimer.getDisplayTime(
-                              value,
-                              hours: false,
-                              milliSecond: false,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 8.0, 0.0),
+                            child: FlutterFlowTimer(
+                              initialTime: _model.timerInitialTimeMs,
+                              getDisplayTime: (value) =>
+                                  StopWatchTimer.getDisplayTime(
+                                value,
+                                hours: false,
+                                milliSecond: false,
+                              ),
+                              controller: _model.timerController,
+                              updateStateInterval: const Duration(milliseconds: 1000),
+                              onChanged: (value, displayTime, shouldUpdate) {
+                                _model.timerMilliseconds = value;
+                                _model.timerValue = displayTime;
+                                if (shouldUpdate) setState(() {});
+                              },
+                              onEnded: () async {
+                                context.safePop();
+                              },
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .headlineSmallFamily,
+                                    color:
+                                        FlutterFlowTheme.of(context).textColor,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .headlineSmallFamily),
+                                  ),
                             ),
-                            controller: _model.timerController,
-                            updateStateInterval: const Duration(milliseconds: 1000),
-                            onChanged: (value, displayTime, shouldUpdate) {
-                              _model.timerMilliseconds = value;
-                              _model.timerValue = displayTime;
-                              if (shouldUpdate) setState(() {});
-                            },
-                            onEnded: () async {
-                              context.safePop();
-                            },
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineSmallFamily,
-                                  color: FlutterFlowTheme.of(context).textColor,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily),
-                                ),
                           ),
                           Align(
                             alignment: const AlignmentDirectional(0.0, 0.0),

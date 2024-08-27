@@ -707,7 +707,6 @@ class GetCustomerBalancesCall {
 
 class GetCardAccountInfoCall {
   Future<ApiCallResponse> call({
-    String? idNumber = '',
     String? cardToken = '',
     String? msgId = '',
     String? token = '',
@@ -740,11 +739,22 @@ class GetCardAccountInfoCall {
       alwaysAllowBody: false,
     );
   }
+
+  dynamic cardBalance(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].availableBalance''',
+      );
+  dynamic currencyCode(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].currencyCode''',
+      );
 }
 
 class ListCardTransactionsCall {
   Future<ApiCallResponse> call({
     String? cardToken = '',
+    String? dateFrom = '',
+    String? dateTo = '',
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
@@ -767,6 +777,8 @@ class ListCardTransactionsCall {
       params: {
         'msgId': msgId,
         'cardToken ': cardToken,
+        'dateFrom': dateFrom,
+        'dateTo': dateTo,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -852,6 +864,11 @@ class GetCardPINCall {
       alwaysAllowBody: false,
     );
   }
+
+  dynamic pinBlock(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].pinBlock''',
+      );
 }
 
 /// End Card Group Code

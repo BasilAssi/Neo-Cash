@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -29,6 +30,32 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CardDetailsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.isNetworkAvailable = await actions.isNetworkAvailable();
+      if (_model.isNetworkAvailable == true) {
+        _model.apiResultCardInfo = await CardGroup.getCardAccountInfoCall.call(
+          msgId: functions.messageId(),
+        );
+
+        if ((_model.apiResultCardInfo?.succeeded ?? true)) {
+          _model.cardbalance = '${CardGroup.getCardAccountInfoCall.cardBalance(
+                (_model.apiResultCardInfo?.jsonBody ?? ''),
+              ).toString()} ${CardGroup.getCardAccountInfoCall.currencyCode(
+                (_model.apiResultCardInfo?.jsonBody ?? ''),
+              ).toString()}';
+          setState(() {});
+        }
+      } else {
+        await actions.showToast(
+          FFLocalizations.of(context).getVariableText(
+            arText: 'عذرا لا يوجد اتصال بالانترنت',
+            enText: 'Sorry, no internet connection.',
+          ),
+        );
+      }
+    });
   }
 
   @override
@@ -128,9 +155,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: FFLocalizations.of(context).getText(
-                                      'dunv88wl' /* 0.00 ILS */,
-                                    ),
+                                    text: _model.cardbalance!,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -147,6 +172,12 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMediumFamily),
                                         ),
+                                  ),
+                                  TextSpan(
+                                    text: FFLocalizations.of(context).getText(
+                                      'jci1ufx5' /*  */,
+                                    ),
+                                    style: const TextStyle(),
                                   )
                                 ],
                                 style: FlutterFlowTheme.of(context)
@@ -414,157 +445,15 @@ THRU */
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  if (FFAppState().cardData.isPhysical == true)
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        _model.isNetworkAvailable2 =
-                                            await actions.isNetworkAvailable();
-                                        if (_model.isNetworkAvailable2 ==
-                                            true) {
-                                          _model.apiResultGetPIN =
-                                              await CardGroup.getCardPINCall
-                                                  .call(
-                                            cardToken: functions.getCardToken(
-                                                FFAppState()
-                                                    .AuthenticatedUser
-                                                    .idNumber,
-                                                FFAppState()
-                                                    .cardData
-                                                    .expiryDate,
-                                                functions.getLast4Digits(
-                                                    FFAppState()
-                                                        .cardData
-                                                        .cardNumber)),
-                                            cardCvv2:
-                                                FFAppState().cardData.cardCvc,
-                                            msgId: functions.messageId(),
-                                            token: FFAppState()
-                                                .AuthenticatedUser
-                                                .accessToken,
-                                            acceptLanguage:
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                              arText: 'AR',
-                                              enText: 'EN',
-                                            ),
-                                          );
-
-                                          if ((_model
-                                                  .apiResultGetPIN?.succeeded ??
-                                              true)) {
-                                            if (ResponseModelStruct
-                                                        .maybeFromMap((_model
-                                                                .apiResultGetPIN
-                                                                ?.jsonBody ??
-                                                            ''))
-                                                    ?.code ==
-                                                '00') {
-                                              context.pushNamed(
-                                                  'view_pin_code_page');
-                                            }
-                                          }
-                                        }
-
-                                        setState(() {});
-                                      },
-                                      child: Wrap(
-                                        spacing: 8.0,
-                                        runSpacing: 0.0,
-                                        alignment: WrapAlignment.start,
-                                        crossAxisAlignment:
-                                            WrapCrossAlignment.center,
-                                        direction: Axis.vertical,
-                                        runAlignment: WrapAlignment.start,
-                                        verticalDirection:
-                                            VerticalDirection.down,
-                                        clipBehavior: Clip.antiAlias,
-                                        children: [
-                                          Container(
-                                            width: 70.0,
-                                            height: 70.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: FlutterFlowIconButton(
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .textFieldBorder,
-                                              borderRadius: 12.0,
-                                              borderWidth: 1.0,
-                                              buttonSize:
-                                                  MediaQuery.sizeOf(context)
-                                                          .width *
-                                                      0.18,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .iconBackground,
-                                              icon: Icon(
-                                                Icons.remove_red_eye_outlined,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                size: 32.0,
-                                              ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
-                                            ),
-                                          ),
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              '7wf328ns' /* عرض الرمز 
-السري */
-                                              ,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .textColor,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context
-                                          .pushNamed('transactions_home_page');
-                                    },
-                                    child: Wrap(
+                                  if (FFAppState().cardData.isPhysical == false)
+                                    Wrap(
                                       spacing: 8.0,
                                       runSpacing: 0.0,
-                                      alignment: WrapAlignment.center,
+                                      alignment: WrapAlignment.start,
                                       crossAxisAlignment:
                                           WrapCrossAlignment.center,
                                       direction: Axis.vertical,
-                                      runAlignment: WrapAlignment.center,
+                                      runAlignment: WrapAlignment.start,
                                       verticalDirection: VerticalDirection.down,
                                       clipBehavior: Clip.antiAlias,
                                       children: [
@@ -590,21 +479,93 @@ THRU */
                                                 FlutterFlowTheme.of(context)
                                                     .iconBackground,
                                             icon: Icon(
-                                              Icons.stacked_bar_chart,
+                                              Icons.remove_red_eye_outlined,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               size: 32.0,
                                             ),
-                                            onPressed: () {
-                                              print('IconButton pressed ...');
+                                            onPressed: () async {
+                                              _model.isNetworkAvailable2 =
+                                                  await actions
+                                                      .isNetworkAvailable();
+                                              if (_model.isNetworkAvailable2 ==
+                                                  true) {
+                                                _model.apiResultGetPIN =
+                                                    await CardGroup
+                                                        .getCardPINCall
+                                                        .call(
+                                                  cardToken:
+                                                      functions.getCardToken(
+                                                          FFAppState()
+                                                              .AuthenticatedUser
+                                                              .idNumber,
+                                                          FFAppState()
+                                                              .cardData
+                                                              .expiryDate,
+                                                          functions.getLast4Digits(
+                                                              FFAppState()
+                                                                  .cardData
+                                                                  .cardNumber)),
+                                                  cardCvv2: FFAppState()
+                                                      .cardData
+                                                      .cardCvc,
+                                                  msgId: functions.messageId(),
+                                                  token: FFAppState()
+                                                      .AuthenticatedUser
+                                                      .accessToken,
+                                                  acceptLanguage:
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                    arText: 'AR',
+                                                    enText: 'EN',
+                                                  ),
+                                                );
+
+                                                if ((_model.apiResultGetPIN
+                                                        ?.succeeded ??
+                                                    true)) {
+                                                  if (ResponseModelStruct
+                                                              .maybeFromMap((_model
+                                                                      .apiResultGetPIN
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '00') {
+                                                    context.pushNamed(
+                                                      'view_pin_code_page',
+                                                      queryParameters: {
+                                                        'pinCode':
+                                                            serializeParam(
+                                                          functions
+                                                              .generateFinalEPIN(
+                                                                  CardGroup
+                                                                      .getCardPINCall
+                                                                      .pinBlock(
+                                                                        (_model.apiResultGetPIN?.jsonBody ??
+                                                                            ''),
+                                                                      )
+                                                                      .toString(),
+                                                                  FFAppState()
+                                                                      .cardData
+                                                                      .cardNumber),
+                                                          ParamType.String,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  }
+                                                }
+                                              }
+
+                                              setState(() {});
                                             },
                                           ),
                                         ),
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'bmdetv0i' /* عرض حركات
- البطاقة */
+                                            '7wf328ns' /* عرض الرمز 
+السري */
                                             ,
                                           ),
                                           textAlign: TextAlign.center,
@@ -630,6 +591,77 @@ THRU */
                                         ),
                                       ],
                                     ),
+                                  Wrap(
+                                    spacing: 8.0,
+                                    runSpacing: 0.0,
+                                    alignment: WrapAlignment.center,
+                                    crossAxisAlignment:
+                                        WrapCrossAlignment.center,
+                                    direction: Axis.vertical,
+                                    runAlignment: WrapAlignment.center,
+                                    verticalDirection: VerticalDirection.down,
+                                    clipBehavior: Clip.antiAlias,
+                                    children: [
+                                      Container(
+                                        width: 70.0,
+                                        height: 70.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: FlutterFlowIconButton(
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .textFieldBorder,
+                                          borderRadius: 12.0,
+                                          borderWidth: 1.0,
+                                          buttonSize:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.18,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .iconBackground,
+                                          icon: Icon(
+                                            Icons.stacked_bar_chart,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 32.0,
+                                          ),
+                                          onPressed: () async {
+                                            context
+                                                .pushNamed('transactions_page');
+                                          },
+                                        ),
+                                      ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bmdetv0i' /* عرض حركات
+ البطاقة */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .textColor,
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                      ),
+                                    ],
                                   ),
                                   Wrap(
                                     spacing: 8.0,
