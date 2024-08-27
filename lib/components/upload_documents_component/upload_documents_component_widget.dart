@@ -277,11 +277,6 @@ class _UploadDocumentsComponentWidgetState
                     var selectedUploadedFiles = <FFUploadedFile>[];
 
                     try {
-                      showUploadMessage(
-                        context,
-                        'Uploading file...',
-                        showLoading: true,
-                      );
                       selectedUploadedFiles = selectedMedia
                           .map((m) => FFUploadedFile(
                                 name: m.storagePath.split('/').last,
@@ -292,17 +287,14 @@ class _UploadDocumentsComponentWidgetState
                               ))
                           .toList();
                     } finally {
-                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
                       _model.isDataUploading = false;
                     }
                     if (selectedUploadedFiles.length == selectedMedia.length) {
                       setState(() {
                         _model.uploadedLocalFile = selectedUploadedFiles.first;
                       });
-                      showUploadMessage(context, 'Success!');
                     } else {
                       setState(() {});
-                      showUploadMessage(context, 'Failed to upload data');
                       return;
                     }
                   }
