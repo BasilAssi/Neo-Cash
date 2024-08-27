@@ -211,3 +211,41 @@ String? getCardToken(
   final sum = customerId + cardExpiryDate + cardLastFourDigits;
   return sum.toString();
 }
+
+String? generateFinalEPIN(
+  String? pinBlock,
+  String? cardNumber,
+) {
+// Validate inputs
+  if (pinBlock == null ||
+      pinBlock.length != 16 ||
+      cardNumber == null ||
+      cardNumber.length != 16) {
+    return null; // Handle invalid input
+  }
+
+  // Step 1: Replace the first three digits with '0000' and remove the last digit
+  String modifiedCardNumber = '0000' + cardNumber.substring(3, 15);
+
+  // Convert the modified card number to a BigInt (as a hexadecimal number)
+  BigInt modifiedCardNumberBigInt = BigInt.parse(modifiedCardNumber, radix: 16);
+
+  // Convert the PIN Block to a BigInt (as hexadecimal)
+  BigInt pinBlockBigInt = BigInt.parse(pinBlock, radix: 16);
+
+  // Step 2: XOR the modified card number with the PIN Block
+  BigInt xorResult = modifiedCardNumberBigInt ^ pinBlockBigInt;
+
+  // Convert the XOR result to a hexadecimal string and pad it to at least 16 characters
+  String xorHex = xorResult.toRadixString(16).padLeft(16, '0').toUpperCase();
+
+  // Step 3: Extract the PIN value from digits 2 to 5 of the XOR result
+  String finalEPIN = xorHex.substring(2, 6);
+
+  // // Handle case where PIN is less than 4 characters (leading zeros)
+  if (finalEPIN.length < 4) {
+    finalEPIN = finalEPIN.padLeft(4, '0');
+  }
+
+  return finalEPIN;
+}

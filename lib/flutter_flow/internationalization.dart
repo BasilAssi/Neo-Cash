@@ -429,9 +429,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رصيد البطاقة ',
       'en': 'Card balance',
     },
-    'dunv88wl': {
-      'ar': '0.00 ILS',
-      'en': 'ILS',
+    'jci1ufx5': {
+      'ar': '',
+      'en': '',
     },
     'kbbahzti': {
       'ar': 'الحساب الاساسي ',
@@ -535,10 +535,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mye4mdo1': {
       'ar': 'رقم البطاقة',
       'en': 'Card Number',
-    },
-    'wfnpkxto': {
-      'ar': '2921 5329 0309 9412',
-      'en': '2921 5329 0309 9412',
     },
     'jbdriiyr': {
       'ar': 'رمز الحركة',
@@ -2806,18 +2802,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transactions_page
   {
-    'ep94svt3': {
-      'ar': 'شحن رصيد موبايل',
-      'en': '',
-    },
-    'ry73pybn': {
-      'ar': '2921532903099',
-      'en': '',
-    },
-    'bamtcmdo': {
-      'ar': 'Jun, 8, 2024',
-      'en': '',
-    },
     '983o6iht': {
       'ar': '08/12/2024 -  08/12/2024 ',
       'en': '',

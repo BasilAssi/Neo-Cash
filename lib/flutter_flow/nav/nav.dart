@@ -127,7 +127,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'view_pin_code_page',
               path: 'viewPinCodePage',
-              builder: (context, params) => const ViewPinCodePageWidget(),
+              builder: (context, params) => ViewPinCodePageWidget(
+                pinCode: params.getParam(
+                  'pinCode',
+                  ParamType.String,
+                ),
+              ),
             ),
             FFRoute(
               name: 'pin_code',
