@@ -222,6 +222,7 @@ class _HomePageListCardsComponentWidgetState
                                 ? cardListItem.isPhysical
                                 : false,
                           );
+                          _model.updatePage(() {});
 
                           context.pushNamed('card_details');
                         },
