@@ -16,7 +16,12 @@ export 'home_page_list_cards_component_model.dart';
 
 class HomePageListCardsComponentWidget extends StatefulWidget {
   /// this component used to   list the cards
-  const HomePageListCardsComponentWidget({super.key});
+  const HomePageListCardsComponentWidget({
+    super.key,
+    this.refresh,
+  });
+
+  final Future Function()? refresh;
 
   @override
   State<HomePageListCardsComponentWidget> createState() =>
@@ -45,6 +50,7 @@ class _HomePageListCardsComponentWidgetState
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       setState(() => _model.apiRequestCompleter = null);
       await _model.waitForApiRequestCompleted();
+      await widget.refresh?.call();
     });
 
     animationsMap.addAll({
@@ -272,31 +278,6 @@ class _HomePageListCardsComponentWidgetState
                                                 width: 44.0,
                                                 height: 14.0,
                                                 fit: BoxFit.cover,
-                                              ),
-                                              Text(
-                                                cardListItem.hasVoucherValue()
-                                                    ? cardListItem.voucherValue
-                                                    : ' ',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .displaySmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          fontSize: 32.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .displaySmallFamily),
-                                                        ),
                                               ),
                                             ],
                                           ),

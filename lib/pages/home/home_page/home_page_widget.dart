@@ -504,7 +504,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         model: _model.homePageListCardsComponentModel,
                         updateCallback: () => setState(() {}),
                         updateOnChange: true,
-                        child: const HomePageListCardsComponentWidget(),
+                        child: HomePageListCardsComponentWidget(
+                          refresh: () async {
+                            FFAppState().update(() {});
+                          },
+                        ),
                       ),
                     ],
                   ),
