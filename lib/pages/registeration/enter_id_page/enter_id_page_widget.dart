@@ -386,7 +386,19 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                   ?.jsonBody ??
                                               ''))
                                           ?.isDeviceRegistered ==
-                                      'false') {
+                                      'true') {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText:
+                                            'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
+                                        enText:
+                                            'please login .. did you forget your password?',
+                                      ),
+                                    );
+
+                                    context.pushNamed('login');
+                                  } else {
                                     FFAppState()
                                         .updateRegisterationFormDataStruct(
                                       (e) => e
@@ -463,18 +475,6 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         ),
                                       );
                                     }
-                                  } else {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText:
-                                            'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
-                                        enText:
-                                            'please login .. did you forget your password?',
-                                      ),
-                                    );
-
-                                    context.pushNamed('login');
                                   }
                                 } else {
                                   await actions.showToast(
