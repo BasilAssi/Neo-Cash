@@ -58,6 +58,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   ApiCallResponse? apiResultLogin;
   // Stores action output result for [Custom Action - parseJWT] action in Button widget.
   dynamic parsedJWT;
+  // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
+  ApiCallResponse? apiResultSendOTPSelfReg;
   bool biometricOutput = false;
 
   @override

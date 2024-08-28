@@ -36,7 +36,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget>
         effectsBuilder: () => [
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 2000.0.ms,
+            delay: 600.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,

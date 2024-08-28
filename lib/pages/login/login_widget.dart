@@ -858,9 +858,50 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             'Your device is not activated',
                                                       ),
                                                     );
+                                                    FFAppState()
+                                                        .updateRegisterationFormDataStruct(
+                                                      (e) => e
+                                                        ..isRegisteredStatus =
+                                                            true,
+                                                    );
+                                                    setState(() {});
+                                                    _model.apiResultSendOTPSelfReg =
+                                                        await AuthAndRegisterGroup
+                                                            .sendOTPToCustomerCall
+                                                            .call(
+                                                      msgId:
+                                                          functions.messageId(),
+                                                      idNumber: FFAppState()
+                                                          .registerationFormData
+                                                          .idNumber,
+                                                      idType: FFAppState()
+                                                          .registerationFormData
+                                                          .idType,
+                                                      mobileNumber:
+                                                          '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                                                      destinationType:
+                                                          'MOBILE_NUMBER',
+                                                      operationType:
+                                                          'REGISTER_CUSTOMER',
+                                                      acceptLanguage:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getVariableText(
+                                                        arText: 'AR',
+                                                        enText: 'EN',
+                                                      ),
+                                                    );
 
-                                                    context.pushNamed(
-                                                        'enter_id_page');
+                                                    if ((_model
+                                                            .apiResultSendOTPSelfReg
+                                                            ?.succeeded ??
+                                                        true)) {
+                                                      context.pushNamed(
+                                                          'otp_does_not_exist_flow');
+                                                    } else {
+                                                      context.pushNamed(
+                                                          'enter_id_page');
+                                                    }
                                                   } else if (LoginAPIResponseStruct
                                                               .maybeFromMap((_model
                                                                       .apiResultLogin
