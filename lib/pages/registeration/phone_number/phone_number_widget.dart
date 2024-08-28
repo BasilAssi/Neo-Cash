@@ -415,7 +415,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 mobileNumber:
                                     '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                 destinationType: 'MOBILE_NUMBER',
-                                operationType: 'VERIFY_DESTINATION',
+                                operationType: 'REGISTER_CUSTOMER',
                               );
 
                               context.pushNamed('otp_does_not_exist_flow');
