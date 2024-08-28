@@ -382,11 +382,11 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         'REJECTED')) {
                                   // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
                                   //                                       false)
-                                  if (RegisterationFormDataStruct.maybeFromMap(
+                                  if (AuthenticatedUserStruct.maybeFromMap(
                                               (_model.isRegisteredOutPut
                                                       ?.jsonBody ??
                                                   ''))
-                                          ?.isRegisteredStatus ==
+                                          ?.isDeviceRegistered ==
                                       true) {
                                     await actions.showToast(
                                       FFLocalizations.of(context)
