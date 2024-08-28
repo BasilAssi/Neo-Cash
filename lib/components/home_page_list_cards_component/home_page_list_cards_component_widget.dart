@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -38,6 +40,12 @@ class _HomePageListCardsComponentWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageListCardsComponentModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() => _model.apiRequestCompleter = null);
+      await _model.waitForApiRequestCompleted();
+    });
 
     animationsMap.addAll({
       'rowOnPageLoadAnimation': AnimationInfo(
@@ -94,15 +102,17 @@ class _HomePageListCardsComponentWidgetState
       child: Align(
         alignment: const AlignmentDirectional(0.0, 0.0),
         child: FutureBuilder<ApiCallResponse>(
-          future: CardGroup.listCardsCall.call(
-            msgId: functions.messageId(),
-            idNumber: FFAppState().AuthenticatedUser.idNumber,
-            token: FFAppState().AuthenticatedUser.accessToken,
-            acceptLanguage: FFLocalizations.of(context).getVariableText(
-              arText: 'AR',
-              enText: 'EN',
-            ),
-          ),
+          future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
+                ..complete(CardGroup.listCardsCall.call(
+                  msgId: functions.messageId(),
+                  idNumber: FFAppState().AuthenticatedUser.idNumber,
+                  token: FFAppState().AuthenticatedUser.accessToken,
+                  acceptLanguage: FFLocalizations.of(context).getVariableText(
+                    arText: 'AR',
+                    enText: 'EN',
+                  ),
+                )))
+              .future,
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
