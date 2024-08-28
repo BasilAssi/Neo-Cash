@@ -1398,7 +1398,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                                         .unfocus(),
                                                                 child:
                                                                     const SizedBox(
-                                                                  height: 400.0,
+                                                                  height: 300.0,
                                                                   child:
                                                                       OtpSessionExpiredComponentWidget(),
                                                                 ),
@@ -1419,9 +1419,9 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                                 context)
                                                             .getVariableText(
                                                           arText:
-                                                              'الإيميل مسجل من قبل',
+                                                              'الإيميل المدخل مسجل سابقا',
                                                           enText:
-                                                              'Customer email already registered',
+                                                              'Email is already registered',
                                                         ),
                                                       );
                                                     } else {

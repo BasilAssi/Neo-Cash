@@ -11,13 +11,8 @@ import 'otp_session_expired_component_model.dart';
 export 'otp_session_expired_component_model.dart';
 
 class OtpSessionExpiredComponentWidget extends StatefulWidget {
-  /// this component used  ex  no internet connection ,  other errors
-  const OtpSessionExpiredComponentWidget({
-    super.key,
-    String? errorText,
-  }) : errorText = errorText ?? 'error';
-
-  final String errorText;
+  /// this component used  expired otp  ,  other errors
+  const OtpSessionExpiredComponentWidget({super.key});
 
   @override
   State<OtpSessionExpiredComponentWidget> createState() =>
