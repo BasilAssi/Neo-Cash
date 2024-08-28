@@ -35,7 +35,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.isTimerEnded = true;
+      _model.isTimerEnded = false;
       setState(() {});
       _model.timerController.onStartTimer();
     });
