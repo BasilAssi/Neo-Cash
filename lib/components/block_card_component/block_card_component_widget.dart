@@ -163,7 +163,7 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
                                               FFAppState().updateCardDataStruct(
                                                 (e) => e..status = 'BLOCKED',
                                               );
-                                              _model.updatePage(() {});
+                                              FFAppState().update(() {});
                                               Navigator.pop(context);
                                             } else {
                                               Navigator.pop(context);

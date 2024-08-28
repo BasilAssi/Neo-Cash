@@ -6,6 +6,7 @@ class ConfirmResetPasswordModel
     extends FlutterFlowModel<ConfirmResetPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for FirstNameTextField widget.
   FocusNode? firstNameTextFieldFocusNode1;

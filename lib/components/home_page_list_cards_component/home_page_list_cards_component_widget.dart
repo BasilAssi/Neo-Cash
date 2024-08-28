@@ -122,10 +122,10 @@ class _HomePageListCardsComponentWidgetState
 
             return Builder(
               builder: (context) {
-                final cardList = CardListStruct.maybeFromMap(
+                final cardList = ListCustomerCardsStruct.maybeFromMap(
                             swipeableStackListCardsResponse.jsonBody)
                         ?.records
-                        ?.toList() ??
+                        .toList() ??
                     [];
 
                 return FlutterFlowSwipeableStack(

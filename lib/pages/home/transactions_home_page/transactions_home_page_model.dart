@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 
 class TransactionsHomePageModel
     extends FlutterFlowModel<TransactionsHomePageWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  final unfocusNode = FocusNode();
+
   @override
   void initState(BuildContext context) {}
 

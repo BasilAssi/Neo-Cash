@@ -10,6 +10,7 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for DropDown widget.
   String? dropDownValue;
