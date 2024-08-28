@@ -503,6 +503,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       wrapWithModel(
                         model: _model.homePageListCardsComponentModel,
                         updateCallback: () => setState(() {}),
+                        updateOnChange: true,
                         child: const HomePageListCardsComponentWidget(),
                       ),
                     ],
