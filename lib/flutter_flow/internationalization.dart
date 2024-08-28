@@ -2954,6 +2954,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'No',
     },
   },
+  // otp_session_expired_component
+  {
+    '7qtlctjf': {
+      'ar': 'انتهت صلاحية رمز التحقق، الرجاء إدخال رمز التحقق مرة أخرى',
+      'en': 'Session expired, please enter the OTP again',
+    },
+    'weybzccb': {
+      'ar': 'موافق',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {
