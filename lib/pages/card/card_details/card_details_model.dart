@@ -10,6 +10,7 @@ class CardDetailsModel extends FlutterFlowModel<CardDetailsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - isNetworkAvailable] action in card_details widget.
   bool? isNetworkAvailable;
   // Stores action output result for [Backend Call - API (Get Card Account Info)] action in card_details widget.
@@ -18,9 +19,9 @@ class CardDetailsModel extends FlutterFlowModel<CardDetailsWidget> {
   bool? isNetworkAvailable2;
   // Stores action output result for [Backend Call - API (Get Card PIN)] action in IconButton widget.
   ApiCallResponse? apiResultGetPIN;
-  // Stores action output result for [Custom Action - isNetworkAvailable] action in Wrap widget.
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in IconButton widget.
   bool? isNetworkAvailableOutput;
-  // Stores action output result for [Backend Call - API (Change Card Status)] action in Wrap widget.
+  // Stores action output result for [Backend Call - API (Change Card Status)] action in IconButton widget.
   ApiCallResponse? apiResultActiveCard;
 
   @override

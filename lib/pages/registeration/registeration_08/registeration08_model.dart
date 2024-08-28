@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class Registeration08Model extends FlutterFlowModel<Registeration08Widget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Send to Approval)] action in Button widget.

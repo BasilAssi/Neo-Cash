@@ -9,6 +9,7 @@ class Registeration01Model extends FlutterFlowModel<Registeration01Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for FirstNameARTextField widget.
   FocusNode? firstNameARTextFieldFocusNode;

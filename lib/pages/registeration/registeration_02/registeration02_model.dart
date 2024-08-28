@@ -19,6 +19,7 @@ class Registeration02Model extends FlutterFlowModel<Registeration02Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // Stores action output result for [Custom Action - isNetworkAvailable] action in registeration_02 widget.
   bool? isNetworkAvaiableOutput;

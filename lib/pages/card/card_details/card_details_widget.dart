@@ -837,147 +837,150 @@ THRU */
                       } else {
                         return Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              _model.isNetworkAvailableOutput =
-                                  await actions.isNetworkAvailable();
-                              if (_model.isNetworkAvailableOutput == true) {
-                                _model.apiResultActiveCard =
-                                    await CardGroup.changeCardStatusCall.call(
-                                  msgId: functions.messageId(),
-                                  cardToken: functions.getCardToken(
-                                      FFAppState().AuthenticatedUser.idNumber,
-                                      FFAppState().cardData.expiryDate,
-                                      functions.getLast4Digits(
-                                          FFAppState().cardData.cardNumber)),
-                                  status: 'ACTIVE',
-                                  token: FFAppState()
-                                      .AuthenticatedUser
-                                      .accessToken,
-                                  acceptLanguage: FFLocalizations.of(context)
-                                      .getVariableText(
-                                    arText: 'AR',
-                                    enText: 'EN',
+                          child: Wrap(
+                            spacing: 8.0,
+                            runSpacing: 0.0,
+                            alignment: WrapAlignment.center,
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            direction: Axis.vertical,
+                            runAlignment: WrapAlignment.center,
+                            verticalDirection: VerticalDirection.down,
+                            clipBehavior: Clip.antiAlias,
+                            children: [
+                              Container(
+                                width: 70.0,
+                                height: 70.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: FlutterFlowIconButton(
+                                  borderColor: FlutterFlowTheme.of(context)
+                                      .textFieldBorder,
+                                  borderRadius: 12.0,
+                                  borderWidth: 1.0,
+                                  buttonSize:
+                                      MediaQuery.sizeOf(context).width * 0.14,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  icon: Icon(
+                                    Icons.lock_open_rounded,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 28.0,
                                   ),
-                                );
+                                  onPressed: () async {
+                                    _model.isNetworkAvailableOutput =
+                                        await actions.isNetworkAvailable();
+                                    if (_model.isNetworkAvailableOutput ==
+                                        true) {
+                                      _model.apiResultActiveCard =
+                                          await CardGroup.changeCardStatusCall
+                                              .call(
+                                        msgId: functions.messageId(),
+                                        cardToken: functions.getCardToken(
+                                            FFAppState()
+                                                .AuthenticatedUser
+                                                .idNumber,
+                                            FFAppState().cardData.expiryDate,
+                                            functions.getLast4Digits(
+                                                FFAppState()
+                                                    .cardData
+                                                    .cardNumber)),
+                                        status: 'ACTIVE',
+                                        token: FFAppState()
+                                            .AuthenticatedUser
+                                            .accessToken,
+                                        acceptLanguage:
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                          arText: 'AR',
+                                          enText: 'EN',
+                                        ),
+                                      );
 
-                                if ((_model.apiResultActiveCard?.succeeded ??
-                                    true)) {
-                                  if (ResponseModelStruct.maybeFromMap((_model
-                                                  .apiResultActiveCard
-                                                  ?.jsonBody ??
-                                              ''))
-                                          ?.code ==
-                                      '00') {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'تم فك  قفل البطاقة بنجاح ',
-                                        enText: 'Card unlocked successfull.',
-                                      ),
-                                    );
-                                    FFAppState().updateCardDataStruct(
-                                      (e) => e..status = 'ACTIVE',
-                                    );
+                                      if ((_model
+                                              .apiResultActiveCard?.succeeded ??
+                                          true)) {
+                                        if (ResponseModelStruct.maybeFromMap(
+                                                    (_model.apiResultActiveCard
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.code ==
+                                            '00') {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'تم فك  قفل البطاقة بنجاح ',
+                                              enText:
+                                                  'Card unlocked successfull.',
+                                            ),
+                                          );
+                                          FFAppState().updateCardDataStruct(
+                                            (e) => e..status = 'ACTIVE',
+                                          );
+                                          setState(() {});
+                                        } else {
+                                          Navigator.pop(context);
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'خطأ',
+                                              enText: 'error',
+                                            ),
+                                          );
+                                        }
+                                      } else {
+                                        Navigator.pop(context);
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'خطأ',
+                                            enText: 'error',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'عذرا لا يوجد اتصال بالانترنت',
+                                          enText:
+                                              'Sorry, no internet connection.',
+                                        ),
+                                      );
+                                    }
+
                                     setState(() {});
-                                    Navigator.pop(context);
-                                  } else {
-                                    Navigator.pop(context);
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'خطأ',
-                                        enText: 'error',
-                                      ),
-                                    );
-                                  }
-                                } else {
-                                  Navigator.pop(context);
-                                  await actions.showToast(
-                                    FFLocalizations.of(context).getVariableText(
-                                      arText: 'خطأ',
-                                      enText: 'error',
-                                    ),
-                                  );
-                                }
-                              } else {
-                                await actions.showToast(
-                                  FFLocalizations.of(context).getVariableText(
-                                    arText: 'عذرا لا يوجد اتصال بالانترنت',
-                                    enText: 'Sorry, no internet connection.',
-                                  ),
-                                );
-                              }
-
-                              setState(() {});
-                            },
-                            child: Wrap(
-                              spacing: 8.0,
-                              runSpacing: 0.0,
-                              alignment: WrapAlignment.center,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              direction: Axis.vertical,
-                              runAlignment: WrapAlignment.center,
-                              verticalDirection: VerticalDirection.down,
-                              clipBehavior: Clip.antiAlias,
-                              children: [
-                                Container(
-                                  width: 70.0,
-                                  height: 70.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: FlutterFlowIconButton(
-                                    borderColor: FlutterFlowTheme.of(context)
-                                        .textFieldBorder,
-                                    borderRadius: 12.0,
-                                    borderWidth: 1.0,
-                                    buttonSize:
-                                        MediaQuery.sizeOf(context).width * 0.14,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .iconBackground,
-                                    icon: Icon(
-                                      Icons.lock_open_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 28.0,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
-                                  ),
+                                  },
                                 ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '6rfifwnu' /* فك قفل
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '6rfifwnu' /* فك قفل
 البطاقة */
-                                    ,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .textColor,
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily),
-                                      ),
+                                  ,
                                 ),
-                              ],
-                            ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ],
                           ),
                         );
                       }

@@ -11,6 +11,7 @@ class BasicInfiForgotPinModel
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   DateTime? datePicked;
   // State field(s) for CitiesDropDown widget.
   String? citiesDropDownValue;
