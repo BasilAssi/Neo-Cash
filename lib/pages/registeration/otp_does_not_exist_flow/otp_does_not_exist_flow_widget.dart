@@ -319,7 +319,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                           .registerationFormData
                                           .isRegisteredStatus ==
                                       false
-                                  ? 'VERIFY_DESTINATION'
+                                  ? 'REGISTER_CUSTOMER'
                                   : 'REGISTER_DEVICE',
                             );
 print(' code ${ResponseModelStruct.maybeFromMap(
