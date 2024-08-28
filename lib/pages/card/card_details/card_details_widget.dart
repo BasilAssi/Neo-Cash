@@ -37,6 +37,15 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
       if (_model.isNetworkAvailable == true) {
         _model.apiResultCardInfo = await CardGroup.getCardAccountInfoCall.call(
           msgId: functions.messageId(),
+          token: FFAppState().AuthenticatedUser.accessToken,
+          acceptLanguage: FFLocalizations.of(context).getVariableText(
+            arText: 'AR',
+            enText: 'EN',
+          ),
+          cardToken: functions.getCardToken(
+              FFAppState().AuthenticatedUser.idNumber,
+              FFAppState().cardData.expiryDate,
+              functions.getLast4Digits(FFAppState().cardData.cardNumber)),
         );
 
         if ((_model.apiResultCardInfo?.succeeded ?? true)) {
