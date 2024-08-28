@@ -2962,7 +2962,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'weybzccb': {
       'ar': 'موافق',
-      'en': '',
+      'en': 'Ok',
     },
   },
   // Miscellaneous
