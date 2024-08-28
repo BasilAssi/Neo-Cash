@@ -341,34 +341,34 @@ print(' code ${ResponseModelStruct.maybeFromMap(
                                   context.pushNamed('registeration_01');
                                 }
                               } else {
-                                if (ResponseModelStruct.maybeFromMap(
-                                            (_model.verifyOTPOutput?.jsonBody ??
-                                                ''))
-                                        ?.code ==
-                                    '1505') {
-                                  await actions.showToast(
-                                    FFLocalizations.of(context).getVariableText(
-                                      arText: 'رقم الهاتف مسجل بالفعل',
-                                      enText: 'Phone number already registered',
-                                    ),
-                                  );
-                                  context.safePop();
-                                } else {
-                                  await actions.showToast(
-                                    FFLocalizations.of(context).getVariableText(
-                                      arText: 'رمز المصادقة غير صحيح',
-                                      enText: 'Invalid authentication code',
-                                    ),
-                                  );
-                                }
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'رمز المصادقة غير صحيح',
+                                    enText: 'Invalid authentication code',
+                                  ),
+                                );
                               }
                             } else {
-                              await actions.showToast(
-                                FFLocalizations.of(context).getVariableText(
-                                  arText: 'خطأ',
-                                  enText: 'Error',
-                                ),
-                              );
+                              if (ResponseModelStruct.maybeFromMap(
+                                          (_model.verifyOTPOutput?.jsonBody ??
+                                              ''))
+                                      ?.code ==
+                                  '1505') {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'رقم الهاتف مسجل بالفعل',
+                                    enText: 'Phone number already registered',
+                                  ),
+                                );
+                                context.safePop();
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'خطأ',
+                                    enText: 'Error',
+                                  ),
+                                );
+                              }
                             }
                           } else {
                             await actions.showToast(
