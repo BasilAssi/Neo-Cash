@@ -83,7 +83,7 @@ class _OtpSessionExpiredComponentWidgetState
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '7qtlctjf' /* Session expired, please enter ... */,
+                                '7qtlctjf' /* انتهت صلاحية رمز التحقق، الرجا... */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
