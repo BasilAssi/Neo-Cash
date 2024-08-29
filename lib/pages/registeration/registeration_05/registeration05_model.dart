@@ -51,7 +51,9 @@ class Registeration05Model extends FlutterFlowModel<Registeration05Widget> {
     }
 
     if (val.length > 25) {
-      return 'Maximum 25 characters allowed, currently ${val.length}.';
+      return FFLocalizations.of(context).getText(
+        'ngvl7l9y' /* يجب ألا يتجاوز النص 25 حرفًا. */,
+      );
     }
 
     return null;
