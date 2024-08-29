@@ -372,8 +372,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Field is required',
     },
     '20xg27or': {
-      'ar': 'لا يمكن ان يكون الرقم اقل من 9 خانات',
-      'en': 'The number cannot be less than 9 digits.',
+      'ar':
+          'الرجاء إدخال رقم هاتف محمول صالح\nيبدأ بـ 59 أو 56 متبوعًا بـ 7 أرقام',
+      'en':
+          'Please enter a valid mobile number\nstarting with 59 or 56 followed \nby 7 digits',
     },
     'o3pcr58o': {
       'ar': 'لا يمكن ان يكون الرقم أكبر من 9 خانات',
