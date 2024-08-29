@@ -92,9 +92,20 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
         'eggopym5' /* الحقل مطلوب */,
       );
     }
-    if (val.length < 4) {
-      return 'Requires 4 characters.';
+    if (!RegExp(r'^\d{4}$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'onlyNumbers' /* The PIN must be exactly 4 digits long and contain only numbers. */,
+      );
     }
+    if (val.length < 4) {
+      return FFLocalizations.of(context).getText(
+        'Requires4Characters' /*  يتطلب اربع خانات*/,
+      );
+    }
+
+
+
+
     return null;
   }
 

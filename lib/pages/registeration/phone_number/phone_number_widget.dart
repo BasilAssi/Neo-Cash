@@ -421,7 +421,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 destinationType: 'MOBILE_NUMBER',
                                 operationType: 'REGISTER_CUSTOMER',
                               );
-
+print('_model.apiResultSendOTPSelfReg ${_model.apiResultSendOTPSelfReg?.jsonBody}');
                               context.pushNamed('otp_does_not_exist_flow');
                             } else {
                               await actions.showToast(

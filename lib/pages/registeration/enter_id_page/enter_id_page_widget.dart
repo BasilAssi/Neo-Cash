@@ -357,6 +357,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             );
 
                             print('_model.isRegisteredOutPut ${_model.isRegisteredOutPut?.jsonBody}');
+                            print('_model.isRegisteredOutPut ${IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody)}');
+
                             if ((_model.isRegisteredOutPut?.succeeded ??
                                 true)) {
                               if (ResponseModelStruct.maybeFromMap((_model
@@ -380,14 +382,15 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                 ''))
                                             ?.customerStatus !=
                                         'REJECTED')) {
-                                  // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                  //                                       false)
-                                  if (AuthenticatedUserStruct.maybeFromMap(
-                                              (_model.isRegisteredOutPut
-                                                      ?.jsonBody ??
-                                                  ''))
-                                          ?.isDeviceRegistered ==
-                                      true) {
+                                  if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                                                        true)
+                                  // if (AuthenticatedUserStruct.maybeFromMap(
+                                  //             (_model.isRegisteredOutPut
+                                  //                     ?.jsonBody ??
+                                  //                 ''))
+                                  //         ?.isDeviceRegistered ==
+                                  //     true)
+                                         {
                                     await actions.showToast(
                                       FFLocalizations.of(context)
                                           .getVariableText(

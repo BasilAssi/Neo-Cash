@@ -328,6 +328,13 @@ print(' code ${ResponseModelStruct.maybeFromMap(
     (_model.verifyOTPOutput?.jsonBody ??
         ''))
     ?.code}');
+
+print(' code ${ResponseModelStruct.maybeFromMap(
+    (_model.verifyOTPOutput?.jsonBody ??
+        ''))
+    ?.code}');
+print('  _model.verifyOTPOutput ${
+    _model.verifyOTPOutput?.jsonBody}');
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
                               if (ResponseModelStruct.maybeFromMap(
                                           (_model.verifyOTPOutput?.jsonBody ??
@@ -351,6 +358,10 @@ print(' code ${ResponseModelStruct.maybeFromMap(
                                 );
                               }
                             } else {
+                              print('exist ${ResponseModelStruct.maybeFromMap(
+                                  (_model.verifyOTPOutput?.jsonBody ??
+                                      ''))
+                                  ?.code}');
                               if (ResponseModelStruct.maybeFromMap(
                                           (_model.verifyOTPOutput?.jsonBody ??
                                               ''))

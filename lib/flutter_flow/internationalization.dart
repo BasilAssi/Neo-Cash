@@ -2519,6 +2519,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'Requires4Characters': {
+      'ar': 'يتطلب اربع خانات',
+      'en': 'Requires 4 characters.',
+    },
+    'onlyNumbers': {
+      'ar': ' يجب أن يتكون الرمز السري  من 4 أرقام فقط.',
+      'en': 'The PIN must be 4 digits only.',
+    },
     'zsckrnmu': {
       'ar': 'تسجيل',
       'en': 'Register',

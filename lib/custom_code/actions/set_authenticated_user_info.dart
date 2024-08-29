@@ -60,7 +60,7 @@ Future setAuthenticatedUserInfo(dynamic payloadMap) async {
       ..mobileNumberPrefix = customerInfo['mobileNumberPrefix'] ?? ''
       ..isPEP = customerInfo['isPEP'] ?? false
       ..encodedId = customerInfo['encodedId'] ?? ''
-      ..birthDate = customerInfo['birthDate'] ?? ''
+     // ..birthDate = customerInfo['birthDate'] ?? null
       ..firstName = customerInfo['firstName'] ?? ''
       ..emailVerified = customerInfo['emailVerified'] ?? false
       ..areaCode = customerInfo['areaCode'] ?? ''

@@ -778,7 +778,7 @@ class _SetPasswordExistFlowWidgetState
                                         }
                                       } else {
                                         await actions.showToast(
-                                          _model.isValidPINResult1,
+                                          _model.isValidPINResult1?? '',
                                         );
                                       }
                                     } else {
@@ -942,7 +942,7 @@ class _SetPasswordExistFlowWidgetState
                                         }
                                       } else {
                                         await actions.showToast(
-                                          _model.isValidPINResult,
+                                          _model.isValidPINResult?? '',
                                         );
                                       }
                                     }

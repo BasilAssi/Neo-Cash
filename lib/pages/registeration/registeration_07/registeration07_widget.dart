@@ -1484,6 +1484,9 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                           'Sorry, no internet connection.',
                                                     ),
                                                   );
+
+                                                  print('apiResultCustomerRegister ${_model.apiResultCustomerRegister?.jsonBody}');
+
                                                 }
                                               } else {
                                                 await actions.showToast(
@@ -1498,7 +1501,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                               }
                                             } else {
                                               await actions.showToast(
-                                                _model.isValidPINResult,
+                                                _model.isValidPINResult?? '',
                                               );
                                             }
 

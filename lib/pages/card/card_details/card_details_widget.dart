@@ -47,7 +47,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
               FFAppState().cardData.expiryDate,
               functions.getLast4Digits(FFAppState().cardData.cardNumber)),
         );
-
+print('apiResultCardInfo ${_model.apiResultCardInfo?.jsonBody}');
         if ((_model.apiResultCardInfo?.succeeded ?? true)) {
           _model.cardbalance = '${CardGroup.getCardAccountInfoCall.cardBalance(
                 (_model.apiResultCardInfo?.jsonBody ?? ''),
@@ -164,7 +164,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: _model.cardbalance!,
+                                    text: _model.cardbalance?? '',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -531,6 +531,7 @@ THRU */
                                                     enText: 'EN',
                                                   ),
                                                 );
+                                                print('_model.apiResultGetPIN ${_model.apiResultGetPIN?.jsonBody}');
 
                                                 if ((_model.apiResultGetPIN
                                                         ?.succeeded ??
