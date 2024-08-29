@@ -373,9 +373,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '20xg27or': {
       'ar':
-          'الرجاء إدخال رقم هاتف محمول \nصالح\nيبدأ بـ 59 أو 56 متبوعًا بـ 7 أرقام',
+          'الرجاء إدخال رقم هاتف محمول \nصالح\nيبدأ بـ 5 أو 5 متبوعًا بـ 8 أرقام',
       'en':
-          'Please enter a valid mobile number\n\nstarting with 59 or 56 followed \nby 7 digits',
+          'Please enter a valid mobile\n number starting with \n5 or 5 followed \nby 8 digits',
     },
     'o3pcr58o': {
       'ar': 'لا يمكن ان يكون الرقم أكبر من 9 خانات',
