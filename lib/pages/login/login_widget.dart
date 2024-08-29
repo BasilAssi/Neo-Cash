@@ -1172,7 +1172,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '07qpw4xc' /*   أنشئ حساب */,
+                                                      '07qpw4xc' /*    أنشئ حساب */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -1186,7 +1186,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 18.0,
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,

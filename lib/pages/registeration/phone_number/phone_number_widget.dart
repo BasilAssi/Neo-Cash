@@ -360,10 +360,14 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
-                                    disabled: FFAppState()
-                                            .registerationFormData
-                                            .idType ==
-                                        'NATIONAL',
+                                    disabled: (FFAppState()
+                                                .registerationFormData
+                                                .idType ==
+                                            'NATIONAL') ||
+                                        (FFAppState()
+                                                .registerationFormData
+                                                .idType ==
+                                            'PASSPORT'),
                                     isSearchable: false,
                                     isMultiSelect: false,
                                   ),

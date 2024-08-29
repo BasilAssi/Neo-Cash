@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/otp_session_expired_component/otp_session_expired_component_widget.dart';
+import '/components/terms_and_conditions_component/terms_and_conditions_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,6 +9,7 @@ import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +34,10 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
     super.initState();
     _model = createModel(context, () => Registeration07Model());
 
-    _model.emailTextFieldTextController ??= TextEditingController();
+    _model.emailTextFieldTextController ??= TextEditingController(
+        text: FFAppState().registerationFormData.hasEmail()
+            ? FFAppState().registerationFormData.email
+            : '');
     _model.emailTextFieldFocusNode ??= FocusNode();
 
     _model.passwordTextFieldTextController ??= TextEditingController();
@@ -1133,6 +1138,40 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                       fontSize: 17.0,
                                       decoration: TextDecoration.underline,
                                     ),
+                                    mouseCursor: SystemMouseCursors.click,
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          isDismissible: false,
+                                          enableDrag: false,
+                                          useSafeArea: true,
+                                          context: context,
+                                          builder: (context) {
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: SizedBox(
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.8,
+                                                    child:
+                                                        const TermsAndConditionsComponentWidget(),
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
                                   )
                                 ],
                                 style: FlutterFlowTheme.of(context)
