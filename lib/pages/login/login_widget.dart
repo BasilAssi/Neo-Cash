@@ -512,6 +512,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
+                                              isOverButton: true,
                                               isSearchable: false,
                                               isMultiSelect: false,
                                             ),
