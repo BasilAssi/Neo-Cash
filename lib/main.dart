@@ -18,8 +18,6 @@ void main() async {
   await actions.lockOrientation();
   // End initial custom actions code
 
-  await FlutterFlowTheme.initialize();
-
   await FFLocalizations.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
@@ -45,7 +43,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale? _locale = FFLocalizations.getStoredLocale();
 
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -70,7 +68,6 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
