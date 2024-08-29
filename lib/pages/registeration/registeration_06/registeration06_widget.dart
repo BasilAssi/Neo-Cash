@@ -717,7 +717,16 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                   return FlutterFlowDropDown<String>(
                                     controller:
                                         _model.citiesDropDownValueController ??=
-                                            FormFieldController<String>(null),
+                                            FormFieldController<String>(
+                                      _model.citiesDropDownValue ??=
+                                          FFAppState()
+                                                  .registerationFormData
+                                                  .hasCityCode()
+                                              ? FFAppState()
+                                                  .registerationFormData
+                                                  .cityCode
+                                              : '',
+                                    ),
                                     options: List<
                                         String>.from(LookupCitiesAPIResponseStruct
                                                     .maybeFromMap(
@@ -775,9 +784,10 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelLargeFamily),
                                         ),
-                                    hintText: FFAppState()
-                                        .registerationFormData
-                                        .cityCode,
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      '4zyjb59r' /* المدينة */,
+                                    ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -860,7 +870,16 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                   return FlutterFlowDropDown<String>(
                                     controller: _model
                                             .populationDropDownValueController ??=
-                                        FormFieldController<String>(null),
+                                        FormFieldController<String>(
+                                      _model.populationDropDownValue ??=
+                                          FFAppState()
+                                                  .registerationFormData
+                                                  .hasAreaCode()
+                                              ? FFAppState()
+                                                  .registerationFormData
+                                                  .areaCode
+                                              : '',
+                                    ),
                                     options: List<
                                         String>.from(LookupCitiesAPIResponseStruct
                                                     .maybeFromMap(
