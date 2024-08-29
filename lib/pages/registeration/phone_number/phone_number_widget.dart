@@ -316,7 +316,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                       _model.prefixMobileNumberDropDownValue ??=
                                           '970',
                                     ),
-                                    options: List<String>.from(['970', '972 ']),
+                                    options: List<String>.from(['970', '972']),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         'k890nwac' /* +970 */,
