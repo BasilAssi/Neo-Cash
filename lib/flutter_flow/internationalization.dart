@@ -203,8 +203,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Don\'t you have an account?',
     },
     '07qpw4xc': {
-      'ar': '  أنشئ حساب',
-      'en': 'Create New Account',
+      'ar': '   أنشئ حساب',
+      'en': '  Create New Account',
     },
     'nuxhazj7': {
       'ar': 'الحقل مطلوب',
@@ -399,8 +399,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm Phone Number',
     },
     'qspd8ikt': {
-      'ar': 'أرسلنالك رمز تحقق على تليفونك  رقم:  ',
-      'en': 'We have sent you a verification code on your phone number:  ',
+      'ar': ' أرسلنالك رمز تحقق على تليفونك  رقم:  ',
+      'en': ' We have sent you a verification code on your phone number:   ',
     },
     'tcup8vos': {
       'ar': '\n',
@@ -411,8 +411,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'tkx75g2g': {
-      'ar': ' الرجاء إدخال الرمز',
-      'en': 'Please enter the code',
+      'ar': '  الرجاء إدخال الرمز',
+      'en': ' Please enter the code',
     },
     'qzqkzusk': {
       'ar': 'إعادة إرسال رمز التحقق',
@@ -1301,10 +1301,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'm37d1181': {
       'ar': '',
       'en': '',
-    },
-    '4zyjb59r': {
-      'ar': 'المدينة',
-      'en': 'City',
     },
     'fvcq8d1v': {
       'ar': 'Search for an item...',
@@ -2963,6 +2959,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'weybzccb': {
       'ar': 'موافق',
       'en': 'Ok',
+    },
+  },
+  // terms_and_conditions_component
+  {
+    '8fhrr738': {
+      'ar': 'الشروط و الأحكام',
+      'en': '',
     },
   },
   // Miscellaneous

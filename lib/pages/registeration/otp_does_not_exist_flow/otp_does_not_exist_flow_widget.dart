@@ -154,7 +154,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'qspd8ikt' /* أرسلنالك رمز تحقق على تليفونك ... */,
+                                      'qspd8ikt' /*  أرسلنالك رمز تحقق على تليفونك... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -221,7 +221,7 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'tkx75g2g' /*  الرجاء إدخال الرمز */,
+                                      'tkx75g2g' /*   الرجاء إدخال الرمز */,
                                     ),
                                     style: TextStyle(
                                       color: FlutterFlowTheme.of(context)

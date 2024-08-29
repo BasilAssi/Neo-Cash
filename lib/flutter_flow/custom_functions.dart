@@ -157,7 +157,8 @@ String? validatePhoneNumber(
           ? 'الرجاء إدخال رقم موبايل صالح يبدأ بـ 59 أو 56 ويتكون من 7 أرقام بعد ذلك.'
           : 'Please enter a valid mobile number starting with 59 or 56 and containing 7 digits after that.';
     }
-  } else if (prefix == '972') {
+  }
+  if (prefix == '972') {
     // Regex for validating mobile number 972
     final regex2 = RegExp(r'^(50|59|56)\d{7}$');
 

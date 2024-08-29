@@ -784,10 +784,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelLargeFamily),
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '4zyjb59r' /* المدينة */,
-                                    ),
+                                    hintText: FFAppState()
+                                        .registerationFormData
+                                        .cityCode,
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
