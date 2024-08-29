@@ -373,9 +373,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '20xg27or': {
       'ar':
-          'الرجاء إدخال رقم هاتف محمول صالح\nيبدأ بـ 59 أو 56 متبوعًا بـ 7 أرقام',
+          'الرجاء إدخال رقم هاتف محمول \nصالح\nيبدأ بـ 59 أو 56 متبوعًا بـ 7 أرقام',
       'en':
-          'Please enter a valid mobile number\nstarting with 59 or 56 followed \nby 7 digits',
+          'Please enter a valid mobile number\n\nstarting with 59 or 56 followed \nby 7 digits',
     },
     'o3pcr58o': {
       'ar': 'لا يمكن ان يكون الرقم أكبر من 9 خانات',
@@ -1217,6 +1217,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
+    'kqhv55n9': {
+      'ar': 'يجب ألا يتجاوز النص 100 حرفًا.',
+      'en': 'Text must not exceed 25 characters.',
+    },
     'qbk4zj7i': {
       'ar': 'الرجاء إدخال بريد إلكتروني صحيح.',
       'en': 'Please enter a valid email.',
@@ -1826,6 +1830,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ot9dvbxc': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
+    },
+    'ngvl7l9y': {
+      'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
+      'en': 'Text must not exceed 25 characters.',
     },
     '6b8ufb9o': {
       'ar': 'Please choose an option from the dropdown',

@@ -22,7 +22,9 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
 
     if (val.length < 9) {
       return FFLocalizations.of(context).getText(
-        '20xg27or' /* الرجاء إدخال رقم هاتف محمول صا... */,
+        '20xg27or' /* الرجاء إدخال رقم هاتف محمول 
+ص... */
+        ,
       );
     }
     if (val.length > 9) {

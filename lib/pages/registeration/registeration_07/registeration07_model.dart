@@ -25,8 +25,10 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
       );
     }
 
-    if (val.length > 25) {
-      return 'Maximum 25 characters allowed, currently ${val.length}.';
+    if (val.length > 100) {
+      return FFLocalizations.of(context).getText(
+        'kqhv55n9' /* يجب ألا يتجاوز النص 100 حرفًا. */,
+      );
     }
     if (!RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$')
         .hasMatch(val)) {
