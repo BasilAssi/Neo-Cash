@@ -2977,6 +2977,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // filter_transactions_component1
+  {
+    'y69w9ruk': {
+      'ar': 'الخيارات',
+      'en': 'Options',
+    },
+    'brv3wjhr': {
+      'ar': 'اليوم',
+      'en': 'Today',
+    },
+    'wj6v08aa': {
+      'ar': 'اخر اسبوع',
+      'en': 'Last week',
+    },
+    '4o1kgke2': {
+      'ar': 'اخر شهر',
+      'en': 'Last Month',
+    },
+    '2h4n5v5v': {
+      'ar': 'اختر فترة',
+      'en': 'selecte date range',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {

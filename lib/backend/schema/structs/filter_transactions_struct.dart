@@ -7,29 +7,29 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class FilterTransactionsStruct extends BaseStruct {
   FilterTransactionsStruct({
-    DateTime? dateFrom,
-    DateTime? dateTo,
+    String? dateFrom,
+    String? dateTo,
   })  : _dateFrom = dateFrom,
         _dateTo = dateTo;
 
   // "dateFrom" field.
-  DateTime? _dateFrom;
-  DateTime? get dateFrom => _dateFrom;
-  set dateFrom(DateTime? val) => _dateFrom = val;
+  String? _dateFrom;
+  String get dateFrom => _dateFrom ?? '';
+  set dateFrom(String? val) => _dateFrom = val;
 
   bool hasDateFrom() => _dateFrom != null;
 
   // "dateTo" field.
-  DateTime? _dateTo;
-  DateTime? get dateTo => _dateTo;
-  set dateTo(DateTime? val) => _dateTo = val;
+  String? _dateTo;
+  String get dateTo => _dateTo ?? '';
+  set dateTo(String? val) => _dateTo = val;
 
   bool hasDateTo() => _dateTo != null;
 
   static FilterTransactionsStruct fromMap(Map<String, dynamic> data) =>
       FilterTransactionsStruct(
-        dateFrom: data['dateFrom'] as DateTime?,
-        dateTo: data['dateTo'] as DateTime?,
+        dateFrom: data['dateFrom'] as String?,
+        dateTo: data['dateTo'] as String?,
       );
 
   static FilterTransactionsStruct? maybeFromMap(dynamic data) => data is Map
@@ -45,11 +45,11 @@ class FilterTransactionsStruct extends BaseStruct {
   Map<String, dynamic> toSerializableMap() => {
         'dateFrom': serializeParam(
           _dateFrom,
-          ParamType.DateTime,
+          ParamType.String,
         ),
         'dateTo': serializeParam(
           _dateTo,
-          ParamType.DateTime,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -58,12 +58,12 @@ class FilterTransactionsStruct extends BaseStruct {
       FilterTransactionsStruct(
         dateFrom: deserializeParam(
           data['dateFrom'],
-          ParamType.DateTime,
+          ParamType.String,
           false,
         ),
         dateTo: deserializeParam(
           data['dateTo'],
-          ParamType.DateTime,
+          ParamType.String,
           false,
         ),
       );
@@ -83,8 +83,8 @@ class FilterTransactionsStruct extends BaseStruct {
 }
 
 FilterTransactionsStruct createFilterTransactionsStruct({
-  DateTime? dateFrom,
-  DateTime? dateTo,
+  String? dateFrom,
+  String? dateTo,
 }) =>
     FilterTransactionsStruct(
       dateFrom: dateFrom,
