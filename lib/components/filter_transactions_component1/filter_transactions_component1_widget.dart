@@ -335,10 +335,11 @@ class _FilterTransactionsComponent1WidgetState
                             ..dateTo =
                                 functions.dateFromCalculate(DateTypes.TODAY),
                         );
-                        setState(() {});
+                        FFAppState().update(() {});
                         await widget.refreshListTransaction?.call();
                       },
                     );
+                    await widget.refreshListTransaction?.call();
                   },
                   child: Container(
                     width: double.infinity,
