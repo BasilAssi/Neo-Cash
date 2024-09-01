@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'filter_transactions_component_model.dart';
 export 'filter_transactions_component_model.dart';
@@ -42,15 +41,12 @@ class _FilterTransactionsComponentWidgetState
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
       ),
-      child: SizedBox(
+      child: const SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: custom_widgets.DateRangePicker(
           width: double.infinity,
           height: double.infinity,
-          initialEndDate: getCurrentTimestamp,
-          initialStartDate: functions.getFirstOfMonth(),
-          onDateRangePicked: (startDateSelected, endDateSelected) async {},
         ),
       ),
     );
