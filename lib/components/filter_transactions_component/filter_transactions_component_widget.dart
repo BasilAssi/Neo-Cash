@@ -45,12 +45,11 @@ class _FilterTransactionsComponentWidgetState
       child: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: custom_widgets.DateRangePicker2(
+        child: custom_widgets.DateRangePicker(
           width: double.infinity,
           height: double.infinity,
-          pickerDialogPadding: 16.0,
-          initialStartDate: functions.getFirstOfMonth(),
           initialEndDate: getCurrentTimestamp,
+          initialStartDate: functions.getFirstOfMonth(),
           onDateRangePicked: (startDateSelected, endDateSelected) async {},
         ),
       ),

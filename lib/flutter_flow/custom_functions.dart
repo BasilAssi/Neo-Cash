@@ -130,6 +130,11 @@ String? maskMobileNumber(
   return visibleSection + maskedSection;
 }
 
+DateTime getFirstOfMonth() {
+  // returns the first of the month
+  return DateTime(DateTime.now().year, DateTime.now().month, 1);
+}
+
 String? updateTextfield(String? val) {
   if (val == null || val == null) return '';
 
@@ -267,9 +272,4 @@ String? dateFromCalculate(DateTypes? dateType) {
     default:
       return '';
   }
-}
-
-DateTime getFirstOfMonth() {
-  // returns the first of the month
-  return DateTime(DateTime.now().year, DateTime.now().month, 1);
 }
