@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1096,10 +1097,25 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                         }
                                         if (_model.citiesDropDownValue ==
                                             null) {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'حقل المدينة مطلوب',
+                                              enText: 'City field is required',
+                                            ),
+                                          );
                                           return;
                                         }
                                         if (_model.populationDropDownValue ==
                                             null) {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'حقل التجمع السكني مطلوب',
+                                              enText:
+                                                  'Town or residential complex field is required',
+                                            ),
+                                          );
                                           return;
                                         }
                                         FFAppState()
