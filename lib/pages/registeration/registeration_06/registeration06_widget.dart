@@ -1094,6 +1094,14 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                 .validate()) {
                                           return;
                                         }
+                                        if (_model.citiesDropDownValue ==
+                                            null) {
+                                          return;
+                                        }
+                                        if (_model.populationDropDownValue ==
+                                            null) {
+                                          return;
+                                        }
                                         FFAppState()
                                             .updateRegisterationFormDataStruct(
                                           (e) => e
