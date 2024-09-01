@@ -1,7 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/filter_transactions_component/filter_transactions_component_widget.dart';
+import '/components/filter_transactions_component1/filter_transactions_component1_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -125,7 +125,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                                         MediaQuery.sizeOf(context).height * 0.4,
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.7,
-                                    child: const FilterTransactionsComponentWidget(),
+                                    child: const FilterTransactionsComponent1Widget(),
                                   ),
                                 ),
                               ),
@@ -141,7 +141,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
-                        '${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom?.toString() : functions.dateFromCalculate(DateTypes.LAST_WEEK)} - ${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo?.toString() : functions.dateFromCalculate(DateTypes.TODAY)}',
+                        '${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo : functions.dateFromCalculate(DateTypes.TODAY)} - ${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom : functions.dateFromCalculate(DateTypes.LAST_WEEK)}',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleLargeFamily,
@@ -188,10 +188,10 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                     FFAppState().cardData.expiryDate,
                     functions.getLast4Digits(FFAppState().cardData.cardNumber)),
                 dateFrom: FFAppState().filterTransactions.hasDateFrom()
-                    ? FFAppState().filterTransactions.dateFrom?.toString()
+                    ? FFAppState().filterTransactions.dateFrom
                     : functions.dateFromCalculate(DateTypes.LAST_WEEK),
                 dateTo: FFAppState().filterTransactions.hasDateTo()
-                    ? FFAppState().filterTransactions.dateTo?.toString()
+                    ? FFAppState().filterTransactions.dateTo
                     : functions.dateFromCalculate(DateTypes.TODAY),
               ),
               builder: (context, snapshot) {
