@@ -96,13 +96,6 @@ class _FilterTransactionsComponent1WidgetState
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      FFAppState().updateFilterTransactionsStruct(
-                        (e) => e
-                          ..dateFrom =
-                              functions.dateFromCalculate(DateTypes.TODAY)
-                          ..dateTo =
-                              functions.dateFromCalculate(DateTypes.TODAY),
-                      );
                       setState(() {});
                       Navigator.pop(context);
                       await widget.refreshListTransaction?.call();
@@ -343,10 +336,9 @@ class _FilterTransactionsComponent1WidgetState
                                 functions.dateFromCalculate(DateTypes.TODAY),
                         );
                         setState(() {});
+                        await widget.refreshListTransaction?.call();
                       },
                     );
-                    Navigator.pop(context);
-                    await widget.refreshListTransaction?.call();
                   },
                   child: Container(
                     width: double.infinity,
