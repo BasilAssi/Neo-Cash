@@ -332,6 +332,8 @@ class _FilterTransactionsComponent1WidgetState
                     Navigator.pop(context);
                     await actions.showDateRangePickerAction(
                       context,
+                      FlutterFlowTheme.of(context).primaryBackground,
+                      FlutterFlowTheme.of(context).primary,
                     );
                   },
                   child: Container(
