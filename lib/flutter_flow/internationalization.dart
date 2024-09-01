@@ -541,25 +541,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رمز الحركة',
       'en': 'Transaction Code',
     },
-    'k3cfquna': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
     '6rh91bf4': {
       'ar': 'حالة الطلب',
       'en': 'Transaction Status',
     },
-    'hvz0m2gy': {
-      'ar': 'تم القبول',
-      'en': 'Accepted',
-    },
     'msl1dt85': {
       'ar': 'نوع الحركة',
       'en': 'Transaction Type',
-    },
-    'y5yti1b1': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Top Up Mobile Balance',
     },
     '8nhwfwiv': {
       'ar': 'المفوتر',
@@ -573,18 +561,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التاريخ ',
       'en': 'Date',
     },
-    'qfdp2l9l': {
-      'ar': '06/09/2024',
-      'en': '06/09/2024',
-    },
-    'rgp0qex3': {
-      'ar': 'الوقت',
-      'en': 'Time',
-    },
-    'g6ujez0v': {
-      'ar': ' 04:54  PM',
-      'en': '04:54 PM',
-    },
     'vgu0asxr': {
       'ar': 'رقم الوبايل',
       'en': 'Mobile Number',
@@ -596,10 +572,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ot0eesux': {
       'ar': 'قيمة الحركة',
       'en': 'Transaction Value',
-    },
-    '222b1j1b': {
-      'ar': '50 ILS',
-      'en': '50 ILS',
     },
     '49lig4vu': {
       'ar': 'الرسوم',
