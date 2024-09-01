@@ -863,7 +863,11 @@ class GetCardPINCall {
         'applicationType': 'BP-V1.0',
         'X-Auth-Token': '$token',
       },
-      params: {},
+      params: {
+        'msgId': msgId,
+        'cardToken': cardToken,
+        'cardCvv2': cardCvv2,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
