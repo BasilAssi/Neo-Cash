@@ -1,4 +1,4 @@
-import '/components/filter_transactions_component/filter_transactions_component_widget.dart';
+import '/components/filter_transactions_component1/filter_transactions_component1_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -128,7 +128,11 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                                     .width *
                                                 0.7,
                                             child:
-                                                const FilterTransactionsComponentWidget(),
+                                                FilterTransactionsComponent1Widget(
+                                              refreshListTransaction: () async {
+                                                Navigator.pop(context);
+                                              },
+                                            ),
                                           ),
                                         ),
                                       ),

@@ -9,19 +9,21 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:custom_date_range_picker/custom_date_range_picker.dart';
-
-Future showDateRangePickerAction(BuildContext context) async {
-  // show Date Range picker
-  await showCustomDateRangePicker(
+Future showDateRangePickerAction(
+  BuildContext context,
+  Color? backgroundColor,
+  Color? primaryColor,
+) async {
+  showCustomDateRangePicker(
     context,
     dismissible: true,
-    minimumDate: DateTime.now().subtract(const Duration(days: 30)),
+    minimumDate: DateTime(1972),
     maximumDate: DateTime.now().add(const Duration(days: 30)),
-    startDate: DateTime.now().subtract(const Duration(days: 30)),
-    endDate: DateTime.now().subtract(const Duration(days: 30)),
-    backgroundColor: Colors.white,
-    primaryColor: Colors.green,
+    startDate: DateTime.now().subtract(const Duration(days: 14)),
+    endDate: DateTime.now().subtract(const Duration(days: 7)),
+    backgroundColor:
+        backgroundColor ?? FlutterFlowTheme.of(context).primaryBackground,
+    primaryColor: primaryColor ?? FlutterFlowTheme.of(context).primary,
     onApplyClick: (start, end) {
       //pickedRange = DateTimeRange(start: start, end: end);
     },
@@ -29,4 +31,5 @@ Future showDateRangePickerAction(BuildContext context) async {
       context.pop();
     },
   );
+  // Add your function code here!
 }
