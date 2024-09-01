@@ -334,7 +334,19 @@ class _FilterTransactionsComponent1WidgetState
                       context,
                       FlutterFlowTheme.of(context).primaryBackground,
                       FlutterFlowTheme.of(context).primary,
+                      () async {
+                        FFAppState().updateFilterTransactionsStruct(
+                          (e) => e
+                            ..dateFrom = functions
+                                .dateFromCalculate(DateTypes.LAST_MONTH)
+                            ..dateTo =
+                                functions.dateFromCalculate(DateTypes.TODAY),
+                        );
+                        setState(() {});
+                      },
                     );
+                    Navigator.pop(context);
+                    await widget.refreshListTransaction?.call();
                   },
                   child: Container(
                     width: double.infinity,

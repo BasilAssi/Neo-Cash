@@ -13,7 +13,9 @@ Future showDateRangePickerAction(
   BuildContext context,
   Color? backgroundColor,
   Color? primaryColor,
+  Future Function()? action,
 ) async {
+  // Add your function code here!
   showCustomDateRangePicker(
     context,
     dismissible: true,
@@ -25,11 +27,12 @@ Future showDateRangePickerAction(
         backgroundColor ?? FlutterFlowTheme.of(context).primaryBackground,
     primaryColor: primaryColor ?? FlutterFlowTheme.of(context).primary,
     onApplyClick: (start, end) {
-      //pickedRange = DateTimeRange(start: start, end: end);
+      if (action != null) {
+        await action();
+      }
     },
     onCancelClick: () {
       context.pop();
     },
   );
-  // Add your function code here!
 }
