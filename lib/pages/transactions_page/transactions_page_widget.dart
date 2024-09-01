@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -125,7 +126,14 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                                         MediaQuery.sizeOf(context).height * 0.4,
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.7,
-                                    child: const FilterTransactionsComponent1Widget(),
+                                    child: FilterTransactionsComponent1Widget(
+                                      refreshListTransaction: () async {
+                                        setState(() =>
+                                            _model.apiRequestCompleter = null);
+                                        await _model
+                                            .waitForApiRequestCompleted();
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
@@ -176,24 +184,29 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
           child: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: FutureBuilder<ApiCallResponse>(
-              future: CardGroup.listCardTransactionsCall.call(
-                msgId: functions.messageId(),
-                token: FFAppState().AuthenticatedUser.accessToken,
-                acceptLanguage: FFLocalizations.of(context).getVariableText(
-                  arText: 'AR',
-                  enText: 'EN',
-                ),
-                cardToken: functions.getCardToken(
-                    FFAppState().AuthenticatedUser.idNumber,
-                    FFAppState().cardData.expiryDate,
-                    functions.getLast4Digits(FFAppState().cardData.cardNumber)),
-                dateFrom: FFAppState().filterTransactions.hasDateFrom()
-                    ? FFAppState().filterTransactions.dateFrom
-                    : functions.dateFromCalculate(DateTypes.LAST_WEEK),
-                dateTo: FFAppState().filterTransactions.hasDateTo()
-                    ? FFAppState().filterTransactions.dateTo
-                    : functions.dateFromCalculate(DateTypes.TODAY),
-              ),
+              future: (_model
+                      .apiRequestCompleter ??= Completer<ApiCallResponse>()
+                    ..complete(CardGroup.listCardTransactionsCall.call(
+                      msgId: functions.messageId(),
+                      token: FFAppState().AuthenticatedUser.accessToken,
+                      acceptLanguage:
+                          FFLocalizations.of(context).getVariableText(
+                        arText: 'AR',
+                        enText: 'EN',
+                      ),
+                      cardToken: functions.getCardToken(
+                          FFAppState().AuthenticatedUser.idNumber,
+                          FFAppState().cardData.expiryDate,
+                          functions.getLast4Digits(
+                              FFAppState().cardData.cardNumber)),
+                      dateFrom: FFAppState().filterTransactions.hasDateFrom()
+                          ? FFAppState().filterTransactions.dateFrom
+                          : functions.dateFromCalculate(DateTypes.LAST_WEEK),
+                      dateTo: FFAppState().filterTransactions.hasDateTo()
+                          ? FFAppState().filterTransactions.dateTo
+                          : functions.dateFromCalculate(DateTypes.TODAY),
+                    )))
+                  .future,
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {

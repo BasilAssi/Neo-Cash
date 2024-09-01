@@ -9,7 +9,12 @@ import 'filter_transactions_component1_model.dart';
 export 'filter_transactions_component1_model.dart';
 
 class FilterTransactionsComponent1Widget extends StatefulWidget {
-  const FilterTransactionsComponent1Widget({super.key});
+  const FilterTransactionsComponent1Widget({
+    super.key,
+    required this.refreshListTransaction,
+  });
+
+  final Future Function()? refreshListTransaction;
 
   @override
   State<FilterTransactionsComponent1Widget> createState() =>
@@ -99,6 +104,7 @@ class _FilterTransactionsComponent1WidgetState
                       );
                       setState(() {});
                       Navigator.pop(context);
+                      await widget.refreshListTransaction?.call();
                     },
                     child: Container(
                       width: double.infinity,
@@ -175,6 +181,7 @@ class _FilterTransactionsComponent1WidgetState
                       );
                       setState(() {});
                       Navigator.pop(context);
+                      await widget.refreshListTransaction?.call();
                     },
                     child: Container(
                       width: double.infinity,
@@ -251,6 +258,7 @@ class _FilterTransactionsComponent1WidgetState
                       );
                       setState(() {});
                       Navigator.pop(context);
+                      await widget.refreshListTransaction?.call();
                     },
                     child: Container(
                       width: double.infinity,
