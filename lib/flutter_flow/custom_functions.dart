@@ -268,3 +268,8 @@ String? dateFromCalculate(DateTypes? dateType) {
       return '';
   }
 }
+
+DateTime getFirstOfMonth() {
+  // returns the first of the month
+  return DateTime(DateTime.now().year, DateTime.now().month, 1);
+}
