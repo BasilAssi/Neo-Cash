@@ -141,9 +141,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          '983o6iht' /* 08/12/2024 -  08/12/2024  */,
-                        ),
+                        '${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom?.toString() : functions.dateFromCalculate(DateTypes.LAST_WEEK)} - ${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo?.toString() : functions.dateFromCalculate(DateTypes.TODAY)}',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleLargeFamily,

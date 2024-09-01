@@ -2819,10 +2819,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transactions_page
   {
-    '983o6iht': {
-      'ar': '08/12/2024 -  08/12/2024 ',
-      'en': '',
-    },
     'ht9cg4jd': {
       'ar': 'الحركات',
       'en': '',
