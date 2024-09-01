@@ -776,7 +776,7 @@ class ListCardTransactionsCall {
       },
       params: {
         'msgId': msgId,
-        'cardToken ': cardToken,
+        'cardToken': cardToken,
         'dateFrom': dateFrom,
         'dateTo': dateTo,
       },
