@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/filter_transactions_component/filter_transactions_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +35,9 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => TransactionsPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
@@ -184,6 +189,12 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                     FFAppState().AuthenticatedUser.idNumber,
                     FFAppState().cardData.expiryDate,
                     functions.getLast4Digits(FFAppState().cardData.cardNumber)),
+                dateFrom: FFAppState().filterTransactions.hasDateFrom()
+                    ? FFAppState().filterTransactions.dateFrom?.toString()
+                    : functions.dateFromCalculate(DateTypes.LAST_WEEK),
+                dateTo: FFAppState().filterTransactions.hasDateTo()
+                    ? FFAppState().filterTransactions.dateTo?.toString()
+                    : functions.dateFromCalculate(DateTypes.TODAY),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.

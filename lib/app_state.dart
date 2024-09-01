@@ -149,6 +149,17 @@ class FFAppState extends ChangeNotifier {
     secureStorage.setString('ff_cardData', _cardData.serialize());
   }
 
+  FilterTransactionsStruct _filterTransactions = FilterTransactionsStruct();
+  FilterTransactionsStruct get filterTransactions => _filterTransactions;
+  set filterTransactions(FilterTransactionsStruct value) {
+    _filterTransactions = value;
+  }
+
+  void updateFilterTransactionsStruct(
+      Function(FilterTransactionsStruct) updateFn) {
+    updateFn(_filterTransactions);
+  }
+
   final _citesAPIResponseManager = FutureRequestManager<ApiCallResponse>();
   Future<ApiCallResponse> citesAPIResponse({
     String? uniqueQueryKey,

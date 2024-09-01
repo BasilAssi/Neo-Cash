@@ -5,6 +5,7 @@ export 'balance_data_struct.dart';
 export 'card_data_struct.dart';
 export 'customer_uploaded_documents_struct.dart';
 export 'device_info_struct.dart';
+export 'filter_transactions_struct.dart';
 export 'list_customer_balances_struct.dart';
 export 'list_customer_cards_struct.dart';
 export 'list_customer_transactions_struct.dart';

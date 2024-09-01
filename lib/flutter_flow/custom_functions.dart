@@ -250,3 +250,21 @@ String? generateFinalEPIN(
 
   return finalEPIN;
 }
+
+String? dateFromCalculate(DateTypes? dateType) {
+  final formatter = DateFormat('dd/MM/yyyy');
+  // i need  function that take the enum lastweek , last month , last year based on it return the date from current date  in this dd/MM/yyyy
+  DateTime now = DateTime.now();
+  switch (dateType) {
+    case DateTypes.TODAY:
+      return formatter.format(now);
+    case DateTypes.LAST_WEEK:
+      DateTime lastWeek = now.subtract(Duration(days: 7));
+      return formatter.format(lastWeek);
+    case DateTypes.LAST_MONTH:
+      DateTime lastMonth = DateTime(now.year, now.month - 1, now.day);
+      return formatter.format(lastMonth);
+    default:
+      return '';
+  }
+}
