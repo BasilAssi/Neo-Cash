@@ -179,12 +179,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search for an item...',
     },
     'wjlvy24l': {
-      'ar': 'كلمة السر',
+      'ar': 'كلمة المرور',
       'en': 'Password',
     },
     '3d2l5lvx': {
-      'ar': 'تغير كلمة السر',
-      'en': 'Change Password',
+      'ar': 'نسيت كلمة المرور؟',
+      'en': 'Forgot Password?',
     },
     'd8rj43jr': {
       'ar': 'تسجيل الدخول',
