@@ -768,6 +768,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           ?.accessToken
                                                       ..password = _model
                                                           .passwordTextController
+                                                          .text
+                                                      ..mobileNumber = _model
+                                                          .textFieldValueTextController
                                                           .text,
                                                   );
                                                   setState(() {});
@@ -1042,7 +1045,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 .updateAuthenticatedUserStruct(
                                                               (e) => e
                                                                 ..accessToken = LoginAPIResponseStruct.maybeFromMap(
-                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                        (_model.apiResultLoginBiometric?.jsonBody ??
                                                                             ''))
                                                                     ?.accessToken,
                                                             );
@@ -1239,13 +1242,17 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             dialogContext)
                                                                         .unfocus(),
                                                                 child:
-                                                                    ErrorComponentCopyWidget(
-                                                                  errorText: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'ys56dzfk' /* تعريف البصمة غير مفعل
+                                                                    SizedBox(
+                                                                  height: 410.0,
+                                                                  child:
+                                                                      ErrorComponentCopyWidget(
+                                                                    errorText: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'ys56dzfk' /* تعريف البصمة غير مفعل
 على هذا ... */
-                                                                    ,
+                                                                      ,
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
