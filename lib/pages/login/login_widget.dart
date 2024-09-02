@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/error_component_copy/error_component_copy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -18,6 +19,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -46,7 +48,10 @@ class _LoginWidgetState extends State<LoginWidget>
       await actions.setDeviceInfo();
     });
 
-    _model.textFieldValueTextController ??= TextEditingController();
+    _model.textFieldValueTextController ??= TextEditingController(
+        text: FFAppState().AuthenticatedUser.hasMobileNumber()
+            ? FFAppState().AuthenticatedUser.mobileNumber
+            : '');
     _model.textFieldValueFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
@@ -452,7 +457,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                               controller: _model
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
-                                                _model.dropDownValue ??= '970',
+                                                _model
+                                                    .dropDownValue ??= FFAppState()
+                                                        .AuthenticatedUser
+                                                        .hasMobileNumberPrefix()
+                                                    ? FFAppState()
+                                                        .AuthenticatedUser
+                                                        .mobileNumberPrefix
+                                                    : '970',
                                               ),
                                               options: List<String>.from(
                                                   ['970', '972']),
@@ -711,17 +723,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 16.0, 0.0, 24.0),
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            gradient: const LinearGradient(
-                                              colors: [
-                                                Color(0xFFF36B23),
-                                                Color(0xFFF05346),
-                                                Color(0xFFFA7A48)
-                                              ],
-                                              stops: [0.0, 0.0, 1.0],
-                                              begin: AlignmentDirectional(
-                                                  0.0, -1.0),
-                                              end: AlignmentDirectional(0, 1.0),
-                                            ),
                                             borderRadius:
                                                 BorderRadius.circular(16.0),
                                           ),
@@ -764,7 +765,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       .apiResultLogin
                                                                       ?.jsonBody ??
                                                                   ''))
-                                                          ?.accessToken,
+                                                          ?.accessToken
+                                                      ..password = _model
+                                                          .passwordTextController
+                                                          .text,
                                                   );
                                                   setState(() {});
                                                   _model.parsedJWT =
@@ -921,7 +925,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Colors.transparent,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -963,85 +969,345 @@ class _LoginWidgetState extends State<LoginWidget>
                                             child: Align(
                                               alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  final localAuth =
-                                                      LocalAuthentication();
-                                                  bool isBiometricSupported =
-                                                      await localAuth
-                                                          .isDeviceSupported();
-                                                  bool canCheckBiometrics =
-                                                      await localAuth
-                                                          .canCheckBiometrics;
-                                                  if (isBiometricSupported &&
-                                                      canCheckBiometrics) {
-                                                    _model.biometricOutput = await localAuth
-                                                        .authenticate(
-                                                            localizedReason:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'q9ks8jtt' /* مرحبا */,
-                                                            ),
-                                                            options:
-                                                                const AuthenticationOptions(
+                                              child: Builder(
+                                                builder: (context) =>
+                                                    FFButtonWidget(
+                                                  onPressed: () async {
+                                                    if (FFAppState()
+                                                            .AppSettings
+                                                            .biometricEnabled ==
+                                                        true) {
+                                                      final localAuth =
+                                                          LocalAuthentication();
+                                                      bool
+                                                          isBiometricSupported =
+                                                          await localAuth
+                                                              .isDeviceSupported();
+                                                      bool canCheckBiometrics =
+                                                          await localAuth
+                                                              .canCheckBiometrics;
+                                                      if (isBiometricSupported &&
+                                                          canCheckBiometrics) {
+                                                        _model.biometricOutput = await localAuth
+                                                            .authenticate(
+                                                                localizedReason:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'q9ks8jtt' /* تسجيل الدخول من خلال خاصية الت... */,
+                                                                ),
+                                                                options: const AuthenticationOptions(
                                                                     biometricOnly:
                                                                         true));
-                                                    setState(() {});
-                                                  }
+                                                        setState(() {});
+                                                      }
 
-                                                  setState(() {});
-                                                },
-                                                text: '',
-                                                icon: Icon(
-                                                  Icons.fingerprint_sharp,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 60.0,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.35,
-                                                  height: 60.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                      if (_model
+                                                              .biometricOutput ==
+                                                          true) {
+                                                        // Set number of failuer to zero
+                                                        FFAppState()
+                                                            .updateAppSettingsStruct(
+                                                          (e) => e
+                                                            ..numberOfBiometricFailure =
+                                                                0,
+                                                        );
+                                                        setState(() {});
+                                                        _model.isNetworkAvailableOutput1 =
+                                                            await actions
+                                                                .isNetworkAvailable();
+                                                        if (_model
+                                                                .isNetworkAvailableOutput1 ==
+                                                            true) {
+                                                          _model.apiResultLoginBiometric =
+                                                              await AuthAndRegisterGroup
+                                                                  .loginCall
+                                                                  .call(
+                                                            deviceSerial:
+                                                                FFAppState()
+                                                                    .deviceInformation
+                                                                    .serial,
+                                                            mobileWithPrefix:
+                                                                '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                                            password: FFAppState()
+                                                                .AuthenticatedUser
+                                                                .password,
+                                                          );
+
+                                                          if ((_model
+                                                                  .apiResultLoginBiometric
+                                                                  ?.succeeded ??
+                                                              true)) {
+                                                            FFAppState()
+                                                                .updateAuthenticatedUserStruct(
+                                                              (e) => e
+                                                                ..accessToken = LoginAPIResponseStruct.maybeFromMap(
+                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                            ''))
+                                                                    ?.accessToken,
+                                                            );
+                                                            setState(() {});
+                                                            _model.parsedJWTBiometric =
+                                                                await actions
+                                                                    .parseJWT(
+                                                              FFAppState()
+                                                                  .AuthenticatedUser
+                                                                  .accessToken,
+                                                            );
+                                                            await actions
+                                                                .setAuthenticatedUserInfo(
+                                                              _model
+                                                                  .parsedJWTBiometric!,
+                                                            );
+                                                            if (FFAppState()
+                                                                    .AuthenticatedUser
+                                                                    .isMissingDocuments ==
+                                                                false) {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
                                                                         context)
-                                                                    .titleSmallFamily,
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmallFamily),
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderSide: const BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'تم تسجيل دخولك بنجاح ',
+                                                                  enText:
+                                                                      'You have successfully logged in.',
+                                                                ),
+                                                              );
+
+                                                              context.pushNamed(
+                                                                  'home_page');
+                                                            } else {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'اكمل نسجيل حسابك',
+                                                                  enText:
+                                                                      'Complete your account registration',
+                                                                ),
+                                                              );
+
+                                                              context.pushNamed(
+                                                                'registeration_08',
+                                                                queryParameters:
+                                                                    {
+                                                                  'fromPage':
+                                                                      serializeParam(
+                                                                    'loginMisDoc',
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'customerId':
+                                                                      serializeParam(
+                                                                    FFAppState()
+                                                                        .AuthenticatedUser
+                                                                        .encodedId,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            }
+                                                          } else {
+                                                            if (LoginAPIResponseStruct.maybeFromMap(
+                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                            ''))
+                                                                    ?.code ==
+                                                                '401') {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'عملية المصادقة غير صحيحة',
+                                                                  enText:
+                                                                      'Sorry, no internet connection.',
+                                                                ),
+                                                              );
+                                                            } else if (LoginAPIResponseStruct.maybeFromMap(
+                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                            ''))
+                                                                    ?.code ==
+                                                                '1522') {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'جهازك غير مفعل ',
+                                                                  enText:
+                                                                      'Your device is not activated',
+                                                                ),
+                                                              );
+
+                                                              context.pushNamed(
+                                                                  'enter_id_page');
+                                                            } else if (LoginAPIResponseStruct.maybeFromMap(
+                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                            ''))
+                                                                    ?.code ==
+                                                                '1523') {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش.',
+                                                                  enText:
+                                                                      'Your account is closed, please contact neocash.',
+                                                                ),
+                                                              );
+                                                            } else {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'عملية المصادقة غير صحيحة',
+                                                                  enText:
+                                                                      'Sorry, no internet connection.',
+                                                                ),
+                                                              );
+                                                            }
+                                                          }
+                                                        } else {
+                                                          await actions
+                                                              .showToast(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getVariableText(
+                                                              arText:
+                                                                  'عذرا لا يوجد اتصال بالانترنت',
+                                                              enText:
+                                                                  'Sorry, no internet connection.',
+                                                            ),
+                                                          );
+                                                        }
+                                                      } else {
+                                                        if (FFAppState()
+                                                                .AppSettings
+                                                                .numberOfBiometricFailure <
+                                                            5) {
+                                                          // Action 17   increment  number of biometric failure
+                                                          FFAppState()
+                                                              .updateAppSettingsStruct(
+                                                            (e) => e
+                                                              ..incrementNumberOfBiometricFailure(
+                                                                  1),
+                                                          );
+                                                          setState(() {});
+                                                        } else {
+                                                          // Action 17   increment  number of biometric failure
+                                                          FFAppState()
+                                                              .updateAppSettingsStruct(
+                                                            (e) => e
+                                                              ..biometricEnabled =
+                                                                  false,
+                                                          );
+                                                          setState(() {});
+                                                        }
+                                                      }
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child: WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () =>
+                                                                    FocusScope.of(
+                                                                            dialogContext)
+                                                                        .unfocus(),
+                                                                child:
+                                                                    ErrorComponentCopyWidget(
+                                                                  errorText: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'ys56dzfk' /* تعريف البصمة غير مفعل
+على هذا ... */
+                                                                    ,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                    }
+
+                                                    setState(() {});
+                                                  },
+                                                  text: '',
+                                                  icon: Icon(
+                                                    Icons.fingerprint_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 60.0,
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16.0),
+                                                  options: FFButtonOptions(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.35,
+                                                    height: 60.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
                                                 ),
                                               ),
                                             ),

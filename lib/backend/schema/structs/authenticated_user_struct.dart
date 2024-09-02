@@ -51,6 +51,7 @@ class AuthenticatedUserStruct extends BaseStruct {
     bool? emailVerified,
     bool? mobileNumberVerified,
     String? birthDate,
+    String? password,
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
         _thirdNameAr = thirdNameAr,
@@ -95,7 +96,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         _accessToken = accessToken,
         _emailVerified = emailVerified,
         _mobileNumberVerified = mobileNumberVerified,
-        _birthDate = birthDate;
+        _birthDate = birthDate,
+        _password = password;
 
   // "correctionReason" field.
   String? _correctionReason;
@@ -422,6 +424,13 @@ class AuthenticatedUserStruct extends BaseStruct {
 
   bool hasBirthDate() => _birthDate != null;
 
+  // "password" field.
+  String? _password;
+  String get password => _password ?? '';
+  set password(String? val) => _password = val;
+
+  bool hasPassword() => _password != null;
+
   static AuthenticatedUserStruct fromMap(Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
         correctionReason: data['correctionReason'] as String?,
@@ -473,6 +482,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         emailVerified: data['emailVerified'] as bool?,
         mobileNumberVerified: data['mobileNumberVerified'] as bool?,
         birthDate: data['birthDate'] as String?,
+        password: data['password'] as String?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -525,6 +535,7 @@ class AuthenticatedUserStruct extends BaseStruct {
         'emailVerified': _emailVerified,
         'mobileNumberVerified': _mobileNumberVerified,
         'birthDate': _birthDate,
+        'password': _password,
       }.withoutNulls;
 
   @override
@@ -708,6 +719,10 @@ class AuthenticatedUserStruct extends BaseStruct {
         ),
         'birthDate': serializeParam(
           _birthDate,
+          ParamType.String,
+        ),
+        'password': serializeParam(
+          _password,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -941,6 +956,11 @@ class AuthenticatedUserStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        password: deserializeParam(
+          data['password'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -995,7 +1015,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         accessToken == other.accessToken &&
         emailVerified == other.emailVerified &&
         mobileNumberVerified == other.mobileNumberVerified &&
-        birthDate == other.birthDate;
+        birthDate == other.birthDate &&
+        password == other.password;
   }
 
   @override
@@ -1044,7 +1065,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         accessToken,
         emailVerified,
         mobileNumberVerified,
-        birthDate
+        birthDate,
+        password
       ]);
 }
 
@@ -1093,6 +1115,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   bool? emailVerified,
   bool? mobileNumberVerified,
   String? birthDate,
+  String? password,
 }) =>
     AuthenticatedUserStruct(
       correctionReason: correctionReason,
@@ -1139,4 +1162,5 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       emailVerified: emailVerified,
       mobileNumberVerified: mobileNumberVerified,
       birthDate: birthDate,
+      password: password,
     );

@@ -33,7 +33,9 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
         '8uyk2yx4' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
-
+    if (!RegExp('^[\\u0621-\\u064A\\s]+\$').hasMatch(val)) {
+      return 'Invalid text';
+    }
     return null;
   }
 
@@ -55,7 +57,11 @@ class Registeration04Model extends FlutterFlowModel<Registeration04Widget> {
         'gjmeocq2' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
-
+    if (!RegExp('^[A-Za-z\\s]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'rakbs32l' /* الاسم يجب ان يكون باللغة الانج... */,
+      );
+    }
     return null;
   }
 

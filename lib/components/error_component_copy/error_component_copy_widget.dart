@@ -75,11 +75,7 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                           Align(
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                'w1jz0htw' /* لا  يوجد رصيد كافي في
-بطاقتك */
-                                ,
-                              ),
+                              widget.errorText,
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

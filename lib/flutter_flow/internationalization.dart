@@ -190,9 +190,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل الدخول',
       'en': 'Login',
     },
+    'ys56dzfk': {
+      'ar':
+          'تعريف البصمة غير مفعل\nعلى هذا الجهاز الرجاء تسجيل\nالدخول لتفعيل تعريف بصمة \nمن الاعدادات  ',
+      'en':
+          'Biometric is disabled for this\n device.Please login and enable\n it from Settings\n',
+    },
     'q9ks8jtt': {
-      'ar': 'مرحبا',
-      'en': 'Welcome',
+      'ar': 'تسجيل الدخول من خلال خاصية التعرف',
+      'en': 'Biometric login',
     },
     'nf068v0h': {
       'ar': 'من نحن؟',
@@ -2399,6 +2405,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
       'en': 'Text must not exceed 25 characters.',
     },
+    'rakbs32l': {
+      'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
+      'en': 'Name must be in English',
+    },
     'ukwnlenj': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
@@ -2797,10 +2807,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // error_componentCopy
   {
-    'w1jz0htw': {
-      'ar': 'لا  يوجد رصيد كافي في\nبطاقتك',
-      'en': 'You don\'t have enough balance',
-    },
     'x8w737e8': {
       'ar': 'موافق',
       'en': 'OK',
