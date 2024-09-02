@@ -122,7 +122,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'transaction_details_page',
               path: 'transactionDetailsPage',
-              builder: (context, params) => const TransactionDetailsPageWidget(),
+              builder: (context, params) => TransactionDetailsPageWidget(
+                transactionData: params.getParam(
+                  'transactionData',
+                  ParamType.DataStruct,
+                  isList: false,
+                  structBuilder: TransactionDataStruct.fromSerializableMap,
+                ),
+              ),
             ),
             FFRoute(
               name: 'view_pin_code_page',

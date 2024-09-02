@@ -366,10 +366,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                           ''))
                                       ?.status ==
                                   true) {
-                                // if ((IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) !=
-                                //                                         'DEACTIVATED') &&
-                                //                                     (IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody) !=
-                                //                                         'REJECTED')) {
+                                // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
+                                //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                //                                                                         true)
                                 if ((ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??

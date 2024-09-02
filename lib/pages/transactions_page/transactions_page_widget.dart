@@ -250,7 +250,42 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('transaction_details_page');
+                              context.pushNamed(
+                                'transaction_details_page',
+                                queryParameters: {
+                                  'transactionData': serializeParam(
+                                    TransactionDataStruct(
+                                      id: listTransactionsItem.id,
+                                      transactionType:
+                                          listTransactionsItem.transactionType,
+                                      transactionDate:
+                                          listTransactionsItem.transactionDate,
+                                      merchantName:
+                                          listTransactionsItem.merchantName,
+                                      transactionPostDate: listTransactionsItem
+                                          .transactionPostDate,
+                                      transactionStatus: listTransactionsItem
+                                          .transactionStatus,
+                                      merchantCode:
+                                          listTransactionsItem.merchantCode,
+                                      transactionReference: listTransactionsItem
+                                          .transactionReference,
+                                      transactionAmount: listTransactionsItem
+                                          .transactionAmount,
+                                      creditDebit:
+                                          listTransactionsItem.creditDebit,
+                                      transactionCurrencyCode:
+                                          listTransactionsItem
+                                              .transactionCurrencyCode,
+                                      billingAmount:
+                                          listTransactionsItem.billingAmount,
+                                      billingCurrencyCode: listTransactionsItem
+                                          .billingCurrencyCode,
+                                    ),
+                                    ParamType.DataStruct,
+                                  ),
+                                }.withoutNulls,
+                              );
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.92,

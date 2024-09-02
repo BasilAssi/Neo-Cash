@@ -672,6 +672,9 @@ class _SetPasswordExistFlowWidgetState
                                               password: _model
                                                   .passwordTextFieldTextController
                                                   .text,
+                                              emailAddress: _model
+                                                  .emailTextFieldTextController
+                                                  .text,
                                             );
 
                                             if ((_model
@@ -852,6 +855,9 @@ class _SetPasswordExistFlowWidgetState
                                               password: _model
                                                   .passwordTextFieldTextController
                                                   .text,
+                                              emailAddress: FFAppState()
+                                                  .registerationFormData
+                                                  .email,
                                             );
 
                                             if ((_model

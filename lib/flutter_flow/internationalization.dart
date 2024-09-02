@@ -190,9 +190,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل الدخول',
       'en': 'Login',
     },
+    'ys56dzfk': {
+      'ar':
+          'تعريف البصمة غير مفعل\nعلى هذا الجهاز الرجاء تسجيل\nالدخول لتفعيل تعريف بصمة \nمن الاعدادات  ',
+      'en':
+          'Biometric is disabled for this\n device.Please login and enable\n it from Settings\n',
+    },
     'q9ks8jtt': {
-      'ar': 'مرحبا',
-      'en': 'Welcome',
+      'ar': 'تسجيل الدخول من خلال خاصية التعرف',
+      'en': 'Biometric login',
     },
     'nf068v0h': {
       'ar': 'من نحن؟',
@@ -541,25 +547,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رمز الحركة',
       'en': 'Transaction Code',
     },
-    'k3cfquna': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
     '6rh91bf4': {
       'ar': 'حالة الطلب',
       'en': 'Transaction Status',
     },
-    'hvz0m2gy': {
-      'ar': 'تم القبول',
-      'en': 'Accepted',
-    },
     'msl1dt85': {
       'ar': 'نوع الحركة',
       'en': 'Transaction Type',
-    },
-    'y5yti1b1': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Top Up Mobile Balance',
     },
     '8nhwfwiv': {
       'ar': 'المفوتر',
@@ -573,18 +567,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التاريخ ',
       'en': 'Date',
     },
-    'qfdp2l9l': {
-      'ar': '06/09/2024',
-      'en': '06/09/2024',
-    },
-    'rgp0qex3': {
-      'ar': 'الوقت',
-      'en': 'Time',
-    },
-    'g6ujez0v': {
-      'ar': ' 04:54  PM',
-      'en': '04:54 PM',
-    },
     'vgu0asxr': {
       'ar': 'رقم الوبايل',
       'en': 'Mobile Number',
@@ -596,10 +578,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ot0eesux': {
       'ar': 'قيمة الحركة',
       'en': 'Transaction Value',
-    },
-    '222b1j1b': {
-      'ar': '50 ILS',
-      'en': '50 ILS',
     },
     '49lig4vu': {
       'ar': 'الرسوم',
@@ -2427,6 +2405,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
       'en': 'Text must not exceed 25 characters.',
     },
+    'rakbs32l': {
+      'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
+      'en': 'Name must be in English',
+    },
     'ukwnlenj': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
@@ -2833,10 +2815,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // error_componentCopy
   {
-    'w1jz0htw': {
-      'ar': 'لا  يوجد رصيد كافي في\nبطاقتك',
-      'en': 'You don\'t have enough balance',
-    },
     'x8w737e8': {
       'ar': 'موافق',
       'en': 'OK',

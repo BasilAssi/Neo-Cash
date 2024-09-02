@@ -273,3 +273,42 @@ String? dateFromCalculate(DateTypes? dateType) {
       return '';
   }
 }
+
+bool? isIDNumberValid(
+  String? idNum,
+  String? identityType,
+) {
+  bool isValid = false;
+
+  // if (identityType == null || identityType == '') return false;
+
+  // if (idNum == null || idNum == '') return false;
+
+  // if (identityType == 'PASSPORT') {
+  //   if (idNum.length >= 4) {
+  //     isValid = true;
+  //   }
+  // } else {
+  //   if (RegExp(r'^\d{5,9}$').hasMatch(idNum)) {
+  //     // The number is too short - add leading 0000
+  //     while (idNum.length < 9) {
+  //       idNum = '0' + idNum;
+  //     }
+
+  //     // CHECK THE ID NUMBER
+  //     int mone = 0;
+  //     int incNum;
+
+  //     for (int i = 0; i < 9; i++) {
+  //       incNum = int.parse(idNum[i]);
+  //       incNum *= (i % 2) + 1;
+  //       if (incNum > 9) incNum -= 9;
+  //       mone += incNum;
+  //     }
+
+  //     if (mone % 10 == 0) isValid = true;
+  //   }
+  // }
+
+  return isValid;
+}

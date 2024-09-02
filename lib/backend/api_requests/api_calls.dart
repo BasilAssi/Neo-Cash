@@ -378,6 +378,7 @@ class RegisterACustomerDeviceCall {
     String? biometricSupported = '',
     String? password = '',
     String? pin = '',
+    String? emailAddress = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) async {
@@ -392,6 +393,7 @@ class RegisterACustomerDeviceCall {
   "idNumber": "$idNumber",
   "idType": "$idType",
   "otp": "$hashedOTP",
+  "emailAddress": "$emailAddress",
   "deviceInfo": {
     "serial": "$serial",
     "name": "$deviceName",

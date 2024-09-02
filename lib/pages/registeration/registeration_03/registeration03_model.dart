@@ -80,7 +80,9 @@ class Registeration03Model extends FlutterFlowModel<Registeration03Widget> {
         '3emqfmua' /* يجب ألا يتجاوز النص 25 حرفًا. */,
       );
     }
-
+    if (!RegExp('^\\+?[1-9]\\d*\$').hasMatch(val)) {
+      return 'Invalid text';
+    }
     return null;
   }
 
