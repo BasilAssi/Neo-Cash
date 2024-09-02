@@ -548,7 +548,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'wjlvy24l' /* كلمة السر */,
+                                              'wjlvy24l' /* كلمة المرور */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -691,7 +691,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   0.0, 16.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '3d2l5lvx' /* تغير كلمة السر */,
+                                              '3d2l5lvx' /* نسيت كلمة المرور؟ */,
                                             ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
