@@ -170,12 +170,8 @@ class _LoginWidgetState extends State<LoginWidget>
                         setState(() =>
                             FFAppState().isEnglish = !FFAppState().isEnglish);
                         if (FFAppState().isEnglish == true) {
-                          FFAppState().isEnglish = false;
-                          setState(() {});
                           setAppLanguage(context, 'ar');
                         } else {
-                          FFAppState().isEnglish = true;
-                          setState(() {});
                           setAppLanguage(context, 'en');
                         }
                       },
