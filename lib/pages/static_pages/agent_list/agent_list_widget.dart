@@ -88,11 +88,11 @@ class _AgentListWidgetState extends State<AgentListWidget> {
         ),
         body: FlutterFlowWebView(
           content: 'https://flutter.dev',
-          bypass: false,
+          bypass: true,
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
           verticalScroll: true,
-          horizontalScroll: false,
+          horizontalScroll: true,
         ),
       ),
     );

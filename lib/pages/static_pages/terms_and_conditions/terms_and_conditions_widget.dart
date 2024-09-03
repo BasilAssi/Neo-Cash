@@ -88,12 +88,15 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
           elevation: 0.0,
         ),
         body: FlutterFlowWebView(
-          content: 'https://flutter.dev',
-          bypass: true,
+          content: FFLocalizations.of(context).getVariableText(
+            arText: 'https://neocash.ps/privacy.html',
+            enText: 'https://neocash.ps/privacy.html',
+          ),
+          bypass: false,
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
           verticalScroll: true,
-          horizontalScroll: false,
+          horizontalScroll: true,
         ),
       ),
     );

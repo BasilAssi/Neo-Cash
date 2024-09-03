@@ -319,6 +319,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'transactions_page',
               path: 'transactionsPage',
               builder: (context, params) => const TransactionsPageWidget(),
+            ),
+            FFRoute(
+              name: 'frequently_asked_questions',
+              path: 'frequentlyAskedQuestions',
+              builder: (context, params) => const FrequentlyAskedQuestionsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

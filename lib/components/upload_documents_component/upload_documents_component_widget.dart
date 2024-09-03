@@ -220,19 +220,41 @@ class _UploadDocumentsComponentWidgetState
                         if ((_model
                                 .apiResultDeleteUploadedDocument?.succeeded ??
                             true)) {
-                          setState(() {
-                            _model.isDataUploading = false;
-                            _model.uploadedLocalFile =
-                                FFUploadedFile(bytes: Uint8List.fromList([]));
-                          });
+                          if ((ResponseModelStruct.maybeFromMap((_model
+                                              .apiResultDeleteUploadedDocument
+                                              ?.jsonBody ??
+                                          ''))
+                                      ?.code ==
+                                  '00') ||
+                              (ResponseModelStruct.maybeFromMap((_model
+                                              .apiResultDeleteUploadedDocument
+                                              ?.jsonBody ??
+                                          ''))
+                                      ?.hasCode() ==
+                                  false)) {
+                            setState(() {
+                              _model.isDataUploading = false;
+                              _model.uploadedLocalFile =
+                                  FFUploadedFile(bytes: Uint8List.fromList([]));
+                            });
 
-                          await actions.showToast(
-                            FFLocalizations.of(context).getVariableText(
-                              arText: 'تم حذف الصورة بنجاح',
-                              enText:
-                                  'The image has been successfully deleted.',
-                            ),
-                          );
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'تم حذف الصورة بنجاح',
+                                enText:
+                                    'The image has been successfully deleted.',
+                              ),
+                            );
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText:
+                                    'فشل حذف الصورة الرجاء المحاولة مرة اخرى',
+                                enText:
+                                    'Image deletion failed, please try again.',
+                              ),
+                            );
+                          }
                         } else {
                           await actions.showToast(
                             FFLocalizations.of(context).getVariableText(
@@ -309,11 +331,16 @@ class _UploadDocumentsComponentWidgetState
                   );
 
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {
-                    if (ResponseModelStruct.maybeFromMap(
-                                (_model.apiResultUploadDocument?.jsonBody ??
-                                    ''))
-                            ?.code ==
-                        '00') {
+                    if ((ResponseModelStruct.maybeFromMap(
+                                    (_model.apiResultUploadDocument?.jsonBody ??
+                                        ''))
+                                ?.code ==
+                            '00') ||
+                        (ResponseModelStruct.maybeFromMap(
+                                    (_model.apiResultUploadDocument?.jsonBody ??
+                                        ''))
+                                ?.hasCode() ==
+                            false)) {
                       await actions.showToast(
                         FFLocalizations.of(context).getVariableText(
                           arText: 'تم إضافة الصورة بنجاح',

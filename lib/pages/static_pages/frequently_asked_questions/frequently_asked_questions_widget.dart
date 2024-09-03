@@ -4,25 +4,27 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'about_us_model.dart';
-export 'about_us_model.dart';
+import 'frequently_asked_questions_model.dart';
+export 'frequently_asked_questions_model.dart';
 
-class AboutUsWidget extends StatefulWidget {
-  const AboutUsWidget({super.key});
+class FrequentlyAskedQuestionsWidget extends StatefulWidget {
+  const FrequentlyAskedQuestionsWidget({super.key});
 
   @override
-  State<AboutUsWidget> createState() => _AboutUsWidgetState();
+  State<FrequentlyAskedQuestionsWidget> createState() =>
+      _FrequentlyAskedQuestionsWidgetState();
 }
 
-class _AboutUsWidgetState extends State<AboutUsWidget> {
-  late AboutUsModel _model;
+class _FrequentlyAskedQuestionsWidgetState
+    extends State<FrequentlyAskedQuestionsWidget> {
+  late FrequentlyAskedQuestionsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AboutUsModel());
+    _model = createModel(context, () => FrequentlyAskedQuestionsModel());
   }
 
   @override
@@ -64,7 +66,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'h2geav6c' /* تفاصيل عنا */,
+                      'r794e0cb' /* الأسئلة الشائعة */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
@@ -88,8 +90,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
         ),
         body: FlutterFlowWebView(
           content: FFLocalizations.of(context).getVariableText(
-            arText: 'https://neocash.ps/about.html',
-            enText: 'https://neocash.ps/about.html',
+            arText: 'https://neocash.ps/faq.html',
+            enText: 'https://neocash.ps/faq.html',
           ),
           bypass: false,
           width: MediaQuery.sizeOf(context).width * 1.0,
