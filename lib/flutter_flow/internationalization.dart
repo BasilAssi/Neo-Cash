@@ -141,15 +141,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yzclqe4f': {
       'ar': 'قائمة الوكلاء',
-      'en': '',
+      'en': 'Agent List',
     },
     'u0kt0xim': {
       'ar': 'الاسئلة الشائعة',
-      'en': '',
+      'en': 'Frequently asked questions',
     },
     'lqmr7caz': {
       'ar': 'الشروط والاحكام',
-      'en': '',
+      'en': 'Terms and conditions',
     },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
