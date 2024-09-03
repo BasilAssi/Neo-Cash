@@ -78,3 +78,5 @@ export '/pages/forgot_pin/set_pin_forgot_pin/set_pin_forgot_pin_widget.dart'
     show SetPinForgotPinWidget;
 export '/pages/transactions_page/transactions_page_widget.dart'
     show TransactionsPageWidget;
+export '/pages/static_pages/frequently_asked_questions/frequently_asked_questions_widget.dart'
+    show FrequentlyAskedQuestionsWidget;

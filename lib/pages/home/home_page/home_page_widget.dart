@@ -249,6 +249,117 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           FlutterFlowTheme.of(context).secondaryBackground,
                       dense: false,
                     ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('agent_list');
+                      },
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.support_agent_outlined,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 32.0,
+                        ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'yzclqe4f' /* قائمة الوكلاء */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('frequently_asked_questions');
+                      },
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.contact_support_outlined,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 32.0,
+                        ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'u0kt0xim' /* الاسئلة الشائعة */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('terms_and_conditions');
+                      },
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.content_paste_sharp,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 32.0,
+                        ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'lqmr7caz' /* الشروط والاحكام */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
+                      ),
+                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),

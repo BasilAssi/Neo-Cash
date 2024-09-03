@@ -139,6 +139,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أسعار العملات',
       'en': 'Currency Exchange Rates',
     },
+    'yzclqe4f': {
+      'ar': 'قائمة الوكلاء',
+      'en': '',
+    },
+    'u0kt0xim': {
+      'ar': 'الاسئلة الشائعة',
+      'en': '',
+    },
+    'lqmr7caz': {
+      'ar': 'الشروط والاحكام',
+      'en': '',
+    },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
       'en': 'Change Language to English',
@@ -2795,6 +2807,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ht9cg4jd': {
       'ar': 'الحركات',
+      'en': '',
+    },
+  },
+  // frequently_asked_questions
+  {
+    'r794e0cb': {
+      'ar': 'الأسئلة الشائعة',
+      'en': '',
+    },
+    'w9kjqj59': {
+      'ar': 'Home',
       'en': '',
     },
   },

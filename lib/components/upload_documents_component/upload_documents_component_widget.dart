@@ -225,13 +225,13 @@ class _UploadDocumentsComponentWidgetState
                                               ?.jsonBody ??
                                           ''))
                                       ?.code ==
-                                  '00') &&
+                                  '00') ||
                               (ResponseModelStruct.maybeFromMap((_model
                                               .apiResultDeleteUploadedDocument
                                               ?.jsonBody ??
                                           ''))
                                       ?.hasCode() ==
-                                  true)) {
+                                  false)) {
                             setState(() {
                               _model.isDataUploading = false;
                               _model.uploadedLocalFile =
@@ -335,12 +335,12 @@ class _UploadDocumentsComponentWidgetState
                                     (_model.apiResultUploadDocument?.jsonBody ??
                                         ''))
                                 ?.code ==
-                            '00') &&
+                            '00') ||
                         (ResponseModelStruct.maybeFromMap(
                                     (_model.apiResultUploadDocument?.jsonBody ??
                                         ''))
                                 ?.hasCode() ==
-                            true)) {
+                            false)) {
                       await actions.showToast(
                         FFLocalizations.of(context).getVariableText(
                           arText: 'تم إضافة الصورة بنجاح',

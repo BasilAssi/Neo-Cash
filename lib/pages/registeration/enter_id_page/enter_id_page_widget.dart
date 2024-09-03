@@ -299,6 +299,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
+                      keyboardType: TextInputType.number,
                       validator: _model.idNumberTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
