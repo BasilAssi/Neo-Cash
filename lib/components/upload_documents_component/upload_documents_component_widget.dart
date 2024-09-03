@@ -309,12 +309,32 @@ class _UploadDocumentsComponentWidgetState
                   );
 
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {
-                    await actions.showToast(
-                      FFLocalizations.of(context).getVariableText(
-                        arText: 'تم إضافة الصورة بنجاح',
-                        enText: 'Image added successfully',
-                      ),
-                    );
+                    if (ResponseModelStruct.maybeFromMap(
+                                (_model.apiResultUploadDocument?.jsonBody ??
+                                    ''))
+                            ?.code ==
+                        '00') {
+                      await actions.showToast(
+                        FFLocalizations.of(context).getVariableText(
+                          arText: 'تم إضافة الصورة بنجاح',
+                          enText: 'Image added successfully',
+                        ),
+                      );
+                    } else {
+                      setState(() {
+                        _model.isDataUploading = false;
+                        _model.uploadedLocalFile =
+                            FFUploadedFile(bytes: Uint8List.fromList([]));
+                      });
+
+                      await actions.showToast(
+                        FFLocalizations.of(context).getVariableText(
+                          arText: 'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
+                          enText:
+                              'Failed to attach the photo. Please try again',
+                        ),
+                      );
+                    }
                   } else {
                     setState(() {
                       _model.isDataUploading = false;

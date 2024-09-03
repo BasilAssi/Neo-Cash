@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -99,6 +100,20 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 20.0,
+                  borderWidth: 1.0,
+                  buttonSize: 40.0,
+                  icon: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 32.0,
+                  ),
+                  onPressed: () async {
+                    context.pushNamed('phone_number');
+                  },
+                ),
                 Expanded(
                   child: Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
