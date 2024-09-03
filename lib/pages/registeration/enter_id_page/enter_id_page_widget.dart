@@ -299,7 +299,6 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
-                      keyboardType: TextInputType.number,
                       validator: _model.idNumberTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
@@ -309,120 +308,183 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          _model.identityFormOutput = true;
-                          if (_model.formKey.currentState == null ||
-                              !_model.formKey.currentState!.validate()) {
-                            setState(() => _model.identityFormOutput = false);
-                            return;
-                          }
-                          if (_model.idTypeDropDownValue == null) {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'يجب اختيار الهوية',
-                                enText: 'please select the ID',
-                              ),
-                            );
-                            _model.identityFormOutput = false;
-                            setState(() {});
-                            return;
-                          }
-                          FFAppState().updateRegisterationFormDataStruct(
-                            (e) => e
-                              ..idNumber =
-                                  _model.idNumberTextFieldTextController.text
-                              ..idType = _model.idTypeDropDownValue,
-                          );
-                          setState(() {});
-                          _model.isNetworkAvailableOutput =
-                              await actions.isNetworkAvailable();
-                          if (_model.isNetworkAvailableOutput == true) {
-                            _model.isRegisteredOutPut =
-                                await AuthAndRegisterGroup.isRegisteredCall
-                                    .call(
-                              msgId: functions.messageId(),
-                              idNumber:
-                                  _model.idNumberTextFieldTextController.text,
-                              idType: _model.idTypeDropDownValue,
-                              acceptLanguage:
-                                  FFLocalizations.of(context).getVariableText(
-                                arText: 'AR',
-                                enText: 'EN',
-                              ),
-                              deviceSerial:
-                                  FFAppState().deviceInformation.hasSerial()
+                      child: Semantics(
+                        button: true,
+                        onTapHint: 'validation Done by next action ',
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            if (functions.isIDNumberValid(
+                                    _model.idNumberTextFieldTextController.text,
+                                    _model.idTypeDropDownValue) ==
+                                true) {
+                              FFAppState().updateRegisterationFormDataStruct(
+                                (e) => e
+                                  ..idNumber = _model
+                                      .idNumberTextFieldTextController.text
+                                  ..idType = _model.idTypeDropDownValue,
+                              );
+                              setState(() {});
+                              _model.isNetworkAvailableOutput =
+                                  await actions.isNetworkAvailable();
+                              if (_model.isNetworkAvailableOutput == true) {
+                                _model.isRegisteredOutPut =
+                                    await AuthAndRegisterGroup.isRegisteredCall
+                                        .call(
+                                  msgId: functions.messageId(),
+                                  idNumber: _model
+                                      .idNumberTextFieldTextController.text,
+                                  idType: _model.idTypeDropDownValue,
+                                  acceptLanguage: FFLocalizations.of(context)
+                                      .getVariableText(
+                                    arText: 'AR',
+                                    enText: 'EN',
+                                  ),
+                                  deviceSerial: FFAppState()
+                                          .deviceInformation
+                                          .hasSerial()
                                       ? FFAppState().deviceInformation.serial
                                       : '',
-                            );
+                                );
 
-                            if ((_model.isRegisteredOutPut?.succeeded ??
-                                true)) {
-                              if (ResponseModelStruct.maybeFromMap((_model
-                                              .isRegisteredOutPut?.jsonBody ??
-                                          ''))
-                                      ?.status ==
-                                  true) {
-                                // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
-                                //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                //                                                                         true)
-                                if ((ResponseModelStruct.maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                            ?.customerStatus !=
-                                        'DEACTIVATED') &&
-                                    (ResponseModelStruct.maybeFromMap((_model
-                                                    .isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''))
-                                            ?.customerStatus !=
-                                        'REJECTED')) {
-                                  // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                  //                                       false)
-                                  if (AuthenticatedUserStruct.maybeFromMap(
+                                if ((_model.isRegisteredOutPut?.succeeded ??
+                                    true)) {
+                                  if (ResponseModelStruct.maybeFromMap((_model
+                                                  .isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''))
+                                          ?.status ==
+                                      true) {
+                                    // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
+                                    //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                    //                                                                         true)
+                                    if ((ResponseModelStruct.maybeFromMap(
+                                                    (_model.isRegisteredOutPut
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.customerStatus !=
+                                            'DEACTIVATED') &&
+                                        (ResponseModelStruct.maybeFromMap(
+                                                    (_model.isRegisteredOutPut
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.customerStatus !=
+                                            'REJECTED')) {
+                                      // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                      //                                       false)
+                                      if (AuthenticatedUserStruct.maybeFromMap(
+                                                  (_model.isRegisteredOutPut
+                                                          ?.jsonBody ??
+                                                      ''))
+                                              ?.isDeviceRegistered ==
+                                          true) {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText:
+                                                'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
+                                            enText:
+                                                'please login .. did you forget your password?',
+                                          ),
+                                        );
+
+                                        context.pushNamed('login');
+                                      } else {
+                                        FFAppState()
+                                            .updateRegisterationFormDataStruct(
+                                          (e) => e
+                                            ..isRegisteredStatus = true
+                                            ..email = AuthAndRegisterGroup
+                                                .isRegisteredCall
+                                                .emailAddress(
                                               (_model.isRegisteredOutPut
                                                       ?.jsonBody ??
-                                                  ''))
-                                          ?.isDeviceRegistered ==
-                                      true) {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText:
-                                            'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
-                                        enText:
-                                            'please login .. did you forget your password?',
-                                      ),
-                                    );
+                                                  ''),
+                                            )
+                                            ..mobileNumber =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumber(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            ..prefixMobile =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumberPrefix(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            ..customerId = AuthAndRegisterGroup
+                                                .isRegisteredCall
+                                                .customerId(
+                                                  (_model.isRegisteredOutPut
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                )
+                                                .toString(),
+                                        );
+                                        setState(() {});
+                                        _model.apiResultSendOTP =
+                                            await AuthAndRegisterGroup
+                                                .sendOTPToCustomerCall
+                                                .call(
+                                          msgId: functions.messageId(),
+                                          idNumber: FFAppState()
+                                              .registerationFormData
+                                              .idNumber,
+                                          idType: FFAppState()
+                                              .registerationFormData
+                                              .idType,
+                                          mobileNumber:
+                                              '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                                          destinationType: 'MOBILE_NUMBER',
+                                          operationType: 'REGISTER_DEVICE',
+                                        );
 
-                                    context.pushNamed('login');
+                                        if ((_model
+                                                .apiResultSendOTP?.succeeded ??
+                                            true)) {
+                                          context.pushNamed(
+                                              'otp_does_not_exist_flow');
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'error',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        }
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش',
+                                          enText:
+                                              'Your account is closed, please contact neocash.',
+                                        ),
+                                      );
+                                    }
                                   } else {
                                     FFAppState()
                                         .updateRegisterationFormDataStruct(
                                       (e) => e
-                                        ..isRegisteredStatus = true
-                                        ..email = AuthAndRegisterGroup
-                                            .isRegisteredCall
-                                            .emailAddress(
-                                          (_model.isRegisteredOutPut
-                                                  ?.jsonBody ??
-                                              ''),
-                                        )
-                                        ..mobileNumber = AuthAndRegisterGroup
-                                            .isRegisteredCall
-                                            .mobileNumber(
-                                          (_model.isRegisteredOutPut
-                                                  ?.jsonBody ??
-                                              ''),
-                                        )
-                                        ..prefixMobile = AuthAndRegisterGroup
-                                            .isRegisteredCall
-                                            .mobileNumberPrefix(
-                                          (_model.isRegisteredOutPut
-                                                  ?.jsonBody ??
-                                              ''),
-                                        )
+                                        ..isRegisteredStatus = false
                                         ..customerId = AuthAndRegisterGroup
                                             .isRegisteredCall
                                             .customerId(
@@ -433,132 +495,76 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                             .toString(),
                                     );
                                     setState(() {});
-                                    _model.apiResultSendOTP =
-                                        await AuthAndRegisterGroup
-                                            .sendOTPToCustomerCall
-                                            .call(
-                                      msgId: functions.messageId(),
-                                      idNumber: FFAppState()
-                                          .registerationFormData
-                                          .idNumber,
-                                      idType: FFAppState()
-                                          .registerationFormData
-                                          .idType,
-                                      mobileNumber:
-                                          '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
-                                      destinationType: 'MOBILE_NUMBER',
-                                      operationType: 'REGISTER_DEVICE',
-                                    );
 
-                                    if ((_model.apiResultSendOTP?.succeeded ??
-                                        true)) {
-                                      context
-                                          .pushNamed('otp_does_not_exist_flow');
-                                    } else {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'error',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
-                                    }
+                                    context.pushNamed('phone_number');
                                   }
                                 } else {
-                                  await actions.showToast(
-                                    FFLocalizations.of(context).getVariableText(
-                                      arText:
-                                          'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش',
-                                      enText:
-                                          'Your account is closed, please contact neocash.',
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'error',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
                                     ),
                                   );
                                 }
                               } else {
-                                FFAppState().updateRegisterationFormDataStruct(
-                                  (e) => e
-                                    ..isRegisteredStatus = false
-                                    ..customerId =
-                                        AuthAndRegisterGroup.isRegisteredCall
-                                            .customerId(
-                                              (_model.isRegisteredOutPut
-                                                      ?.jsonBody ??
-                                                  ''),
-                                            )
-                                            .toString(),
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                    enText: 'Sorry, no internet connection.',
+                                  ),
                                 );
-                                setState(() {});
-
-                                context.pushNamed('phone_number');
                               }
                             } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'error',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'الرجاء ادخال رقم صالح  ',
+                                  enText: 'Please enter a valid number',
                                 ),
                               );
                             }
-                          } else {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'عذرا لا يوجد اتصال بالانترنت',
-                                enText: 'Sorry, no internet connection.',
-                              ),
-                            );
-                          }
 
-                          setState(() {});
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'avin42p9' /* التالي */,
-                        ),
-                        options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 0.9,
-                          height: MediaQuery.sizeOf(context).height * 0.06,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleSmallFamily,
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleSmallFamily),
-                              ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                            setState(() {});
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'avin42p9' /* التالي */,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.9,
+                            height: MediaQuery.sizeOf(context).height * 0.06,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
+                                ),
+                            elevation: 3.0,
+                            borderSide: const BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
                         ),
                       ),
                     ),
