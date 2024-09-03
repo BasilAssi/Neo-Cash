@@ -43,8 +43,6 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
     return null;
   }
 
-  // Stores action output result for [Validate Form] action in Button widget.
-  bool? identityFormOutput;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (isRegistered)] action in Button widget.

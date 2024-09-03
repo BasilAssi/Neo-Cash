@@ -278,33 +278,42 @@ bool? isIDNumberValid(
   String? idNum,
   String? identityType,
 ) {
-  if (idNum == null || identityType == null) {
-    return false; // Return false if either idNum or identityType is null
+  if (identityType == null || identityType == '') {
+    return false;
+  }
+  if (idNum == null || idNum == '') {
+    return false;
   }
 
   bool isValid = false;
 
+  // Check for PASSPORT type
   if (identityType == 'PASSPORT') {
     if (idNum.length >= 4) {
       isValid = true;
     }
-  } else {
+  }
+  // Check for OTHER type
+  else {
+    // Ensure idNum matches the length constraint
     if (RegExp(r'^\d{5,9}$').hasMatch(idNum)) {
-      // The number is too short - add leading 0000
-      while (idNum!.length < 9) {
-        idNum = '0' + idNum;
-      }
+      // Create a new padded idNum with leading zeros if needed
+      String paddedIdNum = idNum.padLeft(9, '0');
 
       // CHECK THE ID NUMBER
       int mone = 0;
       for (int i = 0; i < 9; i++) {
-        int incNum = int.parse(idNum[i]);
+        int incNum = int.parse(paddedIdNum[i]);
         incNum *= (i % 2) + 1;
-        if (incNum > 9) incNum -= 9;
+        if (incNum > 9) {
+          incNum -= 9;
+        }
         mone += incNum;
       }
 
-      if (mone % 10 == 0) isValid = true;
+      if (mone % 10 == 0) {
+        isValid = true;
+      }
     }
   }
 
