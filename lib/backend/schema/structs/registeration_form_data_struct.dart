@@ -44,6 +44,8 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? hashedOTP,
     String? dateOfBirth,
     String? customerId,
+    String? cityEncodedId,
+    String? areaEncodedId,
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -80,7 +82,9 @@ class RegisterationFormDataStruct extends BaseStruct {
         _email = email,
         _hashedOTP = hashedOTP,
         _dateOfBirth = dateOfBirth,
-        _customerId = customerId;
+        _customerId = customerId,
+        _cityEncodedId = cityEncodedId,
+        _areaEncodedId = areaEncodedId;
 
   // "idNumber" field.
   String? _idNumber;
@@ -344,6 +348,20 @@ class RegisterationFormDataStruct extends BaseStruct {
 
   bool hasCustomerId() => _customerId != null;
 
+  // "cityEncodedId" field.
+  String? _cityEncodedId;
+  String get cityEncodedId => _cityEncodedId ?? '';
+  set cityEncodedId(String? val) => _cityEncodedId = val;
+
+  bool hasCityEncodedId() => _cityEncodedId != null;
+
+  // "areaEncodedId" field.
+  String? _areaEncodedId;
+  String get areaEncodedId => _areaEncodedId ?? '';
+  set areaEncodedId(String? val) => _areaEncodedId = val;
+
+  bool hasAreaEncodedId() => _areaEncodedId != null;
+
   static RegisterationFormDataStruct fromMap(Map<String, dynamic> data) =>
       RegisterationFormDataStruct(
         idNumber: data['idNumber'] as String?,
@@ -384,6 +402,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         hashedOTP: data['hashedOTP'] as String?,
         dateOfBirth: data['DateOfBirth'] as String?,
         customerId: data['customerId'] as String?,
+        cityEncodedId: data['cityEncodedId'] as String?,
+        areaEncodedId: data['areaEncodedId'] as String?,
       );
 
   static RegisterationFormDataStruct? maybeFromMap(dynamic data) => data is Map
@@ -428,6 +448,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         'hashedOTP': _hashedOTP,
         'DateOfBirth': _dateOfBirth,
         'customerId': _customerId,
+        'cityEncodedId': _cityEncodedId,
+        'areaEncodedId': _areaEncodedId,
       }.withoutNulls;
 
   @override
@@ -578,6 +600,14 @@ class RegisterationFormDataStruct extends BaseStruct {
         ),
         'customerId': serializeParam(
           _customerId,
+          ParamType.String,
+        ),
+        'cityEncodedId': serializeParam(
+          _cityEncodedId,
+          ParamType.String,
+        ),
+        'areaEncodedId': serializeParam(
+          _areaEncodedId,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -770,6 +800,16 @@ class RegisterationFormDataStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        cityEncodedId: deserializeParam(
+          data['cityEncodedId'],
+          ParamType.String,
+          false,
+        ),
+        areaEncodedId: deserializeParam(
+          data['areaEncodedId'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -815,7 +855,9 @@ class RegisterationFormDataStruct extends BaseStruct {
         email == other.email &&
         hashedOTP == other.hashedOTP &&
         dateOfBirth == other.dateOfBirth &&
-        customerId == other.customerId;
+        customerId == other.customerId &&
+        cityEncodedId == other.cityEncodedId &&
+        areaEncodedId == other.areaEncodedId;
   }
 
   @override
@@ -856,7 +898,9 @@ class RegisterationFormDataStruct extends BaseStruct {
         email,
         hashedOTP,
         dateOfBirth,
-        customerId
+        customerId,
+        cityEncodedId,
+        areaEncodedId
       ]);
 }
 
@@ -898,6 +942,8 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? hashedOTP,
   String? dateOfBirth,
   String? customerId,
+  String? cityEncodedId,
+  String? areaEncodedId,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -937,4 +983,6 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       hashedOTP: hashedOTP,
       dateOfBirth: dateOfBirth,
       customerId: customerId,
+      cityEncodedId: cityEncodedId,
+      areaEncodedId: areaEncodedId,
     );
