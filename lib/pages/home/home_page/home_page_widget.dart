@@ -94,10 +94,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 24.0, 64.0, 0.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 64.0, 0.0),
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          width: MediaQuery.sizeOf(context).width * 0.399,
                           height: MediaQuery.sizeOf(context).height * 0.15,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -147,7 +147,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .titleLargeFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 18.0,
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
@@ -184,7 +184,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -211,7 +211,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleLargeFamily,
                               color: FlutterFlowTheme.of(context).primary,
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -237,7 +237,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleLargeFamily,
                               color: FlutterFlowTheme.of(context).primary,
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -273,7 +273,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -310,7 +310,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -347,7 +347,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -362,7 +362,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -395,7 +395,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .titleLargeFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 18.0,
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
@@ -433,7 +433,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
