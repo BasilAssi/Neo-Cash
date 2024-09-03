@@ -1397,6 +1397,13 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                                 .registerationFormData
                                                                 .prefixMobile,
                                                     );
+                                                    FFAppState()
+                                                        .updateRegisterationFormDataStruct(
+                                                      (e) => e
+                                                        ..email = _model
+                                                            .emailTextFieldTextController
+                                                            .text,
+                                                    );
                                                     setState(() {});
 
                                                     context.pushNamed(
