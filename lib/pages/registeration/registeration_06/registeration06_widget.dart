@@ -33,14 +33,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
     _model = createModel(context, () => Registeration06Model());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.citiesDropDownValueController?.value =
-            (FFAppState().registerationFormData.hasCityCode()
-                ? FFAppState().registerationFormData.cityCode
-                : '');
-      });
-    });
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     _model.addresslTextFieldTextController ??= TextEditingController(
         text: FFAppState().registerationFormData.hasAddressText()
@@ -733,10 +726,10 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       _model.citiesDropDownValue ??=
                                           FFAppState()
                                                   .registerationFormData
-                                                  .hasCityCode()
+                                                  .hasCityEncodedId()
                                               ? FFAppState()
                                                   .registerationFormData
-                                                  .cityCode
+                                                  .cityEncodedId
                                               : '',
                                     ),
                                     options: List<
@@ -886,10 +879,10 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       _model.populationDropDownValue ??=
                                           FFAppState()
                                                   .registerationFormData
-                                                  .hasAreaCode()
+                                                  .hasAreaEncodedId()
                                               ? FFAppState()
                                                   .registerationFormData
-                                                  .areaCode
+                                                  .areaEncodedId
                                               : '',
                                     ),
                                     options: List<
@@ -1134,7 +1127,11 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           (e) => e
                                             ..addressText = _model
                                                 .addresslTextFieldTextController
-                                                .text,
+                                                .text
+                                            ..cityEncodedId =
+                                                _model.citiesDropDownValue
+                                            ..areaEncodedId =
+                                                _model.populationDropDownValue,
                                         );
                                         setState(() {});
 
