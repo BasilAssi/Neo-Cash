@@ -87,12 +87,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
           elevation: 0.0,
         ),
         body: FlutterFlowWebView(
-          content: 'https://flutter.dev',
+          content: FFLocalizations.of(context).getVariableText(
+            arText: 'https://neocash.ps/about.html',
+            enText: 'https://neocash.ps/about.html',
+          ),
           bypass: false,
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
           verticalScroll: true,
-          horizontalScroll: false,
+          horizontalScroll: true,
         ),
       ),
     );
