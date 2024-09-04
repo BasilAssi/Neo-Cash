@@ -3001,6 +3001,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'selecte date range',
     },
   },
+  // empty_list_of_cards
+  {
+    'yj1s13rf': {
+      'ar': 'لا يوجد بطاقات ',
+      'en': 'No cards',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {

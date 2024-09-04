@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/empty_lists/empty_list_of_cards/empty_list_of_cards_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -143,6 +144,13 @@ class _HomePageListCardsComponentWidgetState
                         ?.records
                         .toList() ??
                     [];
+                if (cardList.isEmpty) {
+                  return SizedBox(
+                    width: MediaQuery.sizeOf(context).width * 0.9,
+                    height: MediaQuery.sizeOf(context).height * 0.9,
+                    child: const EmptyListOfCardsWidget(),
+                  );
+                }
 
                 return FlutterFlowSwipeableStack(
                   onSwipeFn: (index) {},
