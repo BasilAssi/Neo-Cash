@@ -701,6 +701,15 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
 
                                                   context.pushNamed(
                                                       'otp_verify_email');
+                                                } else if (ResponseModelStruct
+                                                            .maybeFromMap((_model
+                                                                    .apiResultSendOTPEmail
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.code ==
+                                                    '1607') {
+                                                  context.pushNamed(
+                                                      'otp_verify_email');
                                                 } else {
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
