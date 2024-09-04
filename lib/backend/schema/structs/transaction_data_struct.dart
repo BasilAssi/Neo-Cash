@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class TransactionDataStruct extends BaseStruct {
+class TransactionDataStruct extends FFFirebaseStruct {
   TransactionDataStruct({
     int? id,
     String? transactionType,
@@ -20,6 +21,7 @@ class TransactionDataStruct extends BaseStruct {
     String? transactionCurrencyCode,
     String? billingAmount,
     String? billingCurrencyCode,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _id = id,
         _transactionType = transactionType,
         _transactionDate = transactionDate,
@@ -32,7 +34,8 @@ class TransactionDataStruct extends BaseStruct {
         _creditDebit = creditDebit,
         _transactionCurrencyCode = transactionCurrencyCode,
         _billingAmount = billingAmount,
-        _billingCurrencyCode = billingCurrencyCode;
+        _billingCurrencyCode = billingCurrencyCode,
+        super(firestoreUtilData);
 
   // "id" field.
   int? _id;
@@ -342,6 +345,10 @@ TransactionDataStruct createTransactionDataStruct({
   String? transactionCurrencyCode,
   String? billingAmount,
   String? billingCurrencyCode,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     TransactionDataStruct(
       id: id,
@@ -357,4 +364,74 @@ TransactionDataStruct createTransactionDataStruct({
       transactionCurrencyCode: transactionCurrencyCode,
       billingAmount: billingAmount,
       billingCurrencyCode: billingCurrencyCode,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+TransactionDataStruct? updateTransactionDataStruct(
+  TransactionDataStruct? transactionData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    transactionData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addTransactionDataStructData(
+  Map<String, dynamic> firestoreData,
+  TransactionDataStruct? transactionData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (transactionData == null) {
+    return;
+  }
+  if (transactionData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && transactionData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final transactionDataData =
+      getTransactionDataFirestoreData(transactionData, forFieldValue);
+  final nestedData =
+      transactionDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = transactionData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getTransactionDataFirestoreData(
+  TransactionDataStruct? transactionData, [
+  bool forFieldValue = false,
+]) {
+  if (transactionData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(transactionData.toMap());
+
+  // Add any Firestore field values
+  transactionData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getTransactionDataListFirestoreData(
+  List<TransactionDataStruct>? transactionDatas,
+) =>
+    transactionDatas
+        ?.map((e) => getTransactionDataFirestoreData(e, true))
+        .toList() ??
+    [];

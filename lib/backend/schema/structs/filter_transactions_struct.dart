@@ -1,16 +1,19 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class FilterTransactionsStruct extends BaseStruct {
+class FilterTransactionsStruct extends FFFirebaseStruct {
   FilterTransactionsStruct({
     String? dateFrom,
     String? dateTo,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _dateFrom = dateFrom,
-        _dateTo = dateTo;
+        _dateTo = dateTo,
+        super(firestoreUtilData);
 
   // "dateFrom" field.
   String? _dateFrom;
@@ -85,8 +88,83 @@ class FilterTransactionsStruct extends BaseStruct {
 FilterTransactionsStruct createFilterTransactionsStruct({
   String? dateFrom,
   String? dateTo,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     FilterTransactionsStruct(
       dateFrom: dateFrom,
       dateTo: dateTo,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+FilterTransactionsStruct? updateFilterTransactionsStruct(
+  FilterTransactionsStruct? filterTransactions, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    filterTransactions
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addFilterTransactionsStructData(
+  Map<String, dynamic> firestoreData,
+  FilterTransactionsStruct? filterTransactions,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (filterTransactions == null) {
+    return;
+  }
+  if (filterTransactions.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && filterTransactions.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final filterTransactionsData =
+      getFilterTransactionsFirestoreData(filterTransactions, forFieldValue);
+  final nestedData =
+      filterTransactionsData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      filterTransactions.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getFilterTransactionsFirestoreData(
+  FilterTransactionsStruct? filterTransactions, [
+  bool forFieldValue = false,
+]) {
+  if (filterTransactions == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(filterTransactions.toMap());
+
+  // Add any Firestore field values
+  filterTransactions.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getFilterTransactionsListFirestoreData(
+  List<FilterTransactionsStruct>? filterTransactionss,
+) =>
+    filterTransactionss
+        ?.map((e) => getFilterTransactionsFirestoreData(e, true))
+        .toList() ??
+    [];

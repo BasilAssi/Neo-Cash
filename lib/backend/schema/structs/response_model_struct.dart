@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class ResponseModelStruct extends BaseStruct {
+class ResponseModelStruct extends FFFirebaseStruct {
   ResponseModelStruct({
     bool? status,
     String? message,
@@ -13,12 +14,14 @@ class ResponseModelStruct extends BaseStruct {
     String? referenceId,
     String? isDeviceRegistered,
     String? customerStatus,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _status = status,
         _message = message,
         _code = code,
         _referenceId = referenceId,
         _isDeviceRegistered = isDeviceRegistered,
-        _customerStatus = customerStatus;
+        _customerStatus = customerStatus,
+        super(firestoreUtilData);
 
   // "status" field.
   bool? _status;
@@ -173,6 +176,10 @@ ResponseModelStruct createResponseModelStruct({
   String? referenceId,
   String? isDeviceRegistered,
   String? customerStatus,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     ResponseModelStruct(
       status: status,
@@ -181,4 +188,74 @@ ResponseModelStruct createResponseModelStruct({
       referenceId: referenceId,
       isDeviceRegistered: isDeviceRegistered,
       customerStatus: customerStatus,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+ResponseModelStruct? updateResponseModelStruct(
+  ResponseModelStruct? responseModel, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    responseModel
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addResponseModelStructData(
+  Map<String, dynamic> firestoreData,
+  ResponseModelStruct? responseModel,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (responseModel == null) {
+    return;
+  }
+  if (responseModel.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && responseModel.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final responseModelData =
+      getResponseModelFirestoreData(responseModel, forFieldValue);
+  final nestedData =
+      responseModelData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = responseModel.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getResponseModelFirestoreData(
+  ResponseModelStruct? responseModel, [
+  bool forFieldValue = false,
+]) {
+  if (responseModel == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(responseModel.toMap());
+
+  // Add any Firestore field values
+  responseModel.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getResponseModelListFirestoreData(
+  List<ResponseModelStruct>? responseModels,
+) =>
+    responseModels
+        ?.map((e) => getResponseModelFirestoreData(e, true))
+        .toList() ??
+    [];

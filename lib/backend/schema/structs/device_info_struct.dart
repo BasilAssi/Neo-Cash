@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class DeviceInfoStruct extends BaseStruct {
+class DeviceInfoStruct extends FFFirebaseStruct {
   DeviceInfoStruct({
     String? serial,
     String? name,
@@ -14,13 +15,15 @@ class DeviceInfoStruct extends BaseStruct {
     String? brandName,
     String? brandVersion,
     String? biometricSupported,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _serial = serial,
         _name = name,
         _osName = osName,
         _osVersion = osVersion,
         _brandName = brandName,
         _brandVersion = brandVersion,
-        _biometricSupported = biometricSupported;
+        _biometricSupported = biometricSupported,
+        super(firestoreUtilData);
 
   // "serial" field.
   String? _serial;
@@ -202,6 +205,10 @@ DeviceInfoStruct createDeviceInfoStruct({
   String? brandName,
   String? brandVersion,
   String? biometricSupported,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     DeviceInfoStruct(
       serial: serial,
@@ -211,4 +218,69 @@ DeviceInfoStruct createDeviceInfoStruct({
       brandName: brandName,
       brandVersion: brandVersion,
       biometricSupported: biometricSupported,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+DeviceInfoStruct? updateDeviceInfoStruct(
+  DeviceInfoStruct? deviceInfo, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    deviceInfo
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addDeviceInfoStructData(
+  Map<String, dynamic> firestoreData,
+  DeviceInfoStruct? deviceInfo,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (deviceInfo == null) {
+    return;
+  }
+  if (deviceInfo.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && deviceInfo.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final deviceInfoData = getDeviceInfoFirestoreData(deviceInfo, forFieldValue);
+  final nestedData = deviceInfoData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = deviceInfo.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getDeviceInfoFirestoreData(
+  DeviceInfoStruct? deviceInfo, [
+  bool forFieldValue = false,
+]) {
+  if (deviceInfo == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(deviceInfo.toMap());
+
+  // Add any Firestore field values
+  deviceInfo.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getDeviceInfoListFirestoreData(
+  List<DeviceInfoStruct>? deviceInfos,
+) =>
+    deviceInfos?.map((e) => getDeviceInfoFirestoreData(e, true)).toList() ?? [];

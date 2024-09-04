@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class BalanceDataStruct extends BaseStruct {
+class BalanceDataStruct extends FFFirebaseStruct {
   BalanceDataStruct({
     String? currencyCode,
     double? availableBalance,
@@ -13,12 +14,14 @@ class BalanceDataStruct extends BaseStruct {
     double? usedAccumAmount,
     double? dueAmount,
     String? customerId,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _currencyCode = currencyCode,
         _availableBalance = availableBalance,
         _authorizedAccumAmount = authorizedAccumAmount,
         _usedAccumAmount = usedAccumAmount,
         _dueAmount = dueAmount,
-        _customerId = customerId;
+        _customerId = customerId,
+        super(firestoreUtilData);
 
   // "currencyCode" field.
   String? _currencyCode;
@@ -191,6 +194,10 @@ BalanceDataStruct createBalanceDataStruct({
   double? usedAccumAmount,
   double? dueAmount,
   String? customerId,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     BalanceDataStruct(
       currencyCode: currencyCode,
@@ -199,4 +206,72 @@ BalanceDataStruct createBalanceDataStruct({
       usedAccumAmount: usedAccumAmount,
       dueAmount: dueAmount,
       customerId: customerId,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+BalanceDataStruct? updateBalanceDataStruct(
+  BalanceDataStruct? balanceData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    balanceData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addBalanceDataStructData(
+  Map<String, dynamic> firestoreData,
+  BalanceDataStruct? balanceData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (balanceData == null) {
+    return;
+  }
+  if (balanceData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && balanceData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final balanceDataData =
+      getBalanceDataFirestoreData(balanceData, forFieldValue);
+  final nestedData =
+      balanceDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = balanceData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getBalanceDataFirestoreData(
+  BalanceDataStruct? balanceData, [
+  bool forFieldValue = false,
+]) {
+  if (balanceData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(balanceData.toMap());
+
+  // Add any Firestore field values
+  balanceData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getBalanceDataListFirestoreData(
+  List<BalanceDataStruct>? balanceDatas,
+) =>
+    balanceDatas?.map((e) => getBalanceDataFirestoreData(e, true)).toList() ??
+    [];

@@ -1,10 +1,13 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class IsRegisteredAPIResponseStruct extends BaseStruct {
+class IsRegisteredAPIResponseStruct extends FFFirebaseStruct {
   IsRegisteredAPIResponseStruct({
     String? code,
     String? message,
@@ -13,13 +16,15 @@ class IsRegisteredAPIResponseStruct extends BaseStruct {
     bool? status,
     String? totalCount,
     List<IsRegisteredDataStruct>? records,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _code = code,
         _message = message,
         _offset = offset,
         _referenceId = referenceId,
         _status = status,
         _totalCount = totalCount,
-        _records = records;
+        _records = records,
+        super(firestoreUtilData);
 
   // "code" field.
   String? _code;
@@ -205,6 +210,10 @@ IsRegisteredAPIResponseStruct createIsRegisteredAPIResponseStruct({
   String? referenceId,
   bool? status,
   String? totalCount,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     IsRegisteredAPIResponseStruct(
       code: code,
@@ -213,4 +222,75 @@ IsRegisteredAPIResponseStruct createIsRegisteredAPIResponseStruct({
       referenceId: referenceId,
       status: status,
       totalCount: totalCount,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+IsRegisteredAPIResponseStruct? updateIsRegisteredAPIResponseStruct(
+  IsRegisteredAPIResponseStruct? isRegisteredAPIResponse, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    isRegisteredAPIResponse
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addIsRegisteredAPIResponseStructData(
+  Map<String, dynamic> firestoreData,
+  IsRegisteredAPIResponseStruct? isRegisteredAPIResponse,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (isRegisteredAPIResponse == null) {
+    return;
+  }
+  if (isRegisteredAPIResponse.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields = !forFieldValue &&
+      isRegisteredAPIResponse.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final isRegisteredAPIResponseData = getIsRegisteredAPIResponseFirestoreData(
+      isRegisteredAPIResponse, forFieldValue);
+  final nestedData =
+      isRegisteredAPIResponseData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      isRegisteredAPIResponse.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getIsRegisteredAPIResponseFirestoreData(
+  IsRegisteredAPIResponseStruct? isRegisteredAPIResponse, [
+  bool forFieldValue = false,
+]) {
+  if (isRegisteredAPIResponse == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(isRegisteredAPIResponse.toMap());
+
+  // Add any Firestore field values
+  isRegisteredAPIResponse.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getIsRegisteredAPIResponseListFirestoreData(
+  List<IsRegisteredAPIResponseStruct>? isRegisteredAPIResponses,
+) =>
+    isRegisteredAPIResponses
+        ?.map((e) => getIsRegisteredAPIResponseFirestoreData(e, true))
+        .toList() ??
+    [];

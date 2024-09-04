@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class CustomerUploadedDocumentsStruct extends BaseStruct {
+class CustomerUploadedDocumentsStruct extends FFFirebaseStruct {
   CustomerUploadedDocumentsStruct({
     String? name,
     int? size,
@@ -13,12 +14,14 @@ class CustomerUploadedDocumentsStruct extends BaseStruct {
     String? url,
     String? deleteUrl,
     String? deleteType,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _size = size,
         _type = type,
         _url = url,
         _deleteUrl = deleteUrl,
-        _deleteType = deleteType;
+        _deleteType = deleteType,
+        super(firestoreUtilData);
 
   // "name" field.
   String? _name;
@@ -177,6 +180,10 @@ CustomerUploadedDocumentsStruct createCustomerUploadedDocumentsStruct({
   String? url,
   String? deleteUrl,
   String? deleteType,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     CustomerUploadedDocumentsStruct(
       name: name,
@@ -185,4 +192,76 @@ CustomerUploadedDocumentsStruct createCustomerUploadedDocumentsStruct({
       url: url,
       deleteUrl: deleteUrl,
       deleteType: deleteType,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+CustomerUploadedDocumentsStruct? updateCustomerUploadedDocumentsStruct(
+  CustomerUploadedDocumentsStruct? customerUploadedDocuments, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    customerUploadedDocuments
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addCustomerUploadedDocumentsStructData(
+  Map<String, dynamic> firestoreData,
+  CustomerUploadedDocumentsStruct? customerUploadedDocuments,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (customerUploadedDocuments == null) {
+    return;
+  }
+  if (customerUploadedDocuments.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields = !forFieldValue &&
+      customerUploadedDocuments.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final customerUploadedDocumentsData =
+      getCustomerUploadedDocumentsFirestoreData(
+          customerUploadedDocuments, forFieldValue);
+  final nestedData =
+      customerUploadedDocumentsData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      customerUploadedDocuments.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getCustomerUploadedDocumentsFirestoreData(
+  CustomerUploadedDocumentsStruct? customerUploadedDocuments, [
+  bool forFieldValue = false,
+]) {
+  if (customerUploadedDocuments == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(customerUploadedDocuments.toMap());
+
+  // Add any Firestore field values
+  customerUploadedDocuments.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getCustomerUploadedDocumentsListFirestoreData(
+  List<CustomerUploadedDocumentsStruct>? customerUploadedDocumentss,
+) =>
+    customerUploadedDocumentss
+        ?.map((e) => getCustomerUploadedDocumentsFirestoreData(e, true))
+        .toList() ??
+    [];

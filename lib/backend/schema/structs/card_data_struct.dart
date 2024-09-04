@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class CardDataStruct extends BaseStruct {
+class CardDataStruct extends FFFirebaseStruct {
   CardDataStruct({
     String? cardNumber,
     String? expiryDate,
@@ -27,6 +28,7 @@ class CardDataStruct extends BaseStruct {
     String? isDueRenewalFees,
     String? renewalDueDate,
     bool? isPhysical,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _cardNumber = cardNumber,
         _expiryDate = expiryDate,
         _status = status,
@@ -46,7 +48,8 @@ class CardDataStruct extends BaseStruct {
         _isReloadable = isReloadable,
         _isDueRenewalFees = isDueRenewalFees,
         _renewalDueDate = renewalDueDate,
-        _isPhysical = isPhysical;
+        _isPhysical = isPhysical,
+        super(firestoreUtilData);
 
   // "cardNumber" field.
   String? _cardNumber;
@@ -499,6 +502,10 @@ CardDataStruct createCardDataStruct({
   String? isDueRenewalFees,
   String? renewalDueDate,
   bool? isPhysical,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     CardDataStruct(
       cardNumber: cardNumber,
@@ -521,4 +528,69 @@ CardDataStruct createCardDataStruct({
       isDueRenewalFees: isDueRenewalFees,
       renewalDueDate: renewalDueDate,
       isPhysical: isPhysical,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+CardDataStruct? updateCardDataStruct(
+  CardDataStruct? cardData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    cardData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addCardDataStructData(
+  Map<String, dynamic> firestoreData,
+  CardDataStruct? cardData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (cardData == null) {
+    return;
+  }
+  if (cardData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && cardData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final cardDataData = getCardDataFirestoreData(cardData, forFieldValue);
+  final nestedData = cardDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = cardData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getCardDataFirestoreData(
+  CardDataStruct? cardData, [
+  bool forFieldValue = false,
+]) {
+  if (cardData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(cardData.toMap());
+
+  // Add any Firestore field values
+  cardData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getCardDataListFirestoreData(
+  List<CardDataStruct>? cardDatas,
+) =>
+    cardDatas?.map((e) => getCardDataFirestoreData(e, true)).toList() ?? [];
