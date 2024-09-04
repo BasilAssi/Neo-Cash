@@ -2832,12 +2832,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // otp_verify_email
   {
     'fa4xb5qw': {
-      'ar': 'تأكيد رقم التلفون',
-      'en': '',
+      'ar': 'تأكيد الإيميل',
+      'en': 'Verify email',
     },
     'f562xrix': {
       'ar': ' أرسلنالك رمز تحقق على إيميلك :  ',
-      'en': '',
+      'en': 'We have sent you a verification code to your email:',
     },
     '80egks64': {
       'ar': '\n',
@@ -2849,7 +2849,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lnrfvstt': {
       'ar': '  الرجاء إدخال الرمز',
-      'en': '',
+      'en': 'please enter the code',
     },
     'k5owyn2e': {
       'ar': 'إعادة إرسال رمز التحقق',
