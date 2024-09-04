@@ -198,7 +198,21 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
 
                             if ((_model.apiResultSendToApproval?.succeeded ??
                                 true)) {
-                              context.pushNamed('success_page');
+                              if (ResponseModelStruct.maybeFromMap((_model
+                                              .apiResultSendToApproval
+                                              ?.jsonBody ??
+                                          ''))
+                                      ?.code ==
+                                  '00') {
+                                context.pushNamed('success_page');
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'الرجاء المحاولة مرة اخرى',
+                                    enText: 'Please try again',
+                                  ),
+                                );
+                              }
                             } else {
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(
