@@ -1,7 +1,11 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/backend/schema/structs/index.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -638,56 +642,156 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                       return Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             4.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          height: 45.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xB2E9E4E4),
-                                            borderRadius:
-                                                BorderRadius.circular(15.0),
-                                            shape: BoxShape.rectangle,
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.isNetworkAvailableOutput =
+                                                await actions
+                                                    .isNetworkAvailable();
+                                            if (_model
+                                                    .isNetworkAvailableOutput ==
+                                                true) {
+                                              _model.apiResultSendOTPEmail =
+                                                  await AuthAndRegisterGroup
+                                                      .sendOTPToCustomerCall
+                                                      .call(
+                                                msgId: functions.messageId(),
+                                                idNumber: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .idNumber,
+                                                idType: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .idType,
+                                                destinationType: 'EMAIL',
+                                                operationType:
+                                                    'VERIFY_DESTINATION',
+                                                destination: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .emailAddress,
+                                                acceptLanguage:
                                                     FFLocalizations.of(context)
-                                                        .getText(
-                                                      'uemhjyul' /* التحقق من
- البريد الإلكتروني */
-                                                      ,
+                                                        .getVariableText(
+                                                  arText: 'AR',
+                                                  enText: 'EN',
+                                                ),
+                                              );
+
+                                              if ((_model.apiResultSendOTPEmail
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                if (ResponseModelStruct
+                                                            .maybeFromMap((_model
+                                                                    .apiResultSendOTPEmail
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.code ==
+                                                    '00') {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'تم إرسال رمز التحقق بنجاح  على الايميل ${FFAppState().AuthenticatedUser.emailAddress}',
+                                                      enText:
+                                                          'Verification code has been sent successfully to your email ${FFAppState().AuthenticatedUser.emailAddress}',
                                                     ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondary,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
-                                                        ),
+                                                  );
+
+                                                  context.pushNamed(
+                                                      'otp_verify_email');
+                                                } else {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'فشل إرسال رمز التحقق',
+                                                      enText:
+                                                          'Failed to send verification code.',
+                                                    ),
+                                                  );
+                                                }
+                                              } else {
+                                                await actions.showToast(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                    arText:
+                                                        'فشل إرسال رمز التحقق',
+                                                    enText:
+                                                        'Failed to send verification code.',
+                                                  ),
+                                                );
+                                              }
+                                            } else {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'عذرا لا يوجد اتصال بالانترنت',
+                                                  enText:
+                                                      'Sorry, no internet connection.',
+                                                ),
+                                              );
+                                            }
+
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            height: 45.0,
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xB2E9E4E4),
+                                              borderRadius:
+                                                  BorderRadius.circular(15.0),
+                                              shape: BoxShape.rectangle,
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'uemhjyul' /* التحقق من
+ البريد الإلكتروني */
+                                                        ,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondary,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily),
+                                                              ),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       );

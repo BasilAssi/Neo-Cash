@@ -2821,6 +2821,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // otp_verify_email
+  {
+    'fa4xb5qw': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    'f562xrix': {
+      'ar': ' أرسلنالك رمز تحقق على إيميلك :  ',
+      'en': '',
+    },
+    '80egks64': {
+      'ar': '\n',
+      'en': '',
+    },
+    'wzavwwmu': {
+      'ar': '\n',
+      'en': '',
+    },
+    'lnrfvstt': {
+      'ar': '  الرجاء إدخال الرمز',
+      'en': '',
+    },
+    'k5owyn2e': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    'inwrazsk': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // error_component
   {
     'gzit5wjk': {

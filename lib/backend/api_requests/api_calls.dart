@@ -99,7 +99,7 @@ class SendOTPToCustomerCall {
   Future<ApiCallResponse> call({
     String? idNumber = '',
     String? idType = '',
-    String? mobileNumber = '',
+    String? destination = '',
     String? destinationType = 'MOBILE_NUMBER',
     String? operationType = '',
     String? acceptLanguage = 'EN',
@@ -116,7 +116,7 @@ class SendOTPToCustomerCall {
   "idNumber": "$idNumber",
   "idType": "$idType",
   "operationType": "$operationType",
-  "destination": "$mobileNumber",
+  "destination": "<mobileNumber>",
   "destinationType": "$destinationType"
 }''';
     return ApiManager.instance.makeApiCall(

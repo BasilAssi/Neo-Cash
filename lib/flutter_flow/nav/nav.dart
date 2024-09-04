@@ -325,6 +325,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'frequently_asked_questions',
               path: 'frequentlyAskedQuestions',
               builder: (context, params) => const FrequentlyAskedQuestionsWidget(),
+            ),
+            FFRoute(
+              name: 'otp_verify_email',
+              path: 'otpVerifyEmail',
+              builder: (context, params) => const OtpVerifyEmailWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
