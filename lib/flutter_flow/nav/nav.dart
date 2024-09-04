@@ -7,6 +7,7 @@ import '/backend/schema/structs/index.dart';
 
 import '/index.dart';
 import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -35,7 +36,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 child: Center(
                   child: Image.asset(
                     'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.jpeg',
@@ -53,7 +54,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.transparent,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     child: Center(
                       child: Image.asset(
                         'assets/images/WhatsApp_Image_2024-06-11_at_8.21.11_PM.jpeg',
