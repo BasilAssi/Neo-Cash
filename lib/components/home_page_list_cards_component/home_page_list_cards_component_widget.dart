@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/empty_lists/empty_list_of_cards/empty_list_of_cards_widget.dart';
+import '/components/shimmer/shimmer_component_list_cards/shimmer_component_list_cards_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -123,17 +124,7 @@ class _HomePageListCardsComponentWidgetState
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return Center(
-                child: SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      FlutterFlowTheme.of(context).primary,
-                    ),
-                  ),
-                ),
-              );
+              return const ShimmerComponentListCardsWidget();
             }
             final swipeableStackListCardsResponse = snapshot.data!;
 
