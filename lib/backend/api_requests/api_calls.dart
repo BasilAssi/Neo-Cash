@@ -116,7 +116,7 @@ class SendOTPToCustomerCall {
   "idNumber": "$idNumber",
   "idType": "$idType",
   "operationType": "$operationType",
-  "destination": "<mobileNumber>",
+  "destination": "$destination",
   "destinationType": "$destinationType"
 }''';
     return ApiManager.instance.makeApiCall(
