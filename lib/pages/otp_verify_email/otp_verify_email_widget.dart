@@ -312,7 +312,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                                 FFAppState().updateAuthenticatedUserStruct(
                                   (e) => e..emailVerified = true,
                                 );
-                                setState(() {});
+                                FFAppState().update(() {});
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
                                     arText: 'تم التحقق من الايميل  بنجاح.',
