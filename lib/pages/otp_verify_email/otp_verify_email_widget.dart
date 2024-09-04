@@ -112,7 +112,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'fa4xb5qw' /* تأكيد رقم التلفون */,
+                                  'fa4xb5qw' /* تأكيد الإيميل */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
