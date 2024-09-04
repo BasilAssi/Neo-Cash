@@ -119,7 +119,7 @@ class _OtpSessionExpiredComponentWidgetState
                                       idType: FFAppState()
                                           .registerationFormData
                                           .idType,
-                                      mobileNumber:
+                                      destination:
                                           '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                       destinationType: 'MOBILE_NUMBER',
                                       operationType: 'REGISTER_CUSTOMER',

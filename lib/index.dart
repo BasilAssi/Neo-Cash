@@ -80,3 +80,5 @@ export '/pages/transactions_page/transactions_page_widget.dart'
     show TransactionsPageWidget;
 export '/pages/static_pages/frequently_asked_questions/frequently_asked_questions_widget.dart'
     show FrequentlyAskedQuestionsWidget;
+export '/pages/otp_verify_email/otp_verify_email_widget.dart'
+    show OtpVerifyEmailWidget;
