@@ -319,6 +319,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                                     enText: 'Email verified successfully.',
                                   ),
                                 );
+                                context.safePop();
                               } else {
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
