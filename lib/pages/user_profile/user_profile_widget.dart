@@ -813,19 +813,23 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     }
                                   },
                                 ),
-                                FlutterFlowIconButton(
-                                  borderRadius: 20.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 28.0,
-                                  icon: Icon(
-                                    Icons.edit,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 0.0, 4.0, 0.0),
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 20.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 28.0,
+                                    icon: Icon(
+                                      Icons.edit,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
-                                  },
                                 ),
                               ],
                             ),
