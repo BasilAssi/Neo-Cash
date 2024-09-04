@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class RegisterationFormDataStruct extends BaseStruct {
+class RegisterationFormDataStruct extends FFFirebaseStruct {
   RegisterationFormDataStruct({
     String? idNumber,
     String? idType,
@@ -46,6 +47,7 @@ class RegisterationFormDataStruct extends BaseStruct {
     String? customerId,
     String? cityEncodedId,
     String? areaEncodedId,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _idNumber = idNumber,
         _idType = idType,
         _firstNameAR = firstNameAR,
@@ -84,7 +86,8 @@ class RegisterationFormDataStruct extends BaseStruct {
         _dateOfBirth = dateOfBirth,
         _customerId = customerId,
         _cityEncodedId = cityEncodedId,
-        _areaEncodedId = areaEncodedId;
+        _areaEncodedId = areaEncodedId,
+        super(firestoreUtilData);
 
   // "idNumber" field.
   String? _idNumber;
@@ -944,6 +947,10 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
   String? customerId,
   String? cityEncodedId,
   String? areaEncodedId,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     RegisterationFormDataStruct(
       idNumber: idNumber,
@@ -985,4 +992,75 @@ RegisterationFormDataStruct createRegisterationFormDataStruct({
       customerId: customerId,
       cityEncodedId: cityEncodedId,
       areaEncodedId: areaEncodedId,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+RegisterationFormDataStruct? updateRegisterationFormDataStruct(
+  RegisterationFormDataStruct? registerationFormData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    registerationFormData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addRegisterationFormDataStructData(
+  Map<String, dynamic> firestoreData,
+  RegisterationFormDataStruct? registerationFormData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (registerationFormData == null) {
+    return;
+  }
+  if (registerationFormData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields = !forFieldValue &&
+      registerationFormData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final registerationFormDataData = getRegisterationFormDataFirestoreData(
+      registerationFormData, forFieldValue);
+  final nestedData =
+      registerationFormDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      registerationFormData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getRegisterationFormDataFirestoreData(
+  RegisterationFormDataStruct? registerationFormData, [
+  bool forFieldValue = false,
+]) {
+  if (registerationFormData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(registerationFormData.toMap());
+
+  // Add any Firestore field values
+  registerationFormData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getRegisterationFormDataListFirestoreData(
+  List<RegisterationFormDataStruct>? registerationFormDatas,
+) =>
+    registerationFormDatas
+        ?.map((e) => getRegisterationFormDataFirestoreData(e, true))
+        .toList() ??
+    [];

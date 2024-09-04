@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1015669625608",
+    "project_id": "neo-cash-ijapmn",
+    "storage_bucket": "neo-cash-ijapmn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015669625608:android:f1d3ceb79219b10bdd12bd",
+        "android_client_info": {
+          "package_name": "com.mycompany.neocash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZT-XKpNZbsyiCV3FmVlFjw_2OqW-NYYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

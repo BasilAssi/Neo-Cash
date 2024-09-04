@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LookupCitesDataStruct extends BaseStruct {
+class LookupCitesDataStruct extends FFFirebaseStruct {
   LookupCitesDataStruct({
     String? encodedId,
     String? code,
@@ -15,6 +16,7 @@ class LookupCitesDataStruct extends BaseStruct {
     String? moduleType,
     String? recordStatus,
     String? isoAlpha,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _encodedId = encodedId,
         _code = code,
         _localName = localName,
@@ -22,7 +24,8 @@ class LookupCitesDataStruct extends BaseStruct {
         _description = description,
         _moduleType = moduleType,
         _recordStatus = recordStatus,
-        _isoAlpha = isoAlpha;
+        _isoAlpha = isoAlpha,
+        super(firestoreUtilData);
 
   // "encodedId" field.
   String? _encodedId;
@@ -225,6 +228,10 @@ LookupCitesDataStruct createLookupCitesDataStruct({
   String? moduleType,
   String? recordStatus,
   String? isoAlpha,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     LookupCitesDataStruct(
       encodedId: encodedId,
@@ -235,4 +242,74 @@ LookupCitesDataStruct createLookupCitesDataStruct({
       moduleType: moduleType,
       recordStatus: recordStatus,
       isoAlpha: isoAlpha,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+LookupCitesDataStruct? updateLookupCitesDataStruct(
+  LookupCitesDataStruct? lookupCitesData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    lookupCitesData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addLookupCitesDataStructData(
+  Map<String, dynamic> firestoreData,
+  LookupCitesDataStruct? lookupCitesData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (lookupCitesData == null) {
+    return;
+  }
+  if (lookupCitesData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && lookupCitesData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final lookupCitesDataData =
+      getLookupCitesDataFirestoreData(lookupCitesData, forFieldValue);
+  final nestedData =
+      lookupCitesDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = lookupCitesData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getLookupCitesDataFirestoreData(
+  LookupCitesDataStruct? lookupCitesData, [
+  bool forFieldValue = false,
+]) {
+  if (lookupCitesData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(lookupCitesData.toMap());
+
+  // Add any Firestore field values
+  lookupCitesData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getLookupCitesDataListFirestoreData(
+  List<LookupCitesDataStruct>? lookupCitesDatas,
+) =>
+    lookupCitesDatas
+        ?.map((e) => getLookupCitesDataFirestoreData(e, true))
+        .toList() ??
+    [];

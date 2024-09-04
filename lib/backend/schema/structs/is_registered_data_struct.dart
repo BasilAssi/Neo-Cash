@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class IsRegisteredDataStruct extends BaseStruct {
+class IsRegisteredDataStruct extends FFFirebaseStruct {
   IsRegisteredDataStruct({
     String? isUsPassportHolder,
     String? pepPosition,
@@ -47,6 +48,7 @@ class IsRegisteredDataStruct extends BaseStruct {
     String? cityCode,
     String? customerStatus,
     String? familyName,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _isUsPassportHolder = isUsPassportHolder,
         _pepPosition = pepPosition,
         _address = address,
@@ -86,7 +88,8 @@ class IsRegisteredDataStruct extends BaseStruct {
         _thirdName = thirdName,
         _cityCode = cityCode,
         _customerStatus = customerStatus,
-        _familyName = familyName;
+        _familyName = familyName,
+        super(firestoreUtilData);
 
   // "isUsPassportHolder" field.
   String? _isUsPassportHolder;
@@ -967,6 +970,10 @@ IsRegisteredDataStruct createIsRegisteredDataStruct({
   String? cityCode,
   String? customerStatus,
   String? familyName,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     IsRegisteredDataStruct(
       isUsPassportHolder: isUsPassportHolder,
@@ -1009,4 +1016,74 @@ IsRegisteredDataStruct createIsRegisteredDataStruct({
       cityCode: cityCode,
       customerStatus: customerStatus,
       familyName: familyName,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+IsRegisteredDataStruct? updateIsRegisteredDataStruct(
+  IsRegisteredDataStruct? isRegisteredData, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    isRegisteredData
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addIsRegisteredDataStructData(
+  Map<String, dynamic> firestoreData,
+  IsRegisteredDataStruct? isRegisteredData,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (isRegisteredData == null) {
+    return;
+  }
+  if (isRegisteredData.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && isRegisteredData.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final isRegisteredDataData =
+      getIsRegisteredDataFirestoreData(isRegisteredData, forFieldValue);
+  final nestedData =
+      isRegisteredDataData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = isRegisteredData.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getIsRegisteredDataFirestoreData(
+  IsRegisteredDataStruct? isRegisteredData, [
+  bool forFieldValue = false,
+]) {
+  if (isRegisteredData == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(isRegisteredData.toMap());
+
+  // Add any Firestore field values
+  isRegisteredData.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getIsRegisteredDataListFirestoreData(
+  List<IsRegisteredDataStruct>? isRegisteredDatas,
+) =>
+    isRegisteredDatas
+        ?.map((e) => getIsRegisteredDataFirestoreData(e, true))
+        .toList() ??
+    [];

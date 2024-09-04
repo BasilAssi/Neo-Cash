@@ -1,20 +1,23 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LoginAPIResponseStruct extends BaseStruct {
+class LoginAPIResponseStruct extends FFFirebaseStruct {
   LoginAPIResponseStruct({
     String? accessToken,
     String? message,
     bool? status,
     String? code,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _accessToken = accessToken,
         _message = message,
         _status = status,
-        _code = code;
+        _code = code,
+        super(firestoreUtilData);
 
   // "access_token" field.
   String? _accessToken;
@@ -130,10 +133,84 @@ LoginAPIResponseStruct createLoginAPIResponseStruct({
   String? message,
   bool? status,
   String? code,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     LoginAPIResponseStruct(
       accessToken: accessToken,
       message: message,
       status: status,
       code: code,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+LoginAPIResponseStruct? updateLoginAPIResponseStruct(
+  LoginAPIResponseStruct? loginAPIResponse, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    loginAPIResponse
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addLoginAPIResponseStructData(
+  Map<String, dynamic> firestoreData,
+  LoginAPIResponseStruct? loginAPIResponse,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (loginAPIResponse == null) {
+    return;
+  }
+  if (loginAPIResponse.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && loginAPIResponse.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final loginAPIResponseData =
+      getLoginAPIResponseFirestoreData(loginAPIResponse, forFieldValue);
+  final nestedData =
+      loginAPIResponseData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = loginAPIResponse.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getLoginAPIResponseFirestoreData(
+  LoginAPIResponseStruct? loginAPIResponse, [
+  bool forFieldValue = false,
+]) {
+  if (loginAPIResponse == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(loginAPIResponse.toMap());
+
+  // Add any Firestore field values
+  loginAPIResponse.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getLoginAPIResponseListFirestoreData(
+  List<LoginAPIResponseStruct>? loginAPIResponses,
+) =>
+    loginAPIResponses
+        ?.map((e) => getLoginAPIResponseFirestoreData(e, true))
+        .toList() ??
+    [];

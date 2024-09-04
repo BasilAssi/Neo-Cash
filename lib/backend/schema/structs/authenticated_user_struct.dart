@@ -1,10 +1,13 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class AuthenticatedUserStruct extends BaseStruct {
+class AuthenticatedUserStruct extends FFFirebaseStruct {
   AuthenticatedUserStruct({
     String? correctionReason,
     String? pepPosition,
@@ -52,6 +55,7 @@ class AuthenticatedUserStruct extends BaseStruct {
     bool? mobileNumberVerified,
     String? birthDate,
     String? password,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
         _thirdNameAr = thirdNameAr,
@@ -97,7 +101,8 @@ class AuthenticatedUserStruct extends BaseStruct {
         _emailVerified = emailVerified,
         _mobileNumberVerified = mobileNumberVerified,
         _birthDate = birthDate,
-        _password = password;
+        _password = password,
+        super(firestoreUtilData);
 
   // "correctionReason" field.
   String? _correctionReason;
@@ -1116,6 +1121,10 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   bool? mobileNumberVerified,
   String? birthDate,
   String? password,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     AuthenticatedUserStruct(
       correctionReason: correctionReason,
@@ -1163,4 +1172,74 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       mobileNumberVerified: mobileNumberVerified,
       birthDate: birthDate,
       password: password,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+AuthenticatedUserStruct? updateAuthenticatedUserStruct(
+  AuthenticatedUserStruct? authenticatedUser, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    authenticatedUser
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addAuthenticatedUserStructData(
+  Map<String, dynamic> firestoreData,
+  AuthenticatedUserStruct? authenticatedUser,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (authenticatedUser == null) {
+    return;
+  }
+  if (authenticatedUser.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && authenticatedUser.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final authenticatedUserData =
+      getAuthenticatedUserFirestoreData(authenticatedUser, forFieldValue);
+  final nestedData =
+      authenticatedUserData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = authenticatedUser.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getAuthenticatedUserFirestoreData(
+  AuthenticatedUserStruct? authenticatedUser, [
+  bool forFieldValue = false,
+]) {
+  if (authenticatedUser == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(authenticatedUser.toMap());
+
+  // Add any Firestore field values
+  authenticatedUser.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getAuthenticatedUserListFirestoreData(
+  List<AuthenticatedUserStruct>? authenticatedUsers,
+) =>
+    authenticatedUsers
+        ?.map((e) => getAuthenticatedUserFirestoreData(e, true))
+        .toList() ??
+    [];

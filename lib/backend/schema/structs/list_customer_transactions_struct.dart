@@ -1,10 +1,13 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class ListCustomerTransactionsStruct extends BaseStruct {
+class ListCustomerTransactionsStruct extends FFFirebaseStruct {
   ListCustomerTransactionsStruct({
     String? code,
     String? message,
@@ -13,13 +16,15 @@ class ListCustomerTransactionsStruct extends BaseStruct {
     String? referenceId,
     String? totalCount,
     bool? status,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _code = code,
         _message = message,
         _offset = offset,
         _records = records,
         _referenceId = referenceId,
         _totalCount = totalCount,
-        _status = status;
+        _status = status,
+        super(firestoreUtilData);
 
   // "code" field.
   String? _code;
@@ -205,6 +210,10 @@ ListCustomerTransactionsStruct createListCustomerTransactionsStruct({
   String? referenceId,
   String? totalCount,
   bool? status,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     ListCustomerTransactionsStruct(
       code: code,
@@ -213,4 +222,75 @@ ListCustomerTransactionsStruct createListCustomerTransactionsStruct({
       referenceId: referenceId,
       totalCount: totalCount,
       status: status,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+ListCustomerTransactionsStruct? updateListCustomerTransactionsStruct(
+  ListCustomerTransactionsStruct? listCustomerTransactions, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    listCustomerTransactions
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addListCustomerTransactionsStructData(
+  Map<String, dynamic> firestoreData,
+  ListCustomerTransactionsStruct? listCustomerTransactions,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (listCustomerTransactions == null) {
+    return;
+  }
+  if (listCustomerTransactions.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields = !forFieldValue &&
+      listCustomerTransactions.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final listCustomerTransactionsData = getListCustomerTransactionsFirestoreData(
+      listCustomerTransactions, forFieldValue);
+  final nestedData =
+      listCustomerTransactionsData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      listCustomerTransactions.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getListCustomerTransactionsFirestoreData(
+  ListCustomerTransactionsStruct? listCustomerTransactions, [
+  bool forFieldValue = false,
+]) {
+  if (listCustomerTransactions == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(listCustomerTransactions.toMap());
+
+  // Add any Firestore field values
+  listCustomerTransactions.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getListCustomerTransactionsListFirestoreData(
+  List<ListCustomerTransactionsStruct>? listCustomerTransactionss,
+) =>
+    listCustomerTransactionss
+        ?.map((e) => getListCustomerTransactionsFirestoreData(e, true))
+        .toList() ??
+    [];

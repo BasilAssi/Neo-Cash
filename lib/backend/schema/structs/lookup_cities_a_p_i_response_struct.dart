@@ -1,10 +1,13 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class LookupCitiesAPIResponseStruct extends BaseStruct {
+class LookupCitiesAPIResponseStruct extends FFFirebaseStruct {
   LookupCitiesAPIResponseStruct({
     String? code,
     String? message,
@@ -13,13 +16,15 @@ class LookupCitiesAPIResponseStruct extends BaseStruct {
     String? referenceId,
     bool? status,
     String? totalCount,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _code = code,
         _message = message,
         _offset = offset,
         _records = records,
         _referenceId = referenceId,
         _status = status,
-        _totalCount = totalCount;
+        _totalCount = totalCount,
+        super(firestoreUtilData);
 
   // "code" field.
   String? _code;
@@ -205,6 +210,10 @@ LookupCitiesAPIResponseStruct createLookupCitiesAPIResponseStruct({
   String? referenceId,
   bool? status,
   String? totalCount,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     LookupCitiesAPIResponseStruct(
       code: code,
@@ -213,4 +222,75 @@ LookupCitiesAPIResponseStruct createLookupCitiesAPIResponseStruct({
       referenceId: referenceId,
       status: status,
       totalCount: totalCount,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+LookupCitiesAPIResponseStruct? updateLookupCitiesAPIResponseStruct(
+  LookupCitiesAPIResponseStruct? lookupCitiesAPIResponse, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    lookupCitiesAPIResponse
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addLookupCitiesAPIResponseStructData(
+  Map<String, dynamic> firestoreData,
+  LookupCitiesAPIResponseStruct? lookupCitiesAPIResponse,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (lookupCitiesAPIResponse == null) {
+    return;
+  }
+  if (lookupCitiesAPIResponse.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields = !forFieldValue &&
+      lookupCitiesAPIResponse.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final lookupCitiesAPIResponseData = getLookupCitiesAPIResponseFirestoreData(
+      lookupCitiesAPIResponse, forFieldValue);
+  final nestedData =
+      lookupCitiesAPIResponseData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields =
+      lookupCitiesAPIResponse.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getLookupCitiesAPIResponseFirestoreData(
+  LookupCitiesAPIResponseStruct? lookupCitiesAPIResponse, [
+  bool forFieldValue = false,
+]) {
+  if (lookupCitiesAPIResponse == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(lookupCitiesAPIResponse.toMap());
+
+  // Add any Firestore field values
+  lookupCitiesAPIResponse.firestoreUtilData.fieldValues
+      .forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getLookupCitiesAPIResponseListFirestoreData(
+  List<LookupCitiesAPIResponseStruct>? lookupCitiesAPIResponses,
+) =>
+    lookupCitiesAPIResponses
+        ?.map((e) => getLookupCitiesAPIResponseFirestoreData(e, true))
+        .toList() ??
+    [];

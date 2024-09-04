@@ -1,11 +1,12 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'index.dart';
+import '/backend/schema/util/firestore_util.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
-class RecordsStruct extends BaseStruct {
+class RecordsStruct extends FFFirebaseStruct {
   RecordsStruct({
     String? encodedId,
     String? localName,
@@ -13,12 +14,14 @@ class RecordsStruct extends BaseStruct {
     String? isoAlpha,
     String? recordStatus,
     String? isoNumeric,
+    FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _encodedId = encodedId,
         _localName = localName,
         _latinName = latinName,
         _isoAlpha = isoAlpha,
         _recordStatus = recordStatus,
-        _isoNumeric = isoNumeric;
+        _isoNumeric = isoNumeric,
+        super(firestoreUtilData);
 
   // "encodedId" field.
   String? _encodedId;
@@ -171,6 +174,10 @@ RecordsStruct createRecordsStruct({
   String? isoAlpha,
   String? recordStatus,
   String? isoNumeric,
+  Map<String, dynamic> fieldValues = const {},
+  bool clearUnsetFields = true,
+  bool create = false,
+  bool delete = false,
 }) =>
     RecordsStruct(
       encodedId: encodedId,
@@ -179,4 +186,68 @@ RecordsStruct createRecordsStruct({
       isoAlpha: isoAlpha,
       recordStatus: recordStatus,
       isoNumeric: isoNumeric,
+      firestoreUtilData: FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+        delete: delete,
+        fieldValues: fieldValues,
+      ),
     );
+
+RecordsStruct? updateRecordsStruct(
+  RecordsStruct? records, {
+  bool clearUnsetFields = true,
+  bool create = false,
+}) =>
+    records
+      ?..firestoreUtilData = FirestoreUtilData(
+        clearUnsetFields: clearUnsetFields,
+        create: create,
+      );
+
+void addRecordsStructData(
+  Map<String, dynamic> firestoreData,
+  RecordsStruct? records,
+  String fieldName, [
+  bool forFieldValue = false,
+]) {
+  firestoreData.remove(fieldName);
+  if (records == null) {
+    return;
+  }
+  if (records.firestoreUtilData.delete) {
+    firestoreData[fieldName] = FieldValue.delete();
+    return;
+  }
+  final clearFields =
+      !forFieldValue && records.firestoreUtilData.clearUnsetFields;
+  if (clearFields) {
+    firestoreData[fieldName] = <String, dynamic>{};
+  }
+  final recordsData = getRecordsFirestoreData(records, forFieldValue);
+  final nestedData = recordsData.map((k, v) => MapEntry('$fieldName.$k', v));
+
+  final mergeFields = records.firestoreUtilData.create || clearFields;
+  firestoreData
+      .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
+}
+
+Map<String, dynamic> getRecordsFirestoreData(
+  RecordsStruct? records, [
+  bool forFieldValue = false,
+]) {
+  if (records == null) {
+    return {};
+  }
+  final firestoreData = mapToFirestore(records.toMap());
+
+  // Add any Firestore field values
+  records.firestoreUtilData.fieldValues.forEach((k, v) => firestoreData[k] = v);
+
+  return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
+}
+
+List<Map<String, dynamic>> getRecordsListFirestoreData(
+  List<RecordsStruct>? recordss,
+) =>
+    recordss?.map((e) => getRecordsFirestoreData(e, true)).toList() ?? [];
