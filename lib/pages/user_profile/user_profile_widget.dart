@@ -489,84 +489,90 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     ),
                                   ),
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, -1.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ag1hrdqa' /* الإيميل */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 0.0, 8.0),
-                                            child: Text(
-                                              FFAppState()
-                                                      .AuthenticatedUser
-                                                      .hasEmailAddress()
-                                                  ? FFAppState()
-                                                      .AuthenticatedUser
-                                                      .emailAddress
-                                                  : ' ',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    fontFamily:
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(-1.0, -1.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ag1hrdqa' /* الإيميل */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .titleMediumFamily,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .textColor,
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    useGoogleFonts: GoogleFonts
-                                                            .asMap()
-                                                        .containsKey(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMediumFamily),
-                                                  ),
-                                            ),
-                                          ),
-                                        ],
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                      SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 12.0, 0.0, 8.0),
+                                              child: Text(
+                                                FFAppState()
+                                                        .AuthenticatedUser
+                                                        .hasEmailAddress()
+                                                    ? FFAppState()
+                                                        .AuthenticatedUser
+                                                        .emailAddress
+                                                    : ' ',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .textColor,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily),
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Builder(
                                   builder: (context) {
@@ -622,7 +628,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .success,
-                                                          fontSize: 14.0,
+                                                          fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -787,7 +793,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
-                                                                fontSize: 14.0,
+                                                                fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -810,7 +816,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                 FlutterFlowIconButton(
                                   borderRadius: 20.0,
                                   borderWidth: 1.0,
-                                  buttonSize: 48.0,
+                                  buttonSize: 28.0,
                                   icon: Icon(
                                     Icons.edit,
                                     color: FlutterFlowTheme.of(context)
