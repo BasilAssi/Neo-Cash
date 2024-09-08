@@ -70,7 +70,7 @@ class _RegisterPage1WidgetState extends State<RegisterPage1Widget> {
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ToggleIcon(
                         onPressed: () async {
-                          setState(() =>
+                          safeSetState(() =>
                               FFAppState().isEnglish = !FFAppState().isEnglish);
                           if (FFAppState().isEnglish == true) {
                             setAppLanguage(context, 'ar');

@@ -10,7 +10,6 @@ class UserProfileModel extends FlutterFlowModel<UserProfileWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Container widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Container widget.

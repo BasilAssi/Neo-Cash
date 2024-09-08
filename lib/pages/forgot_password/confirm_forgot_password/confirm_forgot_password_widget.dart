@@ -1,36 +1,41 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'confirm_reset_password_model.dart';
-export 'confirm_reset_password_model.dart';
+import 'package:provider/provider.dart';
+import 'confirm_forgot_password_model.dart';
+export 'confirm_forgot_password_model.dart';
 
-class ConfirmResetPasswordWidget extends StatefulWidget {
-  const ConfirmResetPasswordWidget({super.key});
+class ConfirmForgotPasswordWidget extends StatefulWidget {
+  const ConfirmForgotPasswordWidget({super.key});
 
   @override
-  State<ConfirmResetPasswordWidget> createState() =>
-      _ConfirmResetPasswordWidgetState();
+  State<ConfirmForgotPasswordWidget> createState() =>
+      _ConfirmForgotPasswordWidgetState();
 }
 
-class _ConfirmResetPasswordWidgetState
-    extends State<ConfirmResetPasswordWidget> {
-  late ConfirmResetPasswordModel _model;
+class _ConfirmForgotPasswordWidgetState
+    extends State<ConfirmForgotPasswordWidget> {
+  late ConfirmForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ConfirmResetPasswordModel());
+    _model = createModel(context, () => ConfirmForgotPasswordModel());
 
-    _model.firstNameTextFieldTextController1 ??= TextEditingController();
-    _model.firstNameTextFieldFocusNode1 ??= FocusNode();
+    _model.newPassTextFieldTextController ??= TextEditingController();
+    _model.newPassTextFieldFocusNode ??= FocusNode();
 
-    _model.firstNameTextFieldTextController2 ??= TextEditingController();
-    _model.firstNameTextFieldFocusNode2 ??= FocusNode();
+    _model.confirmNewPassTextFieldTextController ??= TextEditingController();
+    _model.confirmNewPassTextFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -42,6 +47,8 @@ class _ConfirmResetPasswordWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -114,7 +121,7 @@ class _ConfirmResetPasswordWidgetState
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '2cug9a5q' /* تغيير كلمة السر */,
+                                        '2sb6pvno' /* تغيير كلمة المرور */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -142,17 +149,16 @@ class _ConfirmResetPasswordWidgetState
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller:
-                                    _model.firstNameTextFieldTextController1,
-                                focusNode: _model.firstNameTextFieldFocusNode1,
+                                    _model.newPassTextFieldTextController,
+                                focusNode: _model.newPassTextFieldFocusNode,
                                 autofocus: true,
                                 textCapitalization:
                                     TextCapitalization.sentences,
-                                obscureText:
-                                    !_model.firstNameTextFieldVisibility1,
+                                obscureText: !_model.newPassTextFieldVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'ff3upr4v' /* كلمة السر الجديدة */,
+                                    'edqpsq9u' /* كلمة المرور الجديدة */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -213,14 +219,13 @@ class _ConfirmResetPasswordWidgetState
                                   fillColor:
                                       FlutterFlowTheme.of(context).accent4,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () => _model
-                                              .firstNameTextFieldVisibility1 =
-                                          !_model.firstNameTextFieldVisibility1,
+                                    onTap: () => safeSetState(
+                                      () => _model.newPassTextFieldVisibility =
+                                          !_model.newPassTextFieldVisibility,
                                     ),
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      _model.firstNameTextFieldVisibility1
+                                      _model.newPassTextFieldVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
                                       color: FlutterFlowTheme.of(context)
@@ -242,7 +247,7 @@ class _ConfirmResetPasswordWidgetState
                                                   .bodyMediumFamily),
                                     ),
                                 validator: _model
-                                    .firstNameTextFieldTextController1Validator
+                                    .newPassTextFieldTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -250,18 +255,19 @@ class _ConfirmResetPasswordWidgetState
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
-                                controller:
-                                    _model.firstNameTextFieldTextController2,
-                                focusNode: _model.firstNameTextFieldFocusNode2,
+                                controller: _model
+                                    .confirmNewPassTextFieldTextController,
+                                focusNode:
+                                    _model.confirmNewPassTextFieldFocusNode,
                                 autofocus: true,
                                 textCapitalization:
                                     TextCapitalization.sentences,
                                 obscureText:
-                                    !_model.firstNameTextFieldVisibility2,
+                                    !_model.confirmNewPassTextFieldVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'xibhd1bs' /* تأكيد كلمة السر */,
+                                    'l3y5xzu3' /* تأكيد كلمة المرور الجديدة */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -324,14 +330,15 @@ class _ConfirmResetPasswordWidgetState
                                   fillColor:
                                       FlutterFlowTheme.of(context).accent4,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model
-                                              .firstNameTextFieldVisibility2 =
-                                          !_model.firstNameTextFieldVisibility2,
+                                              .confirmNewPassTextFieldVisibility =
+                                          !_model
+                                              .confirmNewPassTextFieldVisibility,
                                     ),
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      _model.firstNameTextFieldVisibility2
+                                      _model.confirmNewPassTextFieldVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
                                       color: FlutterFlowTheme.of(context)
@@ -353,7 +360,7 @@ class _ConfirmResetPasswordWidgetState
                                                   .bodyMediumFamily),
                                     ),
                                 validator: _model
-                                    .firstNameTextFieldTextController2Validator
+                                    .confirmNewPassTextFieldTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -369,10 +376,124 @@ class _ConfirmResetPasswordWidgetState
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('otp_does_not_exist_flow');
+                          if (_model.formKey.currentState == null ||
+                              !_model.formKey.currentState!.validate()) {
+                            return;
+                          }
+                          if (_model.newPassTextFieldTextController.text ==
+                              _model
+                                  .confirmNewPassTextFieldTextController.text) {
+                            _model.isNetworkAvailableOutput =
+                                await actions.isNetworkAvailable();
+                            if (_model.isNetworkAvailableOutput == true) {
+                              _model.apiResultForgotPassword =
+                                  await AuthAndRegisterGroup.forgotPasswordCall
+                                      .call(
+                                msgId: functions.messageId(),
+                                idNumber:
+                                    FFAppState().forgotPasswordData.idNumber,
+                                idType: FFAppState().forgotPasswordData.idType,
+                                newPassword:
+                                    _model.newPassTextFieldTextController.text,
+                                otp: FFAppState().forgotPasswordData.hashedOTP,
+                                acceptLanguage:
+                                    FFLocalizations.of(context).getVariableText(
+                                  arText: 'AR',
+                                  enText: 'EN',
+                                ),
+                              );
+
+                              if ((_model.apiResultForgotPassword?.succeeded ??
+                                  true)) {
+                                if (ResponseModelStruct.maybeFromMap((_model
+                                                .apiResultForgotPassword
+                                                ?.jsonBody ??
+                                            ''))
+                                        ?.code ==
+                                    '00') {
+                                  FFAppState().updateAppSettingsStruct(
+                                    (e) => e
+                                      ..biometricEnabled = false
+                                      ..numberOfBiometricFailure = 0,
+                                  );
+                                  safeSetState(() {});
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'تم تغير كلمة المرور بنجاح',
+                                      enText:
+                                          'Password has been changed successfully.',
+                                    ),
+                                  );
+
+                                  context.pushNamed('login');
+                                } else {
+                                  if (ResponseModelStruct.maybeFromMap((_model
+                                                  .apiResultForgotPassword
+                                                  ?.jsonBody ??
+                                              ''))
+                                          ?.code ==
+                                      '1608') {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'تم استخدام كلمة المرور من قبل',
+                                        enText: 'Password is used before',
+                                      ),
+                                    );
+                                  } else {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'فشل محاولة تغير كلمة المرور',
+                                        enText:
+                                            'Password change attempt failed',
+                                      ),
+                                    );
+                                  }
+                                }
+                              } else {
+                                if (ResponseModelStruct.maybeFromMap((_model
+                                                .apiResultForgotPassword
+                                                ?.jsonBody ??
+                                            ''))
+                                        ?.code ==
+                                    '1608') {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'تم استخدام كلمة المرور من قبل',
+                                      enText: 'Password is used before',
+                                    ),
+                                  );
+                                } else {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'فشل محاولة تغير كلمة المرور',
+                                      enText: 'Password change attempt failed',
+                                    ),
+                                  );
+                                }
+                              }
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                  enText: 'Sorry, no internet connection.',
+                                ),
+                              );
+                            }
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'كلمات المرور غير متطابقة',
+                                enText: 'passwords do not match.',
+                              ),
+                            );
+                          }
+
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          'v4jg8lhr' /* تأكيد */,
+                          'corv76m6' /* تأكيد */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.9,

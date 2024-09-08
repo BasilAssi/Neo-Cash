@@ -37,6 +37,18 @@ class FFAppState extends ChangeNotifier {
       }
     });
     await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_AppSettings') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_AppSettings') ?? '{}';
+          _AppSettings =
+              SettingsAppStruct.fromSerializableMap(jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
       if (await secureStorage.read(key: 'ff_AuthenticatedUser') != null) {
         try {
           final serializedData =
@@ -110,10 +122,16 @@ class FFAppState extends ChangeNotifier {
   SettingsAppStruct get AppSettings => _AppSettings;
   set AppSettings(SettingsAppStruct value) {
     _AppSettings = value;
+    secureStorage.setString('ff_AppSettings', value.serialize());
+  }
+
+  void deleteAppSettings() {
+    secureStorage.delete(key: 'ff_AppSettings');
   }
 
   void updateAppSettingsStruct(Function(SettingsAppStruct) updateFn) {
     updateFn(_AppSettings);
+    secureStorage.setString('ff_AppSettings', _AppSettings.serialize());
   }
 
   AuthenticatedUserStruct _AuthenticatedUser = AuthenticatedUserStruct();
@@ -159,6 +177,27 @@ class FFAppState extends ChangeNotifier {
   void updateFilterTransactionsStruct(
       Function(FilterTransactionsStruct) updateFn) {
     updateFn(_filterTransactions);
+  }
+
+  ForgotPinFormDataStruct _forgotPinData = ForgotPinFormDataStruct();
+  ForgotPinFormDataStruct get forgotPinData => _forgotPinData;
+  set forgotPinData(ForgotPinFormDataStruct value) {
+    _forgotPinData = value;
+  }
+
+  void updateForgotPinDataStruct(Function(ForgotPinFormDataStruct) updateFn) {
+    updateFn(_forgotPinData);
+  }
+
+  ForgotPinFormDataStruct _forgotPasswordData = ForgotPinFormDataStruct();
+  ForgotPinFormDataStruct get forgotPasswordData => _forgotPasswordData;
+  set forgotPasswordData(ForgotPinFormDataStruct value) {
+    _forgotPasswordData = value;
+  }
+
+  void updateForgotPasswordDataStruct(
+      Function(ForgotPinFormDataStruct) updateFn) {
+    updateFn(_forgotPasswordData);
   }
 
   final _citesAPIResponseManager = FutureRequestManager<ApiCallResponse>();

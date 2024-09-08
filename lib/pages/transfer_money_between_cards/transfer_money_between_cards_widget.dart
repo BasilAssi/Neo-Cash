@@ -146,7 +146,7 @@ class _TransferMoneyBetweenCardsWidgetState
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textController2?.text = FFLocalizations.of(context).getText(
             '9d7vx8kw' /* 0.00 */,
           );
@@ -575,7 +575,7 @@ class _TransferMoneyBetweenCardsWidgetState
                                                   const Duration(milliseconds: 500),
                                               curve: Curves.ease,
                                             );
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           effect: smooth_page_indicator
                                               .ExpandingDotsEffect(
@@ -935,7 +935,7 @@ class _TransferMoneyBetweenCardsWidgetState
                                                   const Duration(milliseconds: 500),
                                               curve: Curves.ease,
                                             );
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           effect: smooth_page_indicator
                                               .ExpandingDotsEffect(

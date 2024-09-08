@@ -194,7 +194,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                       '_model.textController',
                                       const Duration(milliseconds: 300),
                                       () async {
-                                        setState(() {
+                                        safeSetState(() {
                                           _model.textController?.text =
                                               functions.updateTextfield(
                                                   _model.textController.text)!;
@@ -325,8 +325,9 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                         'gangnkno' /* +972 */,
                                       )
                                     ],
-                                    onChanged: (val) => setState(() => _model
-                                        .prefixMobileNumberDropDownValue = val),
+                                    onChanged: (val) => safeSetState(() =>
+                                        _model.prefixMobileNumberDropDownValue =
+                                            val),
                                     width: 100.0,
                                     height: 50.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -403,7 +404,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 ..prefixMobile =
                                     _model.prefixMobileNumberDropDownValue,
                             );
-                            setState(() {});
+                            safeSetState(() {});
                             _model.isNetworkAvaiableOutPut =
                                 await actions.isNetworkAvailable();
                             if (_model.isNetworkAvaiableOutPut == true) {
@@ -437,7 +438,7 @@ print('_model.apiResultSendOTPSelfReg ${_model.apiResultSendOTPSelfReg?.jsonBody
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'ffd17gua' /* التالي */,

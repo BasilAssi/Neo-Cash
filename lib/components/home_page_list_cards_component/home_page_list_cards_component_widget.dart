@@ -50,7 +50,7 @@ class _HomePageListCardsComponentWidgetState
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() => _model.apiRequestCompleter = null);
+      safeSetState(() => _model.apiRequestCompleter = null);
       await _model.waitForApiRequestCompleted();
       await widget.refresh?.call();
     });

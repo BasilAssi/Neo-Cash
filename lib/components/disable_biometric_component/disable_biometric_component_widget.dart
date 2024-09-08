@@ -112,7 +112,7 @@ class _DisableBiometricComponentWidgetState
                                         FFAppState().updateAppSettingsStruct(
                                           (e) => e..biometricEnabled = false,
                                         );
-                                        setState(() {});
+                                        safeSetState(() {});
                                         Navigator.pop(context);
                                       },
                                       text: FFLocalizations.of(context).getText(
@@ -162,7 +162,7 @@ class _DisableBiometricComponentWidgetState
                                       FFAppState().updateAppSettingsStruct(
                                         (e) => e..biometricEnabled = true,
                                       );
-                                      setState(() {});
+                                      safeSetState(() {});
                                       await widget.actionDisable?.call();
                                       Navigator.pop(context);
                                     },

@@ -9,7 +9,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'registeration06_model.dart';
@@ -31,9 +30,6 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Registeration06Model());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     _model.addresslTextFieldTextController ??= TextEditingController(
         text: FFAppState().registerationFormData.hasAddressText()
@@ -1185,7 +1181,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                             ..areaEncodedId =
                                                 _model.populationDropDownValue,
                                         );
-                                        setState(() {});
+                                        safeSetState(() {});
 
                                         context.pushNamed('registeration_07');
                                       },

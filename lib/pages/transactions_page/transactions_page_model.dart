@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class TransactionsPageModel extends FlutterFlowModel<TransactionsPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   Completer<ApiCallResponse>? apiRequestCompleter;
 
   @override

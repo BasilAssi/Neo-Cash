@@ -267,11 +267,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const TermsAndConditionsWidget(),
             ),
             FFRoute(
-              name: 'id_forgot_pin',
-              path: 'idForgotPin',
-              builder: (context, params) => const IdForgotPinWidget(),
-            ),
-            FFRoute(
               name: 'confirm_reset_password',
               path: 'confirmResetPassword',
               builder: (context, params) => const ConfirmResetPasswordWidget(),
@@ -280,26 +275,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'agent_list',
               path: 'agentList',
               builder: (context, params) => const AgentListWidget(),
-            ),
-            FFRoute(
-              name: 'otp_email_forgot_pin',
-              path: 'otpEmailForgotPin',
-              builder: (context, params) => OtpEmailForgotPinWidget(
-                phoneNumber: params.getParam(
-                  'phoneNumber',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'otp_phone_reset_password',
-              path: 'otpPhoneResetPassword',
-              builder: (context, params) => OtpPhoneResetPasswordWidget(
-                phoneNumber: params.getParam(
-                  'phoneNumber',
-                  ParamType.String,
-                ),
-              ),
             ),
             FFRoute(
               name: 'basic_infi_forgot_pin',
@@ -330,6 +305,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'otp_verify_email',
               path: 'otpVerifyEmail',
               builder: (context, params) => const OtpVerifyEmailWidget(),
+            ),
+            FFRoute(
+              name: 'enter_id_page_forgot_pin',
+              path: 'enterIdPageForgotPin',
+              builder: (context, params) => const EnterIdPageForgotPinWidget(),
+            ),
+            FFRoute(
+              name: 'otp_phone_forgot_pin',
+              path: 'otpPhoneForgotPin',
+              builder: (context, params) => const OtpPhoneForgotPinWidget(),
+            ),
+            FFRoute(
+              name: 'enter_id_page_forgot_password',
+              path: 'enterIdPageForgotPassword',
+              builder: (context, params) => const EnterIdPageForgotPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'otp_phone_forgot_password',
+              path: 'otpPhoneForgotPassword',
+              builder: (context, params) => const OtpPhoneForgotPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'confirm_forgot_password',
+              path: 'confirmForgotPassword',
+              builder: (context, params) => const ConfirmForgotPasswordWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

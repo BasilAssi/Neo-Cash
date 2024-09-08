@@ -34,7 +34,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
       vsync: this,
       length: 1,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
     animationsMap.addAll({
       'stackOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -256,7 +256,7 @@ class _QrCodePageWidgetState extends State<QrCodePageWidget>
                                         ScanMode.QR,
                                       );
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     }
                                   ][i]();
                                 },

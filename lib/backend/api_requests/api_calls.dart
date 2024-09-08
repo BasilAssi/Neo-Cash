@@ -34,6 +34,7 @@ class AuthAndRegisterGroup {
   static LoginCall loginCall = LoginCall();
   static DeleteUploadedDocumentCall deleteUploadedDocumentCall =
       DeleteUploadedDocumentCall();
+  static ForgotPasswordCall forgotPasswordCall = ForgotPasswordCall();
 }
 
 class IsRegisteredCall {
@@ -610,6 +611,49 @@ class DeleteUploadedDocumentCall {
   }
 }
 
+class ForgotPasswordCall {
+  Future<ApiCallResponse> call({
+    String? idNumber = '',
+    String? idType = '',
+    String? newPassword = '',
+    String? otp = '',
+    String? acceptLanguage = 'EN',
+    String? msgId = '',
+  }) async {
+    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
+      acceptLanguage: acceptLanguage,
+      msgId: msgId,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "newPassword": "$newPassword",
+  "otp": "$otp"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Forgot Password ',
+      apiUrl: '$baseUrl//api/v1/forgotPassword',
+      callType: ApiCallType.POST,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 /// End Auth  and Register  Group Code
 
 /// Start Card Group Code
@@ -635,6 +679,8 @@ class CardGroup {
       ListCardTransactionsCall();
   static ChangeCardStatusCall changeCardStatusCall = ChangeCardStatusCall();
   static GetCardPINCall getCardPINCall = GetCardPINCall();
+  static ChangePasswordCall changePasswordCall = ChangePasswordCall();
+  static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
 }
 
 class ListCardsCall {
@@ -883,6 +929,98 @@ class GetCardPINCall {
         response,
         r'''$.records[:].pinBlock''',
       );
+}
+
+class ChangePasswordCall {
+  Future<ApiCallResponse> call({
+    String? oldPassword = '',
+    String? newPassword = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "msgId": "$msgId",
+  "oldPassword": "$oldPassword",
+  "newPassword": "$newPassword"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Change Password',
+      apiUrl: '$baseUrl/customer/api/v1/changePassword',
+      callType: ApiCallType.POST,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ForgotDevicePinCall {
+  Future<ApiCallResponse> call({
+    String? idNumber = '',
+    String? idType = '',
+    String? birthDate = '',
+    String? password = '',
+    String? newPin = '',
+    String? otp = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "birthDate": "$birthDate",
+  "password": "$password",
+  "newPin": "$newPin",
+  "otp": "$otp"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Forgot Device Pin',
+      apiUrl: '$baseUrl/customer/api/v1/forgotPin',
+      callType: ApiCallType.POST,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 /// End Card Group Code

@@ -36,11 +36,11 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.isTimerEnded = false;
-      setState(() {});
+      safeSetState(() {});
       _model.timerController.onStartTimer();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -293,9 +293,9 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                           FFAppState().updateRegisterationFormDataStruct(
                             (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
                           );
-                          setState(() {});
+                          safeSetState(() {});
                           _model.isCompleted = true;
-                          setState(() {});
+                          safeSetState(() {});
                           _model.isNetworkAvailableOutput =
                               await actions.isNetworkAvailable();
                           if (_model.isNetworkAvailableOutput!) {
@@ -392,7 +392,7 @@ print('  _model.verifyOTPOutput ${
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: _model.pinCodeControllerValidator
@@ -427,11 +427,11 @@ print('  _model.verifyOTPOutput ${
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
-                                  if (shouldUpdate) setState(() {});
+                                  if (shouldUpdate) safeSetState(() {});
                                 },
                                 onEnded: () async {
                                   _model.isTimerEnded = true;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -475,7 +475,7 @@ print('  _model.verifyOTPOutput ${
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     _model.isTimerEnded = false;
-                                    setState(() {});
+                                    safeSetState(() {});
                                     _model.timerController.onResetTimer();
 
                                     _model.timerController.onStartTimer();

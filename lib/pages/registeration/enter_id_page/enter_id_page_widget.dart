@@ -163,7 +163,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.idTypeDropDownValue = val),
+                          safeSetState(() => _model.idTypeDropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -324,7 +324,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                       .idNumberTextFieldTextController.text
                                   ..idType = _model.idTypeDropDownValue,
                               );
-                              setState(() {});
+                              safeSetState(() {});
                               _model.isNetworkAvailableOutput =
                                   await actions.isNetworkAvailable();
                               if (_model.isNetworkAvailableOutput == true) {
@@ -429,7 +429,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                 )
                                                 .toString(),
                                         );
-                                        setState(() {});
+                                        safeSetState(() {});
                                         _model.apiResultSendOTP =
                                             await AuthAndRegisterGroup
                                                 .sendOTPToCustomerCall
@@ -498,7 +498,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                             )
                                             .toString(),
                                     );
-                                    setState(() {});
+                                    safeSetState(() {});
 
                                     context.pushNamed('phone_number');
                                   }
@@ -536,7 +536,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                               );
                             }
 
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'avin42p9' /* التالي */,

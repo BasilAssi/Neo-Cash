@@ -247,7 +247,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                               }
                               Navigator.pop(context);
                             } else {
-                              setState(() {
+                              safeSetState(() {
                                 _model.pinCodeController?.clear();
                               });
                             }
@@ -269,7 +269,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}3';
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           '7b6ufiar' /* 3 */,
@@ -307,7 +307,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}2';
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           '9c7pp1l6' /* 2 */,
@@ -345,8 +345,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}1';
-                          setState(() {});
-                          setState(() {
+                          safeSetState(() {});
+                          safeSetState(() {
                             _model.pinCodeController?.text = _model.pinCode;
                           });
                         },
@@ -401,7 +401,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}1';
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'zkjy0s3s' /* 6 */,
@@ -478,7 +478,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}4';
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             '4vu9gcdy' /* 4 */,
@@ -526,7 +526,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}1';
-                            setState(() {});
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'ae9m7z46' /* 9 */,
@@ -651,7 +651,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           onPressed: () async {
                             _model.pinCode =
                                 '${functions.removeLastCharacter(_model.pinCode)}';
-                            setState(() {});
+                            safeSetState(() {});
                             if (animationsMap[
                                     'listViewOnActionTriggerAnimation'] !=
                                 null) {
@@ -740,8 +740,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '';
-                            setState(() {});
-                            setState(() {
+                            safeSetState(() {});
+                            safeSetState(() {
                               _model.pinCodeController?.clear();
                             });
                           },

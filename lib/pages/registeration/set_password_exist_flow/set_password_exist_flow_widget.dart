@@ -357,7 +357,7 @@ class _SetPasswordExistFlowWidgetState
                                   fillColor:
                                       FlutterFlowTheme.of(context).accent4,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model.passwordTextFieldVisibility =
                                           !_model.passwordTextFieldVisibility,
                                     ),
@@ -468,7 +468,7 @@ class _SetPasswordExistFlowWidgetState
                                   fillColor:
                                       FlutterFlowTheme.of(context).accent4,
                                   suffixIcon: InkWell(
-                                    onTap: () => setState(
+                                    onTap: () => safeSetState(
                                       () => _model
                                               .confirmPasswordTextFieldVisibility =
                                           !_model
@@ -771,6 +771,22 @@ class _SetPasswordExistFlowWidgetState
                                                           'Email is already registered',
                                                     ),
                                                   );
+                                                } else if (ResponseModelStruct
+                                                            .maybeFromMap((_model
+                                                                    .apiResultCustomerRegisterDevice1
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.code ==
+                                                    '1608') {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'تم استخدام كلمة المرور من قبل',
+                                                      enText:
+                                                          'Password is used before',
+                                                    ),
+                                                  );
                                                 } else {
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
@@ -943,6 +959,22 @@ class _SetPasswordExistFlowWidgetState
                                                       );
                                                     },
                                                   );
+                                                } else if (ResponseModelStruct
+                                                            .maybeFromMap((_model
+                                                                    .apiResultCustomerRegisterDevice
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.code ==
+                                                    '1608') {
+                                                  await actions.showToast(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                      arText:
+                                                          'تم استخدام كلمة المرور من قبل',
+                                                      enText:
+                                                          'Password is used before',
+                                                    ),
+                                                  );
                                                 } else {
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
@@ -982,7 +1014,7 @@ class _SetPasswordExistFlowWidgetState
                                         }
                                       }
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'zsckrnmu' /* تسجيل */,

@@ -197,7 +197,7 @@ class _BlockCardComponentWidgetState extends State<BlockCardComponentWidget> {
                                           );
                                         }
 
-                                        setState(() {});
+                                        safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'ec1qwqbv' /* نعم */,

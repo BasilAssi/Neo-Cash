@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'set_pin_forgot_pin_widget.dart' show SetPinForgotPinWidget;
 import 'package:flutter/material.dart';
@@ -9,7 +10,6 @@ class SetPinForgotPinModel extends FlutterFlowModel<SetPinForgotPinWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
@@ -25,6 +25,11 @@ class SetPinForgotPinModel extends FlutterFlowModel<SetPinForgotPinWidget> {
     }
     return null;
   }
+
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+  bool? isNetworkAvailableOutput;
+  // Stores action output result for [Backend Call - API (Forgot Device Pin)] action in Button widget.
+  ApiCallResponse? apiResultForGotPass;
 
   @override
   void initState(BuildContext context) {

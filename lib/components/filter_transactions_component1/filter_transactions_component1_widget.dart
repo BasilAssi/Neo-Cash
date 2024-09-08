@@ -96,7 +96,7 @@ class _FilterTransactionsComponent1WidgetState
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      setState(() {});
+                      safeSetState(() {});
                       Navigator.pop(context);
                       await widget.refreshListTransaction?.call();
                     },
@@ -173,7 +173,7 @@ class _FilterTransactionsComponent1WidgetState
                           ..dateTo =
                               functions.dateFromCalculate(DateTypes.TODAY),
                       );
-                      setState(() {});
+                      safeSetState(() {});
                       Navigator.pop(context);
                       await widget.refreshListTransaction?.call();
                     },
@@ -250,7 +250,7 @@ class _FilterTransactionsComponent1WidgetState
                           ..dateTo =
                               functions.dateFromCalculate(DateTypes.TODAY),
                       );
-                      setState(() {});
+                      safeSetState(() {});
                       Navigator.pop(context);
                       await widget.refreshListTransaction?.call();
                     },

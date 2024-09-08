@@ -232,7 +232,7 @@ class _UploadDocumentsComponentWidgetState
                                           ''))
                                       ?.hasCode() ==
                                   false)) {
-                            setState(() {
+                            safeSetState(() {
                               _model.isDataUploading = false;
                               _model.uploadedLocalFile =
                                   FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -272,7 +272,7 @@ class _UploadDocumentsComponentWidgetState
                         );
                       }
 
-                      setState(() {});
+                      safeSetState(() {});
                     },
                   ),
                 ),
@@ -295,7 +295,7 @@ class _UploadDocumentsComponentWidgetState
                   if (selectedMedia != null &&
                       selectedMedia.every(
                           (m) => validateFileFormat(m.storagePath, context))) {
-                    setState(() => _model.isDataUploading = true);
+                    safeSetState(() => _model.isDataUploading = true);
                     var selectedUploadedFiles = <FFUploadedFile>[];
 
                     try {
@@ -312,11 +312,11 @@ class _UploadDocumentsComponentWidgetState
                       _model.isDataUploading = false;
                     }
                     if (selectedUploadedFiles.length == selectedMedia.length) {
-                      setState(() {
+                      safeSetState(() {
                         _model.uploadedLocalFile = selectedUploadedFiles.first;
                       });
                     } else {
-                      setState(() {});
+                      safeSetState(() {});
                       return;
                     }
                   }
@@ -348,7 +348,7 @@ class _UploadDocumentsComponentWidgetState
                         ),
                       );
                     } else {
-                      setState(() {
+                      safeSetState(() {
                         _model.isDataUploading = false;
                         _model.uploadedLocalFile =
                             FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -363,7 +363,7 @@ class _UploadDocumentsComponentWidgetState
                       );
                     }
                   } else {
-                    setState(() {
+                    safeSetState(() {
                       _model.isDataUploading = false;
                       _model.uploadedLocalFile =
                           FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -385,7 +385,7 @@ class _UploadDocumentsComponentWidgetState
                   );
                 }
 
-                setState(() {});
+                safeSetState(() {});
               },
               text: FFLocalizations.of(context).getVariableText(
                 arText: 'ارفق',

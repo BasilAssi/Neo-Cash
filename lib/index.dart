@@ -60,16 +60,10 @@ export '/pages/registeration/set_password_exist_flow/set_password_exist_flow_wid
 export '/pages/static_pages/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/pages/static_pages/terms_and_conditions/terms_and_conditions_widget.dart'
     show TermsAndConditionsWidget;
-export '/pages/forgot_pin/id_forgot_pin/id_forgot_pin_widget.dart'
-    show IdForgotPinWidget;
-export '/pages/reset_password/confirm_reset_password/confirm_reset_password_widget.dart'
+export '/pages/change_password/confirm_reset_password/confirm_reset_password_widget.dart'
     show ConfirmResetPasswordWidget;
 export '/pages/static_pages/agent_list/agent_list_widget.dart'
     show AgentListWidget;
-export '/pages/forgot_pin/otp_email_forgot_pin/otp_email_forgot_pin_widget.dart'
-    show OtpEmailForgotPinWidget;
-export '/pages/reset_password/otp_phone_reset_password/otp_phone_reset_password_widget.dart'
-    show OtpPhoneResetPasswordWidget;
 export '/pages/forgot_pin/basic_infi_forgot_pin/basic_infi_forgot_pin_widget.dart'
     show BasicInfiForgotPinWidget;
 export '/pages/registeration/success_page/success_page_widget.dart'
@@ -82,3 +76,13 @@ export '/pages/static_pages/frequently_asked_questions/frequently_asked_question
     show FrequentlyAskedQuestionsWidget;
 export '/pages/otp_verify_email/otp_verify_email_widget.dart'
     show OtpVerifyEmailWidget;
+export '/pages/forgot_pin/enter_id_page_forgot_pin/enter_id_page_forgot_pin_widget.dart'
+    show EnterIdPageForgotPinWidget;
+export '/pages/forgot_pin/otp_phone_forgot_pin/otp_phone_forgot_pin_widget.dart'
+    show OtpPhoneForgotPinWidget;
+export '/pages/forgot_password/enter_id_page_forgot_password/enter_id_page_forgot_password_widget.dart'
+    show EnterIdPageForgotPasswordWidget;
+export '/pages/forgot_password/otp_phone_forgot_password/otp_phone_forgot_password_widget.dart'
+    show OtpPhoneForgotPasswordWidget;
+export '/pages/forgot_password/confirm_forgot_password/confirm_forgot_password_widget.dart'
+    show ConfirmForgotPasswordWidget;

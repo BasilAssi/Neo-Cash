@@ -639,7 +639,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                         )
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue = val),
+                          safeSetState(() => _model.dropDownValue = val),
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -942,7 +942,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                                           .relationShipWithTrueBeneficiaryTextFieldTextController
                                           .text,
                                   );
-                                  setState(() {});
+                                  safeSetState(() {});
 
                                   context.pushNamed('registeration_06');
                                 } else {
@@ -952,7 +952,7 @@ class _Registeration05WidgetState extends State<Registeration05Widget> {
                                       ..isTrueBeneficiaryAccount =
                                           _model.dropDownValue,
                                   );
-                                  setState(() {});
+                                  safeSetState(() {});
 
                                   context.pushNamed('registeration_06');
                                 }

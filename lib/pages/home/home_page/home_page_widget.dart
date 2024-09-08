@@ -371,11 +371,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         onTap: () async {
                           if (FFAppState().isEnglish == true) {
                             FFAppState().isEnglish = false;
-                            setState(() {});
+                            safeSetState(() {});
                             setAppLanguage(context, 'ar');
                           } else {
                             FFAppState().isEnglish = true;
-                            setState(() {});
+                            safeSetState(() {});
                             setAppLanguage(context, 'en');
                           }
                         },
@@ -577,7 +577,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             child: wrapWithModel(
                               model:
                                   _model.homePageCustomerBalancesComponentModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: const HomePageCustomerBalancesComponentWidget(),
                             ),
                           ),
@@ -613,7 +613,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     children: [
                       wrapWithModel(
                         model: _model.homePageListCardsComponentModel,
-                        updateCallback: () => setState(() {}),
+                        updateCallback: () => safeSetState(() {}),
                         updateOnChange: true,
                         child: HomePageListCardsComponentWidget(
                           refresh: () async {
@@ -726,7 +726,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.homePageListTransactionComponentModel,
-                            updateCallback: () => setState(() {}),
+                            updateCallback: () => safeSetState(() {}),
                             child: const HomePageListTransactionComponentWidget(),
                           ),
                         ),

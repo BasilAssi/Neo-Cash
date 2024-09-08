@@ -1,10 +1,15 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/backend/schema/structs/index.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'set_pin_forgot_pin_model.dart';
 export 'set_pin_forgot_pin_model.dart';
 
@@ -35,6 +40,8 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -261,8 +268,91 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 8.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  if (_model.formKey.currentState == null ||
+                                      !_model.formKey.currentState!
+                                          .validate()) {
+                                    return;
+                                  }
+                                  _model.isNetworkAvailableOutput =
+                                      await actions.isNetworkAvailable();
+                                  if (_model.isNetworkAvailableOutput == true) {
+                                    _model.apiResultForGotPass = await CardGroup
+                                        .forgotDevicePinCall
+                                        .call(
+                                      msgId: functions.messageId(),
+                                      idNumber:
+                                          FFAppState().forgotPinData.idNumber,
+                                      idType: FFAppState().forgotPinData.idType,
+                                      birthDate: FFAppState()
+                                          .forgotPinData
+                                          .dateOfBirth,
+                                      password: FFAppState()
+                                          .forgotPinData
+                                          .currentPassword,
+                                      newPin: _model.pinCodeController!.text,
+                                      otp: FFAppState().forgotPinData.hashedOTP,
+                                      token: FFAppState()
+                                          .AuthenticatedUser
+                                          .accessToken,
+                                      acceptLanguage:
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                        arText: 'AR',
+                                        enText: 'EN',
+                                      ),
+                                    );
+
+                                    if ((_model
+                                            .apiResultForGotPass?.succeeded ??
+                                        true)) {
+                                      if (ResponseModelStruct.maybeFromMap(
+                                                  (_model.apiResultForGotPass
+                                                          ?.jsonBody ??
+                                                      ''))
+                                              ?.code ==
+                                          '00') {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'تم تغير الرمز السري بنجاح',
+                                            enText:
+                                                'The pin code has been changed successfully.',
+                                          ),
+                                        );
+
+                                        context.pushNamed('home_page');
+                                      } else {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'فشل تغير الرمز السري',
+                                            enText:
+                                                'Failed to change pin code.',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'خطأ',
+                                          enText: 'error',
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                        enText:
+                                            'Sorry, no internet connection.',
+                                      ),
+                                    );
+                                  }
+
+                                  safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'ju2oiiam' /* تأكيد */,
