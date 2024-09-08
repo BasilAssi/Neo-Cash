@@ -35,19 +35,6 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.isNetworkAvailable = await actions.isNetworkAvailable();
       if (_model.isNetworkAvailable == true) {
-        _model.apiResultCardInfo = await CardGroup.getCardAccountInfoCall.call(
-          msgId: functions.messageId(),
-          token: FFAppState().AuthenticatedUser.accessToken,
-          acceptLanguage: FFLocalizations.of(context).getVariableText(
-            arText: 'AR',
-            enText: 'EN',
-          ),
-          cardToken: functions.getCardToken(
-              FFAppState().AuthenticatedUser.idNumber,
-              FFAppState().cardData.expiryDate,
-              functions.getLast4Digits(FFAppState().cardData.cardNumber)),
-        );
-
         _model.apiResultListCards = await CardGroup.listCardsCall.call(
           msgId: functions.messageId(),
           idNumber: FFAppState().AuthenticatedUser.idNumber,
@@ -67,11 +54,6 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                       (_model.apiResultListCards?.jsonBody ?? ''))
                   ?.code ==
               '00') {
-            _model.cardbalance = '${CardGroup.getCardAccountInfoCall.cardBalance(
-                  (_model.apiResultCardInfo?.jsonBody ?? ''),
-                ).toString()} ${CardGroup.getCardAccountInfoCall.currencyCode(
-                  (_model.apiResultCardInfo?.jsonBody ?? ''),
-                ).toString()}';
             safeSetState(() {});
           }
         }
@@ -186,7 +168,21 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                 text: TextSpan(
                                   children: [
                                     TextSpan(
-                                      text: _model.cardbalance!,
+                                      text: CardGroup.listCardsCall
+                                                  .availableBalance(
+                                                (_model.apiResultListCards
+                                                        ?.jsonBody ??
+                                                    ''),
+                                              ) !=
+                                              null
+                                          ? CardGroup.listCardsCall
+                                              .availableBalance(
+                                                (_model.apiResultListCards
+                                                        ?.jsonBody ??
+                                                    ''),
+                                              )
+                                              .toString()
+                                          : '',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
@@ -206,8 +202,26 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                     ),
                                     TextSpan(
                                       text: FFLocalizations.of(context).getText(
-                                        'jci1ufx5' /*  */,
+                                        'jci1ufx5' /*   */,
                                       ),
+                                      style: const TextStyle(),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          CardGroup.listCardsCall.currencyCode(
+                                                    (_model.apiResultListCards
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  ) !=
+                                                  null
+                                              ? CardGroup.listCardsCall
+                                                  .currencyCode(
+                                                    (_model.apiResultListCards
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  )
+                                                  .toString()
+                                              : '',
                                       style: const TextStyle(),
                                     )
                                   ],
@@ -264,36 +278,40 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Image.asset(
-                                            'assets/images/aa9na3zzj.webp',
+                                            'assets/images/whitevisa.png',
                                             width: 63.0,
                                             height: 45.0,
                                             fit: BoxFit.fitWidth,
                                           ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Text(
-                                            FFAppState().cardData.nameOnCard,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 20.0,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMediumFamily),
-                                                ),
+                                        Expanded(
+                                          child: Align(
+                                            alignment:
+                                                const AlignmentDirectional(1.0, 0.0),
+                                            child: Text(
+                                              FFAppState().cardData.nameOnCard,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily),
+                                                      ),
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -322,11 +340,23 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 4.0),
                                                 child: Text(
-                                                  functions
-                                                      .addSpaceBtnCardNumber(
-                                                          FFAppState()
-                                                              .cardData
-                                                              .cardNumber)!,
+                                                  functions.addSpaceBtnCardNumber(
+                                                      CardGroup.listCardsCall
+                                                                  .cardNumber(
+                                                                (_model.apiResultListCards
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                              ) !=
+                                                              null
+                                                          ? CardGroup
+                                                              .listCardsCall
+                                                              .cardNumber(
+                                                                (_model.apiResultListCards
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                              )
+                                                              .toString()
+                                                          : '')!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -366,7 +396,22 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              FFAppState().cardData.cardCvc,
+                                              CardGroup.listCardsCall.cardCvc(
+                                                        (_model.apiResultListCards
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      ) !=
+                                                      null
+                                                  ? CardGroup.listCardsCall
+                                                      .cardCvc(
+                                                        (_model.apiResultListCards
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )
+                                                      .toString()
+                                                  : FFAppState()
+                                                      .cardData
+                                                      .cardCvc,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium

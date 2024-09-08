@@ -449,7 +449,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Card balance',
     },
     'jci1ufx5': {
-      'ar': '',
+      'ar': ' ',
       'en': '',
     },
     'kbbahzti': {

@@ -721,6 +721,43 @@ class ListCardsCall {
       alwaysAllowBody: false,
     );
   }
+
+  dynamic cardNumber(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].cardNumber''',
+      );
+  dynamic currencyCode(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].currencyCode''',
+      );
+  dynamic availableBalance(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].availableBalance''',
+      );
+  dynamic cardCvc(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].cardCvc''',
+      );
+  dynamic firstName(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].firstName''',
+      );
+  dynamic middleName(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].middleName''',
+      );
+  dynamic lastName(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].lastName''',
+      );
+  dynamic nameOnCard(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].nameOnCard''',
+      );
+  dynamic expiryDate(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].expiryDate''',
+      );
 }
 
 class GetCustomerBalancesCall {
