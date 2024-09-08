@@ -284,34 +284,31 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                             fit: BoxFit.fitWidth,
                                           ),
                                         ),
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(1.0, 0.0),
-                                            child: Text(
-                                              FFAppState().cardData.nameOnCard,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMediumFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMediumFamily),
-                                                      ),
-                                            ),
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(1.0, 0.0),
+                                          child: Text(
+                                            FFAppState().cardData.nameOnCard,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMediumFamily),
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -365,7 +362,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMediumFamily,
-                                                        fontSize: 20.0,
+                                                        fontSize: 18.0,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -420,7 +417,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryText,
-                                                    fontSize: 18.0,
+                                                    fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                     useGoogleFonts:
                                                         GoogleFonts.asMap()
@@ -474,7 +471,7 @@ CODE */
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryText,
-                                                    fontSize: 18.0,
+                                                    fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                     useGoogleFonts:
                                                         GoogleFonts.asMap()
