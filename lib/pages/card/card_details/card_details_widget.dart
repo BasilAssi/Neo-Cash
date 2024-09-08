@@ -281,7 +281,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                             'assets/images/whitevisa.png',
                                             width: 63.0,
                                             height: 45.0,
-                                            fit: BoxFit.fitWidth,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                         Align(
