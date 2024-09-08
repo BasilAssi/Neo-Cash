@@ -12,8 +12,6 @@ class CardDetailsModel extends FlutterFlowModel<CardDetailsWidget> {
 
   // Stores action output result for [Custom Action - isNetworkAvailable] action in card_details widget.
   bool? isNetworkAvailable;
-  // Stores action output result for [Backend Call - API (Get Card Account Info)] action in card_details widget.
-  ApiCallResponse? apiResultCardInfo;
   // Stores action output result for [Backend Call - API (List Cards)] action in card_details widget.
   ApiCallResponse? apiResultListCards;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in IconButton widget.
