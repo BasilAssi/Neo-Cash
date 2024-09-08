@@ -731,7 +731,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               ..dateOfBirth =
                                   functions.formatDate(_model.datePicked),
                           );
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         child: Container(
                           height: 55.0,
@@ -1046,16 +1046,16 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             '5bjewnop' /* أنثى */,
                           )
                         ],
-                        onChanged: (val) =>
-                            setState(() => _model.genderDropDownValue = val),
+                        onChanged: (val) => safeSetState(
+                            () => _model.genderDropDownValue = val),
                         width: 300.0,
-                        height: 56.0,
+                        height: 60.0,
                         textStyle: FlutterFlowTheme.of(context)
                             .labelLarge
                             .override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).labelLargeFamily,
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context)
@@ -1176,16 +1176,16 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     .records
                                     .map((e) => e.latinName)
                                     .toList(),
-                            onChanged: (val) => setState(
+                            onChanged: (val) => safeSetState(
                                 () => _model.dropDownNationaltyValue = val),
                             width: 300.0,
-                            height: 56.0,
+                            height: 60.0,
                             textStyle: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .labelLargeFamily,
-                                  fontSize: 18.0,
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -1261,7 +1261,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               ..birthOfPlace =
                                   _model.cityTextFieldTextController.text,
                           );
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -1321,7 +1321,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ..nationality =
                                           _model.dropDownNationaltyValue,
                                   );
-                                  setState(() {});
+                                  safeSetState(() {});
 
                                   context.pushNamed(
                                     'registeration_03',

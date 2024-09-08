@@ -167,7 +167,7 @@ class _LoginWidgetState extends State<LoginWidget>
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ToggleIcon(
                       onPressed: () async {
-                        setState(() =>
+                        safeSetState(() =>
                             FFAppState().isEnglish = !FFAppState().isEnglish);
                         if (FFAppState().isEnglish == true) {
                           setAppLanguage(context, 'ar');
@@ -290,7 +290,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 '_model.textFieldValueTextController',
                                                 const Duration(milliseconds: 300),
                                                 () async {
-                                                  setState(() {
+                                                  safeSetState(() {
                                                     _model.textFieldValueTextController
                                                             ?.text =
                                                         functions.updateTextfield(
@@ -478,8 +478,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   'mydegl1b' /* +972 */,
                                                 )
                                               ],
-                                              onChanged: (val) => setState(() =>
-                                                  _model.dropDownValue = val),
+                                              onChanged: (val) => safeSetState(
+                                                  () => _model.dropDownValue =
+                                                      val),
                                               width: 100.0,
                                               height: 48.0,
                                               textStyle:
@@ -640,7 +641,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               Icons.key_rounded,
                                             ),
                                             suffixIcon: InkWell(
-                                              onTap: () => setState(
+                                              onTap: () => safeSetState(
                                                 () => _model
                                                         .passwordVisibility =
                                                     !_model.passwordVisibility,
@@ -773,7 +774,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .textFieldValueTextController
                                                           .text,
                                                   );
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   _model.parsedJWT =
                                                       await actions.parseJWT(
                                                     FFAppState()
@@ -832,9 +833,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     );
                                                   }
                                                 } else {
-                                                  if (LoginAPIResponseStruct
-                                                              .maybeFromMap((_model
-                                                                      .apiResultLogin
+                                                  if (LoginAPIResponseStruct.maybeFromMap(
+                                                              (_model.apiResultLogin
                                                                       ?.jsonBody ??
                                                                   ''))
                                                           ?.code ==
@@ -849,9 +849,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             'Sorry, no internet connection.',
                                                       ),
                                                     );
-                                                  } else if (LoginAPIResponseStruct
-                                                              .maybeFromMap((_model
-                                                                      .apiResultLogin
+                                                  } else if (LoginAPIResponseStruct.maybeFromMap(
+                                                              (_model.apiResultLogin
                                                                       ?.jsonBody ??
                                                                   ''))
                                                           ?.code ==
@@ -869,13 +868,29 @@ class _LoginWidgetState extends State<LoginWidget>
 
                                                     context.pushNamed(
                                                         'enter_id_page');
+                                                  } else if (LoginAPIResponseStruct.maybeFromMap(
+                                                              (_model.apiResultLogin
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '1523') {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش.',
+                                                        enText:
+                                                            'Your account is closed, please contact neocash.',
+                                                      ),
+                                                    );
                                                   } else if (LoginAPIResponseStruct
                                                               .maybeFromMap((_model
                                                                       .apiResultLogin
                                                                       ?.jsonBody ??
                                                                   ''))
                                                           ?.code ==
-                                                      '1523') {
+                                                      '1011') {
                                                     await actions.showToast(
                                                       FFLocalizations.of(
                                                               context)
@@ -911,7 +926,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 );
                                               }
 
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
@@ -1002,7 +1017,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 options: const AuthenticationOptions(
                                                                     biometricOnly:
                                                                         true));
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                       }
 
                                                       if (_model
@@ -1015,7 +1030,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ..numberOfBiometricFailure =
                                                                 0,
                                                         );
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                         _model.isNetworkAvailableOutput1 =
                                                             await actions
                                                                 .isNetworkAvailable();
@@ -1049,7 +1064,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             ''))
                                                                     ?.accessToken,
                                                             );
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                             _model.parsedJWTBiometric =
                                                                 await actions
                                                                     .parseJWT(
@@ -1205,7 +1220,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               ..incrementNumberOfBiometricFailure(
                                                                   1),
                                                           );
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         } else {
                                                           // Action 17   increment  number of biometric failure
                                                           FFAppState()
@@ -1214,7 +1229,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               ..biometricEnabled =
                                                                   false,
                                                           );
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         }
                                                       }
                                                     } else {
@@ -1262,7 +1277,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       );
                                                     }
 
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   },
                                                   text: '',
                                                   icon: Icon(

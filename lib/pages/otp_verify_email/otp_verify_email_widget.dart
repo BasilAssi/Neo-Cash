@@ -35,11 +35,11 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.isTimerEnded = false;
-      setState(() {});
+      safeSetState(() {});
       _model.timerController.onStartTimer();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -280,7 +280,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                             _model.pinCodeController!.text,
                           );
                           _model.isCompleted = true;
-                          setState(() {});
+                          safeSetState(() {});
                           _model.isNetworkAvailableOutput =
                               await actions.isNetworkAvailable();
                           if (_model.isNetworkAvailableOutput!) {
@@ -345,7 +345,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: _model.pinCodeControllerValidator
@@ -380,11 +380,11 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
-                                  if (shouldUpdate) setState(() {});
+                                  if (shouldUpdate) safeSetState(() {});
                                 },
                                 onEnded: () async {
                                   _model.isTimerEnded = true;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -474,7 +474,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                                             ),
                                           );
                                           _model.isTimerEnded = false;
-                                          setState(() {});
+                                          safeSetState(() {});
                                           _model.timerController.onResetTimer();
 
                                           _model.timerController.onStartTimer();
@@ -510,7 +510,7 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                                       );
                                     }
 
-                                    setState(() {});
+                                    safeSetState(() {});
                                   },
                                   child: Text(
                                     FFLocalizations.of(context).getText(

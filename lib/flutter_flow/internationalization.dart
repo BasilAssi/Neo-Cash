@@ -1200,7 +1200,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ype1jx4m': {
       'ar': 'تسجيل',
-      'en': 'Registration',
+      'en': 'Register',
     },
     'tt0swmgt': {
       'ar': 'الحقل مطلوب',
@@ -2557,62 +2557,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // id_forgot_pin
-  {
-    'fvzfxcqw': {
-      'ar': 'نسيت كلمة المرور؟',
-      'en': 'Forgot Password?',
-    },
-    'eh9aeadi': {
-      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
-      'en': 'Please select your Identification Type',
-    },
-    'r6nzurqp': {
-      'ar': 'الهوية  الفلسطينية',
-      'en': 'Palestinian Identity',
-    },
-    'jq2h3kwv': {
-      'ar': 'هوية القدس',
-      'en': 'Jerusalem Identity',
-    },
-    'b2r8gjy6': {
-      'ar': 'اختيار نوع الهوية ',
-      'en': 'Select ID type',
-    },
-    'r87qx93n': {
-      'ar': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
-    'wuwr4gcb': {
-      'ar': 'الرجاء ادخال رقم الهوية بشكل صحيح',
-      'en': 'Please enter your ID number correctly',
-    },
-    'v854yanp': {
-      'ar': 'ادخال رقم الهوية',
-      'en': 'ID number',
-    },
-    '4ydgmlj5': {
-      'ar': 'التالي',
-      'en': 'Next',
-    },
-    'nm2mbj7p': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
   // confirm_reset_password
   {
     '2cug9a5q': {
-      'ar': 'تغيير كلمة السر',
+      'ar': 'تغيير كلمة المرور',
       'en': 'Change Password',
     },
     'ff3upr4v': {
-      'ar': 'كلمة السر الجديدة',
+      'ar': 'كلمة المرور الحالية',
       'en': 'New password',
     },
+    'bpv1pkml': {
+      'ar': 'كلمة المرور الجديدة',
+      'en': '',
+    },
     'xibhd1bs': {
-      'ar': 'تأكيد كلمة السر',
+      'ar': 'تأكيد كلمة المرور الجديدة',
       'en': 'Confirm password',
+    },
+    '6xbm4scs': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'waw6vcko': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
+    },
+    'xzymsnvc': {
+      'ar': 'Field is required',
+      'en': 'Field is required',
+    },
+    '691jtwsm': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
+    },
+    'lboxqnwa': {
+      'ar': 'Field is required',
+      'en': 'Field is required',
+    },
+    '5onal60i': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
     },
     'v4jg8lhr': {
       'ar': 'تأكيد',
@@ -2634,68 +2619,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // otp_email_forgot_pin
-  {
-    'de1cfdxp': {
-      'ar': 'تأكيد إيميلك',
-      'en': 'Confirm your Email',
-    },
-    'nyn9hgws': {
-      'ar': 'بعتنالك رمز تحقق على إيميلك',
-      'en': 'We sent you a verification code to your email.',
-    },
-    '0u39zzxp': {
-      'ar': '\n',
-      'en': '',
-    },
-    'k2o5twom': {
-      'ar': 'xxxxx@gmail.com',
-      'en': 'xxxxx@gmail.com',
-    },
-    'skza5adf': {
-      'ar': '\n',
-      'en': '',
-    },
-    'l9zv2cch': {
-      'ar': 'إعادة إرسال رمز التحقق',
-      'en': 'Resend verification code',
-    },
-    'qh3rq7c0': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
-  // otp_phone_reset_password
-  {
-    'f89lzjja': {
-      'ar': 'تأكيد رقم التلفون',
-      'en': 'Confirm Phone Number',
-    },
-    '8870pp45': {
-      'ar': 'بعتنالك رمز تحقق على تليفونك  رقم',
-      'en': 'We sent you a verification code on your phone number',
-    },
-    'j4stwg16': {
-      'ar': '\n',
-      'en': '',
-    },
-    'a3gk6gid': {
-      'ar': '\n',
-      'en': '',
-    },
-    'pxsjwm17': {
-      'ar': ' الرجاء إدخال الرمز',
-      'en': 'Please enter the verification code',
-    },
-    '9em721k3': {
-      'ar': 'إعادة إرسال رمز التحقق',
-      'en': 'Resend verification code',
-    },
-    '0q24e3y0': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
   // basic_infi_forgot_pin
   {
     'hfce6qeb': {
@@ -2707,24 +2630,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Date of Birth',
     },
     'vwbeeetc': {
-      'ar': ' مكان الميلاد ',
-      'en': 'Place of Birth',
+      'ar': 'كلمة المرور الحالية',
+      'en': 'Current Password',
     },
-    'mh8eec57': {
-      'ar': '',
-      'en': '',
-    },
-    'axjjzo1w': {
-      'ar': 'المدينة',
-      'en': 'City',
-    },
-    '35hkijz2': {
-      'ar': 'Search for an item...',
+    'xyv5l5tm': {
+      'ar': 'كلمة المرور الحالية',
       'en': '',
     },
     'takmk9lm': {
       'ar': 'التالي',
       'en': 'Next',
+    },
+    'wu1u3yv7': {
+      'ar': 'Field is required',
+      'en': 'Field is required',
+    },
+    'fo2wcgpk': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
     },
     'aizmi0ii': {
       'ar': 'Home',
@@ -2848,6 +2771,249 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'inwrazsk': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // enter_id_page_forgot_pin
+  {
+    'hee3e4h1': {
+      'ar': '  هويتك الشخصية',
+      'en': '',
+    },
+    'mgiwm0nz': {
+      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
+      'en': '',
+    },
+    'wuag5s66': {
+      'ar': 'الهوية  الفلسطينية',
+      'en': '',
+    },
+    '2owpc0x1': {
+      'ar': 'هوية القدس',
+      'en': '',
+    },
+    'h419mtia': {
+      'ar': 'هوية 48',
+      'en': '',
+    },
+    'lbpsj9hu': {
+      'ar': 'جواز السفر',
+      'en': '',
+    },
+    'cijkktic': {
+      'ar': 'اختيار نوع الهوية ',
+      'en': '',
+    },
+    'agvcvuqj': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'fwtmlkeo': {
+      'ar': 'الرجاء إدخال رقم الهوية بشكل صحيح',
+      'en': '',
+    },
+    '4fcvpklz': {
+      'ar': ' رقم الهوية',
+      'en': '',
+    },
+    'mn60mwwl': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    '2u53gt79': {
+      'ar': 'الحقل لا يمكن ان يكون أقل من 10 خانات',
+      'en': '',
+    },
+    'r2ogxk2h': {
+      'ar': 'رقم الهوية اقل من 9  ارقام',
+      'en': '',
+    },
+    '09qszrvh': {
+      'ar': 'الحقل لا يمكن ان يكون أكبر من 10 خانات',
+      'en': '',
+    },
+    '143w5asr': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'cwsk4o59': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // otp_phone_forgot_pin
+  {
+    'bgqb2ioh': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    'qm1h1z55': {
+      'ar': ' أرسلنالك رمز تحقق على تليفونك  رقم:  ',
+      'en': '',
+    },
+    '9rqdog66': {
+      'ar': '\n',
+      'en': '',
+    },
+    'vjg78hih': {
+      'ar': '\n',
+      'en': '',
+    },
+    'fn6f3pzw': {
+      'ar': '  الرجاء إدخال الرمز',
+      'en': '',
+    },
+    'ucahdamy': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    'h6i318f6': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // enter_id_page_forgot_password
+  {
+    'bvpaznti': {
+      'ar': '  هويتك الشخصية',
+      'en': '',
+    },
+    'ot6z8cbr': {
+      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
+      'en': '',
+    },
+    '382qm4sy': {
+      'ar': 'الهوية  الفلسطينية',
+      'en': '',
+    },
+    '1sxsz5bu': {
+      'ar': 'هوية القدس',
+      'en': '',
+    },
+    '7b0t6go8': {
+      'ar': 'هوية 48',
+      'en': '',
+    },
+    'fti5wvz8': {
+      'ar': 'جواز السفر',
+      'en': '',
+    },
+    '9mp5d3qd': {
+      'ar': 'اختيار نوع الهوية ',
+      'en': '',
+    },
+    'vsmxky0m': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'at1quu1z': {
+      'ar': 'الرجاء إدخال رقم الهوية بشكل صحيح',
+      'en': '',
+    },
+    'lonwiwbb': {
+      'ar': ' رقم الهوية',
+      'en': '',
+    },
+    'qge4504d': {
+      'ar': 'التالي',
+      'en': '',
+    },
+    'od60cyt0': {
+      'ar': 'الحقل لا يمكن ان يكون أقل من 10 خانات',
+      'en': '',
+    },
+    'ig90grnc': {
+      'ar': 'رقم الهوية اقل من 9  ارقام',
+      'en': '',
+    },
+    '5191d3yv': {
+      'ar': 'الحقل لا يمكن ان يكون أكبر من 10 خانات',
+      'en': '',
+    },
+    'sodw4ip3': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'jiwcbcrz': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // otp_phone_forgot_password
+  {
+    'q3n3vtoe': {
+      'ar': 'تأكيد رقم التلفون',
+      'en': '',
+    },
+    'oqv7ut56': {
+      'ar': ' أرسلنالك رمز تحقق على تليفونك  رقم:  ',
+      'en': '',
+    },
+    'wlxozkwp': {
+      'ar': '\n',
+      'en': '',
+    },
+    '5vwxjzb4': {
+      'ar': '\n',
+      'en': '',
+    },
+    'o87lm0cu': {
+      'ar': '  الرجاء إدخال الرمز',
+      'en': '',
+    },
+    'uozvedle': {
+      'ar': 'إعادة إرسال رمز التحقق',
+      'en': '',
+    },
+    'bdoxr5rb': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // confirm_forgot_password
+  {
+    '2sb6pvno': {
+      'ar': 'تغيير كلمة المرور',
+      'en': '',
+    },
+    'edqpsq9u': {
+      'ar': 'كلمة المرور الجديدة',
+      'en': '',
+    },
+    'l3y5xzu3': {
+      'ar': 'تأكيد كلمة المرور الجديدة',
+      'en': '',
+    },
+    '1tkcmxb0': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'vhv0avid': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'kq8nfhqt': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'w0zd4h1o': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'm2886y5m': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    '06evdp52': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'corv76m6': {
+      'ar': 'تأكيد',
+      'en': '',
+    },
+    '2b6qtbns': {
       'ar': 'Home',
       'en': '',
     },

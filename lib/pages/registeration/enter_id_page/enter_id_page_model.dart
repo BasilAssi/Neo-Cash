@@ -11,7 +11,6 @@ class EnterIdPageModel extends FlutterFlowModel<EnterIdPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for idTypeDropDown widget.
   String? idTypeDropDownValue;

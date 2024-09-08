@@ -230,7 +230,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'c4fvj91y' /* حفظ */,

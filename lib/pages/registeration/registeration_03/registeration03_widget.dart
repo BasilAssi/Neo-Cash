@@ -684,8 +684,8 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                             'g5scq0d2' /* لا */,
                           )
                         ],
-                        onChanged: (val) =>
-                            setState(() => _model.dropDownRESIDENTValue = val),
+                        onChanged: (val) => safeSetState(
+                            () => _model.dropDownRESIDENTValue = val),
                         width: 300.0,
                         height: 56.0,
                         textStyle: FlutterFlowTheme.of(context)
@@ -768,7 +768,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                             't62zgocx' /* لا */,
                           )
                         ],
-                        onChanged: (val) => setState(
+                        onChanged: (val) => safeSetState(
                             () => _model.dropDownisUsPassportHolderValue = val),
                         width: 300.0,
                         height: 56.0,
@@ -1148,7 +1148,7 @@ class _Registeration03WidgetState extends State<Registeration03Widget> {
                                         .montlyIncomeTextFieldTextController
                                         .text,
                                 );
-                                setState(() {});
+                                safeSetState(() {});
 
                                 context.pushNamed('registeration_04');
                               },

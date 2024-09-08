@@ -1,45 +1,46 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'otp_phone_reset_password_model.dart';
-export 'otp_phone_reset_password_model.dart';
+import 'package:provider/provider.dart';
+import 'otp_phone_forgot_pin_model.dart';
+export 'otp_phone_forgot_pin_model.dart';
 
-class OtpPhoneResetPasswordWidget extends StatefulWidget {
-  const OtpPhoneResetPasswordWidget({
-    super.key,
-    required this.phoneNumber,
-  });
-
-  final String? phoneNumber;
+class OtpPhoneForgotPinWidget extends StatefulWidget {
+  const OtpPhoneForgotPinWidget({super.key});
 
   @override
-  State<OtpPhoneResetPasswordWidget> createState() =>
-      _OtpPhoneResetPasswordWidgetState();
+  State<OtpPhoneForgotPinWidget> createState() =>
+      _OtpPhoneForgotPinWidgetState();
 }
 
-class _OtpPhoneResetPasswordWidgetState
-    extends State<OtpPhoneResetPasswordWidget> {
-  late OtpPhoneResetPasswordModel _model;
+class _OtpPhoneForgotPinWidgetState extends State<OtpPhoneForgotPinWidget> {
+  late OtpPhoneForgotPinModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OtpPhoneResetPasswordModel());
+    _model = createModel(context, () => OtpPhoneForgotPinModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.isTimerEnded = false;
+      safeSetState(() {});
       _model.timerController.onStartTimer();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -51,6 +52,8 @@ class _OtpPhoneResetPasswordWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -110,7 +113,7 @@ class _OtpPhoneResetPasswordWidgetState
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'f89lzjja' /* تأكيد رقم التلفون */,
+                                  'bgqb2ioh' /* تأكيد رقم التلفون */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -151,7 +154,7 @@ class _OtpPhoneResetPasswordWidgetState
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      '8870pp45' /* بعتنالك رمز تحقق على تليفونك  ... */,
+                                      'qm1h1z55' /*  أرسلنالك رمز تحقق على تليفونك... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -172,7 +175,7 @@ class _OtpPhoneResetPasswordWidgetState
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'j4stwg16' /* 
+                                      '9rqdog66' /* 
  */
                                       ,
                                     ),
@@ -184,7 +187,13 @@ class _OtpPhoneResetPasswordWidgetState
                                     ),
                                   ),
                                   TextSpan(
-                                    text: widget.phoneNumber!,
+                                    text: FFAppState()
+                                            .AuthenticatedUser
+                                            .hasMobileNumber()
+                                        ? FFAppState()
+                                            .AuthenticatedUser
+                                            .mobileNumber
+                                        : '',
                                     style: TextStyle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -194,7 +203,7 @@ class _OtpPhoneResetPasswordWidgetState
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'a3gk6gid' /* 
+                                      'vjg78hih' /* 
  */
                                       ,
                                     ),
@@ -202,7 +211,7 @@ class _OtpPhoneResetPasswordWidgetState
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'pxsjwm17' /*  الرجاء إدخال الرمز */,
+                                      'fn6f3pzw' /*   الرجاء إدخال الرمز */,
                                     ),
                                     style: TextStyle(
                                       color: FlutterFlowTheme.of(context)
@@ -230,7 +239,7 @@ class _OtpPhoneResetPasswordWidgetState
                       PinCodeTextField(
                         autoDisposeControllers: false,
                         appContext: context,
-                        length: 6,
+                        length: 5,
                         textStyle: FlutterFlowTheme.of(context)
                             .bodyLarge
                             .override(
@@ -267,10 +276,74 @@ class _OtpPhoneResetPasswordWidgetState
                         controller: _model.pinCodeController,
                         onChanged: (_) {},
                         onCompleted: (_) async {
+                          _model.oTPHashedSHA256base64 =
+                              await actions.encodeSHA256(
+                            _model.pinCodeController!.text,
+                          );
+                          FFAppState().updateForgotPinDataStruct(
+                            (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
+                          );
+                          safeSetState(() {});
                           _model.isCompleted = true;
-                          setState(() {});
+                          safeSetState(() {});
+                          _model.isNetworkAvailableOutput =
+                              await actions.isNetworkAvailable();
+                          if (_model.isNetworkAvailableOutput!) {
+                            _model.verifyOTPOutput =
+                                await AuthAndRegisterGroup.verifyOTPCall.call(
+                              destination:
+                                  '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                              destinationType: ' MOBILE_NUMBER',
+                              msgId: functions.messageId(),
+                              otp: FFAppState().forgotPinData.hashedOTP,
+                              setConfirmed: 'false',
+                              idType: FFAppState()
+                                      .registerationFormData
+                                      .hasIdType()
+                                  ? FFAppState().registerationFormData.idType
+                                  : '',
+                              idNumber: FFAppState().forgotPinData.idNumber,
+                              operationType: 'FORGOT_PIN',
+                              acceptLanguage:
+                                  FFLocalizations.of(context).getVariableText(
+                                arText: 'AR',
+                                enText: 'EN',
+                              ),
+                            );
 
-                          context.pushNamed('registeration_01');
+                            if ((_model.verifyOTPOutput?.succeeded ?? true)) {
+                              if (ResponseModelStruct.maybeFromMap(
+                                          (_model.verifyOTPOutput?.jsonBody ??
+                                              ''))
+                                      ?.code ==
+                                  '00') {
+                                context.pushNamed('basic_infi_forgot_pin');
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'رمز المصادقة غير صحيح',
+                                    enText: 'Invalid authentication code',
+                                  ),
+                                );
+                              }
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'خطأ',
+                                  enText: 'Error',
+                                ),
+                              );
+                            }
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'عذرا لا يتوفر انترنت',
+                                enText: 'please check internet connection',
+                              ),
+                            );
+                          }
+
+                          safeSetState(() {});
                         },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: _model.pinCodeControllerValidator
@@ -305,11 +378,11 @@ class _OtpPhoneResetPasswordWidgetState
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
-                                  if (shouldUpdate) setState(() {});
+                                  if (shouldUpdate) safeSetState(() {});
                                 },
                                 onEnded: () async {
                                   _model.isTimerEnded = true;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -352,15 +425,92 @@ class _OtpPhoneResetPasswordWidgetState
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.isTimerEnded = false;
-                                    setState(() {});
-                                    _model.timerController.onResetTimer();
+                                    _model.isNetworkAvailableOutput1 =
+                                        await actions.isNetworkAvailable();
+                                    if (_model.isNetworkAvailableOutput ==
+                                        true) {
+                                      _model.apiResultSendOTP =
+                                          await AuthAndRegisterGroup
+                                              .sendOTPToCustomerCall
+                                              .call(
+                                        msgId: functions.messageId(),
+                                        idNumber: FFAppState()
+                                            .AuthenticatedUser
+                                            .idNumber,
+                                        idType: FFAppState()
+                                            .AuthenticatedUser
+                                            .idType,
+                                        destinationType: ' MOBILE_NUMBER',
+                                        operationType: 'FORGOT_PIN',
+                                        destination:
+                                            '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                        acceptLanguage:
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                          arText: 'AR',
+                                          enText: 'EN',
+                                        ),
+                                      );
 
-                                    _model.timerController.onStartTimer();
+                                      if ((_model.apiResultSendOTP?.succeeded ??
+                                          true)) {
+                                        if (ResponseModelStruct.maybeFromMap(
+                                                    (_model.apiResultSendOTP
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.code ==
+                                            '00') {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'تم إرسال رمز التحقق بنجاح  على الموبايل ${FFAppState().AuthenticatedUser.mobileNumber}',
+                                              enText:
+                                                  'Verification code has been sent successfully to your phone number ${FFAppState().AuthenticatedUser.mobileNumber}',
+                                            ),
+                                          );
+                                          _model.isTimerEnded = false;
+                                          safeSetState(() {});
+                                          _model.timerController.onResetTimer();
+
+                                          _model.timerController.onStartTimer();
+                                        } else {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'فشل إرسال رمز التحقق',
+                                              enText:
+                                                  'Failed to send verification code.',
+                                            ),
+                                          );
+                                        }
+                                      } else {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'فشل إرسال رمز التحقق',
+                                            enText:
+                                                'Failed to send verification code.',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'عذرا لا يوجد اتصال بالانترنت',
+                                          enText:
+                                              'Sorry, no internet connection.',
+                                        ),
+                                      );
+                                    }
+
+                                    safeSetState(() {});
                                   },
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '9em721k3' /* إعادة إرسال رمز التحقق */,
+                                      'ucahdamy' /* إعادة إرسال رمز التحقق */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium

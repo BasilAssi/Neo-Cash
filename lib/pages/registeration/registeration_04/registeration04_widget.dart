@@ -688,7 +688,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.isPEPDropDownValue = val),
+                            safeSetState(() => _model.isPEPDropDownValue = val),
                         width: 300.0,
                         height: 56.0,
                         textStyle: FlutterFlowTheme.of(context)
@@ -1225,7 +1225,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                                             .pepPositionTextFieldTextController
                                             .text,
                                     );
-                                    setState(() {});
+                                    safeSetState(() {});
 
                                     context.pushNamed('registeration_05');
                                   } else {
@@ -1235,7 +1235,7 @@ class _Registeration04WidgetState extends State<Registeration04Widget> {
                                         ..isTrueBeneficiaryAccount =
                                             _model.isPEPDropDownValue,
                                     );
-                                    setState(() {});
+                                    safeSetState(() {});
 
                                     context.pushNamed('registeration_05');
                                   }

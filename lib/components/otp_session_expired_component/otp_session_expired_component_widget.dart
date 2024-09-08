@@ -144,7 +144,7 @@ class _OtpSessionExpiredComponentWidgetState
                                     );
                                   }
 
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'weybzccb' /* موافق */,

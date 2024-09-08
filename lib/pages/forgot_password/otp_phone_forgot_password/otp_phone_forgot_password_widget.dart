@@ -1,45 +1,47 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'otp_email_forgot_pin_model.dart';
-export 'otp_email_forgot_pin_model.dart';
+import 'package:provider/provider.dart';
+import 'otp_phone_forgot_password_model.dart';
+export 'otp_phone_forgot_password_model.dart';
 
-class OtpEmailForgotPinWidget extends StatefulWidget {
-  const OtpEmailForgotPinWidget({
-    super.key,
-    required this.phoneNumber,
-  });
-
-  final String? phoneNumber;
+class OtpPhoneForgotPasswordWidget extends StatefulWidget {
+  const OtpPhoneForgotPasswordWidget({super.key});
 
   @override
-  State<OtpEmailForgotPinWidget> createState() =>
-      _OtpEmailForgotPinWidgetState();
+  State<OtpPhoneForgotPasswordWidget> createState() =>
+      _OtpPhoneForgotPasswordWidgetState();
 }
 
-class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
-  late OtpEmailForgotPinModel _model;
+class _OtpPhoneForgotPasswordWidgetState
+    extends State<OtpPhoneForgotPasswordWidget> {
+  late OtpPhoneForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OtpEmailForgotPinModel());
+    _model = createModel(context, () => OtpPhoneForgotPasswordModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.isTimerEnded = false;
+      safeSetState(() {});
       _model.timerController.onStartTimer();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -51,6 +53,8 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -83,13 +87,6 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.5,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-              ),
-              Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -117,7 +114,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'de1cfdxp' /* تأكيد إيميلك */,
+                                  'q3n3vtoe' /* تأكيد رقم التلفون */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -158,7 +155,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                 children: [
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'nyn9hgws' /* بعتنالك رمز تحقق على إيميلك */,
+                                      'oqv7ut56' /*  أرسلنالك رمز تحقق على تليفونك... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -167,7 +164,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .bodyMediumFamily,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .textColor,
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -179,7 +176,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      '0u39zzxp' /* 
+                                      'wlxozkwp' /* 
  */
                                       ,
                                     ),
@@ -191,9 +188,13 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: FFLocalizations.of(context).getText(
-                                      'k2o5twom' /* xxxxx@gmail.com */,
-                                    ),
+                                    text: FFAppState()
+                                            .AuthenticatedUser
+                                            .hasMobileNumber()
+                                        ? FFAppState()
+                                            .forgotPasswordData
+                                            .mobileNumber
+                                        : '',
                                     style: TextStyle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -203,11 +204,21 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      'skza5adf' /* 
+                                      '5vwxjzb4' /* 
  */
                                       ,
                                     ),
                                     style: const TextStyle(),
+                                  ),
+                                  TextSpan(
+                                    text: FFLocalizations.of(context).getText(
+                                      'o87lm0cu' /*   الرجاء إدخال الرمز */,
+                                    ),
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
+                                      fontSize: 18.0,
+                                    ),
                                   )
                                 ],
                                 style: FlutterFlowTheme.of(context)
@@ -229,7 +240,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                       PinCodeTextField(
                         autoDisposeControllers: false,
                         appContext: context,
-                        length: 6,
+                        length: 5,
                         textStyle: FlutterFlowTheme.of(context)
                             .bodyLarge
                             .override(
@@ -251,7 +262,7 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                         pinTheme: PinTheme(
                           fieldHeight: 74.0,
                           fieldWidth: 54.0,
-                          borderWidth: 2.0,
+                          borderWidth: 1.0,
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
@@ -266,15 +277,71 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                         controller: _model.pinCodeController,
                         onChanged: (_) {},
                         onCompleted: (_) async {
-                          _model.isCompleted = true;
-                          setState(() {});
-                          _model.encodedOTP = await actions.encodeSHA256(
+                          _model.oTPHashedSHA256base64 =
+                              await actions.encodeSHA256(
                             _model.pinCodeController!.text,
                           );
+                          FFAppState().updateForgotPasswordDataStruct(
+                            (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
+                          );
+                          safeSetState(() {});
+                          _model.isCompleted = true;
+                          safeSetState(() {});
+                          _model.isNetworkAvailableOutput =
+                              await actions.isNetworkAvailable();
+                          if (_model.isNetworkAvailableOutput!) {
+                            _model.verifyOTPOutput =
+                                await AuthAndRegisterGroup.verifyOTPCall.call(
+                              destination:
+                                  '${FFAppState().forgotPasswordData.prefixMobile}${FFAppState().forgotPasswordData.mobileNumber}',
+                              destinationType: ' MOBILE_NUMBER',
+                              msgId: functions.messageId(),
+                              otp: FFAppState().forgotPasswordData.hashedOTP,
+                              setConfirmed: 'false',
+                              idType: FFAppState().forgotPasswordData.idType,
+                              idNumber:
+                                  FFAppState().forgotPasswordData.idNumber,
+                              operationType: 'FORGOT_PASSWORD',
+                              acceptLanguage:
+                                  FFLocalizations.of(context).getVariableText(
+                                arText: 'AR',
+                                enText: 'EN',
+                              ),
+                            );
 
-                          context.pushNamed('login');
+                            if ((_model.verifyOTPOutput?.succeeded ?? true)) {
+                              if (ResponseModelStruct.maybeFromMap(
+                                          (_model.verifyOTPOutput?.jsonBody ??
+                                              ''))
+                                      ?.code ==
+                                  '00') {
+                                context.pushNamed('confirm_forgot_password');
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'رمز المصادقة غير صحيح',
+                                    enText: 'Invalid authentication code',
+                                  ),
+                                );
+                              }
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'خطأ',
+                                  enText: 'Error',
+                                ),
+                              );
+                            }
+                          } else {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'عذرا لا يتوفر انترنت',
+                                enText: 'please check internet connection',
+                              ),
+                            );
+                          }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: _model.pinCodeControllerValidator
@@ -309,11 +376,11 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
-                                  if (shouldUpdate) setState(() {});
+                                  if (shouldUpdate) safeSetState(() {});
                                 },
                                 onEnded: () async {
                                   _model.isTimerEnded = true;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -321,6 +388,8 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .headlineSmallFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textColor,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -354,15 +423,92 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.isTimerEnded = false;
-                                    setState(() {});
-                                    _model.timerController.onResetTimer();
+                                    _model.isNetworkAvailableOutput1 =
+                                        await actions.isNetworkAvailable();
+                                    if (_model.isNetworkAvailableOutput ==
+                                        true) {
+                                      _model.apiResultSendOTP =
+                                          await AuthAndRegisterGroup
+                                              .sendOTPToCustomerCall
+                                              .call(
+                                        msgId: functions.messageId(),
+                                        idNumber: FFAppState()
+                                            .AuthenticatedUser
+                                            .idNumber,
+                                        idType: FFAppState()
+                                            .AuthenticatedUser
+                                            .idType,
+                                        destinationType: ' MOBILE_NUMBER',
+                                        operationType: 'FORGOT_PIN',
+                                        destination:
+                                            '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                        acceptLanguage:
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                          arText: 'AR',
+                                          enText: 'EN',
+                                        ),
+                                      );
 
-                                    _model.timerController.onStartTimer();
+                                      if ((_model.apiResultSendOTP?.succeeded ??
+                                          true)) {
+                                        if (ResponseModelStruct.maybeFromMap(
+                                                    (_model.apiResultSendOTP
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.code ==
+                                            '00') {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'تم إرسال رمز التحقق بنجاح  على الموبايل ${FFAppState().AuthenticatedUser.mobileNumber}',
+                                              enText:
+                                                  'Verification code has been sent successfully to your phone number ${FFAppState().AuthenticatedUser.mobileNumber}',
+                                            ),
+                                          );
+                                          _model.isTimerEnded = false;
+                                          safeSetState(() {});
+                                          _model.timerController.onResetTimer();
+
+                                          _model.timerController.onStartTimer();
+                                        } else {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'فشل إرسال رمز التحقق',
+                                              enText:
+                                                  'Failed to send verification code.',
+                                            ),
+                                          );
+                                        }
+                                      } else {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'فشل إرسال رمز التحقق',
+                                            enText:
+                                                'Failed to send verification code.',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'عذرا لا يوجد اتصال بالانترنت',
+                                          enText:
+                                              'Sorry, no internet connection.',
+                                        ),
+                                      );
+                                    }
+
+                                    safeSetState(() {});
                                   },
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'l9zv2cch' /* إعادة إرسال رمز التحقق */,
+                                      'uozvedle' /* إعادة إرسال رمز التحقق */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -370,6 +516,8 @@ class _OtpEmailForgotPinWidgetState extends State<OtpEmailForgotPinWidget> {
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .textColor,
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,

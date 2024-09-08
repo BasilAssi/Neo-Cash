@@ -479,7 +479,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                     const Duration(milliseconds: 500),
                                                 curve: Curves.ease,
                                               );
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             effect: smooth_page_indicator
                                                 .ExpandingDotsEffect(
@@ -644,7 +644,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                           'uf70ikbn' /* +970 */,
                                         )
                                       ],
-                                      onChanged: (val) => setState(
+                                      onChanged: (val) => safeSetState(
                                           () => _model.dropDownValue = val),
                                       width: 100.0,
                                       height: 60.0,

@@ -14,6 +14,7 @@ export 'lookup_cities_a_p_i_response_struct.dart';
 export 'response_model_struct.dart';
 export 'transaction_data_struct.dart';
 export 'customer_documents_struct.dart';
+export 'forgot_pin_form_data_struct.dart';
 export 'is_registered_a_p_i_response_struct.dart';
 export 'is_registered_data_struct.dart';
 export 'login_a_p_i_response_struct.dart';

@@ -750,7 +750,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                               );
                                             }
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             height: 45.0,

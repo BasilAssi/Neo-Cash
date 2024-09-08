@@ -1543,7 +1543,7 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                           .familyNameENTextFieldTextController
                                           .text,
                                   );
-                                  setState(() {});
+                                  safeSetState(() {});
 
                                   context.pushNamed(
                                     'registeration_02',

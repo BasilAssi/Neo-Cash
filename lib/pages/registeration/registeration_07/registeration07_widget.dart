@@ -836,7 +836,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent4,
                             suffixIcon: InkWell(
-                              onTap: () => setState(
+                              onTap: () => safeSetState(
                                 () => _model.passwordTextFieldVisibility =
                                     !_model.passwordTextFieldVisibility,
                               ),
@@ -933,7 +933,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context).accent4,
                             suffixIcon: InkWell(
-                              onTap: () => setState(
+                              onTap: () => safeSetState(
                                 () => _model.confirmTextFieldVisibility =
                                     !_model.confirmTextFieldVisibility,
                               ),
@@ -1089,7 +1089,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                 child: Checkbox(
                                   value: _model.checkboxValue ??= false,
                                   onChanged: (newValue) async {
-                                    setState(
+                                    safeSetState(
                                         () => _model.checkboxValue = newValue!);
                                   },
                                   side: BorderSide(
@@ -1404,7 +1404,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                             .emailTextFieldTextController
                                                             .text,
                                                     );
-                                                    setState(() {});
+                                                    safeSetState(() {});
 
                                                     context.pushNamed(
                                                       'registeration_08',
@@ -1523,7 +1523,7 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                               );
                                             }
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                     text: FFLocalizations.of(context).getText(
                                       'ype1jx4m' /* تسجيل */,

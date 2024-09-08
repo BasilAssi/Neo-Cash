@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -36,9 +35,6 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => TransactionsPageModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
@@ -128,7 +124,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                                         MediaQuery.sizeOf(context).width * 0.7,
                                     child: FilterTransactionsComponent1Widget(
                                       refreshListTransaction: () async {
-                                        setState(() =>
+                                        safeSetState(() =>
                                             _model.apiRequestCompleter = null);
                                         await _model
                                             .waitForApiRequestCompleted();

@@ -178,7 +178,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                               builder: (context) => Switch.adaptive(
                                 value: _model.switchValue!,
                                 onChanged: (newValue) async {
-                                  setState(
+                                  safeSetState(
                                       () => _model.switchValue = newValue);
                                   if (newValue) {
                                     await showDialog(
@@ -210,7 +210,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                 child:
                                                     EnableBiometricComponentWidget(
                                                   actionDisable: () async {
-                                                    setState(() {
+                                                    safeSetState(() {
                                                       _model.switchValue =
                                                           false;
                                                     });
@@ -252,7 +252,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                 child:
                                                     DisableBiometricComponentWidget(
                                                   actionDisable: () async {
-                                                    setState(() {
+                                                    safeSetState(() {
                                                       _model.switchValue = true;
                                                     });
                                                   },

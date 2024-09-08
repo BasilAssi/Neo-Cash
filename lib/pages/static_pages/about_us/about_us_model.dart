@@ -7,10 +7,6 @@ class AboutUsModel extends FlutterFlowModel<AboutUsWidget> {
 
   bool? selectedValue = true;
 
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 

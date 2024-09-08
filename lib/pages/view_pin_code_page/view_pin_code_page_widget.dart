@@ -35,13 +35,13 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
+      safeSetState(() {
         _model.pinCodeController?.text = widget.pinCode!;
       });
       _model.timerController.onStartTimer();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -247,7 +247,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                               onChanged: (value, displayTime, shouldUpdate) {
                                 _model.timerMilliseconds = value;
                                 _model.timerValue = displayTime;
-                                if (shouldUpdate) setState(() {});
+                                if (shouldUpdate) safeSetState(() {});
                               },
                               onEnded: () async {
                                 context.safePop();
