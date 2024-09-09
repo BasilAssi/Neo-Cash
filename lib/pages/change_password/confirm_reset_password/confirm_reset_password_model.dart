@@ -20,12 +20,44 @@ class ConfirmResetPasswordModel
   late bool newPassTextFieldVisibility;
   String? Function(BuildContext, String?)?
       newPassTextFieldTextControllerValidator;
+  String? _newPassTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'nuxhazj7' /* Field is required */,
+      );
+    }
+
+    if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '5jznvy9c' /* يجب أن تكون كلمة المرور بطول ل... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for confirmNewPassTextField widget.
   FocusNode? confirmNewPassTextFieldFocusNode;
   TextEditingController? confirmNewPassTextFieldTextController;
   late bool confirmNewPassTextFieldVisibility;
   String? Function(BuildContext, String?)?
       confirmNewPassTextFieldTextControllerValidator;
+  String? _confirmNewPassTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'szccmsm4' /* Field is required */,
+      );
+    }
+
+    if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'vu3icv7j' /* يجب أن تكون كلمة المرور بطول ل... */,
+      );
+    }
+    return null;
+  }
+
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Change Password)] action in Button widget.
@@ -35,7 +67,11 @@ class ConfirmResetPasswordModel
   void initState(BuildContext context) {
     oldPassTextFieldVisibility = false;
     newPassTextFieldVisibility = false;
+    newPassTextFieldTextControllerValidator =
+        _newPassTextFieldTextControllerValidator;
     confirmNewPassTextFieldVisibility = false;
+    confirmNewPassTextFieldTextControllerValidator =
+        _confirmNewPassTextFieldTextControllerValidator;
   }
 
   @override

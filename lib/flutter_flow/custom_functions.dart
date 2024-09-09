@@ -291,7 +291,7 @@ bool? isIDNumberValid(
 
   // Check for PASSPORT type
   if (identityType == 'PASSPORT') {
-    if (idNum.length >= 4) {
+    if (idNum.length >= 4 && RegExp(r'^[A-Za-z0-9]+$').hasMatch(idNum)) {
       isValid = true;
     }
   }
