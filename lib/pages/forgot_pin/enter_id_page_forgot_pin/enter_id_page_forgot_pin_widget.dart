@@ -324,52 +324,35 @@ class _EnterIdPageForgotPinWidgetState
                                 ..idType = _model.idTypeDropDownValue,
                             );
                             safeSetState(() {});
-                            if ((FFAppState()
-                                            .AuthenticatedUser
-                                            .mobileNumberPrefix ==
-                                        '') &&
-                                (FFAppState()
-                                            .AuthenticatedUser
-                                            .mobileNumber ==
-                                        '')) {
-                              _model.isNetworkAvailableOutput =
-                                  await actions.isNetworkAvailable();
-                              if (_model.isNetworkAvailableOutput == true) {
-                                _model.apiResultSendOTP =
-                                    await AuthAndRegisterGroup
-                                        .sendOTPToCustomerCall
-                                        .call(
-                                  msgId: functions.messageId(),
-                                  idNumber: FFAppState().forgotPinData.idNumber,
-                                  idType: FFAppState().forgotPinData.idType,
-                                  destination:
-                                      '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
-                                  destinationType: 'MOBILE_NUMBER',
-                                  operationType: 'FORGOT_PIN',
-                                  acceptLanguage: FFLocalizations.of(context)
-                                      .getVariableText(
-                                    arText: 'AR',
-                                    enText: 'EN',
-                                  ),
-                                );
+                            _model.isNetworkAvailableOutput =
+                                await actions.isNetworkAvailable();
+                            if (_model.isNetworkAvailableOutput == true) {
+                              _model.apiResultSendOTP =
+                                  await AuthAndRegisterGroup
+                                      .sendOTPToCustomerCall
+                                      .call(
+                                msgId: functions.messageId(),
+                                idNumber: FFAppState().forgotPinData.idNumber,
+                                idType: FFAppState().forgotPinData.idType,
+                                destination:
+                                    '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                destinationType: 'MOBILE_NUMBER',
+                                operationType: 'FORGOT_PIN',
+                                acceptLanguage:
+                                    FFLocalizations.of(context).getVariableText(
+                                  arText: 'AR',
+                                  enText: 'EN',
+                                ),
+                              );
 
-                                if ((_model.apiResultSendOTP?.succeeded ??
-                                    true)) {
-                                  if (ResponseModelStruct.maybeFromMap((_model
-                                                  .apiResultSendOTP?.jsonBody ??
-                                              ''))
-                                          ?.code ==
-                                      '00') {
-                                    context.pushNamed('otp_phone_forgot_pin');
-                                  } else {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'خطأ',
-                                        enText: 'error',
-                                      ),
-                                    );
-                                  }
+                              if ((_model.apiResultSendOTP?.succeeded ??
+                                  true)) {
+                                if (ResponseModelStruct.maybeFromMap((_model
+                                                .apiResultSendOTP?.jsonBody ??
+                                            ''))
+                                        ?.code ==
+                                    '00') {
+                                  context.pushNamed('otp_phone_forgot_pin');
                                 } else {
                                   await actions.showToast(
                                     FFLocalizations.of(context).getVariableText(
@@ -381,11 +364,18 @@ class _EnterIdPageForgotPinWidgetState
                               } else {
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
-                                    arText: 'عذرا لا يوجد اتصال بالانترنت',
-                                    enText: 'Sorry, no internet connection.',
+                                    arText: 'خطأ',
+                                    enText: 'error',
                                   ),
                                 );
                               }
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                  enText: 'Sorry, no internet connection.',
+                                ),
+                              );
                             }
                           } else {
                             await actions.showToast(

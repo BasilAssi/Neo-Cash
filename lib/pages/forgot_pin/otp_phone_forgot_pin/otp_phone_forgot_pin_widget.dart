@@ -293,7 +293,7 @@ class _OtpPhoneForgotPinWidgetState extends State<OtpPhoneForgotPinWidget> {
                                 await AuthAndRegisterGroup.verifyOTPCall.call(
                               destination:
                                   '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
-                              destinationType: ' MOBILE_NUMBER',
+                              destinationType: 'MOBILE_NUMBER',
                               msgId: functions.messageId(),
                               otp: FFAppState().forgotPinData.hashedOTP,
                               setConfirmed: 'false',

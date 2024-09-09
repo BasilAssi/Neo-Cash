@@ -628,7 +628,7 @@ class ForgotPasswordCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Forgot Password ',
-      apiUrl: '$baseUrl//api/v1/forgotPassword',
+      apiUrl: '$baseUrl/customer/api/v1/forgotPassword',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
