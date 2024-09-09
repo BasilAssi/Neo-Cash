@@ -189,7 +189,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                   ),
                                   TextSpan(
                                     text: FFAppState()
-                                            .AuthenticatedUser
+                                            .forgotPasswordData
                                             .hasMobileNumber()
                                         ? FFAppState()
                                             .forgotPasswordData
