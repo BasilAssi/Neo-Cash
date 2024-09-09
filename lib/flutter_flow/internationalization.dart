@@ -536,13 +536,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'بصمة التعريف',
       'en': 'Fingerprint ID',
     },
-    'd3mi7j0c': {
-      'ar': 'نسيت كلمة المرور؟',
-      'en': '',
-    },
     '5035sg3i': {
       'ar': 'نسيت الرمز السري؟',
       'en': 'Forgot your PIN?',
+    },
+    'd3mi7j0c': {
+      'ar': 'تغيير كلمة المرور؟',
+      'en': '',
     },
     'c1m639px': {
       'ar': 'Home',
@@ -2793,73 +2793,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'inwrazsk': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // enter_id_page_forgot_pin
-  {
-    'hee3e4h1': {
-      'ar': '  هويتك الشخصية',
-      'en': '',
-    },
-    'mgiwm0nz': {
-      'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
-      'en': '',
-    },
-    'wuag5s66': {
-      'ar': 'الهوية  الفلسطينية',
-      'en': '',
-    },
-    '2owpc0x1': {
-      'ar': 'هوية القدس',
-      'en': '',
-    },
-    'h419mtia': {
-      'ar': 'هوية 48',
-      'en': '',
-    },
-    'lbpsj9hu': {
-      'ar': 'جواز السفر',
-      'en': '',
-    },
-    'cijkktic': {
-      'ar': 'اختيار نوع الهوية ',
-      'en': '',
-    },
-    'agvcvuqj': {
-      'ar': 'Search for an item...',
-      'en': '',
-    },
-    'fwtmlkeo': {
-      'ar': 'الرجاء إدخال رقم الهوية بشكل صحيح',
-      'en': '',
-    },
-    '4fcvpklz': {
-      'ar': ' رقم الهوية',
-      'en': '',
-    },
-    'mn60mwwl': {
-      'ar': 'التالي',
-      'en': '',
-    },
-    '2u53gt79': {
-      'ar': 'الحقل لا يمكن ان يكون أقل من 10 خانات',
-      'en': '',
-    },
-    'r2ogxk2h': {
-      'ar': 'رقم الهوية اقل من 9  ارقام',
-      'en': '',
-    },
-    '09qszrvh': {
-      'ar': 'الحقل لا يمكن ان يكون أكبر من 10 خانات',
-      'en': '',
-    },
-    '143w5asr': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
-    },
-    'cwsk4o59': {
       'ar': 'Home',
       'en': '',
     },

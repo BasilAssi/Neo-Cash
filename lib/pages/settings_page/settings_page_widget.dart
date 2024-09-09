@@ -1,8 +1,12 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/disable_biometric_component/disable_biometric_component_widget.dart';
 import '/components/enable_biometric_component/enable_biometric_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -291,7 +295,69 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('confirm_reset_password');
+                            FFAppState().updateForgotPinDataStruct(
+                              (e) => e
+                                ..idNumber =
+                                    FFAppState().AuthenticatedUser.idNumber
+                                ..idType =
+                                    FFAppState().AuthenticatedUser.idType,
+                            );
+                            safeSetState(() {});
+                            _model.isNetworkAvailableOutput =
+                                await actions.isNetworkAvailable();
+                            if (_model.isNetworkAvailableOutput == true) {
+                              _model.apiResultSendOTP =
+                                  await AuthAndRegisterGroup
+                                      .sendOTPToCustomerCall
+                                      .call(
+                                msgId: functions.messageId(),
+                                idNumber: FFAppState().forgotPinData.idNumber,
+                                idType: FFAppState().forgotPinData.idType,
+                                destination:
+                                    '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                destinationType: 'MOBILE_NUMBER',
+                                operationType: 'FORGOT_PIN',
+                                acceptLanguage:
+                                    FFLocalizations.of(context).getVariableText(
+                                  arText: 'AR',
+                                  enText: 'EN',
+                                ),
+                              );
+
+                              if ((_model.apiResultSendOTP?.succeeded ??
+                                  true)) {
+                                if (ResponseModelStruct.maybeFromMap((_model
+                                                .apiResultSendOTP?.jsonBody ??
+                                            ''))
+                                        ?.code ==
+                                    '00') {
+                                  context.pushNamed('otp_phone_forgot_pin');
+                                } else {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'خطأ',
+                                      enText: 'error',
+                                    ),
+                                  );
+                                }
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'خطأ',
+                                    enText: 'error',
+                                  ),
+                                );
+                              }
+                            } else {
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                  enText: 'Sorry, no internet connection.',
+                                ),
+                              );
+                            }
+
+                            safeSetState(() {});
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -313,7 +379,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Icon(
-                                        Icons.password_outlined,
+                                        Icons.password_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         size: 32.0,
@@ -325,7 +391,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                         8.0, 12.0, 8.0, 8.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'd3mi7j0c' /* نسيت كلمة المرور؟ */,
+                                        '5035sg3i' /* نسيت الرمز السري؟ */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -380,7 +446,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('enter_id_page_forgot_pin');
+                            context.pushNamed('confirm_reset_password');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -402,7 +468,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Icon(
-                                        Icons.question_mark,
+                                        Icons.question_mark_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         size: 32.0,
@@ -414,7 +480,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                         8.0, 12.0, 8.0, 8.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '5035sg3i' /* نسيت الرمز السري؟ */,
+                                        'd3mi7j0c' /* تغيير كلمة المرور؟ */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
