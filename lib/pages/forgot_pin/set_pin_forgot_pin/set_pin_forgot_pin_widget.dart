@@ -1,9 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -309,6 +309,8 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                                     'The pin code has been changed successfully.',
                                               ),
                                             );
+                                            FFAppState().forgotPinData =
+                                                ForgotPinFormDataStruct();
 
                                             context.pushNamed('home_page');
                                           } else {
@@ -322,13 +324,30 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                             );
                                           }
                                         } else {
-                                          await actions.showToast(
-                                            FFLocalizations.of(context)
-                                                .getVariableText(
-                                              arText: 'خطأ',
-                                              enText: 'error',
-                                            ),
-                                          );
+                                          if (ResponseModelStruct.maybeFromMap(
+                                                      (_model.apiResultForGotPass
+                                                              ?.jsonBody ??
+                                                          ''))
+                                                  ?.code ==
+                                              '1717') {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText:
+                                                    'الرجاء التاكد من القيم التي قمت بادخالها',
+                                                enText:
+                                                    'Please check the values ​​you entered.',
+                                              ),
+                                            );
+                                          } else {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'خطأ',
+                                                enText: 'error',
+                                              ),
+                                            );
+                                          }
                                         }
                                       } else {
                                         await actions.showToast(
