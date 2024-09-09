@@ -536,6 +536,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'بصمة التعريف',
       'en': 'Fingerprint ID',
     },
+    'd3mi7j0c': {
+      'ar': 'نسيت كلمة المرور؟',
+      'en': '',
+    },
     '5035sg3i': {
       'ar': 'نسيت الرمز السري؟',
       'en': 'Forgot your PIN?',
