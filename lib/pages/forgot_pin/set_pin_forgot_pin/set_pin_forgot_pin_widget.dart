@@ -110,291 +110,289 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                   topRight: Radius.circular(25.0),
                 ),
               ),
-              child: Stack(
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/pin-set.png',
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 0.0),
-                          child: Form(
-                            key: _model.formKey,
-                            autovalidateMode: AutovalidateMode.disabled,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 24.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'pfhb06nu' /* أدخل الرمز السري الجديد الخاص ... */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 18.0,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 0.0),
-                                  child: PinCodeTextField(
-                                    autoDisposeControllers: false,
-                                    appContext: context,
-                                    length: 4,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLargeFamily,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLargeFamily),
-                                        ),
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    enableActiveFill: false,
-                                    autoFocus: true,
-                                    enablePinAutofill: false,
-                                    errorTextSpace: 16.0,
-                                    showCursor: true,
-                                    cursorColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    obscureText: false,
-                                    keyboardType: TextInputType.number,
-                                    pinTheme: PinTheme(
-                                      fieldHeight: 44.0,
-                                      fieldWidth: 44.0,
-                                      borderWidth: 1.0,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(12.0),
-                                        bottomRight: Radius.circular(12.0),
-                                        topLeft: Radius.circular(12.0),
-                                        topRight: Radius.circular(12.0),
-                                      ),
-                                      shape: PinCodeFieldShape.box,
-                                      activeColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      inactiveColor:
-                                          FlutterFlowTheme.of(context)
-                                              .textFieldBorder,
-                                      selectedColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                                    controller: _model.pinCodeController,
-                                    onChanged: (_) {},
-                                    autovalidateMode: AutovalidateMode.disabled,
-                                    validator: _model.pinCodeControllerValidator
-                                        .asValidator(context),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 8.0, 0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '82drjyts' /* الرمز المكون من 4 أرقام سيستخد... */,
-                                    ),
-                                    textAlign: TextAlign.justify,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .textAppbarColor,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/pin-set.png',
+                        width: 300.0,
+                        height: 200.0,
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
-                    child: Padding(
+                    Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 8.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  if (_model.formKey.currentState == null ||
-                                      !_model.formKey.currentState!
-                                          .validate()) {
-                                    return;
-                                  }
-                                  _model.isNetworkAvailableOutput =
-                                      await actions.isNetworkAvailable();
-                                  if (_model.isNetworkAvailableOutput == true) {
-                                    _model.apiResultForGotPass = await CardGroup
-                                        .forgotDevicePinCall
-                                        .call(
-                                      msgId: functions.messageId(),
-                                      idNumber:
-                                          FFAppState().forgotPinData.idNumber,
-                                      idType: FFAppState().forgotPinData.idType,
-                                      birthDate: FFAppState()
-                                          .forgotPinData
-                                          .dateOfBirth,
-                                      password: FFAppState()
-                                          .forgotPinData
-                                          .currentPassword,
-                                      newPin: _model.pinCodeController!.text,
-                                      otp: FFAppState().forgotPinData.hashedOTP,
-                                      token: FFAppState()
-                                          .AuthenticatedUser
-                                          .accessToken,
-                                      acceptLanguage:
-                                          FFLocalizations.of(context)
-                                              .getVariableText(
-                                        arText: 'AR',
-                                        enText: 'EN',
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                      child: Form(
+                        key: _model.formKey,
+                        autovalidateMode: AutovalidateMode.disabled,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 24.0, 0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'pfhb06nu' /* أدخل الرمز السري الجديد الخاص ... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .textColor,
+                                        fontSize: 18.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily),
                                       ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 0.0, 0.0),
+                              child: PinCodeTextField(
+                                autoDisposeControllers: false,
+                                appContext: context,
+                                length: 4,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyLargeFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily),
+                                    ),
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                enableActiveFill: false,
+                                autoFocus: true,
+                                enablePinAutofill: false,
+                                errorTextSpace: 16.0,
+                                showCursor: true,
+                                cursorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                obscureText: false,
+                                keyboardType: TextInputType.number,
+                                pinTheme: PinTheme(
+                                  fieldHeight: 44.0,
+                                  fieldWidth: 44.0,
+                                  borderWidth: 1.0,
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(12.0),
+                                    bottomRight: Radius.circular(12.0),
+                                    topLeft: Radius.circular(12.0),
+                                    topRight: Radius.circular(12.0),
+                                  ),
+                                  shape: PinCodeFieldShape.box,
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  inactiveColor: FlutterFlowTheme.of(context)
+                                      .textFieldBorder,
+                                  selectedColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                ),
+                                controller: _model.pinCodeController,
+                                onChanged: (_) {},
+                                autovalidateMode: AutovalidateMode.disabled,
+                                validator: _model.pinCodeControllerValidator
+                                    .asValidator(context),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '82drjyts' /* الرمز المكون من 4 أرقام سيستخد... */,
+                                ),
+                                textAlign: TextAlign.justify,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .textAppbarColor,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 100.0, 0.0, 8.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    if (_model.formKey.currentState == null ||
+                                        !_model.formKey.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
+                                    _model.isValidPINResult =
+                                        await actions.isValidPIN(
+                                      _model.pinCodeController!.text,
+                                      FFLocalizations.of(context).languageCode,
                                     );
-
-                                    if ((_model
-                                            .apiResultForGotPass?.succeeded ??
-                                        true)) {
-                                      if (ResponseModelStruct.maybeFromMap(
-                                                  (_model.apiResultForGotPass
-                                                          ?.jsonBody ??
-                                                      ''))
-                                              ?.code ==
-                                          '00') {
-                                        await actions.showToast(
-                                          FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText: 'تم تغير الرمز السري بنجاح',
-                                            enText:
-                                                'The pin code has been changed successfully.',
+                                    if (_model.isValidPINResult == 'true') {
+                                      _model.isNetworkAvailableOutput =
+                                          await actions.isNetworkAvailable();
+                                      if (_model.isNetworkAvailableOutput ==
+                                          true) {
+                                        _model.apiResultForGotPass =
+                                            await CardGroup.forgotDevicePinCall
+                                                .call(
+                                          msgId: functions.messageId(),
+                                          idNumber: FFAppState()
+                                              .forgotPinData
+                                              .idNumber,
+                                          idType:
+                                              FFAppState().forgotPinData.idType,
+                                          birthDate: FFAppState()
+                                              .forgotPinData
+                                              .dateOfBirth,
+                                          password: FFAppState()
+                                              .forgotPinData
+                                              .currentPassword,
+                                          newPin:
+                                              _model.pinCodeController!.text,
+                                          otp: FFAppState()
+                                              .forgotPinData
+                                              .hashedOTP,
+                                          token: FFAppState()
+                                              .AuthenticatedUser
+                                              .accessToken,
+                                          acceptLanguage:
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                            arText: 'AR',
+                                            enText: 'EN',
                                           ),
                                         );
 
-                                        context.pushNamed('home_page');
+                                        if ((_model.apiResultForGotPass
+                                                ?.succeeded ??
+                                            true)) {
+                                          if (ResponseModelStruct.maybeFromMap(
+                                                      (_model.apiResultForGotPass
+                                                              ?.jsonBody ??
+                                                          ''))
+                                                  ?.code ==
+                                              '00') {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText:
+                                                    'تم تغير الرمز السري بنجاح',
+                                                enText:
+                                                    'The pin code has been changed successfully.',
+                                              ),
+                                            );
+
+                                            context.pushNamed('home_page');
+                                          } else {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'فشل تغير الرمز السري',
+                                                enText:
+                                                    'Failed to change pin code.',
+                                              ),
+                                            );
+                                          }
+                                        } else {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'خطأ',
+                                              enText: 'error',
+                                            ),
+                                          );
+                                        }
                                       } else {
                                         await actions.showToast(
                                           FFLocalizations.of(context)
                                               .getVariableText(
-                                            arText: 'فشل تغير الرمز السري',
+                                            arText:
+                                                'عذرا لا يوجد اتصال بالانترنت',
                                             enText:
-                                                'Failed to change pin code.',
+                                                'Sorry, no internet connection.',
                                           ),
                                         );
                                       }
                                     } else {
                                       await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'خطأ',
-                                          enText: 'error',
-                                        ),
+                                        _model.isValidPINResult,
                                       );
                                     }
-                                  } else {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'عذرا لا يوجد اتصال بالانترنت',
-                                        enText:
-                                            'Sorry, no internet connection.',
-                                      ),
-                                    );
-                                  }
 
-                                  safeSetState(() {});
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'ju2oiiam' /* تأكيد */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: MediaQuery.sizeOf(context).width * 0.9,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.06,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
-                                        color: Colors.white,
-                                        fontSize: 20.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'ju2oiiam' /* تأكيد */,
                                   ),
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  options: FFButtonOptions(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.9,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.06,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

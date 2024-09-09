@@ -440,7 +440,7 @@ class _OtpPhoneForgotPinWidgetState extends State<OtpPhoneForgotPinWidget> {
                                         idType: FFAppState()
                                             .AuthenticatedUser
                                             .idType,
-                                        destinationType: ' MOBILE_NUMBER',
+                                        destinationType: 'MOBILE_NUMBER',
                                         operationType: 'FORGOT_PIN',
                                         destination:
                                             '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',

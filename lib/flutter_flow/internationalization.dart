@@ -2711,6 +2711,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },
+    'ju2oiiam': {
+      'ar': 'تأكيد',
+      'en': 'Confirm',
+    },
     'ijhz7zxu': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
@@ -2736,10 +2740,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '2jt0d9nr': {
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
-    },
-    'ju2oiiam': {
-      'ar': 'تأكيد',
-      'en': 'Confirm',
     },
     'utcofzjq': {
       'ar': 'Home',
