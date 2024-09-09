@@ -294,7 +294,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                 await AuthAndRegisterGroup.verifyOTPCall.call(
                               destination:
                                   '${FFAppState().forgotPasswordData.prefixMobile}${FFAppState().forgotPasswordData.mobileNumber}',
-                              destinationType: ' MOBILE_NUMBER',
+                              destinationType: 'MOBILE_NUMBER',
                               msgId: functions.messageId(),
                               otp: FFAppState().forgotPasswordData.hashedOTP,
                               setConfirmed: 'false',
