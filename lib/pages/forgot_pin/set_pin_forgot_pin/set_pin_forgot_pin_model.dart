@@ -26,6 +26,8 @@ class SetPinForgotPinModel extends FlutterFlowModel<SetPinForgotPinWidget> {
     return null;
   }
 
+  // Stores action output result for [Custom Action - isValidPIN] action in Button widget.
+  String? isValidPINResult;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Forgot Device Pin)] action in Button widget.
