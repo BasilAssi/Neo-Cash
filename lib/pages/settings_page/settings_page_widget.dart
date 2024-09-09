@@ -295,7 +295,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('confirm_reset_password');
+                            context.pushNamed('enter_id_page_forgot_pin');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
