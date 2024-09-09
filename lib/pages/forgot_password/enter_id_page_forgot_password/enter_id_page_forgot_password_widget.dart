@@ -369,7 +369,7 @@ class _EnterIdPageForgotPasswordWidgetState
                                     await actions.showToast(
                                       FFLocalizations.of(context)
                                           .getVariableText(
-                                        arText: 'خطأ',
+                                        arText: ' 1خطأ',
                                         enText: 'error',
                                       ),
                                     );

@@ -617,6 +617,7 @@ class ForgotPasswordCall {
     String? idType = '',
     String? newPassword = '',
     String? otp = '',
+    String? deviceSerial = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) async {
@@ -640,6 +641,7 @@ class ForgotPasswordCall {
       headers: {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
+        'Device-Serial': '$deviceSerial',
       },
       params: {},
       body: ffApiRequestBody,

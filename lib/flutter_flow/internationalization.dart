@@ -2583,6 +2583,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تأكيد كلمة المرور الجديدة',
       'en': 'Confirm password',
     },
+    'v4jg8lhr': {
+      'ar': 'تأكيد',
+      'en': 'Confirm',
+    },
     '6xbm4scs': {
       'ar': 'Field is required',
       'en': '',
@@ -2595,6 +2599,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': 'Field is required',
     },
+    '5jznvy9c': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
+      'en':
+          'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
+    },
     '691jtwsm': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
@@ -2603,13 +2613,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': 'Field is required',
     },
+    'vu3icv7j': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
+      'en':
+          'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
+    },
     '5onal60i': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
-    },
-    'v4jg8lhr': {
-      'ar': 'تأكيد',
-      'en': 'Confirm',
     },
     'djfdrczz': {
       'ar': 'Home',
@@ -2993,16 +3005,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تأكيد كلمة المرور الجديدة',
       'en': '',
     },
-    '1tkcmxb0': {
-      'ar': 'Field is required',
-      'en': '',
-    },
-    'vhv0avid': {
-      'ar': 'Please choose an option from the dropdown',
+    'corv76m6': {
+      'ar': 'تأكيد',
       'en': '',
     },
     'kq8nfhqt': {
       'ar': 'Field is required',
+      'en': '',
+    },
+    'cnr9d944': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
       'en': '',
     },
     'w0zd4h1o': {
@@ -3013,12 +3026,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': '',
     },
-    '06evdp52': {
-      'ar': 'Please choose an option from the dropdown',
+    's9hilgvk': {
+      'ar':
+          'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
       'en': '',
     },
-    'corv76m6': {
-      'ar': 'تأكيد',
+    '06evdp52': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     '2b6qtbns': {

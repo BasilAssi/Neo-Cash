@@ -52,8 +52,7 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
       );
     }
 
-    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
-        .hasMatch(val)) {
+    if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '6q1dfoo5' /* يجب أن تكون كلمة المرور بطول ل... */,
       );
@@ -75,8 +74,7 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
       );
     }
 
-    if (!RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d]{7,}\$')
-        .hasMatch(val)) {
+    if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '6q1dfoo5' /* يجب أن تكون كلمة المرور بطول ل... */,
       );
