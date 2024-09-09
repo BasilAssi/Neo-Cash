@@ -324,14 +324,24 @@ class _EnterIdPageForgotPasswordWidgetState
                                 ..idType = _model.idTypeDropDownValue,
                             );
                             safeSetState(() {});
-                            if ((FFAppState()
+                            if (!((FFAppState()
                                             .AuthenticatedUser
                                             .mobileNumberPrefix ==
                                         '') &&
                                 (FFAppState()
                                             .AuthenticatedUser
                                             .mobileNumber ==
-                                        '')) {
+                                        ''))) {
+                              FFAppState().updateForgotPasswordDataStruct(
+                                (e) => e
+                                  ..prefixMobile = FFAppState()
+                                      .AuthenticatedUser
+                                      .mobileNumberPrefix
+                                  ..mobileNumber = FFAppState()
+                                      .AuthenticatedUser
+                                      .mobileNumber,
+                              );
+                              safeSetState(() {});
                               _model.isNetworkAvailableOutput =
                                   await actions.isNetworkAvailable();
                               if (_model.isNetworkAvailableOutput == true) {
