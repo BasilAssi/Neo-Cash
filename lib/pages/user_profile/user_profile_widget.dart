@@ -164,7 +164,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 fadeOutDuration:
                                                     const Duration(milliseconds: 500),
                                                 imageUrl:
-                                                    'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+                                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMI5YxZE03Vnj-s-sth2_JxlPd30Zy7yEGg&usqp=CAU',
                                                 fit: BoxFit.contain,
                                                 errorWidget: (context, error,
                                                         stackTrace) =>
@@ -192,7 +192,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                             fadeOutDuration:
                                                 const Duration(milliseconds: 500),
                                             imageUrl:
-                                                'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+                                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMI5YxZE03Vnj-s-sth2_JxlPd30Zy7yEGg&usqp=CAU',
                                             width: double.infinity,
                                             height: double.infinity,
                                             fit: BoxFit.cover,

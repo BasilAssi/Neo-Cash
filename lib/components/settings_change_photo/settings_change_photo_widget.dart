@@ -41,10 +41,10 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 60.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
-        height: 350.0,
+        height: 400.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: const BorderRadius.only(
@@ -310,7 +310,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                   ),
                                 ),
                               ),
-                            ],
+                            ].divide(const SizedBox(width: 34.0)),
                           ),
                         ),
                       ],
