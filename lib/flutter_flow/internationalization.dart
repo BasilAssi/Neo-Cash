@@ -3233,6 +3233,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'No cards',
     },
   },
+  // settings_change_photo
+  {
+    'e6kdvpqx': {
+      'ar': 'تغير الصورة',
+      'en': 'Change Photo',
+    },
+    'ltiag9l2': {
+      'ar': 'قم بتحميل صورة جديدة.',
+      'en': 'Upload a new photo below.',
+    },
+    'def6ozqk': {
+      'ar': 'حفظ',
+      'en': 'Save Changes',
+    },
+    'cda62kdp': {
+      'ar': 'تحميل صورة',
+      'en': 'Upload Image',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {

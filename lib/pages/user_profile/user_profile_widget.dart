@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/components/settings_change_photo/settings_change_photo_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -10,6 +11,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'user_profile_model.dart';
 export 'user_profile_model.dart';
 
@@ -228,8 +230,29 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) {
+                                return WebViewAware(
+                                  child: GestureDetector(
+                                    onTap: () =>
+                                        FocusScope.of(context).unfocus(),
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: SizedBox(
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.6,
+                                        child: const SettingsChangePhotoWidget(),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
                           },
                         ),
                       ),
