@@ -473,14 +473,11 @@ class _EnterIdPageForgotPasswordWidgetState
                                     );
 
                                     if ((_model
-                                            .apiResultSendOTPPass1?.succeeded ??
+                                            .apiResultSendOTPPass?.succeeded ??
                                         true)) {
-                                      if (ResponseModelStruct.maybeFromMap(
-                                                  (_model.apiResultSendOTPPass1
-                                                          ?.jsonBody ??
-                                                      ''))
-                                              ?.code ==
-                                          '00') {
+                                      if ((_model.apiResultSendOTPPass
+                                              ?.succeeded ??
+                                          true)) {
                                         context.pushNamed(
                                             'otp_phone_forgot_password');
                                       } else {
