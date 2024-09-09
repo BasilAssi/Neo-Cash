@@ -24,6 +24,11 @@ class BasicInfiForgotPinModel
       );
     }
 
+    if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '3r5ueaze' /* يجب أن تكون كلمة المرور بطول ل... */,
+      );
+    }
     return null;
   }
 

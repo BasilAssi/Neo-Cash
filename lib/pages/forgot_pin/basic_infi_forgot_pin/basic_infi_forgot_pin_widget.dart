@@ -419,6 +419,17 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                             .validate()) {
                                       return;
                                     }
+                                    if (_model.datePicked == null) {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'حقل تاريخ الميلاد مطلوب',
+                                          enText:
+                                              'Date of Birth field is required.',
+                                        ),
+                                      );
+                                      return;
+                                    }
                                     if (_model.passwordTextController.text ==
                                         FFAppState()
                                             .AuthenticatedUser
