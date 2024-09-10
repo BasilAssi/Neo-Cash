@@ -1,3 +1,4 @@
+import '/components/dialog_component/dialog_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'registeration01_model.dart';
 export 'registeration01_model.dart';
 
@@ -100,19 +102,66 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 20.0,
-                  borderWidth: 1.0,
-                  buttonSize: 40.0,
-                  icon: Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: FlutterFlowTheme.of(context).primary,
-                    size: 32.0,
+                Builder(
+                  builder: (context) => FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 32.0,
+                    ),
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (dialogContext) {
+                          return Dialog(
+                            elevation: 0,
+                            insetPadding: EdgeInsets.zero,
+                            backgroundColor: Colors.transparent,
+                            alignment: const AlignmentDirectional(0.0, 0.0)
+                                .resolve(Directionality.of(context)),
+                            child: WebViewAware(
+                              child: GestureDetector(
+                                onTap: () =>
+                                    FocusScope.of(dialogContext).unfocus(),
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.4,
+                                  child: DialogComponentWidget(
+                                    text: FFLocalizations.of(context)
+                                        .getVariableText(
+                                      arText: 'هل أنت متأكد أنك تريد الرجوع ؟',
+                                      enText:
+                                          'Are you sure you want to go back?',
+                                    ),
+                                    firstBtnText: FFLocalizations.of(context)
+                                        .getVariableText(
+                                      arText: 'نعم',
+                                      enText: 'Yes',
+                                    ),
+                                    secBtoText: FFLocalizations.of(context)
+                                        .getVariableText(
+                                      arText: 'لا',
+                                      enText: 'No',
+                                    ),
+                                    firstBtnAction: () async {
+                                      context.pushNamed('phone_number');
+                                    },
+                                    secBtnAction: () async {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
-                  onPressed: () async {
-                    context.pushNamed('phone_number');
-                  },
                 ),
                 Expanded(
                   child: Align(
