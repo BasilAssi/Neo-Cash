@@ -369,13 +369,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          if (FFAppState().isEnglish == true) {
-                            FFAppState().isEnglish = false;
-                            safeSetState(() {});
+                          if (FFLocalizations.of(context).languageCode ==
+                              'en') {
                             setAppLanguage(context, 'ar');
                           } else {
-                            FFAppState().isEnglish = true;
-                            safeSetState(() {});
                             setAppLanguage(context, 'en');
                           }
                         },

@@ -167,15 +167,13 @@ class _LoginWidgetState extends State<LoginWidget>
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ToggleIcon(
                       onPressed: () async {
-                        safeSetState(() =>
-                            FFAppState().isEnglish = !FFAppState().isEnglish);
-                        if (FFAppState().isEnglish == true) {
+                        if (FFLocalizations.of(context).languageCode == 'en') {
                           setAppLanguage(context, 'ar');
                         } else {
                           setAppLanguage(context, 'en');
                         }
                       },
-                      value: FFAppState().isEnglish,
+                      value: FFLocalizations.of(context).languageCode == 'en',
                       onIcon: Icon(
                         Icons.e_mobiledata,
                         color: FlutterFlowTheme.of(context).primary,
@@ -908,9 +906,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               context)
                                                           .getVariableText(
                                                         arText:
-                                                            'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش.',
+                                                            'تم تجاوز عدد محاولات تسجيل الدخول المسموح بها يرجى مراجعة نيو كاش',
                                                         enText:
-                                                            'Your account is closed, please contact neocash.',
+                                                            'The number of allowed login attempts has been exceeded. Please check NeoCash.',
                                                       ),
                                                     );
                                                   } else {
@@ -1191,6 +1189,22 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش.',
                                                                   enText:
                                                                       'Your account is closed, please contact neocash.',
+                                                                ),
+                                                              );
+                                                            } else if (LoginAPIResponseStruct.maybeFromMap(
+                                                                        (_model.apiResultLogin?.jsonBody ??
+                                                                            ''))
+                                                                    ?.code ==
+                                                                '1011') {
+                                                              await actions
+                                                                  .showToast(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  arText:
+                                                                      'تم تجاوز عدد محاولات تسجيل الدخول المسموح بها يرجى مراجعة نيو كاش',
+                                                                  enText:
+                                                                      'The number of allowed login attempts has been exceeded. Please check NeoCash.',
                                                                 ),
                                                               );
                                                             } else {
