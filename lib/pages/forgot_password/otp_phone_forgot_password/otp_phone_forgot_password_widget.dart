@@ -284,6 +284,9 @@ class _OtpPhoneForgotPasswordWidgetState
                           FFAppState().updateForgotPasswordDataStruct(
                             (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
                           );
+                          FFAppState().updateRegisterationFormDataStruct(
+                            (e) => e..hashedOTP = _model.oTPHashedSHA256base64,
+                          );
                           safeSetState(() {});
                           _model.isCompleted = true;
                           safeSetState(() {});
