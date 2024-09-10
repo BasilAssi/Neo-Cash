@@ -96,6 +96,13 @@ class _FilterTransactionsComponent1WidgetState
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      FFAppState().updateFilterTransactionsStruct(
+                        (e) => e
+                          ..dateFrom =
+                              functions.dateFromCalculate(DateTypes.TODAY)
+                          ..dateTo =
+                              functions.dateFromCalculate(DateTypes.TODAY),
+                      );
                       safeSetState(() {});
                       Navigator.pop(context);
                       await widget.refreshListTransaction?.call();
