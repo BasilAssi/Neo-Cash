@@ -95,51 +95,80 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Builder(
-                    builder: (context) => FlutterFlowIconButton(
-                      borderRadius: 20.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: Icon(
-                        Icons.calendar_month,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        size: 40.0,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 20.0,
+                          borderWidth: 1.0,
+                          buttonSize: 40.0,
+                          icon: Icon(
+                            Icons.arrow_back_ios_rounded,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 32.0,
+                          ),
+                          onPressed: () async {
+                            context.safePop();
+                          },
+                        ),
                       ),
-                      onPressed: () async {
-                        await showDialog(
-                          context: context,
-                          builder: (dialogContext) {
-                            return Dialog(
-                              elevation: 0,
-                              insetPadding: EdgeInsets.zero,
-                              backgroundColor: Colors.transparent,
-                              alignment: const AlignmentDirectional(-0.0, 0.0)
-                                  .resolve(Directionality.of(context)),
-                              child: WebViewAware(
-                                child: GestureDetector(
-                                  onTap: () =>
-                                      FocusScope.of(dialogContext).unfocus(),
-                                  child: SizedBox(
-                                    height:
-                                        MediaQuery.sizeOf(context).height * 0.4,
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.7,
-                                    child: FilterTransactionsComponent1Widget(
-                                      refreshListTransaction: () async {
-                                        safeSetState(() =>
-                                            _model.apiRequestCompleter = null);
-                                        await _model
-                                            .waitForApiRequestCompleted();
-                                      },
+                      Builder(
+                        builder: (context) => FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 20.0,
+                          borderWidth: 1.0,
+                          buttonSize: 50.0,
+                          icon: Icon(
+                            Icons.calendar_month,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 40.0,
+                          ),
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: const AlignmentDirectional(-0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: WebViewAware(
+                                    child: GestureDetector(
+                                      onTap: () => FocusScope.of(dialogContext)
+                                          .unfocus(),
+                                      child: SizedBox(
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.4,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.7,
+                                        child:
+                                            FilterTransactionsComponent1Widget(
+                                          refreshListTransaction: () async {
+                                            safeSetState(() => _model
+                                                .apiRequestCompleter = null);
+                                            await _model
+                                                .waitForApiRequestCompleted();
+                                          },
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                             );
                           },
-                        );
-                      },
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),

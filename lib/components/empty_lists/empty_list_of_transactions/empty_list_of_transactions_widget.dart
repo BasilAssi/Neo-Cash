@@ -95,7 +95,7 @@ class _EmptyListOfTransactionsWidgetState
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  width: MediaQuery.sizeOf(context).width * 0.7,
                   height: MediaQuery.sizeOf(context).height * 0.5,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
@@ -103,7 +103,7 @@ class _EmptyListOfTransactionsWidgetState
                   child: Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
