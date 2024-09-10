@@ -476,7 +476,11 @@ class _EnterIdPageForgotPasswordWidgetState
                                                         ?.jsonBody ??
                                                     ''),
                                               )
-                                              .toString(),
+                                              .toString()
+                                          ..idNumber = _model
+                                              .idNumberTextFieldTextController
+                                              .text
+                                          ..idType = _model.idTypeDropDownValue,
                                       );
                                       safeSetState(() {});
                                       _model.apiResultSendOTP =
