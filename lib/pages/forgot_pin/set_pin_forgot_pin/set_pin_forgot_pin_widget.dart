@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/single_btn_component/single_btn_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,6 +11,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'set_pin_forgot_pin_model.dart';
 export 'set_pin_forgot_pin_model.dart';
 
@@ -240,168 +242,327 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, 1.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 100.0, 0.0, 8.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
-                                    _model.isValidPINResult =
-                                        await actions.isValidPIN(
-                                      _model.pinCodeController!.text,
-                                      FFLocalizations.of(context).languageCode,
-                                    );
-                                    if (_model.isValidPINResult == 'true') {
-                                      _model.isNetworkAvailableOutput =
-                                          await actions.isNetworkAvailable();
-                                      if (_model.isNetworkAvailableOutput ==
-                                          true) {
-                                        _model.apiResultForGotPass =
-                                            await CardGroup.forgotDevicePinCall
-                                                .call(
-                                          msgId: functions.messageId(),
-                                          idNumber: FFAppState()
-                                              .forgotPinData
-                                              .idNumber,
-                                          idType:
-                                              FFAppState().forgotPinData.idType,
-                                          birthDate: FFAppState()
-                                              .forgotPinData
-                                              .dateOfBirth,
-                                          password: FFAppState()
-                                              .forgotPinData
-                                              .currentPassword,
-                                          newPin:
-                                              _model.pinCodeController!.text,
-                                          otp: FFAppState()
-                                              .forgotPinData
-                                              .hashedOTP,
-                                          token: FFAppState()
-                                              .AuthenticatedUser
-                                              .accessToken,
-                                          acceptLanguage:
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                            arText: 'AR',
-                                            enText: 'EN',
-                                          ),
-                                        );
+                              child: Builder(
+                                builder: (context) => Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 100.0, 0.0, 8.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      _model.isValidPINResult =
+                                          await actions.isValidPIN(
+                                        _model.pinCodeController!.text,
+                                        FFLocalizations.of(context)
+                                            .languageCode,
+                                      );
+                                      if (_model.isValidPINResult == 'true') {
+                                        _model.isNetworkAvailableOutput =
+                                            await actions.isNetworkAvailable();
+                                        if (_model.isNetworkAvailableOutput ==
+                                            true) {
+                                          _model.apiResultForGotPass =
+                                              await CardGroup
+                                                  .forgotDevicePinCall
+                                                  .call(
+                                            msgId: functions.messageId(),
+                                            idNumber: FFAppState()
+                                                .forgotPinData
+                                                .idNumber,
+                                            idType: FFAppState()
+                                                .forgotPinData
+                                                .idType,
+                                            birthDate: FFAppState()
+                                                .forgotPinData
+                                                .dateOfBirth,
+                                            password: FFAppState()
+                                                .forgotPinData
+                                                .currentPassword,
+                                            newPin:
+                                                _model.pinCodeController!.text,
+                                            otp: FFAppState()
+                                                .forgotPinData
+                                                .hashedOTP,
+                                            token: FFAppState()
+                                                .AuthenticatedUser
+                                                .accessToken,
+                                            acceptLanguage:
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              arText: 'AR',
+                                              enText: 'EN',
+                                            ),
+                                          );
 
-                                        if ((_model.apiResultForGotPass
-                                                ?.succeeded ??
-                                            true)) {
-                                          if (ResponseModelStruct.maybeFromMap(
-                                                      (_model.apiResultForGotPass
-                                                              ?.jsonBody ??
-                                                          ''))
-                                                  ?.code ==
-                                              '00') {
-                                            await actions.showToast(
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                                arText:
-                                                    'تم تغير الرمز السري بنجاح',
-                                                enText:
-                                                    'The pin code has been changed successfully.',
-                                              ),
-                                            );
-                                            FFAppState().forgotPinData =
-                                                ForgotPinFormDataStruct();
+                                          if ((_model.apiResultForGotPass
+                                                  ?.succeeded ??
+                                              true)) {
+                                            if (ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultForGotPass
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '00') {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'تم تغير الرمز السري بنجاح',
+                                                  enText:
+                                                      'The pin code has been changed successfully.',
+                                                ),
+                                              );
+                                              FFAppState().forgotPinData =
+                                                  ForgotPinFormDataStruct();
 
-                                            context.pushNamed('home_page');
+                                              context.pushNamed('home_page');
+                                            } else {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'فشل تغير الرمز السري',
+                                                  enText:
+                                                      'Failed to change pin code.',
+                                                ),
+                                              );
+                                            }
                                           } else {
-                                            await actions.showToast(
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                                arText: 'فشل تغير الرمز السري',
-                                                enText:
-                                                    'Failed to change pin code.',
-                                              ),
-                                            );
+                                            if (ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultForGotPass
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '1717') {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'الرجاء التاكد من القيم التي قمت بادخالها',
+                                                  enText:
+                                                      'Please check the values ​​you entered.',
+                                                ),
+                                              );
+                                            } else if (ResponseModelStruct
+                                                        .maybeFromMap((_model
+                                                                .apiResultForGotPass
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '1605') {
+                                              await showDialog(
+                                                barrierDismissible: false,
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                                0.0, 0.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child: WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () =>
+                                                            FocusScope.of(
+                                                                    dialogContext)
+                                                                .unfocus(),
+                                                        child: SizedBox(
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.4,
+                                                          child:
+                                                              SingleBtnComponentWidget(
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getVariableText(
+                                                              arText:
+                                                                  'انتهت صلاحية رمز التحقق، الرجاء إدخال رمز التحقق مرة أخرى',
+                                                              enText:
+                                                                  'Session expired, please enter the OTP again',
+                                                            ),
+                                                            textBtn: FFLocalizations
+                                                                    .of(context)
+                                                                .getVariableText(
+                                                              arText: 'موافق',
+                                                              enText: 'ok',
+                                                            ),
+                                                            action: () async {
+                                                              _model.isNetworkAvailableOutput1 =
+                                                                  await actions
+                                                                      .isNetworkAvailable();
+                                                              if (_model
+                                                                      .isNetworkAvailableOutput1 ==
+                                                                  true) {
+                                                                _model.apiResultSendOTP =
+                                                                    await AuthAndRegisterGroup
+                                                                        .sendOTPToCustomerCall
+                                                                        .call(
+                                                                  msgId: functions
+                                                                      .messageId(),
+                                                                  idNumber: FFAppState()
+                                                                      .forgotPinData
+                                                                      .idNumber,
+                                                                  idType: FFAppState()
+                                                                      .forgotPinData
+                                                                      .idType,
+                                                                  destination:
+                                                                      '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
+                                                                  destinationType:
+                                                                      'MOBILE_NUMBER',
+                                                                  operationType:
+                                                                      'FORGOT_PIN',
+                                                                  acceptLanguage:
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getVariableText(
+                                                                    arText:
+                                                                        'AR',
+                                                                    enText:
+                                                                        'EN',
+                                                                  ),
+                                                                );
+
+                                                                if ((_model
+                                                                        .apiResultSendOTP
+                                                                        ?.succeeded ??
+                                                                    true)) {
+                                                                  if (ResponseModelStruct.maybeFromMap((_model.apiResultSendOTP?.jsonBody ??
+                                                                              ''))
+                                                                          ?.code ==
+                                                                      '00') {
+                                                                    context.pushNamed(
+                                                                        'otp_phone_forgot_pin');
+                                                                  } else if (ResponseModelStruct.maybeFromMap((_model.apiResultSendOTP?.jsonBody ??
+                                                                              ''))
+                                                                          ?.code ==
+                                                                      '1607') {
+                                                                    context.pushNamed(
+                                                                        'otp_phone_forgot_pin');
+                                                                  } else {
+                                                                    await actions
+                                                                        .showToast(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getVariableText(
+                                                                        arText:
+                                                                            'فشل إرسال رمز التحقق',
+                                                                        enText:
+                                                                            'Failed to send verification code.',
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                } else {
+                                                                  await actions
+                                                                      .showToast(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getVariableText(
+                                                                      arText:
+                                                                          'خطأ',
+                                                                      enText:
+                                                                          'error',
+                                                                    ),
+                                                                  );
+                                                                }
+                                                              } else {
+                                                                await actions
+                                                                    .showToast(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getVariableText(
+                                                                    arText:
+                                                                        'عذرا لا يوجد اتصال بالانترنت',
+                                                                    enText:
+                                                                        'Sorry, no internet connection.',
+                                                                  ),
+                                                                );
+                                                              }
+                                                            },
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            } else {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText: 'خطأ',
+                                                  enText: 'error',
+                                                ),
+                                              );
+                                            }
                                           }
                                         } else {
-                                          if (ResponseModelStruct.maybeFromMap(
-                                                      (_model.apiResultForGotPass
-                                                              ?.jsonBody ??
-                                                          ''))
-                                                  ?.code ==
-                                              '1717') {
-                                            await actions.showToast(
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                                arText:
-                                                    'الرجاء التاكد من القيم التي قمت بادخالها',
-                                                enText:
-                                                    'Please check the values ​​you entered.',
-                                              ),
-                                            );
-                                          } else {
-                                            await actions.showToast(
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                                arText: 'خطأ',
-                                                enText: 'error',
-                                              ),
-                                            );
-                                          }
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'عذرا لا يوجد اتصال بالانترنت',
+                                              enText:
+                                                  'Sorry, no internet connection.',
+                                            ),
+                                          );
                                         }
                                       } else {
                                         await actions.showToast(
-                                          FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText:
-                                                'عذرا لا يوجد اتصال بالانترنت',
-                                            enText:
-                                                'Sorry, no internet connection.',
-                                          ),
+                                          _model.isValidPINResult,
                                         );
                                       }
-                                    } else {
-                                      await actions.showToast(
-                                        _model.isValidPINResult,
-                                      );
-                                    }
 
-                                    safeSetState(() {});
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'ju2oiiam' /* تأكيد */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.9,
-                                    height: MediaQuery.sizeOf(context).height *
-                                        0.06,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      safeSetState(() {});
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'ju2oiiam' /* تأكيد */,
                                     ),
-                                    borderRadius: BorderRadius.circular(12.0),
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.9,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.06,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: Colors.white,
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
                                   ),
                                 ),
                               ),
