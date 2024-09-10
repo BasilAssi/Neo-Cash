@@ -2750,6 +2750,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transactions_page
   {
+    'ry73pybn': {
+      'ar': ' ',
+      'en': '',
+    },
     'ht9cg4jd': {
       'ar': 'الحركات',
       'en': '',
