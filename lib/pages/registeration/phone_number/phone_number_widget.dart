@@ -66,7 +66,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed('enter_id_page');
             },
           ),
           actions: const [],
