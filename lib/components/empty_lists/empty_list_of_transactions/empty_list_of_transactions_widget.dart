@@ -78,79 +78,84 @@ class _EmptyListOfTransactionsWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width * 1.0,
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: Align(
-        alignment: const AlignmentDirectional(0.0, 0.0),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.5,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Container(
-                          width: 180.0,
-                          height: 180.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).contianerColor,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: FaIcon(
-                              FontAwesomeIcons.solidCreditCard,
+    return Align(
+      alignment: const AlignmentDirectional(0.0, 0.0),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Align(
+          alignment: const AlignmentDirectional(0.0, 0.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Container(
+                            width: 180.0,
+                            height: 180.0,
+                            decoration: BoxDecoration(
                               color:
-                                  FlutterFlowTheme.of(context).textFieldBorder,
-                              size: 80.0,
+                                  FlutterFlowTheme.of(context).contianerColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: FaIcon(
+                                FontAwesomeIcons.solidCreditCard,
+                                color: FlutterFlowTheme.of(context)
+                                    .textFieldBorder,
+                                size: 80.0,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'l9vp4tx5' /* لا يوجد أي حركات  */,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'l9vp4tx5' /* لا يوجد أي حركات  */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto Mono',
+                                  color: FlutterFlowTheme.of(context).textColor,
+                                  fontSize: 24.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Roboto Mono'),
+                                ),
                           ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Roboto Mono',
-                                color: FlutterFlowTheme.of(context).textColor,
-                                fontSize: 24.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey('Roboto Mono'),
-                              ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
+            ],
+          ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
+        ),
       ),
     );
   }

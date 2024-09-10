@@ -542,7 +542,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd3mi7j0c': {
       'ar': 'تغيير كلمة المرور؟',
-      'en': '',
+      'en': 'Change password?',
     },
     'c1m639px': {
       'ar': 'Home',
