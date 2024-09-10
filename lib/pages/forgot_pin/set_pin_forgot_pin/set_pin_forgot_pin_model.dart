@@ -32,6 +32,10 @@ class SetPinForgotPinModel extends FlutterFlowModel<SetPinForgotPinWidget> {
   bool? isNetworkAvailableOutput;
   // Stores action output result for [Backend Call - API (Forgot Device Pin)] action in Button widget.
   ApiCallResponse? apiResultForGotPass;
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+  bool? isNetworkAvailableOutput1;
+  // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
+  ApiCallResponse? apiResultSendOTP;
 
   @override
   void initState(BuildContext context) {
