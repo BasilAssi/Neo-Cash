@@ -10,12 +10,12 @@ class SingleBtnComponentWidget extends StatefulWidget {
   /// this component used  expired otp  ,  other errors
   const SingleBtnComponentWidget({
     super.key,
-    required this.text,
-    required this.action,
-    required this.textBtn,
-  });
+    String? text,
+    this.action,
+    this.textBtn,
+  }) : text = text ?? ' ';
 
-  final String? text;
+  final String text;
   final Future Function()? action;
   final String? textBtn;
 
@@ -79,7 +79,7 @@ class _SingleBtnComponentWidgetState extends State<SingleBtnComponentWidget> {
                           Align(
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              widget.text!,
+                              widget.text,
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
