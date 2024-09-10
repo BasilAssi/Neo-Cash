@@ -3181,6 +3181,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Upload Image',
     },
   },
+  // empty_list_of_transactions
+  {
+    'l9vp4tx5': {
+      'ar': 'لا يوجد أي حركات ',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {

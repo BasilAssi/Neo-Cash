@@ -15,6 +15,7 @@ Future showDateRangePickerAction(
   Color? backgroundColor,
   Color? primaryColor,
   Future Function()? action,
+  Future Function()? closeAction,
 ) async {
   // Add your function code here!
   showCustomDateRangePicker(
@@ -33,7 +34,7 @@ Future showDateRangePickerAction(
       }
     },
     onCancelClick: () {
-      context.pop();
+      await closeAction();
     },
   );
 }

@@ -1,7 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/enums/enums.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/empty_lists/empty_list_of_transactions/empty_list_of_transactions_widget.dart';
 import '/components/filter_transactions_component1/filter_transactions_component1_widget.dart';
+import '/components/shimmer/shimmer_component_list_transactions/shimmer_component_list_transactions_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -206,17 +208,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 40.0,
-                      height: 40.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                    ),
-                  );
+                  return const ShimmerComponentListTransactionsWidget();
                 }
                 final listViewListCardTransactionsResponse = snapshot.data!;
 
@@ -229,6 +221,9 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                                 ?.records
                                 .toList() ??
                             [];
+                    if (listTransactions.isEmpty) {
+                      return const EmptyListOfTransactionsWidget();
+                    }
 
                     return ListView.builder(
                       padding: EdgeInsets.zero,

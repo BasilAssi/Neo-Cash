@@ -338,6 +338,9 @@ class _FilterTransactionsComponent1WidgetState
                         FFAppState().update(() {});
                         await widget.refreshListTransaction?.call();
                       },
+                      () async {
+                        Navigator.pop(context);
+                      },
                     );
                     await widget.refreshListTransaction?.call();
                   },
