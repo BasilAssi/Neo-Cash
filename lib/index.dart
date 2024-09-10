@@ -76,8 +76,6 @@ export '/pages/static_pages/frequently_asked_questions/frequently_asked_question
     show FrequentlyAskedQuestionsWidget;
 export '/pages/otp_verify_email/otp_verify_email_widget.dart'
     show OtpVerifyEmailWidget;
-export '/pages/forgot_pin/enter_id_page_forgot_pin/enter_id_page_forgot_pin_widget.dart'
-    show EnterIdPageForgotPinWidget;
 export '/pages/forgot_pin/otp_phone_forgot_pin/otp_phone_forgot_pin_widget.dart'
     show OtpPhoneForgotPinWidget;
 export '/pages/forgot_password/enter_id_page_forgot_password/enter_id_page_forgot_password_widget.dart'

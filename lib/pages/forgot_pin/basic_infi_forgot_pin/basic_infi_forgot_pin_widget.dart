@@ -67,7 +67,7 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                     size: 32.0,
                   ),
                   onPressed: () async {
-                    context.pushNamed('enter_id_page_forgot_pin');
+                    context.pushNamed('settings_page');
                   },
                 ),
                 Expanded(

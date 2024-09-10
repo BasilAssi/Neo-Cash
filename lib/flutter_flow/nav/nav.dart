@@ -307,11 +307,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const OtpVerifyEmailWidget(),
             ),
             FFRoute(
-              name: 'enter_id_page_forgot_pin',
-              path: 'enterIdPageForgotPin',
-              builder: (context, params) => const EnterIdPageForgotPinWidget(),
-            ),
-            FFRoute(
               name: 'otp_phone_forgot_pin',
               path: 'otpPhoneForgotPin',
               builder: (context, params) => const OtpPhoneForgotPinWidget(),
