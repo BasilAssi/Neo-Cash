@@ -109,49 +109,47 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: WillPopScope(
-        onWillPop: () async => false,
-        child: Scaffold(
-          key: scaffoldKey,
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-            automaticallyImplyLeading: false,
-            title: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'jbiuuahw' /*   إرسال لصديق  */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context)
-                          .headlineMedium
-                          .override(
-                            fontFamily: FlutterFlowTheme.of(context)
-                                .headlineMediumFamily,
-                            color: FlutterFlowTheme.of(context).textAppbarColor,
-                            fontSize: 24.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context)
-                                    .headlineMediumFamily),
-                          ),
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'jbiuuahw' /*   إرسال لصديق  */,
                     ),
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineMediumFamily,
+                          color: FlutterFlowTheme.of(context).textAppbarColor,
+                          fontSize: 24.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily),
+                        ),
                   ),
                 ),
-              ],
-            ),
-            actions: const [],
-            centerTitle: false,
-            elevation: 0.0,
+              ),
+            ],
           ),
-          body: Row(
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
@@ -516,7 +514,7 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                       controller:
                                           _model.textFieldValueTextController,
                                       focusNode: _model.textFieldValueFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       autofillHints: const [
                                         AutofillHints.telephoneNumber
                                       ],
@@ -884,7 +882,6 @@ class _SendMoneyToFriendWidgetState extends State<SendMoneyToFriendWidget>
                                                   .bodyMediumFamily),
                                     ),
                                 textAlign: TextAlign.start,
-                                keyboardType: TextInputType.phone,
                                 validator: _model
                                     .textFieldDescriptionTextControllerValidator
                                     .asValidator(context),
