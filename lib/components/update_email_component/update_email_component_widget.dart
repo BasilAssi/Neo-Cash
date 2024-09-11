@@ -53,12 +53,12 @@ class _UpdateEmailComponentWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: SafeArea(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12.0),
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.7,
+            height: MediaQuery.sizeOf(context).height * 0.5,
             constraints: const BoxConstraints(
               maxWidth: 570.0,
             ),

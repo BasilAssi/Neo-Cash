@@ -875,61 +875,53 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                           }
                                         },
                                       ),
-                                      Builder(
-                                        builder: (context) => Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  4.0, 0.0, 4.0, 0.0),
-                                          child: FlutterFlowIconButton(
-                                            borderRadius: 20.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 44.0,
-                                            icon: Icon(
-                                              Icons.edit,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                            onPressed: () async {
-                                              await showDialog(
-                                                barrierDismissible: false,
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                -0.0, 1.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: WebViewAware(
-                                                      child: GestureDetector(
-                                                        onTap: () =>
-                                                            FocusScope.of(
-                                                                    dialogContext)
-                                                                .unfocus(),
-                                                        child: SizedBox(
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.6,
-                                                          child:
-                                                              const UpdateEmailComponentWidget(),
-                                                        ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            4.0, 0.0, 4.0, 0.0),
+                                        child: FlutterFlowIconButton(
+                                          borderRadius: 20.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 44.0,
+                                          icon: Icon(
+                                            Icons.edit,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                          onPressed: () async {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              isDismissible: false,
+                                              useSafeArea: true,
+                                              context: context,
+                                              builder: (context) {
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () =>
+                                                        FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child: SizedBox(
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.6,
+                                                        child:
+                                                            const UpdateEmailComponentWidget(),
                                                       ),
                                                     ),
-                                                  );
-                                                },
-                                              );
-                                            },
-                                          ),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
+                                          },
                                         ),
                                       ),
                                     ],
