@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/settings_change_photo/settings_change_photo_widget.dart';
+import '/components/update_email_component/update_email_component_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -874,22 +875,61 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                           }
                                         },
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            4.0, 0.0, 4.0, 0.0),
-                                        child: FlutterFlowIconButton(
-                                          borderRadius: 20.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 28.0,
-                                          icon: Icon(
-                                            Icons.edit,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
+                                      Builder(
+                                        builder: (context) => Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  4.0, 0.0, 4.0, 0.0),
+                                          child: FlutterFlowIconButton(
+                                            borderRadius: 20.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 44.0,
+                                            icon: Icon(
+                                              Icons.edit,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () async {
+                                              await showDialog(
+                                                barrierDismissible: false,
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                                -0.0, 1.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child: WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () =>
+                                                            FocusScope.of(
+                                                                    dialogContext)
+                                                                .unfocus(),
+                                                        child: SizedBox(
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.6,
+                                                          child:
+                                                              const UpdateEmailComponentWidget(),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
                                           ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
                                         ),
                                       ),
                                     ],

@@ -266,7 +266,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                             .encodedId,
                                         file: _model.uploadedLocalFile,
                                         msgId: functions.messageId(),
-                                        documentTypeId: ' ',
+                                        documentTypeId: 'NA==',
                                         forceUpload: 'false',
                                         moduleType: 'PROFILE_PICTURE',
                                       );

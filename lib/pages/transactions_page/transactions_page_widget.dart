@@ -402,7 +402,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                                           Container(
                                             decoration: const BoxDecoration(),
                                             child: Text(
-                                              '${listTransactionsItem.hasBillingAmount() ? listTransactionsItem.billingAmount : ' '} ${listTransactionsItem.hasBillingCurrencyCode() ? listTransactionsItem.billingCurrencyCode : ' '}',
+                                              '${listTransactionsItem.hasTransactionAmount() ? listTransactionsItem.transactionAmount : ' '} ${listTransactionsItem.hasBillingCurrencyCode() ? listTransactionsItem.billingCurrencyCode : ' '}',
                                               textAlign: TextAlign.end,
                                               style:
                                                   FlutterFlowTheme.of(context)
