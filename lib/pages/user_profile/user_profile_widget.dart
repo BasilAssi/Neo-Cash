@@ -164,8 +164,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                     const Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     const Duration(milliseconds: 500),
-                                                imageUrl:
-                                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMI5YxZE03Vnj-s-sth2_JxlPd30Zy7yEGg&usqp=CAU',
+                                                imageUrl: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .userProfile,
                                                 fit: BoxFit.contain,
                                                 errorWidget: (context, error,
                                                         stackTrace) =>
@@ -175,14 +176,18 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 ),
                                               ),
                                               allowRotation: false,
-                                              tag: 'dash',
+                                              tag: FFAppState()
+                                                  .AuthenticatedUser
+                                                  .userProfile,
                                               useHeroAnimation: true,
                                             ),
                                           ),
                                         );
                                       },
                                       child: Hero(
-                                        tag: 'dash',
+                                        tag: FFAppState()
+                                            .AuthenticatedUser
+                                            .userProfile,
                                         transitionOnUserGestures: true,
                                         child: ClipRRect(
                                           borderRadius:
@@ -192,8 +197,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 const Duration(milliseconds: 500),
                                             fadeOutDuration:
                                                 const Duration(milliseconds: 500),
-                                            imageUrl:
-                                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMI5YxZE03Vnj-s-sth2_JxlPd30Zy7yEGg&usqp=CAU',
+                                            imageUrl: FFAppState()
+                                                .AuthenticatedUser
+                                                .userProfile,
                                             width: double.infinity,
                                             height: double.infinity,
                                             fit: BoxFit.cover,
@@ -595,7 +601,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .textColor,
-                                                                fontSize: 11.0,
+                                                                fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -830,9 +836,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      8.0,
+                                                                      4.0,
                                                                       0.0,
-                                                                      0.0,
+                                                                      4.0,
                                                                       0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
@@ -855,7 +861,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                           context)
                                                                       .secondary,
                                                                   fontSize:
-                                                                      12.0,
+                                                                      11.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -875,54 +881,48 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                           }
                                         },
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            4.0, 0.0, 4.0, 0.0),
-                                        child: FlutterFlowIconButton(
-                                          borderRadius: 20.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 44.0,
-                                          icon: Icon(
-                                            Icons.edit,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                          onPressed: () async {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              useSafeArea: true,
-                                              context: context,
-                                              builder: (context) {
-                                                return WebViewAware(
-                                                  child: GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: SizedBox(
-                                                        height:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .height *
-                                                                0.6,
-                                                        child:
-                                                            const UpdateEmailComponentWidget(),
-                                                      ),
+                                      FlutterFlowIconButton(
+                                        borderRadius: 20.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 44.0,
+                                        icon: Icon(
+                                          Icons.edit,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            isDismissible: false,
+                                            useSafeArea: true,
+                                            context: context,
+                                            builder: (context) {
+                                              return WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () =>
+                                                      FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: SizedBox(
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.6,
+                                                      child:
+                                                          const UpdateEmailComponentWidget(),
                                                     ),
                                                   ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
-                                          },
-                                        ),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+                                        },
                                       ),
                                     ],
                                   ),
