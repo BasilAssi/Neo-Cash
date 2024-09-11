@@ -240,7 +240,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'xg9pxhd2': {
+    '2fng89k8': {
       'ar': 'لا يمكن ان يكون الرقم اقل من 9 خانات',
       'en': '',
     },
@@ -406,7 +406,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    '1f51n1l6': {
+    'ropov1fv': {
       'ar': 'Home',
       'en': 'Home',
     },
@@ -490,7 +490,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تفاصيل البطاقة',
       'en': 'Card Details',
     },
-    'v04sy0uk': {
+    'my5w45w9': {
       'ar': 'Home',
       'en': 'Transactions',
     },
@@ -816,7 +816,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'x802qk9b': {
+    'fd194nlo': {
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
       'en': 'Text must not exceed 25 characters.',
     },
@@ -836,7 +836,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
       'en': 'Text must not exceed 25 characters.',
     },
-    '972ziqbl': {
+    'ex6jv13c': {
       'ar': 'الاسم يجب ان يكون باللغة العربية',
       'en': 'Name must be in Arabic',
     },
@@ -884,7 +884,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يجب ألا يتجاوز النص 25 حرفًا.',
       'en': 'Text must not exceed 25 characters.',
     },
-    'x114xo5o': {
+    'srrvkkcw': {
       'ar': 'الاسم يجب ان يكون باللغة الانجليزية',
       'en': 'Name must be in English',
     },
@@ -1240,13 +1240,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
       'en': 'Field is required',
     },
-    'sh8pcgv7': {
+    'eu1pfxnv': {
       'ar':
           'يجب أن تكون كلمة المرور بطول لا يقل عن 7 أحرف\n ويحتوي على حرف واحد كبير،حرف واحد صغير، ورقم واحد',
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    'x3v0m7qw': {
+    'if3r7kvc': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -1345,7 +1345,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يجب ألا يتجاوز النص 100 حرفًا.',
       'en': 'Text must not exceed 100 characters.',
     },
-    '9tynz1pf': {
+    '4v74j3ei': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2587,11 +2587,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Field is required',
       'en': '',
     },
-    'waw6vcko': {
+    'yg2m1odw': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'xzymsnvc': {
+    'fws67ayg': {
       'ar': 'Field is required',
       'en': 'Field is required',
     },
@@ -2601,11 +2601,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    '691jtwsm': {
+    'c4le5k7i': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'lboxqnwa': {
+    'cta50rh5': {
       'ar': 'Field is required',
       'en': 'Field is required',
     },
@@ -2615,7 +2615,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    '5onal60i': {
+    'cqkkp185': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2657,7 +2657,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'wu1u3yv7': {
+    '2120b3ra': {
       'ar': 'Field is required',
       'en': 'Field is required',
     },
@@ -2667,7 +2667,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    'fo2wcgpk': {
+    '981vqtqf': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -3118,6 +3118,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'No',
     },
   },
+  // home_page_list_cards_component
+  {
+    'sidsk0va': {
+      'ar': 'تأكيد البصمة للاستمرار',
+      'en': 'Confirm biometric to continue  ',
+    },
+  },
   // otp_session_expired_component
   {
     '7qtlctjf': {
@@ -3192,6 +3199,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // empty_list_of_notification
+  {
+    '0ryy5jsu': {
+      'ar': 'لا يوجد أي إشعارات ',
+      'en': 'There are no notifications.',
+    },
+  },
   // Miscellaneous
   {
     '2noqmglu': {
@@ -3206,7 +3220,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
       'en': '',
     },
-    'qwiw8hej': {
+    'ai9jriog': {
       'ar': '',
       'en': '',
     },

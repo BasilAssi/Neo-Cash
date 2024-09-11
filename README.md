@@ -1,4 +1,4 @@
-# Neo Cash
+# NeoCash
 
 A new Flutter project.
 

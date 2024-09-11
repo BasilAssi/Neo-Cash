@@ -133,9 +133,10 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
                                   child: DialogComponentWidget(
                                     text: FFLocalizations.of(context)
                                         .getVariableText(
-                                      arText: 'هل أنت متأكد أنك تريد الرجوع ؟',
+                                      arText:
+                                          'الرجوع من هذه الخطوة سيؤدي إلى إعادة بدء عملية التسجيل. هل أنت متأكد أنك تريد الرجوع؟',
                                       enText:
-                                          'Are you sure you want to go back?',
+                                          'Going back will restart the registration process. Are you sure you want to proceed?',
                                     ),
                                     firstBtnText: FFLocalizations.of(context)
                                         .getVariableText(

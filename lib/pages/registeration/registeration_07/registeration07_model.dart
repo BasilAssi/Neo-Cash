@@ -76,7 +76,7 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
 
     if (!RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,1000})').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '6q1dfoo5' /* يجب أن تكون كلمة المرور بطول ل... */,
+        'eu1pfxnv' /* يجب أن تكون كلمة المرور بطول ل... */,
       );
     }
     return null;

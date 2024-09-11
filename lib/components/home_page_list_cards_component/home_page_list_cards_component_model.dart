@@ -13,6 +13,7 @@ class HomePageListCardsComponentModel
   Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for SwipeableStack widget.
   late CardSwiperController swipeableStackController;
+  bool biometricOutput = false;
 
   @override
   void initState(BuildContext context) {

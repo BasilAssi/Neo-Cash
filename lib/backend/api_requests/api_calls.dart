@@ -499,6 +499,7 @@ class UploadDocumentCall {
     String? documentTypeId = '',
     FFUploadedFile? file,
     String? forceUpload = '',
+    String? moduleType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) async {
@@ -520,6 +521,7 @@ class UploadDocumentCall {
         'documentTypeId': documentTypeId,
         'file': file,
         'forceUpload': forceUpload,
+        'moduleType': moduleType,
       },
       bodyType: BodyType.MULTIPART,
       returnBody: true,
@@ -675,6 +677,7 @@ class CardGroup {
   static GetCardPINCall getCardPINCall = GetCardPINCall();
   static ChangePasswordCall changePasswordCall = ChangePasswordCall();
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
+  static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
 }
 
 class ListCardsCall {
@@ -1035,6 +1038,45 @@ class ForgotDevicePinCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Forgot Device Pin',
       apiUrl: '$baseUrl/customer/api/v1/forgotPin',
+      callType: ApiCallType.POST,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SaveMyProfileCall {
+  Future<ApiCallResponse> call({
+    String? deviceSerial = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "msgId": "$msgId"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Save My Profile',
+      apiUrl: '$baseUrl/customer/api/v1/saveMyProfile',
       callType: ApiCallType.POST,
       headers: {
         'Accept-Language': '$acceptLanguage',
