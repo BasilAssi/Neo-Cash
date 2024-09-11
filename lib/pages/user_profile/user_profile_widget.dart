@@ -595,7 +595,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .textColor,
-                                                                fontSize: 12.0,
+                                                                fontSize: 11.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
