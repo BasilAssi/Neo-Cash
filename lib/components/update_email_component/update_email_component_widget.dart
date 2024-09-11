@@ -56,7 +56,12 @@ class _UpdateEmailComponentWidgetState
       alignment: const AlignmentDirectional(0.0, 1.0),
       child: SafeArea(
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(12.0),
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(0.0),
+            bottomRight: Radius.circular(0.0),
+            topLeft: Radius.circular(12.0),
+            topRight: Radius.circular(12.0),
+          ),
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.6,
             constraints: const BoxConstraints(
@@ -64,7 +69,12 @@ class _UpdateEmailComponentWidgetState
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(12.0),
+                topRight: Radius.circular(12.0),
+              ),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primary,
                 width: 1.0,

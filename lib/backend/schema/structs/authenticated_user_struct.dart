@@ -55,6 +55,7 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
     bool? mobileNumberVerified,
     String? birthDate,
     String? password,
+    String? userProfile,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _correctionReason = correctionReason,
         _pepPosition = pepPosition,
@@ -102,6 +103,7 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         _mobileNumberVerified = mobileNumberVerified,
         _birthDate = birthDate,
         _password = password,
+        _userProfile = userProfile,
         super(firestoreUtilData);
 
   // "correctionReason" field.
@@ -436,6 +438,15 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
 
   bool hasPassword() => _password != null;
 
+  // "user_profile" field.
+  String? _userProfile;
+  String get userProfile =>
+      _userProfile ??
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMI5YxZE03Vnj-s-sth2_JxlPd30Zy7yEGg&usqp=CAU';
+  set userProfile(String? val) => _userProfile = val;
+
+  bool hasUserProfile() => _userProfile != null;
+
   static AuthenticatedUserStruct fromMap(Map<String, dynamic> data) =>
       AuthenticatedUserStruct(
         correctionReason: data['correctionReason'] as String?,
@@ -488,6 +499,7 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         mobileNumberVerified: data['mobileNumberVerified'] as bool?,
         birthDate: data['birthDate'] as String?,
         password: data['password'] as String?,
+        userProfile: data['user_profile'] as String?,
       );
 
   static AuthenticatedUserStruct? maybeFromMap(dynamic data) => data is Map
@@ -541,6 +553,7 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         'mobileNumberVerified': _mobileNumberVerified,
         'birthDate': _birthDate,
         'password': _password,
+        'user_profile': _userProfile,
       }.withoutNulls;
 
   @override
@@ -728,6 +741,10 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         ),
         'password': serializeParam(
           _password,
+          ParamType.String,
+        ),
+        'user_profile': serializeParam(
+          _userProfile,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -966,6 +983,11 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        userProfile: deserializeParam(
+          data['user_profile'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -1021,7 +1043,8 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         emailVerified == other.emailVerified &&
         mobileNumberVerified == other.mobileNumberVerified &&
         birthDate == other.birthDate &&
-        password == other.password;
+        password == other.password &&
+        userProfile == other.userProfile;
   }
 
   @override
@@ -1071,7 +1094,8 @@ class AuthenticatedUserStruct extends FFFirebaseStruct {
         emailVerified,
         mobileNumberVerified,
         birthDate,
-        password
+        password,
+        userProfile
       ]);
 }
 
@@ -1121,6 +1145,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
   bool? mobileNumberVerified,
   String? birthDate,
   String? password,
+  String? userProfile,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -1172,6 +1197,7 @@ AuthenticatedUserStruct createAuthenticatedUserStruct({
       mobileNumberVerified: mobileNumberVerified,
       birthDate: birthDate,
       password: password,
+      userProfile: userProfile,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
