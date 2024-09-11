@@ -289,78 +289,84 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'bp7pe903' /* اسم المستخدم */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 8.0),
-                                      child: Text(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: FFAppState()
-                                                  .AuthenticatedUser
-                                                  .hasFirstNameAr()
-                                              ? FFAppState()
-                                                  .AuthenticatedUser
-                                                  .firstNameAr
-                                              : ' ',
-                                          enText: FFAppState()
-                                                  .AuthenticatedUser
-                                                  .hasFirstName()
-                                              ? FFAppState()
-                                                  .AuthenticatedUser
-                                                  .firstName
-                                              : '  ',
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bp7pe903' /* اسم المستخدم */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .titleMedium
+                                            .bodyMedium
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily,
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .textColor,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMediumFamily),
+                                                          .bodyMediumFamily),
                                             ),
                                       ),
-                                    ),
-                                  ],
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 12.0, 0.0, 8.0),
+                                        child: Text(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .hasFirstNameAr()
+                                                ? FFAppState()
+                                                    .AuthenticatedUser
+                                                    .firstNameAr
+                                                : ' ',
+                                            enText: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .hasFirstName()
+                                                ? FFAppState()
+                                                    .AuthenticatedUser
+                                                    .firstName
+                                                : '  ',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textColor,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -404,68 +410,74 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'dbqmodex' /* رقم الموبايل */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 8.0),
-                                      child: Text(
-                                        FFAppState()
-                                                .AuthenticatedUser
-                                                .hasMobileNumber()
-                                            ? FFAppState()
-                                                .AuthenticatedUser
-                                                .mobileNumber
-                                            : ' ',
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'dbqmodex' /* رقم الموبايل */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
-                                            .titleMedium
+                                            .bodyMedium
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily,
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .textColor,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w600,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMediumFamily),
+                                                          .bodyMediumFamily),
                                             ),
                                       ),
-                                    ),
-                                  ],
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 12.0, 0.0, 8.0),
+                                        child: Text(
+                                          FFAppState()
+                                                  .AuthenticatedUser
+                                                  .hasMobileNumber()
+                                              ? FFAppState()
+                                                  .AuthenticatedUser
+                                                  .mobileNumber
+                                              : ' ',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textColor,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -486,325 +498,96 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .iconBackground,
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  border: Border.all(
                                     color: FlutterFlowTheme.of(context)
-                                        .iconBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .textFieldBorder,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.email_outlined,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 28.0,
-                                    ),
+                                        .textFieldBorder,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  child: Column(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(
+                                    Icons.email_outlined,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 28.0,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 6,
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(-1.0, -1.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'ag1hrdqa' /* الإيميل */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                fontSize: 16.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMediumFamily),
-                                              ),
-                                        ),
-                                      ),
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        child: Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 8.0),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, -1.0),
                                               child: Text(
-                                                FFAppState()
-                                                        .AuthenticatedUser
-                                                        .hasEmailAddress()
-                                                    ? FFAppState()
-                                                        .AuthenticatedUser
-                                                        .emailAddress
-                                                    : ' ',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ag1hrdqa' /* الإيميل */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMedium
+                                                        .bodyMedium
                                                         .override(
                                                           fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleMediumFamily,
+                                                                  .bodyMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .textColor,
-                                                          fontSize: 12.0,
+                                                              .secondaryText,
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.bold,
+                                                              FontWeight.w600,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMediumFamily),
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Builder(
-                                  builder: (context) {
-                                    if ((FFAppState()
-                                                .AuthenticatedUser
-                                                .hasEmailVerified()
-                                            ? FFAppState()
-                                                .AuthenticatedUser
-                                                .emailVerified
-                                            : false) ==
-                                        true) {
-                                      return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            4.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xB2E9E4E4),
-                                            borderRadius:
-                                                BorderRadius.circular(15.0),
-                                            shape: BoxShape.rectangle,
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.check_outlined,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                size: 28.0,
-                                              ),
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'g3fbaqeh' /* تم التحقق   */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .success,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      );
-                                    } else {
-                                      return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            4.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            _model.isNetworkAvailableOutput =
-                                                await actions
-                                                    .isNetworkAvailable();
-                                            if (_model
-                                                    .isNetworkAvailableOutput ==
-                                                true) {
-                                              _model.apiResultSendOTPEmail =
-                                                  await AuthAndRegisterGroup
-                                                      .sendOTPToCustomerCall
-                                                      .call(
-                                                msgId: functions.messageId(),
-                                                idNumber: FFAppState()
-                                                    .AuthenticatedUser
-                                                    .idNumber,
-                                                idType: FFAppState()
-                                                    .AuthenticatedUser
-                                                    .idType,
-                                                destinationType: 'EMAIL',
-                                                operationType:
-                                                    'VERIFY_DESTINATION',
-                                                destination: FFAppState()
-                                                    .AuthenticatedUser
-                                                    .emailAddress,
-                                                acceptLanguage:
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                  arText: 'AR',
-                                                  enText: 'EN',
-                                                ),
-                                              );
-
-                                              if ((_model.apiResultSendOTPEmail
-                                                      ?.succeeded ??
-                                                  true)) {
-                                                if (ResponseModelStruct
-                                                            .maybeFromMap((_model
-                                                                    .apiResultSendOTPEmail
-                                                                    ?.jsonBody ??
-                                                                ''))
-                                                        ?.code ==
-                                                    '00') {
-                                                  await actions.showToast(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                      arText:
-                                                          'تم إرسال رمز التحقق بنجاح  على الايميل ${FFAppState().AuthenticatedUser.emailAddress}',
-                                                      enText:
-                                                          'Verification code has been sent successfully to your email ${FFAppState().AuthenticatedUser.emailAddress}',
-                                                    ),
-                                                  );
-
-                                                  context.pushNamed(
-                                                      'otp_verify_email');
-                                                } else if (ResponseModelStruct
-                                                            .maybeFromMap((_model
-                                                                    .apiResultSendOTPEmail
-                                                                    ?.jsonBody ??
-                                                                ''))
-                                                        ?.code ==
-                                                    '1607') {
-                                                  context.pushNamed(
-                                                      'otp_verify_email');
-                                                } else {
-                                                  await actions.showToast(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                      arText:
-                                                          'فشل إرسال رمز التحقق',
-                                                      enText:
-                                                          'Failed to send verification code.',
-                                                    ),
-                                                  );
-                                                }
-                                              } else {
-                                                await actions.showToast(
-                                                  FFLocalizations.of(context)
-                                                      .getVariableText(
-                                                    arText:
-                                                        'فشل إرسال رمز التحقق',
-                                                    enText:
-                                                        'Failed to send verification code.',
-                                                  ),
-                                                );
-                                              }
-                                            } else {
-                                              await actions.showToast(
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                                  arText:
-                                                      'عذرا لا يوجد اتصال بالانترنت',
-                                                  enText:
-                                                      'Sorry, no internet connection.',
-                                                ),
-                                              );
-                                            }
-
-                                            safeSetState(() {});
-                                          },
-                                          child: Container(
-                                            height: 45.0,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xB2E9E4E4),
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                              shape: BoxShape.rectangle,
-                                            ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
+                                            SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(0.0, 12.0,
+                                                                0.0, 8.0),
                                                     child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'uemhjyul' /* التحقق من
- البريد الإلكتروني */
-                                                        ,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
+                                                      FFAppState()
+                                                              .AuthenticatedUser
+                                                              .hasEmailAddress()
+                                                          ? FFAppState()
+                                                              .AuthenticatedUser
+                                                              .emailAddress
+                                                          : ' ',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -815,7 +598,89 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                     .titleMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .textColor,
+                                                                fontSize: 12.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Builder(
+                                        builder: (context) {
+                                          if ((FFAppState()
+                                                      .AuthenticatedUser
+                                                      .hasEmailVerified()
+                                                  ? FFAppState()
+                                                      .AuthenticatedUser
+                                                      .emailVerified
+                                                  : false) ==
+                                              true) {
+                                            return Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                              child: Container(
+                                                height: 40.0,
+                                                decoration: BoxDecoration(
+                                                  color: const Color(0xB2E9E4E4),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                  shape: BoxShape.rectangle,
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.check_outlined,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .success,
+                                                      size: 28.0,
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    8.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'g3fbaqeh' /* تم التحقق   */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -825,37 +690,218 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleMediumFamily),
                                                               ),
+                                                        ),
+                                                      ),
                                                     ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          } else {
+                                            return Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  _model.isNetworkAvailableOutput =
+                                                      await actions
+                                                          .isNetworkAvailable();
+                                                  if (_model
+                                                          .isNetworkAvailableOutput ==
+                                                      true) {
+                                                    _model.apiResultSendOTPEmail =
+                                                        await AuthAndRegisterGroup
+                                                            .sendOTPToCustomerCall
+                                                            .call(
+                                                      msgId:
+                                                          functions.messageId(),
+                                                      idNumber: FFAppState()
+                                                          .AuthenticatedUser
+                                                          .idNumber,
+                                                      idType: FFAppState()
+                                                          .AuthenticatedUser
+                                                          .idType,
+                                                      destinationType: 'EMAIL',
+                                                      operationType:
+                                                          'VERIFY_DESTINATION',
+                                                      destination: FFAppState()
+                                                          .AuthenticatedUser
+                                                          .emailAddress,
+                                                      acceptLanguage:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getVariableText(
+                                                        arText: 'AR',
+                                                        enText: 'EN',
+                                                      ),
+                                                    );
+
+                                                    if ((_model
+                                                            .apiResultSendOTPEmail
+                                                            ?.succeeded ??
+                                                        true)) {
+                                                      if (ResponseModelStruct
+                                                                  .maybeFromMap((_model
+                                                                          .apiResultSendOTPEmail
+                                                                          ?.jsonBody ??
+                                                                      ''))
+                                                              ?.code ==
+                                                          '00') {
+                                                        await actions.showToast(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getVariableText(
+                                                            arText:
+                                                                'تم إرسال رمز التحقق بنجاح  على الايميل ${FFAppState().AuthenticatedUser.emailAddress}',
+                                                            enText:
+                                                                'Verification code has been sent successfully to your email ${FFAppState().AuthenticatedUser.emailAddress}',
+                                                          ),
+                                                        );
+
+                                                        context.pushNamed(
+                                                            'otp_verify_email');
+                                                      } else if (ResponseModelStruct
+                                                                  .maybeFromMap((_model
+                                                                          .apiResultSendOTPEmail
+                                                                          ?.jsonBody ??
+                                                                      ''))
+                                                              ?.code ==
+                                                          '1607') {
+                                                        context.pushNamed(
+                                                            'otp_verify_email');
+                                                      } else {
+                                                        await actions.showToast(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getVariableText(
+                                                            arText:
+                                                                'فشل إرسال رمز التحقق',
+                                                            enText:
+                                                                'Failed to send verification code.',
+                                                          ),
+                                                        );
+                                                      }
+                                                    } else {
+                                                      await actions.showToast(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                          arText:
+                                                              'فشل إرسال رمز التحقق',
+                                                          enText:
+                                                              'Failed to send verification code.',
+                                                        ),
+                                                      );
+                                                    }
+                                                  } else {
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'عذرا لا يوجد اتصال بالانترنت',
+                                                        enText:
+                                                            'Sorry, no internet connection.',
+                                                      ),
+                                                    );
+                                                  }
+
+                                                  safeSetState(() {});
+                                                },
+                                                child: Container(
+                                                  height: 45.0,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color(0xB2E9E4E4),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15.0),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'uemhjyul' /* التحقق من
+ البريد الإلكتروني */
+                                                              ,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            4.0, 0.0, 4.0, 0.0),
+                                        child: FlutterFlowIconButton(
+                                          borderRadius: 20.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 28.0,
+                                          icon: Icon(
+                                            Icons.edit,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
                                           ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
                                         ),
-                                      );
-                                    }
-                                  },
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      4.0, 0.0, 4.0, 0.0),
-                                  child: FlutterFlowIconButton(
-                                    borderRadius: 20.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 28.0,
-                                    icon: Icon(
-                                      Icons.edit,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           Divider(
                             thickness: 1.0,

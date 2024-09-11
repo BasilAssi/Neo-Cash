@@ -20,7 +20,7 @@ class BasicInfiForgotPinModel
   String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '8693qu5v' /* Field is required */,
+        '2120b3ra' /* Field is required */,
       );
     }
 

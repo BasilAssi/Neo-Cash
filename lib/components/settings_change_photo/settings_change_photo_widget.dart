@@ -1,11 +1,16 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/backend/schema/structs/index.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'settings_change_photo_model.dart';
 export 'settings_change_photo_model.dart';
 
@@ -41,6 +46,8 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
       child: Container(
@@ -245,7 +252,146 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                               Expanded(
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pop();
+                                    _model.isNetworkAvailableOutput =
+                                        await actions.isNetworkAvailable();
+                                    if (_model.isNetworkAvailableOutput ==
+                                        true) {
+                                      // please add documentTypeId
+                                      _model.apiResultUploadDocument =
+                                          await AuthAndRegisterGroup
+                                              .uploadDocumentCall
+                                              .call(
+                                        customerId: FFAppState()
+                                            .AuthenticatedUser
+                                            .encodedId,
+                                        file: _model.uploadedLocalFile,
+                                        msgId: functions.messageId(),
+                                        documentTypeId: ' ',
+                                        forceUpload: 'false',
+                                        moduleType: 'PROFILE_PICTURE',
+                                      );
+
+                                      if ((_model.apiResultUploadDocument
+                                              ?.succeeded ??
+                                          true)) {
+                                        if ((ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultUploadDocument
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '00') ||
+                                            (ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultUploadDocument
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.hasCode() ==
+                                                false)) {
+                                          _model.apiResultSaveMyProfile =
+                                              await CardGroup.saveMyProfileCall
+                                                  .call(
+                                            deviceSerial: FFAppState()
+                                                .deviceInformation
+                                                .serial,
+                                            msgId: functions.messageId(),
+                                            token: FFAppState()
+                                                .AuthenticatedUser
+                                                .accessToken,
+                                            acceptLanguage:
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              arText: 'AR',
+                                              enText: 'EN',
+                                            ),
+                                          );
+
+                                          if ((_model.apiResultSaveMyProfile
+                                                  ?.succeeded ??
+                                              true)) {
+                                            if (ResponseModelStruct.maybeFromMap(
+                                                        (_model.apiResultSaveMyProfile
+                                                                ?.jsonBody ??
+                                                            ''))
+                                                    ?.code ==
+                                                '00') {
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'تم إضافة الصورة بنجاح',
+                                                  enText:
+                                                      'Image added successfully',
+                                                ),
+                                              );
+                                            } else {
+                                              safeSetState(() {
+                                                _model.isDataUploading = false;
+                                                _model.uploadedLocalFile =
+                                                    FFUploadedFile(
+                                                        bytes:
+                                                            Uint8List.fromList(
+                                                                []));
+                                              });
+
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
+                                                  enText:
+                                                      'Failed to attach the photo. Please try again',
+                                                ),
+                                              );
+                                            }
+                                          }
+                                        } else {
+                                          safeSetState(() {
+                                            _model.isDataUploading = false;
+                                            _model.uploadedLocalFile =
+                                                FFUploadedFile(
+                                                    bytes:
+                                                        Uint8List.fromList([]));
+                                          });
+
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
+                                              enText:
+                                                  'Failed to attach the photo. Please try again',
+                                            ),
+                                          );
+                                        }
+                                      } else {
+                                        safeSetState(() {
+                                          _model.isDataUploading = false;
+                                          _model.uploadedLocalFile =
+                                              FFUploadedFile(
+                                                  bytes:
+                                                      Uint8List.fromList([]));
+                                        });
+
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'خطأ',
+                                            enText: 'Error',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'عذرا لا يوجد اتصال بالانترنت',
+                                          enText:
+                                              'Sorry, no internet connection.',
+                                        ),
+                                      );
+                                    }
+
+                                    safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'def6ozqk' /* حفظ */,
