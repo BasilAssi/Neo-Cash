@@ -53,12 +53,12 @@ class _UpdateEmailComponentWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: SafeArea(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12.0),
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.5,
+            height: MediaQuery.sizeOf(context).height * 0.6,
             constraints: const BoxConstraints(
               maxWidth: 570.0,
             ),
@@ -240,7 +240,6 @@ class _UpdateEmailComponentWidgetState
                                 autofocus: true,
                                 textCapitalization:
                                     TextCapitalization.sentences,
-                                readOnly: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
