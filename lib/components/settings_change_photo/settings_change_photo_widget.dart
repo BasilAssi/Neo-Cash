@@ -317,7 +317,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                                   .updateAuthenticatedUserStruct(
                                                 (e) => e
                                                   ..userProfile =
-                                                      '${FFAppConstants.baseURL}${CustomerDocumentsStruct.maybeFromMap((_model.apiResultUploadDocument?.jsonBody ?? ''))?.documentUrl}',
+                                                      '${FFAppConstants.baseURL}${CustomerUploadedDocumentsStruct.maybeFromMap((_model.apiResultUploadDocument?.jsonBody ?? ''))?.url}',
                                               );
                                               safeSetState(() {});
                                               await actions.showToast(
