@@ -11,24 +11,8 @@ class SetPasswordExistFlowModel
 
   ///  State fields for stateful widgets in this page.
 
-  final formKey2 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
-  String? _emailTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'f3jdv1tf' /* الحقل مطلوب */,
-      );
-    }
-
-    return null;
-  }
-
+  final formKey2 = GlobalKey<FormState>();
   // State field(s) for PasswordTextField widget.
   FocusNode? passwordTextFieldFocusNode;
   TextEditingController? passwordTextFieldTextController;
@@ -96,6 +80,22 @@ class SetPasswordExistFlowModel
     return null;
   }
 
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode;
+  TextEditingController? emailTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextControllerValidator;
+  String? _emailTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'f3jdv1tf' /* الحقل مطلوب */,
+      );
+    }
+
+    return null;
+  }
+
   // Stores action output result for [Custom Action - isValidPIN] action in Button widget.
   String? isValidPINResult1;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
@@ -111,8 +111,6 @@ class SetPasswordExistFlowModel
 
   @override
   void initState(BuildContext context) {
-    emailTextFieldTextControllerValidator =
-        _emailTextFieldTextControllerValidator;
     passwordTextFieldVisibility = false;
     passwordTextFieldTextControllerValidator =
         _passwordTextFieldTextControllerValidator;
@@ -121,13 +119,12 @@ class SetPasswordExistFlowModel
         _confirmPasswordTextFieldTextControllerValidator;
     pinCodeController = TextEditingController();
     pinCodeControllerValidator = _pinCodeControllerValidator;
+    emailTextFieldTextControllerValidator =
+        _emailTextFieldTextControllerValidator;
   }
 
   @override
   void dispose() {
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
-
     passwordTextFieldFocusNode?.dispose();
     passwordTextFieldTextController?.dispose();
 
@@ -135,5 +132,7 @@ class SetPasswordExistFlowModel
     confirmPasswordTextFieldTextController?.dispose();
 
     pinCodeController?.dispose();
+    emailTextFieldFocusNode?.dispose();
+    emailTextFieldTextController?.dispose();
   }
 }

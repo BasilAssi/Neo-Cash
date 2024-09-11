@@ -1172,10 +1172,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أدخل باقي المعلومات',
       'en': 'Complete your information',
     },
-    'jr2dayzi': {
-      'ar': 'الإيميل',
-      'en': 'Email',
-    },
     'futstmfr': {
       'ar': 'كلمة المرور',
       'en': 'Password',
@@ -1193,6 +1189,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
+    },
+    'jr2dayzi': {
+      'ar': 'الإيميل',
+      'en': 'Email',
     },
     't2k8mdj6': {
       'ar': 'الرجاء الموافقة على  ',
@@ -2468,18 +2468,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أدخل باقي المعلومات',
       'en': 'Complete your Information',
     },
-    'm6sf741h': {
-      'ar': 'الإيميل',
-      'en': 'Email',
-    },
-    'f3jdv1tf': {
-      'ar': 'الحقل مطلوب',
-      'en': 'Field is required',
-    },
-    'xb8br4rz': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': 'Please choose an option from the dropdown',
-    },
     'pqomtgby': {
       'ar': 'كلمة السر',
       'en': 'Password',
@@ -2537,6 +2525,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'onlyNumbers': {
       'ar': ' يجب أن يتكون الرمز السري  من 4 أرقام فقط.',
       'en': 'The PIN must be 4 digits only.',
+    },
+    'm6sf741h': {
+      'ar': 'الإيميل',
+      'en': 'Email',
+    },
+    'f3jdv1tf': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
+    },
+    'xb8br4rz': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': 'Please choose an option from the dropdown',
     },
     'zsckrnmu': {
       'ar': 'تسجيل',
@@ -3212,6 +3212,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0ryy5jsu': {
       'ar': 'لا يوجد أي إشعارات ',
       'en': 'There are no notifications.',
+    },
+  },
+  // update_email_component
+  {
+    'tv7c0z7t': {
+      'ar': 'تغير الإيميل الخاص بك',
+      'en': '',
+    },
+    'sgi9gsvt': {
+      'ar': 'الإيميل الحالي ',
+      'en': 'Current Email',
+    },
+    'pleqp1ju': {
+      'ar': 'الإيميل الجديد ',
+      'en': 'New email',
+    },
+    'c7jp7ev3': {
+      'ar': 'الحقل مطلوب',
+      'en': '',
+    },
+    '7f7b5uid': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'x9ni795n': {
+      'ar': 'تأكيد',
+      'en': '',
     },
   },
   // Miscellaneous

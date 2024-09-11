@@ -11,33 +11,6 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
-  String? _emailTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'tt0swmgt' /* الحقل مطلوب */,
-      );
-    }
-
-    if (val.length > 100) {
-      return FFLocalizations.of(context).getText(
-        'kqhv55n9' /* يجب ألا يتجاوز النص 100 حرفًا. */,
-      );
-    }
-    if (!RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$')
-        .hasMatch(val)) {
-      return FFLocalizations.of(context).getText(
-        'qbk4zj7i' /* الرجاء إدخال بريد إلكتروني صحي... */,
-      );
-    }
-    return null;
-  }
-
   // State field(s) for PasswordTextField widget.
   FocusNode? passwordTextFieldFocusNode;
   TextEditingController? passwordTextFieldTextController;
@@ -108,6 +81,33 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
     return null;
   }
 
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode;
+  TextEditingController? emailTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextControllerValidator;
+  String? _emailTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'tt0swmgt' /* الحقل مطلوب */,
+      );
+    }
+
+    if (val.length > 100) {
+      return FFLocalizations.of(context).getText(
+        'kqhv55n9' /* يجب ألا يتجاوز النص 100 حرفًا. */,
+      );
+    }
+    if (!RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$')
+        .hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'qbk4zj7i' /* الرجاء إدخال بريد إلكتروني صحي... */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
   // Stores action output result for [Custom Action - isValidPIN] action in Button widget.
@@ -119,8 +119,6 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
 
   @override
   void initState(BuildContext context) {
-    emailTextFieldTextControllerValidator =
-        _emailTextFieldTextControllerValidator;
     passwordTextFieldVisibility = false;
     passwordTextFieldTextControllerValidator =
         _passwordTextFieldTextControllerValidator;
@@ -129,13 +127,12 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
         _confirmTextFieldTextControllerValidator;
     pinCodeController = TextEditingController();
     pinCodeControllerValidator = _pinCodeControllerValidator;
+    emailTextFieldTextControllerValidator =
+        _emailTextFieldTextControllerValidator;
   }
 
   @override
   void dispose() {
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
-
     passwordTextFieldFocusNode?.dispose();
     passwordTextFieldTextController?.dispose();
 
@@ -143,5 +140,7 @@ class Registeration07Model extends FlutterFlowModel<Registeration07Widget> {
     confirmTextFieldTextController?.dispose();
 
     pinCodeController?.dispose();
+    emailTextFieldFocusNode?.dispose();
+    emailTextFieldTextController?.dispose();
   }
 }
