@@ -1,8 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/empty_lists/empty_list_of_cards/empty_list_of_cards_widget.dart';
+import '/components/pin_code_component/pin_code_component_widget.dart';
 import '/components/shimmer/shimmer_component_list_cards/shimmer_component_list_cards_widget.dart';
-import '/components/single_btn_component/single_btn_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -275,22 +275,95 @@ class _HomePageListCardsComponentWidgetState
                                       child: SizedBox(
                                         height:
                                             MediaQuery.sizeOf(context).height *
-                                                0.33,
-                                        child: SingleBtnComponentWidget(
-                                          text: FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText: 'الرجاء تفعيل بصمة الاصبع',
-                                            enText: 'Please enable biometrics',
-                                          ),
-                                          textBtn: FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText: 'موافق',
-                                            enText: 'Ok',
-                                          ),
-                                          action: () async {
-                                            Navigator.pop(context);
+                                                1.0,
+                                        child: PinCodeComponentWidget(
+                                          actiononPass: () async {
+                                            FFAppState().cardData =
+                                                CardDataStruct(
+                                              cardNumber:
+                                                  cardListItem.hasCardNumber()
+                                                      ? cardListItem.cardNumber
+                                                      : ' ',
+                                              expiryDate:
+                                                  cardListItem.hasExpiryDate()
+                                                      ? cardListItem.expiryDate
+                                                      : ' ',
+                                              status: cardListItem.hasStatus()
+                                                  ? cardListItem.status
+                                                  : ' ',
+                                              nameOnCard:
+                                                  cardListItem.hasNameOnCard()
+                                                      ? cardListItem.nameOnCard
+                                                      : ' ',
+                                              type: cardListItem.hasType()
+                                                  ? cardListItem.type
+                                                  : ' ',
+                                              cardCvc: cardListItem.hasCardCvc()
+                                                  ? cardListItem.cardCvc
+                                                  : ' ',
+                                              firstName:
+                                                  cardListItem.hasFirstName()
+                                                      ? cardListItem.firstName
+                                                      : ' ',
+                                              middleName:
+                                                  cardListItem.hasMiddleName()
+                                                      ? cardListItem.middleName
+                                                      : ' ',
+                                              lastName:
+                                                  cardListItem.hasLastName()
+                                                      ? cardListItem.lastName
+                                                      : ' ',
+                                              cardToken:
+                                                  cardListItem.hasCardToken()
+                                                      ? cardListItem.cardToken
+                                                      : ' ',
+                                              imagePath:
+                                                  cardListItem.hasImagePath()
+                                                      ? cardListItem.imagePath
+                                                      : ' ',
+                                              voucherValue: cardListItem
+                                                      .hasVoucherValue()
+                                                  ? cardListItem.voucherValue
+                                                  : ' ',
+                                              programCode:
+                                                  cardListItem.hasProgramCode()
+                                                      ? cardListItem.programCode
+                                                      : ' ',
+                                              localProgramName: cardListItem
+                                                      .hasLocalProgramName()
+                                                  ? cardListItem
+                                                      .localProgramName
+                                                  : ' ',
+                                              latinProgramName: cardListItem
+                                                      .hasLatinProgramName()
+                                                  ? cardListItem
+                                                      .latinProgramName
+                                                  : ' ',
+                                              accountNumber: cardListItem
+                                                      .hasAccountNumber()
+                                                  ? cardListItem.accountNumber
+                                                  : ' ',
+                                              isReloadable: cardListItem
+                                                      .hasIsReloadable()
+                                                  ? cardListItem.isReloadable
+                                                  : false,
+                                              isDueRenewalFees: cardListItem
+                                                      .hasIsDueRenewalFees()
+                                                  ? cardListItem
+                                                      .isDueRenewalFees
+                                                  : ' ',
+                                              renewalDueDate: cardListItem
+                                                      .hasRenewalDueDate()
+                                                  ? cardListItem.renewalDueDate
+                                                  : ' ',
+                                              isPhysical:
+                                                  cardListItem.hasIsPhysical()
+                                                      ? cardListItem.isPhysical
+                                                      : false,
+                                            );
+                                            _model.updatePage(() {});
 
-                                            context.pushNamed('settings_page');
+                                            context.pushNamed('card_details');
                                           },
                                         ),
                                       ),

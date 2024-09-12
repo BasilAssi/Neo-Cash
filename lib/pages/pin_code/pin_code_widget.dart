@@ -1,13 +1,17 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/backend/schema/structs/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'pin_code_model.dart';
 export 'pin_code_model.dart';
 
@@ -126,6 +130,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -213,44 +219,73 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           controller: _model.pinCodeController,
                           onChanged: (_) {},
                           onCompleted: (_) async {
-                            if (_model.pinCodeController!.text == '1234') {
-                              HapticFeedback.lightImpact();
-                              await Future.delayed(
-                                  const Duration(milliseconds: 200));
-                              HapticFeedback.lightImpact();
-                              await Future.delayed(
-                                  const Duration(milliseconds: 100));
-                              // lockClose
-                              if (animationsMap[
-                                      'iconOnActionTriggerAnimation2'] !=
-                                  null) {
-                                animationsMap['iconOnActionTriggerAnimation2']!
-                                    .controller
-                                    .forward(from: 0.0);
+                            _model.isNetworkAvailableoutput =
+                                await actions.isNetworkAvailable();
+                            if (_model.isNetworkAvailableoutput == true) {
+                              _model.apiResultValidateCustomerPIN =
+                                  await CardGroup.validateCustomerPINCall.call(
+                                msgId: functions.messageId(),
+                                pin: _model.pinCodeController!.text,
+                                deviceSerial:
+                                    FFAppState().deviceInformation.serial,
+                                token:
+                                    FFAppState().AuthenticatedUser.accessToken,
+                                acceptLanguage:
+                                    FFLocalizations.of(context).getVariableText(
+                                  arText: 'AR',
+                                  enText: 'EN',
+                                ),
+                              );
+
+                              if (ResponseModelStruct.maybeFromMap((_model
+                                              .apiResultValidateCustomerPIN
+                                              ?.jsonBody ??
+                                          ''))
+                                      ?.code ==
+                                  '00') {
+                                HapticFeedback.lightImpact();
+                                await Future.delayed(
+                                    const Duration(milliseconds: 200));
+                                HapticFeedback.lightImpact();
+                                await Future.delayed(
+                                    const Duration(milliseconds: 100));
+                                // lockClose
+                                if (animationsMap[
+                                        'iconOnActionTriggerAnimation2'] !=
+                                    null) {
+                                  animationsMap[
+                                          'iconOnActionTriggerAnimation2']!
+                                      .controller
+                                      .forward(from: 0.0);
+                                }
+                                // lockOpen
+                                if (animationsMap[
+                                        'iconOnActionTriggerAnimation1'] !=
+                                    null) {
+                                  await animationsMap[
+                                          'iconOnActionTriggerAnimation1']!
+                                      .controller
+                                      .forward(from: 0.0);
+                                }
+                                if (animationsMap[
+                                        'listViewOnActionTriggerAnimation'] !=
+                                    null) {
+                                  await animationsMap[
+                                          'listViewOnActionTriggerAnimation']!
+                                      .controller
+                                      .forward(from: 0.0);
+                                }
+                                Navigator.pop(context);
+                              } else {
+                                _model.pinCode = '';
+                                safeSetState(() {});
+                                safeSetState(() {
+                                  _model.pinCodeController?.clear();
+                                });
                               }
-                              // lockOpen
-                              if (animationsMap[
-                                      'iconOnActionTriggerAnimation1'] !=
-                                  null) {
-                                await animationsMap[
-                                        'iconOnActionTriggerAnimation1']!
-                                    .controller
-                                    .forward(from: 0.0);
-                              }
-                              if (animationsMap[
-                                      'listViewOnActionTriggerAnimation'] !=
-                                  null) {
-                                await animationsMap[
-                                        'listViewOnActionTriggerAnimation']!
-                                    .controller
-                                    .forward(from: 0.0);
-                              }
-                              Navigator.pop(context);
-                            } else {
-                              safeSetState(() {
-                                _model.pinCodeController?.clear();
-                              });
                             }
+
+                            safeSetState(() {});
                           },
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: _model.pinCodeControllerValidator
@@ -272,7 +307,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          '7b6ufiar' /* 3 */,
+                          'sbpwr6w5' /* 3 */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
@@ -310,7 +345,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          '9c7pp1l6' /* 2 */,
+                          'xqd9clfs' /* 2 */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
@@ -351,7 +386,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           });
                         },
                         text: FFLocalizations.of(context).getText(
-                          's1pboej2' /* 1 */,
+                          '5fhxcvo0' /* 1 */,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
@@ -367,13 +402,6 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
                                 letterSpacing: 0.0,
-                                shadows: [
-                                  Shadow(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    offset: const Offset(2.0, 2.0),
-                                    blurRadius: 2.0,
-                                  )
-                                ],
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
                                         .headlineSmallFamily),
@@ -404,7 +432,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            'zkjy0s3s' /* 6 */,
+                            'e9c5wdbk' /* 6 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -439,10 +467,10 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
-                            print('one pressed ...');
+                            print('five pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'hoh686ue' /* 5 */,
+                            '3oj4h2he' /* 5 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -481,7 +509,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            '4vu9gcdy' /* 4 */,
+                            '5rx752cb' /* 4 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -529,7 +557,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            'ae9m7z46' /* 9 */,
+                            '6buto0oh' /* 9 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -564,10 +592,10 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
-                            print('one pressed ...');
+                            print('eight pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'bldx0dbs' /* 8 */,
+                            'cn1wslyn' /* 8 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -602,10 +630,10 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
-                            print('one pressed ...');
+                            print('seven pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'gbw0k1xf' /* 7 */,
+                            '1u9wq6yc' /* 7 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -662,7 +690,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             }
                           },
                           text: FFLocalizations.of(context).getText(
-                            'qggri9hp' /*  */,
+                            '08749mxw' /*  */,
                           ),
                           icon: const Icon(
                             Icons.arrow_forward,
@@ -701,10 +729,10 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
-                            print('one pressed ...');
+                            print('zero pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            '6umc4o4u' /* 0 */,
+                            '41v9f6zg' /* 0 */,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -746,7 +774,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             });
                           },
                           text: FFLocalizations.of(context).getText(
-                            '66whvcgs' /*  */,
+                            'v16kqthu' /*  */,
                           ),
                           icon: const Icon(
                             Icons.close_rounded,

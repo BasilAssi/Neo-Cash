@@ -24,7 +24,7 @@ class ConfirmResetPasswordModel
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'fws67ayg' /* Field is required */,
+        'pu3jza3e' /* Field is required */,
       );
     }
 

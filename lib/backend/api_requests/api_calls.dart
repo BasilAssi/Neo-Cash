@@ -683,6 +683,8 @@ class CardGroup {
       ListCardTransactionsCall();
   static ChangeCardStatusCall changeCardStatusCall = ChangeCardStatusCall();
   static GetCardPINCall getCardPINCall = GetCardPINCall();
+  static ValidateCustomerPINCall validateCustomerPINCall =
+      ValidateCustomerPINCall();
   static ChangePasswordCall changePasswordCall = ChangePasswordCall();
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
   static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
@@ -973,6 +975,49 @@ class GetCardPINCall {
       );
 }
 
+class ValidateCustomerPINCall {
+  Future<ApiCallResponse> call({
+    String? pin = '',
+    String? deviceSerial = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Validate Customer PIN',
+      apiUrl: '$baseUrl/customer/api/v1/validatePin',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+        'Device-Serial': '$deviceSerial',
+      },
+      params: {
+        'msgId': msgId,
+        'pin': cardToken,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic pinBlock(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].pinBlock''',
+      );
+}
+
 class ChangePasswordCall {
   Future<ApiCallResponse> call({
     String? oldPassword = '',
@@ -1068,6 +1113,7 @@ class ForgotDevicePinCall {
 class SaveMyProfileCall {
   Future<ApiCallResponse> call({
     String? deviceSerial = '',
+    String? emailAddress = '',
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
@@ -1080,7 +1126,8 @@ class SaveMyProfileCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "$msgId"
+  "msgId": "$msgId",
+  "emailAddress": "$emailAddress"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Save My Profile',
@@ -1090,6 +1137,7 @@ class SaveMyProfileCall {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
         'X-Auth-Token': '$token',
+        'Device-Serial': '$deviceSerial',
       },
       params: {},
       body: ffApiRequestBody,

@@ -143,11 +143,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'pin_code',
-              path: 'pinCode',
-              builder: (context, params) => const PinCodeWidget(),
-            ),
-            FFRoute(
               name: 'registeration_01',
               path: 'registeration01',
               builder: (context, params) => const Registeration01Widget(),
@@ -325,6 +320,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'confirm_forgot_password',
               path: 'confirmForgotPassword',
               builder: (context, params) => const ConfirmForgotPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'pin_code',
+              path: 'pinCode',
+              builder: (context, params) => const PinCodeWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -19,7 +19,6 @@ export '/pages/transaction_details_page/transaction_details_page_widget.dart'
     show TransactionDetailsPageWidget;
 export '/pages/view_pin_code_page/view_pin_code_page_widget.dart'
     show ViewPinCodePageWidget;
-export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
 export '/pages/registeration/registeration_01/registeration01_widget.dart'
     show Registeration01Widget;
 export '/pages/home/qr_code_page/qr_code_page_widget.dart'
@@ -84,3 +83,4 @@ export '/pages/forgot_password/otp_phone_forgot_password/otp_phone_forgot_passwo
     show OtpPhoneForgotPasswordWidget;
 export '/pages/forgot_password/confirm_forgot_password/confirm_forgot_password_widget.dart'
     show ConfirmForgotPasswordWidget;
+export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
