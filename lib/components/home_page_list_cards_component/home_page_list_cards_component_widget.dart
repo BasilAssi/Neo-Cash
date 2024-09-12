@@ -271,7 +271,9 @@ class _HomePageListCardsComponentWidgetState
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
                                     child: SizedBox(
-                                      height: 100.0,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
                                       child: PinCodeComponentWidget(
                                         actiononPass: () async {
                                           FFAppState().cardData =
