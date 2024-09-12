@@ -416,6 +416,19 @@ class _UpdateEmailComponentWidgetState
                                         ),
                                       );
                                       Navigator.pop(context);
+                                    } else if (ResponseModelStruct.maybeFromMap(
+                                                (_model.apiResultSaveMyProfile
+                                                        ?.jsonBody ??
+                                                    ''))
+                                            ?.code ==
+                                        '1520') {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'الإيميل المدخل مسجل سابقا',
+                                          enText: 'Email is already registered',
+                                        ),
+                                      );
                                     } else {
                                       await actions.showToast(
                                         FFLocalizations.of(context)
