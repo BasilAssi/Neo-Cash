@@ -434,6 +434,17 @@ class _HomePageListCardsComponentWidgetState
                                                   height: 14.0,
                                                   fit: BoxFit.cover,
                                                 ),
+                                                if ((cardListItem.hasStatus()
+                                                        ? cardListItem.status
+                                                        : ' ') !=
+                                                    'ACTIVE')
+                                                  Icon(
+                                                    Icons.lock_outline,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 32.0,
+                                                  ),
                                               ],
                                             ),
                                           ),
