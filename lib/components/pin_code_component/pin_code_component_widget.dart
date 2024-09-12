@@ -47,27 +47,55 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
+        applyInitialState: true,
         effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(1.5, 1.5),
-            end: const Offset(1.0, 1.0),
-          ),
           BlurEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 500.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(60.0, 60.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 500.0.ms,
+            begin: 1.0,
+            end: 0.0,
           ),
           MoveEffect(
-            curve: Curves.easeOut,
+            curve: Curves.easeInOut,
             delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, -50.0),
-            end: const Offset(0.0, 0.0),
+            duration: 700.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 300.0),
+          ),
+        ],
+      ),
+      'listViewOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          BlurEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 500.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(60.0, 60.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 500.0.ms,
+            begin: 1.0,
+            end: 0.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 700.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 300.0),
           ),
         ],
       ),
@@ -75,6 +103,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
         effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 250.0.ms,
@@ -102,6 +131,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
         effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 0.0.ms,
@@ -165,39 +195,71 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             begin: 1.0,
             end: 0.0,
           ),
+        ],
+      ),
+      'rowOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
           FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 100.0.ms,
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
             duration: 400.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
-        ],
-      ),
-      'pinCodeOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(2.5, 2.5),
-            end: const Offset(1.0, 1.0),
-          ),
           BlurEffect(
             curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
             begin: const Offset(10.0, 10.0),
             end: const Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, -50.0),
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
             end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'rowOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -375,8 +437,16 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                     .controller
                                     .forward(from: 0.0);
                               }
-                              Navigator.pop(context);
+                              if (animationsMap[
+                                      'listViewOnActionTriggerAnimation'] !=
+                                  null) {
+                                await animationsMap[
+                                        'listViewOnActionTriggerAnimation']!
+                                    .controller
+                                    .forward(from: 0.0);
+                              }
                               await widget.actiononPass?.call();
+                              Navigator.pop(context);
                             } else {
                               if (animationsMap[
                                       'pinCodeOnActionTriggerAnimation'] !=
@@ -386,12 +456,21 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                     .controller
                                     .forward(from: 0.0);
                               }
-                              HapticFeedback.vibrate();
+                              await Future.delayed(
+                                  const Duration(milliseconds: 1000));
                               _model.pinCode = null;
                               safeSetState(() {});
                               safeSetState(() {
                                 _model.pinCodeForm?.clear();
                               });
+                              if (animationsMap[
+                                      'pinCodeOnActionTriggerAnimation'] !=
+                                  null) {
+                                animationsMap[
+                                        'pinCodeOnActionTriggerAnimation']!
+                                    .controller
+                                    .reset();
+                              }
                             }
                           }
 
@@ -400,12 +479,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator:
                             _model.pinCodeFormValidator.asValidator(context),
-                      )
-                          .animateOnPageLoad(
-                              animationsMap['pinCodeOnPageLoadAnimation']!)
-                          .animateOnActionTrigger(
-                            animationsMap['pinCodeOnActionTriggerAnimation']!,
-                          ),
+                      ).animateOnActionTrigger(
+                        animationsMap['pinCodeOnActionTriggerAnimation']!,
+                      ),
                     ],
                   ),
                 ),
@@ -535,7 +611,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                     ),
                   ),
                 ],
-              ),
+              ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation1']!),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
@@ -666,7 +742,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       ),
                     ),
                   ],
-                ),
+                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation2']!),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
@@ -935,7 +1011,11 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
             ],
-          ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
+          )
+              .animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!)
+              .animateOnActionTrigger(
+                animationsMap['listViewOnActionTriggerAnimation']!,
+              ),
         ),
       ),
     );
