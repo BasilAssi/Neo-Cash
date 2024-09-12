@@ -170,39 +170,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
-      'rowOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeOut,
-            delay: 200.0.ms,
-            duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          BlurEffect(
-            curve: Curves.easeOut,
-            delay: 200.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          MoveEffect(
-            curve: Curves.easeOut,
-            delay: 200.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          ScaleEffect(
-            curve: Curves.easeOut,
-            delay: 200.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
-          ),
-        ],
-      ),
       'buttonOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -304,7 +271,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
-      'rowOnPageLoadAnimation2': AnimationInfo(
+      'rowOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -664,7 +631,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
         height: MediaQuery.sizeOf(context).height * 1.0,
         decoration: BoxDecoration(
@@ -994,7 +961,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         animationsMap['buttonOnPageLoadAnimation3']!),
                   ),
                 ],
-              ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation1']!),
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
@@ -1128,7 +1095,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation6']!),
                     ),
                   ],
-                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation2']!),
+                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
