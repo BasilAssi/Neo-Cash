@@ -179,11 +179,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '+970',
     },
     'ke1w6n59': {
-      'ar': '+970',
+      'ar': '970+',
       'en': '+970',
     },
     'mydegl1b': {
-      'ar': '+972',
+      'ar': '972+',
       'en': '+972',
     },
     'bu04m7sg': {
@@ -1131,7 +1131,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'k2kbci2a': {
       'ar':
-          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+          'الرمز المكون من 4 أرقام سيستخدم لتأكيد حركاتك المالية من خلال التطبيق',
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },
@@ -2427,7 +2427,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xhrkcmyz': {
       'ar':
-          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+          'الرمز المكون من 4 أرقام سيستخدم لتأكيد حركاتك المالية من خلال التطبيق',
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },
