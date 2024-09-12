@@ -170,6 +170,41 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
+      'pinCodeOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(2.5, 2.5),
+            end: const Offset(1.0, 1.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, -50.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'buttonOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -826,9 +861,12 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator:
                             _model.pinCodeFormValidator.asValidator(context),
-                      ).animateOnActionTrigger(
-                        animationsMap['pinCodeOnActionTriggerAnimation']!,
-                      ),
+                      )
+                          .animateOnPageLoad(
+                              animationsMap['pinCodeOnPageLoadAnimation']!)
+                          .animateOnActionTrigger(
+                            animationsMap['pinCodeOnActionTriggerAnimation']!,
+                          ),
                     ],
                   ),
                 ),
