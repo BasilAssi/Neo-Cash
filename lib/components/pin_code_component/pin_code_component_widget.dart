@@ -8,6 +8,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,6 +44,15 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => PinCodeComponentModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (animationsMap['listViewOnActionTriggerAnimation'] != null) {
+        await animationsMap['listViewOnActionTriggerAnimation']!
+            .controller
+            .forward(from: 0.0);
+      }
+    });
 
     animationsMap.addAll({
       'listViewOnActionTriggerAnimation': AnimationInfo(
@@ -193,20 +203,21 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                             .override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyLargeFamily,
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).textColor,
                               fontSize: 24.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context).bodyLargeFamily),
                             ),
                         mainAxisAlignment: MainAxisAlignment.center,
-                        enableActiveFill: true,
+                        enableActiveFill: false,
                         autoFocus: false,
                         enablePinAutofill: true,
                         errorTextSpace: 16.0,
                         showCursor: false,
                         cursorColor: FlutterFlowTheme.of(context).primary,
-                        obscureText: false,
+                        obscureText: true,
+                        obscuringCharacter: '●',
                         hintCharacter: '●',
                         keyboardType: TextInputType.number,
                         pinTheme: PinTheme(
@@ -220,7 +231,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                             topRight: Radius.circular(12.0),
                           ),
                           shape: PinCodeFieldShape.box,
-                          activeColor: FlutterFlowTheme.of(context).primary,
+                          activeColor:
+                              FlutterFlowTheme.of(context).iconBackground,
                           inactiveColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
@@ -394,9 +406,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       onPressed: () async {
                         _model.pinCode = '${_model.pinCode}1';
                         safeSetState(() {});
-                        safeSetState(() {
-                          _model.pinCodeForm?.text = _model.pinCode!;
-                        });
                       },
                       text: FFLocalizations.of(context).getText(
                         '4ezp2cxb' /* 1 */,
@@ -727,9 +736,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                              8.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsets.all(0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
@@ -809,9 +817,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              8.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
