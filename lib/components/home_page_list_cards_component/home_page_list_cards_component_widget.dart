@@ -273,7 +273,7 @@ class _HomePageListCardsComponentWidgetState
                                     child: SizedBox(
                                       height:
                                           MediaQuery.sizeOf(context).height *
-                                              1.0,
+                                              0.9,
                                       child: PinCodeComponentWidget(
                                         actiononPass: () async {
                                           FFAppState().cardData =
