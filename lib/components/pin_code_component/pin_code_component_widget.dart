@@ -45,33 +45,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     _model = createModel(context, () => PinCodeComponentModel());
 
     animationsMap.addAll({
-      'listViewOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          BlurEffect(
-            curve: Curves.easeInOut,
-            delay: 100.0.ms,
-            duration: 500.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(60.0, 60.0),
-          ),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 200.0.ms,
-            duration: 500.0.ms,
-            begin: 1.0,
-            end: 0.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 700.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 300.0),
-          ),
-        ],
-      ),
       'listViewOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
@@ -306,8 +279,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: SizedBox(
-                  width: 100.0,
-                  height: 100.0,
+                  width: 50.0,
+                  height: 50.0,
                   child: Stack(
                     children: [
                       Align(
@@ -335,7 +308,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 70.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 24.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.5,
                   decoration: const BoxDecoration(),
@@ -1011,11 +984,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
             ],
-          )
-              .animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!)
-              .animateOnActionTrigger(
-                animationsMap['listViewOnActionTriggerAnimation']!,
-              ),
+          ).animateOnActionTrigger(
+            animationsMap['listViewOnActionTriggerAnimation']!,
+          ),
         ),
       ),
     );
