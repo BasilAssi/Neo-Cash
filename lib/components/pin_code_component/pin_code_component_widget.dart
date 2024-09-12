@@ -89,7 +89,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
+            begin: 0.5,
             end: 1.0,
           ),
           FadeEffect(
@@ -97,7 +97,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             delay: 250.0.ms,
             duration: 50.0.ms,
             begin: 1.0,
-            end: 0.0,
+            end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeIn,
@@ -119,6 +119,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onPageLoad,
         applyInitialState: true,
         effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 0.0.ms,
@@ -130,7 +131,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: 0.0,
+            begin: 1.0,
             end: 1.0,
           ),
           BlurEffect(
