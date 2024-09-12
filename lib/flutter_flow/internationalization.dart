@@ -1131,7 +1131,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'k2kbci2a': {
       'ar':
-          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+          'الرمز المكون من 4 أرقام سيستخدم لتأكيد حركاتك المالية من خلال التطبيق',
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },
@@ -2427,7 +2427,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xhrkcmyz': {
       'ar':
-          'الرمز المكون من 4 أرقام سيستخدم لإتمام الحركات المالية من خلال التطبيق',
+          'الرمز المكون من 4 أرقام سيستخدم لتأكيد حركاتك المالية من خلال التطبيق',
       'en':
           'The 4-digit PIN will be used to authorize financial transactions within the app',
     },

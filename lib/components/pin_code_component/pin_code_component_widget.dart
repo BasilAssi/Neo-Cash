@@ -8,7 +8,6 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,22 +44,12 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     super.initState();
     _model = createModel(context, () => PinCodeComponentModel());
 
-    // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (animationsMap['listViewOnActionTriggerAnimation'] != null) {
-        await animationsMap['listViewOnActionTriggerAnimation']!
-            .controller
-            .forward(from: 0.0);
-      }
-    });
-
     animationsMap.addAll({
-      'listViewOnActionTriggerAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onActionTrigger,
-        applyInitialState: true,
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           BlurEffect(
-            curve: Curves.easeInOut,
+            curve: Curves.easeOut,
             delay: 100.0.ms,
             duration: 500.0.ms,
             begin: const Offset(0.0, 0.0),
@@ -931,9 +920,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
             ],
-          ).animateOnActionTrigger(
-            animationsMap['listViewOnActionTriggerAnimation']!,
-          ),
+          ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
         ),
       ),
     );
