@@ -52,7 +52,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(2.5, 2.5),
+            begin: const Offset(1.5, 1.5),
             end: const Offset(1.0, 1.0),
           ),
           BlurEffect(
@@ -75,7 +75,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 200.ms),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 250.0.ms,
@@ -103,7 +102,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 0.0.ms,
@@ -176,6 +174,33 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
+      'pinCodeOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(2.5, 2.5),
+            end: const Offset(1.0, 1.0),
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, -50.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
     });
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -218,23 +243,33 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             children: [
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Stack(
-                  children: [
-                    Icon(
-                      Icons.lock_open,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 40.0,
-                    ).animateOnActionTrigger(
-                      animationsMap['iconOnActionTriggerAnimation1']!,
-                    ),
-                    Icon(
-                      Icons.lock_outline_rounded,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 40.0,
-                    ).animateOnActionTrigger(
-                      animationsMap['iconOnActionTriggerAnimation2']!,
-                    ),
-                  ],
+                child: SizedBox(
+                  width: 100.0,
+                  height: 100.0,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Icon(
+                          Icons.lock_open,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 40.0,
+                        ).animateOnActionTrigger(
+                          animationsMap['iconOnActionTriggerAnimation1']!,
+                        ),
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Icon(
+                          Icons.lock_outline_rounded,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 40.0,
+                        ).animateOnActionTrigger(
+                          animationsMap['iconOnActionTriggerAnimation2']!,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -365,9 +400,12 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator:
                             _model.pinCodeFormValidator.asValidator(context),
-                      ).animateOnActionTrigger(
-                        animationsMap['pinCodeOnActionTriggerAnimation']!,
-                      ),
+                      )
+                          .animateOnPageLoad(
+                              animationsMap['pinCodeOnPageLoadAnimation']!)
+                          .animateOnActionTrigger(
+                            animationsMap['pinCodeOnActionTriggerAnimation']!,
+                          ),
                     ],
                   ),
                 ),
