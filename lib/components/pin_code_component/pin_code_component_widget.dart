@@ -132,7 +132,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             delay: 200.0.ms,
             duration: 100.0.ms,
             begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, -20.0),
+            end: const Offset(0.0, 30.0),
           ),
         ],
       ),
@@ -269,7 +269,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                 '00') {
                               HapticFeedback.lightImpact();
                               await Future.delayed(
-                                  const Duration(milliseconds: 500));
+                                  const Duration(milliseconds: 200));
                               HapticFeedback.lightImpact();
                               await Future.delayed(
                                   const Duration(milliseconds: 100));
