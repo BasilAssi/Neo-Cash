@@ -357,7 +357,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your Phone Number',
     },
     '5n57g2jq': {
-      'ar': 'راح  يوصلك رمز تحقق على نفس الرقم , الرجاء التأكد من الرقم المدخل',
+      'ar': 'رح  يوصلك رمز تحقق على نفس الرقم , الرجاء التأكد من الرقم المدخل',
       'en':
           'You will receive a verification code on the same number. Please make sure of the provided number.',
     },
@@ -647,61 +647,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // pin_code
-  {
-    '7b6ufiar': {
-      'ar': '3',
-      'en': '3',
-    },
-    '9c7pp1l6': {
-      'ar': '2',
-      'en': '2',
-    },
-    's1pboej2': {
-      'ar': '1',
-      'en': '1',
-    },
-    'zkjy0s3s': {
-      'ar': '6',
-      'en': '6',
-    },
-    'hoh686ue': {
-      'ar': '5',
-      'en': '5',
-    },
-    '4vu9gcdy': {
-      'ar': '4',
-      'en': '4',
-    },
-    'ae9m7z46': {
-      'ar': '9',
-      'en': '9',
-    },
-    'bldx0dbs': {
-      'ar': '8',
-      'en': '8',
-    },
-    'gbw0k1xf': {
-      'ar': '7',
-      'en': '7',
-    },
-    'qggri9hp': {
-      'ar': '',
-      'en': '',
-    },
-    '6umc4o4u': {
-      'ar': '0',
-      'en': '0',
-    },
-    '66whvcgs': {
-      'ar': '',
-      'en': '',
-    },
-    'ala30aup': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
   // registeration_01
   {
     'cui94pxw': {
@@ -971,11 +916,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search for an item...',
     },
     '9hnsedy0': {
-      'ar': 'الرجاء إدخال رقم الهوية بشكل صحيح',
+      'ar': 'الرجاء إدخال رقم الوثيقة بشكل صحيح',
       'en': 'Please enter your ID number correctly',
     },
     'c42bc1ay': {
-      'ar': ' رقم الهوية',
+      'ar': ' رقم الوثيقة',
       'en': 'ID number',
     },
     'avin42p9': {
@@ -1212,7 +1157,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kqhv55n9': {
       'ar': 'يجب ألا يتجاوز النص 100 حرفًا.',
-      'en': 'Text must not exceed 25 characters.',
+      'en': 'Text must not exceed 100 characters.',
     },
     'qbk4zj7i': {
       'ar': 'الرجاء إدخال بريد إلكتروني صحيح.',
@@ -1246,7 +1191,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Password must be at least 7 characters long and contain one uppercase letter, one lowercase letter, and one number.',
     },
-    'if3r7kvc': {
+    'adnsilw0': {
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
@@ -2591,7 +2536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Please choose an option from the dropdown',
       'en': 'Please choose an option from the dropdown',
     },
-    'fws67ayg': {
+    'pu3jza3e': {
       'ar': 'Field is required',
       'en': 'Field is required',
     },
@@ -2867,11 +2812,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'at1quu1z': {
-      'ar': 'الرجاء إدخال رقم الهوية بشكل صحيح',
+      'ar': 'الرجاء إدخال رقم الوثيقة بشكل صحيح',
       'en': '',
     },
     'lonwiwbb': {
-      'ar': ' رقم الهوية',
+      'ar': ' رقم الوثيقة',
       'en': '',
     },
     'qge4504d': {
@@ -2975,6 +2920,61 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '2b6qtbns': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // pin_code
+  {
+    'sbpwr6w5': {
+      'ar': '3',
+      'en': '',
+    },
+    'xqd9clfs': {
+      'ar': '2',
+      'en': '',
+    },
+    '5fhxcvo0': {
+      'ar': '1',
+      'en': '',
+    },
+    'e9c5wdbk': {
+      'ar': '6',
+      'en': '',
+    },
+    '3oj4h2he': {
+      'ar': '5',
+      'en': '',
+    },
+    '5rx752cb': {
+      'ar': '4',
+      'en': '',
+    },
+    '6buto0oh': {
+      'ar': '9',
+      'en': '',
+    },
+    'cn1wslyn': {
+      'ar': '8',
+      'en': '',
+    },
+    '1u9wq6yc': {
+      'ar': '7',
+      'en': '',
+    },
+    '08749mxw': {
+      'ar': '',
+      'en': '',
+    },
+    '41v9f6zg': {
+      'ar': '0',
+      'en': '',
+    },
+    'v16kqthu': {
+      'ar': '',
+      'en': '',
+    },
+    'gwyheqi4': {
       'ar': 'Home',
       'en': '',
     },
@@ -3209,7 +3209,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // update_email_component
   {
     'tv7c0z7t': {
-      'ar': 'تغير الإيميل الخاص بك',
+      'ar': 'تعديل  الإيميل الخاص بك',
       'en': '',
     },
     'sgi9gsvt': {
@@ -3228,8 +3228,75 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
+    'fws67ayg': {
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
+    },
+    'tt5y9myk': {
+      'ar': 'يجب ألا يتجاوز النص 100 حرفًا.',
+      'en': '',
+    },
+    'l9l47kgh': {
+      'ar': 'الرجاء إدخال بريد إلكتروني صحيح.',
+      'en': 'Please enter a valid email.',
+    },
+    'if3r7kvc': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
     'x9ni795n': {
       'ar': 'تأكيد',
+      'en': '',
+    },
+  },
+  // pin_code_component
+  {
+    'fj8ikdq9': {
+      'ar': '3',
+      'en': '',
+    },
+    't8l67tzg': {
+      'ar': '2',
+      'en': '',
+    },
+    '4ezp2cxb': {
+      'ar': '1',
+      'en': '',
+    },
+    'xxhlgslh': {
+      'ar': '6',
+      'en': '',
+    },
+    'gchhwvc8': {
+      'ar': '5',
+      'en': '',
+    },
+    'bg4uaucw': {
+      'ar': '4',
+      'en': '',
+    },
+    'mcv9tml9': {
+      'ar': '9',
+      'en': '',
+    },
+    '9bb0dgr9': {
+      'ar': '8',
+      'en': '',
+    },
+    'ymichjjl': {
+      'ar': '7',
+      'en': '',
+    },
+    '9l081t2i': {
+      'ar': '',
+      'en': '',
+    },
+    '0vxgida4': {
+      'ar': '0',
+      'en': '',
+    },
+    'xlcer1iy': {
+      'ar': '',
       'en': '',
     },
   },

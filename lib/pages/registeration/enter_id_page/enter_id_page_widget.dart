@@ -220,7 +220,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '9hnsedy0' /* الرجاء إدخال رقم الهوية بشكل ص... */,
+                            '9hnsedy0' /* الرجاء إدخال رقم الوثيقة بشكل ... */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
@@ -250,7 +250,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                         decoration: InputDecoration(
                           isDense: false,
                           labelText: FFLocalizations.of(context).getText(
-                            'c42bc1ay' /*  رقم الهوية */,
+                            'c42bc1ay' /*  رقم الوثيقة */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium

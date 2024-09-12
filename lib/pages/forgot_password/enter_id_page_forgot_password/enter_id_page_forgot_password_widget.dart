@@ -209,7 +209,7 @@ class _EnterIdPageForgotPasswordWidgetState
                           const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'at1quu1z' /* الرجاء إدخال رقم الهوية بشكل ص... */,
+                          'at1quu1z' /* الرجاء إدخال رقم الوثيقة بشكل ... */,
                         ),
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily:
@@ -235,7 +235,7 @@ class _EnterIdPageForgotPasswordWidgetState
                       decoration: InputDecoration(
                         isDense: false,
                         labelText: FFLocalizations.of(context).getText(
-                          'lonwiwbb' /*  رقم الهوية */,
+                          'lonwiwbb' /*  رقم الوثيقة */,
                         ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(

@@ -1,7 +1,11 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -92,7 +96,7 @@ class _UpdateEmailComponentWidgetState
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'tv7c0z7t' /* تغير الإيميل الخاص بك */,
+                            'tv7c0z7t' /* تعديل  الإيميل الخاص بك */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .labelLarge
@@ -360,8 +364,90 @@ class _UpdateEmailComponentWidgetState
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                if (_model.formKey.currentState == null ||
+                                    !_model.formKey.currentState!.validate()) {
+                                  return;
+                                }
+                                _model.isNetworkAvailableOutput =
+                                    await actions.isNetworkAvailable();
+                                if (_model.isNetworkAvailableOutput == true) {
+                                  _model.apiResultSaveMyProfile =
+                                      await CardGroup.saveMyProfileCall.call(
+                                    deviceSerial:
+                                        FFAppState().deviceInformation.serial,
+                                    msgId: functions.messageId(),
+                                    token: FFAppState()
+                                        .AuthenticatedUser
+                                        .accessToken,
+                                    acceptLanguage: FFLocalizations.of(context)
+                                        .getVariableText(
+                                      arText: 'AR',
+                                      enText: 'EN',
+                                    ),
+                                    emailAddress: _model
+                                        .newEmailTextFieldTextController.text,
+                                  );
+
+                                  if ((_model
+                                          .apiResultSaveMyProfile?.succeeded ??
+                                      true)) {
+                                    if (ResponseModelStruct.maybeFromMap((_model
+                                                    .apiResultSaveMyProfile
+                                                    ?.jsonBody ??
+                                                ''))
+                                            ?.code ==
+                                        '00') {
+                                      FFAppState()
+                                          .updateAuthenticatedUserStruct(
+                                        (e) => e
+                                          ..emailAddress = _model
+                                              .newEmailTextFieldTextController
+                                              .text
+                                          ..emailVerified = false,
+                                      );
+                                      safeSetState(() {});
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'تم تعديل الإيميل بنجاح',
+                                          enText:
+                                              'Email has been modified successfully.',
+                                        ),
+                                      );
+                                      Navigator.pop(context);
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'فشل تعديل الإيميل, يُرجى المحاولة مرة أخرى',
+                                          enText:
+                                              'Email modification failed, please try again',
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText:
+                                            'فشل تعديل الإيميل, يُرجى المحاولة مرة أخرى',
+                                        enText:
+                                            'Email modification failed, please try again',
+                                      ),
+                                    );
+                                  }
+                                } else {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                      enText: 'Sorry, no internet connection.',
+                                    ),
+                                  );
+                                }
+
+                                safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'x9ni795n' /* تأكيد */,

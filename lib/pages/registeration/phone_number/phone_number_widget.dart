@@ -157,7 +157,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '5n57g2jq' /* راح  يوصلك رمز تحقق على نفس ال... */,
+                                      '5n57g2jq' /* رح  يوصلك رمز تحقق على نفس الر... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
