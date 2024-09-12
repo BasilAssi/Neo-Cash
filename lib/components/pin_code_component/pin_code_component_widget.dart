@@ -45,6 +45,32 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     _model = createModel(context, () => PinCodeComponentModel());
 
     animationsMap.addAll({
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(2.5, 2.5),
+            end: const Offset(1.0, 1.0),
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, -50.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'iconOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
@@ -871,7 +897,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
             ],
-          ),
+          ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
         ),
       ),
     );
