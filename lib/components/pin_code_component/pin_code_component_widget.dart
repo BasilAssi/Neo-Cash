@@ -247,10 +247,14 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           _model.isNetworkAvailableoutput =
                               await actions.isNetworkAvailable();
                           if (_model.isNetworkAvailableoutput == true) {
+                            _model.pINCODEHashedSHA256base64 =
+                                await actions.encodeSHA256(
+                              _model.pinCode,
+                            );
                             _model.apiResultValidateCustomerPIN =
                                 await CardGroup.validateCustomerPINCall.call(
                               msgId: functions.messageId(),
-                              pin: _model.pinCode,
+                              pin: _model.pINCODEHashedSHA256base64,
                               deviceSerial:
                                   FFAppState().deviceInformation.serial,
                               token: FFAppState().AuthenticatedUser.accessToken,
