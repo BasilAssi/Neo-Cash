@@ -3296,7 +3296,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'xlcer1iy': {
-      'ar': '',
+      'ar': 'close',
       'en': '',
     },
   },
