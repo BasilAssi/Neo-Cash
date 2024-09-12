@@ -119,6 +119,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
         trigger: AnimationTrigger.onPageLoad,
         applyInitialState: true,
         effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 0.0.ms,
