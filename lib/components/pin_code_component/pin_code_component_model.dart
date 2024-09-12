@@ -15,6 +15,8 @@ class PinCodeComponentModel extends FlutterFlowModel<PinCodeComponentWidget> {
   String? Function(BuildContext, String?)? pinCodeFormValidator;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in PinCode_form widget.
   bool? isNetworkAvailableoutput;
+  // Stores action output result for [Custom Action - encodeSHA256] action in PinCode_form widget.
+  String? pINCODEHashedSHA256base64;
   // Stores action output result for [Backend Call - API (Validate Customer PIN)] action in PinCode_form widget.
   ApiCallResponse? apiResultValidateCustomerPIN;
 
