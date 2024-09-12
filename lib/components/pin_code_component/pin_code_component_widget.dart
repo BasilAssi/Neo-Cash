@@ -203,9 +203,416 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
+      'buttonOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
       'rowOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation4': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation5': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation6': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation7': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation8': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation9': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation10': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation11': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          BlurEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(10.0, 10.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(2.0, 2.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation12': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 200.ms),
           FadeEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
@@ -431,7 +838,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                               }
                               await Future.delayed(
                                   const Duration(milliseconds: 1000));
-                              _model.pinCode = null;
+                              _model.pinCode = '';
                               safeSetState(() {});
                               safeSetState(() {
                                 _model.pinCodeForm?.clear();
@@ -501,7 +908,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       showLoadingIndicator: false,
-                    ),
+                    ).animateOnPageLoad(
+                        animationsMap['buttonOnPageLoadAnimation1']!),
                   ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
@@ -541,7 +949,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       showLoadingIndicator: false,
-                    ),
+                    ).animateOnPageLoad(
+                        animationsMap['buttonOnPageLoadAnimation2']!),
                   ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
@@ -581,7 +990,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         borderRadius: BorderRadius.circular(50.0),
                       ),
                       showLoadingIndicator: false,
-                    ),
+                    ).animateOnPageLoad(
+                        animationsMap['buttonOnPageLoadAnimation3']!),
                   ),
                 ],
               ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation1']!),
@@ -630,7 +1040,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation4']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -671,7 +1082,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation5']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -712,7 +1124,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation6']!),
                     ),
                   ],
                 ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation2']!),
@@ -762,7 +1175,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation7']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -803,7 +1217,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation8']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -844,7 +1259,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation9']!),
                     ),
                   ],
                 ),
@@ -900,7 +1316,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation10']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -941,7 +1358,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation11']!),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
@@ -978,7 +1396,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                         showLoadingIndicator: false,
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['buttonOnPageLoadAnimation12']!),
                     ),
                   ],
                 ),
