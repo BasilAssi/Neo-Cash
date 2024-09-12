@@ -127,13 +127,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             begin: const Offset(2.5, 2.5),
             end: const Offset(1.0, 1.0),
           ),
-          FadeEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 1.0,
-            end: 1.0,
-          ),
           BlurEffect(
             curve: Curves.easeOut,
             delay: 0.0.ms,
@@ -272,7 +265,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         enableActiveFill: false,
                         autoFocus: false,
-                        enablePinAutofill: true,
+                        enablePinAutofill: false,
                         errorTextSpace: 16.0,
                         showCursor: false,
                         cursorColor: FlutterFlowTheme.of(context).primary,
