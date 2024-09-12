@@ -115,34 +115,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ],
       ),
-      'pinCodeOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          ScaleEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(2.5, 2.5),
-            end: const Offset(1.0, 1.0),
-          ),
-          BlurEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          MoveEffect(
-            curve: Curves.easeOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.0, -50.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
       'pinCodeOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
@@ -367,12 +339,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator:
                             _model.pinCodeFormValidator.asValidator(context),
-                      )
-                          .animateOnPageLoad(
-                              animationsMap['pinCodeOnPageLoadAnimation']!)
-                          .animateOnActionTrigger(
-                            animationsMap['pinCodeOnActionTriggerAnimation']!,
-                          ),
+                      ).animateOnActionTrigger(
+                        animationsMap['pinCodeOnActionTriggerAnimation']!,
+                      ),
                     ],
                   ),
                 ),
