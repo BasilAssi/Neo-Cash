@@ -52,11 +52,6 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             .controller
             .forward(from: 0.0);
       }
-      if (animationsMap['iconOnActionTriggerAnimation2'] != null) {
-        await animationsMap['iconOnActionTriggerAnimation2']!
-            .controller
-            .forward(from: 0.0);
-      }
     });
 
     animationsMap.addAll({

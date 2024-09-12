@@ -157,334 +157,349 @@ class _HomePageListCardsComponentWidgetState
                     final cardListItem = cardList[cardListIndex];
                     return Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          if (FFAppState().AppSettings.biometricEnabled ==
-                              true) {
-                            final localAuth = LocalAuthentication();
-                            bool isBiometricSupported =
-                                await localAuth.isDeviceSupported();
-                            bool canCheckBiometrics =
-                                await localAuth.canCheckBiometrics;
-                            if (isBiometricSupported && canCheckBiometrics) {
-                              _model.biometricOutput =
-                                  await localAuth.authenticate(
-                                      localizedReason:
-                                          FFLocalizations.of(context).getText(
-                                        'sidsk0va' /* تأكيد البصمة للاستمرار */,
-                                      ),
-                                      options: const AuthenticationOptions(
-                                          biometricOnly: true));
-                              safeSetState(() {});
-                            }
+                      child: Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            if (FFAppState().AppSettings.biometricEnabled ==
+                                true) {
+                              final localAuth = LocalAuthentication();
+                              bool isBiometricSupported =
+                                  await localAuth.isDeviceSupported();
+                              bool canCheckBiometrics =
+                                  await localAuth.canCheckBiometrics;
+                              if (isBiometricSupported && canCheckBiometrics) {
+                                _model.biometricOutput =
+                                    await localAuth.authenticate(
+                                        localizedReason:
+                                            FFLocalizations.of(context).getText(
+                                          'sidsk0va' /* تأكيد البصمة للاستمرار */,
+                                        ),
+                                        options: const AuthenticationOptions(
+                                            biometricOnly: true));
+                                safeSetState(() {});
+                              }
 
-                            if (_model.biometricOutput == true) {
-                              FFAppState().cardData = CardDataStruct(
-                                cardNumber: cardListItem.hasCardNumber()
-                                    ? cardListItem.cardNumber
-                                    : ' ',
-                                expiryDate: cardListItem.hasExpiryDate()
-                                    ? cardListItem.expiryDate
-                                    : ' ',
-                                status: cardListItem.hasStatus()
-                                    ? cardListItem.status
-                                    : ' ',
-                                nameOnCard: cardListItem.hasNameOnCard()
-                                    ? cardListItem.nameOnCard
-                                    : ' ',
-                                type: cardListItem.hasType()
-                                    ? cardListItem.type
-                                    : ' ',
-                                cardCvc: cardListItem.hasCardCvc()
-                                    ? cardListItem.cardCvc
-                                    : ' ',
-                                firstName: cardListItem.hasFirstName()
-                                    ? cardListItem.firstName
-                                    : ' ',
-                                middleName: cardListItem.hasMiddleName()
-                                    ? cardListItem.middleName
-                                    : ' ',
-                                lastName: cardListItem.hasLastName()
-                                    ? cardListItem.lastName
-                                    : ' ',
-                                cardToken: cardListItem.hasCardToken()
-                                    ? cardListItem.cardToken
-                                    : ' ',
-                                imagePath: cardListItem.hasImagePath()
-                                    ? cardListItem.imagePath
-                                    : ' ',
-                                voucherValue: cardListItem.hasVoucherValue()
-                                    ? cardListItem.voucherValue
-                                    : ' ',
-                                programCode: cardListItem.hasProgramCode()
-                                    ? cardListItem.programCode
-                                    : ' ',
-                                localProgramName:
-                                    cardListItem.hasLocalProgramName()
-                                        ? cardListItem.localProgramName
-                                        : ' ',
-                                latinProgramName:
-                                    cardListItem.hasLatinProgramName()
-                                        ? cardListItem.latinProgramName
-                                        : ' ',
-                                accountNumber: cardListItem.hasAccountNumber()
-                                    ? cardListItem.accountNumber
-                                    : ' ',
-                                isReloadable: cardListItem.hasIsReloadable()
-                                    ? cardListItem.isReloadable
-                                    : false,
-                                isDueRenewalFees:
-                                    cardListItem.hasIsDueRenewalFees()
-                                        ? cardListItem.isDueRenewalFees
-                                        : ' ',
-                                renewalDueDate: cardListItem.hasRenewalDueDate()
-                                    ? cardListItem.renewalDueDate
-                                    : ' ',
-                                isPhysical: cardListItem.hasIsPhysical()
-                                    ? cardListItem.isPhysical
-                                    : false,
-                              );
-                              _model.updatePage(() {});
+                              if (_model.biometricOutput == true) {
+                                FFAppState().cardData = CardDataStruct(
+                                  cardNumber: cardListItem.hasCardNumber()
+                                      ? cardListItem.cardNumber
+                                      : ' ',
+                                  expiryDate: cardListItem.hasExpiryDate()
+                                      ? cardListItem.expiryDate
+                                      : ' ',
+                                  status: cardListItem.hasStatus()
+                                      ? cardListItem.status
+                                      : ' ',
+                                  nameOnCard: cardListItem.hasNameOnCard()
+                                      ? cardListItem.nameOnCard
+                                      : ' ',
+                                  type: cardListItem.hasType()
+                                      ? cardListItem.type
+                                      : ' ',
+                                  cardCvc: cardListItem.hasCardCvc()
+                                      ? cardListItem.cardCvc
+                                      : ' ',
+                                  firstName: cardListItem.hasFirstName()
+                                      ? cardListItem.firstName
+                                      : ' ',
+                                  middleName: cardListItem.hasMiddleName()
+                                      ? cardListItem.middleName
+                                      : ' ',
+                                  lastName: cardListItem.hasLastName()
+                                      ? cardListItem.lastName
+                                      : ' ',
+                                  cardToken: cardListItem.hasCardToken()
+                                      ? cardListItem.cardToken
+                                      : ' ',
+                                  imagePath: cardListItem.hasImagePath()
+                                      ? cardListItem.imagePath
+                                      : ' ',
+                                  voucherValue: cardListItem.hasVoucherValue()
+                                      ? cardListItem.voucherValue
+                                      : ' ',
+                                  programCode: cardListItem.hasProgramCode()
+                                      ? cardListItem.programCode
+                                      : ' ',
+                                  localProgramName:
+                                      cardListItem.hasLocalProgramName()
+                                          ? cardListItem.localProgramName
+                                          : ' ',
+                                  latinProgramName:
+                                      cardListItem.hasLatinProgramName()
+                                          ? cardListItem.latinProgramName
+                                          : ' ',
+                                  accountNumber: cardListItem.hasAccountNumber()
+                                      ? cardListItem.accountNumber
+                                      : ' ',
+                                  isReloadable: cardListItem.hasIsReloadable()
+                                      ? cardListItem.isReloadable
+                                      : false,
+                                  isDueRenewalFees:
+                                      cardListItem.hasIsDueRenewalFees()
+                                          ? cardListItem.isDueRenewalFees
+                                          : ' ',
+                                  renewalDueDate:
+                                      cardListItem.hasRenewalDueDate()
+                                          ? cardListItem.renewalDueDate
+                                          : ' ',
+                                  isPhysical: cardListItem.hasIsPhysical()
+                                      ? cardListItem.isPhysical
+                                      : false,
+                                );
+                                _model.updatePage(() {});
 
-                              context.pushNamed('card_details');
-                            } else {
-                              await actions.showToast(
-                                FFLocalizations.of(context).getVariableText(
-                                  arText: 'تعذر استخدام بصمة التعريف',
-                                  enText: 'Failed biometric ',
-                                ),
-                              );
-                            }
-                          } else {
-                            await showModalBottomSheet(
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              isDismissible: false,
-                              enableDrag: false,
-                              context: context,
-                              builder: (context) {
-                                return WebViewAware(
-                                  child: Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: SizedBox(
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              0.9,
-                                      child: PinCodeComponentWidget(
-                                        actiononPass: () async {
-                                          FFAppState().cardData =
-                                              CardDataStruct(
-                                            cardNumber:
-                                                cardListItem.hasCardNumber()
-                                                    ? cardListItem.cardNumber
-                                                    : ' ',
-                                            expiryDate:
-                                                cardListItem.hasExpiryDate()
-                                                    ? cardListItem.expiryDate
-                                                    : ' ',
-                                            status: cardListItem.hasStatus()
-                                                ? cardListItem.status
-                                                : ' ',
-                                            nameOnCard:
-                                                cardListItem.hasNameOnCard()
-                                                    ? cardListItem.nameOnCard
-                                                    : ' ',
-                                            type: cardListItem.hasType()
-                                                ? cardListItem.type
-                                                : ' ',
-                                            cardCvc: cardListItem.hasCardCvc()
-                                                ? cardListItem.cardCvc
-                                                : ' ',
-                                            firstName:
-                                                cardListItem.hasFirstName()
-                                                    ? cardListItem.firstName
-                                                    : ' ',
-                                            middleName:
-                                                cardListItem.hasMiddleName()
-                                                    ? cardListItem.middleName
-                                                    : ' ',
-                                            lastName: cardListItem.hasLastName()
-                                                ? cardListItem.lastName
-                                                : ' ',
-                                            cardToken:
-                                                cardListItem.hasCardToken()
-                                                    ? cardListItem.cardToken
-                                                    : ' ',
-                                            imagePath:
-                                                cardListItem.hasImagePath()
-                                                    ? cardListItem.imagePath
-                                                    : ' ',
-                                            voucherValue:
-                                                cardListItem.hasVoucherValue()
-                                                    ? cardListItem.voucherValue
-                                                    : ' ',
-                                            programCode:
-                                                cardListItem.hasProgramCode()
-                                                    ? cardListItem.programCode
-                                                    : ' ',
-                                            localProgramName: cardListItem
-                                                    .hasLocalProgramName()
-                                                ? cardListItem.localProgramName
-                                                : ' ',
-                                            latinProgramName: cardListItem
-                                                    .hasLatinProgramName()
-                                                ? cardListItem.latinProgramName
-                                                : ' ',
-                                            accountNumber:
-                                                cardListItem.hasAccountNumber()
-                                                    ? cardListItem.accountNumber
-                                                    : ' ',
-                                            isReloadable:
-                                                cardListItem.hasIsReloadable()
-                                                    ? cardListItem.isReloadable
-                                                    : false,
-                                            isDueRenewalFees: cardListItem
-                                                    .hasIsDueRenewalFees()
-                                                ? cardListItem.isDueRenewalFees
-                                                : ' ',
-                                            renewalDueDate: cardListItem
-                                                    .hasRenewalDueDate()
-                                                ? cardListItem.renewalDueDate
-                                                : ' ',
-                                            isPhysical:
-                                                cardListItem.hasIsPhysical()
-                                                    ? cardListItem.isPhysical
-                                                    : false,
-                                          );
-                                          _model.updatePage(() {});
-
-                                          context.pushNamed('card_details');
-                                        },
-                                      ),
-                                    ),
+                                context.pushNamed('card_details');
+                              } else {
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'تعذر استخدام بصمة التعريف',
+                                    enText: 'Failed biometric ',
                                   ),
                                 );
-                              },
-                            ).then((value) => safeSetState(() {}));
-                          }
+                              }
+                            } else {
+                              await showDialog(
+                                barrierDismissible: false,
+                                context: context,
+                                builder: (dialogContext) {
+                                  return Dialog(
+                                    elevation: 0,
+                                    insetPadding: EdgeInsets.zero,
+                                    backgroundColor: Colors.transparent,
+                                    alignment: const AlignmentDirectional(0.0, 0.0)
+                                        .resolve(Directionality.of(context)),
+                                    child: WebViewAware(
+                                      child: SizedBox(
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                1.0,
+                                        child: PinCodeComponentWidget(
+                                          actiononPass: () async {
+                                            FFAppState().cardData =
+                                                CardDataStruct(
+                                              cardNumber:
+                                                  cardListItem.hasCardNumber()
+                                                      ? cardListItem.cardNumber
+                                                      : ' ',
+                                              expiryDate:
+                                                  cardListItem.hasExpiryDate()
+                                                      ? cardListItem.expiryDate
+                                                      : ' ',
+                                              status: cardListItem.hasStatus()
+                                                  ? cardListItem.status
+                                                  : ' ',
+                                              nameOnCard:
+                                                  cardListItem.hasNameOnCard()
+                                                      ? cardListItem.nameOnCard
+                                                      : ' ',
+                                              type: cardListItem.hasType()
+                                                  ? cardListItem.type
+                                                  : ' ',
+                                              cardCvc: cardListItem.hasCardCvc()
+                                                  ? cardListItem.cardCvc
+                                                  : ' ',
+                                              firstName:
+                                                  cardListItem.hasFirstName()
+                                                      ? cardListItem.firstName
+                                                      : ' ',
+                                              middleName:
+                                                  cardListItem.hasMiddleName()
+                                                      ? cardListItem.middleName
+                                                      : ' ',
+                                              lastName:
+                                                  cardListItem.hasLastName()
+                                                      ? cardListItem.lastName
+                                                      : ' ',
+                                              cardToken:
+                                                  cardListItem.hasCardToken()
+                                                      ? cardListItem.cardToken
+                                                      : ' ',
+                                              imagePath:
+                                                  cardListItem.hasImagePath()
+                                                      ? cardListItem.imagePath
+                                                      : ' ',
+                                              voucherValue: cardListItem
+                                                      .hasVoucherValue()
+                                                  ? cardListItem.voucherValue
+                                                  : ' ',
+                                              programCode:
+                                                  cardListItem.hasProgramCode()
+                                                      ? cardListItem.programCode
+                                                      : ' ',
+                                              localProgramName: cardListItem
+                                                      .hasLocalProgramName()
+                                                  ? cardListItem
+                                                      .localProgramName
+                                                  : ' ',
+                                              latinProgramName: cardListItem
+                                                      .hasLatinProgramName()
+                                                  ? cardListItem
+                                                      .latinProgramName
+                                                  : ' ',
+                                              accountNumber: cardListItem
+                                                      .hasAccountNumber()
+                                                  ? cardListItem.accountNumber
+                                                  : ' ',
+                                              isReloadable: cardListItem
+                                                      .hasIsReloadable()
+                                                  ? cardListItem.isReloadable
+                                                  : false,
+                                              isDueRenewalFees: cardListItem
+                                                      .hasIsDueRenewalFees()
+                                                  ? cardListItem
+                                                      .isDueRenewalFees
+                                                  : ' ',
+                                              renewalDueDate: cardListItem
+                                                      .hasRenewalDueDate()
+                                                  ? cardListItem.renewalDueDate
+                                                  : ' ',
+                                              isPhysical:
+                                                  cardListItem.hasIsPhysical()
+                                                      ? cardListItem.isPhysical
+                                                      : false,
+                                            );
+                                            _model.updatePage(() {});
 
-                          safeSetState(() {});
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
-                                  decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 6.0,
-                                        color: Color(0x4B1A1F24),
-                                        offset: Offset(
-                                          0.0,
-                                          2.0,
+                                            context.pushNamed('card_details');
+                                          },
                                         ),
-                                      )
-                                    ],
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        FlutterFlowTheme.of(context).secondary,
-                                        FlutterFlowTheme.of(context).primaryText
-                                      ],
-                                      stops: const [0.0, 1.0],
-                                      begin: const AlignmentDirectional(0.94, -1.0),
-                                      end: const AlignmentDirectional(-0.94, 1.0),
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 20.0, 20.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Image.asset(
-                                                'assets/images/visa@3x.png',
-                                                width: 44.0,
-                                                height: 14.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ],
+                                  );
+                                },
+                              );
+                            }
+
+                            safeSetState(() {});
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height:
+                                        MediaQuery.sizeOf(context).height * 1.0,
+                                    decoration: BoxDecoration(
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          blurRadius: 6.0,
+                                          color: Color(0x4B1A1F24),
+                                          offset: Offset(
+                                            0.0,
+                                            2.0,
+                                          ),
+                                        )
+                                      ],
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText
+                                        ],
+                                        stops: const [0.0, 1.0],
+                                        begin: const AlignmentDirectional(0.94, -1.0),
+                                        end: const AlignmentDirectional(-0.94, 1.0),
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 20.0, 20.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Image.asset(
+                                                  'assets/images/visa@3x.png',
+                                                  width: 44.0,
+                                                  height: 14.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 12.0, 20.0, 16.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                '${cardListItem.hasCardNumber() ? functions.getLast4Digits(cardListItem.cardNumber) : ' '} **** ',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Roboto Mono',
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts:
-                                                          GoogleFonts.asMap()
-                                                              .containsKey(
-                                                                  'Roboto Mono'),
-                                                    ),
-                                              ),
-                                              Text(
-                                                functions.spliteExpiryDate(
-                                                    cardListItem.expiryDate)!,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Roboto Mono',
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts:
-                                                          GoogleFonts.asMap()
-                                                              .containsKey(
-                                                                  'Roboto Mono'),
-                                                    ),
-                                              ),
-                                            ],
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 12.0, 20.0, 16.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  '${cardListItem.hasCardNumber() ? functions.getLast4Digits(cardListItem.cardNumber) : ' '} **** ',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Roboto Mono',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            GoogleFonts.asMap()
+                                                                .containsKey(
+                                                                    'Roboto Mono'),
+                                                      ),
+                                                ),
+                                                Text(
+                                                  functions.spliteExpiryDate(
+                                                      cardListItem.expiryDate)!,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Roboto Mono',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            GoogleFonts.asMap()
+                                                                .containsKey(
+                                                                    'Roboto Mono'),
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['rowOnPageLoadAnimation']!),
+                            ],
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['rowOnPageLoadAnimation']!),
+                      ),
                     );
                   },
                   itemCount: cardList.length,
