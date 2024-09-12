@@ -52,6 +52,11 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             .controller
             .forward(from: 0.0);
       }
+      if (animationsMap['iconOnActionTriggerAnimation2'] != null) {
+        await animationsMap['iconOnActionTriggerAnimation2']!
+            .controller
+            .forward(from: 0.0);
+      }
     });
 
     animationsMap.addAll({
@@ -230,7 +235,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                             topLeft: Radius.circular(12.0),
                             topRight: Radius.circular(12.0),
                           ),
-                          shape: PinCodeFieldShape.box,
+                          shape: PinCodeFieldShape.circle,
                           activeColor:
                               FlutterFlowTheme.of(context).iconBackground,
                           inactiveColor:
@@ -264,7 +269,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                 '00') {
                               HapticFeedback.lightImpact();
                               await Future.delayed(
-                                  const Duration(milliseconds: 200));
+                                  const Duration(milliseconds: 500));
                               HapticFeedback.lightImpact();
                               await Future.delayed(
                                   const Duration(milliseconds: 100));
@@ -406,6 +411,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       onPressed: () async {
                         _model.pinCode = '${_model.pinCode}1';
                         safeSetState(() {});
+                        safeSetState(() {
+                          _model.pinCodeForm?.text = _model.pinCode!;
+                        });
                       },
                       text: FFLocalizations.of(context).getText(
                         '4ezp2cxb' /* 1 */,
@@ -716,6 +724,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           _model.pinCode =
                               functions.removeLastCharacter(_model.pinCode);
                           safeSetState(() {});
+                          safeSetState(() {
+                            _model.pinCodeForm?.text = _model.pinCode!;
+                          });
                           if (animationsMap[
                                   'listViewOnActionTriggerAnimation'] !=
                               null) {
@@ -803,8 +814,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('one pressed ...');
+                        onPressed: () async {
+                          Navigator.pop(context);
                         },
                         text: FFLocalizations.of(context).getText(
                           'xlcer1iy' /*  */,
