@@ -106,6 +106,13 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             begin: const Offset(0.0, 0.0),
             end: const Offset(0.0, -20.0),
           ),
+          FadeEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
         ],
       ),
       'pinCodeOnPageLoadAnimation': AnimationInfo(
@@ -167,6 +174,13 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             duration: 600.0.ms,
             begin: 1.0,
             end: 0.0,
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
