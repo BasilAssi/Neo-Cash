@@ -87,8 +87,8 @@ class _AgentListWidgetState extends State<AgentListWidget> {
           elevation: 0.0,
         ),
         body: FlutterFlowWebView(
-          content: 'https://flutter.dev',
-          bypass: true,
+          content: 'https://neocash.ps/dealers.html',
+          bypass: false,
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
           verticalScroll: true,

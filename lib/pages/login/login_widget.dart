@@ -333,7 +333,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .textColor,
-                                                          fontSize: 16.0,
+                                                          fontSize: 18.0,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -484,7 +484,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   () => _model.dropDownValue =
                                                       val),
                                               width: 100.0,
-                                              height: 48.0,
+                                              height: 55.0,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -497,7 +497,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .textColor,
-                                                        fontSize: 14.0,
+                                                        fontSize: 18.0,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()

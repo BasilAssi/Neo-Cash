@@ -223,31 +223,42 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           FlutterFlowTheme.of(context).secondaryBackground,
                       dense: false,
                     ),
-                    ListTile(
-                      leading: FaIcon(
-                        FontAwesomeIcons.coins,
-                        color: FlutterFlowTheme.of(context).primary,
-                        size: 32.0,
-                      ),
-                      title: Text(
-                        FFLocalizations.of(context).getText(
-                          'nq7ri7jv' /* أسعار العملات */,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed('list_exchange_rate');
+                      },
+                      child: ListTile(
+                        leading: FaIcon(
+                          FontAwesomeIcons.coins,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 32.0,
                         ),
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              color: FlutterFlowTheme.of(context).primary,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'nq7ri7jv' /* أسعار العملات */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
                       ),
-                      tileColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      dense: false,
                     ),
                     InkWell(
                       splashColor: Colors.transparent,

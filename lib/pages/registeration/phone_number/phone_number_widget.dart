@@ -184,54 +184,138 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 16.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                    flex: 2,
-                                    child: TextFormField(
-                                      controller: _model.textController,
-                                      focusNode: _model.textFieldFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.textController',
-                                        const Duration(milliseconds: 300),
-                                        () async {
-                                          safeSetState(() {
-                                            _model.textController?.text =
-                                                functions.updateTextfield(_model
-                                                    .textController.text)!;
-                                            _model.textController?.selection =
-                                                TextSelection.collapsed(
-                                                    offset: _model
-                                                        .textController!
-                                                        .text
-                                                        .length);
-                                          });
-                                        },
-                                      ),
-                                      autofocus: true,
-                                      autofillHints: const [
-                                        AutofillHints.telephoneNumber
-                                      ],
-                                      textInputAction: TextInputAction.done,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'xoyvv7gu' /* 5xxxxxxxx */,
+                              child: Container(
+                                decoration: const BoxDecoration(),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: TextFormField(
+                                        controller: _model.textController,
+                                        focusNode: _model.textFieldFocusNode,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.textController',
+                                          const Duration(milliseconds: 300),
+                                          () async {
+                                            safeSetState(() {
+                                              _model.textController?.text =
+                                                  functions.updateTextfield(
+                                                      _model.textController
+                                                          .text)!;
+                                              _model.textController?.selection =
+                                                  TextSelection.collapsed(
+                                                      offset: _model
+                                                          .textController!
+                                                          .text
+                                                          .length);
+                                            });
+                                          },
                                         ),
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                        autofocus: true,
+                                        autofillHints: const [
+                                          AutofillHints.telephoneNumber
+                                        ],
+                                        textInputAction: TextInputAction.done,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: FFLocalizations.of(context)
+                                              .getText(
+                                            'xoyvv7gu' /* 5xxxxxxxx */,
+                                          ),
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
+                                              ),
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
+                                              ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .textFieldBorder,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .textColor,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
@@ -239,154 +323,89 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                                   .containsKey(
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMediumFamily),
+                                                          .bodyMediumFamily),
                                             ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                        maxLength: 9,
+                                        maxLengthEnforcement:
+                                            MaxLengthEnforcement.enforced,
+                                        keyboardType: TextInputType.phone,
+                                        validator: _model
+                                            .textControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .prefixMobileNumberDropDownValueController ??=
+                                            FormFieldController<String>(
+                                          _model.prefixMobileNumberDropDownValue ??=
+                                              '970',
+                                        ),
+                                        options:
+                                            List<String>.from(['970', '972']),
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            'k890nwac' /* +970 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'gangnkno' /* +972 */,
+                                          )
+                                        ],
+                                        onChanged: (val) => safeSetState(() =>
+                                            _model.prefixMobileNumberDropDownValue =
+                                                val),
+                                        width: 100.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              fontSize: 14.0,
+                                                      .bodyMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .textColor,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMediumFamily),
+                                                          .bodyMediumFamily),
                                             ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .textFieldBorder,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 30.0,
                                         ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
+                                        elevation: 2.0,
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .textFieldBorder,
+                                        borderWidth: 1.0,
+                                        borderRadius: 12.0,
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 4.0, 16.0, 4.0),
+                                        hidesUnderline: true,
+                                        disabled: (FFAppState()
+                                                    .registerationFormData
+                                                    .idType ==
+                                                'NATIONAL') ||
+                                            (FFAppState()
+                                                    .registerationFormData
+                                                    .idType ==
+                                                'PASSPORT'),
+                                        isSearchable: false,
+                                        isMultiSelect: false,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                      maxLength: 9,
-                                      maxLengthEnforcement:
-                                          MaxLengthEnforcement.enforced,
-                                      keyboardType: TextInputType.phone,
-                                      validator: _model.textControllerValidator
-                                          .asValidator(context),
                                     ),
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: FlutterFlowDropDown<String>(
-                                      controller: _model
-                                              .prefixMobileNumberDropDownValueController ??=
-                                          FormFieldController<String>(
-                                        _model.prefixMobileNumberDropDownValue ??=
-                                            '970',
-                                      ),
-                                      options:
-                                          List<String>.from(['970', '972']),
-                                      optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          'k890nwac' /* +970 */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'gangnkno' /* +972 */,
-                                        )
-                                      ],
-                                      onChanged: (val) => safeSetState(() =>
-                                          _model.prefixMobileNumberDropDownValue =
-                                              val),
-                                      width: 100.0,
-                                      height: 50.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 30.0,
-                                      ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .textFieldBorder,
-                                      borderWidth: 1.0,
-                                      borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      disabled: (FFAppState()
-                                                  .registerationFormData
-                                                  .idType ==
-                                              'NATIONAL') ||
-                                          (FFAppState()
-                                                  .registerationFormData
-                                                  .idType ==
-                                              'PASSPORT'),
-                                      isSearchable: false,
-                                      isMultiSelect: false,
-                                    ),
-                                  ),
-                                ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(const SizedBox(width: 16.0)),
+                                ),
                               ),
                             ),
                           ),
