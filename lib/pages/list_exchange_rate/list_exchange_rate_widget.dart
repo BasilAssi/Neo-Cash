@@ -264,22 +264,18 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
 
                               return Builder(
                                 builder: (context) {
-                                  final listExchangeRate = (CardGroup
-                                                  .listExchangeRateCall
-                                                  .records(
-                                                    listViewListExchangeRateResponse
-                                                        .jsonBody,
-                                                  )
-                                                  ?.toList()
-                                                  .map<ExchangeRateDataStruct?>(
-                                                      ExchangeRateDataStruct
-                                                          .maybeFromMap)
-                                                  .toList()
-                                              as Iterable<
-                                                  ExchangeRateDataStruct?>)
-                                          .withoutNulls
-                                          .toList() ??
-                                      [];
+                                  final listExchangeRate =
+                                      (listViewListExchangeRateResponse.jsonBody
+                                                      .toList()
+                                                      .map<ExchangeRateDataStruct?>(
+                                                          ExchangeRateDataStruct
+                                                              .maybeFromMap)
+                                                      .toList()
+                                                  as Iterable<
+                                                      ExchangeRateDataStruct?>)
+                                              .withoutNulls
+                                              .toList() ??
+                                          [];
                                   if (listExchangeRate.isEmpty) {
                                     return const Center(
                                       child: EmptyListOfExchangeRateWidget(),
