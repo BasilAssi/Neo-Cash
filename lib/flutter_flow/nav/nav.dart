@@ -163,11 +163,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration06Widget(),
             ),
             FFRoute(
-              name: 'transfer_money_between_cards',
-              path: 'transferMoneyBetweenCards',
-              builder: (context, params) => const TransferMoneyBetweenCardsWidget(),
-            ),
-            FFRoute(
               name: 'registeration_03',
               path: 'registeration03',
               builder: (context, params) => const Registeration03Widget(),
