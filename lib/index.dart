@@ -27,8 +27,6 @@ export '/pages/registeration/registeration_07/registeration07_widget.dart'
     show Registeration07Widget;
 export '/pages/registeration/registeration_06/registeration06_widget.dart'
     show Registeration06Widget;
-export '/pages/transfer_money_between_cards/transfer_money_between_cards_widget.dart'
-    show TransferMoneyBetweenCardsWidget;
 export '/pages/registeration/registeration_03/registeration03_widget.dart'
     show Registeration03Widget;
 export '/pages/registeration/registeration_05/registeration05_widget.dart'

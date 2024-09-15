@@ -11,3 +11,4 @@ export 'is_valid_p_i_n.dart' show isValidPIN;
 export 'validate_mobile_number.dart' show validateMobileNumber;
 export 'show_date_range_picker_action.dart' show showDateRangePickerAction;
 export 'get_f_c_m_token.dart' show getFCMToken;
+export 'save_to_gallary.dart' show saveToGallary;
