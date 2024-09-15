@@ -136,7 +136,6 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'home_page': const HomePageWidget(),
-      'send_money_to_friend': const SendMoneyToFriendWidget(),
       'transactions_home_page': const TransactionsHomePageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -163,16 +162,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'hjejmmsa' /* الرئيسية */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.screen_share_outlined,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'hlwqlc5j' /* إرسال لصديق */,
             ),
             tooltip: '',
           ),
