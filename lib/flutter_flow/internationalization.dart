@@ -406,7 +406,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
       'en': 'Next',
     },
-    'ropov1fv': {
+    'sruxt71n': {
       'ar': 'Home',
       'en': 'Home',
     },
@@ -2979,6 +2979,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // list_exchange_rate
+  {
+    'sno3w7d0': {
+      'ar': 'العملة',
+      'en': '',
+    },
+    'm0m5k6uc': {
+      'ar': 'شراء',
+      'en': '',
+    },
+    '2365y9ek': {
+      'ar': 'بيع',
+      'en': '',
+    },
+    '5408c9tx': {
+      'ar': 'أسعار العملات',
+      'en': '',
+    },
+    'ropov1fv': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // error_component
   {
     'gzit5wjk': {
@@ -3297,6 +3320,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xlcer1iy': {
       'ar': 'close',
+      'en': '',
+    },
+  },
+  // empty_list_of_exchange_rate
+  {
+    'mmcsxokt': {
+      'ar': 'لا يوجد اسعار صرف ',
       'en': '',
     },
   },

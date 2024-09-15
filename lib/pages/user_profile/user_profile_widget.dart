@@ -164,9 +164,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                     const Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     const Duration(milliseconds: 500),
-                                                imageUrl: FFAppState()
-                                                    .AuthenticatedUser
-                                                    .userProfile,
+                                                imageUrl:
+                                                    '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                                 fit: BoxFit.contain,
                                                 errorWidget: (context, error,
                                                         stackTrace) =>
@@ -176,18 +175,16 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 ),
                                               ),
                                               allowRotation: false,
-                                              tag: FFAppState()
-                                                  .AuthenticatedUser
-                                                  .userProfile,
+                                              tag:
+                                                  '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                               useHeroAnimation: true,
                                             ),
                                           ),
                                         );
                                       },
                                       child: Hero(
-                                        tag: FFAppState()
-                                            .AuthenticatedUser
-                                            .userProfile,
+                                        tag:
+                                            '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                         transitionOnUserGestures: true,
                                         child: ClipRRect(
                                           borderRadius:
@@ -197,9 +194,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 const Duration(milliseconds: 500),
                                             fadeOutDuration:
                                                 const Duration(milliseconds: 500),
-                                            imageUrl: FFAppState()
-                                                .AuthenticatedUser
-                                                .userProfile,
+                                            imageUrl:
+                                                '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                             width: double.infinity,
                                             height: double.infinity,
                                             fit: BoxFit.cover,

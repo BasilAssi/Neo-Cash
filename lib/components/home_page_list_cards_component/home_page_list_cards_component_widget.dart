@@ -436,13 +436,13 @@ class _HomePageListCardsComponentWidgetState
                                                 ),
                                                 if ((cardListItem.hasStatus()
                                                         ? cardListItem.status
-                                                        : ' ') !=
-                                                    'ACTIVE')
+                                                        : ' ') ==
+                                                    'BLOCKED')
                                                   Icon(
                                                     Icons.lock_outline,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .secondaryBackground,
                                                     size: 32.0,
                                                   ),
                                               ],

@@ -84,3 +84,5 @@ export '/pages/forgot_password/otp_phone_forgot_password/otp_phone_forgot_passwo
 export '/pages/forgot_password/confirm_forgot_password/confirm_forgot_password_widget.dart'
     show ConfirmForgotPasswordWidget;
 export '/pages/pin_code/pin_code_widget.dart' show PinCodeWidget;
+export '/pages/list_exchange_rate/list_exchange_rate_widget.dart'
+    show ListExchangeRateWidget;
