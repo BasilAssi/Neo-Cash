@@ -325,6 +325,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'pin_code',
               path: 'pinCode',
               builder: (context, params) => const PinCodeWidget(),
+            ),
+            FFRoute(
+              name: 'list_exchange_rate',
+              path: 'listExchangeRate',
+              builder: (context, params) => const ListExchangeRateWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

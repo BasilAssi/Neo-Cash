@@ -688,6 +688,7 @@ class CardGroup {
   static ChangePasswordCall changePasswordCall = ChangePasswordCall();
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
   static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
+  static ListExchangeRateCall listExchangeRateCall = ListExchangeRateCall();
 }
 
 class ListCardsCall {
@@ -1150,6 +1151,46 @@ class SaveMyProfileCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class ListExchangeRateCall {
+  Future<ApiCallResponse> call({
+    String? exchangeRateDate = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'List ExchangeRate',
+      apiUrl: '$baseUrl/customer/api/v1/exchangeRate',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'exchangeRateDate': exchangeRateDate,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic records(dynamic response) => getJsonField(
+        response,
+        r'''$.records[?((@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'ILS') || (@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'JOD') || (@.fromCurrencyCode == 'JOD' && @.toCurrencyCode == 'ILS'))]''',
+      );
 }
 
 /// End Card Group Code

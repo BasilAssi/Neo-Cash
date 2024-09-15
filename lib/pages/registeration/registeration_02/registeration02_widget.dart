@@ -1091,7 +1091,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         borderWidth: 1.0,
                         borderRadius: 12.0,
                         margin: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 4.0, 16.0, 4.0),
+                            16.0, 0.0, 16.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -1221,7 +1221,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             borderWidth: 1.0,
                             borderRadius: 12.0,
                             margin: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
+                                16.0, 0.0, 16.0, 0.0),
                             hidesUnderline: true,
                             isOverButton: true,
                             isSearchable: false,
