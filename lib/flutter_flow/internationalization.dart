@@ -2364,19 +2364,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'sno3w7d0': {
       'ar': 'العملة',
-      'en': '',
+      'en': 'Currency',
     },
     'm0m5k6uc': {
       'ar': 'شراء',
-      'en': '',
+      'en': 'Buying',
     },
     '2365y9ek': {
       'ar': 'بيع',
-      'en': '',
+      'en': 'Selling',
     },
     '5408c9tx': {
       'ar': 'أسعار العملات',
-      'en': '',
+      'en': 'Currency Exchange Rates',
     },
     'ropov1fv': {
       'ar': 'Home',
