@@ -91,11 +91,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const NotificationPageWidget(),
             ),
             FFRoute(
-              name: 'register_page_1',
-              path: 'registerPage1',
-              builder: (context, params) => const RegisterPage1Widget(),
-            ),
-            FFRoute(
               name: 'phone_number',
               path: 'phoneNumber',
               builder: (context, params) => const PhoneNumberWidget(),
@@ -148,11 +143,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration01Widget(),
             ),
             FFRoute(
-              name: 'qr_code_page',
-              path: 'qrCodePage',
-              builder: (context, params) => const QrCodePageWidget(),
-            ),
-            FFRoute(
               name: 'enter_id_page',
               path: 'enterIdPage',
               builder: (context, params) => const EnterIdPageWidget(),
@@ -173,21 +163,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const Registeration06Widget(),
             ),
             FFRoute(
-              name: 'send_money_to_friend',
-              path: 'sendMoneyToFriend',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'send_money_to_friend')
-                  : const SendMoneyToFriendWidget(),
-            ),
-            FFRoute(
               name: 'transfer_money_between_cards',
               path: 'transferMoneyBetweenCards',
               builder: (context, params) => const TransferMoneyBetweenCardsWidget(),
-            ),
-            FFRoute(
-              name: 'confirm_transfer_between_cards',
-              path: 'confirmTransferBetweenCards',
-              builder: (context, params) => const ConfirmTransferBetweenCardsWidget(),
             ),
             FFRoute(
               name: 'registeration_03',
@@ -198,34 +176,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'registeration_05',
               path: 'registeration05',
               builder: (context, params) => const Registeration05Widget(),
-            ),
-            FFRoute(
-              name: 'DetailsReceipt',
-              path: 'detailsReceipt',
-              builder: (context, params) => const DetailsReceiptWidget(),
-            ),
-            FFRoute(
-              name: 'confirm_transfer_between_friends_old',
-              path: 'confirmTransferBetweenFriendsOld',
-              builder: (context, params) =>
-                  const ConfirmTransferBetweenFriendsOldWidget(),
-            ),
-            FFRoute(
-              name: 'details_receipt_between_freineds',
-              path: 'detailsReceiptBetweenFreineds',
-              builder: (context, params) =>
-                  const DetailsReceiptBetweenFreinedsWidget(),
-            ),
-            FFRoute(
-              name: 'confirm_transfer_between_friends',
-              path: 'confirmTransferBetweenFriends',
-              builder: (context, params) =>
-                  const ConfirmTransferBetweenFriendsWidget(),
-            ),
-            FFRoute(
-              name: 'card_limits',
-              path: 'cardLimits',
-              builder: (context, params) => const CardLimitsWidget(),
             ),
             FFRoute(
               name: 'registeration_08',

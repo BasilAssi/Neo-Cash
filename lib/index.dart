@@ -5,8 +5,6 @@ export '/pages/home/transactions_home_page/transactions_home_page_widget.dart'
     show TransactionsHomePageWidget;
 export '/pages/notification_page/notification_page_widget.dart'
     show NotificationPageWidget;
-export '/pages/registeration/register_page_1/register_page1_widget.dart'
-    show RegisterPage1Widget;
 export '/pages/registeration/phone_number/phone_number_widget.dart'
     show PhoneNumberWidget;
 export '/pages/registeration/otp_does_not_exist_flow/otp_does_not_exist_flow_widget.dart'
@@ -21,8 +19,6 @@ export '/pages/view_pin_code_page/view_pin_code_page_widget.dart'
     show ViewPinCodePageWidget;
 export '/pages/registeration/registeration_01/registeration01_widget.dart'
     show Registeration01Widget;
-export '/pages/home/qr_code_page/qr_code_page_widget.dart'
-    show QrCodePageWidget;
 export '/pages/registeration/enter_id_page/enter_id_page_widget.dart'
     show EnterIdPageWidget;
 export '/pages/registeration/registeration_02/registeration02_widget.dart'
@@ -31,25 +27,12 @@ export '/pages/registeration/registeration_07/registeration07_widget.dart'
     show Registeration07Widget;
 export '/pages/registeration/registeration_06/registeration06_widget.dart'
     show Registeration06Widget;
-export '/pages/home/send_money_to_friend/send_money_to_friend_widget.dart'
-    show SendMoneyToFriendWidget;
 export '/pages/transfer_money_between_cards/transfer_money_between_cards_widget.dart'
     show TransferMoneyBetweenCardsWidget;
-export '/pages/confirm_transfer_between_cards/confirm_transfer_between_cards_widget.dart'
-    show ConfirmTransferBetweenCardsWidget;
 export '/pages/registeration/registeration_03/registeration03_widget.dart'
     show Registeration03Widget;
 export '/pages/registeration/registeration_05/registeration05_widget.dart'
     show Registeration05Widget;
-export '/pages/details_receipt/details_receipt_widget.dart'
-    show DetailsReceiptWidget;
-export '/pages/confirm_transfer_between_friends_old/confirm_transfer_between_friends_old_widget.dart'
-    show ConfirmTransferBetweenFriendsOldWidget;
-export '/pages/details_receipt_between_freineds/details_receipt_between_freineds_widget.dart'
-    show DetailsReceiptBetweenFreinedsWidget;
-export '/pages/confirm_transfer_between_friends/confirm_transfer_between_friends_widget.dart'
-    show ConfirmTransferBetweenFriendsWidget;
-export '/pages/card/card_limits/card_limits_widget.dart' show CardLimitsWidget;
 export '/pages/registeration/registeration_08/registeration08_widget.dart'
     show Registeration08Widget;
 export '/pages/registeration/registeration_04/registeration04_widget.dart'

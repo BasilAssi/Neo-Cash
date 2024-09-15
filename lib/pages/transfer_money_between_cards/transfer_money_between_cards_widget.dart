@@ -1172,8 +1172,7 @@ class _TransferMoneyBetweenCardsWidgetState
                                   0.0, 70.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed(
-                                      'confirm_transfer_between_cards');
+                                  context.pushNamed('null');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'g8ub0m5g' /* التالي */,
