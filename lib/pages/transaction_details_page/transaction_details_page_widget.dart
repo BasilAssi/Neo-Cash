@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'transaction_details_page_model.dart';
 export 'transaction_details_page_model.dart';
 
@@ -696,27 +697,34 @@ class _TransactionDetailsPageWidgetState
                       ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: FlutterFlowTheme.of(context).primary,
-                          borderRadius: 12.0,
-                          borderWidth: 1.0,
-                          buttonSize: 45.0,
-                          fillColor: FlutterFlowTheme.of(context).accent1,
-                          icon: Icon(
-                            Icons.save_alt_sharp,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28.0,
+                        child: Builder(
+                          builder: (context) => FlutterFlowIconButton(
+                            borderColor: FlutterFlowTheme.of(context).primary,
+                            borderRadius: 12.0,
+                            borderWidth: 1.0,
+                            buttonSize: 45.0,
+                            fillColor: FlutterFlowTheme.of(context).accent1,
+                            icon: Icon(
+                              Icons.save_alt_sharp,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 28.0,
+                            ),
+                            showLoadingIndicator: true,
+                            onPressed: () async {
+                               _model.saveImage();
+                              await Share.share(
+                                null!,
+                                sharePositionOrigin:
+                                    getWidgetBoundingBox(context),
+                              );
+                              await actions.showToast(
+                                FFLocalizations.of(context).getVariableText(
+                                  arText: 'تم تنزيل الصورة بنجاح',
+                                  enText: 'Image downloaded successfully',
+                                ),
+                              );
+                            },
                           ),
-                          showLoadingIndicator: true,
-                          onPressed: () async {
-                            _model.saveImage();
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'تم تنزيل الصورة بنجاح',
-                                enText: 'Image downloaded successfully',
-                              ),
-                            );
-                          },
                         ),
                       ),
                     ].divide(const SizedBox(width: 16.0)),
