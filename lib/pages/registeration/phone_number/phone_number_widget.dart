@@ -293,7 +293,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                                   .bodyMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .textColor,
-                                          fontSize: 16.0,
+                                          fontSize: 15.0,
                                           letterSpacing: 0.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
@@ -359,7 +359,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     borderWidth: 1.0,
                                     borderRadius: 12.0,
                                     margin: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 4.0, 16.0, 4.0),
+                                        16.0, 4.0, 16.0, 12.0),
                                     hidesUnderline: true,
                                     disabled: (FFAppState()
                                                 .registerationFormData
@@ -369,6 +369,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                                 .registerationFormData
                                                 .idType ==
                                             'PASSPORT'),
+                                    isOverButton: true,
                                     isSearchable: false,
                                     isMultiSelect: false,
                                   ),
