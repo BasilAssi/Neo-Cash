@@ -134,11 +134,24 @@ class _HomePageListCardsComponentWidgetState
 print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBody}');
             return Builder(
               builder: (context) {
+
+                int statusCode = snapshot.data?.statusCode ?? 0;
+
+                // Handle 401 or 403 - Unauthorized or Forbidden
+                if (statusCode == 200 || statusCode == 200) {
+                  // Redirect to login page
+                  print('Handle 401 or 403 - Unauthorized or Forbidden');
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    context.pushNamed('login');
+                  });
+                  return SizedBox(); // Return an empty widget since the user is being redirected
+                }
                 final cardList = ListCustomerCardsStruct.maybeFromMap(
                             swipeableStackListCardsResponse.jsonBody)
                         ?.records
                         .toList() ??
                     [];
+
                 if (cardList.isEmpty) {
                   return SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.9,
@@ -146,6 +159,36 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                     child: const EmptyListOfCardsWidget(),
                   );
                 }
+
+                if (cardList.isNotEmpty) {
+                  var cardListItem = cardList[0]; // Example: Use the first card for demonstration
+
+                  // Update FFAppState with card data
+                  FFAppState().cardData = CardDataStruct(
+                    cardNumber: cardListItem.hasCardNumber() ? cardListItem.cardNumber : ' ',
+                    expiryDate: cardListItem.hasExpiryDate() ? cardListItem.expiryDate : ' ',
+                    status: cardListItem.hasStatus() ? cardListItem.status : ' ',
+                    nameOnCard: cardListItem.hasNameOnCard() ? cardListItem.nameOnCard : ' ',
+                    type: cardListItem.hasType() ? cardListItem.type : ' ',
+                    cardCvc: cardListItem.hasCardCvc() ? cardListItem.cardCvc : ' ',
+                    firstName: cardListItem.hasFirstName() ? cardListItem.firstName : ' ',
+                    middleName: cardListItem.hasMiddleName() ? cardListItem.middleName : ' ',
+                    lastName: cardListItem.hasLastName() ? cardListItem.lastName : ' ',
+                    cardToken: cardListItem.hasCardToken() ? cardListItem.cardToken : ' ',
+                    imagePath: cardListItem.hasImagePath() ? cardListItem.imagePath : ' ',
+                    voucherValue: cardListItem.hasVoucherValue() ? cardListItem.voucherValue : ' ',
+                    programCode: cardListItem.hasProgramCode() ? cardListItem.programCode : ' ',
+                    localProgramName: cardListItem.hasLocalProgramName() ? cardListItem.localProgramName : ' ',
+                    latinProgramName: cardListItem.hasLatinProgramName() ? cardListItem.latinProgramName : ' ',
+                    accountNumber: cardListItem.hasAccountNumber() ? cardListItem.accountNumber : ' ',
+                    isReloadable: cardListItem.hasIsReloadable() ? cardListItem.isReloadable : false,
+                    isDueRenewalFees: cardListItem.hasIsDueRenewalFees() ? cardListItem.isDueRenewalFees : ' ',
+                    renewalDueDate: cardListItem.hasRenewalDueDate() ? cardListItem.renewalDueDate : ' ',
+                    isPhysical: cardListItem.hasIsPhysical() ? cardListItem.isPhysical : false,
+                  );
+
+                }
+                print( 'FFAppState().cardData ${FFAppState().cardData.toString()} ');
 
                 return FlutterFlowSwipeableStack(
                   onSwipeFn: (index) {},
