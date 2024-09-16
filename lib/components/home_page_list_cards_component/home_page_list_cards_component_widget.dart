@@ -162,7 +162,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 }
 
                 if (cardList.isNotEmpty) {
-                  var cardListItem = cardList[0]; // Example: Use the first card for demonstration
+                  var cardListItem = cardList[1]; // Example: Use the first card for demonstration
 
                   // Update FFAppState with card data
                   FFAppState().cardData = CardDataStruct(
