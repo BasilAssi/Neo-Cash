@@ -1,11 +1,11 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
@@ -348,6 +348,17 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                                                 ''))
                                                         ?.code ==
                                                     '00') {
+                                                  FFAppState()
+                                                      .updateAuthenticatedUserStruct(
+                                                    (e) => e
+                                                      ..userProfile =
+                                                          '${FFAppConstants.baseURL}${functions.splitURL(AuthAndRegisterGroup.isRegisteredCall.photourl(
+                                                                (_model.isRegistedOutPut
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                              ).toString())}',
+                                                  );
+                                                  safeSetState(() {});
                                                   await actions.showToast(
                                                     FFLocalizations.of(context)
                                                         .getVariableText(
