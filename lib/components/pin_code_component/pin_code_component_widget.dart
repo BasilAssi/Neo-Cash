@@ -774,7 +774,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           if (_model.isNetworkAvailableoutput == true) {
                             _model.pINCODEHashedSHA256base64 =
                                 await actions.encodeSHA256(
-                              _model.pinCode?? '',
+                              _model.pinCode ?? '',
                             );
                             _model.apiResultValidateCustomerPIN =
                                 await CardGroup.validateCustomerPINCall.call(

@@ -438,7 +438,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                               }
                             } else {
                               await actions.showToast(
-                                _model.validateMobileNumberOutput ?? '',
+                                _model.validateMobileNumberOutput?? '',
                               );
                             }
 
