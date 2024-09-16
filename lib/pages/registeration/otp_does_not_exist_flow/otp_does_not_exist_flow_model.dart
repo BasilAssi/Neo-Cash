@@ -35,6 +35,11 @@ class OtpDoesNotExistFlowModel
   FlutterFlowTimerController timerController =
       FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countDown));
 
+  // Stores action output result for [Custom Action - isNetworkAvailable] action in Text widget.
+  bool? isNetworkAvaiableOutPutResend;
+  // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Text widget.
+  ApiCallResponse? apiResultSendOTP;
+
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();

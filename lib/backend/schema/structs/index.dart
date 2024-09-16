@@ -9,6 +9,7 @@ export 'filter_transactions_struct.dart';
 export 'list_customer_balances_struct.dart';
 export 'list_customer_cards_struct.dart';
 export 'list_customer_transactions_struct.dart';
+export 'list_exchange_rate_data_struct.dart';
 export 'lookup_cites_data_struct.dart';
 export 'lookup_cities_a_p_i_response_struct.dart';
 export 'response_model_struct.dart';
