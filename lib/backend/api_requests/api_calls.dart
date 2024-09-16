@@ -679,13 +679,15 @@ class SystemSettingsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'System Settings',
-      apiUrl: '$baseUrl/customer/api/v1/systemSettings',
+      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
-      params: {},
+      params: {
+        'msgId': msgId,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
