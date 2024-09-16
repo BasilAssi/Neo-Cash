@@ -378,6 +378,84 @@ class _ShimmerComponentListTransactionsWidgetState
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+            child: Container(
+              width: MediaQuery.sizeOf(context).width * 0.92,
+              height: 80.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).contianerColor,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 64.0,
+                            height: 12.0,
+                            decoration: BoxDecoration(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          Container(
+                            width: 80.0,
+                            height: 12.0,
+                            decoration: BoxDecoration(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            width: 44.0,
+                            height: 12.0,
+                            decoration: BoxDecoration(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          Container(
+                            width: 44.0,
+                            height: 12.0,
+                            decoration: BoxDecoration(
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ).animateOnPageLoad(animationsMap['listViewOnPageLoadAnimation']!),
     );
