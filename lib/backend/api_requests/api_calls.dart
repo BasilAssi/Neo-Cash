@@ -98,6 +98,10 @@ class IsRegisteredCall {
         response,
         r'''$.records[:].isDeviceRegistered''',
       );
+  dynamic photourl(dynamic response) => getJsonField(
+        response,
+        r'''$.records[:].customerDocuments[?(@.moduleType == 'PROFILE_PICTURE')].documentUrl''',
+      );
 }
 
 class SendOTPToCustomerCall {

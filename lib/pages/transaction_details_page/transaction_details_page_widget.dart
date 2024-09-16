@@ -541,7 +541,7 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                '${widget.transactionData!.hasTransactionAmount() ? widget.transactionData?.transactionAmount : ''} ${widget.transactionData!.hasBillingCurrencyCode() ? widget.transactionData?.billingCurrencyCode : ''}',
+                                '${widget.transactionData!.hasBillingAmount() ? (widget.transactionData!.hasBillingAmount() ? widget.transactionData?.billingAmount : '') : (widget.transactionData!.hasTransactionAmount() ? widget.transactionData?.transactionAmount : '')} ${widget.transactionData!.hasBillingCurrencyCode() ? widget.transactionData?.billingCurrencyCode : ''}',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(

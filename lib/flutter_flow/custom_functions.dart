@@ -321,3 +321,10 @@ bool? isIDNumberValid(
 
   return isValid;
 }
+
+String? splitURL(String? url) {
+  if (url == null || url == '') return '';
+  Uri uri = Uri.parse(url);
+  String? photoURL = uri.path + (uri.hasQuery ? '?${uri.query}' : '');
+  return photoURL;
+}
