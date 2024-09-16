@@ -48,7 +48,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('home_page');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

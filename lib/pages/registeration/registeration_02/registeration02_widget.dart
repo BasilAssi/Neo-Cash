@@ -1256,7 +1256,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               return;
                             }
                           }
-                          if (_model.genderDropDownValue == null) {
+                          print('_model.genderDropDownValue  ${_model.genderDropDownValue }');
+                          if (_model.genderDropDownValue == null || _model.genderDropDownValue?.trim() == '') {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
                                 arText: 'حقل الجنس مطلوب',
@@ -1265,11 +1266,13 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             );
                             return;
                           }
-                          if (_model.dropDownNationaltyValue == null) {
+                          print('_model.dropDownNationaltyValue  ${_model.dropDownNationaltyValue }');
+
+                          if (_model.dropDownNationaltyValue == null || _model.dropDownNationaltyValue?.trim() == '') {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل مطلوب',
-                                enText: 'Field is required',
+                                arText: 'الحقل الجنسية مطلوب',
+                                enText: 'Nationally field is required',
                               ),
                             );
                             return;
@@ -1315,22 +1318,23 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       return;
                                     }
                                   }
-                                  if (_model.genderDropDownValue == null) {
+                                  print('_model.genderDropDownValue  ${_model.genderDropDownValue }');
+                                  if (_model.genderDropDownValue == null || _model.genderDropDownValue?.trim() == '') {
                                     await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
+                                      FFLocalizations.of(context).getVariableText(
                                         arText: 'حقل الجنس مطلوب',
                                         enText: 'Gender field is required',
                                       ),
                                     );
                                     return;
                                   }
-                                  if (_model.dropDownNationaltyValue == null) {
+                                  print('_model.dropDownNationaltyValue  ${_model.dropDownNationaltyValue }');
+
+                                  if (_model.dropDownNationaltyValue == null || _model.dropDownNationaltyValue?.trim() == '') {
                                     await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText: 'الحقل مطلوب',
-                                        enText: 'Field is required',
+                                      FFLocalizations.of(context).getVariableText(
+                                        arText: 'الحقل الجنسية مطلوب',
+                                        enText: 'Nationally field is required',
                                       ),
                                     );
                                     return;

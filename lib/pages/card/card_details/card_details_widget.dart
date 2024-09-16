@@ -21,7 +21,7 @@ class CardDetailsWidget extends StatefulWidget {
   State<CardDetailsWidget> createState() => _CardDetailsWidgetState();
 }
 
-class _CardDetailsWidgetState extends State<CardDetailsWidget> {
+class _CardDetailsWidgetState extends State<CardDetailsWidget> with WidgetsBindingObserver {
   late CardDetailsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -30,6 +30,8 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CardDetailsModel());
+
+    WidgetsBinding.instance.addObserver(this);
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -54,6 +56,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                       (_model.apiResultListCards?.jsonBody ?? ''))
                   ?.code ==
               '00') {
+            print('apiResultListCards  ${_model.apiResultListCards?.jsonBody}');
             safeSetState(() {});
           }
         }
@@ -66,6 +69,30 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
         );
       }
     });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Handle the different states of the app lifecycle
+    if (state == AppLifecycleState.resumed) {
+      // App has resumed
+      // You can refresh the card details or any other action
+    } else if (state == AppLifecycleState.paused) {
+      // App is paused
+      SchedulerBinding.instance.addPostFrameCallback((_) async {
+        context.pushNamed('home_page');
+      });
+    } else if (state == AppLifecycleState.inactive) {
+      // App is inactive
+      SchedulerBinding.instance.addPostFrameCallback((_) async {
+        context.pushNamed('home_page');
+      });
+    } else if (state == AppLifecycleState.detached) {
+      // App is detached
+      SchedulerBinding.instance.addPostFrameCallback((_) async {
+        context.pushNamed('home_page');
+      });
+    }
   }
 
   @override
@@ -82,7 +109,10 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('home_page');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

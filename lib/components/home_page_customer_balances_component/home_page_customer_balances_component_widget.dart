@@ -71,7 +71,6 @@ class _HomePageCustomerBalancesComponentWidgetState
           );
         }
         final listViewGetCustomerBalancesResponse = snapshot.data!;
-
         return Builder(
           builder: (context) {
             final listBalances = ListCustomerBalancesStruct.maybeFromMap(

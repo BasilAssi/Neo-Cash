@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class PinCodeComponentModel extends FlutterFlowModel<PinCodeComponentWidget> {
   ///  Local state fields for this component.
 
-  String? pinCode;
+  String? pinCode ='';
 
   ///  State fields for stateful widgets in this component.
 

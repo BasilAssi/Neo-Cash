@@ -58,7 +58,10 @@ class _SetPasswordExistFlowWidgetState
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('phone_number');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -715,6 +718,12 @@ class _SetPasswordExistFlowWidgetState
 
                                                 context.pushNamed('login');
                                               } else {
+                                                print('  status code  ${ResponseModelStruct
+                                                    .maybeFromMap((_model
+                                                    .apiResultCustomerRegisterDevice1
+                                                    ?.jsonBody ??
+                                                    ''))
+                                                    ?.code}');
                                                 if (ResponseModelStruct
                                                             .maybeFromMap((_model
                                                                     .apiResultCustomerRegisterDevice1
@@ -1009,7 +1018,7 @@ class _SetPasswordExistFlowWidgetState
                                           }
                                         } else {
                                           await actions.showToast(
-                                            _model.isValidPINResult,
+                                            _model.isValidPINResult?? '',
                                           );
                                         }
                                       }

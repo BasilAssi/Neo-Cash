@@ -519,7 +519,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                         }
                                       } else {
                                         await actions.showToast(
-                                          _model.isValidPINResult,
+                                          _model.isValidPINResult ?? '',
                                         );
                                       }
 

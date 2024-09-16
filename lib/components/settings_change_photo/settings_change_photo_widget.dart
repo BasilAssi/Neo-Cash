@@ -200,7 +200,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                                   errorBuilder: (context, error,
                                                           stackTrace) =>
                                                       Image.asset(
-                                                    'assets/images/error_image.jpeg',
+                                                    'assets/images/addImage@2x.png',
                                                     fit: BoxFit.contain,
                                                   ),
                                                 ),
@@ -228,15 +228,15 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                               errorBuilder: (context, error,
                                                       stackTrace) =>
                                                   Image.asset(
-                                                'assets/images/error_image.jpeg',
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
+                                            'assets/images/addImage@2x.png',
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ],
+                                      ),
+                                    ),],
+
                                 ),
                               ),
                             ],

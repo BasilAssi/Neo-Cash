@@ -32,6 +32,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UserProfileModel());
+    print('imagepath');
+    print('${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}');
   }
 
   @override

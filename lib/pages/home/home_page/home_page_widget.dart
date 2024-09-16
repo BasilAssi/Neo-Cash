@@ -1,3 +1,4 @@
+import '../../../components/dialog_component/dialog_component_widget.dart';
 import '/components/home_page_customer_balances_component/home_page_customer_balances_component_widget.dart';
 import '/components/home_page_list_cards_component/home_page_list_cards_component_widget.dart';
 import '/components/home_page_list_transaction_component/home_page_list_transaction_component_widget.dart';
@@ -73,7 +74,61 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
+      child: WillPopScope(
+        onWillPop: () async {
+          //context.pushNamed('phone_number');
+          await showDialog(
+            context: context,
+            builder: (dialogContext) {
+              return Dialog(
+                elevation: 0,
+                insetPadding: EdgeInsets.zero,
+                backgroundColor: Colors.transparent,
+                alignment: const AlignmentDirectional(0.0, 0.0)
+                    .resolve(Directionality.of(context)),
+                child: WebViewAware(
+                  child: GestureDetector(
+                    onTap: () =>
+                        FocusScope.of(dialogContext).unfocus(),
+                    child: SizedBox(
+                      height:
+                      MediaQuery.sizeOf(context).height * 0.3,
+                      child: DialogComponentWidget(
+                        text: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'هل أنت متأكد أنك تريد تسجيل الخروج من التطبيق ؟',
+                          enText:
+                          'Are you sure you want to exit the app?',
+                        ),
+                        firstBtnText: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'نعم',
+                          enText: 'Yes',
+                        ),
+                        secBtoText: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'لا',
+                          enText: 'No',
+                        ),
+                        firstBtnAction: () async {
+                          FFAppState().AuthenticatedUser.accessToken ='';
+                          context.pushNamed('login');
+                        },
+                        secBtnAction: () async {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+          return false;
+        },
       child: Scaffold(
+        extendBodyBehindAppBar: false,
+        resizeToAvoidBottomInset: false,
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         endDrawer: Drawer(
@@ -81,7 +136,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           child: WebViewAware(
             child: Container(
               width: 100.0,
-              height: MediaQuery.sizeOf(context).height * 1.0,
+              height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
@@ -747,6 +802,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           ),
         ),
       ),
+    ),
     );
   }
 }

@@ -240,7 +240,7 @@ class _TransactionsPageWidgetState extends State<TransactionsPageWidget>
                   return const ShimmerComponentListTransactionsWidget();
                 }
                 final listViewListCardTransactionsResponse = snapshot.data!;
-
+                print('listViewListCardTransactionsResponse ${listViewListCardTransactionsResponse?.jsonBody}');
                 return Builder(
                   builder: (context) {
                     final listTransactions =

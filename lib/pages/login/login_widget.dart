@@ -169,15 +169,13 @@ class _LoginWidgetState extends State<LoginWidget>
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ToggleIcon(
                       onPressed: () async {
-                        safeSetState(() =>
-                            FFAppState().isEnglish = !FFAppState().isEnglish);
                         if (FFLocalizations.of(context).languageCode == 'en') {
                           setAppLanguage(context, 'ar');
                         } else {
                           setAppLanguage(context, 'en');
                         }
                       },
-                      value: FFAppState().isEnglish,
+                      value: FFLocalizations.of(context).languageCode == 'en',
                       onIcon: Icon(
                         Icons.e_mobiledata,
                         color: FlutterFlowTheme.of(context).primary,

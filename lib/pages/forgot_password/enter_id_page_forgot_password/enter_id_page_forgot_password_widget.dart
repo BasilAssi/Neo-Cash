@@ -27,6 +27,7 @@ class _EnterIdPageForgotPasswordWidgetState
   late EnterIdPageForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  TextInputType _keyboardType = TextInputType.number;
 
   @override
   void initState() {
@@ -164,8 +165,14 @@ class _EnterIdPageForgotPasswordWidgetState
                           'fti5wvz8' /* جواز السفر */,
                         )
                       ],
-                      onChanged: (val) =>
-                          safeSetState(() => _model.idTypeDropDownValue = val),
+                      onChanged: (val) {
+                        safeSetState(() {
+                          _keyboardType = (val == 'PASSPORT')
+                              ? TextInputType.text // Text keyboard for passport
+                              : TextInputType.number;
+                          _model.idTypeDropDownValue = val;
+                        });
+                      },
                       width: 300.0,
                       height: 56.0,
                       textStyle: FlutterFlowTheme.of(context)
@@ -301,7 +308,7 @@ class _EnterIdPageForgotPasswordWidgetState
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
-                      keyboardType: TextInputType.number,
+                        keyboardType: _keyboardType,
                       validator: _model.idNumberTextFieldTextControllerValidator
                           .asValidator(context),
                     ),
@@ -337,7 +344,7 @@ class _EnterIdPageForgotPasswordWidgetState
                                         ? FFAppState().deviceInformation.serial
                                         : '',
                               );
-
+                              String? customerStatus = IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody);
                               if ((_model.isRegisteredOutPut?.succeeded ??
                                   true)) {
                                 if (ResponseModelStruct.maybeFromMap((_model
@@ -345,29 +352,33 @@ class _EnterIdPageForgotPasswordWidgetState
                                             ''))
                                         ?.status ==
                                     true) {
-                                  // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
+                                   if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
                                   //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
                                   //                                                                         true)
-                                  if ((ResponseModelStruct.maybeFromMap((_model
-                                                      .isRegisteredOutPut
-                                                      ?.jsonBody ??
-                                                  ''))
-                                              ?.customerStatus !=
-                                          'DEACTIVATED') &&
-                                      (ResponseModelStruct.maybeFromMap((_model
-                                                      .isRegisteredOutPut
-                                                      ?.jsonBody ??
-                                                  ''))
-                                              ?.customerStatus !=
-                                          'REJECTED')) {
+                                  // if ((ResponseModelStruct.maybeFromMap((_model
+                                  //                     .isRegisteredOutPut
+                                  //                     ?.jsonBody ??
+                                  //                 ''))
+                                  //             ?.customerStatus !=
+                                  //         'DEACTIVATED') &&
+                                  //     (ResponseModelStruct.maybeFromMap((_model
+                                  //                     .isRegisteredOutPut
+                                  //                     ?.jsonBody ??
+                                  //                 ''))
+                                  //             ?.customerStatus !=
+                                  //         'REJECTED')) {
                                     // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
                                     //                                       false)
-                                    if (AuthenticatedUserStruct.maybeFromMap(
-                                                (_model.isRegisteredOutPut
-                                                        ?.jsonBody ??
-                                                    ''))
-                                            ?.isDeviceRegistered ==
-                                        true) {
+
+                                    // if (AuthenticatedUserStruct.maybeFromMap(
+                                    //             (_model.isRegisteredOutPut
+                                    //                     ?.jsonBody ??
+                                    //                 ''))
+                                    //         ?.isDeviceRegistered ==
+                                    //     true) {
+
+                                  if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                  true){
                                       FFAppState()
                                           .updateForgotPasswordDataStruct(
                                         (e) => e

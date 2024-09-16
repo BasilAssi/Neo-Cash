@@ -1,3 +1,5 @@
+import 'package:neo_cash/services/notification_service.dart';
+
 import '/custom_code/actions/index.dart' as actions;
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +11,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'index.dart';
+import 'dart:async';
+import 'package:local_session_timeout/local_session_timeout.dart';
+import 'app_state.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +31,12 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
+  String? fcmToken= await actions.getFCMToken();
+  print('fcmToken ${fcmToken}');
+
+  final notificationService = NotificationService();
+  await notificationService.requestPermissions();
+  await notificationService.getToken();
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
     child: const MyApp(),
@@ -51,7 +63,8 @@ class _MyAppState extends State<MyApp> {
   late GoRouter _router;
 
   bool displaySplashImage = true;
-
+  final sessionStateStream = StreamController<SessionState>();
+  late SessionConfig sessionConfig;
   @override
   void initState() {
     super.initState();
@@ -74,6 +87,28 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
+    // sessionConfig = SessionConfig(
+    //   invalidateSessionForAppLostFocus: const Duration(seconds: 10),
+    //   invalidateSessionForUserInactivity: const Duration(seconds: 15),
+    // );
+    //
+    // sessionConfig.stream.listen((SessionTimeoutState timeoutEvent) {
+    //   print("Session Timeout Event: $timeoutEvent");  // Debugging
+    //
+    //   sessionStateStream.add(SessionState.stopListening);
+    //   if (timeoutEvent == SessionTimeoutState.userInactivityTimeout ||
+    //       timeoutEvent == SessionTimeoutState.appFocusTimeout) {
+    //     print("Detected session timeout: ${timeoutEvent.name}");  // Debugging
+    //     actions.showToast('تم انتهاء الجلسة ');
+    //     // here i wanna to navigate to login screen
+    //     try {
+    //       context.pushNamed('login');
+    //     }catch (ex){
+    //       print('ex  cant  work   ${ex} ');
+    //     }
+    //   }
+    // });
     return MaterialApp.router(
       title: 'NeoCash',
       localizationsDelegates: const [

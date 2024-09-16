@@ -261,6 +261,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                               }
                               final listViewListExchangeRateResponse =
                                   snapshot.data!;
+                              print('listViewListExchangeRateResponse ${listViewListExchangeRateResponse?.jsonBody}');
 
                               return Builder(
                                 builder: (context) {

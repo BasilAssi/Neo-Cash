@@ -774,7 +774,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           if (_model.isNetworkAvailableoutput == true) {
                             _model.pINCODEHashedSHA256base64 =
                                 await actions.encodeSHA256(
-                              _model.pinCode,
+                              _model.pinCode?? '',
                             );
                             _model.apiResultValidateCustomerPIN =
                                 await CardGroup.validateCustomerPINCall.call(
@@ -790,6 +790,11 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                               ),
                             );
 
+                            print('code  ${ResponseModelStruct.maybeFromMap((_model
+        .apiResultValidateCustomerPIN
+        ?.jsonBody ??
+    ''))
+        ?.code }');
                             if (ResponseModelStruct.maybeFromMap((_model
                                             .apiResultValidateCustomerPIN
                                             ?.jsonBody ??
@@ -1095,10 +1100,12 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}4';
+                          print('_model.pinCode  ${_model.pinCode }');
                           safeSetState(() {});
                           safeSetState(() {
                             _model.pinCodeForm?.text = _model.pinCode!;
                           });
+
                         },
                         text: FFLocalizations.of(context).getText(
                           'bg4uaucw' /* 4 */,

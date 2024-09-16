@@ -1,3 +1,5 @@
+import 'package:provider/provider.dart';
+
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -335,13 +337,13 @@ class _FilterTransactionsComponent1WidgetState
                       FlutterFlowTheme.of(context).primaryBackground,
                       FlutterFlowTheme.of(context).primary,
                       () async {
-                        FFAppState().updateFilterTransactionsStruct(
-                          (e) => e
-                            ..dateFrom = functions
-                                .dateFromCalculate(DateTypes.LAST_MONTH)
-                            ..dateTo =
-                                functions.dateFromCalculate(DateTypes.TODAY),
-                        );
+                        // FFAppState().updateFilterTransactionsStruct(
+                        //   (e) => e
+                        //     ..dateFrom = functions
+                        //         .dateFromCalculate(DateTypes.LAST_MONTH)
+                        //     ..dateTo =
+                        //         functions.dateFromCalculate(DateTypes.TODAY),
+                        // );
                         FFAppState().update(() {});
                         await widget.refreshListTransaction?.call();
                       },

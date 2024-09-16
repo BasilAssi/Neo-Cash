@@ -788,7 +788,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               .updateRegisterationFormDataStruct(
                                                 (e) =>
                                             e
-                                              ..cityCode = selectedCity.code,
+                                              ..cityCode = selectedCity.code
+                                              ..cityEncodedId =
+                                                  _model.citiesDropDownValue,
                                           );
                                         }
 
@@ -966,7 +968,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               .updateRegisterationFormDataStruct(
                                                 (e) =>
                                             e
-                                              ..areaCode = selectedArea.code,
+                                              ..areaCode = selectedArea.code
+                                              ..areaEncodedId =
+                                                  _model.populationDropDownValue,
                                           );
                                         }
                                       });
@@ -1147,8 +1151,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                 .validate()) {
                                           return;
                                         }
+                                        print('_model.citiesDropDownValue ${_model.citiesDropDownValue}');
                                         if (_model.citiesDropDownValue ==
-                                            null) {
+                                            null|| _model.citiesDropDownValue == '') {
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
@@ -1158,8 +1163,10 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           );
                                           return;
                                         }
+                                        print('_model.citiesDropDownValue ${_model.populationDropDownValue}');
+
                                         if (_model.populationDropDownValue ==
-                                            null) {
+                                            null || _model.populationDropDownValue == '') {
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
@@ -1175,11 +1182,11 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                           (e) => e
                                             ..addressText = _model
                                                 .addresslTextFieldTextController
-                                                .text
-                                            ..cityEncodedId =
-                                                _model.citiesDropDownValue
-                                            ..areaEncodedId =
-                                                _model.populationDropDownValue,
+                                                .text,
+                                            // ..cityEncodedId =
+                                            //     _model.citiesDropDownValue
+                                            // ..areaEncodedId =
+                                            //     _model.populationDropDownValue,
                                         );
                                         safeSetState(() {});
 

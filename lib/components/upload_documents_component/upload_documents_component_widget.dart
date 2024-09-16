@@ -149,7 +149,7 @@ class _UploadDocumentsComponentWidgetState
                                   ),
                                   allowRotation: false,
                                   tag: 'imageTag',
-                                  useHeroAnimation: true,
+                                  useHeroAnimation: false,
                                 ),
                               ),
                             );
@@ -216,7 +216,7 @@ class _UploadDocumentsComponentWidgetState
                                           ''))
                                   ?.deleteUrl,
                         );
-
+print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploadedDocument?.jsonBody}');
                         if ((_model
                                 .apiResultDeleteUploadedDocument?.succeeded ??
                             true)) {
@@ -330,6 +330,7 @@ class _UploadDocumentsComponentWidgetState
                     forceUpload: 'false',
                   );
 
+                  print('_model.apiResultUploadDocument?.jsonBody  ${_model.apiResultUploadDocument?.jsonBody}');
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {
                     if ((ResponseModelStruct.maybeFromMap(
                                     (_model.apiResultUploadDocument?.jsonBody ??

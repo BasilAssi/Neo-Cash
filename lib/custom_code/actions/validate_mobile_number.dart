@@ -20,7 +20,6 @@ Future<String> validateMobileNumber(
     return language == 'ar'
         ? 'رقم الموبايل مطلوب'
         : 'Phone number is required.';
-
   if (prefix == '970') {
     // Regex for validating mobile number 970
     final regex1 = RegExp(r'^(59|56)\d{7}$');

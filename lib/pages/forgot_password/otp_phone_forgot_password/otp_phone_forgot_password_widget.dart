@@ -311,7 +311,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                 enText: 'EN',
                               ),
                             );
-
+                            print('_model.verifyOTPOutput  ${_model.verifyOTPOutput?.jsonBody}');
                             if ((_model.verifyOTPOutput?.succeeded ?? true)) {
                               if (ResponseModelStruct.maybeFromMap(
                                           (_model.verifyOTPOutput?.jsonBody ??
@@ -441,7 +441,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                         idType: FFAppState()
                                             .AuthenticatedUser
                                             .idType,
-                                        destinationType: ' MOBILE_NUMBER',
+                                        destinationType: 'MOBILE_NUMBER',
                                         operationType: 'FORGOT_PIN',
                                         destination:
                                             '${FFAppState().AuthenticatedUser.mobileNumberPrefix}${FFAppState().AuthenticatedUser.mobileNumber}',
@@ -452,7 +452,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                           enText: 'EN',
                                         ),
                                       );
-
+                                      print('_model.apiResultSendOTP ${_model.apiResultSendOTP?.jsonBody}');
                                       if ((_model.apiResultSendOTP?.succeeded ??
                                           true)) {
                                         if (ResponseModelStruct.maybeFromMap(

@@ -50,7 +50,10 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('enter_id_page');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -435,7 +438,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                               }
                             } else {
                               await actions.showToast(
-                                _model.validateMobileNumberOutput,
+                                _model.validateMobileNumberOutput ?? '',
                               );
                             }
 

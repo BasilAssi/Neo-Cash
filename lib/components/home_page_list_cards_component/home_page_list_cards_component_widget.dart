@@ -131,7 +131,7 @@ class _HomePageListCardsComponentWidgetState
               return const ShimmerComponentListCardsWidget();
             }
             final swipeableStackListCardsResponse = snapshot.data!;
-
+print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBody}');
             return Builder(
               builder: (context) {
                 final cardList = ListCustomerCardsStruct.maybeFromMap(

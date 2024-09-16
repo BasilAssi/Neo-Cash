@@ -451,7 +451,7 @@ class _OtpPhoneForgotPinWidgetState extends State<OtpPhoneForgotPinWidget> {
                                           enText: 'EN',
                                         ),
                                       );
-
+                                      print('apiResultSendOTP ${_model.apiResultSendOTP?.jsonBody}');
                                       if ((_model.apiResultSendOTP?.succeeded ??
                                           true)) {
                                         if (ResponseModelStruct.maybeFromMap(

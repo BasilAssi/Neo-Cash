@@ -4,9 +4,11 @@ import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+import '/custom_code/actions/index.dart'; // Imports other custom actions
+import '/flutter_flow/custom_functions.dart' as functions; // Imports custom functions
 import 'package:flutter/material.dart';
+import 'package:custom_date_range_picker/custom_date_range_picker.dart';
+
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
@@ -25,16 +27,25 @@ Future showDateRangePickerAction(
     maximumDate: DateTime.now().add(const Duration(days: 30)),
     startDate: DateTime.now().subtract(const Duration(days: 14)),
     endDate: DateTime.now().subtract(const Duration(days: 7)),
-    backgroundColor:
-        backgroundColor ?? FlutterFlowTheme.of(context).primaryBackground,
+    backgroundColor: backgroundColor ?? FlutterFlowTheme.of(context).primaryBackground,
     primaryColor: primaryColor ?? FlutterFlowTheme.of(context).primary,
-    onApplyClick: (start, end) {
-      if (action != null) {
+    onApplyClick: (start, end) async{
+      print('sdad');
+      FFAppState().updateFilterTransactionsStruct(
+            (e) => e
+          ..dateFrom = functions.formatDate(start)
+          ..dateTo =functions.formatDate(end)
+      );
+
+
+      if(action != null){
         await action();
       }
     },
-    onCancelClick: () {
-      await closeAction();
+    onCancelClick: () async {
+      if(closeAction != null){
+        await closeAction();
+      }
     },
   );
 }

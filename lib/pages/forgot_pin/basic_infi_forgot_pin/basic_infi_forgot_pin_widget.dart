@@ -46,7 +46,10 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('enter_id_page_forgot_pin');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -117,16 +120,16 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 0.0, 16.0, 30.0),
                   child: ListView(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'zptptm6s' /* تاريخ الميلاد */,
@@ -146,8 +149,8 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 16.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -233,8 +236,9 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFAppState()
                                               .forgotPinData
@@ -258,8 +262,9 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 8.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
                                     child: Icon(
                                       Icons.calendar_month_outlined,
                                       color: FlutterFlowTheme.of(context)
@@ -274,8 +279,8 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'vwbeeetc' /* كلمة المرور الحالية */,
@@ -400,8 +405,8 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 48.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -419,16 +424,20 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                             .validate()) {
                                       return;
                                     }
-                                    if (_model.datePicked == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'حقل تاريخ الميلاد مطلوب',
-                                          enText:
-                                              'Date of Birth field is required.',
-                                        ),
-                                      );
-                                      return;
+                                    if (!FFAppState()
+                                        .forgotPinData
+                                        .hasDateOfBirth()) {
+                                      if (_model.datePicked == null) {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'حقل تاريخ الميلاد مطلوب',
+                                            enText:
+                                                'Date of Birth field is required.',
+                                          ),
+                                        );
+                                        return;
+                                      }
                                     }
                                     if (_model.passwordTextController.text ==
                                         FFAppState()
@@ -462,10 +471,12 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                         MediaQuery.sizeOf(context).width * 0.9,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.06,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                    iconPadding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall

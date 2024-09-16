@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
 import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
+
+
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
@@ -15,6 +17,30 @@ Future setAuthenticatedUserInfo(dynamic payloadMap) async {
 // Extract the customer info or set as empty map if null
   final customerInfo = payloadMap['customerInfo'] ?? {};
 
+
+  var customerDocuments = (customerInfo['customerDocuments'] as List<dynamic>?)
+      ?.map((doc) => {
+    'documentType': doc['documentType'] ?? '',
+    'documentUrl': doc['documentUrl'] ?? '',
+  })
+      .toList() ??
+      [];
+
+  // Initialize userProfile to null
+  String? userProfile1;
+
+  // Find the document with moduleType 'PROFILE_PICTURE' and set userProfile
+  for (var document in customerInfo['customerDocuments']) {
+      if (document['moduleType'] == 'PROFILE_PICTURE') {
+          String fullUrl = document['documentUrl'];
+
+          // Extract the part of the URL starting from "/customer" to the end
+          Uri uri = Uri.parse(fullUrl);
+          userProfile1 = uri.path + (uri.hasQuery ? '?${uri.query}' : '');
+print('userProfile1  ${userProfile1}');
+          break; // Exit the loop once found
+      }
+  }
   // Update the FFAppState with the extracted fields, ensuring non-null values
   FFAppState().updateAuthenticatedUserStruct(
     (e) => e
@@ -71,8 +97,21 @@ Future setAuthenticatedUserInfo(dynamic payloadMap) async {
       ..middleName = customerInfo['middleName'] ?? ''
       ..firstNameAr = customerInfo['firstNameAr'] ?? ''
       ..monthlyIncomeUsd = customerInfo['monthlyIncomeUsd'] ?? '0'
-      ..residencyType = customerInfo['residencyType'] ?? '',
+      ..residencyType = customerInfo['residencyType'] ?? ''
+      ..userProfile =userProfile1 ?? ''
   );
 
+  FFAppState().updateRegisterationFormDataStruct(
+          (e) => e
+      // Customer Info Fields
+          // these fields used when documents is missing
+          // for send to approval API
+              ..idNumber = customerInfo['idNumber'] ?? ''
+              ..idType = customerInfo['idType'] ?? ''
+  );
+  print('idNumber ${FFAppState().registerationFormData.idNumber}');
+  print('idType ${FFAppState().registerationFormData.idType}');
   print('updated feilds ${FFAppState().AuthenticatedUser.toMap().toString()}');
+  print('userProfile  ${FFAppState().AuthenticatedUser.userProfile}');
+
 }

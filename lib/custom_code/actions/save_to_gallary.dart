@@ -12,12 +12,12 @@ import 'package:flutter/material.dart';
 
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
-Future saveToGallary(FFUploadedFile? imageBytes) async {
+Future saveToGallery(Uint8List imageBytes) async {
   final time = DateTime.now()
       .toIso8601String()
       .replaceAll('.', '-')
       .replaceAll(':', '-');
   final name = 'NeoCashTransaction$time';
-  await ImageGallerySaver.saveImage(imageBytes?.bytes, name: name, quality: 80);
+  await ImageGallerySaver.saveImage(imageBytes, name: name, quality: 80);
   // Add your function code here!
 }

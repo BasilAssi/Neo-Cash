@@ -91,7 +91,56 @@ class _Registeration01WidgetState extends State<Registeration01Widget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          //context.pushNamed('phone_number');
+          await showDialog(
+            context: context,
+            builder: (dialogContext) {
+              return Dialog(
+                elevation: 0,
+                insetPadding: EdgeInsets.zero,
+                backgroundColor: Colors.transparent,
+                alignment: const AlignmentDirectional(0.0, 0.0)
+                    .resolve(Directionality.of(context)),
+                child: WebViewAware(
+                  child: GestureDetector(
+                    onTap: () =>
+                        FocusScope.of(dialogContext).unfocus(),
+                    child: SizedBox(
+                      height:
+                      MediaQuery.sizeOf(context).height * 0.4,
+                      child: DialogComponentWidget(
+                        text: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'الرجوع من هذه الخطوة سيؤدي إلى إعادة بدء عملية التسجيل. هل أنت متأكد أنك تريد الرجوع؟',
+                          enText:
+                          'Going back will restart the registration process. Are you sure you want to proceed?',
+                        ),
+                        firstBtnText: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'نعم',
+                          enText: 'Yes',
+                        ),
+                        secBtoText: FFLocalizations.of(context)
+                            .getVariableText(
+                          arText: 'لا',
+                          enText: 'No',
+                        ),
+                        firstBtnAction: () async {
+                          context.pushNamed('phone_number');
+                        },
+                        secBtnAction: () async {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

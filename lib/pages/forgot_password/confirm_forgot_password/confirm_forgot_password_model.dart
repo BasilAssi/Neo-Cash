@@ -57,6 +57,7 @@ class ConfirmForgotPasswordModel
   // Stores action output result for [Backend Call - API (Forgot Password )] action in Button widget.
   ApiCallResponse? apiResultForgotPassword;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
+
   bool? isNetworkAvailableOutput1;
   // Stores action output result for [Backend Call - API (Send OTP to customer)] action in Button widget.
   ApiCallResponse? apiResultSendOTPPass;

@@ -14,6 +14,15 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 Future<String?> getFCMToken() async {
   // Add your function code here!
+
+  try {
+    String? token = await FirebaseMessaging.instance.getToken();
+    print("FCM Token: $token");
+    return token;
+  } catch (e) {
+    print("Failed to get FCM token: $e");
+    return null;
+  }
 }
 
 Future<void> requestPermissions() async {
