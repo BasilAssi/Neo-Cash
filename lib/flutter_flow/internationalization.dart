@@ -2334,41 +2334,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // home_page_list_transaction_component
   {
-    'nsavudjo': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'ay52o26k': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'ca2wtsdn': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    '3xp6eido': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'jgngh5xx': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'ekp45l3e': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    'qrbttcv9': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'gsajqi1l': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'hiemgsju': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
+    '5hnon1gy': {
+      'ar': ' ',
+      'en': '',
     },
   },
   // enable_biometric_component

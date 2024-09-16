@@ -249,6 +249,21 @@ class FFAppState extends ChangeNotifier {
       _documentsTypesAPIResponseManager.clear();
   void clearDocumentsTypesAPIResponseCacheKey(String? uniqueKey) =>
       _documentsTypesAPIResponseManager.clearRequest(uniqueKey);
+
+  final _transactionsHomePageManager = FutureRequestManager<ApiCallResponse>();
+  Future<ApiCallResponse> transactionsHomePage({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<ApiCallResponse> Function() requestFn,
+  }) =>
+      _transactionsHomePageManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearTransactionsHomePageCache() => _transactionsHomePageManager.clear();
+  void clearTransactionsHomePageCacheKey(String? uniqueKey) =>
+      _transactionsHomePageManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {
