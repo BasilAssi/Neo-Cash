@@ -136,6 +136,7 @@ class _HomePageListTransactionComponentWidgetState
                 backgroundColor: FlutterFlowTheme.of(context).alternate,
                 strokeWidth: 4.0,
                 onRefresh: () async {
+                  FFAppState().clearTransactionsHomePageCache();
                   safeSetState(() {
                     FFAppState().clearTransactionsHomePageCache();
                     _model.apiRequestCompleted = false;
@@ -144,6 +145,7 @@ class _HomePageListTransactionComponentWidgetState
                 },
                 child: ListView.builder(
                   padding: EdgeInsets.zero,
+                  primary: false,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   itemCount: listTransactions.length,
