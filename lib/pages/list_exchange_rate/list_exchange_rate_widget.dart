@@ -265,15 +265,21 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                               return Builder(
                                 builder: (context) {
                                   final listExchangeRate =
-                                      (listViewListExchangeRateResponse.jsonBody
-                                                      .toList()
-                                                      .map<ExchangeRateDataStruct?>(
-                                                          ExchangeRateDataStruct
-                                                              .maybeFromMap)
-                                                      .toList()
-                                                  as Iterable<
-                                                      ExchangeRateDataStruct?>)
-                                              .withoutNulls
+                                      ListExchangeRateDataStruct.maybeFromMap(
+                                                  listViewListExchangeRateResponse
+                                                      .jsonBody)
+                                              ?.records
+                                              .where((e) =>
+                                                  ((e.fromCurrencyCode == 'USD') && (e.toCurrencyCode == 'ILS')) ||
+                                                  ((e.fromCurrencyCode ==
+                                                          'USD') &&
+                                                      (e.toCurrencyCode ==
+                                                          'JOD')) ||
+                                                  ((e.fromCurrencyCode ==
+                                                          'JOD') &&
+                                                      (e.toCurrencyCode ==
+                                                          'ILS')))
+                                              .toList()
                                               .toList() ??
                                           [];
                                   if (listExchangeRate.isEmpty) {

@@ -460,11 +460,74 @@ class _OtpDoesNotExistFlowWidgetState extends State<OtpDoesNotExistFlowWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.isTimerEnded = false;
-                                    safeSetState(() {});
-                                    _model.timerController.onResetTimer();
+                                    _model.isNetworkAvaiableOutPutResend =
+                                        await actions.isNetworkAvailable();
+                                    if (_model.isNetworkAvaiableOutPutResend ==
+                                        true) {
+                                      _model.apiResultSendOTP =
+                                          await AuthAndRegisterGroup
+                                              .sendOTPToCustomerCall
+                                              .call(
+                                        msgId: functions.messageId(),
+                                        idNumber: FFAppState()
+                                            .registerationFormData
+                                            .idNumber,
+                                        idType: FFAppState()
+                                            .registerationFormData
+                                            .idType,
+                                        destination:
+                                            '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                                        destinationType: 'MOBILE_NUMBER',
+                                        operationType: FFAppState()
+                                                    .registerationFormData
+                                                    .isRegisteredStatus ==
+                                                false
+                                            ? 'REGISTER_CUSTOMER'
+                                            : 'REGISTER_DEVICE',
+                                      );
 
-                                    _model.timerController.onStartTimer();
+                                      if (ResponseModelStruct.maybeFromMap(
+                                                  (_model.apiResultSendOTP
+                                                          ?.jsonBody ??
+                                                      ''))
+                                              ?.code ==
+                                          '00') {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText:
+                                                'تم إرسال رمز التحقق بنجاح ',
+                                            enText:
+                                                'Verification code sent successfully',
+                                          ),
+                                        );
+                                        _model.isTimerEnded = false;
+                                        safeSetState(() {});
+                                        _model.timerController.onResetTimer();
+
+                                        _model.timerController.onStartTimer();
+                                      } else {
+                                        await actions.showToast(
+                                          FFLocalizations.of(context)
+                                              .getVariableText(
+                                            arText: 'فشل إرسال رمز التحقق',
+                                            enText:
+                                                'Failed to send verification code',
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'عذرا لا يتوفر انترنت',
+                                          enText:
+                                              'please check internet connection',
+                                        ),
+                                      );
+                                    }
+
+                                    safeSetState(() {});
                                   },
                                   child: Text(
                                     FFLocalizations.of(context).getText(
