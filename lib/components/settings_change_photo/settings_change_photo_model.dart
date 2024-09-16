@@ -13,6 +13,8 @@ class SettingsChangePhotoModel
   ApiCallResponse? apiResultUploadDocument;
   // Stores action output result for [Backend Call - API (Save My Profile)] action in Button widget.
   ApiCallResponse? apiResultSaveMyProfile;
+  // Stores action output result for [Backend Call - API (isRegistered)] action in Button widget.
+  ApiCallResponse? isRegistedOutPut;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
