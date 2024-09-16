@@ -138,11 +138,12 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 int statusCode = snapshot.data?.statusCode ?? 0;
 
                 // Handle 401 or 403 - Unauthorized or Forbidden
-                if (statusCode == 200 || statusCode == 200) {
+                if (statusCode == 401 || statusCode == 403) {
                   // Redirect to login page
                   print('Handle 401 or 403 - Unauthorized or Forbidden');
                   WidgetsBinding.instance.addPostFrameCallback((_) {
                     context.pushNamed('login');
+                    FFAppState().AuthenticatedUser.accessToken='';
                   });
                   return SizedBox(); // Return an empty widget since the user is being redirected
                 }
