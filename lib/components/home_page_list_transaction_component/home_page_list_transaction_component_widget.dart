@@ -98,9 +98,7 @@ class _HomePageListTransactionComponentWidgetState
                 FFAppState().AuthenticatedUser.idNumber,
                 FFAppState().cardData.expiryDate,
                 functions.getLast4Digits(FFAppState().cardData.cardNumber)),
-            dateFrom: FFAppState().filterTransactions.hasDateFrom()
-                ? FFAppState().filterTransactions.dateFrom
-                : functions.dateFromCalculate(DateTypes.LAST_WEEK),
+            dateFrom: '09/09/1970',
             dateTo: FFAppState().filterTransactions.hasDateTo()
                 ? FFAppState().filterTransactions.dateTo
                 : functions.dateFromCalculate(DateTypes.TODAY),
