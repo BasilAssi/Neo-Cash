@@ -250,7 +250,6 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                       ? cardListItem.isPhysical
                                       : false,
                                 );
-                                _model.updatePage(() {});
 
                                 context.pushNamed('card_details');
                               } else {
