@@ -247,7 +247,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
                           text: TextSpan(
