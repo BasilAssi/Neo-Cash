@@ -632,7 +632,7 @@ class _TransactionDetailsPageWidgetState
                             ),
                             showLoadingIndicator: true,
                             onPressed: () async {
-                               _model.saveImage();
+                              // _model.saveImage();
                               await Share.share(
                                 null!,
                                 sharePositionOrigin:
