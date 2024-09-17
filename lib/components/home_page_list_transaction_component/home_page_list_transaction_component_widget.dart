@@ -6,8 +6,11 @@ import '/components/shimmer/shimmer_component_list_transactions/shimmer_componen
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -56,15 +59,15 @@ class _HomePageListTransactionComponentWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.4, 0.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.4, 0.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -83,7 +86,7 @@ class _HomePageListTransactionComponentWidgetState
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
       child: FutureBuilder<ApiCallResponse>(
         future: FFAppState()
             .transactionsHomePage(
@@ -111,7 +114,7 @@ class _HomePageListTransactionComponentWidgetState
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
-            return const ShimmerComponentListTransactionsWidget();
+            return ShimmerComponentListTransactionsWidget();
           }
           final listViewListCardTransactionsResponse = snapshot.data!;
 
@@ -121,12 +124,12 @@ class _HomePageListTransactionComponentWidgetState
                   (ListCustomerTransactionsStruct.maybeFromMap(
                                   listViewListCardTransactionsResponse.jsonBody)
                               ?.records
-                              .toList() ??
+                              ?.toList() ??
                           [])
                       .take(3)
                       .toList();
               if (listTransactions.isEmpty) {
-                return const EmptyListOfTransactionsWidget();
+                return EmptyListOfTransactionsWidget();
               }
 
               return RefreshIndicator(
@@ -152,7 +155,7 @@ class _HomePageListTransactionComponentWidgetState
                         listTransactions[listTransactionsIndex];
                     return Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -206,7 +209,7 @@ class _HomePageListTransactionComponentWidgetState
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: SingleChildScrollView(
                                     child: Column(
@@ -241,7 +244,7 @@ class _HomePageListTransactionComponentWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -271,7 +274,7 @@ class _HomePageListTransactionComponentWidgetState
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -279,7 +282,7 @@ class _HomePageListTransactionComponentWidgetState
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Text(
                                           '${listTransactionsItem.hasTransactionAmount() ? listTransactionsItem.transactionAmount : ' '} ${listTransactionsItem.hasBillingCurrencyCode() ? listTransactionsItem.billingCurrencyCode : ' '}',
                                           textAlign: TextAlign.end,
@@ -303,7 +306,7 @@ class _HomePageListTransactionComponentWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           listTransactionsItem

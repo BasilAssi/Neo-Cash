@@ -9,8 +9,11 @@ import 'dart:ui';
 import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 import 'upload_documents_component_model.dart';
 export 'upload_documents_component_model.dart';
 
@@ -61,18 +64,18 @@ class _UploadDocumentsComponentWidgetState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
             child: Text(
               '${FFLocalizations.of(context).getVariableText(
                 arText: ' ارفق ',
                 enText: 'Upload ',
-              )}${widget.name}',
+              )}${widget!.name}',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily:
                         FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -85,9 +88,9 @@ class _UploadDocumentsComponentWidgetState
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: Text(
-              widget.description!,
+              widget!.description!,
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily:
                         FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -102,13 +105,13 @@ class _UploadDocumentsComponentWidgetState
           Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 180.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(20.0),
@@ -124,7 +127,7 @@ class _UploadDocumentsComponentWidgetState
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -158,7 +161,7 @@ class _UploadDocumentsComponentWidgetState
                             tag: 'imageTag',
                             transitionOnUserGestures: true,
                             child: ClipRRect(
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(16.0),
@@ -187,16 +190,16 @@ class _UploadDocumentsComponentWidgetState
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.9, 0.47),
+                alignment: AlignmentDirectional(0.9, 0.47),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: FlutterFlowTheme.of(context).primary,
                     borderRadius: 20.0,
                     borderWidth: 1.0,
                     buttonSize: 40.0,
                     fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete_sharp,
                       color: Color(0xFFE20505),
                       size: 24.0,
@@ -280,7 +283,7 @@ print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploaded
             ],
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 _model.isNetworkAvailableOutput =
@@ -323,10 +326,10 @@ print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploaded
 
                   _model.apiResultUploadDocument =
                       await AuthAndRegisterGroup.uploadDocumentCall.call(
-                    customerId: widget.customerId,
+                    customerId: widget!.customerId,
                     file: _model.uploadedLocalFile,
                     msgId: functions.messageId(),
-                    documentTypeId: widget.encodedId,
+                    documentTypeId: widget!.encodedId,
                     forceUpload: 'false',
                   );
 
@@ -388,19 +391,19 @@ print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploaded
 
                 safeSetState(() {});
               },
-              text: FFLocalizations.of(context).getVariableText(
+              text: '${FFLocalizations.of(context).getVariableText(
                 arText: 'ارفق',
                 enText: 'Upload ',
-              ),
-              icon: const Icon(
+              )}',
+              icon: Icon(
                 Icons.upload,
                 size: 15.0,
               ),
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 50.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -410,11 +413,11 @@ print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploaded
                           FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 3.0,
-                borderSide: const BorderSide(
+                borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(12.0),
                   bottomRight: Radius.circular(12.0),
                   topLeft: Radius.circular(0.0),
@@ -424,11 +427,11 @@ print(' _model.apiResultDeleteUploadedDocument ${ _model.apiResultDeleteUploaded
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
             child: Container(
               width: double.infinity,
               height: 4.0,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0x74D7DEE3),
               ),
             ),

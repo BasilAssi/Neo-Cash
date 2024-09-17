@@ -71,7 +71,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'wwmjyqx9' /*  نسيت الرمز السري؟ */,
@@ -92,20 +92,20 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 36.0, 0.0, 0.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: MediaQuery.sizeOf(context).height * 1.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(25.0),
@@ -113,7 +113,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -130,7 +130,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Form(
                         key: _model.formKey,
                         autovalidateMode: AutovalidateMode.disabled,
@@ -138,9 +138,9 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -164,7 +164,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: PinCodeTextField(
                                 autoDisposeControllers: false,
@@ -196,7 +196,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                   fieldHeight: 44.0,
                                   fieldWidth: 44.0,
                                   borderWidth: 1.0,
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(12.0),
                                     bottomRight: Radius.circular(12.0),
                                     topLeft: Radius.circular(12.0),
@@ -218,7 +218,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -241,10 +241,10 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Builder(
                                 builder: (context) => Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 100.0, 0.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -364,7 +364,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
@@ -375,7 +375,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                                             FocusScope.of(
                                                                     dialogContext)
                                                                 .unfocus(),
-                                                        child: SizedBox(
+                                                        child: Container(
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -534,10 +534,10 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -557,7 +557,7 @@ class _SetPinForgotPinWidgetState extends State<SetPinForgotPinWidget> {
                                                         .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
