@@ -957,6 +957,7 @@ class GetCardPINCall {
       acceptLanguage: acceptLanguage,
     );
     print('cardToken ${cardToken}');
+    print('cardCvv2 ${cardCvv2}');
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Card PIN',

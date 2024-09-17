@@ -657,7 +657,7 @@ THRU */
                                                             .cardData
                                                             .cardCvc,
                                                   );
-
+                                                  print('_model.apiResultGetPIN ${_model.apiResultGetPIN?.jsonBody}');
                                                   if ((_model.apiResultGetPIN
                                                           ?.succeeded ??
                                                       true)) {
