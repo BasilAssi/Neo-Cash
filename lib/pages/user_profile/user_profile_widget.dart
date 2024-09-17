@@ -5,14 +5,12 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'user_profile_model.dart';
@@ -76,7 +74,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '897rfc7a' /* ملفي الشخصي */,
@@ -97,18 +95,18 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(25.0),
@@ -116,19 +114,19 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: ListView(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 children: [
                   Stack(
-                    alignment: AlignmentDirectional(-0.0, 1.0),
+                    alignment: const AlignmentDirectional(-0.0, 1.0),
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 36.0, 0.0, 0.0),
                           child: Material(
                             color: Colors.transparent,
@@ -149,9 +147,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(4.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -165,9 +163,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                             child: FlutterFlowExpandedImageView(
                                               image: CachedNetworkImage(
                                                 fadeInDuration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 fadeOutDuration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 imageUrl:
                                                     '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                                 fit: BoxFit.contain,
@@ -195,9 +193,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                               BorderRadius.circular(170.0),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 500),
+                                                const Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 500),
+                                                const Duration(milliseconds: 500),
                                             imageUrl:
                                                 '${FFAppConstants.baseURL}${FFAppState().AuthenticatedUser.userProfile}',
                                             width: double.infinity,
@@ -223,7 +221,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-0.3, 0.4),
+                        alignment: const AlignmentDirectional(-0.3, 0.4),
                         child: FlutterFlowIconButton(
                           borderColor:
                               FlutterFlowTheme.of(context).textFieldBorder,
@@ -249,11 +247,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                         FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
+                                      child: SizedBox(
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.6,
-                                        child: SettingsChangePhotoWidget(),
+                                        child: const SettingsChangePhotoWidget(),
                                       ),
                                     ),
                                   ),
@@ -266,10 +264,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                     ],
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -288,7 +286,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Icon(
                                     Icons.person_outline_sharp,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -298,7 +296,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -332,7 +330,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context)
@@ -387,10 +385,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -409,7 +407,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Icon(
                                     Icons.phone_in_talk_outlined,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -419,7 +417,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -453,7 +451,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 8.0),
                                         child: Text(
                                           FFAppState()
@@ -498,10 +496,10 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -520,7 +518,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Icon(
                                     Icons.email_outlined,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -536,7 +534,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -579,7 +577,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 8.0),
                                                     child: Text(
@@ -632,12 +630,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                   : false) ==
                                               true) {
                                             return Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: Container(
                                                 height: 40.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xB2E9E4E4),
+                                                  color: const Color(0xB2E9E4E4),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           15.0),
@@ -657,11 +655,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -701,7 +699,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                             );
                                           } else {
                                             return Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -818,7 +816,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 child: Container(
                                                   height: 45.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xB2E9E4E4),
+                                                    color: const Color(0xB2E9E4E4),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15.0),
@@ -830,11 +828,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       4.0,
                                                                       0.0,
@@ -908,13 +906,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                     padding:
                                                         MediaQuery.viewInsetsOf(
                                                             context),
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
                                                           0.6,
                                                       child:
-                                                          UpdateEmailComponentWidget(),
+                                                          const UpdateEmailComponentWidget(),
                                                     ),
                                                   ),
                                                 ),

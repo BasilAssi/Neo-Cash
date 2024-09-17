@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -75,7 +74,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                 context.pushNamed('enter_id_page');
               },
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.0,
           ),
@@ -93,7 +92,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(25.0),
@@ -104,16 +103,16 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 24.0, 16.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -144,7 +143,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: Wrap(
                               spacing: 0.0,
@@ -157,7 +156,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                               clipBehavior: Clip.none,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -197,7 +196,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
-                                      Duration(milliseconds: 300),
+                                      const Duration(milliseconds: 300),
                                       () async {
                                         safeSetState(() {
                                           _model.textController?.text =
@@ -211,7 +210,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                       },
                                     ),
                                     autofocus: true,
-                                    autofillHints: [
+                                    autofillHints: const [
                                       AutofillHints.telephoneNumber
                                     ],
                                     textInputAction: TextInputAction.done,
@@ -362,7 +361,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                         .textFieldBorder,
                                     borderWidth: 1.0,
                                     borderRadius: 12.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 12.0),
                                     hidesUnderline: true,
                                     disabled: (FFAppState()
@@ -378,17 +377,17 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     isMultiSelect: false,
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
+                      alignment: const AlignmentDirectional(0.0, 1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             if (_model.formKey.currentState == null ||
@@ -451,9 +450,9 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             height: MediaQuery.sizeOf(context).height * 0.06,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -470,7 +469,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                           .titleSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

@@ -8,7 +8,6 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'view_pin_code_page_model.dart';
 export 'view_pin_code_page_model.dart';
 
@@ -37,7 +36,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       safeSetState(() {
-        _model.pinCodeController?.text = widget!.pinCode!;
+        _model.pinCodeController?.text = widget.pinCode!;
       });
       _model.timerController.onStartTimer();
     });
@@ -63,7 +62,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -90,18 +89,18 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
               ],
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(25.0),
@@ -109,19 +108,19 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
               ),
             ),
             child: Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 0.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '2o6k2tg3' /* الرمز السري الخاص بك هو  */,
@@ -143,7 +142,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'm38fpv1o' /* هذا هو الرمز السري الخاص بك  */,
@@ -162,7 +161,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: PinCodeTextField(
                         autoDisposeControllers: false,
                         appContext: context,
@@ -190,7 +189,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                           fieldHeight: 64.0,
                           fieldWidth: 74.0,
                           borderWidth: 1.0,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
@@ -208,7 +207,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'lowepglo' /* سيختفي الرقم خلال  */,
@@ -227,13 +226,13 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: FlutterFlowTimer(
                               initialTime: _model.timerInitialTimeMs,
@@ -244,7 +243,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                                 milliSecond: false,
                               ),
                               controller: _model.timerController,
-                              updateStateInterval: Duration(milliseconds: 1000),
+                              updateStateInterval: const Duration(milliseconds: 1000),
                               onChanged: (value, displayTime, shouldUpdate) {
                                 _model.timerMilliseconds = value;
                                 _model.timerValue = displayTime;
@@ -270,9 +269,9 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -300,10 +299,10 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.safePop();
@@ -314,9 +313,9 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             height: MediaQuery.sizeOf(context).height * 0.06,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -333,7 +332,7 @@ class _ViewPinCodePageWidgetState extends State<ViewPinCodePageWidget> {
                                           .titleSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

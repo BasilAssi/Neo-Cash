@@ -2,10 +2,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'frequently_asked_questions_model.dart';
 export 'frequently_asked_questions_model.dart';
 
@@ -65,7 +63,7 @@ class _FrequentlyAskedQuestionsWidgetState
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'r794e0cb' /* الأسئلة الشائعة */,
@@ -86,7 +84,7 @@ class _FrequentlyAskedQuestionsWidgetState
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),

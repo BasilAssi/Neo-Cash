@@ -7,14 +7,12 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
@@ -76,15 +74,15 @@ class _HomePageListCardsComponentWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.4, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -114,7 +112,7 @@ class _HomePageListCardsComponentWidgetState
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Align(
-        alignment: AlignmentDirectional(0.0, 0.0),
+        alignment: const AlignmentDirectional(0.0, 0.0),
         child: FutureBuilder<ApiCallResponse>(
           future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
                 ..complete(CardGroup.listCardsCall.call(
@@ -130,7 +128,7 @@ class _HomePageListCardsComponentWidgetState
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return ShimmerComponentListCardsWidget();
+              return const ShimmerComponentListCardsWidget();
             }
             final swipeableStackListCardsResponse = snapshot.data!;
 print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBody}');
@@ -139,13 +137,13 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 final cardList = ListCustomerCardsStruct.maybeFromMap(
                             swipeableStackListCardsResponse.jsonBody)
                         ?.records
-                        ?.toList() ??
+                        .toList() ??
                     [];
                 if (cardList.isEmpty) {
-                  return Container(
+                  return SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     height: MediaQuery.sizeOf(context).height * 0.9,
-                    child: EmptyListOfCardsWidget(),
+                    child: const EmptyListOfCardsWidget(),
                   );
                 }
 
@@ -158,7 +156,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                   itemBuilder: (context, cardListIndex) {
                     final cardListItem = cardList[cardListIndex];
                     return Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Builder(
                         builder: (context) => InkWell(
                           splashColor: Colors.transparent,
@@ -168,14 +166,14 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                           onTap: () async {
                             if (FFAppState().AppSettings.biometricEnabled ==
                                 true) {
-                              final _localAuth = LocalAuthentication();
-                              bool _isBiometricSupported =
-                                  await _localAuth.isDeviceSupported();
+                              final localAuth = LocalAuthentication();
+                              bool isBiometricSupported =
+                                  await localAuth.isDeviceSupported();
                               bool canCheckBiometrics =
-                                  await _localAuth.canCheckBiometrics;
-                              if (_isBiometricSupported && canCheckBiometrics) {
+                                  await localAuth.canCheckBiometrics;
+                              if (isBiometricSupported && canCheckBiometrics) {
                                 _model.biometricOutput =
-                                    await _localAuth.authenticate(
+                                    await localAuth.authenticate(
                                         localizedReason:
                                             FFLocalizations.of(context).getText(
                                           'sidsk0va' /* تأكيد البصمة للاستمرار */,
@@ -271,10 +269,10 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                     elevation: 0,
                                     insetPadding: EdgeInsets.zero,
                                     backgroundColor: Colors.transparent,
-                                    alignment: AlignmentDirectional(0.0, 0.0)
+                                    alignment: const AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
                                     child: WebViewAware(
-                                      child: Container(
+                                      child: SizedBox(
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 1.0,
@@ -383,14 +381,14 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                             children: [
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height:
                                         MediaQuery.sizeOf(context).height * 1.0,
                                     decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 6.0,
                                           color: Color(0x4B1A1F24),
@@ -407,9 +405,9 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                           FlutterFlowTheme.of(context)
                                               .primaryText
                                         ],
-                                        stops: [0.0, 1.0],
-                                        begin: AlignmentDirectional(0.94, -1.0),
-                                        end: AlignmentDirectional(-0.94, 1.0),
+                                        stops: const [0.0, 1.0],
+                                        begin: const AlignmentDirectional(0.94, -1.0),
+                                        end: const AlignmentDirectional(-0.94, 1.0),
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
@@ -421,7 +419,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 20.0, 20.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -453,7 +451,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 12.0, 20.0, 16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -521,7 +519,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                   scale: 0.85,
                   threshold: 0.5,
                   maxAngle: 10.0,
-                  cardPadding: EdgeInsets.all(12.0),
+                  cardPadding: const EdgeInsets.all(12.0),
                   backCardOffset: const Offset(0.0, 30.0),
                 );
               },

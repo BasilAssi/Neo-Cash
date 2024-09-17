@@ -4,12 +4,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,7 +77,7 @@ class _OtpPhoneForgotPasswordWidgetState
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -92,7 +90,7 @@ class _OtpPhoneForgotPasswordWidgetState
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(25.0),
@@ -100,16 +98,16 @@ class _OtpPhoneForgotPasswordWidgetState
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: ListView(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 24.0, 16.0, 16.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -140,7 +138,7 @@ class _OtpPhoneForgotPasswordWidgetState
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Wrap(
                           spacing: 0.0,
                           runSpacing: 0.0,
@@ -210,7 +208,7 @@ class _OtpPhoneForgotPasswordWidgetState
  */
                                       ,
                                     ),
-                                    style: TextStyle(),
+                                    style: const TextStyle(),
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
@@ -265,7 +263,7 @@ class _OtpPhoneForgotPasswordWidgetState
                           fieldHeight: 74.0,
                           fieldWidth: 54.0,
                           borderWidth: 1.0,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
@@ -353,9 +351,9 @@ class _OtpPhoneForgotPasswordWidgetState
                             .asValidator(context),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Wrap(
                             spacing: 0.0,
@@ -377,7 +375,7 @@ class _OtpPhoneForgotPasswordWidgetState
                                 ),
                                 controller: _model.timerController,
                                 updateStateInterval:
-                                    Duration(milliseconds: 1000),
+                                    const Duration(milliseconds: 1000),
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
@@ -407,9 +405,9 @@ class _OtpPhoneForgotPasswordWidgetState
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Wrap(
                             spacing: 0.0,

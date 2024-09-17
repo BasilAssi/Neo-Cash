@@ -8,8 +8,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -42,6 +41,42 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
     super.initState();
     _model = createModel(context, () => TransactionsHomePageModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.isNetworkAvailable = await actions.isNetworkAvailable();
+      if (_model.isNetworkAvailable == true) {
+        _model.apiResultListCards = await CardGroup.listCardsCall.call(
+          msgId: functions.messageId(),
+          idNumber: FFAppState().AuthenticatedUser.idNumber,
+          token: FFAppState().AuthenticatedUser.accessToken,
+          cardToken: functions.getCardToken(
+              FFAppState().AuthenticatedUser.idNumber,
+              FFAppState().cardData.expiryDate,
+              functions.getLast4Digits(FFAppState().cardData.cardNumber)),
+          acceptLanguage: FFLocalizations.of(context).getVariableText(
+            arText: 'AR',
+            enText: 'EN',
+          ),
+        );
+
+        if ((_model.apiResultListCards?.succeeded ?? true)) {
+          if (ResponseModelStruct.maybeFromMap(
+                      (_model.apiResultListCards?.jsonBody ?? ''))
+                  ?.code ==
+              '00') {
+            safeSetState(() {});
+          }
+        }
+      } else {
+        await actions.showToast(
+          FFLocalizations.of(context).getVariableText(
+            arText: 'عذرا لا يوجد اتصال بالانترنت',
+            enText: 'Sorry, no internet connection.',
+          ),
+        );
+      }
+    });
+
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -57,15 +92,15 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.4, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -129,14 +164,14 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: AlignmentDirectional(-0.0, 0.0)
+                                      alignment: const AlignmentDirectional(-0.0, 0.0)
                                           .resolve(Directionality.of(context)),
                                       child: WebViewAware(
                                         child: GestureDetector(
                                           onTap: () =>
                                               FocusScope.of(dialogContext)
                                                   .unfocus(),
-                                          child: Container(
+                                          child: SizedBox(
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.4,
@@ -190,7 +225,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          'bs41kbym' /* إجمالي الرصيد  */,
+                          'bs41kbym' /*  الرصيد  */,
                         ),
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily:
@@ -212,37 +247,95 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                        child: Text(
-                          'ILS 100.00',
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleLargeFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 32.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleLargeFamily),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: RichText(
+                          textScaler: MediaQuery.of(context).textScaler,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: CardGroup.listCardsCall.availableBalance(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        ) !=
+                                        null
+                                    ? CardGroup.listCardsCall
+                                        .availableBalance(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()
+                                    : '',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      fontSize: 32.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily),
+                                    ),
                               ),
+                              TextSpan(
+                                text: FFLocalizations.of(context).getText(
+                                  '3lgcu7uz' /*  */,
+                                ),
+                                style: const TextStyle(),
+                              ),
+                              TextSpan(
+                                text: CardGroup.listCardsCall.currencyCode(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        ) !=
+                                        null
+                                    ? CardGroup.listCardsCall
+                                        .currencyCode(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()
+                                    : '',
+                                style: const TextStyle(),
+                              )
+                            ],
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleLargeFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  fontSize: 32.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleLargeFamily),
+                                ),
+                          ),
                         ),
                       ),
                     ],
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               '${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo : functions.dateFromCalculate(DateTypes.TODAY)} - ${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom : functions.dateFromCalculate(DateTypes.LAST_WEEK)}',
@@ -267,9 +360,9 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                       ],
                     ),
                   ),
-                ].divide(SizedBox(height: 8.0)).around(SizedBox(height: 8.0)),
+                ].divide(const SizedBox(height: 8.0)).around(const SizedBox(height: 8.0)),
               ),
-              actions: [],
+              actions: const [],
               bottom: PreferredSize(
                 preferredSize:
                     Size.fromHeight(MediaQuery.sizeOf(context).height * 0.02),
@@ -283,33 +376,35 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
               child: FutureBuilder<ApiCallResponse>(
-                future: (_model.apiRequestCompleter2 ??=
-                        Completer<ApiCallResponse>()
-                          ..complete(CardGroup.listCardTransactionsCall.call(
-                            msgId: functions.messageId(),
-                            token: FFAppState().AuthenticatedUser.accessToken,
-                            acceptLanguage:
-                                FFLocalizations.of(context).getVariableText(
-                              arText: 'AR',
-                              enText: 'EN',
-                            ),
-                            cardToken: functions.getCardToken(
-                                FFAppState().AuthenticatedUser.idNumber,
-                                FFAppState().cardData.expiryDate,
-                                functions.getLast4Digits(
-                                    FFAppState().cardData.cardNumber)),
-                            dateFrom: '09/09/1970',
-                            dateTo: FFAppState().filterTransactions.hasDateTo()
-                                ? FFAppState().filterTransactions.dateTo
-                                : functions.dateFromCalculate(DateTypes.TODAY),
-                          )))
+                future: (_model
+                        .apiRequestCompleter2 ??= Completer<ApiCallResponse>()
+                      ..complete(CardGroup.listCardTransactionsCall.call(
+                        msgId: functions.messageId(),
+                        token: FFAppState().AuthenticatedUser.accessToken,
+                        acceptLanguage:
+                            FFLocalizations.of(context).getVariableText(
+                          arText: 'AR',
+                          enText: 'EN',
+                        ),
+                        cardToken: functions.getCardToken(
+                            FFAppState().AuthenticatedUser.idNumber,
+                            FFAppState().cardData.expiryDate,
+                            functions.getLast4Digits(
+                                FFAppState().cardData.cardNumber)),
+                        dateFrom: FFAppState().filterTransactions.hasDateFrom()
+                            ? FFAppState().filterTransactions.dateFrom
+                            : functions.dateFromCalculate(DateTypes.LAST_WEEK),
+                        dateTo: FFAppState().filterTransactions.hasDateTo()
+                            ? FFAppState().filterTransactions.dateTo
+                            : functions.dateFromCalculate(DateTypes.TODAY),
+                      )))
                     .future,
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return ShimmerComponentListTransactionsWidget();
+                    return const ShimmerComponentListTransactionsWidget();
                   }
                   final listViewListCardTransactionsResponse = snapshot.data!;
 
@@ -320,12 +415,12 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                           listViewListCardTransactionsResponse
                                               .jsonBody)
                                       ?.records
-                                      ?.toList() ??
+                                      .toList() ??
                                   [])
                               .take(3)
                               .toList();
                       if (listTransactions.isEmpty) {
-                        return EmptyListOfTransactionsWidget();
+                        return const EmptyListOfTransactionsWidget();
                       }
 
                       return RefreshIndicator(
@@ -340,7 +435,6 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                         },
                         child: ListView.builder(
                           padding: EdgeInsets.zero,
-                          primary: false,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemCount: listTransactions.length,
@@ -348,7 +442,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                             final listTransactionsItem =
                                 listTransactions[listTransactionsIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 8.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -413,7 +507,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: SingleChildScrollView(
                                             child: Column(
@@ -451,7 +545,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -485,7 +579,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -495,7 +589,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                                 CrossAxisAlignment.end,
                                             children: [
                                               Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Text(
                                                   '${listTransactionsItem.hasTransactionAmount() ? listTransactionsItem.transactionAmount : ' '} ${listTransactionsItem.hasBillingCurrencyCode() ? listTransactionsItem.billingCurrencyCode : ' '}',
                                                   textAlign: TextAlign.end,
@@ -522,7 +616,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(

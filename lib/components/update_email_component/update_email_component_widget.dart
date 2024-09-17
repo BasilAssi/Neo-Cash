@@ -57,10 +57,10 @@ class _UpdateEmailComponentWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 1.0),
+      alignment: const AlignmentDirectional(0.0, 1.0),
       child: SafeArea(
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(12.0),
@@ -68,12 +68,12 @@ class _UpdateEmailComponentWidgetState
           ),
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.6,
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 570.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(12.0),
@@ -85,7 +85,7 @@ class _UpdateEmailComponentWidgetState
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -134,14 +134,14 @@ class _UpdateEmailComponentWidgetState
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 24.0, 0.0, 24.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller:
@@ -245,7 +245,7 @@ class _UpdateEmailComponentWidgetState
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller:
@@ -357,7 +357,7 @@ class _UpdateEmailComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -467,9 +467,9 @@ class _UpdateEmailComponentWidgetState
                               ),
                               options: FFButtonOptions(
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -485,7 +485,7 @@ class _UpdateEmailComponentWidgetState
                                                   .titleSmallFamily),
                                     ),
                                 elevation: 4.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -502,12 +502,12 @@ class _UpdateEmailComponentWidgetState
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 16.0)),
+                        ].divide(const SizedBox(width: 16.0)),
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 4.0))
-                      .addToEnd(SizedBox(height: 12.0)),
+                      .divide(const SizedBox(height: 4.0))
+                      .addToEnd(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

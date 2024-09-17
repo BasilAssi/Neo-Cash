@@ -3,13 +3,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,8 +58,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
             curve: Curves.easeOut,
             delay: 250.0.ms,
             duration: 150.0.ms,
-            begin: Offset(0.0, 10.0),
-            end: Offset(0.0, -40.0),
+            begin: const Offset(0.0, 10.0),
+            end: const Offset(0.0, -40.0),
           ),
           FadeEffect(
             curve: Curves.easeOut,
@@ -88,8 +86,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -200.0),
-            end: Offset(0.0, 20.0),
+            begin: const Offset(0.0, -200.0),
+            end: const Offset(0.0, 20.0),
           ),
           FadeEffect(
             curve: Curves.easeOut,
@@ -109,8 +107,8 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
             curve: Curves.easeIn,
             delay: 200.0.ms,
             duration: 100.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, -20.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, -20.0),
           ),
         ],
       ),
@@ -142,14 +140,14 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Stack(
                     children: [
                       Icon(
@@ -170,10 +168,10 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 70.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 70.0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 0.5,
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -207,7 +205,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                             fieldHeight: 44.0,
                             fieldWidth: 44.0,
                             borderWidth: 0.0,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(12.0),
                               bottomRight: Radius.circular(12.0),
                               topLeft: Radius.circular(12.0),
@@ -302,7 +300,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}3';
@@ -314,9 +312,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -330,7 +328,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -340,7 +338,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}2';
@@ -352,9 +350,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -368,7 +366,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -378,7 +376,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}1';
@@ -393,9 +391,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -409,7 +407,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -421,13 +419,13 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}1';
@@ -439,9 +437,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -456,7 +454,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -466,7 +464,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('five pressed ...');
@@ -477,9 +475,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -494,7 +492,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -504,7 +502,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}4';
@@ -516,9 +514,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -533,7 +531,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -546,13 +544,13 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '${_model.pinCode}1';
@@ -564,9 +562,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -581,7 +579,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -591,7 +589,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('eight pressed ...');
@@ -602,9 +600,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -619,7 +617,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -629,7 +627,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('seven pressed ...');
@@ -640,9 +638,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -657,7 +655,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -670,13 +668,13 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode =
@@ -694,16 +692,16 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           text: FFLocalizations.of(context).getText(
                             '08749mxw' /*  */,
                           ),
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_forward,
                             size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -718,7 +716,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -728,7 +726,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('zero pressed ...');
@@ -739,9 +737,9 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -756,7 +754,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -766,7 +764,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.pinCode = '';
@@ -778,16 +776,16 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                           text: FFLocalizations.of(context).getText(
                             'v16kqthu' /*  */,
                           ),
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.close_rounded,
                             size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.1,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -802,7 +800,7 @@ class _PinCodeWidgetState extends State<PinCodeWidget>
                                           .headlineSmallFamily),
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

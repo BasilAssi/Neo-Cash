@@ -25,7 +25,6 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
   late EnterIdPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  TextInputType _keyboardType = TextInputType.number;
 
   @override
   void initState() {
@@ -50,10 +49,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async {
-          context.pushNamed('login');
-          return false;
-        },
+        onWillPop: () async => false,
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -111,9 +107,11 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                       FFLocalizations.of(context).getText(
                         'je18929v' /*   هويتك الشخصية */,
                       ),
-                      style: FlutterFlowTheme.of(context).headlineMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).headlineMediumFamily,
+                      style: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .override(
+                            fontFamily: FlutterFlowTheme.of(context)
+                                .headlineMediumFamily,
                             color: FlutterFlowTheme.of(context).textAppbarColor,
                             fontSize: 24.0,
                             letterSpacing: 0.0,
@@ -132,10 +130,13 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           FFLocalizations.of(context).getText(
                             'lcpbbpxk' /* الرجاء اختيار نوع وثيقتك  الشخ... */,
                           ),
-                          style: FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily:
-                                    FlutterFlowTheme.of(context).titleSmallFamily,
-                                color: FlutterFlowTheme.of(context).secondaryText,
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -146,14 +147,19 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.idTypeDropDownValueController ??=
                             FormFieldController<String>(
                           _model.idTypeDropDownValue ??= 'NATIONAL',
                         ),
-                        options: List<String>.from(
-                            ['NATIONAL', 'JERUSALEM', 'OCCUPIED_ID', 'PASSPORT']),
+                        options: List<String>.from([
+                          'NATIONAL',
+                          'JERUSALEM',
+                          'OCCUPIED_ID',
+                          'PASSPORT'
+                        ]),
                         optionLabels: [
                           FFLocalizations.of(context).getText(
                             'gx1gtqed' /* الهوية  الفلسطينية */,
@@ -168,14 +174,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             'gbfbw5q5' /* جواز السفر */,
                           )
                         ],
-                        onChanged: (val) {
-                          safeSetState(() {
-                            _keyboardType = (val == 'PASSPORT')
-                                ? TextInputType.text // Text keyboard for passport
-                                : TextInputType.number;
-                            _model.idTypeDropDownValue = val;
-                          });
-                        },
+                        onChanged: (val) => safeSetState(
+                            () => _model.idTypeDropDownValue = val),
                         width: 300.0,
                         height: 56.0,
                         textStyle: FlutterFlowTheme.of(context)
@@ -188,7 +188,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context).bodyMediumFamily),
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                         hintText: FFLocalizations.of(context).getText(
                           'olbvbygi' /* اختيار نوع الهوية  */,
@@ -204,8 +205,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
-                        margin:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                        margin: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -219,12 +220,15 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '9hnsedy0' /* الرجاء إدخال رقم الهوية بشكل ص... */,
+                            '9hnsedy0' /* الرجاء إدخال رقم الوثيقة بشكل ... */,
                           ),
-                          style: FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily:
-                                    FlutterFlowTheme.of(context).titleSmallFamily,
-                                color: FlutterFlowTheme.of(context).secondaryText,
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -235,7 +239,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.idNumberTextFieldTextController,
                         focusNode: _model.idNumberTextFieldFocusNode,
@@ -245,27 +250,29 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                         decoration: InputDecoration(
                           isDense: false,
                           labelText: FFLocalizations.of(context).getText(
-                            'c42bc1ay' /*  رقم الهوية */,
+                            'c42bc1ay' /*  رقم الوثيقة */,
                           ),
-                          labelStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(FlutterFlowTheme.of(context)
-                                            .labelMediumFamily),
-                                  ),
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(FlutterFlowTheme.of(context)
-                                            .labelMediumFamily),
-                                  ),
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).alternate,
@@ -275,7 +282,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).textFieldBorder,
+                              color:
+                                  FlutterFlowTheme.of(context).textFieldBorder,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
@@ -309,25 +317,28 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context).bodyMediumFamily),
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
-                        keyboardType: _keyboardType,
-                        validator: _model.idNumberTextFieldTextControllerValidator
+                        keyboardType: TextInputType.number,
+                        validator: _model
+                            .idNumberTextFieldTextControllerValidator
                             .asValidator(context),
                       ),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 100.0, 0.0, 0.0),
                         child: Semantics(
                           button: true,
                           onTapHint: 'validation Done by next action ',
                           child: FFButtonWidget(
                             onPressed: () async {
                               if (functions.isIDNumberValid(
-                                      _model.idNumberTextFieldTextController.text,
+                                      _model
+                                          .idNumberTextFieldTextController.text,
                                       _model.idTypeDropDownValue) ==
                                   true) {
                                 FFAppState().updateRegisterationFormDataStruct(
@@ -341,7 +352,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                     await actions.isNetworkAvailable();
                                 if (_model.isNetworkAvailableOutput == true) {
                                   _model.isRegisteredOutPut =
-                                      await AuthAndRegisterGroup.isRegisteredCall
+                                      await AuthAndRegisterGroup
+                                          .isRegisteredCall
                                           .call(
                                     msgId: functions.messageId(),
                                     idNumber: _model
@@ -359,49 +371,47 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         : '',
                                   );
 
-                              print('_model.isRegisteredOutPut ${_model.isRegisteredOutPut?.jsonBody}');
-                              print('_model.isRegisteredOutPut ${IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody)}');
-                              String? customerStatus = IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody);
-                              if ((_model.isRegisteredOutPut?.succeeded ??
-                                  true)) {
-                                if (ResponseModelStruct.maybeFromMap((_model
-                                                .isRegisteredOutPut?.jsonBody ??
-                                            ''))
-                                        ?.status ==
-                                    true) {
-                                   if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
-                                  //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                  //                                                                         true)
-                                  // if ((ResponseModelStruct.maybeFromMap((_model
-                                  //                     .isRegisteredOutPut
-                                  //                     ?.jsonBody ??
-                                  //                 ''))
-                                  //             ?.customerStatus !=
-                                  //         'DEACTIVATED') &&
-                                  //     (ResponseModelStruct.maybeFromMap((_model
-                                  //                     .isRegisteredOutPut
-                                  //                     ?.jsonBody ??
-                                  //                 ''))
-                                  //             ?.customerStatus !=
-                                  //         'REJECTED')) {
-                                    if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                                                          true)
-                                    // if (AuthenticatedUserStruct.maybeFromMap(
-                                    //             (_model.isRegisteredOutPut
-                                    //                     ?.jsonBody ??
-                                    //                 ''))
-                                    //         ?.isDeviceRegistered ==
-                                    //     true)
-                                           {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText:
-                                              'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
-                                          enText:
-                                              'please login .. did you forget your password?',
-                                        ),
-                                      );
+                                  if ((_model.isRegisteredOutPut?.succeeded ??
+                                      true)) {
+                                    if (ResponseModelStruct.maybeFromMap((_model
+                                                    .isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                            ?.status ==
+                                        true) {
+                                      // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
+                                      //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                      //                                                                         true)
+                                      if ((ResponseModelStruct.maybeFromMap(
+                                                      (_model.isRegisteredOutPut
+                                                              ?.jsonBody ??
+                                                          ''))
+                                                  ?.customerStatus !=
+                                              'DEACTIVATED') &&
+                                          (ResponseModelStruct.maybeFromMap(
+                                                      (_model.isRegisteredOutPut
+                                                              ?.jsonBody ??
+                                                          ''))
+                                                  ?.customerStatus !=
+                                              'REJECTED')) {
+                                        // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                        //                                       false)
+                                        if (AuthenticatedUserStruct
+                                                    .maybeFromMap((_model
+                                                            .isRegisteredOutPut
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.isDeviceRegistered ==
+                                            true) {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'الرجاء تسجيل الدخول .. هل نسيت كلمة المرور؟',
+                                              enText:
+                                                  'please login .. did you forget your password?',
+                                            ),
+                                          );
 
                                           context.pushNamed('login');
                                         } else {
@@ -432,14 +442,15 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                         ?.jsonBody ??
                                                     ''),
                                               )
-                                              ..customerId = AuthAndRegisterGroup
-                                                  .isRegisteredCall
-                                                  .customerId(
-                                                    (_model.isRegisteredOutPut
-                                                            ?.jsonBody ??
-                                                        ''),
-                                                  )
-                                                  .toString(),
+                                              ..customerId =
+                                                  AuthAndRegisterGroup
+                                                      .isRegisteredCall
+                                                      .customerId(
+                                                        (_model.isRegisteredOutPut
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )
+                                                      .toString(),
                                           );
                                           safeSetState(() {});
                                           _model.apiResultSendOTP =
@@ -459,8 +470,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                             operationType: 'REGISTER_DEVICE',
                                           );
 
-                                          if ((_model
-                                                  .apiResultSendOTP?.succeeded ??
+                                          if ((_model.apiResultSendOTP
+                                                  ?.succeeded ??
                                               true)) {
                                             context.pushNamed(
                                                 'otp_does_not_exist_flow');
@@ -476,8 +487,8 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration:
-                                                    const Duration(milliseconds: 4000),
+                                                duration: const Duration(
+                                                    milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
                                                         .secondary,
@@ -571,8 +582,9 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                     useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(FlutterFlowTheme.of(context)
-                                            .titleSmallFamily),
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(
@@ -601,7 +613,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'n5zjlx3a' /* العودة الى الصفحة الرئيسية
-         */
+ */
                               ,
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -609,12 +621,13 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .titleSmallFamily,
-                                  color: FlutterFlowTheme.of(context).primaryText,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w900,
                                   decoration: TextDecoration.underline,
-                                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                      FlutterFlowTheme.of(context)
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
                                 ),
                           ),
