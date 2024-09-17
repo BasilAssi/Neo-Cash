@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'error_component_copy_model.dart';
 export 'error_component_copy_model.dart';
 
@@ -11,7 +12,7 @@ class ErrorComponentCopyWidget extends StatefulWidget {
   const ErrorComponentCopyWidget({
     super.key,
     String? errorText,
-  }) : errorText = errorText ?? 'error';
+  }) : this.errorText = errorText ?? 'error';
 
   final String errorText;
 
@@ -45,15 +46,15 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
-      child: SizedBox(
+      alignment: AlignmentDirectional(0.0, 0.0),
+      child: Container(
         width: MediaQuery.sizeOf(context).width * 0.9,
         height: MediaQuery.sizeOf(context).height * 1.0,
         child: Stack(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 0.7,
@@ -61,21 +62,21 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(32.0, 0.0, 32.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              widget.errorText,
+                              widget!.errorText,
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -95,9 +96,9 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 30.0, 0.0, 30.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -109,9 +110,9 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -127,7 +128,7 @@ class _ErrorComponentCopyWidgetState extends State<ErrorComponentCopyWidget> {
                                                     .titleSmallFamily),
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

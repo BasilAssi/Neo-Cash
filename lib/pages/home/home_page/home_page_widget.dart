@@ -6,8 +6,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,8 +56,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
             curve: Curves.easeInOut,
             delay: 900.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -141,16 +144,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 50.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 50.0, 8.0, 0.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 64.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 64.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.399,
                           height: MediaQuery.sizeOf(context).height * 0.15,
@@ -160,7 +163,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -177,7 +180,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -428,7 +431,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -518,7 +521,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
-          actions: const [],
+          actions: [],
           flexibleSpace: FlexibleSpaceBar(
             title: Row(
               mainAxisSize: MainAxisSize.max,
@@ -578,7 +581,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             ),
             centerTitle: true,
             expandedTitleScale: 1.0,
-            titlePadding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 32.0, 4.0),
+            titlePadding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 32.0, 4.0),
           ),
           elevation: 0.0,
         ),
@@ -589,7 +592,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             scrollDirection: Axis.vertical,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -641,12 +644,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               model:
                                   _model.homePageCustomerBalancesComponentModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const HomePageCustomerBalancesComponentWidget(),
+                              child: HomePageCustomerBalancesComponentWidget(),
                             ),
                           ),
                         ],
                       ),
-                      theme: const ExpandableThemeData(
+                      theme: ExpandableThemeData(
                         tapHeaderToExpand: true,
                         tapBodyToExpand: true,
                         tapBodyToCollapse: true,
@@ -667,7 +670,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: ListView(
                     padding: EdgeInsets.zero,
                     primary: false,
@@ -689,13 +692,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: Container(
                   width: 100.0,
                   height: MediaQuery.sizeOf(context).height * 0.55,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(50.0),
@@ -704,14 +707,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: ListView(
                       padding: EdgeInsets.zero,
                       primary: false,
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 8.0, 8.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -721,7 +724,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 4.0, 0.0),
                                     child: Icon(
                                       Icons.stacked_bar_chart_sharp,
@@ -786,11 +789,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.homePageListTransactionComponentModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: const HomePageListTransactionComponentWidget(),
+                            child: HomePageListTransactionComponentWidget(),
                           ),
                         ),
                       ],

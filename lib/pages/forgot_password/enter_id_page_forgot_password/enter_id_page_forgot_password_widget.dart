@@ -58,12 +58,12 @@ class _EnterIdPageForgotPasswordWidgetState
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -88,17 +88,17 @@ class _EnterIdPageForgotPasswordWidgetState
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 0.0,
         ),
         body: Align(
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Form(
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: ListView(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
@@ -121,10 +121,10 @@ class _EnterIdPageForgotPasswordWidgetState
                         ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ot6z8cbr' /* الرجاء اختيار نوع وثيقتك  الشخ... */,
@@ -143,7 +143,7 @@ class _EnterIdPageForgotPasswordWidgetState
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: FlutterFlowDropDown<String>(
                       controller: _model.idTypeDropDownValueController ??=
                           FormFieldController<String>(
@@ -202,7 +202,7 @@ class _EnterIdPageForgotPasswordWidgetState
                       borderWidth: 2.0,
                       borderRadius: 8.0,
                       margin:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                       hidesUnderline: true,
                       isOverButton: true,
                       isSearchable: false,
@@ -210,10 +210,10 @@ class _EnterIdPageForgotPasswordWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 8.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'at1quu1z' /* الرجاء إدخال رقم الوثيقة بشكل ... */,
@@ -232,7 +232,7 @@ class _EnterIdPageForgotPasswordWidgetState
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: TextFormField(
                       controller: _model.idNumberTextFieldTextController,
                       focusNode: _model.idNumberTextFieldFocusNode,
@@ -314,10 +314,10 @@ class _EnterIdPageForgotPasswordWidgetState
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           if (functions.isIDNumberValid(
@@ -564,7 +564,7 @@ class _EnterIdPageForgotPasswordWidgetState
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -595,9 +595,9 @@ class _EnterIdPageForgotPasswordWidgetState
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.9,
                           height: MediaQuery.sizeOf(context).height * 0.06,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -614,7 +614,7 @@ class _EnterIdPageForgotPasswordWidgetState
                                         .titleSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

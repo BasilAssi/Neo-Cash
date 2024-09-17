@@ -2,8 +2,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'shimmer_component_list_cards_model.dart';
 export 'shimmer_component_list_cards_model.dart';
 
@@ -43,7 +48,7 @@ class _ShimmerComponentListCardsWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            color: const Color(0x80FFFFFF),
+            color: Color(0x80FFFFFF),
             angle: 0.524,
           ),
         ],
@@ -66,7 +71,7 @@ class _ShimmerComponentListCardsWidgetState
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 0.0),
+        alignment: AlignmentDirectional(0.0, 0.0),
         child: FlutterFlowSwipeableStack(
           onSwipeFn: (index) {},
           onLeftSwipe: (index) {},
@@ -76,13 +81,13 @@ class _ShimmerComponentListCardsWidgetState
           itemBuilder: (context, index) {
             return [
               () => Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFEEEEEE),
-                        boxShadow: const [
+                        color: Color(0xFFEEEEEE),
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 6.0,
                             color: Color(0x4B1A1F24),
@@ -100,7 +105,7 @@ class _ShimmerComponentListCardsWidgetState
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -122,7 +127,7 @@ class _ShimmerComponentListCardsWidgetState
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 12.0, 20.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -156,20 +161,20 @@ class _ShimmerComponentListCardsWidgetState
                     ),
                   ),
               () => Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 1.0,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFEEEEEE),
-                                boxShadow: const [
+                                color: Color(0xFFEEEEEE),
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 6.0,
                                     color: Color(0x4B1A1F24),
@@ -188,7 +193,7 @@ class _ShimmerComponentListCardsWidgetState
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -212,7 +217,7 @@ class _ShimmerComponentListCardsWidgetState
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 12.0, 20.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -262,7 +267,7 @@ class _ShimmerComponentListCardsWidgetState
           scale: 0.9,
           threshold: 0.5,
           maxAngle: 10.0,
-          cardPadding: const EdgeInsets.all(12.0),
+          cardPadding: EdgeInsets.all(12.0),
           backCardOffset: const Offset(0.0, 30.0),
         ).animateOnPageLoad(
             animationsMap['swipeableStackOnPageLoadAnimation']!),

@@ -1,9 +1,11 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'notification_page_model.dart';
 export 'notification_page_model.dart';
 
@@ -48,7 +50,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +72,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                 ),
                 Expanded(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'n6fn9m9k' /* الإشعارات */,
@@ -94,20 +96,20 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: MediaQuery.sizeOf(context).height * 1.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(25.0),
@@ -115,7 +117,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   primary: false,
@@ -124,9 +126,9 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                       child: Container(
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Container(
                           width: double.infinity,
                           color: Colors.white,
@@ -134,7 +136,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                             controller: _model.expandableExpandableController1,
                             child: ExpandablePanel(
                               header: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -223,7 +225,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                   ),
                                 ],
                               ),
-                              theme: const ExpandableThemeData(
+                              theme: ExpandableThemeData(
                                 tapHeaderToExpand: true,
                                 tapBodyToExpand: true,
                                 tapBodyToCollapse: true,
@@ -237,7 +239,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                       ),
                     ),
                     Container(
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Container(
                         width: double.infinity,
                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -245,7 +247,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                           controller: _model.expandableExpandableController2,
                           child: ExpandablePanel(
                             header: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -273,7 +275,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -282,7 +284,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'ckpq355p' /* Jun, 8, 2024 */,
@@ -327,13 +329,13 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                   ),
                             ),
                             expanded: Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -361,7 +363,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                 ],
                               ),
                             ),
-                            theme: const ExpandableThemeData(
+                            theme: ExpandableThemeData(
                               tapHeaderToExpand: true,
                               tapBodyToExpand: true,
                               tapBodyToCollapse: true,

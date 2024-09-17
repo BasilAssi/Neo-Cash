@@ -6,8 +6,11 @@ import '/components/shimmer/shimmer_component_list_transactions/shimmer_componen
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -122,12 +125,12 @@ class _HomePageListTransactionComponentWidgetState
                   (ListCustomerTransactionsStruct.maybeFromMap(
                                   listViewListCardTransactionsResponse.jsonBody)
                               ?.records
-                              .toList() ??
+                              ?.toList() ??
                           [])
                       .take(3)
                       .toList();
               if (listTransactions.isEmpty) {
-                return const EmptyListOfTransactionsWidget();
+                return EmptyListOfTransactionsWidget();
               }
 
               return RefreshIndicator(
@@ -153,7 +156,7 @@ class _HomePageListTransactionComponentWidgetState
                         listTransactions[listTransactionsIndex];
                     return Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,

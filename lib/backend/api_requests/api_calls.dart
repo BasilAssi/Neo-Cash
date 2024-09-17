@@ -988,7 +988,6 @@ class GetCardPINCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
-    print('cardToken ${cardToken}');
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Card PIN',
