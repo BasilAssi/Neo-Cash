@@ -36,7 +36,7 @@ class TransactionDetailsPageModel
       if (image != null) {
         // Save the image to the local directory
         final directory = await getApplicationDocumentsDirectory();
-        final imagePath = File('${directory.path}/name.png');
+        final imagePath = File('${directory.path}/$name.png');
 
         // Save the image file
         await imagePath.writeAsBytes(image);
