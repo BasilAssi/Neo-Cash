@@ -62,6 +62,27 @@ class TransactionDetailsPageModel
     }
     return null;  // Return null if something fails
   }
+  Future saveImageToDevice() async {
+    try {
+      final time = DateTime.now()
+          .toIso8601String()
+          .replaceAll('.', '-')
+          .replaceAll(':', '-');
+      final name = 'NeoCashTransaction$time';
+      // Capture screenshot
+      final image = await screenshotController.capture(delay: const Duration(milliseconds: 10));
+
+      if (image != null) {
+
+        return image!;  // Return the file path for sharing
+      } else {
+        print('Capture failed. Image is null.');
+      }
+    } catch (e) {
+      print('Error occurred while Capture failed: $e');
+    }
+    return null;  // Return null if something fails
+  }
 
   saveToGallery(Uint8List imageBytes) async {
     final time = DateTime.now()
