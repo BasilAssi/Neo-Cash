@@ -27,15 +27,14 @@ class AuthAndRegisterGroup {
   static SendToApprovalCall sendToApprovalCall = SendToApprovalCall();
   static RegisterACustomerCall registerACustomerCall = RegisterACustomerCall();
   static RegisterACustomerDeviceCall registerACustomerDeviceCall =
-      RegisterACustomerDeviceCall();
+  RegisterACustomerDeviceCall();
   static ListCustomersCall listCustomersCall = ListCustomersCall();
   static LOOKUPsAPIsCall lOOKUPsAPIsCall = LOOKUPsAPIsCall();
   static UploadDocumentCall uploadDocumentCall = UploadDocumentCall();
   static LoginCall loginCall = LoginCall();
   static DeleteUploadedDocumentCall deleteUploadedDocumentCall =
-      DeleteUploadedDocumentCall();
+  DeleteUploadedDocumentCall();
   static ForgotPasswordCall forgotPasswordCall = ForgotPasswordCall();
-  static SystemSettingsCall systemSettingsCall = SystemSettingsCall();
 }
 
 class IsRegisteredCall {
@@ -51,6 +50,10 @@ class IsRegisteredCall {
       msgId: msgId,
     );
 
+    print('idNumber  $idNumber \n ');
+    print('idType  $idType \n ');
+    print('acceptLanguage  $acceptLanguage \n ');
+    print('msgId  $msgId \n ');
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
       apiUrl: '$baseUrl/customer/api/v1/isRegistered',
@@ -75,34 +78,34 @@ class IsRegisteredCall {
   }
 
   String? emailAddress(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.records[:].emailAddress''',
-      ));
+    response,
+    r'''$.records[:].emailAddress''',
+  ));
   String? mobileNumberPrefix(dynamic response) =>
       castToType<String>(getJsonField(
         response,
         r'''$.records[:].mobileNumberPrefix''',
       ));
   String? mobileNumber(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.records[:].mobileNumber''',
-      ));
+    response,
+    r'''$.records[:].mobileNumber''',
+  ));
   dynamic customerId(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].encodedId''',
-      );
+    response,
+    r'''$.records[:].encodedId''',
+  );
   dynamic isDeviceRegistered(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].isDeviceRegistered''',
-      );
+    response,
+    r'''$.records[:].isDeviceRegistered''',
+  );
   dynamic photourl(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].customerDocuments[?(@.moduleType == 'PROFILE_PICTURE')].documentUrl''',
-      );
+    response,
+    r'''$.records[:].customerDocuments[?(@.moduleType == 'PROFILE_PICTURE')].documentUrl''',
+  );
   dynamic customerStatus(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].customerStatus''',
-      );
+    response,
+    r'''$.records[:].customerStatus''',
+  );
 }
 
 class SendOTPToCustomerCall {
@@ -217,6 +220,7 @@ class SendToApprovalCall {
   "idNumber": "$idNumber",
   "idType": "$idType"
 }''';
+    print('ffApiRequestBody ${ffApiRequestBody}');
     return ApiManager.instance.makeApiCall(
       callName: 'Send to Approval',
       apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
@@ -364,9 +368,9 @@ class RegisterACustomerCall {
   }
 
   dynamic customerId(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].encodedId''',
-      );
+    response,
+    r'''$.records[:].encodedId''',
+  );
 }
 
 class RegisterACustomerDeviceCall {
@@ -516,7 +520,6 @@ class UploadDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-
     return ApiManager.instance.makeApiCall(
       callName: 'Upload Document',
       apiUrl: '$baseUrl/customer/api/v1/uploadDocument',
@@ -556,6 +559,10 @@ class LoginCall {
       msgId: msgId,
     );
 
+    final String credentials = '$mobileWithPrefix:$password';
+    final String basicAuth = 'Basic ${base64Encode(utf8.encode(credentials))}';
+
+
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
       apiUrl: '$baseUrl/customer/api/login',
@@ -564,8 +571,8 @@ class LoginCall {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
         'Device-Serial': '$deviceSerial',
-        'authorization':
-            'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
+        'authorization':basicAuth,
+
       },
       params: {},
       bodyType: BodyType.NONE,
@@ -579,9 +586,9 @@ class LoginCall {
   }
 
   dynamic code(dynamic response) => getJsonField(
-        response,
-        r'''$.code''',
-      );
+    response,
+    r'''$.code''',
+  );
 }
 
 class DeleteUploadedDocumentCall {
@@ -594,10 +601,10 @@ class DeleteUploadedDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-
+    print('$baseUrl/$deleteURL ${'$baseUrl/$deleteURL'}');
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
-      apiUrl: '$baseUrl/$deleteURL',
+      apiUrl: '$baseUrl$deleteURL',
       callType: ApiCallType.DELETE,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -659,37 +666,6 @@ class ForgotPasswordCall {
   }
 }
 
-class SystemSettingsCall {
-  Future<ApiCallResponse> call({
-    String? acceptLanguage = 'EN',
-    String? msgId = '',
-  }) async {
-    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
-      acceptLanguage: acceptLanguage,
-      msgId: msgId,
-    );
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'System Settings',
-      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {
-        'msgId': msgId,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 /// End Auth  and Register  Group Code
 
 /// Start Card Group Code
@@ -708,15 +684,15 @@ class CardGroup {
   };
   static ListCardsCall listCardsCall = ListCardsCall();
   static GetCustomerBalancesCall getCustomerBalancesCall =
-      GetCustomerBalancesCall();
+  GetCustomerBalancesCall();
   static GetCardAccountInfoCall getCardAccountInfoCall =
-      GetCardAccountInfoCall();
+  GetCardAccountInfoCall();
   static ListCardTransactionsCall listCardTransactionsCall =
-      ListCardTransactionsCall();
+  ListCardTransactionsCall();
   static ChangeCardStatusCall changeCardStatusCall = ChangeCardStatusCall();
   static GetCardPINCall getCardPINCall = GetCardPINCall();
   static ValidateCustomerPINCall validateCustomerPINCall =
-      ValidateCustomerPINCall();
+  ValidateCustomerPINCall();
   static ChangePasswordCall changePasswordCall = ChangePasswordCall();
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
   static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
@@ -763,41 +739,41 @@ class ListCardsCall {
   }
 
   dynamic cardNumber(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].cardNumber''',
-      );
+    response,
+    r'''$.records[:].cardNumber''',
+  );
   dynamic currencyCode(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].currencyCode''',
-      );
+    response,
+    r'''$.records[:].currencyCode''',
+  );
   dynamic availableBalance(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].availableBalance''',
-      );
+    response,
+    r'''$.records[:].availableBalance''',
+  );
   dynamic cardCvc(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].cardCvc''',
-      );
+    response,
+    r'''$.records[:].cardCvc''',
+  );
   dynamic firstName(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].firstName''',
-      );
+    response,
+    r'''$.records[:].firstName''',
+  );
   dynamic middleName(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].middleName''',
-      );
+    response,
+    r'''$.records[:].middleName''',
+  );
   dynamic lastName(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].lastName''',
-      );
+    response,
+    r'''$.records[:].lastName''',
+  );
   dynamic nameOnCard(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].nameOnCard''',
-      );
+    response,
+    r'''$.records[:].nameOnCard''',
+  );
   dynamic expiryDate(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].expiryDate''',
-      );
+    response,
+    r'''$.records[:].expiryDate''',
+  );
 }
 
 class GetCustomerBalancesCall {
@@ -874,13 +850,13 @@ class GetCardAccountInfoCall {
   }
 
   dynamic cardBalance(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].availableBalance''',
-      );
+    response,
+    r'''$.records[:].availableBalance''',
+  );
   dynamic currencyCode(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].currencyCode''',
-      );
+    response,
+    r'''$.records[:].currencyCode''',
+  );
 }
 
 class ListCardTransactionsCall {
@@ -897,7 +873,9 @@ class ListCardTransactionsCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
-
+    print('ListCardTransactionsCall card token  ${cardToken}');
+    print('ListCardTransactionsCall dateFrom  ${dateFrom}');
+    print('ListCardTransactionsCall dateTo  ${dateTo}');
     return ApiManager.instance.makeApiCall(
       callName: 'List Card Transactions',
       apiUrl: '$baseUrl/customer/api/v1/cardTransList',
@@ -936,7 +914,7 @@ class ChangeCardStatusCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
-
+    print(' ChangeCardStatusCall cardToken ${cardToken}');
     final ffApiRequestBody = '''
 {
   "msgId": "$msgId",
@@ -978,6 +956,7 @@ class GetCardPINCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
+    print('cardToken ${cardToken}');
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Card PIN',
@@ -1003,9 +982,9 @@ class GetCardPINCall {
   }
 
   dynamic pinBlock(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].pinBlock''',
-      );
+    response,
+    r'''$.records[:].pinBlock''',
+  );
 }
 
 class ValidateCustomerPINCall {
@@ -1046,9 +1025,9 @@ class ValidateCustomerPINCall {
   }
 
   dynamic pinBlock(dynamic response) => getJsonField(
-        response,
-        r'''$.records[:].pinBlock''',
-      );
+    response,
+    r'''$.records[:].pinBlock''',
+  );
 }
 
 class ChangePasswordCall {
@@ -1200,7 +1179,7 @@ class ListExchangeRateCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List ExchangeRate',
-      apiUrl: '$baseUrl/lookup/api/v1/exchangeRate',
+      apiUrl: '$baseUrl/customer/api/v1/exchangeRate',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -1209,7 +1188,6 @@ class ListExchangeRateCall {
       },
       params: {
         'exchangeRateDate': exchangeRateDate,
-        'msgId': msgId,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1221,9 +1199,9 @@ class ListExchangeRateCall {
   }
 
   dynamic records(dynamic response) => getJsonField(
-        response,
-        r'''$.records[?((@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'ILS') || (@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'JOD') || (@.fromCurrencyCode == 'JOD' && @.toCurrencyCode == 'ILS'))]''',
-      );
+    response,
+    r'''$.records[?((@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'ILS') || (@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'JOD') || (@.fromCurrencyCode == 'JOD' && @.toCurrencyCode == 'ILS'))]''',
+  );
 }
 
 /// End Card Group Code

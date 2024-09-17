@@ -767,7 +767,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .passwordTextController
                                                       .text,
                                                 );
-
+                                                print('_model.apiResultLogin ${_model.apiResultLogin?.jsonBody}');
                                                 if ((_model.apiResultLogin
                                                         ?.succeeded ??
                                                     true)) {
