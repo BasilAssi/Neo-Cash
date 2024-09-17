@@ -253,8 +253,8 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     if ((_model.uploadedLocalFile.bytes
-                                                ?.isEmpty ??
-                                            true)) {
+                                                ?.isNotEmpty ??
+                                            false)) {
                                       _model.isNetworkAvailableOutput =
                                           await actions.isNetworkAvailable();
                                       if (_model.isNetworkAvailableOutput ==
