@@ -51,10 +51,6 @@ class IsRegisteredCall {
       msgId: msgId,
     );
 
-    print('idNumber  $idNumber \n ');
-    print('idType  $idType \n ');
-    print('acceptLanguage  $acceptLanguage \n ');
-    print('msgId  $msgId \n ');
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
       apiUrl: '$baseUrl/customer/api/v1/isRegistered',
@@ -221,7 +217,6 @@ class SendToApprovalCall {
   "idNumber": "$idNumber",
   "idType": "$idType"
 }''';
-    print('ffApiRequestBody ${ffApiRequestBody}');
     return ApiManager.instance.makeApiCall(
       callName: 'Send to Approval',
       apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
@@ -521,6 +516,7 @@ class UploadDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
+
     return ApiManager.instance.makeApiCall(
       callName: 'Upload Document',
       apiUrl: '$baseUrl/customer/api/v1/uploadDocument',
@@ -560,10 +556,6 @@ class LoginCall {
       msgId: msgId,
     );
 
-    final String credentials = '$mobileWithPrefix:$password';
-    final String basicAuth = 'Basic ${base64Encode(utf8.encode(credentials))}';
-
-
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
       apiUrl: '$baseUrl/customer/api/login',
@@ -572,8 +564,8 @@ class LoginCall {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
         'Device-Serial': '$deviceSerial',
-        'authorization':basicAuth,
-
+        'authorization':
+            'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
       },
       params: {},
       bodyType: BodyType.NONE,
@@ -602,10 +594,10 @@ class DeleteUploadedDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-print('$baseUrl/$deleteURL ${'$baseUrl/$deleteURL'}');
+
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
-      apiUrl: '$baseUrl$deleteURL',
+      apiUrl: '$baseUrl/$deleteURL',
       callType: ApiCallType.DELETE,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -905,9 +897,7 @@ class ListCardTransactionsCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
-print('ListCardTransactionsCall card token  ${cardToken}');
-print('ListCardTransactionsCall dateFrom  ${dateFrom}');
-print('ListCardTransactionsCall dateTo  ${dateTo}');
+
     return ApiManager.instance.makeApiCall(
       callName: 'List Card Transactions',
       apiUrl: '$baseUrl/customer/api/v1/cardTransList',
@@ -946,7 +936,7 @@ class ChangeCardStatusCall {
       token: token,
       acceptLanguage: acceptLanguage,
     );
-print(' ChangeCardStatusCall cardToken ${cardToken}');
+
     final ffApiRequestBody = '''
 {
   "msgId": "$msgId",

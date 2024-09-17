@@ -10,7 +10,6 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'settings_change_photo_model.dart';
 export 'settings_change_photo_model.dart';
@@ -50,13 +49,13 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: 400.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -64,13 +63,13 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -89,7 +88,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 16.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -135,7 +134,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -158,7 +157,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -168,7 +167,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                 width: 120.0,
                                 height: 120.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFDBE2E7),
+                                  color: const Color(0xFFDBE2E7),
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: Image.asset(
@@ -180,7 +179,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                 child: Stack(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -219,7 +218,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                             width: 200.0,
                                             height: 200.0,
                                             clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.memory(
@@ -244,7 +243,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 44.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -253,8 +252,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                               Expanded(
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    if (_model.uploadedLocalFile != null &&
-                                        (_model.uploadedLocalFile.bytes
+                                    if ((_model.uploadedLocalFile.bytes
                                                 ?.isNotEmpty ??
                                             false)) {
                                       _model.isNetworkAvailableOutput =
@@ -476,9 +474,9 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -493,7 +491,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                               .containsKey('Lexend Deca'),
                                         ),
                                     elevation: 2.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -551,9 +549,9 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -570,14 +568,14 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                                       .labelMediumFamily),
                                         ),
                                     elevation: 2.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 34.0)),
+                            ].divide(const SizedBox(width: 34.0)),
                           ),
                         ),
                       ],

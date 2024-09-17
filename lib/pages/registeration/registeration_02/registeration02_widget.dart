@@ -131,8 +131,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -141,8 +140,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 16.0, 0.0, 0.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -167,8 +166,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '213i0qjp' /* 7 */,
@@ -196,8 +194,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -243,8 +240,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '808vqhu1' /* 6 */,
@@ -272,8 +268,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -319,8 +314,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           's74r4pq0' /* 5 */,
@@ -348,8 +342,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -395,8 +388,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'eiuy8p86' /* 4 */,
@@ -424,8 +416,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -471,8 +462,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'xk8j1fbf' /* 3 */,
@@ -500,8 +490,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -547,8 +536,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'pz0aym10' /* 2 */,
@@ -576,8 +564,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 20.0,
                                       decoration: BoxDecoration(
@@ -623,8 +610,7 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       ),
                                     ),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'vohah3vr' /* 1 */,
@@ -659,8 +645,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'j1orf7vl' /*  تاريخ الميلاد */,
@@ -679,8 +665,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 16.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -806,8 +792,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'l0r5ylqb' /*  مكان الميلاد  */,
@@ -826,8 +812,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 16.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.cityTextFieldTextController,
                         focusNode: _model.cityTextFieldFocusNode,
@@ -914,8 +900,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '1gqz1vk4' /* اسم الأم باللغة الانجليزية */,
@@ -934,8 +920,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 16.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: TextFormField(
                         controller: _model.motherNameENTextFieldTextController,
                         focusNode: _model.motherNameENTextFieldFocusNode,
@@ -1021,8 +1007,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '87900l1f' /* الجنس */,
@@ -1041,8 +1027,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 16.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.genderDropDownValueController ??=
                             FormFieldController<String>(
@@ -1099,8 +1085,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '320f0ies' /* الجنسية */,
@@ -1119,8 +1105,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 16.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: FFAppState().nationaltiesAPIResponse(
                           overrideCache: _model.dropDownNationaltyValue ==
@@ -1231,8 +1217,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 48.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -1243,21 +1229,16 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
-                          if (!FFAppState()
-                              .registerationFormData
-                              .hasDateOfBirth()) {
-                            if (_model.datePicked == null) {
-                              await actions.showToast(
-                                FFLocalizations.of(context).getVariableText(
-                                  arText: 'حقل تاريخ الميلاد مطلوب',
-                                  enText: 'Date of Birth field is required.',
-                                ),
-                              );
-                              return;
-                            }
+                          if (_model.datePicked == null) {
+                            await actions.showToast(
+                              FFLocalizations.of(context).getVariableText(
+                                arText: 'حقل تاريخ الميلاد مطلوب',
+                                enText: 'Date of Birth field is required.',
+                              ),
+                            );
+                            return;
                           }
-                          print('_model.genderDropDownValue  ${_model.genderDropDownValue }');
-                          if (_model.genderDropDownValue == null || _model.genderDropDownValue?.trim() == '') {
+                          if (_model.genderDropDownValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
                                 arText: 'حقل الجنس مطلوب',
@@ -1266,13 +1247,11 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                             );
                             return;
                           }
-                          print('_model.dropDownNationaltyValue  ${_model.dropDownNationaltyValue }');
-
-                          if (_model.dropDownNationaltyValue == null || _model.dropDownNationaltyValue?.trim() == '') {
+                          if (_model.dropDownNationaltyValue == null) {
                             await actions.showToast(
                               FFLocalizations.of(context).getVariableText(
-                                arText: 'الحقل الجنسية مطلوب',
-                                enText: 'Nationally field is required',
+                                arText: 'الحقل مطلوب',
+                                enText: 'Field is required',
                               ),
                             );
                             return;
@@ -1299,42 +1278,33 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                           .validate()) {
                                     return;
                                   }
-                                  print(FFAppState()
-                                      .registerationFormData
-                                      .hasDateOfBirth());
-
-                                  if (!FFAppState()
-                                      .registerationFormData
-                                      .hasDateOfBirth()) {
-                                    if (_model.datePicked == null) {
-                                      await actions.showToast(
-                                        FFLocalizations.of(context)
-                                            .getVariableText(
-                                          arText: 'حقل تاريخ الميلاد مطلوب',
-                                          enText:
-                                              'Date of Birth field is required.',
-                                        ),
-                                      );
-                                      return;
-                                    }
-                                  }
-                                  print('_model.genderDropDownValue  ${_model.genderDropDownValue }');
-                                  if (_model.genderDropDownValue == null || _model.genderDropDownValue?.trim() == '') {
+                                  if (_model.datePicked == null) {
                                     await actions.showToast(
-                                      FFLocalizations.of(context).getVariableText(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'حقل تاريخ الميلاد مطلوب',
+                                        enText:
+                                            'Date of Birth field is required.',
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  if (_model.genderDropDownValue == null) {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
                                         arText: 'حقل الجنس مطلوب',
                                         enText: 'Gender field is required',
                                       ),
                                     );
                                     return;
                                   }
-                                  print('_model.dropDownNationaltyValue  ${_model.dropDownNationaltyValue }');
-
-                                  if (_model.dropDownNationaltyValue == null || _model.dropDownNationaltyValue?.trim() == '') {
+                                  if (_model.dropDownNationaltyValue == null) {
                                     await actions.showToast(
-                                      FFLocalizations.of(context).getVariableText(
-                                        arText: 'الحقل الجنسية مطلوب',
-                                        enText: 'Nationally field is required',
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'الحقل مطلوب',
+                                        enText: 'Field is required',
                                       ),
                                     );
                                     return;
@@ -1374,9 +1344,8 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                                       MediaQuery.sizeOf(context).height * 0.06,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: functions.gradientColor(
                                       FlutterFlowTheme.of(context).primary,
                                       FlutterFlowTheme.of(context).alternate),

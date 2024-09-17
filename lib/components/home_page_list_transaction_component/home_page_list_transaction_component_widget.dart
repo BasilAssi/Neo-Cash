@@ -125,12 +125,12 @@ class _HomePageListTransactionComponentWidgetState
                   (ListCustomerTransactionsStruct.maybeFromMap(
                                   listViewListCardTransactionsResponse.jsonBody)
                               ?.records
-                              ?.toList() ??
+                              .toList() ??
                           [])
                       .take(3)
                       .toList();
               if (listTransactions.isEmpty) {
-                return EmptyListOfTransactionsWidget();
+                return const EmptyListOfTransactionsWidget();
               }
 
               return RefreshIndicator(
@@ -156,7 +156,7 @@ class _HomePageListTransactionComponentWidgetState
                         listTransactions[listTransactionsIndex];
                     return Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,

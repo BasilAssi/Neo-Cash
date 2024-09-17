@@ -1,8 +1,4 @@
-import 'dart:io';
-
-import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -592,7 +588,7 @@ class _TransactionDetailsPageWidgetState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Builder(
                           builder: (context) => FlutterFlowIconButton(
                             borderColor: FlutterFlowTheme.of(context).primary,
@@ -601,7 +597,7 @@ class _TransactionDetailsPageWidgetState
                             buttonSize: 45.0,
                             fillColor: FlutterFlowTheme.of(context).accent1,
                             icon: Icon(
-                              Icons.save_alt_sharp,
+                              Icons.share,
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 28.0,
                             ),

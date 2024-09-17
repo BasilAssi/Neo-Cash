@@ -1,15 +1,13 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/empty_lists/empty_list_of_exchange_rate/empty_list_of_exchange_rate_widget.dart';
+import '/components/shimmer/shimmer_component_list_exchange_rate/shimmer_component_list_exchange_rate_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -51,15 +49,15 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.4, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -100,7 +98,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
             },
           ),
           title: Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 '5408c9tx' /* أسعار العملات */,
@@ -115,14 +113,14 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                   ),
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -130,7 +128,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                     child: SingleChildScrollView(
                       primary: false,
                       child: Column(
@@ -139,7 +137,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                           Container(
                             width: double.infinity,
                             height: 50.0,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
@@ -158,7 +156,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'sno3w7d0' /* العملة */,
@@ -184,7 +182,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'm0m5k6uc' /* شراء */,
@@ -210,7 +208,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         '2365y9ek' /* بيع */,
@@ -250,17 +248,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
+                                return const ShimmerComponentListExchangeRateWidget();
                               }
                               final listViewListExchangeRateResponse =
                                   snapshot.data!;
@@ -273,7 +261,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                   listViewListExchangeRateResponse
                                                       .jsonBody)
                                               ?.records
-                                              ?.where((e) =>
+                                              .where((e) =>
                                                   ((e.fromCurrencyCode == 'USD') && (e.toCurrencyCode == 'ILS')) ||
                                                   ((e.fromCurrencyCode ==
                                                           'USD') &&
@@ -284,10 +272,10 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                       (e.toCurrencyCode ==
                                                           'ILS')))
                                               .toList()
-                                              ?.toList() ??
+                                              .toList() ??
                                           [];
                                   if (listExchangeRate.isEmpty) {
-                                    return Center(
+                                    return const Center(
                                       child: EmptyListOfExchangeRateWidget(),
                                     );
                                   }
@@ -299,7 +287,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                     scrollDirection: Axis.vertical,
                                     itemCount: listExchangeRate.length,
                                     separatorBuilder: (_, __) =>
-                                        SizedBox(height: 24.0),
+                                        const SizedBox(height: 24.0),
                                     itemBuilder:
                                         (context, listExchangeRateIndex) {
                                       final listExchangeRateItem =
@@ -307,7 +295,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                               listExchangeRateIndex];
                                       return Container(
                                         width: double.infinity,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                           maxWidth: 570.0,
                                         ),
                                         decoration: BoxDecoration(
@@ -334,7 +322,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                           context)
                                                       .contianerColor,
                                                   borderRadius:
-                                                      BorderRadius.only(
+                                                      const BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -353,11 +341,11 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Text(
@@ -409,11 +397,11 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Text(
@@ -459,7 +447,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                           context)
                                                       .contianerColor,
                                                   borderRadius:
-                                                      BorderRadius.only(
+                                                      const BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(12.0),
                                                     bottomRight:
@@ -478,11 +466,11 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Text(
@@ -530,7 +518,7 @@ class _ListExchangeRateWidgetState extends State<ListExchangeRateWidget>
                               );
                             },
                           ),
-                        ].divide(SizedBox(height: 12.0)),
+                        ].divide(const SizedBox(height: 12.0)),
                       ),
                     ),
                   ),

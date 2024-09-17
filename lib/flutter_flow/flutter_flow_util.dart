@@ -14,7 +14,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../main.dart';
 
-import 'lat_lng.dart';
 
 export 'lat_lng.dart';
 export 'place.dart';
@@ -54,21 +53,21 @@ String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {
 }
 
 Theme wrapInMaterialDatePickerTheme(
-  BuildContext context,
-  Widget child, {
-  required Color headerBackgroundColor,
-  required Color headerForegroundColor,
-  required TextStyle headerTextStyle,
-  required Color pickerBackgroundColor,
-  required Color pickerForegroundColor,
-  required Color selectedDateTimeBackgroundColor,
-  required Color selectedDateTimeForegroundColor,
-  required Color actionButtonForegroundColor,
-  required double iconSize,
-}) {
+    BuildContext context,
+    Widget child, {
+      required Color headerBackgroundColor,
+      required Color headerForegroundColor,
+      required TextStyle headerTextStyle,
+      required Color pickerBackgroundColor,
+      required Color pickerForegroundColor,
+      required Color selectedDateTimeBackgroundColor,
+      required Color selectedDateTimeForegroundColor,
+      required Color actionButtonForegroundColor,
+      required double iconSize,
+    }) {
   final baseTheme = Theme.of(context);
   final dateTimeMaterialStateForegroundColor =
-      MaterialStateProperty.resolveWith((states) {
+  MaterialStateProperty.resolveWith((states) {
     if (states.contains(MaterialState.disabled)) {
       return pickerForegroundColor.withOpacity(0.60);
     }
@@ -82,7 +81,7 @@ Theme wrapInMaterialDatePickerTheme(
   });
 
   final dateTimeMaterialStateBackgroundColor =
-      MaterialStateProperty.resolveWith((states) {
+  MaterialStateProperty.resolveWith((states) {
     if (states.contains(MaterialState.selected)) {
       return selectedDateTimeBackgroundColor;
     }
@@ -138,18 +137,18 @@ Theme wrapInMaterialDatePickerTheme(
 }
 
 Theme wrapInMaterialTimePickerTheme(
-  BuildContext context,
-  Widget child, {
-  required Color headerBackgroundColor,
-  required Color headerForegroundColor,
-  required TextStyle headerTextStyle,
-  required Color pickerBackgroundColor,
-  required Color pickerForegroundColor,
-  required Color selectedDateTimeBackgroundColor,
-  required Color selectedDateTimeForegroundColor,
-  required Color actionButtonForegroundColor,
-  required double iconSize,
-}) {
+    BuildContext context,
+    Widget child, {
+      required Color headerBackgroundColor,
+      required Color headerForegroundColor,
+      required TextStyle headerTextStyle,
+      required Color pickerBackgroundColor,
+      required Color pickerForegroundColor,
+      required Color selectedDateTimeBackgroundColor,
+      required Color selectedDateTimeForegroundColor,
+      required Color actionButtonForegroundColor,
+      required double iconSize,
+    }) {
   final baseTheme = Theme.of(context);
   return Theme(
     data: baseTheme.copyWith(
@@ -177,20 +176,20 @@ Theme wrapInMaterialTimePickerTheme(
         hourMinuteTextColor: pickerForegroundColor,
         dialHandColor: selectedDateTimeBackgroundColor,
         dialTextColor: MaterialStateColor.resolveWith((states) =>
-            states.contains(MaterialState.selected)
-                ? selectedDateTimeForegroundColor
-                : pickerForegroundColor),
+        states.contains(MaterialState.selected)
+            ? selectedDateTimeForegroundColor
+            : pickerForegroundColor),
         dayPeriodBorderSide: BorderSide(
           color: pickerForegroundColor,
         ),
         dayPeriodTextColor: MaterialStateColor.resolveWith((states) =>
-            states.contains(MaterialState.selected)
-                ? selectedDateTimeForegroundColor
-                : pickerForegroundColor),
+        states.contains(MaterialState.selected)
+            ? selectedDateTimeForegroundColor
+            : pickerForegroundColor),
         dayPeriodColor: MaterialStateColor.resolveWith((states) =>
-            states.contains(MaterialState.selected)
-                ? selectedDateTimeBackgroundColor
-                : Colors.transparent),
+        states.contains(MaterialState.selected)
+            ? selectedDateTimeBackgroundColor
+            : Colors.transparent),
         entryModeIconColor: pickerForegroundColor,
       ),
     ),
@@ -230,14 +229,14 @@ enum DecimalType {
 }
 
 String formatNumber(
-  num? value, {
-  required FormatType formatType,
-  DecimalType? decimalType,
-  String? currency,
-  bool toLowerCase = false,
-  String? format,
-  String? locale,
-}) {
+    num? value, {
+      required FormatType formatType,
+      DecimalType? decimalType,
+      String? currency,
+      bool toLowerCase = false,
+      String? format,
+      String? locale,
+    }) {
   if (value == null) {
     return '';
   }
@@ -321,11 +320,11 @@ T? castToType<T>(dynamic value) {
   }
   switch (T) {
     case double:
-      // Doubles may be stored as ints in some cases.
+    // Doubles may be stored as ints in some cases.
       return value.toDouble() as T;
     case int:
-      // Likewise, ints may be stored as doubles. If this is the case
-      // (i.e. no decimal value), return the value as an int.
+    // Likewise, ints may be stored as doubles. If this is the case
+    // (i.e. no decimal value), return the value as an int.
       if (value is num && value.toInt() == value) {
         return value.toInt() as T;
       }
@@ -337,10 +336,10 @@ T? castToType<T>(dynamic value) {
 }
 
 dynamic getJsonField(
-  dynamic response,
-  String jsonPath, [
-  bool isForList = false,
-]) {
+    dynamic response,
+    String jsonPath, [
+      bool isForList = false,
+    ]) {
   final field = JsonPath(jsonPath).read(response);
   if (field.isEmpty) {
     return null;
@@ -435,23 +434,23 @@ void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
     MyApp.of(context).setThemeMode(themeMode);
 
 void showSnackbar(
-  BuildContext context,
-  String message, {
-  bool loading = false,
-  int duration = 4,
-}) {
+    BuildContext context,
+    String message, {
+      bool loading = false,
+      int duration = 4,
+    }) {
   ScaffoldMessenger.of(context).hideCurrentSnackBar();
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Row(
         children: [
           if (loading)
-            Padding(
+            const Padding(
               padding: EdgeInsetsDirectional.only(end: 10.0),
-              child: Container(
+              child: SizedBox(
                 height: 20,
                 width: 20,
-                child: const CircularProgressIndicator(
+                child: CircularProgressIndicator(
                   color: Colors.white,
                 ),
               ),
@@ -477,10 +476,10 @@ extension ListFilterExt<T> on Iterable<T?> {
 
 extension MapFilterExtensions<T> on Map<String, T?> {
   Map<String, T> get withoutNulls => Map.fromEntries(
-        entries
-            .where((e) => e.value != null)
-            .map((e) => MapEntry(e.key, e.value as T)),
-      );
+    entries
+        .where((e) => e.value != null)
+        .map((e) => MapEntry(e.key, e.value as T)),
+  );
 }
 
 extension MapListContainsExt on List<dynamic> {
@@ -495,10 +494,10 @@ extension ListDivideExt<T extends Widget> on Iterable<T> {
   List<Widget> divide(Widget t, {bool Function(int)? filterFn}) => isEmpty
       ? []
       : (enumerate
-          .map((e) => [e.value, if (filterFn == null || filterFn(e.key)) t])
-          .expand((i) => i)
-          .toList()
-        ..removeLast());
+      .map((e) => [e.value, if (filterFn == null || filterFn(e.key)) t])
+      .expand((i) => i)
+      .toList()
+    ..removeLast());
 
   List<Widget> around(Widget t) => addToStart(t).addToEnd(t);
 

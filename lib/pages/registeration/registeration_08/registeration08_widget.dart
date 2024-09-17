@@ -64,7 +64,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
               children: [
                 Expanded(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'zwhfi7na' /* إرفاق الصور */,
@@ -87,14 +87,14 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                 ),
               ],
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -137,7 +137,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                                             listViewLOOKUPsAPIsResponse
                                                 .jsonBody)
                                         ?.records
-                                        ?.toList() ??
+                                        .toList() ??
                                     [];
 
                             return ListView.builder(
@@ -171,7 +171,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                                   moduleType: documentTypesItem.hasModuleType()
                                       ? documentTypesItem.moduleType
                                       : ' ',
-                                  customerId: widget!.customerId!,
+                                  customerId: widget.customerId!,
                                 );
                               },
                             );
@@ -181,7 +181,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 32.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 32.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.isNetworkAvailableOutput =
@@ -238,9 +238,9 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -255,7 +255,7 @@ class _Registeration08WidgetState extends State<Registeration08Widget> {
                                         .titleSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
