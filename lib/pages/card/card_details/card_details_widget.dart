@@ -673,18 +673,26 @@ THRU */
                                                         queryParameters: {
                                                           'pinCode':
                                                               serializeParam(
-                                                            functions
-                                                                .generateFinalEPIN(
-                                                                    CardGroup
-                                                                        .getCardPINCall
-                                                                        .pinBlock(
-                                                                          (_model.apiResultGetPIN?.jsonBody ??
+                                                            functions.generateFinalEPIN(
+                                                                CardGroup.getCardPINCall
+                                                                    .pinBlock(
+                                                                      (_model.apiResultGetPIN
+                                                                              ?.jsonBody ??
+                                                                          ''),
+                                                                    )
+                                                                    .toString(),
+                                                                CardGroup.listCardsCall.cardNumber(
+                                                                          (_model.apiResultListCards?.jsonBody ??
+                                                                              ''),
+                                                                        ) !=
+                                                                        null
+                                                                    ? CardGroup.listCardsCall
+                                                                        .cardNumber(
+                                                                          (_model.apiResultListCards?.jsonBody ??
                                                                               ''),
                                                                         )
-                                                                        .toString(),
-                                                                    FFAppState()
-                                                                        .cardData
-                                                                        .cardNumber),
+                                                                        .toString()
+                                                                    : ''),
                                                             ParamType.String,
                                                           ),
                                                         }.withoutNulls,
