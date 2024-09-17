@@ -595,9 +595,6 @@ THRU */
                                                             FFAppState()
                                                                 .cardData
                                                                 .cardNumber)),
-                                                    cardCvv2: FFAppState()
-                                                        .cardData
-                                                        .cardCvc,
                                                     msgId:
                                                         functions.messageId(),
                                                     token: FFAppState()
@@ -610,6 +607,25 @@ THRU */
                                                       arText: 'AR',
                                                       enText: 'EN',
                                                     ),
+                                                    cardCvv2: CardGroup
+                                                                .listCardsCall
+                                                                .cardCvc(
+                                                              (_model.apiResultListCards
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            ) !=
+                                                            null
+                                                        ? CardGroup
+                                                            .listCardsCall
+                                                            .cardCvc(
+                                                              (_model.apiResultListCards
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            )
+                                                            .toString()
+                                                        : FFAppState()
+                                                            .cardData
+                                                            .cardCvc,
                                                   );
 
                                                   if ((_model.apiResultGetPIN
