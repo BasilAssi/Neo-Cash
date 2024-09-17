@@ -601,9 +601,9 @@ class _TransactionDetailsPageWidgetState
                             ),
                             showLoadingIndicator: true,
                             onPressed: () async {
-                              await actions.saveToGallary(
-                                null,
-                              );
+                              // await actions.saveToGallary(
+                              //   null,
+                              // );
                               await Share.share(
                                 null!,
                                 sharePositionOrigin:
