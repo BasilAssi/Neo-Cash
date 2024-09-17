@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
@@ -55,10 +53,10 @@ class IsRegisteredCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'isRegistered',
-      apiUrl: '${baseUrl}/customer/api/v1/isRegistered',
+      apiUrl: '$baseUrl/customer/api/v1/isRegistered',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {
@@ -120,19 +118,19 @@ class SendOTPToCustomerCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "operationType": "${operationType}",
-  "destination": "${destination}",
-  "destinationType": "${destinationType}"
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "operationType": "$operationType",
+  "destination": "$destination",
+  "destinationType": "$destinationType"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send OTP to customer',
-      apiUrl: '${baseUrl}/customer/api/v1/sendOtp',
+      apiUrl: '$baseUrl/customer/api/v1/sendOtp',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -167,21 +165,21 @@ class VerifyOTPCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "operationType": "${operationType}",
-  "destination": "${destination}",
-  "destinationType": "${destinationType}",
-  "otp":"${otp}",
-  "setConfirmed":"${setConfirmed}"
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "operationType": "$operationType",
+  "destination": "$destination",
+  "destinationType": "$destinationType",
+  "otp":"$otp",
+  "setConfirmed":"$setConfirmed"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Verify OTP',
-      apiUrl: '${baseUrl}/customer/api/v1/verifyOtp',
+      apiUrl: '$baseUrl/customer/api/v1/verifyOtp',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -211,16 +209,16 @@ class SendToApprovalCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}"
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send to Approval',
-      apiUrl: '${baseUrl}/customer/api/v1/sendToApproval',
+      apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -292,61 +290,61 @@ class RegisterACustomerCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "nationalityCode": "${nationalityCode}",
-  "mobileNumber": "${mobileNumber}",
-  "mobileNumberPrefix": "${mobileNumberPrefix}",
-  "emailAddress": "${emailAddress}",
-  "firstName": "${firstName}",
-  "middleName": "${middleName}",
-  "thirdName": "${thirdName}",
-  "familyName": "${familyName}",
-  "birthdate": "${birthdate}",
-  "cityCode": "${cityCode}",
-  "areaCode": "${areaCode}",
-  "address": "${address}",
-  "firstNameAr": "${firstNameAr}",
-  "middleNameAr": "${middleNameAr}",
-  "thirdNameAr": "${thirdNameAr}",
-  "familyNameAr": "${familyNameAr}",
-  "gender": "${gender}",
-  "motherNameEn": "${motherNameEn}",
-  "birthPlace": "${birthPlace}",
-  "otp": "${hashedOTP}",
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "nationalityCode": "$nationalityCode",
+  "mobileNumber": "$mobileNumber",
+  "mobileNumberPrefix": "$mobileNumberPrefix",
+  "emailAddress": "$emailAddress",
+  "firstName": "$firstName",
+  "middleName": "$middleName",
+  "thirdName": "$thirdName",
+  "familyName": "$familyName",
+  "birthdate": "$birthdate",
+  "cityCode": "$cityCode",
+  "areaCode": "$areaCode",
+  "address": "$address",
+  "firstNameAr": "$firstNameAr",
+  "middleNameAr": "$middleNameAr",
+  "thirdNameAr": "$thirdNameAr",
+  "familyNameAr": "$familyNameAr",
+  "gender": "$gender",
+  "motherNameEn": "$motherNameEn",
+  "birthPlace": "$birthPlace",
+  "otp": "$hashedOTP",
   "mobileNumber2": "",
-  "residencyType": "${residencyType}",
-  "profession": "${profession}",
-  "placeOfWork": "${placeOfWork}",
-  "monthlyIncomeUsd": "${monthlyIncomeUsd}",
-  "isPEP": "${isPEP}",
-  "localPepFullName": "${localPepFullName}",
-  "latinPepFullName": "${latinPepFullName}",
-  "relationshipWithPep": "${relationshipWithPep}",
-  "pepPosition": "${pepPosition}",
-  "isUsPassportHolder": "${isUsPassportHolder}",
-  "isTrueAccountBeneficiary": "${isTrueAccountBeneficiary}",
-  "trueBeneficiaryName": "${trueBeneficiaryName}",
-  "relationShipWithTrueBeneficiary": "${relationShipWithTrueBeneficiary}",
+  "residencyType": "$residencyType",
+  "profession": "$profession",
+  "placeOfWork": "$placeOfWork",
+  "monthlyIncomeUsd": "$monthlyIncomeUsd",
+  "isPEP": "$isPEP",
+  "localPepFullName": "$localPepFullName",
+  "latinPepFullName": "$latinPepFullName",
+  "relationshipWithPep": "$relationshipWithPep",
+  "pepPosition": "$pepPosition",
+  "isUsPassportHolder": "$isUsPassportHolder",
+  "isTrueAccountBeneficiary": "$isTrueAccountBeneficiary",
+  "trueBeneficiaryName": "$trueBeneficiaryName",
+  "relationShipWithTrueBeneficiary": "$relationShipWithTrueBeneficiary",
   "deviceInfo": {
-    "serial": "${serial}",
-    "name": "${name}",
-    "osName": "${osName}",
-    "osVersion": "${osVersion}",
-    "brandName": "${brandName}",
-    "brandVersion": "${brandVersion}",
-    "biometricSupported": "${biometricSupported}"
+    "serial": "$serial",
+    "name": "$name",
+    "osName": "$osName",
+    "osVersion": "$osVersion",
+    "brandName": "$brandName",
+    "brandVersion": "$brandVersion",
+    "biometricSupported": "$biometricSupported"
   },
-  "password": "${password}",
-  "pin": "${pin}"
+  "password": "$password",
+  "pin": "$pin"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Register a customer',
-      apiUrl: '${baseUrl}/customer/api/v1/register',
+      apiUrl: '$baseUrl/customer/api/v1/register',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -393,29 +391,29 @@ class RegisterACustomerDeviceCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "otp": "${hashedOTP}",
-  "emailAddress": "${emailAddress}",
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "otp": "$hashedOTP",
+  "emailAddress": "$emailAddress",
   "deviceInfo": {
-    "serial": "${serial}",
-    "name": "${deviceName}",
-    "osName": "${osName}",
-    "osVersion": "${osVersion}",
-    "brandName": "${brandName}",
-    "brandVersion": "${brandVersion}",
-    "biometricSupported": "${biometricSupported}"
+    "serial": "$serial",
+    "name": "$deviceName",
+    "osName": "$osName",
+    "osVersion": "$osVersion",
+    "brandName": "$brandName",
+    "brandVersion": "$brandVersion",
+    "biometricSupported": "$biometricSupported"
   },
-  "password": "${password}",
-  "pin": "${pin}"
+  "password": "$password",
+  "pin": "$pin"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Register a customer Device',
-      apiUrl: '${baseUrl}/customer/api/v1/registerDevice',
+      apiUrl: '$baseUrl/customer/api/v1/registerDevice',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -443,10 +441,10 @@ class ListCustomersCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'list customers',
-      apiUrl: '${baseUrl}/customer/api/v1/list',
+      apiUrl: '$baseUrl/customer/api/v1/list',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {
@@ -478,10 +476,10 @@ class LOOKUPsAPIsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'LOOK UPs APIs',
-      apiUrl: '${baseUrl}/lookup/api/v1/list',
+      apiUrl: '$baseUrl/lookup/api/v1/list',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {
@@ -517,10 +515,10 @@ class UploadDocumentCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Upload Document',
-      apiUrl: '${baseUrl}/customer/api/v1/uploadDocument',
+      apiUrl: '$baseUrl/customer/api/v1/uploadDocument',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {
@@ -556,14 +554,14 @@ class LoginCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
-      apiUrl: '${baseUrl}/customer/api/login',
+      apiUrl: '$baseUrl/customer/api/login',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'Device-Serial': '${deviceSerial}',
+        'Device-Serial': '$deviceSerial',
         'authorization':
-            'Basic \${base64Encode(utf8.encode(${mobileWithPrefix}:${password}))}',
+            'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
       },
       params: {},
       bodyType: BodyType.NONE,
@@ -595,10 +593,10 @@ class DeleteUploadedDocumentCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
-      apiUrl: '${baseUrl}/${deleteURL}',
+      apiUrl: '$baseUrl/$deleteURL',
       callType: ApiCallType.DELETE,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {},
@@ -629,20 +627,20 @@ class ForgotPasswordCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "newPassword": "${newPassword}",
-  "otp": "${otp}"
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "newPassword": "$newPassword",
+  "otp": "$otp"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Forgot Password ',
-      apiUrl: '${baseUrl}/customer/api/v1/forgotPassword',
+      apiUrl: '$baseUrl/customer/api/v1/forgotPassword',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'Device-Serial': '${deviceSerial}',
+        'Device-Serial': '$deviceSerial',
       },
       params: {},
       body: ffApiRequestBody,
@@ -669,10 +667,10 @@ class SystemSettingsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'System Settings',
-      apiUrl: '${baseUrl}/lookup/api/v1/systemSettings',
+      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
       },
       params: {
@@ -738,12 +736,12 @@ class ListCardsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List Cards',
-      apiUrl: '${baseUrl}/customer/api/v1/cardList',
+      apiUrl: '$baseUrl/customer/api/v1/cardList',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'msgId': msgId,
@@ -814,12 +812,12 @@ class GetCustomerBalancesCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Customer Balances',
-      apiUrl: '${baseUrl}/customer/api/v1/customerBalances',
+      apiUrl: '$baseUrl/customer/api/v1/customerBalances',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'msgId': msgId,
@@ -851,12 +849,12 @@ class GetCardAccountInfoCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Card Account Info',
-      apiUrl: '${baseUrl}/customer/api/v1/cardAccountInfo',
+      apiUrl: '$baseUrl/customer/api/v1/cardAccountInfo',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'msgId': msgId,
@@ -898,12 +896,12 @@ class ListCardTransactionsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List Card Transactions',
-      apiUrl: '${baseUrl}/customer/api/v1/cardTransList',
+      apiUrl: '$baseUrl/customer/api/v1/cardTransList',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'msgId': msgId,
@@ -937,18 +935,18 @@ class ChangeCardStatusCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "cardToken": "${cardToken}",
-  "status": "${status}"
+  "msgId": "$msgId",
+  "cardToken": "$cardToken",
+  "status": "$status"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Change Card Status',
-      apiUrl: '${baseUrl}/customer/api/v1/cardChangeStatus',
+      apiUrl: '$baseUrl/customer/api/v1/cardChangeStatus',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {},
       body: ffApiRequestBody,
@@ -979,12 +977,12 @@ class GetCardPINCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Get Card PIN',
-      apiUrl: '${baseUrl}/customer/api/v1/cardPin',
+      apiUrl: '$baseUrl/customer/api/v1/cardPin',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'msgId': msgId,
@@ -1022,13 +1020,13 @@ class ValidateCustomerPINCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Validate Customer PIN',
-      apiUrl: '${baseUrl}/customer/api/v1/validatePin',
+      apiUrl: '$baseUrl/customer/api/v1/validatePin',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
-        'Device-Serial': '${deviceSerial}',
+        'X-Auth-Token': '$token',
+        'Device-Serial': '$deviceSerial',
       },
       params: {
         'msgId': msgId,
@@ -1065,18 +1063,18 @@ class ChangePasswordCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "oldPassword": "${oldPassword}",
-  "newPassword": "${newPassword}"
+  "msgId": "$msgId",
+  "oldPassword": "$oldPassword",
+  "newPassword": "$newPassword"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Change Password',
-      apiUrl: '${baseUrl}/customer/api/v1/changePassword',
+      apiUrl: '$baseUrl/customer/api/v1/changePassword',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1111,22 +1109,22 @@ class ForgotDevicePinCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "idNumber": "${idNumber}",
-  "idType": "${idType}",
-  "birthDate": "${birthDate}",
-  "password": "${password}",
-  "newPin": "${newPin}",
-  "otp": "${otp}"
+  "msgId": "$msgId",
+  "idNumber": "$idNumber",
+  "idType": "$idType",
+  "birthDate": "$birthDate",
+  "password": "$password",
+  "newPin": "$newPin",
+  "otp": "$otp"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Forgot Device Pin',
-      apiUrl: '${baseUrl}/customer/api/v1/forgotPin',
+      apiUrl: '$baseUrl/customer/api/v1/forgotPin',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1157,18 +1155,18 @@ class SaveMyProfileCall {
 
     final ffApiRequestBody = '''
 {
-  "msgId": "${msgId}",
-  "emailAddress": "${emailAddress}"
+  "msgId": "$msgId",
+  "emailAddress": "$emailAddress"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Save My Profile',
-      apiUrl: '${baseUrl}/customer/api/v1/saveMyProfile',
+      apiUrl: '$baseUrl/customer/api/v1/saveMyProfile',
       callType: ApiCallType.POST,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
-        'Device-Serial': '${deviceSerial}',
+        'X-Auth-Token': '$token',
+        'Device-Serial': '$deviceSerial',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1198,12 +1196,12 @@ class ListExchangeRateCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List ExchangeRate',
-      apiUrl: '${baseUrl}/lookup/api/v1/exchangeRate',
+      apiUrl: '$baseUrl/lookup/api/v1/exchangeRate',
       callType: ApiCallType.GET,
       headers: {
-        'Accept-Language': '${acceptLanguage}',
+        'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '${token}',
+        'X-Auth-Token': '$token',
       },
       params: {
         'exchangeRateDate': exchangeRateDate,

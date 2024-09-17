@@ -76,7 +76,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'nl00v5wv' /* عنوانك */,
@@ -97,20 +97,20 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: MediaQuery.sizeOf(context).height * 1.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(25.0),
@@ -125,9 +125,9 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -154,7 +154,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'ldicnasa' /* 7 */,
@@ -183,7 +183,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -195,7 +195,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -231,7 +231,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'bzkvn9vt' /* 6 */,
@@ -260,7 +260,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -272,7 +272,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -308,7 +308,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'esw6f001' /* 5 */,
@@ -337,7 +337,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -349,7 +349,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -385,7 +385,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'ea5xqjj9' /* 4 */,
@@ -414,7 +414,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -426,7 +426,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -462,7 +462,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '5da2g9zm' /* 3 */,
@@ -491,7 +491,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -503,7 +503,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -539,7 +539,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'levc8meb' /* 2 */,
@@ -568,7 +568,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 20.0,
                                         decoration: BoxDecoration(
@@ -580,7 +580,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              offset: Offset(
+                                              offset: const Offset(
                                                 -2.0,
                                                 0.0,
                                               ),
@@ -616,7 +616,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '1dhppwx7' /* 1 */,
@@ -651,7 +651,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 30.0),
                         child: ListView(
                           padding: EdgeInsets.zero,
@@ -660,7 +660,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                           scrollDirection: Axis.vertical,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -683,7 +683,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: FutureBuilder<ApiCallResponse>(
                                 future: FFAppState().citesAPIResponse(
@@ -802,7 +802,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                         .textFieldBorder,
                                     borderWidth: 1.0,
                                     borderRadius: 12.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -813,7 +813,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -836,7 +836,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: FutureBuilder<ApiCallResponse>(
                                 future:
@@ -954,7 +954,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                         .textFieldBorder,
                                     borderWidth: 1.0,
                                     borderRadius: 12.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                    margin: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -965,7 +965,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -988,7 +988,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller:
@@ -1078,7 +1078,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 24.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1086,7 +1086,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         if (_model.formKey.currentState ==
@@ -1143,10 +1143,10 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.06,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1168,7 +1168,7 @@ class _Registeration06WidgetState extends State<Registeration06Widget> {
                                                           .titleSmallFamily),
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),

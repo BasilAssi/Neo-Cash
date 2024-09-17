@@ -260,8 +260,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // transactions_home_page
   {
     'bs41kbym': {
-      'ar': 'إجمالي الرصيد ',
-      'en': 'Total Balance',
+      'ar': ' الرصيد ',
+      'en': 'Balance',
+    },
+    '3lgcu7uz': {
+      'ar': '',
+      'en': '',
+    },
+    'nj67827h': {
+      'ar': '',
+      'en': '',
     },
     '2xfis4wg': {
       'ar': ' ',

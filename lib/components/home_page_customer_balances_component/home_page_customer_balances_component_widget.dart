@@ -77,18 +77,18 @@ class _HomePageCustomerBalancesComponentWidgetState
             final listBalances = ListCustomerBalancesStruct.maybeFromMap(
                         listViewGetCustomerBalancesResponse.jsonBody)
                     ?.records
-                    ?.toList() ??
+                    .toList() ??
                 [];
 
             return ListView.separated(
               padding: EdgeInsets.zero,
               scrollDirection: Axis.horizontal,
               itemCount: listBalances.length,
-              separatorBuilder: (_, __) => SizedBox(width: 30.0),
+              separatorBuilder: (_, __) => const SizedBox(width: 30.0),
               itemBuilder: (context, listBalancesIndex) {
                 final listBalancesItem = listBalances[listBalancesIndex];
                 return Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Text(
                     '${listBalancesItem.hasAvailableBalance() ? listBalancesItem.availableBalance.toString() : ' '}  ${listBalancesItem.hasCurrencyCode() ? listBalancesItem.currencyCode : '  '}',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(

@@ -3,12 +3,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -57,15 +54,15 @@ class _TransactionDetailsPageWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.4, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.4, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -104,7 +101,7 @@ class _TransactionDetailsPageWidgetState
               context.safePop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -113,7 +110,7 @@ class _TransactionDetailsPageWidgetState
           height: MediaQuery.sizeOf(context).height * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(25.0),
@@ -130,7 +127,7 @@ class _TransactionDetailsPageWidgetState
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 32.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 32.0),
                     child: ListView(
                       padding: EdgeInsets.zero,
                       primary: false,
@@ -142,7 +139,7 @@ class _TransactionDetailsPageWidgetState
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'm9553mti' /* تفاصيل الحركة */,
@@ -173,10 +170,10 @@ class _TransactionDetailsPageWidgetState
                                 fit: BoxFit.cover,
                               ),
                             ),
-                          ].divide(SizedBox(width: 16.0)),
+                          ].divide(const SizedBox(width: 16.0)),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -225,7 +222,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -252,9 +249,9 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                widget!.transactionData!
+                                widget.transactionData!
                                         .hasTransactionReference()
-                                    ? widget!
+                                    ? widget
                                         .transactionData!.transactionReference
                                     : '',
                                 style: FlutterFlowTheme.of(context)
@@ -277,7 +274,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -304,8 +301,8 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                widget!.transactionData!.hasTransactionStatus()
-                                    ? widget!.transactionData!.transactionStatus
+                                widget.transactionData!.hasTransactionStatus()
+                                    ? widget.transactionData!.transactionStatus
                                     : '',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -327,7 +324,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -354,8 +351,8 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                widget!.transactionData!.hasTransactionType()
-                                    ? widget!.transactionData!.transactionType
+                                widget.transactionData!.hasTransactionType()
+                                    ? widget.transactionData!.transactionType
                                     : '',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -377,7 +374,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -404,8 +401,8 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                widget!.transactionData!.hasMerchantName()
-                                    ? widget!.transactionData!.merchantName
+                                widget.transactionData!.hasMerchantName()
+                                    ? widget.transactionData!.merchantName
                                     : '',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -427,7 +424,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -454,8 +451,8 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                widget!.transactionData!.hasTransactionDate()
-                                    ? widget!.transactionData!.transactionDate
+                                widget.transactionData!.hasTransactionDate()
+                                    ? widget.transactionData!.transactionDate
                                     : '',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -476,9 +473,9 @@ class _TransactionDetailsPageWidgetState
                             ],
                           ),
                         ),
-                        if (widget!.transactionData?.hasBillingAmount() == true)
+                        if (widget.transactionData?.hasBillingAmount() == true)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -505,7 +502,7 @@ class _TransactionDetailsPageWidgetState
                                       ),
                                 ),
                                 Text(
-                                  '${widget!.transactionData!.hasBillingAmount() ? widget!.transactionData?.billingAmount : ''} ${widget!.transactionData!.hasBillingCurrencyCode() ? widget!.transactionData?.billingCurrencyCode : ''}',
+                                  '${widget.transactionData!.hasBillingAmount() ? widget.transactionData?.billingAmount : ''} ${widget.transactionData!.hasBillingCurrencyCode() ? widget.transactionData?.billingCurrencyCode : ''}',
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -526,7 +523,7 @@ class _TransactionDetailsPageWidgetState
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -553,7 +550,7 @@ class _TransactionDetailsPageWidgetState
                                     ),
                               ),
                               Text(
-                                '${widget!.transactionData!.hasBillingAmount() ? widget!.transactionData?.billingAmount : (widget!.transactionData!.hasTransactionAmount() ? widget!.transactionData?.transactionAmount : '')} ${widget!.transactionData!.hasBillingCurrencyCode() ? widget!.transactionData?.billingCurrencyCode : ''}',
+                                '${widget.transactionData!.hasBillingAmount() ? widget.transactionData?.billingAmount : (widget.transactionData!.hasTransactionAmount() ? widget.transactionData?.transactionAmount : '')} ${widget.transactionData!.hasBillingCurrencyCode() ? widget.transactionData?.billingCurrencyCode : ''}',
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -578,13 +575,13 @@ class _TransactionDetailsPageWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Builder(
                           builder: (context) => FlutterFlowIconButton(
                             borderColor: FlutterFlowTheme.of(context).primary,
@@ -618,7 +615,7 @@ class _TransactionDetailsPageWidgetState
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Builder(
                           builder: (context) => FlutterFlowIconButton(
                             borderColor: FlutterFlowTheme.of(context).primary,
@@ -651,7 +648,7 @@ class _TransactionDetailsPageWidgetState
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(width: 32.0)),
+                    ].divide(const SizedBox(width: 32.0)),
                   ),
                 ),
               ],

@@ -1,20 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/schema/enums/enums.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -52,7 +46,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : LoginWidget(),
+          : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -70,56 +64,56 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : LoginWidget(),
+              : const LoginWidget(),
           routes: [
             FFRoute(
               name: 'home_page',
               path: 'homePage',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'home_page')
-                  : HomePageWidget(),
+                  ? const NavBarPage(initialPage: 'home_page')
+                  : const HomePageWidget(),
             ),
             FFRoute(
               name: 'login',
               path: 'login',
-              builder: (context, params) => LoginWidget(),
+              builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
               name: 'transactions_home_page',
               path: 'transactionsHomePage',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'transactions_home_page')
-                  : TransactionsHomePageWidget(),
+                  ? const NavBarPage(initialPage: 'transactions_home_page')
+                  : const TransactionsHomePageWidget(),
             ),
             FFRoute(
               name: 'notification_page',
               path: 'notificationPage',
-              builder: (context, params) => NotificationPageWidget(),
+              builder: (context, params) => const NotificationPageWidget(),
             ),
             FFRoute(
               name: 'phone_number',
               path: 'phoneNumber',
-              builder: (context, params) => PhoneNumberWidget(),
+              builder: (context, params) => const PhoneNumberWidget(),
             ),
             FFRoute(
               name: 'otp_does_not_exist_flow',
               path: 'otpDoesNotExistFlow',
-              builder: (context, params) => OtpDoesNotExistFlowWidget(),
+              builder: (context, params) => const OtpDoesNotExistFlowWidget(),
             ),
             FFRoute(
               name: 'card_details',
               path: 'cardDetails',
-              builder: (context, params) => CardDetailsWidget(),
+              builder: (context, params) => const CardDetailsWidget(),
             ),
             FFRoute(
               name: 'user_profile',
               path: 'userProfile',
-              builder: (context, params) => UserProfileWidget(),
+              builder: (context, params) => const UserProfileWidget(),
             ),
             FFRoute(
               name: 'settings_page',
               path: 'settingsPage',
-              builder: (context, params) => SettingsPageWidget(),
+              builder: (context, params) => const SettingsPageWidget(),
             ),
             FFRoute(
               name: 'transaction_details_page',
@@ -146,37 +140,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'registeration_01',
               path: 'registeration01',
-              builder: (context, params) => Registeration01Widget(),
+              builder: (context, params) => const Registeration01Widget(),
             ),
             FFRoute(
               name: 'enter_id_page',
               path: 'enterIdPage',
-              builder: (context, params) => EnterIdPageWidget(),
+              builder: (context, params) => const EnterIdPageWidget(),
             ),
             FFRoute(
               name: 'registeration_02',
               path: 'registeration02',
-              builder: (context, params) => Registeration02Widget(),
+              builder: (context, params) => const Registeration02Widget(),
             ),
             FFRoute(
               name: 'registeration_07',
               path: 'registeration07',
-              builder: (context, params) => Registeration07Widget(),
+              builder: (context, params) => const Registeration07Widget(),
             ),
             FFRoute(
               name: 'registeration_06',
               path: 'registeration06',
-              builder: (context, params) => Registeration06Widget(),
+              builder: (context, params) => const Registeration06Widget(),
             ),
             FFRoute(
               name: 'registeration_03',
               path: 'registeration03',
-              builder: (context, params) => Registeration03Widget(),
+              builder: (context, params) => const Registeration03Widget(),
             ),
             FFRoute(
               name: 'registeration_05',
               path: 'registeration05',
-              builder: (context, params) => Registeration05Widget(),
+              builder: (context, params) => const Registeration05Widget(),
             ),
             FFRoute(
               name: 'registeration_08',
@@ -195,92 +189,92 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'registeration_04',
               path: 'registeration04',
-              builder: (context, params) => Registeration04Widget(),
+              builder: (context, params) => const Registeration04Widget(),
             ),
             FFRoute(
               name: 'set_password_exist_flow',
               path: 'setPasswordExistFlow',
-              builder: (context, params) => SetPasswordExistFlowWidget(),
+              builder: (context, params) => const SetPasswordExistFlowWidget(),
             ),
             FFRoute(
               name: 'about_us',
               path: 'aboutUs',
-              builder: (context, params) => AboutUsWidget(),
+              builder: (context, params) => const AboutUsWidget(),
             ),
             FFRoute(
               name: 'terms_and_conditions',
               path: 'termsAndConditions',
-              builder: (context, params) => TermsAndConditionsWidget(),
+              builder: (context, params) => const TermsAndConditionsWidget(),
             ),
             FFRoute(
               name: 'confirm_reset_password',
               path: 'confirmResetPassword',
-              builder: (context, params) => ConfirmResetPasswordWidget(),
+              builder: (context, params) => const ConfirmResetPasswordWidget(),
             ),
             FFRoute(
               name: 'agent_list',
               path: 'agentList',
-              builder: (context, params) => AgentListWidget(),
+              builder: (context, params) => const AgentListWidget(),
             ),
             FFRoute(
               name: 'basic_infi_forgot_pin',
               path: 'basicInfiForgotPin',
-              builder: (context, params) => BasicInfiForgotPinWidget(),
+              builder: (context, params) => const BasicInfiForgotPinWidget(),
             ),
             FFRoute(
               name: 'success_page',
               path: 'successPage',
-              builder: (context, params) => SuccessPageWidget(),
+              builder: (context, params) => const SuccessPageWidget(),
             ),
             FFRoute(
               name: 'set_pin_forgot_pin',
               path: 'setPinForgotPin',
-              builder: (context, params) => SetPinForgotPinWidget(),
+              builder: (context, params) => const SetPinForgotPinWidget(),
             ),
             FFRoute(
               name: 'transactions_page',
               path: 'transactionsPage',
-              builder: (context, params) => TransactionsPageWidget(),
+              builder: (context, params) => const TransactionsPageWidget(),
             ),
             FFRoute(
               name: 'frequently_asked_questions',
               path: 'frequentlyAskedQuestions',
-              builder: (context, params) => FrequentlyAskedQuestionsWidget(),
+              builder: (context, params) => const FrequentlyAskedQuestionsWidget(),
             ),
             FFRoute(
               name: 'otp_verify_email',
               path: 'otpVerifyEmail',
-              builder: (context, params) => OtpVerifyEmailWidget(),
+              builder: (context, params) => const OtpVerifyEmailWidget(),
             ),
             FFRoute(
               name: 'otp_phone_forgot_pin',
               path: 'otpPhoneForgotPin',
-              builder: (context, params) => OtpPhoneForgotPinWidget(),
+              builder: (context, params) => const OtpPhoneForgotPinWidget(),
             ),
             FFRoute(
               name: 'enter_id_page_forgot_password',
               path: 'enterIdPageForgotPassword',
-              builder: (context, params) => EnterIdPageForgotPasswordWidget(),
+              builder: (context, params) => const EnterIdPageForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'otp_phone_forgot_password',
               path: 'otpPhoneForgotPassword',
-              builder: (context, params) => OtpPhoneForgotPasswordWidget(),
+              builder: (context, params) => const OtpPhoneForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'confirm_forgot_password',
               path: 'confirmForgotPassword',
-              builder: (context, params) => ConfirmForgotPasswordWidget(),
+              builder: (context, params) => const ConfirmForgotPasswordWidget(),
             ),
             FFRoute(
               name: 'pin_code',
               path: 'pinCode',
-              builder: (context, params) => PinCodeWidget(),
+              builder: (context, params) => const PinCodeWidget(),
             ),
             FFRoute(
               name: 'list_exchange_rate',
               path: 'listExchangeRate',
-              builder: (context, params) => ListExchangeRateWidget(),
+              builder: (context, params) => const ListExchangeRateWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -450,7 +444,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
