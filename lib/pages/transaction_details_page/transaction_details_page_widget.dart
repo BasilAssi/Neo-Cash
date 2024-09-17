@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -11,7 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'transaction_details_page_model.dart';
 export 'transaction_details_page_model.dart';
 
@@ -130,8 +133,8 @@ class _TransactionDetailsPageWidgetState
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 32.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 0.0, 16.0, 32.0),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         primary: false,
@@ -297,7 +300,8 @@ class _TransactionDetailsPageWidgetState
                                 ),
                                 Text(
                                   widget.transactionData!.hasTransactionStatus()
-                                      ? widget.transactionData!.transactionStatus
+                                      ? widget
+                                          .transactionData!.transactionStatus
                                       : '',
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -672,7 +676,8 @@ class _TransactionDetailsPageWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 4.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -711,12 +716,20 @@ class _TransactionDetailsPageWidgetState
                             ),
                             showLoadingIndicator: true,
                             onPressed: () async {
-                               _model.saveImage();
-                              await Share.share(
-                                null!,
-                                sharePositionOrigin:
+                              final savedImagePath = await _model.saveImage();
+                              if (savedImagePath != null) {
+                                print('savedImagePath ${savedImagePath}');
+                                try {
+                                  await Share.shareFiles(
+                                    [savedImagePath],
+                                    sharePositionOrigin:
                                     getWidgetBoundingBox(context),
-                              );
+                                  );
+                                }catch (e) {
+                               print('Error occurred while sharing the image: $e');
+                                    }
+
+                              }
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(
                                   arText: 'تم تنزيل الصورة بنجاح',

@@ -162,32 +162,61 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 }
 
                 if (cardList.isNotEmpty) {
-                  var cardListItem = cardList[1]; // Example: Use the first card for demonstration
+                  if(FFAppState().cardData == null || FFAppState().cardData == '') {
+                    var cardListItem = cardList[1]; // Example: Use the first card for demonstration
 
-                  // Update FFAppState with card data
-                  FFAppState().cardData = CardDataStruct(
-                    cardNumber: cardListItem.hasCardNumber() ? cardListItem.cardNumber : ' ',
-                    expiryDate: cardListItem.hasExpiryDate() ? cardListItem.expiryDate : ' ',
-                    status: cardListItem.hasStatus() ? cardListItem.status : ' ',
-                    nameOnCard: cardListItem.hasNameOnCard() ? cardListItem.nameOnCard : ' ',
-                    type: cardListItem.hasType() ? cardListItem.type : ' ',
-                    cardCvc: cardListItem.hasCardCvc() ? cardListItem.cardCvc : ' ',
-                    firstName: cardListItem.hasFirstName() ? cardListItem.firstName : ' ',
-                    middleName: cardListItem.hasMiddleName() ? cardListItem.middleName : ' ',
-                    lastName: cardListItem.hasLastName() ? cardListItem.lastName : ' ',
-                    cardToken: cardListItem.hasCardToken() ? cardListItem.cardToken : ' ',
-                    imagePath: cardListItem.hasImagePath() ? cardListItem.imagePath : ' ',
-                    voucherValue: cardListItem.hasVoucherValue() ? cardListItem.voucherValue : ' ',
-                    programCode: cardListItem.hasProgramCode() ? cardListItem.programCode : ' ',
-                    localProgramName: cardListItem.hasLocalProgramName() ? cardListItem.localProgramName : ' ',
-                    latinProgramName: cardListItem.hasLatinProgramName() ? cardListItem.latinProgramName : ' ',
-                    accountNumber: cardListItem.hasAccountNumber() ? cardListItem.accountNumber : ' ',
-                    isReloadable: cardListItem.hasIsReloadable() ? cardListItem.isReloadable : false,
-                    isDueRenewalFees: cardListItem.hasIsDueRenewalFees() ? cardListItem.isDueRenewalFees : ' ',
-                    renewalDueDate: cardListItem.hasRenewalDueDate() ? cardListItem.renewalDueDate : ' ',
-                    isPhysical: cardListItem.hasIsPhysical() ? cardListItem.isPhysical : false,
-                  );
-
+                    // Update FFAppState with card data
+                    FFAppState().cardData = CardDataStruct(
+                      cardNumber: cardListItem.hasCardNumber() ? cardListItem
+                          .cardNumber : ' ',
+                      expiryDate: cardListItem.hasExpiryDate() ? cardListItem
+                          .expiryDate : ' ',
+                      status: cardListItem.hasStatus()
+                          ? cardListItem.status
+                          : ' ',
+                      nameOnCard: cardListItem.hasNameOnCard() ? cardListItem
+                          .nameOnCard : ' ',
+                      type: cardListItem.hasType() ? cardListItem.type : ' ',
+                      cardCvc: cardListItem.hasCardCvc()
+                          ? cardListItem.cardCvc
+                          : ' ',
+                      firstName: cardListItem.hasFirstName() ? cardListItem
+                          .firstName : ' ',
+                      middleName: cardListItem.hasMiddleName() ? cardListItem
+                          .middleName : ' ',
+                      lastName: cardListItem.hasLastName() ? cardListItem
+                          .lastName : ' ',
+                      cardToken: cardListItem.hasCardToken() ? cardListItem
+                          .cardToken : ' ',
+                      imagePath: cardListItem.hasImagePath() ? cardListItem
+                          .imagePath : ' ',
+                      voucherValue: cardListItem.hasVoucherValue()
+                          ? cardListItem.voucherValue
+                          : ' ',
+                      programCode: cardListItem.hasProgramCode() ? cardListItem
+                          .programCode : ' ',
+                      localProgramName: cardListItem.hasLocalProgramName()
+                          ? cardListItem.localProgramName
+                          : ' ',
+                      latinProgramName: cardListItem.hasLatinProgramName()
+                          ? cardListItem.latinProgramName
+                          : ' ',
+                      accountNumber: cardListItem.hasAccountNumber()
+                          ? cardListItem.accountNumber
+                          : ' ',
+                      isReloadable: cardListItem.hasIsReloadable()
+                          ? cardListItem.isReloadable
+                          : false,
+                      isDueRenewalFees: cardListItem.hasIsDueRenewalFees()
+                          ? cardListItem.isDueRenewalFees
+                          : ' ',
+                      renewalDueDate: cardListItem.hasRenewalDueDate()
+                          ? cardListItem.renewalDueDate
+                          : ' ',
+                      isPhysical: cardListItem.hasIsPhysical() ? cardListItem
+                          .isPhysical : false,
+                    );
+                  }
                 }
                 print( 'FFAppState().cardData ${FFAppState().cardData.toString()} ');
 
