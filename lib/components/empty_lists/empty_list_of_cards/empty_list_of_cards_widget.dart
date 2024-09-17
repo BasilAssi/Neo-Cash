@@ -1,9 +1,12 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'empty_list_of_cards_model.dart';
 export 'empty_list_of_cards_model.dart';
 
@@ -46,15 +49,15 @@ class _EmptyListOfCardsWidgetState extends State<EmptyListOfCardsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.4, 0.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.4, 0.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -83,14 +86,14 @@ class _EmptyListOfCardsWidgetState extends State<EmptyListOfCardsWidget>
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 0.0),
+        alignment: AlignmentDirectional(0.0, 0.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 1.0,
@@ -104,9 +107,9 @@ class _EmptyListOfCardsWidgetState extends State<EmptyListOfCardsWidget>
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 12.0, 20.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,

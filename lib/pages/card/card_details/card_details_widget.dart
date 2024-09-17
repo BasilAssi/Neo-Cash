@@ -4,8 +4,10 @@ import '/components/block_card_component/block_card_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -118,16 +120,16 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                         FlutterFlowTheme.of(context).headlineMediumFamily),
                   ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: true,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -138,7 +140,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -204,7 +206,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                       text: FFLocalizations.of(context).getText(
                                         'jci1ufx5' /*   */,
                                       ),
-                                      style: const TextStyle(),
+                                      style: TextStyle(),
                                     ),
                                     TextSpan(
                                       text:
@@ -222,7 +224,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                   )
                                                   .toString()
                                               : '',
-                                      style: const TextStyle(),
+                                      style: TextStyle(),
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)
@@ -246,7 +248,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 32.0),
                           child: Container(
                             width: double.infinity,
@@ -260,13 +262,13 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 8.0, 8.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -275,7 +277,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Image.asset(
                                             'assets/images/whitevisa.png',
@@ -286,7 +288,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: Text(
                                             FFAppState().cardData.nameOnCard,
                                             style: FlutterFlowTheme.of(context)
@@ -315,7 +317,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -323,7 +325,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -333,7 +335,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 4.0),
                                                 child: Text(
@@ -380,7 +382,7 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -451,7 +453,7 @@ CODE */
                                                                 'Roboto Mono'),
                                                   ),
                                             ),
-                                          ].divide(const SizedBox(width: 16.0)),
+                                          ].divide(SizedBox(width: 16.0)),
                                         ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -505,7 +507,7 @@ THRU */
                                                                 'Roboto Mono'),
                                                   ),
                                             ),
-                                          ].divide(const SizedBox(width: 16.0)),
+                                          ].divide(SizedBox(width: 16.0)),
                                         ),
                                       ],
                                     ),
@@ -515,7 +517,7 @@ THRU */
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 8.0)),
+                      ].divide(SizedBox(height: 8.0)),
                     ),
                     Builder(
                       builder: (context) {
@@ -524,7 +526,7 @@ THRU */
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -836,7 +838,7 @@ THRU */
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   -0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -848,7 +850,7 @@ THRU */
                                                                       dialogContext)
                                                                   .unfocus(),
                                                           child:
-                                                              const BlockCardComponentWidget(),
+                                                              BlockCardComponentWidget(),
                                                         ),
                                                       ),
                                                     );
@@ -891,7 +893,7 @@ THRU */
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 36.0, 0.0, 0.0),
                                 child: Wrap(
                                   spacing: 0.0,
@@ -929,7 +931,7 @@ THRU */
                           );
                         } else {
                           return Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Wrap(
                               spacing: 8.0,
                               runSpacing: 0.0,

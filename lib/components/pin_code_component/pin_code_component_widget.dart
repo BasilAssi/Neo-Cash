@@ -3,11 +3,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,8 +55,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 500.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(60.0, 60.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(60.0, 60.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -67,8 +69,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 700.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 300.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 300.0),
           ),
         ],
       ),
@@ -81,8 +83,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 250.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, -40.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, -40.0),
           ),
           FadeEffect(
             curve: Curves.easeOut,
@@ -109,8 +111,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(0.0, -200.0),
-            end: const Offset(0.0, 20.0),
+            begin: Offset(0.0, -200.0),
+            end: Offset(0.0, 20.0),
           ),
           FadeEffect(
             curve: Curves.easeOut,
@@ -130,8 +132,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeIn,
             delay: 200.0.ms,
             duration: 100.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, -20.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, -20.0),
           ),
           FadeEffect(
             curve: Curves.easeOut,
@@ -151,15 +153,15 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             delay: 0.0.ms,
             duration: 1000.0.ms,
             hz: 100,
-            offset: const Offset(4.0, 0.0),
+            offset: Offset(4.0, 0.0),
             rotation: 0,
           ),
           BlurEffect(
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(10.0, 10.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(10.0, 10.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -179,8 +181,8 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(2.5, 2.5),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.5, 2.5),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -193,15 +195,15 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -220,22 +222,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -254,22 +256,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -287,22 +289,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -320,22 +322,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -354,22 +356,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -388,22 +390,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -422,22 +424,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -456,22 +458,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -490,22 +492,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -524,22 +526,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -558,22 +560,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -592,22 +594,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -626,22 +628,22 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(10.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(10.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(2.0, 2.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(2.0, 2.0),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -666,12 +668,12 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         height: MediaQuery.sizeOf(context).height * 1.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(12.0),
@@ -679,21 +681,21 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
           ),
         ),
         child: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: ListView(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: SizedBox(
+                alignment: AlignmentDirectional(0.0, 0.0),
+                child: Container(
                   width: 50.0,
                   height: 50.0,
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Icon(
                           Icons.lock_open,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -703,7 +705,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Icon(
                           Icons.lock_outline_rounded,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -717,10 +719,10 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 24.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 0.5,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -754,7 +756,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           fieldHeight: 44.0,
                           fieldWidth: 44.0,
                           borderWidth: 0.0,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
@@ -876,7 +878,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.pinCode = '${_model.pinCode}3';
@@ -891,10 +893,10 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.2,
                         height: MediaQuery.sizeOf(context).height * 0.1,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).headlineSmall.override(
@@ -906,7 +908,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                           .headlineSmallFamily),
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -917,7 +919,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         animationsMap['buttonOnPageLoadAnimation1']!),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.pinCode = '${_model.pinCode}2';
@@ -932,10 +934,10 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.2,
                         height: MediaQuery.sizeOf(context).height * 0.1,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).headlineSmall.override(
@@ -947,7 +949,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                           .headlineSmallFamily),
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -958,7 +960,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         animationsMap['buttonOnPageLoadAnimation2']!),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.pinCode = '${_model.pinCode}1';
@@ -973,10 +975,10 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.2,
                         height: MediaQuery.sizeOf(context).height * 0.1,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).headlineSmall.override(
@@ -988,7 +990,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                           .headlineSmallFamily),
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -1001,13 +1003,13 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}6';
@@ -1022,9 +1024,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1038,7 +1040,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1049,7 +1051,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation4']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}5';
@@ -1064,9 +1066,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1080,7 +1082,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1091,7 +1093,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation5']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}4';
@@ -1106,9 +1108,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1122,7 +1124,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1136,13 +1138,13 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}9';
@@ -1157,9 +1159,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1173,7 +1175,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1184,7 +1186,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation7']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}8';
@@ -1199,9 +1201,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1215,7 +1217,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1226,7 +1228,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation8']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}7';
@@ -1241,9 +1243,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1257,7 +1259,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1271,13 +1273,13 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           if (_model.pinCode != null && _model.pinCode != '') {
@@ -1292,16 +1294,16 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         text: FFLocalizations.of(context).getText(
                           '9l081t2i' /*  */,
                         ),
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.arrow_forward,
                           size: 24.0,
                         ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsets.all(0.0),
+                          iconPadding: EdgeInsets.all(0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
@@ -1314,7 +1316,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1325,7 +1327,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation10']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.pinCode = '${_model.pinCode}0';
@@ -1340,9 +1342,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1356,7 +1358,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -1367,7 +1369,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                           animationsMap['buttonOnPageLoadAnimation11']!),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           Navigator.pop(context);
@@ -1378,9 +1380,9 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.2,
                           height: MediaQuery.sizeOf(context).height * 0.1,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
@@ -1394,7 +1396,7 @@ class _PinCodeComponentWidgetState extends State<PinCodeComponentWidget>
                                         .headlineSmallFamily),
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

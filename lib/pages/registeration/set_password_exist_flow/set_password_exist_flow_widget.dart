@@ -84,7 +84,7 @@ class _SetPasswordExistFlowWidgetState
                 ),
                 Expanded(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'qj8edcp1' /* فعل حسابك على هذا الجهاز */,
@@ -107,20 +107,20 @@ class _SetPasswordExistFlowWidgetState
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(25.0),
@@ -129,7 +129,7 @@ class _SetPasswordExistFlowWidgetState
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 30.0),
                   child: ListView(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
@@ -137,7 +137,7 @@ class _SetPasswordExistFlowWidgetState
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '5hbla8hx' /* أدخل باقي المعلومات */,
@@ -162,7 +162,7 @@ class _SetPasswordExistFlowWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller:
@@ -272,7 +272,7 @@ class _SetPasswordExistFlowWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model
@@ -385,9 +385,9 @@ class _SetPasswordExistFlowWidgetState
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -411,7 +411,7 @@ class _SetPasswordExistFlowWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: PinCodeTextField(
                                 autoDisposeControllers: false,
@@ -443,7 +443,7 @@ class _SetPasswordExistFlowWidgetState
                                   fieldHeight: 44.0,
                                   fieldWidth: 44.0,
                                   borderWidth: 1.0,
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(12.0),
                                     bottomRight: Radius.circular(12.0),
                                     topLeft: Radius.circular(12.0),
@@ -465,7 +465,7 @@ class _SetPasswordExistFlowWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -500,7 +500,7 @@ class _SetPasswordExistFlowWidgetState
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
@@ -609,7 +609,7 @@ class _SetPasswordExistFlowWidgetState
                           ),
                         ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 48.0, 0.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -617,10 +617,10 @@ class _SetPasswordExistFlowWidgetState
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Builder(
                                 builder: (context) => Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -733,7 +733,7 @@ class _SetPasswordExistFlowWidgetState
                                                         backgroundColor:
                                                             Colors.transparent,
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                     -0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -745,7 +745,7 @@ class _SetPasswordExistFlowWidgetState
                                                                 FocusScope.of(
                                                                         dialogContext)
                                                                     .unfocus(),
-                                                            child: const SizedBox(
+                                                            child: Container(
                                                               height: 300.0,
                                                               child:
                                                                   OtpSessionExpiredComponentWidget(),
@@ -937,7 +937,7 @@ class _SetPasswordExistFlowWidgetState
                                                         backgroundColor:
                                                             Colors.transparent,
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                     -0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -949,7 +949,7 @@ class _SetPasswordExistFlowWidgetState
                                                                 FocusScope.of(
                                                                         dialogContext)
                                                                     .unfocus(),
-                                                            child: const SizedBox(
+                                                            child: Container(
                                                               height: 300.0,
                                                               child:
                                                                   OtpSessionExpiredComponentWidget(),
@@ -1025,10 +1025,10 @@ class _SetPasswordExistFlowWidgetState
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1048,7 +1048,7 @@ class _SetPasswordExistFlowWidgetState
                                                         .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

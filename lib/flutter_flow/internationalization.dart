@@ -263,10 +263,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إجمالي الرصيد ',
       'en': 'Total Balance',
     },
-    '63jl6fbe': {
-      'ar': '08/12/2024 -  08/12/2024 ',
-      'en': '08/12/2024 - 08/12/2024',
-    },
     '2xfis4wg': {
       'ar': ' ',
       'en': '',
@@ -545,48 +541,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Transaction Type',
     },
     '8nhwfwiv': {
-      'ar': 'المفوتر',
+      'ar': ' التاجر',
       'en': 'Biller',
-    },
-    'bpwgutti': {
-      'ar': 'جّوال',
-      'en': 'Jawwal',
     },
     'uo770vgi': {
       'ar': 'التاريخ ',
       'en': 'Date',
     },
-    'vgu0asxr': {
-      'ar': 'رقم الوبايل',
-      'en': 'Mobile Number',
-    },
-    'j3f6mua1': {
-      'ar': '00970598251350',
-      'en': '00970598251350',
-    },
     'ot0eesux': {
-      'ar': 'قيمة الحركة',
+      'ar': 'قيمة الحركة بعملة البطاقة',
       'en': 'Transaction Value',
     },
-    '49lig4vu': {
-      'ar': 'الرسوم',
-      'en': 'Fees',
-    },
-    'mtbpjg1l': {
-      'ar': '0 ILS',
-      'en': '0 ILS',
-    },
-    'rk80713u': {
-      'ar': 'المجموع',
-      'en': 'Total',
-    },
-    'z3i6h5zp': {
-      'ar': '50 ILS',
-      'en': '50 ILS',
-    },
-    '6jyekuwf': {
-      'ar': 'تنزيل الصورة على الجهاز؟',
-      'en': 'Download image to your device?',
+    '0o5knh13': {
+      'ar': 'قيمة الحركة',
+      'en': '',
     },
     'j5y93gae': {
       'ar': 'Home',
