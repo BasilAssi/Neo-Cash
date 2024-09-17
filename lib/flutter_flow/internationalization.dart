@@ -259,18 +259,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transactions_home_page
   {
-    'uepqecre': {
-      'ar': 'شحن رصيد موبايل',
-      'en': 'Mobile top-up',
-    },
-    'bsofh1iq': {
-      'ar': '2921532903099',
-      'en': '2921532903099',
-    },
-    'eoh7j0yp': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
     'bs41kbym': {
       'ar': 'إجمالي الرصيد ',
       'en': 'Total Balance',
@@ -278,6 +266,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '63jl6fbe': {
       'ar': '08/12/2024 -  08/12/2024 ',
       'en': '08/12/2024 - 08/12/2024',
+    },
+    '2xfis4wg': {
+      'ar': ' ',
+      'en': '',
     },
     '1dz4sx9s': {
       'ar': 'الحركات',
