@@ -2302,7 +2302,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // home_page_list_transaction_component
   {
-    '02fs2jmu': {
+    '6cnnlwbl': {
       'ar': 'إعادة التحميل',
       'en': '',
     },
