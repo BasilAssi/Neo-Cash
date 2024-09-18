@@ -567,7 +567,7 @@ class LoginCall {
         'Device-Serial': '$deviceSerial',
         'authorization':
             'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
-        'Device-Token': '',
+        'Device-Token': '$fcmToken',
       },
       params: {},
       bodyType: BodyType.NONE,
@@ -599,7 +599,7 @@ class DeleteUploadedDocumentCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
-      apiUrl: '$baseUrl/$deleteURL',
+      apiUrl: '$baseUrl$deleteURL',
       callType: ApiCallType.DELETE,
       headers: {
         'Accept-Language': '$acceptLanguage',
