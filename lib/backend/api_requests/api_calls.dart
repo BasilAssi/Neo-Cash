@@ -548,6 +548,7 @@ class LoginCall {
     String? deviceSerial = '',
     String? mobileWithPrefix = '',
     String? password = '',
+    String? fcmToken = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) async {
@@ -566,6 +567,7 @@ class LoginCall {
         'Device-Serial': '$deviceSerial',
         'authorization':
             'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
+        'Device-Token': '',
       },
       params: {},
       bodyType: BodyType.NONE,

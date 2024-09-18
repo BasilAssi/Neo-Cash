@@ -790,6 +790,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                               if (_model
                                                       .isNetworkAvailableOutput ==
                                                   true) {
+                                                _model.fcmTokenOutput =
+                                                    await actions.getFCMToken();
                                                 _model.apiResultLogin =
                                                     await AuthAndRegisterGroup
                                                         .loginCall
@@ -802,6 +804,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   password: _model
                                                       .passwordTextController
                                                       .text,
+                                                  fcmToken:
+                                                      _model.fcmTokenOutput,
                                                 );
 
                                                 if ((_model.apiResultLogin
@@ -1086,6 +1090,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         if (_model
                                                                 .isNetworkAvailableOutput1 ==
                                                             true) {
+                                                          _model.fcmTokenOutput1 =
+                                                              await actions
+                                                                  .getFCMToken();
                                                           _model.apiResultLoginBiometric =
                                                               await AuthAndRegisterGroup
                                                                   .loginCall
@@ -1099,6 +1106,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             password: FFAppState()
                                                                 .AuthenticatedUser
                                                                 .password,
+                                                            fcmToken: _model
+                                                                .fcmTokenOutput1,
                                                           );
 
                                                           if ((_model
