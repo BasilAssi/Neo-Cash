@@ -25,6 +25,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
   late EnterIdPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  TextInputType _keyboardType = TextInputType.number;
 
   @override
   void initState() {
@@ -174,8 +175,14 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                             'gbfbw5q5' /* جواز السفر */,
                           )
                         ],
-                        onChanged: (val) => safeSetState(
-                            () => _model.idTypeDropDownValue = val),
+                        onChanged: (val) {
+                          safeSetState(() {
+                            _keyboardType = (val == 'PASSPORT')
+                                ? TextInputType.text // Text keyboard for passport
+                                : TextInputType.number;
+                            _model.idTypeDropDownValue = val;
+                          });
+                        },
                         width: 300.0,
                         height: 56.0,
                         textStyle: FlutterFlowTheme.of(context)
@@ -320,7 +327,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                   FlutterFlowTheme.of(context)
                                       .bodyMediumFamily),
                             ),
-                        keyboardType: TextInputType.number,
+                        keyboardType: _keyboardType,
                         validator: _model
                             .idNumberTextFieldTextControllerValidator
                             .asValidator(context),
