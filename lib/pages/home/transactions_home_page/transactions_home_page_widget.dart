@@ -127,7 +127,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           appBar: PreferredSize(
             preferredSize:
-                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.3),
+                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.28),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
@@ -349,16 +349,11 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                       ],
                     ),
                   ),
-                ].divide(const SizedBox(height: 8.0)).around(const SizedBox(height: 8.0)),
+                ].divide(const SizedBox(height: 6.0)).around(const SizedBox(height: 6.0)),
               ),
               actions: const [],
-              bottom: PreferredSize(
-                preferredSize:
-                    Size.fromHeight(MediaQuery.sizeOf(context).height * 0.02),
-                child: Container(),
-              ),
               centerTitle: false,
-              toolbarHeight: MediaQuery.sizeOf(context).height * 0.22,
+              toolbarHeight: MediaQuery.sizeOf(context).height * 0.28,
               elevation: 2.0,
             ),
           ),
@@ -368,7 +363,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
               child: FutureBuilder<ApiCallResponse>(
                 future: (_model
-                        .apiRequestCompleter2 ??= Completer<ApiCallResponse>()
+                        .apiRequestCompleter ??= Completer<ApiCallResponse>()
                       ..complete(CardGroup.listCardTransactionsCall.call(
                         msgId: functions.messageId(),
                         token: FFAppState().AuthenticatedUser.accessToken,
@@ -418,9 +413,8 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                         strokeWidth: 4.0,
                         onRefresh: () async {
                           FFAppState().clearTransactionsHomePageCache();
-                          safeSetState(
-                              () => _model.apiRequestCompleter2 = null);
-                          await _model.waitForApiRequestCompleted2();
+                          safeSetState(() => _model.apiRequestCompleter = null);
+                          await _model.waitForApiRequestCompleted();
                         },
                         child: ListView.builder(
                           padding: EdgeInsets.zero,
