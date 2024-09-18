@@ -368,7 +368,11 @@ class _OtpPhoneForgotPinWidgetState extends State<OtpPhoneForgotPinWidget> {
                                 initialTime: FFAppState()
                                         .AppSettings
                                         .hasVCResendInSeconds()
-                                    ? FFAppState().AppSettings.vCResendInSeconds
+                                    ? functions.convertMilliSecondsToSeconds(
+                                        FFAppState()
+                                            .AppSettings
+                                            .vCResendInSeconds
+                                            .toString())!
                                     : 60000,
                                 getDisplayTime: (value) =>
                                     StopWatchTimer.getDisplayTime(
