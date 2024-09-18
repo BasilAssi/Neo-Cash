@@ -130,176 +130,109 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           appBar: PreferredSize(
             preferredSize:
-                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.28),
+                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.3),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
-              title: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Builder(
-                            builder: (context) => FlutterFlowIconButton(
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              icon: Icon(
-                                Icons.calendar_month,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                size: 40.0,
-                              ),
-                              onPressed: () async {
-                                await showDialog(
-                                  context: context,
-                                  builder: (dialogContext) {
-                                    return Dialog(
-                                      elevation: 0,
-                                      insetPadding: EdgeInsets.zero,
-                                      backgroundColor: Colors.transparent,
-                                      alignment: const AlignmentDirectional(-0.0, 0.0)
-                                          .resolve(Directionality.of(context)),
-                                      child: WebViewAware(
-                                        child: GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(dialogContext)
-                                                  .unfocus(),
-                                          child: SizedBox(
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.4,
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.7,
-                                            child:
-                                                FilterTransactionsComponent1Widget(
-                                              refreshListTransaction: () async {
-                                                safeSetState(() =>
-                                                    _model.apiRequestCompleter =
-                                                        null);
-                                                await _model
-                                                    .waitForApiRequestCompleted();
-                                              },
+              title: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Builder(
+                              builder: (context) => FlutterFlowIconButton(
+                                borderRadius: 20.0,
+                                borderWidth: 1.0,
+                                buttonSize: 50.0,
+                                icon: Icon(
+                                  Icons.calendar_month,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  size: 40.0,
+                                ),
+                                onPressed: () async {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            const AlignmentDirectional(-0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () =>
+                                                FocusScope.of(dialogContext)
+                                                    .unfocus(),
+                                            child: SizedBox(
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.4,
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.7,
+                                              child:
+                                                  FilterTransactionsComponent1Widget(
+                                                refreshListTransaction:
+                                                    () async {
+                                                  safeSetState(() => _model
+                                                          .apiRequestCompleter =
+                                                      null);
+                                                  await _model
+                                                      .waitForApiRequestCompleted();
+                                                },
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    );
-                                  },
-                                );
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 30.0,
+                              buttonSize: 50.0,
+                              icon: Icon(
+                                Icons.notifications_outlined,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                size: 28.0,
+                              ),
+                              onPressed: () async {
+                                context.pushNamed('notification_page');
                               },
                             ),
-                          ),
-                        ],
-                      ),
-                      Stack(
-                        children: [
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            buttonSize: 50.0,
-                            icon: Icon(
-                              Icons.notifications_outlined,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              size: 28.0,
-                            ),
-                            onPressed: () async {
-                              context.pushNamed('notification_page');
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'bs41kbym' /*  الرصيد  */,
-                        ),
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      RichText(
-                        textScaler: MediaQuery.of(context).textScaler,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: CardGroup.listCardsCall.availableBalance(
-                                        (_model.apiResultListCards?.jsonBody ??
-                                            ''),
-                                      ) !=
-                                      null
-                                  ? CardGroup.listCardsCall
-                                      .availableBalance(
-                                        (_model.apiResultListCards?.jsonBody ??
-                                            ''),
-                                      )
-                                      .toString()
-                                  : '',
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleLargeFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    fontSize: 32.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleLargeFamily),
-                                  ),
-                            ),
-                            TextSpan(
-                              text: FFLocalizations.of(context).getText(
-                                '3lgcu7uz' /*    */,
-                              ),
-                              style: const TextStyle(),
-                            ),
-                            TextSpan(
-                              text: CardGroup.listCardsCall.currencyCode(
-                                        (_model.apiResultListCards?.jsonBody ??
-                                            ''),
-                                      ) !=
-                                      null
-                                  ? CardGroup.listCardsCall
-                                      .currencyCode(
-                                        (_model.apiResultListCards?.jsonBody ??
-                                            ''),
-                                      )
-                                      .toString()
-                                  : '',
-                              style: const TextStyle(),
-                            )
                           ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'bs41kbym' /*  الرصيد  */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .titleLarge
                               .override(
@@ -307,7 +240,6 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                     .titleLargeFamily,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                fontSize: 32.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -315,48 +247,129 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                                         .titleLargeFamily),
                               ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Row(
+                      ],
+                    ),
+                    Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 8.0, 0.0, 0.0),
-                            child: Text(
-                              '${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo : functions.dateFromCalculate(DateTypes.TODAY)} - ${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom : functions.dateFromCalculate(DateTypes.LAST_WEEK)}',
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleLargeFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleLargeFamily),
-                                  ),
-                            ),
+                        RichText(
+                          textScaler: MediaQuery.of(context).textScaler,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: CardGroup.listCardsCall.availableBalance(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        ) !=
+                                        null
+                                    ? CardGroup.listCardsCall
+                                        .availableBalance(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()
+                                    : '',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      fontSize: 32.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily),
+                                    ),
+                              ),
+                              TextSpan(
+                                text: FFLocalizations.of(context).getText(
+                                  '3lgcu7uz' /*    */,
+                                ),
+                                style: const TextStyle(),
+                              ),
+                              TextSpan(
+                                text: CardGroup.listCardsCall.currencyCode(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        ) !=
+                                        null
+                                    ? CardGroup.listCardsCall
+                                        .currencyCode(
+                                          (_model.apiResultListCards
+                                                  ?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()
+                                    : '',
+                                style: const TextStyle(),
+                              )
+                            ],
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleLargeFamily,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  fontSize: 32.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleLargeFamily),
+                                ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                ].divide(const SizedBox(height: 6.0)).around(const SizedBox(height: 6.0)),
+                    Align(
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: Text(
+                                '${FFAppState().filterTransactions.hasDateTo() ? FFAppState().filterTransactions.dateTo : functions.dateFromCalculate(DateTypes.TODAY)} - ${FFAppState().filterTransactions.hasDateFrom() ? FFAppState().filterTransactions.dateFrom : functions.dateFromCalculate(DateTypes.LAST_WEEK)}',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
               actions: const [],
               centerTitle: false,
-              toolbarHeight: MediaQuery.sizeOf(context).height * 0.28,
+              toolbarHeight: MediaQuery.sizeOf(context).height * 0.3,
               elevation: 2.0,
             ),
           ),
