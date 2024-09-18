@@ -57,6 +57,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
+  // Stores action output result for [Custom Action - getFCMToken] action in Button widget.
+  String? fcmTokenOutput;
   // Stores action output result for [Backend Call - API (Login)] action in Button widget.
   ApiCallResponse? apiResultLogin;
   // Stores action output result for [Custom Action - parseJWT] action in Button widget.
@@ -64,6 +66,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   bool biometricOutput = false;
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput1;
+  // Stores action output result for [Custom Action - getFCMToken] action in Button widget.
+  String? fcmTokenOutput1;
   // Stores action output result for [Backend Call - API (Login)] action in Button widget.
   ApiCallResponse? apiResultLoginBiometric;
   // Stores action output result for [Custom Action - parseJWT] action in Button widget.
