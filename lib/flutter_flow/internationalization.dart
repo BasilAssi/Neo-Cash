@@ -2294,6 +2294,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // home_page_list_transaction_component
   {
+    '02fs2jmu': {
+      'ar': 'إعادة التحميل',
+      'en': '',
+    },
     '5hnon1gy': {
       'ar': ' ',
       'en': '',
