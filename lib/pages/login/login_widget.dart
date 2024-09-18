@@ -46,6 +46,42 @@ class _LoginWidgetState extends State<LoginWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.setDeviceInfo();
+      _model.isNetworkAvailableOutput2 = await actions.isNetworkAvailable();
+      if (_model.isNetworkAvailableOutput2 == true) {
+        if ((FFAppState().AppSettings.minCustomerAge == null) ||
+            (FFAppState().AppSettings.vCResendInSeconds == null)) {
+          _model.apiResultSystemSettings =
+              await AuthAndRegisterGroup.systemSettingsCall.call(
+            msgId: functions.messageId(),
+          );
+
+          if ((_model.apiResultSystemSettings?.succeeded ?? true)) {
+            if (ResponseModelStruct.maybeFromMap(
+                        (_model.apiResultSystemSettings?.jsonBody ?? ''))
+                    ?.code ==
+                '00') {
+              FFAppState().updateAppSettingsStruct(
+                (e) => e
+                  ..vCResendInSeconds = functions.pareseStringToInteger(
+                      AuthAndRegisterGroup.systemSettingsCall.vCResendInSeconds(
+                    (_model.apiResultSystemSettings?.jsonBody ?? ''),
+                  ))
+                  ..minCustomerAge = functions.pareseStringToInteger(
+                      AuthAndRegisterGroup.systemSettingsCall.minCustomerAge(
+                    (_model.apiResultSystemSettings?.jsonBody ?? ''),
+                  )),
+              );
+            }
+          }
+        }
+      } else {
+        await actions.showToast(
+          FFLocalizations.of(context).getVariableText(
+            arText: 'عذرا لا يوجد اتصال بالانترنت',
+            enText: 'Sorry, no internet connection.',
+          ),
+        );
+      }
     });
 
     _model.textFieldValueTextController ??= TextEditingController(

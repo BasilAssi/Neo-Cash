@@ -24,10 +24,10 @@ class OtpVerifyEmailModel extends FlutterFlowModel<OtpVerifyEmailWidget> {
   // Stores action output result for [Backend Call - API (Verify OTP)] action in PinCode widget.
   ApiCallResponse? verifyOTPOutputEmail;
   // State field(s) for Timer widget.
-  final timerInitialTimeMs = 120000;
-  int timerMilliseconds = 120000;
+  final timerInitialTimeMs = 0;
+  int timerMilliseconds = 0;
   String timerValue = StopWatchTimer.getDisplayTime(
-    120000,
+    0,
     hours: false,
     milliSecond: false,
   );

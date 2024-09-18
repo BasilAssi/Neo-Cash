@@ -675,10 +675,12 @@ class _Registeration02WidgetState extends State<Registeration02Widget> {
                         onTap: () async {
                           final datePickedDate = await showDatePicker(
                             context: context,
-                            initialDate: (functions.calculateAge18Year() ??
+                            initialDate: (functions.calculateAgeYear(
+                                    FFAppState().AppSettings.minCustomerAge) ??
                                 DateTime.now()),
                             firstDate: DateTime(1900),
-                            lastDate: (functions.calculateAge18Year() ??
+                            lastDate: (functions.calculateAgeYear(
+                                    FFAppState().AppSettings.minCustomerAge) ??
                                 DateTime(2050)),
                             builder: (context, child) {
                               return wrapInMaterialDatePickerTheme(

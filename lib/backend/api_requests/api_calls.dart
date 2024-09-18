@@ -696,6 +696,16 @@ class SystemSettingsCall {
       alwaysAllowBody: false,
     );
   }
+
+  String? minCustomerAge(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.records[?(@.settingKey == 'minCustomerAge')].settingValue''',
+      ));
+  String? vCResendInSeconds(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.records[?(@.settingKey == 'VCResendInSeconds')].settingValue''',
+      ));
 }
 
 /// End Auth  and Register  Group Code
