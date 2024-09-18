@@ -146,8 +146,9 @@ class _HomePageListTransactionComponentWidgetState
                   await _model.waitForApiRequestCompleted();
                 },
                 child: ListView.builder(
+                  physics: const AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
-                  primary: true,
+                  //primary: true,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   itemCount: listTransactions.length,
