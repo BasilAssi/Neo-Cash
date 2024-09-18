@@ -573,7 +573,7 @@ class LoginCall {
         'applicationType': 'BP-V1.0',
         'Device-Serial': '$deviceSerial',
         'authorization':basicAuth,
-
+        'Device-Token': '',
       },
       params: {},
       bodyType: BodyType.NONE,
