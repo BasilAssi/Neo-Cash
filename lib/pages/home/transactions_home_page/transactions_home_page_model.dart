@@ -13,7 +13,6 @@ class TransactionsHomePageModel
   // Stores action output result for [Backend Call - API (List Cards)] action in transactions_home_page widget.
   ApiCallResponse? apiResultListCards;
   Completer<ApiCallResponse>? apiRequestCompleter;
-  Completer<ApiCallResponse>? apiRequestCompleter2;
 
   @override
   void initState(BuildContext context) {}
@@ -31,21 +30,6 @@ class TransactionsHomePageModel
       await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForApiRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
