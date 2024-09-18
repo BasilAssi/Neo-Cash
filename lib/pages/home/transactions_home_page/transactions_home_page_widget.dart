@@ -130,7 +130,7 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           appBar: PreferredSize(
             preferredSize:
-                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.25),
+                Size.fromHeight(MediaQuery.sizeOf(context).height * 0.3),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
@@ -245,83 +245,75 @@ class _TransactionsHomePageWidgetState extends State<TransactionsHomePageWidget>
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                        child: RichText(
-                          textScaler: MediaQuery.of(context).textScaler,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: CardGroup.listCardsCall.availableBalance(
-                                          (_model.apiResultListCards
-                                                  ?.jsonBody ??
-                                              ''),
-                                        ) !=
-                                        null
-                                    ? CardGroup.listCardsCall
-                                        .availableBalance(
-                                          (_model.apiResultListCards
-                                                  ?.jsonBody ??
-                                              ''),
-                                        )
-                                        .toString()
-                                    : '',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleLargeFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      fontSize: 32.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLargeFamily),
-                                    ),
+                      RichText(
+                        textScaler: MediaQuery.of(context).textScaler,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: CardGroup.listCardsCall.availableBalance(
+                                        (_model.apiResultListCards?.jsonBody ??
+                                            ''),
+                                      ) !=
+                                      null
+                                  ? CardGroup.listCardsCall
+                                      .availableBalance(
+                                        (_model.apiResultListCards?.jsonBody ??
+                                            ''),
+                                      )
+                                      .toString()
+                                  : '',
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleLargeFamily,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    fontSize: 32.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleLargeFamily),
+                                  ),
+                            ),
+                            TextSpan(
+                              text: FFLocalizations.of(context).getText(
+                                '3lgcu7uz' /*    */,
                               ),
-                              TextSpan(
-                                text: FFLocalizations.of(context).getText(
-                                  '3lgcu7uz' /*  */,
-                                ),
-                                style: const TextStyle(),
+                              style: const TextStyle(),
+                            ),
+                            TextSpan(
+                              text: CardGroup.listCardsCall.currencyCode(
+                                        (_model.apiResultListCards?.jsonBody ??
+                                            ''),
+                                      ) !=
+                                      null
+                                  ? CardGroup.listCardsCall
+                                      .currencyCode(
+                                        (_model.apiResultListCards?.jsonBody ??
+                                            ''),
+                                      )
+                                      .toString()
+                                  : '',
+                              style: const TextStyle(),
+                            )
+                          ],
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                fontSize: 32.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.bold,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
                               ),
-                              TextSpan(
-                                text: CardGroup.listCardsCall.currencyCode(
-                                          (_model.apiResultListCards
-                                                  ?.jsonBody ??
-                                              ''),
-                                        ) !=
-                                        null
-                                    ? CardGroup.listCardsCall
-                                        .currencyCode(
-                                          (_model.apiResultListCards
-                                                  ?.jsonBody ??
-                                              ''),
-                                        )
-                                        .toString()
-                                    : '',
-                                style: const TextStyle(),
-                              )
-                            ],
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleLargeFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  fontSize: 32.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleLargeFamily),
-                                ),
-                          ),
                         ),
                       ),
                     ],
