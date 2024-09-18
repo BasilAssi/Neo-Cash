@@ -6,6 +6,7 @@ import '/components/shimmer/shimmer_component_list_transactions/shimmer_componen
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -88,47 +89,48 @@ class _HomePageListTransactionComponentWidgetState
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       children: [
-        InkWell(
-          splashColor: Colors.transparent,
-          focusColor: Colors.transparent,
-          hoverColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          onTap: () async {
-            FFAppState().clearTransactionsHomePageCache();
-            safeSetState(() {
-              FFAppState().clearTransactionsHomePageCache();
-              _model.apiRequestCompleted = false;
-            });
-            await _model.waitForApiRequestCompleted();
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                child: Icon(
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: FFButtonWidget(
+                onPressed: () async {
+                  FFAppState().clearTransactionsHomePageCache();
+                  safeSetState(() {
+                    FFAppState().clearTransactionsHomePageCache();
+                    _model.apiRequestCompleted = false;
+                  });
+                  await _model.waitForApiRequestCompleted();
+                },
+                text: FFLocalizations.of(context).getText(
+                  '6cnnlwbl' /* إعادة التحميل */,
+                ),
+                icon: const Icon(
                   Icons.refresh_outlined,
-                  color: FlutterFlowTheme.of(context).textColor,
-                  size: 24.0,
+                  size: 14.0,
+                ),
+                options: FFButtonOptions(
+                  height: 40.0,
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  iconPadding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: const Color(0x00F05346),
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
+                        color: FlutterFlowTheme.of(context).textColor,
+                        fontSize: 12.0,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
+                      ),
+                  elevation: 0.0,
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
-              Text(
-                FFLocalizations.of(context).getText(
-                  '02fs2jmu' /* إعادة التحميل */,
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                      color: FlutterFlowTheme.of(context).textColor,
-                      fontSize: 18.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w600,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodyMediumFamily),
-                    ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
