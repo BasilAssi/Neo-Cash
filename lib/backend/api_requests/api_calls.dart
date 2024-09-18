@@ -35,6 +35,9 @@ class AuthAndRegisterGroup {
   static DeleteUploadedDocumentCall deleteUploadedDocumentCall =
   DeleteUploadedDocumentCall();
   static ForgotPasswordCall forgotPasswordCall = ForgotPasswordCall();
+  static SystemSettingsCall systemSettingsCall = SystemSettingsCall();
+  static SystemSettingsCopyCall systemSettingsCopyCall =
+      SystemSettingsCopyCall();
 }
 
 class IsRegisteredCall {
@@ -601,7 +604,7 @@ class DeleteUploadedDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-    print('$baseUrl/$deleteURL ${'$baseUrl/$deleteURL'}');
+    print('$baseUrl$deleteURL ${'$baseUrl$deleteURL'}');
     return ApiManager.instance.makeApiCall(
       callName: 'Delete Uploaded Document',
       apiUrl: '$baseUrl$deleteURL',
@@ -656,6 +659,68 @@ class ForgotPasswordCall {
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SystemSettingsCall {
+  Future<ApiCallResponse> call({
+    String? acceptLanguage = 'EN',
+    String? msgId = '',
+  }) async {
+    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
+      acceptLanguage: acceptLanguage,
+      msgId: msgId,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'System Settings',
+      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+      },
+      params: {
+        'msgId': msgId,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SystemSettingsCopyCall {
+  Future<ApiCallResponse> call({
+    String? acceptLanguage = 'EN',
+    String? msgId = '',
+  }) async {
+    final baseUrl = AuthAndRegisterGroup.getBaseUrl(
+      acceptLanguage: acceptLanguage,
+      msgId: msgId,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'System Settings Copy',
+      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+      },
+      params: {
+        'msgId': msgId,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -1179,7 +1244,7 @@ class ListExchangeRateCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List ExchangeRate',
-      apiUrl: '$baseUrl/customer/api/v1/exchangeRate',
+      apiUrl: '$baseUrl/lookup/api/v1/exchangeRate',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
@@ -1188,6 +1253,7 @@ class ListExchangeRateCall {
       },
       params: {
         'exchangeRateDate': exchangeRateDate,
+        'msgId': msgId,
       },
       returnBody: true,
       encodeBodyUtf8: false,
