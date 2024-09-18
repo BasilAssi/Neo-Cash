@@ -96,39 +96,43 @@ class _HomePageListTransactionComponentWidgetState
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: FFButtonWidget(
-                onPressed: () async {
-                  FFAppState().clearTransactionsHomePageCache();
-                  safeSetState(() {
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
                     FFAppState().clearTransactionsHomePageCache();
-                    _model.apiRequestCompleted = false;
-                  });
-                  await _model.waitForApiRequestCompleted();
-                },
-                text: FFLocalizations.of(context).getText(
-                  '6cnnlwbl' /* إعادة التحميل */,
-                ),
-                icon: const Icon(
-                  Icons.refresh_outlined,
-                  size: 14.0,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: const Color(0x00F05346),
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).titleSmallFamily,
-                        color: FlutterFlowTheme.of(context).textColor,
-                        fontSize: 12.0,
-                        letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).titleSmallFamily),
-                      ),
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                    safeSetState(() {
+                      FFAppState().clearTransactionsHomePageCache();
+                      _model.apiRequestCompleted = false;
+                    });
+                    await _model.waitForApiRequestCompleted();
+                  },
+                  text: FFLocalizations.of(context).getText(
+                    '6cnnlwbl' /* إعادة تحميل الحركات */,
+                  ),
+                  icon: const Icon(
+                    Icons.refresh_outlined,
+                    size: 14.0,
+                  ),
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: const Color(0x00F05346),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
+                          color: FlutterFlowTheme.of(context).textColor,
+                          fontSize: 12.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
+                        ),
+                    elevation: 0.0,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                 ),
               ),
             ),

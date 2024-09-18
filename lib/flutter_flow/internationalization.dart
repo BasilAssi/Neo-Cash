@@ -2303,8 +2303,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // home_page_list_transaction_component
   {
     '6cnnlwbl': {
-      'ar': 'إعادة التحميل',
-      'en': '',
+      'ar': 'إعادة تحميل الحركات',
+      'en': 'Refresh Transactions',
     },
     '5hnon1gy': {
       'ar': ' ',
