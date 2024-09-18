@@ -10,9 +10,13 @@ class SettingsAppStruct extends FFFirebaseStruct {
   SettingsAppStruct({
     bool? biometricEnabled,
     int? numberOfBiometricFailure,
+    int? minCustomerAge,
+    int? vCResendInSeconds,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _biometricEnabled = biometricEnabled,
         _numberOfBiometricFailure = numberOfBiometricFailure,
+        _minCustomerAge = minCustomerAge,
+        _vCResendInSeconds = vCResendInSeconds,
         super(firestoreUtilData);
 
   // "biometricEnabled" field.
@@ -32,11 +36,33 @@ class SettingsAppStruct extends FFFirebaseStruct {
 
   bool hasNumberOfBiometricFailure() => _numberOfBiometricFailure != null;
 
+  // "minCustomerAge" field.
+  int? _minCustomerAge;
+  int get minCustomerAge => _minCustomerAge ?? 15;
+  set minCustomerAge(int? val) => _minCustomerAge = val;
+
+  void incrementMinCustomerAge(int amount) =>
+      minCustomerAge = minCustomerAge + amount;
+
+  bool hasMinCustomerAge() => _minCustomerAge != null;
+
+  // "VCResendInSeconds" field.
+  int? _vCResendInSeconds;
+  int get vCResendInSeconds => _vCResendInSeconds ?? 45;
+  set vCResendInSeconds(int? val) => _vCResendInSeconds = val;
+
+  void incrementVCResendInSeconds(int amount) =>
+      vCResendInSeconds = vCResendInSeconds + amount;
+
+  bool hasVCResendInSeconds() => _vCResendInSeconds != null;
+
   static SettingsAppStruct fromMap(Map<String, dynamic> data) =>
       SettingsAppStruct(
         biometricEnabled: data['biometricEnabled'] as bool?,
         numberOfBiometricFailure:
             castToType<int>(data['numberOfBiometricFailure']),
+        minCustomerAge: castToType<int>(data['minCustomerAge']),
+        vCResendInSeconds: castToType<int>(data['VCResendInSeconds']),
       );
 
   static SettingsAppStruct? maybeFromMap(dynamic data) => data is Map
@@ -46,6 +72,8 @@ class SettingsAppStruct extends FFFirebaseStruct {
   Map<String, dynamic> toMap() => {
         'biometricEnabled': _biometricEnabled,
         'numberOfBiometricFailure': _numberOfBiometricFailure,
+        'minCustomerAge': _minCustomerAge,
+        'VCResendInSeconds': _vCResendInSeconds,
       }.withoutNulls;
 
   @override
@@ -56,6 +84,14 @@ class SettingsAppStruct extends FFFirebaseStruct {
         ),
         'numberOfBiometricFailure': serializeParam(
           _numberOfBiometricFailure,
+          ParamType.int,
+        ),
+        'minCustomerAge': serializeParam(
+          _minCustomerAge,
+          ParamType.int,
+        ),
+        'VCResendInSeconds': serializeParam(
+          _vCResendInSeconds,
           ParamType.int,
         ),
       }.withoutNulls;
@@ -72,6 +108,16 @@ class SettingsAppStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
+        minCustomerAge: deserializeParam(
+          data['minCustomerAge'],
+          ParamType.int,
+          false,
+        ),
+        vCResendInSeconds: deserializeParam(
+          data['VCResendInSeconds'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -81,17 +127,25 @@ class SettingsAppStruct extends FFFirebaseStruct {
   bool operator ==(Object other) {
     return other is SettingsAppStruct &&
         biometricEnabled == other.biometricEnabled &&
-        numberOfBiometricFailure == other.numberOfBiometricFailure;
+        numberOfBiometricFailure == other.numberOfBiometricFailure &&
+        minCustomerAge == other.minCustomerAge &&
+        vCResendInSeconds == other.vCResendInSeconds;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([biometricEnabled, numberOfBiometricFailure]);
+  int get hashCode => const ListEquality().hash([
+        biometricEnabled,
+        numberOfBiometricFailure,
+        minCustomerAge,
+        vCResendInSeconds
+      ]);
 }
 
 SettingsAppStruct createSettingsAppStruct({
   bool? biometricEnabled,
   int? numberOfBiometricFailure,
+  int? minCustomerAge,
+  int? vCResendInSeconds,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -100,6 +154,8 @@ SettingsAppStruct createSettingsAppStruct({
     SettingsAppStruct(
       biometricEnabled: biometricEnabled,
       numberOfBiometricFailure: numberOfBiometricFailure,
+      minCustomerAge: minCustomerAge,
+      vCResendInSeconds: vCResendInSeconds,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

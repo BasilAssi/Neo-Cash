@@ -367,7 +367,11 @@ class _OtpVerifyEmailWidgetState extends State<OtpVerifyEmailWidget> {
                             clipBehavior: Clip.none,
                             children: [
                               FlutterFlowTimer(
-                                initialTime: _model.timerInitialTimeMs,
+                                initialTime: FFAppState()
+                                        .AppSettings
+                                        .hasVCResendInSeconds()
+                                    ? FFAppState().AppSettings.vCResendInSeconds
+                                    : 60000,
                                 getDisplayTime: (value) =>
                                     StopWatchTimer.getDisplayTime(
                                   value,

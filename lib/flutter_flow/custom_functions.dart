@@ -34,9 +34,10 @@ String? messageId() {
   return uniqueString;
 }
 
-DateTime? calculateAge18Year() {
+DateTime? calculateAgeYear(int? age) {
+  if (age == null) age = 16;
   final now = DateTime.now();
-  final age18 = DateTime(now.year - 18, now.month, now.day);
+  final age18 = DateTime(now.year - age, now.month, now.day);
   return age18;
 }
 
@@ -327,4 +328,16 @@ String? splitURL(String? url) {
   Uri uri = Uri.parse(url);
   String? photoURL = uri.path + (uri.hasQuery ? '?${uri.query}' : '');
   return photoURL;
+}
+
+int? pareseStringToInteger(String? str) {
+  // parese String To Integer
+  if (str == null) {
+    return null;
+  }
+  try {
+    return int.parse(str);
+  } catch (e) {
+    return null;
+  }
 }
