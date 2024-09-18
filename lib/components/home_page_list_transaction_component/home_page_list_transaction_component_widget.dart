@@ -163,7 +163,8 @@ class _HomePageListTransactionComponentWidgetState
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return const ShimmerComponentListTransactionsWidget();
+               // return const ShimmerComponentListTransactionsWidget();
+                return const SizedBox();
               }
               final listViewListCardTransactionsResponse = snapshot.data!;
 
