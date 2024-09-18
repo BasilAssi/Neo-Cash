@@ -341,3 +341,11 @@ int? pareseStringToInteger(String? str) {
     return null;
   }
 }
+
+int? convertMilliSecondsToSeconds(String? seconds) {
+  // Convert seconds to milliseconds
+  if (seconds == null) {
+    return null;
+  }
+  return int.tryParse(seconds) != null ? int.parse(seconds) * 1000 : null;
+}
