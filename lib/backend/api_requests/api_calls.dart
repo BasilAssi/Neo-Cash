@@ -552,6 +552,7 @@ class LoginCall {
     String? deviceSerial = '',
     String? mobileWithPrefix = '',
     String? password = '',
+    String? fcmToken = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) async {
@@ -573,7 +574,7 @@ class LoginCall {
         'applicationType': 'BP-V1.0',
         'Device-Serial': '$deviceSerial',
         'authorization':basicAuth,
-        'Device-Token': '',
+        'Device-Token': '$fcmToken',
       },
       params: {},
       bodyType: BodyType.NONE,
