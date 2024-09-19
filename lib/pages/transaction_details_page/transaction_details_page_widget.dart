@@ -129,7 +129,12 @@ class _TransactionDetailsPageWidgetState
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 32.0),
                     child: ListView(
-                      padding: EdgeInsets.zero,
+                      padding: const EdgeInsets.fromLTRB(
+                        0,
+                        24.0,
+                        0,
+                        24.0,
+                      ),
                       primary: false,
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
@@ -174,7 +179,7 @@ class _TransactionDetailsPageWidgetState
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 0.0),
+                              0.0, 36.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -473,7 +478,8 @@ class _TransactionDetailsPageWidgetState
                             ],
                           ),
                         ),
-                        if (widget.transactionData?.hasBillingAmount() == true)
+                        if (widget.transactionData?.hasBillingAmount() ==
+                            false)
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
