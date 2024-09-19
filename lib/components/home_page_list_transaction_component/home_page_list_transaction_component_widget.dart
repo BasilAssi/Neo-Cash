@@ -171,7 +171,7 @@ class _HomePageListTransactionComponentWidgetState
                 return const SizedBox();
               }
               final listViewListCardTransactionsResponse = snapshot.data!;
-
+              print('listViewListCardTransactionsResponse ${listViewListCardTransactionsResponse?.jsonBody}');
               return Builder(
                 builder: (context) {
                   final listTransactions =
