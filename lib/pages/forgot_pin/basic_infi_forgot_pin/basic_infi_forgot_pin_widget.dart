@@ -435,10 +435,20 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                       );
                                       return;
                                     }
-                                    if (_model.passwordTextController.text ==
-                                        FFAppState()
-                                            .AuthenticatedUser
-                                            .password) {
+                                    if ((_model.passwordTextController.text ==
+                                            FFAppState()
+                                                .AuthenticatedUser
+                                                .password) &&
+                                        (FFAppState()
+                                                .AuthenticatedUser
+                                                .birthDate ==
+                                            dateTimeFormat(
+                                              "dd/MM/yyyy",
+                                              _model.datePicked,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ))) {
                                       FFAppState().updateForgotPinDataStruct(
                                         (e) => e
                                           ..currentPassword = _model
@@ -452,9 +462,9 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                         FFLocalizations.of(context)
                                             .getVariableText(
                                           arText:
-                                              'الرجاء ادخال كلمة المرور بشكل صحيح',
+                                              'الرجاء ادخال المعلومات بشكل صحيح',
                                           enText:
-                                              'Please enter the password correctly.',
+                                              'Please enter the information correctly.',
                                         ),
                                       );
                                     }
