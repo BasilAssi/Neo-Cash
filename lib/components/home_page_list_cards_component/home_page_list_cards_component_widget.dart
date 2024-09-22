@@ -308,8 +308,12 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            if (FFAppState().AppSettings.biometricEnabled ==
-                                true) {
+                            if ((FFAppState().AppSettings.biometricEnabled ==
+                                    true) &&
+                                (FFAppState()
+                                        .AppSettings
+                                        .numberOfBiometricFailure <
+                                    4)) {
                               final localAuth = LocalAuthentication();
                               bool isBiometricSupported =
                                   await localAuth.isDeviceSupported();
@@ -397,9 +401,20 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                       ? cardListItem.isPhysical
                                       : false,
                                 );
+                                FFAppState().updateAppSettingsStruct(
+                                  (e) => e
+                                    ..numberOfBiometricFailure = 0
+                                    ..biometricEnabled = false,
+                                );
+                                safeSetState(() {});
 
                                 context.pushNamed('card_details');
                               } else {
+                                FFAppState().updateAppSettingsStruct(
+                                  (e) =>
+                                      e..incrementNumberOfBiometricFailure(1),
+                                );
+                                safeSetState(() {});
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
                                     arText: 'تعذر استخدام بصمة التعريف',
