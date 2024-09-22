@@ -393,7 +393,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                     ..numberOfBiometricFailure = 0
                                     ..biometricEnabled = false,
                                 );
-                                safeSetState(() {});
+                                FFAppState().update(() {});
 
                                 context.pushNamed('card_details');
                               } else {
