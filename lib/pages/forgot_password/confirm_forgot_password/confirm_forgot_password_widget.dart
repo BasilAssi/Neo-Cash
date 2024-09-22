@@ -54,7 +54,10 @@ class _ConfirmForgotPasswordWidgetState
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('enter_id_page_forgot_password');
+          return false;
+        } ,
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

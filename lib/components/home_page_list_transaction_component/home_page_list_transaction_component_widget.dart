@@ -167,10 +167,11 @@ class _HomePageListTransactionComponentWidgetState
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return const ShimmerComponentListTransactionsWidget();
+               // return const ShimmerComponentListTransactionsWidget();
+                return const SizedBox();
               }
               final listViewListCardTransactionsResponse = snapshot.data!;
-
+              print('listViewListCardTransactionsResponse ${listViewListCardTransactionsResponse?.jsonBody}');
               return Builder(
                 builder: (context) {
                   final listTransactions =
@@ -199,6 +200,7 @@ class _HomePageListTransactionComponentWidgetState
                       await _model.waitForApiRequestCompleted();
                     },
                     child: ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(),
                       padding: EdgeInsets.zero,
                       primary: false,
                       shrinkWrap: true,

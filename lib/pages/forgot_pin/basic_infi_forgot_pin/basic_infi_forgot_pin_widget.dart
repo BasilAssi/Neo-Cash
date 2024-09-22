@@ -445,9 +445,7 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
                                             dateTimeFormat(
                                               "dd/MM/yyyy",
                                               _model.datePicked,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
+                                              locale:'en',
                                             ))) {
                                       FFAppState().updateForgotPinDataStruct(
                                         (e) => e
