@@ -252,31 +252,42 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         dense: false,
                       ),
                     ),
-                    ListTile(
-                      leading: FaIcon(
-                        FontAwesomeIcons.whatsapp,
-                        color: FlutterFlowTheme.of(context).primary,
-                        size: 32.0,
-                      ),
-                      title: Text(
-                        FFLocalizations.of(context).getText(
-                          '80d86a13' /* تواصل معنا */,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await launchURL('https://wa.me/message/RL3WBBTC4NQTD1');
+                      },
+                      child: ListTile(
+                        leading: FaIcon(
+                          FontAwesomeIcons.whatsapp,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 32.0,
                         ),
-                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              color: FlutterFlowTheme.of(context).primary,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            '80d86a13' /* تواصل معنا */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleLargeFamily,
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleLargeFamily),
+                              ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
                       ),
-                      tileColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      dense: false,
                     ),
                     InkWell(
                       splashColor: Colors.transparent,
