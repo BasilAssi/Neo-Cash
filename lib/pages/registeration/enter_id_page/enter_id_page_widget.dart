@@ -377,7 +377,7 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         ? FFAppState().deviceInformation.serial
                                         : '',
                                   );
-
+                                  String? customerStatus = IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody);
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut
                                                   ?.jsonBody ??
@@ -390,30 +390,31 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                                 ''))
                                             ?.status ==
                                         true) {
-                                      // if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
+                                       if (customerStatus != 'DEACTIVATED' && customerStatus != 'REJECTED'){
                                       //                                   if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
                                       //                                                                         true)
-                                      if ((ResponseModelStruct.maybeFromMap(
-                                                      (_model.isRegisteredOutPut
-                                                              ?.jsonBody ??
-                                                          ''))
-                                                  ?.customerStatus !=
-                                              'DEACTIVATED') &&
-                                          (ResponseModelStruct.maybeFromMap(
-                                                      (_model.isRegisteredOutPut
-                                                              ?.jsonBody ??
-                                                          ''))
-                                                  ?.customerStatus !=
-                                              'REJECTED')) {
-                                        // if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
-                                        //                                       false)
-                                        if (AuthenticatedUserStruct
-                                                    .maybeFromMap((_model
-                                                            .isRegisteredOutPut
-                                                            ?.jsonBody ??
-                                                        ''))
-                                                ?.isDeviceRegistered ==
-                                            true) {
+                                      // if ((ResponseModelStruct.maybeFromMap(
+                                      //                 (_model.isRegisteredOutPut
+                                      //                         ?.jsonBody ??
+                                      //                     ''))
+                                      //             ?.customerStatus !=
+                                      //         'DEACTIVATED') &&
+                                      //     (ResponseModelStruct.maybeFromMap(
+                                      //                 (_model.isRegisteredOutPut
+                                      //                         ?.jsonBody ??
+                                      //                     ''))
+                                      //             ?.customerStatus !=
+                                      //         'REJECTED')) {
+                                         if (IsRegisteredCall().isDeviceRegistered(_model.isRegisteredOutPut?.jsonBody) ==
+                                                                               true)
+                                        // if (AuthenticatedUserStruct
+                                        //             .maybeFromMap((_model
+                                        //                     .isRegisteredOutPut
+                                        //                     ?.jsonBody ??
+                                        //                 ''))
+                                        //         ?.isDeviceRegistered ==
+                                        //     true)
+                                        {
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
