@@ -303,7 +303,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                 (FFAppState()
                                         .AppSettings
                                         .numberOfBiometricFailure <
-                                    4)) {
+                                    5)) {
                               final localAuth = LocalAuthentication();
                               bool isBiometricSupported =
                                   await localAuth.isDeviceSupported();
@@ -402,6 +402,24 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                       e..incrementNumberOfBiometricFailure(1),
                                 );
                                 safeSetState(() {});
+                                if (FFAppState()
+                                        .AppSettings
+                                        .numberOfBiometricFailure <
+                                    5) {
+                                  // Action 17   increment  number of biometric failure
+                                  FFAppState().updateAppSettingsStruct(
+                                    (e) =>
+                                        e..incrementNumberOfBiometricFailure(1),
+                                  );
+                                  safeSetState(() {});
+                                } else {
+                                  // disable biometric
+                                  FFAppState().updateAppSettingsStruct(
+                                    (e) => e..biometricEnabled = false,
+                                  );
+                                  safeSetState(() {});
+                                }
+
                                 await actions.showToast(
                                   FFLocalizations.of(context).getVariableText(
                                     arText: 'تعذر استخدام بصمة التعريف',
