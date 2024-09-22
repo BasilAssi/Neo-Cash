@@ -87,7 +87,7 @@ print('userProfile1  ${userProfile1}');
       ..mobileNumberPrefix = customerInfo['mobileNumberPrefix'] ?? ''
       ..isPEP = customerInfo['isPEP'] ?? false
       ..encodedId = customerInfo['encodedId'] ?? ''
-     // ..birthDate = customerInfo['birthDate'] ?? null
+      ..birthDate = customerInfo['birthDateText'] ?? ''
       ..firstName = customerInfo['firstName'] ?? ''
       ..emailVerified = customerInfo['emailVerified'] ?? false
       ..areaCode = customerInfo['areaCode'] ?? ''
@@ -113,5 +113,6 @@ print('userProfile1  ${userProfile1}');
   print('idType ${FFAppState().registerationFormData.idType}');
   print('updated feilds ${FFAppState().AuthenticatedUser.toMap().toString()}');
   print('userProfile  ${FFAppState().AuthenticatedUser.userProfile}');
+  print('birthDateText  ${FFAppState().AuthenticatedUser.birthDate}');
 
 }

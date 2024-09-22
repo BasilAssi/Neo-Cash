@@ -323,7 +323,10 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                           'sidsk0va' /* تأكيد البصمة للاستمرار */,
                                         ),
                                         options: const AuthenticationOptions(
-                                            biometricOnly: true));
+                                            biometricOnly: true,
+                                          stickyAuth: false,
+                                        sensitiveTransaction: true,
+                                        useErrorDialogs: true));
                                 safeSetState(() {});
                               }
 

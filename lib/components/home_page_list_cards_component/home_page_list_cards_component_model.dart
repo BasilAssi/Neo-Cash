@@ -21,7 +21,9 @@ class HomePageListCardsComponentModel
   }
 
   @override
-  void dispose() {}
+  void dispose() {
+    biometricOutput =false;
+  }
 
   /// Additional helper methods.
   Future waitForApiRequestCompleted({

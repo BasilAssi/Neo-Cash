@@ -1067,13 +1067,18 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 ),
                                                                 options: const AuthenticationOptions(
                                                                     biometricOnly:
-                                                                        true));
+                                                                        true,
+                                                                stickyAuth: false,));
+
                                                         safeSetState(() {});
                                                       }
-
+                                                      print('logout pressed before ${_model.biometricOutput1}');
                                                       if (_model
                                                               .biometricOutput1 ==
                                                           true) {
+
+                                                        _model.biometricOutput1 =false;
+                                                        print('after update pressed ${_model.biometricOutput1}');
                                                         // Set number of failuer to zero
                                                         FFAppState()
                                                             .updateAppSettingsStruct(
