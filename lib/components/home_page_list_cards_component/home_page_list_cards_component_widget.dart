@@ -320,7 +320,7 @@ class _HomePageListCardsComponentWidgetState
                                     ..numberOfBiometricFailure = 0
                                     ..biometricEnabled = false,
                                 );
-                                safeSetState(() {});
+                                FFAppState().update(() {});
 
                                 context.pushNamed('card_details');
                               } else {
