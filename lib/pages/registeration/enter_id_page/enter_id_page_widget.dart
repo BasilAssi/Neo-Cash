@@ -371,8 +371,12 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         : '',
                                   );
 
-                                  if ((_model.isRegisteredOutPut?.succeeded ??
-                                      true)) {
+                                  if (ResponseModelStruct.maybeFromMap((_model
+                                                  .isRegisteredOutPut
+                                                  ?.jsonBody ??
+                                              ''))
+                                          ?.code ==
+                                      '00') {
                                     if (ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
@@ -525,6 +529,20 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
 
                                       context.pushNamed('phone_number');
                                     }
+                                  } else if (ResponseModelStruct.maybeFromMap(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''))
+                                          ?.code ==
+                                      '1525') {
+                                    await actions.showToast(
+                                      FFLocalizations.of(context)
+                                          .getVariableText(
+                                        arText: 'الجهاز مسجل من قبل شخص اخر',
+                                        enText:
+                                            'Device already registered by another customer',
+                                      ),
+                                    );
                                   } else {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(

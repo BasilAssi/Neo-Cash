@@ -1059,7 +1059,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .canCheckBiometrics;
                                                       if (isBiometricSupported &&
                                                           canCheckBiometrics) {
-                                                        _model.biometricOutput = await localAuth
+                                                        _model.biometricOutput1 = await localAuth
                                                             .authenticate(
                                                                 localizedReason:
                                                                     FFLocalizations.of(
@@ -1074,7 +1074,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       }
 
                                                       if (_model
-                                                              .biometricOutput ==
+                                                              .biometricOutput1 ==
                                                           true) {
                                                         // Set number of failuer to zero
                                                         FFAppState()
