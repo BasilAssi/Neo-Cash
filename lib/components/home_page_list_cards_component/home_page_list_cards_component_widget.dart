@@ -342,7 +342,9 @@ class _HomePageListCardsComponentWidgetState
                                 } else {
                                   // disable biometric
                                   FFAppState().updateAppSettingsStruct(
-                                    (e) => e..biometricEnabled = false,
+                                    (e) => e
+                                      ..biometricEnabled = false
+                                      ..numberOfBiometricFailure = 0,
                                   );
                                   safeSetState(() {});
                                 }
