@@ -1,4 +1,4 @@
-package com.mycompany.neocash
+package com.blockBuilders.neocash
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

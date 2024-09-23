@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1015669625608:android:123d21048cd2e411dd12bd",
+        "android_client_info": {
+          "package_name": "com.blockBuilders.neocash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZT-XKpNZbsyiCV3FmVlFjw_2OqW-NYYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1015669625608:android:f1d3ceb79219b10bdd12bd",
         "android_client_info": {
           "package_name": "com.mycompany.neocash"
