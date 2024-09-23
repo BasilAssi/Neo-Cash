@@ -402,9 +402,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                       : false,
                                 );
                                 FFAppState().updateAppSettingsStruct(
-                                  (e) => e
-                                    ..numberOfBiometricFailure = 0
-                                    ..biometricEnabled = false,
+                                  (e) => e..numberOfBiometricFailure = 0,
                                 );
                                 FFAppState().update(() {});
 
@@ -428,9 +426,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                 } else {
                                   // disable biometric
                                   FFAppState().updateAppSettingsStruct(
-                                    (e) => e
-                                      ..biometricEnabled = false
-                                      ..numberOfBiometricFailure = 0,
+                                    (e) => e..biometricEnabled = false,
                                   );
                                   safeSetState(() {});
                                 }
