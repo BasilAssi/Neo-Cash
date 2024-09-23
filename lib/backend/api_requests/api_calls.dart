@@ -740,6 +740,7 @@ class CardGroup {
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
   static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
   static ListExchangeRateCall listExchangeRateCall = ListExchangeRateCall();
+  static ListNotificationsCall listNotificationsCall = ListNotificationsCall();
 }
 
 class ListCardsCall {
@@ -1247,6 +1248,47 @@ class ListExchangeRateCall {
     response,
     r'''$.records[?((@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'ILS') || (@.fromCurrencyCode == 'USD' && @.toCurrencyCode == 'JOD') || (@.fromCurrencyCode == 'JOD' && @.toCurrencyCode == 'ILS'))]''',
   );
+}
+
+class ListNotificationsCall {
+  Future<ApiCallResponse> call({
+    String? title = '',
+    String? body = '',
+    String? channel = '',
+    String? msgId = '',
+    String? token = '',
+    String? acceptLanguage = 'EN',
+  }) async {
+    final baseUrl = CardGroup.getBaseUrl(
+      msgId: msgId,
+      token: token,
+      acceptLanguage: acceptLanguage,
+    );
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'List notifications',
+      apiUrl: '$baseUrl/api/v1/listNotifications',
+      callType: ApiCallType.GET,
+      headers: {
+        'Accept-Language': '$acceptLanguage',
+        'applicationType': 'BP-V1.0',
+        'X-Auth-Token': '$token',
+      },
+      params: {
+        'msgId': msgId,
+        'title': title,
+        'body': body,
+        'status': acceptLanguage,
+        'channel': channel,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 /// End Card Group Code
