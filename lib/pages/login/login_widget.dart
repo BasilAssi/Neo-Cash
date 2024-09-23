@@ -42,6 +42,7 @@ class _LoginWidgetState extends State<LoginWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginModel());
+    print('inside login ');
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {

@@ -1,3 +1,4 @@
+import '../../../backend/schema/structs/authenticated_user_struct.dart';
 import '../../../components/dialog_component/dialog_component_widget.dart';
 import '/components/home_page_customer_balances_component/home_page_customer_balances_component_widget.dart';
 import '/components/home_page_list_cards_component/home_page_list_cards_component_widget.dart';
@@ -35,7 +36,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
-
+print('inside it ');
     _model.expandableExpandableController =
         ExpandableController(initialExpanded: false);
     animationsMap.addAll({
@@ -489,7 +490,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        //FFAppState().deleteAuthenticatedUser();
+                        // FFAppState().AuthenticatedUser =
+                        //     AuthenticatedUserStruct();
                         context.pushNamed('login');
+                        FFAppState().AuthenticatedUser.accessToken ='';
+                        FFAppState().update(() {});
+
+
+                        // FFAppState().AuthenticatedUser.accessToken ='';
+                        //context.pushNamed('login');
                       },
                       child: ListTile(
                         leading: Icon(
