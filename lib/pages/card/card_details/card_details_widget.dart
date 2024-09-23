@@ -23,6 +23,7 @@ class CardDetailsWidget extends StatefulWidget {
 
 class _CardDetailsWidgetState extends State<CardDetailsWidget> with WidgetsBindingObserver {
   late CardDetailsModel _model;
+  bool _isActive = true; // Track if this widget is active
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -72,25 +73,40 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> with WidgetsBindi
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _isActive = ModalRoute.of(context)?.isCurrent ?? false; // Check if the route is current
+  }
+
+
+  @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (!_isActive) return;
     // Handle the different states of the app lifecycle
     if (state == AppLifecycleState.resumed) {
       // App has resumed
       // You can refresh the card details or any other action
-    } else if (state == AppLifecycleState.paused) {
+    }
+    else if (state == AppLifecycleState.paused) {
       // App is paused
       SchedulerBinding.instance.addPostFrameCallback((_) async {
-        context.pushNamed('home_page');
+        if(FFAppState().AuthenticatedUser.accessToken.isNotEmpty) {
+          context.pushNamed('home_page');
+        }
       });
-    } else if (state == AppLifecycleState.inactive) {
+    }else if (state == AppLifecycleState.inactive) {
       // App is inactive
       SchedulerBinding.instance.addPostFrameCallback((_) async {
-        context.pushNamed('home_page');
+        if(FFAppState().AuthenticatedUser.accessToken.isNotEmpty) {
+          context.pushNamed('home_page');
+        }
       });
     } else if (state == AppLifecycleState.detached) {
       // App is detached
       SchedulerBinding.instance.addPostFrameCallback((_) async {
-        context.pushNamed('home_page');
+        if(FFAppState().AuthenticatedUser.accessToken.isNotEmpty) {
+          context.pushNamed('home_page');
+        }
       });
     }
   }

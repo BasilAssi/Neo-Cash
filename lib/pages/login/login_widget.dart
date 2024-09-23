@@ -31,7 +31,7 @@ class LoginWidget extends StatefulWidget {
 }
 
 class _LoginWidgetState extends State<LoginWidget>
-    with TickerProviderStateMixin {
+    with TickerProviderStateMixin ,WidgetsBindingObserver {
   late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -41,6 +41,7 @@ class _LoginWidgetState extends State<LoginWidget>
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _model = createModel(context, () => LoginModel());
     print('inside login ');
 
@@ -164,6 +165,7 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _model.dispose();
 
     super.dispose();
