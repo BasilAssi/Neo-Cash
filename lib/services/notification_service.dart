@@ -1,107 +1,9 @@
-//
-//
-// import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-//
-// import '../app_state.dart';
-// import '../main.dart';
-//
-// class NotificationService {
-//   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-//   FlutterLocalNotificationsPlugin();
-//
-//   NotificationService() {
-//     initializeFirebaseMessaging();
-//     initializeLocalNotifications();
-//   }
-//
-//   void initializeFirebaseMessaging() {
-//     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-//       // Display notification when a message is received while the app is in the foreground
-//       showNotification(message);
-//     });
-//
-//     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-//       showNotification(message);
-//       // Handle the notification tap when the app is opened from a terminated or background state
-//     });
-//
-//
-//   }
-//
-//   void initializeLocalNotifications() {
-//     final AndroidInitializationSettings initializationSettingsAndroid =
-//     AndroidInitializationSettings('@mipmap/ic_launcher');
-//     final InitializationSettings initializationSettings =
-//     InitializationSettings(android: initializationSettingsAndroid);
-//     flutterLocalNotificationsPlugin.initialize(initializationSettings);
-//   }
-//
-//   Future<void> requestPermissions() async {
-//     FirebaseMessaging.instance.requestPermission(
-//       alert: true,
-//       announcement: false,
-//       badge: true,
-//       carPlay: true,
-//       criticalAlert: true,
-//       provisional: false,
-//       sound: true,
-//     ).then((settings) {
-//       print('User granted permission: ${settings.authorizationStatus}');
-//     });
-//   }
-//
-//   Future<String?> getToken() async {
-//     try {
-//       String? token = await FirebaseMessaging.instance.getToken();
-//       print("FCM Token: $token");
-//       return token;
-//     } catch (e) {
-//
-//       print("Failed to get FCM token: $e");
-//       return null;
-//     }
-//   }
-//
-//   Future<void> showNotification(RemoteMessage message) async {
-//     var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-//       ' channel id',
-//       ' channel name',
-//       importance: Importance.max,
-//       priority: Priority.high,
-//       enableVibration: true,
-//       playSound: true,
-//       enableLights: true,
-//       channelShowBadge: true,
-//       ticker: 'ticker',
-//     );
-//     var platformChannelSpecifics =
-//     NotificationDetails(android: androidPlatformChannelSpecifics);
-//
-//     await flutterLocalNotificationsPlugin.show(
-//       0,
-//       message.notification!.title,
-//       message.notification!.body,
-//       platformChannelSpecifics,
-//       payload: 'item x',
-//     );
-//   }
-//
-//
-//
-//
-// }
-//
+
 
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import '../app_state.dart';
-import '../main.dart';
-
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // Background message handler for when the app is in the background or terminated
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -115,38 +17,39 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   const AndroidInitializationSettings initializationSettingsAndroid =
   AndroidInitializationSettings('@mipmap/ic_launcher');
 
-  // const IOSInitializationSettings initializationSettingsIOS =
-  // IOSInitializationSettings();
+
 
   const InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
-   // iOS: initializationSettingsIOS,
+    iOS: DarwinInitializationSettings(),
   );
 
   flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
   // Display notification manually
   var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-    'channel id',
-    'channel name',
+    'custom_channel_id1',
+    'Custom Sound Channel2',
     importance: Importance.max,
     priority: Priority.high,
     enableVibration: true,
     playSound: true,
+    sound: RawResourceAndroidNotificationSound('res_notification'),
     enableLights: true,
     channelShowBadge: true,
     ticker: 'ticker',
   );
 
-  // var iosPlatformChannelSpecifics = const IOSNotificationDetails(
-  //   presentAlert: true,
-  //   presentBadge: true,
-  //   presentSound: true,
-  // );
+
 
   var platformChannelSpecifics = NotificationDetails(
     android: androidPlatformChannelSpecifics,
-    //iOS: iosPlatformChannelSpecifics,
+    iOS: const DarwinNotificationDetails(
+     // sound: 'res_notification.aiff', // Ensure correct sound format for iOS
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    ),
   );
 
   await flutterLocalNotificationsPlugin.show(
@@ -190,19 +93,21 @@ class NotificationService {
     const AndroidInitializationSettings initializationSettingsAndroid =
     AndroidInitializationSettings('@mipmap/ic_launcher');
 
-    // const IOSInitializationSettings initializationSettingsIOS =
-    // IOSInitializationSettings(
-    //   onDidReceiveLocalNotification: onDidReceiveLocalNotification,
-    // );
+    const DarwinInitializationSettings initializationSettingsDarwin =
+    DarwinInitializationSettings(
+      onDidReceiveLocalNotification: onDidReceiveLocalNotification, // Handler for foreground notifications on iOS
+    );
 
-    // const InitializationSettings initializationSettings =
-    // InitializationSettings(
-    //   android: initializationSettingsAndroid,
-    //   iOS: initializationSettingsIOS,
-    // );
+    const InitializationSettings initializationSettings =
+    InitializationSettings(
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsDarwin,
+    );
 
-    // flutterLocalNotificationsPlugin.initialize(initializationSettings,
-    //     onSelectNotification: selectNotification);
+    flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+     // onSelectNotification: selectNotification,  // For handling notification taps
+    );
   }
 
   static Future onDidReceiveLocalNotification(
@@ -213,7 +118,7 @@ class NotificationService {
 
   Future selectNotification(String? payload) async {
     // Handle notification tap
-    print('Notification tapped with payload: $payload');
+   // print('Notification tapped with payload: $payload');
   }
 
   Future<void> requestPermissions() async {
@@ -244,26 +149,29 @@ class NotificationService {
 
   Future<void> showNotification(RemoteMessage message) async {
     var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-      'channel id',
-      'channel name',
+      'channel ida',
+      'channel name1',
       importance: Importance.max,
       priority: Priority.high,
       enableVibration: true,
       playSound: true,
+      sound: RawResourceAndroidNotificationSound('res_notification'),
       enableLights: true,
       channelShowBadge: true,
       ticker: 'ticker',
+
     );
 
-    // var iosPlatformChannelSpecifics = const IOSNotificationDetails(
-    //   presentAlert: true,
-    //   presentBadge: true,
-    //   presentSound: true,
-    // );
+    var iosPlatformChannelSpecifics = const DarwinNotificationDetails(
+      sound: 'res_notification.aiff', // Use correct sound format for iOS
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
 
     var platformChannelSpecifics = NotificationDetails(
       android: androidPlatformChannelSpecifics,
-      //iOS: iosPlatformChannelSpecifics,
+      iOS: iosPlatformChannelSpecifics,
     );
 
     await flutterLocalNotificationsPlugin.show(

@@ -1,3 +1,4 @@
+import '../home_page_list_transaction_component/home_page_list_transaction_component_model.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/empty_lists/empty_list_of_cards/empty_list_of_cards_widget.dart';
@@ -162,9 +163,8 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 }
 
                 if (cardList.isNotEmpty) {
-                  if(FFAppState().cardData == null || FFAppState().cardData == '') {
-                    var cardListItem = cardList[1]; // Example: Use the first card for demonstration
-
+                  if(FFAppState().cardData != null ) {
+                    var cardListItem = cardList[0]; // Example: Use the first card for demonstration
                     // Update FFAppState with card data
                     FFAppState().cardData = CardDataStruct(
                       cardNumber: cardListItem.hasCardNumber() ? cardListItem

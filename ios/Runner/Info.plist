@@ -65,6 +65,16 @@
 	<key>NSFaceIDUsageDescription</key>
     <string>This app requires permissions to perform a biometric verification.</string>
 
+    <!-- Permissions for notifications (required for iOS 10+) -->
+    <key>NSUserNotificationUsageDescription</key>
+    <string>We need notifications to keep you informed about updates and offers.</string>
+
+    <!-- Optional: Required if you use background push notifications -->
+    <key>UIBackgroundModes</key>
+    <array>
+    	<string>fetch</string>
+    	<string>remote-notification</string>
+    </array>
 
 
 	<key>UILaunchStoryboardName</key>
