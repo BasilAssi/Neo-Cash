@@ -139,7 +139,7 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                       );
                     }
                     final listViewListNotificationsResponse = snapshot.data!;
-
+                    print('listViewListNotificationsResponse ${listViewListNotificationsResponse?.jsonBody}');
                     return Builder(
                       builder: (context) {
                         final listOfNotification =
