@@ -1,9 +1,13 @@
+import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'notification_page_model.dart';
 export 'notification_page_model.dart';
 
@@ -23,11 +27,6 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NotificationPageModel());
-
-    _model.expandableExpandableController1 =
-        ExpandableController(initialExpanded: false);
-    _model.expandableExpandableController2 =
-        ExpandableController(initialExpanded: false);
   }
 
   @override
@@ -39,6 +38,8 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -116,264 +117,192 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  primary: false,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                      child: Container(
-                        decoration: const BoxDecoration(),
-                        child: Container(
-                          width: double.infinity,
-                          color: Colors.white,
-                          child: ExpandableNotifier(
-                            controller: _model.expandableExpandableController1,
-                            child: ExpandablePanel(
-                              header: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'b9tcv9w6' /* بلشت تحوش لسفرة العيد ؟ */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .textColor,
-                                            fontSize: 24.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily),
-                                          ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'fd8j6p3a' /*  Jun, 8, 2024 */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              collapsed: Text(
-                                FFLocalizations.of(context).getText(
-                                  'b1r7vqyn' /*   */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
-                              ),
-                              expanded: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '92f23h94' /* افتح حساب تحوش ونذكر انه صا ر ... */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 18.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                  ),
-                                ],
-                              ),
-                              theme: const ExpandableThemeData(
-                                tapHeaderToExpand: true,
-                                tapBodyToExpand: true,
-                                tapBodyToCollapse: true,
-                                headerAlignment:
-                                    ExpandablePanelHeaderAlignment.center,
-                                hasIcon: true,
-                              ),
+                child: FutureBuilder<ApiCallResponse>(
+                  future: CardGroup.listNotificationsCall.call(
+                    msgId: functions.messageId(),
+                    token: FFAppState().AuthenticatedUser.accessToken,
+                    channel: 'SMS',
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 40.0,
+                          height: 40.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(),
-                      child: Container(
-                        width: double.infinity,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        child: ExpandableNotifier(
-                          controller: _model.expandableExpandableController2,
-                          child: ExpandablePanel(
-                            header: Padding(
+                      );
+                    }
+                    final listViewListNotificationsResponse = snapshot.data!;
+
+                    return Builder(
+                      builder: (context) {
+                        final listOfNotification =
+                            ListNotificationsStruct.maybeFromMap(
+                                        listViewListNotificationsResponse
+                                            .jsonBody)
+                                    ?.records
+                                    .toList() ??
+                                [];
+
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listOfNotification.length,
+                          itemBuilder: (context, listOfNotificationIndex) {
+                            final listOfNotificationItem =
+                                listOfNotification[listOfNotificationIndex];
+                            return Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'zks01jx1' /*  مبارك، تم تفعيل بطاقتك رقم 43... */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmallFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .textColor,
-                                          fontSize: 24.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .displaySmallFamily),
-                                        ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 12.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'ckpq355p' /* Jun, 8, 2024 */,
+                                  0.0, 0.0, 0.0, 8.0),
+                              child: Container(
+                                decoration: const BoxDecoration(),
+                                child: Container(
+                                  width: double.infinity,
+                                  color: Colors.white,
+                                  child: ExpandableNotifier(
+                                    initialExpanded: false,
+                                    child: ExpandablePanel(
+                                      header: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              listOfNotificationItem.hasTitle()
+                                                  ? listOfNotificationItem.title
+                                                  : '',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .displaySmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .displaySmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .textColor,
+                                                    fontSize: 24.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily),
+                                                  ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily:
+                                            Text(
+                                              listOfNotificationItem
+                                                      .hasSubmissionDate()
+                                                  ? listOfNotificationItem
+                                                      .submissionDate
+                                                  : '',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      collapsed: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'b1r7vqyn' /*   */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMediumFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMediumFamily),
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            collapsed: Text(
-                              FFLocalizations.of(context).getText(
-                                '4ouibfps' /*   */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                            expanded: Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'w5sls8lu' /*  مبارك، تم تفعيل بطاقتك رقم 43... */,
+                                                          .bodyMediumFamily),
+                                            ),
                                       ),
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            fontSize: 18.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
+                                      expanded: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: Text(
+                                              listOfNotificationItem.hasBody()
+                                                  ? listOfNotificationItem.body
+                                                  : '',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    fontSize: 18.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
+                                            ),
                                           ),
+                                        ],
+                                      ),
+                                      theme: const ExpandableThemeData(
+                                        tapHeaderToExpand: true,
+                                        tapBodyToExpand: true,
+                                        tapBodyToCollapse: true,
+                                        headerAlignment:
+                                            ExpandablePanelHeaderAlignment
+                                                .center,
+                                        hasIcon: true,
+                                      ),
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                            theme: const ExpandableThemeData(
-                              tapHeaderToExpand: true,
-                              tapBodyToExpand: true,
-                              tapBodyToCollapse: true,
-                              headerAlignment:
-                                  ExpandablePanelHeaderAlignment.center,
-                              hasIcon: true,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
                 ),
               ),
             ),

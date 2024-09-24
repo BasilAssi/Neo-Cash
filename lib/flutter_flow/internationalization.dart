@@ -286,41 +286,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الإشعارات',
       'en': 'Notifications',
     },
-    'b9tcv9w6': {
-      'ar': 'بلشت تحوش لسفرة العيد ؟',
-      'en': 'Have you started saving for Eid?',
-    },
-    'fd8j6p3a': {
-      'ar': ' Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
     'b1r7vqyn': {
       'ar': ' ',
       'en': '',
-    },
-    '92f23h94': {
-      'ar':
-          'افتح حساب تحوش ونذكر انه صا ر اسهل معا  وجهز لمصاريف السفر ! تمتع بالسحب والايداع وإادارة الاصاريف بأفضل طريقة',
-      'en':
-          'Open a savings account and remember that it has become easier with us and prepare for travel expenses! Enjoy withdrawals, deposits and managing expenses in the best way',
-    },
-    'zks01jx1': {
-      'ar': ' مبارك، تم تفعيل بطاقتك رقم 4356**',
-      'en': 'Congratulations, your card number 4356** has been activated.',
-    },
-    'ckpq355p': {
-      'ar': 'Jun, 8, 2024',
-      'en': 'Jun, 8, 2024',
-    },
-    '4ouibfps': {
-      'ar': ' ',
-      'en': '',
-    },
-    'w5sls8lu': {
-      'ar':
-          ' مبارك، تم تفعيل بطاقتك رقم 4356 **** \nاستمتع بخدمات نيو كاش قد ما بدك',
-      'en':
-          'Congratulations, your card number 4356**** has been activated. Enjoy New Cash services as much as you want.',
     },
     '89vwnktl': {
       'ar': 'Home',
