@@ -1267,7 +1267,7 @@ class ListNotificationsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'List notifications',
-      apiUrl: '$baseUrl/api/v1/listNotifications',
+      apiUrl: '$baseUrl/notification/api/v1/listNotifications',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
