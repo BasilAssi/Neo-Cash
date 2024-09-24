@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/empty_lists/empty_list_of_notification/empty_list_of_notification_widget.dart';
+import '/components/shimmer/shimmer_component_list_transactions/shimmer_component_list_transactions_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -127,16 +128,10 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 40.0,
-                          height: 40.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                        ),
+                      return SizedBox(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 0.9,
+                        child: const ShimmerComponentListTransactionsWidget(),
                       );
                     }
                     final listViewListNotificationsResponse = snapshot.data!;
