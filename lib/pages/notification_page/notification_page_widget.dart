@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/empty_lists/empty_list_of_notification/empty_list_of_notification_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -149,6 +150,9 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                                     ?.records
                                     .toList() ??
                                 [];
+                        if (listOfNotification.isEmpty) {
+                          return const EmptyListOfNotificationWidget();
+                        }
 
                         return ListView.builder(
                           padding: EdgeInsets.zero,

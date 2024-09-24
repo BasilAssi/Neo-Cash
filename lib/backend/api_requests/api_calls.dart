@@ -1267,7 +1267,6 @@ class ListNotificationsCall {
         'msgId': msgId,
         'title': title,
         'body': body,
-        'status': acceptLanguage,
         'channel': channel,
       },
       returnBody: true,
