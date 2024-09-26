@@ -16,7 +16,12 @@ import 'otp_does_not_exist_flow_model.dart';
 export 'otp_does_not_exist_flow_model.dart';
 
 class OtpDoesNotExistFlowWidget extends StatefulWidget {
-  const OtpDoesNotExistFlowWidget({super.key});
+  const OtpDoesNotExistFlowWidget({
+    super.key,
+    this.navigateFrom,
+  });
+
+  final String? navigateFrom;
 
   @override
   State<OtpDoesNotExistFlowWidget> createState() =>
