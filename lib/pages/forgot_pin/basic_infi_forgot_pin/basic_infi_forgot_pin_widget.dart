@@ -46,7 +46,10 @@ class _BasicInfiForgotPinWidgetState extends State<BasicInfiForgotPinWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('settings_page');
+          return  false;
+          },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

@@ -1057,6 +1057,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .canCheckBiometrics;
                                                       if (isBiometricSupported &&
                                                           canCheckBiometrics) {
+
                                                         _model.biometricOutput1 = await localAuth
                                                             .authenticate(
                                                                 localizedReason:
