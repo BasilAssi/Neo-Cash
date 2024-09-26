@@ -434,15 +434,16 @@ class _EnterIdPageForgotPasswordWidgetState
                                                 ?.succeeded ??
                                             true)) {
                                           if ((ResponseModelStruct.maybeFromMap(
-                                                      (_model.apiResultSendOTPPass
-                                                              ?.jsonBody ??
-                                                          ''))
-                                                  ?.code ==
-                                              '00') ||
-                                              (ResponseModelStruct.maybeFromMap((_model
-                                                  .apiResultSendOTPPass?.jsonBody ??
-                                                  ''))
-                                                  ?.code ==
+                                                          (_model.apiResultSendOTPPass
+                                                                  ?.jsonBody ??
+                                                              ''))
+                                                      ?.code ==
+                                                  '00') ||
+                                              (ResponseModelStruct.maybeFromMap(
+                                                          (_model.apiResultSendOTPPass
+                                                                  ?.jsonBody ??
+                                                              ''))
+                                                      ?.code ==
                                                   '1607')) {
                                             context.pushNamed(
                                                 'otp_phone_forgot_password');
@@ -476,16 +477,18 @@ class _EnterIdPageForgotPasswordWidgetState
                                                       ?.jsonBody ??
                                                   ''),
                                             )
-                                            ..mobileNumber = AuthAndRegisterGroup
-                                                .isRegisteredCall
-                                                .mobileNumber(
+                                            ..mobileNumber =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumber(
                                               (_model.isRegisteredOutPut
                                                       ?.jsonBody ??
                                                   ''),
                                             )
-                                            ..prefixMobile = AuthAndRegisterGroup
-                                                .isRegisteredCall
-                                                .mobileNumberPrefix(
+                                            ..prefixMobile =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumberPrefix(
                                               (_model.isRegisteredOutPut
                                                       ?.jsonBody ??
                                                   ''),
@@ -501,7 +504,8 @@ class _EnterIdPageForgotPasswordWidgetState
                                             ..idNumber = _model
                                                 .idNumberTextFieldTextController
                                                 .text
-                                            ..idType = _model.idTypeDropDownValue,
+                                            ..idType =
+                                                _model.idTypeDropDownValue,
                                         );
                                         safeSetState(() {});
                                         _model.apiResultSendOTP =
@@ -521,7 +525,8 @@ class _EnterIdPageForgotPasswordWidgetState
                                           operationType: 'REGISTER_DEVICE',
                                         );
 
-                                        if ((_model.apiResultSendOTP?.succeeded ??
+                                        if ((_model
+                                                .apiResultSendOTP?.succeeded ??
                                             true)) {
                                           context.pushNamed(
                                               'otp_does_not_exist_flow');
@@ -551,19 +556,34 @@ class _EnterIdPageForgotPasswordWidgetState
                                         .updateRegisterationFormDataStruct(
                                       (e) => e
                                         ..isRegisteredStatus = false
-                                        ..customerId =
-                                            AuthAndRegisterGroup.isRegisteredCall
-                                                .customerId(
-                                                  (_model.isRegisteredOutPut
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                )
-                                                .toString(),
+                                        ..customerId = AuthAndRegisterGroup
+                                            .isRegisteredCall
+                                            .customerId(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            .toString(),
                                     );
                                     safeSetState(() {});
 
                                     context.pushNamed('phone_number');
                                   }
+                                } else if (ResponseModelStruct.maybeFromMap(
+                                            (_model.isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                        ?.code ==
+                                    '1525') {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'الجهاز مسجل من قبل شخص اخر',
+                                      enText:
+                                          'Device already registered by another customer',
+                                    ),
+                                  );
+
+                                  context.pushNamed('login');
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -576,7 +596,8 @@ class _EnterIdPageForgotPasswordWidgetState
                                       ),
                                       duration: const Duration(milliseconds: 4000),
                                       backgroundColor:
-                                          FlutterFlowTheme.of(context).secondary,
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
                                     ),
                                   );
                                 }
@@ -619,8 +640,8 @@ class _EnterIdPageForgotPasswordWidgetState
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                      FlutterFlowTheme.of(context)
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
                                 ),
                             elevation: 3.0,
