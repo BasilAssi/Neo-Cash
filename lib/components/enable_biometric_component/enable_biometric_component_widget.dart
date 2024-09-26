@@ -110,7 +110,9 @@ class _EnableBiometricComponentWidgetState
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         FFAppState().updateAppSettingsStruct(
-                                          (e) => e..biometricEnabled = true,
+                                          (e) => e
+                                            ..biometricEnabled = true
+                                            ..numberOfBiometricFailure = 0,
                                         );
                                         safeSetState(() {});
                                         Navigator.pop(context);
