@@ -577,9 +577,10 @@ class _EnterIdPageForgotPasswordWidgetState
                                     '1525') {
                                   await actions.showToast(
                                     FFLocalizations.of(context).getVariableText(
-                                      arText: 'الجهاز مسجل من قبل شخص اخر',
+                                      arText:
+                                          'لا يمكن استرجاع كلمة المرور للحساب من خلال جهاز غير مسجل',
                                       enText:
-                                          'Device already registered by another customer',
+                                          'Account password cannot be retrieved from an unregistered device.',
                                     ),
                                   );
 
