@@ -50,7 +50,10 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async {
+          context.pushNamed('login');
+          return false;
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
