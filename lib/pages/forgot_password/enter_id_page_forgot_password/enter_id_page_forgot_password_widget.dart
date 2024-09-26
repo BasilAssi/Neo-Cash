@@ -564,6 +564,21 @@ class _EnterIdPageForgotPasswordWidgetState
 
                                     context.pushNamed('phone_number');
                                   }
+                                } else if (ResponseModelStruct.maybeFromMap(
+                                            (_model.isRegisteredOutPut
+                                                    ?.jsonBody ??
+                                                ''))
+                                        ?.code ==
+                                    '1525') {
+                                  await actions.showToast(
+                                    FFLocalizations.of(context).getVariableText(
+                                      arText: 'الجهاز مسجل من قبل شخص اخر',
+                                      enText:
+                                          'Device already registered by another customer',
+                                    ),
+                                  );
+
+                                  context.pushNamed('login');
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
