@@ -344,9 +344,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 },
                                               ),
                                               autofocus: true,
-                                              autofillHints: const [
-                                                AutofillHints.telephoneNumber
-                                              ],
                                               textInputAction:
                                                   TextInputAction.done,
                                               obscureText: false,
