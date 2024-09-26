@@ -425,17 +425,32 @@ class _EnterIdPageForgotPasswordWidgetState
                                             .idType,
                                       );
 
-                                      if ((_model.apiResultSendOTPPass
-                                              ?.succeeded ??
-                                          true)) {
-                                        if (ResponseModelStruct.maybeFromMap(
-                                                    (_model.apiResultSendOTPPass
-                                                            ?.jsonBody ??
-                                                        ''))
-                                                ?.code ==
-                                            '00') {
-                                          context.pushNamed(
-                                              'otp_phone_forgot_password');
+                                        if ((_model.apiResultSendOTPPass
+                                                ?.succeeded ??
+                                            true)) {
+                                          if ((ResponseModelStruct.maybeFromMap(
+                                                          (_model.apiResultSendOTPPass
+                                                                  ?.jsonBody ??
+                                                              ''))
+                                                      ?.code ==
+                                                  '00') ||
+                                              (ResponseModelStruct.maybeFromMap(
+                                                          (_model.apiResultSendOTPPass
+                                                                  ?.jsonBody ??
+                                                              ''))
+                                                      ?.code ==
+                                                  '1607')) {
+                                            context.pushNamed(
+                                                'otp_phone_forgot_password');
+                                          } else {
+                                            await actions.showToast(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                arText: 'خطأ',
+                                                enText: 'error',
+                                              ),
+                                            );
+                                          }
                                         } else {
                                           await actions.showToast(
                                             FFLocalizations.of(context)
@@ -446,184 +461,181 @@ class _EnterIdPageForgotPasswordWidgetState
                                           );
                                         }
                                       } else {
-                                        await actions.showToast(
-                                          FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText: 'خطأ',
-                                            enText: 'error',
-                                          ),
+                                        FFAppState()
+                                            .updateRegisterationFormDataStruct(
+                                          (e) => e
+                                            ..isRegisteredStatus = true
+                                            ..email = AuthAndRegisterGroup
+                                                .isRegisteredCall
+                                                .emailAddress(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            ..mobileNumber =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumber(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            ..prefixMobile =
+                                                AuthAndRegisterGroup
+                                                    .isRegisteredCall
+                                                    .mobileNumberPrefix(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            ..customerId = AuthAndRegisterGroup
+                                                .isRegisteredCall
+                                                .customerId(
+                                                  (_model.isRegisteredOutPut
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                )
+                                                .toString()
+                                            ..idNumber = _model
+                                                .idNumberTextFieldTextController
+                                                .text
+                                            ..idType =
+                                                _model.idTypeDropDownValue,
                                         );
+                                        safeSetState(() {});
+                                        _model.apiResultSendOTP =
+                                            await AuthAndRegisterGroup
+                                                .sendOTPToCustomerCall
+                                                .call(
+                                          msgId: functions.messageId(),
+                                          idNumber: FFAppState()
+                                              .registerationFormData
+                                              .idNumber,
+                                          idType: FFAppState()
+                                              .registerationFormData
+                                              .idType,
+                                          destination:
+                                              '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
+                                          destinationType: 'MOBILE_NUMBER',
+                                          operationType: 'REGISTER_DEVICE',
+                                        );
+
+                                        if ((_model
+                                                .apiResultSendOTP?.succeeded ??
+                                            true)) {
+                                          context.pushNamed(
+                                              'otp_does_not_exist_flow');
+                                        } else {
+                                          await actions.showToast(
+                                            FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText: 'خطأ',
+                                              enText: 'error',
+                                            ),
+                                          );
+                                        }
                                       }
                                     } else {
-                                      FFAppState()
-                                          .updateRegisterationFormDataStruct(
-                                        (e) => e
-                                          ..isRegisteredStatus = true
-                                          ..email = AuthAndRegisterGroup
-                                              .isRegisteredCall
-                                              .emailAddress(
-                                            (_model.isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''),
-                                          )
-                                          ..mobileNumber = AuthAndRegisterGroup
-                                              .isRegisteredCall
-                                              .mobileNumber(
-                                            (_model.isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''),
-                                          )
-                                          ..prefixMobile = AuthAndRegisterGroup
-                                              .isRegisteredCall
-                                              .mobileNumberPrefix(
-                                            (_model.isRegisteredOutPut
-                                                    ?.jsonBody ??
-                                                ''),
-                                          )
-                                          ..customerId = AuthAndRegisterGroup
-                                              .isRegisteredCall
-                                              .customerId(
-                                                (_model.isRegisteredOutPut
-                                                        ?.jsonBody ??
-                                                    ''),
-                                              )
-                                              .toString()
-                                          ..idNumber = _model
-                                              .idNumberTextFieldTextController
-                                              .text
-                                          ..idType = _model.idTypeDropDownValue,
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش',
+                                          enText:
+                                              'Your account is closed, please contact neocash.',
+                                        ),
                                       );
-                                      safeSetState(() {});
-                                      _model.apiResultSendOTP =
-                                          await AuthAndRegisterGroup
-                                              .sendOTPToCustomerCall
-                                              .call(
-                                        msgId: functions.messageId(),
-                                        idNumber: FFAppState()
-                                            .registerationFormData
-                                            .idNumber,
-                                        idType: FFAppState()
-                                            .registerationFormData
-                                            .idType,
-                                        destination:
-                                            '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
-                                        destinationType: 'MOBILE_NUMBER',
-                                        operationType: 'REGISTER_DEVICE',
-                                      );
-
-                                      if ((_model.apiResultSendOTP?.succeeded ??
-                                          true)) {
-                                        context.pushNamed(
-                                            'otp_does_not_exist_flow');
-                                      } else {
-                                        await actions.showToast(
-                                          FFLocalizations.of(context)
-                                              .getVariableText(
-                                            arText: 'خطأ',
-                                            enText: 'error',
-                                          ),
-                                        );
-                                      }
                                     }
                                   } else {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText:
-                                            'تم إغلاق حسابك، يرجى الاتصال بـ نيوكاش',
-                                        enText:
-                                            'Your account is closed, please contact neocash.',
-                                      ),
+                                    FFAppState()
+                                        .updateRegisterationFormDataStruct(
+                                      (e) => e
+                                        ..isRegisteredStatus = false
+                                        ..customerId = AuthAndRegisterGroup
+                                            .isRegisteredCall
+                                            .customerId(
+                                              (_model.isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            )
+                                            .toString(),
                                     );
+                                    safeSetState(() {});
+
+                                    context.pushNamed('phone_number');
                                   }
                                 } else {
-                                  FFAppState()
-                                      .updateRegisterationFormDataStruct(
-                                    (e) => e
-                                      ..isRegisteredStatus = false
-                                      ..customerId =
-                                          AuthAndRegisterGroup.isRegisteredCall
-                                              .customerId(
-                                                (_model.isRegisteredOutPut
-                                                        ?.jsonBody ??
-                                                    ''),
-                                              )
-                                              .toString(),
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'error',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                    ),
                                   );
-                                  safeSetState(() {});
-
-                                  context.pushNamed('phone_number');
                                 }
                               } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'error',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    duration: const Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).secondary,
+                                await actions.showToast(
+                                  FFLocalizations.of(context).getVariableText(
+                                    arText: 'عذرا لا يوجد اتصال بالانترنت',
+                                    enText: 'Sorry, no internet connection.',
                                   ),
                                 );
                               }
                             } else {
                               await actions.showToast(
                                 FFLocalizations.of(context).getVariableText(
-                                  arText: 'عذرا لا يوجد اتصال بالانترنت',
-                                  enText: 'Sorry, no internet connection.',
+                                  arText: 'الرجاء ادخال رقم صالح  ',
+                                  enText: 'Please enter a valid number',
                                 ),
                               );
                             }
-                          } else {
-                            await actions.showToast(
-                              FFLocalizations.of(context).getVariableText(
-                                arText: 'الرجاء ادخال رقم صالح  ',
-                                enText: 'Please enter a valid number',
-                              ),
-                            );
-                          }
 
-                          safeSetState(() {});
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'qge4504d' /* التالي */,
-                        ),
-                        options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 0.9,
-                          height: MediaQuery.sizeOf(context).height * 0.06,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleSmallFamily,
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleSmallFamily),
-                              ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                            safeSetState(() {});
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'qge4504d' /* التالي */,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          options: FFButtonOptions(
+                            width: MediaQuery.sizeOf(context).width * 0.9,
+                            height: MediaQuery.sizeOf(context).height * 0.06,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
+                                ),
+                            elevation: 3.0,
+                            borderSide: const BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
