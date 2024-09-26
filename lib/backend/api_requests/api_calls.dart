@@ -62,12 +62,12 @@ class IsRegisteredCall {
       headers: {
         'Accept-Language': '$acceptLanguage',
         'applicationType': 'BP-V1.0',
+        'Device-Serial': '$deviceSerial',
       },
       params: {
         'msgId': msgId,
         'idNumber': idNumber,
         'idType': idType,
-        'deviceSerial': deviceSerial,
       },
       returnBody: true,
       encodeBodyUtf8: false,
