@@ -98,12 +98,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'otp_does_not_exist_flow',
               path: 'otpDoesNotExistFlow',
-              builder: (context, params) => OtpDoesNotExistFlowWidget(
-                navigateFrom: params.getParam(
-                  'navigateFrom',
-                  ParamType.String,
-                ),
-              ),
+              builder: (context, params) => const OtpDoesNotExistFlowWidget(),
             ),
             FFRoute(
               name: 'card_details',

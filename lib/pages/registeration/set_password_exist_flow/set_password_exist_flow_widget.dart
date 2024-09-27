@@ -1,10 +1,10 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/otp_session_expired_component/otp_session_expired_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -79,7 +79,11 @@ class _SetPasswordExistFlowWidgetState
                     size: 32.0,
                   ),
                   onPressed: () async {
-                    context.pushNamed('phone_number');
+                    if (FFAppState().AppSettings.routeNavigationg == '0') {
+                      context.pushNamed('enter_id_page_forgot_password');
+                    } else {
+                      context.pushNamed('phone_number');
+                    }
                   },
                 ),
                 Expanded(
@@ -712,6 +716,13 @@ class _SetPasswordExistFlowWidgetState
                                                         'Your device has been successfully registered.',
                                                   ),
                                                 );
+                                                // clear  the navigation action
+                                                FFAppState()
+                                                    .updateAppSettingsStruct(
+                                                  (e) =>
+                                                      e..routeNavigationg = '',
+                                                );
+                                                safeSetState(() {});
 
                                                 context.pushNamed('login');
                                               } else {
@@ -916,6 +927,13 @@ class _SetPasswordExistFlowWidgetState
                                                         'Your device has been successfully registered.',
                                                   ),
                                                 );
+                                                // clear  the navigation action
+                                                FFAppState()
+                                                    .updateAppSettingsStruct(
+                                                  (e) =>
+                                                      e..routeNavigationg = '',
+                                                );
+                                                safeSetState(() {});
 
                                                 context.pushNamed('login');
                                               } else {
