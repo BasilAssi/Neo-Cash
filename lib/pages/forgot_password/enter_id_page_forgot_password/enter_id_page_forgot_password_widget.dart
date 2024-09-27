@@ -523,6 +523,16 @@ class _EnterIdPageForgotPasswordWidgetState
                                         if ((_model
                                                 .apiResultSendOTP?.succeeded ??
                                             true)) {
+                                          // fromExistFlow
+                                          //
+                                          // used for manage the route
+                                          // in set password exist flow
+                                          // if value equal 0  its from here
+                                          FFAppState().updateAppSettingsStruct(
+                                            (e) => e..routeNavigationg = '0',
+                                          );
+                                          safeSetState(() {});
+
                                           context.pushNamed(
                                               'otp_does_not_exist_flow');
                                         } else {

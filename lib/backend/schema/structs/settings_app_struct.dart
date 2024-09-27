@@ -12,11 +12,13 @@ class SettingsAppStruct extends FFFirebaseStruct {
     int? numberOfBiometricFailure,
     int? minCustomerAge,
     int? vCResendInSeconds,
+    String? routeNavigationg,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _biometricEnabled = biometricEnabled,
         _numberOfBiometricFailure = numberOfBiometricFailure,
         _minCustomerAge = minCustomerAge,
         _vCResendInSeconds = vCResendInSeconds,
+        _routeNavigationg = routeNavigationg,
         super(firestoreUtilData);
 
   // "biometricEnabled" field.
@@ -56,6 +58,13 @@ class SettingsAppStruct extends FFFirebaseStruct {
 
   bool hasVCResendInSeconds() => _vCResendInSeconds != null;
 
+  // "routeNavigationg" field.
+  String? _routeNavigationg;
+  String get routeNavigationg => _routeNavigationg ?? '';
+  set routeNavigationg(String? val) => _routeNavigationg = val;
+
+  bool hasRouteNavigationg() => _routeNavigationg != null;
+
   static SettingsAppStruct fromMap(Map<String, dynamic> data) =>
       SettingsAppStruct(
         biometricEnabled: data['biometricEnabled'] as bool?,
@@ -63,6 +72,7 @@ class SettingsAppStruct extends FFFirebaseStruct {
             castToType<int>(data['numberOfBiometricFailure']),
         minCustomerAge: castToType<int>(data['minCustomerAge']),
         vCResendInSeconds: castToType<int>(data['VCResendInSeconds']),
+        routeNavigationg: data['routeNavigationg'] as String?,
       );
 
   static SettingsAppStruct? maybeFromMap(dynamic data) => data is Map
@@ -74,6 +84,7 @@ class SettingsAppStruct extends FFFirebaseStruct {
         'numberOfBiometricFailure': _numberOfBiometricFailure,
         'minCustomerAge': _minCustomerAge,
         'VCResendInSeconds': _vCResendInSeconds,
+        'routeNavigationg': _routeNavigationg,
       }.withoutNulls;
 
   @override
@@ -93,6 +104,10 @@ class SettingsAppStruct extends FFFirebaseStruct {
         'VCResendInSeconds': serializeParam(
           _vCResendInSeconds,
           ParamType.int,
+        ),
+        'routeNavigationg': serializeParam(
+          _routeNavigationg,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -118,6 +133,11 @@ class SettingsAppStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
+        routeNavigationg: deserializeParam(
+          data['routeNavigationg'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -129,7 +149,8 @@ class SettingsAppStruct extends FFFirebaseStruct {
         biometricEnabled == other.biometricEnabled &&
         numberOfBiometricFailure == other.numberOfBiometricFailure &&
         minCustomerAge == other.minCustomerAge &&
-        vCResendInSeconds == other.vCResendInSeconds;
+        vCResendInSeconds == other.vCResendInSeconds &&
+        routeNavigationg == other.routeNavigationg;
   }
 
   @override
@@ -137,7 +158,8 @@ class SettingsAppStruct extends FFFirebaseStruct {
         biometricEnabled,
         numberOfBiometricFailure,
         minCustomerAge,
-        vCResendInSeconds
+        vCResendInSeconds,
+        routeNavigationg
       ]);
 }
 
@@ -146,6 +168,7 @@ SettingsAppStruct createSettingsAppStruct({
   int? numberOfBiometricFailure,
   int? minCustomerAge,
   int? vCResendInSeconds,
+  String? routeNavigationg,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -156,6 +179,7 @@ SettingsAppStruct createSettingsAppStruct({
       numberOfBiometricFailure: numberOfBiometricFailure,
       minCustomerAge: minCustomerAge,
       vCResendInSeconds: vCResendInSeconds,
+      routeNavigationg: routeNavigationg,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
