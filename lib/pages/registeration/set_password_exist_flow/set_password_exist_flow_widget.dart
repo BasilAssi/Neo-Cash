@@ -59,7 +59,11 @@ class _SetPasswordExistFlowWidgetState
       onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
         onWillPop: () async {
-          context.pushNamed('phone_number');
+          if (FFAppState().AppSettings.routeNavigationg == '0') {
+            context.pushNamed('enter_id_page_forgot_password');
+          } else {
+            context.pushNamed('phone_number');
+          }
           return false;
         },
         child: Scaffold(
