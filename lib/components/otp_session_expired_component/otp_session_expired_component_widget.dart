@@ -12,7 +12,12 @@ export 'otp_session_expired_component_model.dart';
 
 class OtpSessionExpiredComponentWidget extends StatefulWidget {
   /// this component used  expired otp  ,  other errors
-  const OtpSessionExpiredComponentWidget({super.key});
+  const OtpSessionExpiredComponentWidget({
+    super.key,
+    required this.operationType,
+  });
+
+  final String? operationType;
 
   @override
   State<OtpSessionExpiredComponentWidget> createState() =>
@@ -122,7 +127,7 @@ class _OtpSessionExpiredComponentWidgetState
                                       destination:
                                           '${FFAppState().registerationFormData.prefixMobile}${FFAppState().registerationFormData.mobileNumber}',
                                       destinationType: 'MOBILE_NUMBER',
-                                      operationType: 'REGISTER_CUSTOMER',
+                                      operationType: widget.operationType,
                                       acceptLanguage:
                                           FFLocalizations.of(context)
                                               .getVariableText(
