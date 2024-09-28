@@ -98,7 +98,7 @@ class _SetPasswordExistFlowWidgetState
 
                       context.pushNamed('enter_id_page_forgot_password');
                     } else {
-                      context.pushNamed('phone_number');
+                      context.pushNamed('enter_id_page');
                     }
                   },
                 ),
