@@ -60,6 +60,10 @@ class _SetPasswordExistFlowWidgetState
       child: WillPopScope(
         onWillPop: () async {
           if (FFAppState().AppSettings.routeNavigationg == '0') {
+            FFAppState().updateAppSettingsStruct(
+                  (e) => e..routeNavigationg = '',
+            );
+            safeSetState(() {});
             context.pushNamed('enter_id_page_forgot_password');
           } else {
             context.pushNamed('phone_number');
