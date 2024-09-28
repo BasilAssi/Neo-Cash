@@ -773,7 +773,10 @@ class _SetPasswordExistFlowWidgetState
                                                             child: const SizedBox(
                                                               height: 300.0,
                                                               child:
-                                                                  OtpSessionExpiredComponentWidget(),
+                                                                  OtpSessionExpiredComponentWidget(
+                                                                operationType:
+                                                                    'REGISTER_DEVICE',
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
@@ -984,7 +987,10 @@ class _SetPasswordExistFlowWidgetState
                                                             child: const SizedBox(
                                                               height: 300.0,
                                                               child:
-                                                                  OtpSessionExpiredComponentWidget(),
+                                                                  OtpSessionExpiredComponentWidget(
+                                                                operationType:
+                                                                    'REGISTER_DEVICE',
+                                                              ),
                                                             ),
                                                           ),
                                                         ),

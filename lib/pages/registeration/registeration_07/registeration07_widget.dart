@@ -1460,7 +1460,10 @@ class _Registeration07WidgetState extends State<Registeration07Widget> {
                                                                     const SizedBox(
                                                                   height: 300.0,
                                                                   child:
-                                                                      OtpSessionExpiredComponentWidget(),
+                                                                      OtpSessionExpiredComponentWidget(
+                                                                    operationType:
+                                                                        'REGISTER_CUSTOMER',
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
