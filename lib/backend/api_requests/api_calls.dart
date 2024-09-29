@@ -480,7 +480,7 @@ class LOOKUPsAPIsCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'LOOK UPs APIs',
-      apiUrl: '$baseUrl/lookup/api/v1/list',
+      apiUrl: '$baseUrl/lookup/api/v1/listLookups',
       callType: ApiCallType.GET,
       headers: {
         'Accept-Language': '$acceptLanguage',
