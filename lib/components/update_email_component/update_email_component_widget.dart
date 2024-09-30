@@ -441,15 +441,30 @@ class _UpdateEmailComponentWidgetState
                                       );
                                     }
                                   } else {
-                                    await actions.showToast(
-                                      FFLocalizations.of(context)
-                                          .getVariableText(
-                                        arText:
-                                            'فشل تعديل الإيميل, يُرجى المحاولة مرة أخرى',
-                                        enText:
-                                            'Email modification failed, please try again',
-                                      ),
-                                    );
+                                    if (ResponseModelStruct.maybeFromMap((_model
+                                                    .apiResultSaveMyProfile
+                                                    ?.jsonBody ??
+                                                ''))
+                                            ?.code ==
+                                        '1520') {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText: 'الإيميل المدخل مسجل سابقا',
+                                          enText: 'Email is already registered',
+                                        ),
+                                      );
+                                    } else {
+                                      await actions.showToast(
+                                        FFLocalizations.of(context)
+                                            .getVariableText(
+                                          arText:
+                                              'فشل تعديل الإيميل, يُرجى المحاولة مرة أخرى',
+                                          enText:
+                                              'Email modification failed, please try again',
+                                        ),
+                                      );
+                                    }
                                   }
                                 } else {
                                   await actions.showToast(
