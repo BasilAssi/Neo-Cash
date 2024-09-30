@@ -350,8 +350,18 @@ class _EnterIdPageForgotPasswordWidgetState
                                           : '',
                                 );
                                 String? customerStatus = IsRegisteredCall().customerStatus(_model.isRegisteredOutPut?.jsonBody);
-                                if ((_model.isRegisteredOutPut?.succeeded ??
-                                    true)) {
+                                if ((ResponseModelStruct.maybeFromMap((_model
+                                    .isRegisteredOutPut
+                                    ?.jsonBody ??
+                                    ''))
+                                    ?.code ==
+                                    '00') ||
+                                    (ResponseModelStruct.maybeFromMap((_model
+                                        .isRegisteredOutPut
+                                        ?.jsonBody ??
+                                        ''))
+                                        ?.code ==
+                                        '1503')) {
                                   if (ResponseModelStruct.maybeFromMap((_model
                                                   .isRegisteredOutPut?.jsonBody ??
                                               ''))
