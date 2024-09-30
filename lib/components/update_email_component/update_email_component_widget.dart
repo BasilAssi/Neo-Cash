@@ -459,6 +459,7 @@ class _UpdateEmailComponentWidgetState
                                     ),
                                   );
                                 }
+                                print('apiResultSaveMyProfile ${_model.apiResultSaveMyProfile?.jsonBody}');
 
                                 safeSetState(() {});
                               },
