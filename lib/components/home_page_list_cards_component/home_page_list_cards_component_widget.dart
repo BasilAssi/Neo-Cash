@@ -401,6 +401,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                       ? cardListItem.isPhysical
                                       : false,
                                 );
+                                FFAppState().update(() {});
                                 FFAppState().updateAppSettingsStruct(
                                   (e) => e..numberOfBiometricFailure = 0,
                                 );
