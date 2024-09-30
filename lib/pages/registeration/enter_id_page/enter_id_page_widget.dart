@@ -371,12 +371,18 @@ class _EnterIdPageWidgetState extends State<EnterIdPageWidget> {
                                         : '',
                                   );
 
-                                  if (ResponseModelStruct.maybeFromMap((_model
-                                                  .isRegisteredOutPut
-                                                  ?.jsonBody ??
-                                              ''))
-                                          ?.code ==
-                                      '00') {
+                                  if ((ResponseModelStruct.maybeFromMap((_model
+                                                      .isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''))
+                                              ?.code ==
+                                          '00') ||
+                                      (ResponseModelStruct.maybeFromMap((_model
+                                                      .isRegisteredOutPut
+                                                      ?.jsonBody ??
+                                                  ''))
+                                              ?.code ==
+                                          '1503')) {
                                     if (ResponseModelStruct.maybeFromMap((_model
                                                     .isRegisteredOutPut
                                                     ?.jsonBody ??
