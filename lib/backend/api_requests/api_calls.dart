@@ -16,7 +16,7 @@ class AuthAndRegisterGroup {
     String? acceptLanguage = 'EN',
     String? msgId = '',
   }) =>
-      'http://185.57.122.61:7777';
+      'http://185.57.122.58:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',
@@ -712,7 +712,7 @@ class CardGroup {
     String? token = '',
     String? acceptLanguage = 'EN',
   }) =>
-      'http://185.57.122.61:7777';
+      'http://185.57.122.58:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',
