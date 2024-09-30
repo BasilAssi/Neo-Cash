@@ -1038,7 +1038,7 @@ THRU */
                                             FFAppState().updateCardDataStruct(
                                               (e) => e..status = 'ACTIVE',
                                             );
-                                            safeSetState(() {});
+                                            FFAppState().update(() {});
                                           } else {
                                             Navigator.pop(context);
                                             await actions.showToast(
