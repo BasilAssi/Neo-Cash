@@ -335,6 +335,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                               }
 
                               if (_model.biometricOutput == true) {
+                                print( 'cardListItem.status ${ cardListItem.status } ');
                                 FFAppState().cardData = CardDataStruct(
                                   cardNumber: cardListItem.hasCardNumber()
                                       ? cardListItem.cardNumber
@@ -406,7 +407,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                   (e) => e..numberOfBiometricFailure = 0,
                                 );
                                 FFAppState().update(() {});
-
+                                print( 'cardListItem.status after ${ FFAppState().cardData.status } ');
                                 context.pushNamed('card_details');
                               } else {
                                 FFAppState().updateAppSettingsStruct(
