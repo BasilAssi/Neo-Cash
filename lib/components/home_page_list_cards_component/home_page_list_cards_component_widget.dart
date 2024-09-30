@@ -315,6 +315,7 @@ class _HomePageListCardsComponentWidgetState
                                       ? cardListItem.isPhysical
                                       : false,
                                 );
+                                FFAppState().update(() {});
                                 FFAppState().updateAppSettingsStruct(
                                   (e) => e..numberOfBiometricFailure = 0,
                                 );
