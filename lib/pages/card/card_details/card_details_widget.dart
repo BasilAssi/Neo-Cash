@@ -36,10 +36,6 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> with WidgetsBindi
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      FFAppState().updateCardDataStruct(
-        (e) => e..status = FFAppState().cardData.status,
-      );
-      FFAppState().update(() {});
       _model.isNetworkAvailable = await actions.isNetworkAvailable();
       if (_model.isNetworkAvailable == true) {
         _model.apiResultListCards = await CardGroup.listCardsCall.call(
