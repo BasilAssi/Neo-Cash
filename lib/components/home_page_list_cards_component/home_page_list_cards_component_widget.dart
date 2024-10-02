@@ -12,6 +12,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
@@ -237,14 +238,19 @@ class _HomePageListCardsComponentWidgetState
                               bool canCheckBiometrics =
                                   await localAuth.canCheckBiometrics;
                               if (isBiometricSupported && canCheckBiometrics) {
-                                _model.biometricOutput =
-                                    await localAuth.authenticate(
-                                        localizedReason:
-                                            FFLocalizations.of(context).getText(
-                                          'sidsk0va' /* تأكيد البصمة للاستمرار */,
-                                        ),
-                                        options: const AuthenticationOptions(
-                                            biometricOnly: true));
+                                try {
+                                  _model.biometricOutput =
+                                      await localAuth.authenticate(
+                                          localizedReason:
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                            'sidsk0va' /* تأكيد البصمة للاستمرار */,
+                                          ),
+                                          options: const AuthenticationOptions(
+                                              biometricOnly: true));
+                                } on PlatformException {
+                                  _model.biometricOutput = false;
+                                }
                                 safeSetState(() {});
                               }
 

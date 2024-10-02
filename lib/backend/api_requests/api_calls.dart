@@ -1047,7 +1047,7 @@ class ValidateCustomerPINCall {
       },
       params: {
         'msgId': msgId,
-        'pin': cardToken,
+        'pin': pin,
       },
       returnBody: true,
       encodeBodyUtf8: false,
