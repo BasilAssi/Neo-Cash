@@ -1054,19 +1054,22 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .canCheckBiometrics;
                                                       if (isBiometricSupported &&
                                                           canCheckBiometrics) {
-                                                        _model.biometricOutput1 = await localAuth
-                                                            .authenticate(
-                                                                localizedReason:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'q9ks8jtt' /* تسجيل الدخول من خلال خاصية الت... */,
-                                                                ),
-                                                                options: const AuthenticationOptions(
-                                                                    biometricOnly:
-                                                                        true,
-                                                                stickyAuth: false,));
-
+                                                        try {
+                                                          _model.biometricOutput1 = await localAuth
+                                                              .authenticate(
+                                                                  localizedReason:
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                    'q9ks8jtt' /* تسجيل الدخول من خلال خاصية الت... */,
+                                                                  ),
+                                                                  options: const AuthenticationOptions(
+                                                                      biometricOnly:
+                                                                          true));
+                                                        } on PlatformException {
+                                                          _model.biometricOutput1 =
+                                                              false;
+                                                        }
                                                         safeSetState(() {});
                                                       }
                                                       print('logout pressed before ${_model.biometricOutput1}');
