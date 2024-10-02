@@ -13,6 +13,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
@@ -163,8 +164,9 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                 }
 
                 if (cardList.isNotEmpty) {
-                  if(FFAppState().cardData != null ) {
+                  if(FFAppState().cardData == null || FFAppState().cardData == '') {
                     var cardListItem = cardList[0]; // Example: Use the first card for demonstration
+
                     // Update FFAppState with card data
                     FFAppState().cardData = CardDataStruct(
                       cardNumber: cardListItem.hasCardNumber() ? cardListItem
