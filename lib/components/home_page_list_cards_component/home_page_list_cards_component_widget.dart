@@ -322,6 +322,7 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                               bool canCheckBiometrics =
                                   await localAuth.canCheckBiometrics;
                               if (isBiometricSupported && canCheckBiometrics) {
+                                try{
                                 _model.biometricOutput =
                                     await localAuth.authenticate(
                                         localizedReason:
@@ -333,6 +334,9 @@ print('swipeableStackListCardsResponse ${swipeableStackListCardsResponse.jsonBod
                                           stickyAuth: false,
                                         sensitiveTransaction: true,
                                         useErrorDialogs: true));
+                                } on PlatformException {
+                                  _model.biometricOutput = false;
+                                }
                                 safeSetState(() {});
                               }
 
