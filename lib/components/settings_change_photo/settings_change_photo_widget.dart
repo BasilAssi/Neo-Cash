@@ -259,116 +259,161 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                           await actions.isNetworkAvailable();
                                       if (_model.isNetworkAvailableOutput ==
                                           true) {
-                                        // please add documentTypeId
-                                        _model.apiResultUploadDocument =
+                                        _model.apiResultLookups =
                                             await AuthAndRegisterGroup
-                                                .uploadDocumentCall
+                                                .lOOKUPsAPIsCall
                                                 .call(
-                                          customerId: FFAppState()
-                                              .AuthenticatedUser
-                                              .encodedId,
-                                          file: _model.uploadedLocalFile,
                                           msgId: functions.messageId(),
-                                          documentTypeId: 'NA==',
-                                          forceUpload: 'false',
                                           moduleType: 'PROFILE_PICTURE',
+                                          type: 'DOCUMENT_TYPE',
                                         );
 
-                                        if ((_model.apiResultUploadDocument
-                                                ?.succeeded ??
-                                            true)) {
-                                          if ((ResponseModelStruct.maybeFromMap(
-                                                          (_model.apiResultUploadDocument
-                                                                  ?.jsonBody ??
-                                                              ''))
-                                                      ?.code ==
-                                                  '00') ||
-                                              (ResponseModelStruct.maybeFromMap(
-                                                          (_model.apiResultUploadDocument
-                                                                  ?.jsonBody ??
-                                                              ''))
-                                                      ?.hasCode() ==
-                                                  false)) {
-                                            _model.apiResultSaveMyProfile =
-                                                await CardGroup
-                                                    .saveMyProfileCall
-                                                    .call(
-                                              deviceSerial: FFAppState()
-                                                  .deviceInformation
-                                                  .serial,
-                                              msgId: functions.messageId(),
-                                              token: FFAppState()
-                                                  .AuthenticatedUser
-                                                  .accessToken,
-                                              acceptLanguage:
-                                                  FFLocalizations.of(context)
-                                                      .getVariableText(
-                                                arText: 'AR',
-                                                enText: 'EN',
-                                              ),
-                                            );
+                                        if (ResponseModelStruct.maybeFromMap(
+                                                    (_model.apiResultLookups
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                ?.code ==
+                                            '00') {
+                                          // please add documentTypeId
+                                          _model.apiResultUploadDocument =
+                                              await AuthAndRegisterGroup
+                                                  .uploadDocumentCall
+                                                  .call(
+                                            customerId: FFAppState()
+                                                .AuthenticatedUser
+                                                .encodedId,
+                                            file: _model.uploadedLocalFile,
+                                            msgId: functions.messageId(),
+                                            documentTypeId: AuthAndRegisterGroup
+                                                .lOOKUPsAPIsCall
+                                                .documentTypeId(
+                                              (_model.apiResultLookups
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            ),
+                                            forceUpload: 'false',
+                                            moduleType: 'PROFILE_PICTURE',
+                                          );
 
-                                            if ((_model.apiResultSaveMyProfile
-                                                    ?.succeeded ??
-                                                true)) {
-                                              if (ResponseModelStruct
-                                                          .maybeFromMap((_model
-                                                                  .apiResultSaveMyProfile
-                                                                  ?.jsonBody ??
-                                                              ''))
-                                                      ?.code ==
-                                                  '00') {
-                                                _model.isRegistedOutPut =
-                                                    await AuthAndRegisterGroup
-                                                        .isRegisteredCall
-                                                        .call(
-                                                  idType: FFAppState()
-                                                      .AuthenticatedUser
-                                                      .idType,
-                                                  msgId: functions.messageId(),
-                                                  idNumber: FFAppState()
-                                                      .AuthenticatedUser
-                                                      .idNumber,
-                                                  deviceSerial: FFAppState()
-                                                      .deviceInformation
-                                                      .serial,
-                                                  acceptLanguage:
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getVariableText(
-                                                    arText: 'AR',
-                                                    enText: 'EN',
-                                                  ),
-                                                );
+                                          if ((_model.apiResultUploadDocument
+                                                  ?.succeeded ??
+                                              true)) {
+                                            if ((ResponseModelStruct.maybeFromMap(
+                                                            (_model.apiResultUploadDocument
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.code ==
+                                                    '00') ||
+                                                (ResponseModelStruct.maybeFromMap(
+                                                            (_model.apiResultUploadDocument
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        ?.hasCode() ==
+                                                    false)) {
+                                              _model.apiResultSaveMyProfile =
+                                                  await CardGroup
+                                                      .saveMyProfileCall
+                                                      .call(
+                                                deviceSerial: FFAppState()
+                                                    .deviceInformation
+                                                    .serial,
+                                                msgId: functions.messageId(),
+                                                token: FFAppState()
+                                                    .AuthenticatedUser
+                                                    .accessToken,
+                                                acceptLanguage:
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                  arText: 'AR',
+                                                  enText: 'EN',
+                                                ),
+                                              );
 
+                                              if ((_model.apiResultSaveMyProfile
+                                                      ?.succeeded ??
+                                                  true)) {
                                                 if (ResponseModelStruct
                                                             .maybeFromMap((_model
-                                                                    .isRegistedOutPut
+                                                                    .apiResultSaveMyProfile
                                                                     ?.jsonBody ??
                                                                 ''))
                                                         ?.code ==
                                                     '00') {
-                                                  FFAppState()
-                                                      .updateAuthenticatedUserStruct(
-                                                    (e) => e
-                                                      ..userProfile =
-                                                          '${FFAppConstants.baseURL}${functions.splitURL(AuthAndRegisterGroup.isRegisteredCall.photourl(
-                                                                (_model.isRegistedOutPut
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                              ).toString())}',
-                                                  );
-                                                  safeSetState(() {});
-                                                  await actions.showToast(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                      arText:
-                                                          'تم إضافة الصورة بنجاح',
-                                                      enText:
-                                                          'Image added successfully',
+                                                  _model.isRegistedOutPut =
+                                                      await AuthAndRegisterGroup
+                                                          .isRegisteredCall
+                                                          .call(
+                                                    idType: FFAppState()
+                                                        .AuthenticatedUser
+                                                        .idType,
+                                                    msgId:
+                                                        functions.messageId(),
+                                                    idNumber: FFAppState()
+                                                        .AuthenticatedUser
+                                                        .idNumber,
+                                                    deviceSerial: FFAppState()
+                                                        .deviceInformation
+                                                        .serial,
+                                                    acceptLanguage:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                      arText: 'AR',
+                                                      enText: 'EN',
                                                     ),
                                                   );
-                                                  Navigator.pop(context);
+
+                                                  if (ResponseModelStruct
+                                                              .maybeFromMap((_model
+                                                                      .isRegistedOutPut
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          ?.code ==
+                                                      '00') {
+                                                    FFAppState()
+                                                        .updateAuthenticatedUserStruct(
+                                                      (e) => e
+                                                        ..userProfile =
+                                                            '${FFAppConstants.baseURL}${functions.splitURL(AuthAndRegisterGroup.isRegisteredCall.photourl(
+                                                                  (_model.isRegistedOutPut
+                                                                          ?.jsonBody ??
+                                                                      ''),
+                                                                ).toString())}',
+                                                    );
+                                                    safeSetState(() {});
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'تم إضافة الصورة بنجاح',
+                                                        enText:
+                                                            'Image added successfully',
+                                                      ),
+                                                    );
+                                                    Navigator.pop(context);
+                                                  } else {
+                                                    safeSetState(() {
+                                                      _model.isDataUploading =
+                                                          false;
+                                                      _model.uploadedLocalFile =
+                                                          FFUploadedFile(
+                                                              bytes: Uint8List
+                                                                  .fromList(
+                                                                      []));
+                                                    });
+
+                                                    await actions.showToast(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                        arText:
+                                                            'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
+                                                        enText:
+                                                            'Failed to attach the photo. Please try again',
+                                                      ),
+                                                    );
+                                                  }
                                                 } else {
                                                   safeSetState(() {
                                                     _model.isDataUploading =
@@ -409,6 +454,25 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                                   ),
                                                 );
                                               }
+                                            } else {
+                                              safeSetState(() {
+                                                _model.isDataUploading = false;
+                                                _model.uploadedLocalFile =
+                                                    FFUploadedFile(
+                                                        bytes:
+                                                            Uint8List.fromList(
+                                                                []));
+                                              });
+
+                                              await actions.showToast(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                                  arText:
+                                                      'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
+                                                  enText:
+                                                      'Failed to attach the photo. Please try again',
+                                                ),
+                                              );
                                             }
                                           } else {
                                             safeSetState(() {
@@ -422,22 +486,12 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                             await actions.showToast(
                                               FFLocalizations.of(context)
                                                   .getVariableText(
-                                                arText:
-                                                    'فشل إرفاق الصورة. يُرجى المحاولة مرة أخرى',
-                                                enText:
-                                                    'Failed to attach the photo. Please try again',
+                                                arText: 'خطأ',
+                                                enText: 'Error',
                                               ),
                                             );
                                           }
                                         } else {
-                                          safeSetState(() {
-                                            _model.isDataUploading = false;
-                                            _model.uploadedLocalFile =
-                                                FFUploadedFile(
-                                                    bytes:
-                                                        Uint8List.fromList([]));
-                                          });
-
                                           await actions.showToast(
                                             FFLocalizations.of(context)
                                                 .getVariableText(

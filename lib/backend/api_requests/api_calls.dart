@@ -500,6 +500,11 @@ class LOOKUPsAPIsCall {
       alwaysAllowBody: false,
     );
   }
+
+  String? documentTypeId(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.records[:].encodedId''',
+      ));
 }
 
 class UploadDocumentCall {
