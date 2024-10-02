@@ -471,7 +471,7 @@ class ListCustomersCall {
 
 class LOOKUPsAPIsCall {
   Future<ApiCallResponse> call({
-    String? countryId = 'Mzk2MA==',
+    String? countryId = 'MQ==',
     String? cityId = '',
     String? type = '',
     String? moduleType = '',
