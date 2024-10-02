@@ -9,6 +9,8 @@ class SettingsChangePhotoModel
 
   // Stores action output result for [Custom Action - isNetworkAvailable] action in Button widget.
   bool? isNetworkAvailableOutput;
+  // Stores action output result for [Backend Call - API (LOOK UPs APIs)] action in Button widget.
+  ApiCallResponse? apiResultLookups;
   // Stores action output result for [Backend Call - API (Upload Document)] action in Button widget.
   ApiCallResponse? apiResultUploadDocument;
   // Stores action output result for [Backend Call - API (Save My Profile)] action in Button widget.
