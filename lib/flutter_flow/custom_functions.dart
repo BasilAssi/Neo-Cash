@@ -351,35 +351,52 @@ int? convertMilliSecondsToSeconds(String? seconds) {
 }
 
 String? lexicographicalOrder(
-  String? value1,
-  String? value2,
-  String? value3,
+  dynamic params,
+  String? body,
+  String? xAuth,
 ) {
-  // If value3 is null, set it to an empty string
-  value3 ??= '';
 
-  // Check if all values are null (excluding value3 since it's defaulted to empty string)
-  if (value1 == null && value2 == null && value3.isEmpty) {
-    return null;
-  }
+    // Initialize an empty list to store the values
+    List<String> values = [];
 
-  // Put the values into a list, handling potential nulls
-  List<String?> values = [value1, value2, value3];
+    // Add params' values to the list
+    if (params != null && params is Map<String, dynamic>) {
+      values.addAll(params.values.map((e) => e.toString()));  // Convert values to string
+    }
+    print('Params values: $values');
 
-  // Custom lexicographical sort: Compare each pair manually
-  for (int i = 0; i < values.length - 1; i++) {
-    for (int j = i + 1; j < values.length; j++) {
-      if (values[i] != null &&
-          values[j] != null &&
-          values[i]!.compareTo(values[j]!) > 0) {
-        // Swap if value[i] is lexicographically greater than value[j]
-        String? temp = values[i];
-        values[i] = values[j];
-        values[j] = temp;
+    // Parse body if not null and add its values to the list
+    if (body != null && body.isNotEmpty) {
+      Map<String, dynamic> bodyMap = jsonDecode(body);
+      values.addAll(bodyMap.values.map((e) => e.toString()));
+    }
+    print('After adding body values: $values');
+
+    // Add xAuth to the list, if not null
+    if (xAuth != null) {
+      values.add(xAuth);
+    }
+    print('After adding xAuth: $values');
+
+    // If the values list is empty, return null
+    if (values.isEmpty) {
+      return null;
+    }
+
+    // Custom lexicographical sort
+    for (int i = 0; i < values.length - 1; i++) {
+      for (int j = i + 1; j < values.length; j++) {
+        if (values[i].compareTo(values[j]) > 0) {
+          // Swap if values[i] is lexicographically greater than values[j]
+          String temp = values[i];
+          values[i] = values[j];
+          values[j] = temp;
+        }
       }
     }
+    print('Sorted values: ${values.join()}');
+
+    // Concatenate all sorted values and return
+    return values.join();
   }
 
-  // Filter out nulls and concatenate the non-null values
-  return values.where((v) => v != null).join();
-}
