@@ -16,6 +16,8 @@ class AuthAndRegisterGroup {
   static String getBaseUrl({
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) =>
       'http://185.57.122.61:7777';
   static Map<String, String> headers = {
@@ -50,10 +52,14 @@ class IsRegisteredCall {
     String? deviceSerial = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -122,10 +128,14 @@ class SendOTPToCustomerCall {
     String? operationType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -172,10 +182,14 @@ class VerifyOTPCall {
     String? setConfirmed = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -219,10 +233,14 @@ class SendToApprovalCall {
     String? idType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -303,10 +321,14 @@ class RegisterACustomerCall {
     String? pin = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -407,10 +429,14 @@ class RegisterACustomerDeviceCall {
     String? emailAddress = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -460,10 +486,14 @@ class ListCustomersCall {
   Future<ApiCallResponse> call({
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -498,10 +528,14 @@ class LOOKUPsAPIsCall {
     String? moduleType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -545,10 +579,14 @@ class UploadDocumentCall {
     String? moduleType = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -588,10 +626,14 @@ class LoginCall {
     String? fcmToken = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -631,10 +673,14 @@ class DeleteUploadedDocumentCall {
     String? deleteURL = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
@@ -668,10 +714,14 @@ class ForgotPasswordCall {
     String? deviceSerial = '',
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -711,10 +761,14 @@ class SystemSettingsCall {
   Future<ApiCallResponse> call({
     String? acceptLanguage = 'EN',
     String? msgId = '',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = AuthAndRegisterGroup.getBaseUrl(
       acceptLanguage: acceptLanguage,
       msgId: msgId,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     return FFApiInterceptor.makeApiCall(
