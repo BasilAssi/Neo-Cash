@@ -19,7 +19,7 @@ Future<String?> calculateHmacSHA512(
   // Add your function code here!
 
   String? apiSecretKey =
-      '1a3b5d7f9h0j2k4m6n8pAqRsTuVwYxEzbc131400-ad21-422c-89b7-120091bdb5b0$nonce';
+      '8309E831A3C7F0B657C60BD21B1CDF3BA6276B4B05A89136866466E045BCC1AC$nonce';
   if (concatenatedValues == null) return null;
   var hmacKey = Uint8List.fromList(
       md5.convert(utf8.encode(apiSecretKey)).bytes); // Apply MD5 encoding

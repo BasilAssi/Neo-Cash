@@ -33,8 +33,6 @@ void main() async {
 
   String? fcmToken= await actions.getFCMToken();
   print('fcmToken ${fcmToken}');
-  String? signature = await actions.calculateHmacSHA512('05990009991177bc131400-ad21-422c-89b7-120091bdb5b0eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZUTVdcL1RRQmk5aEZRRkJaVUVSRVVSWmFGc3l');
-  print('signature ${signature}');
 
 
   final notificationService = NotificationService();
