@@ -349,3 +349,37 @@ int? convertMilliSecondsToSeconds(String? seconds) {
   }
   return int.tryParse(seconds) != null ? int.parse(seconds) * 1000 : null;
 }
+
+String? lexicographicalOrder(
+  String? value1,
+  String? value2,
+  String? value3,
+) {
+  // If value3 is null, set it to an empty string
+  value3 ??= '';
+
+  // Check if all values are null (excluding value3 since it's defaulted to empty string)
+  if (value1 == null && value2 == null && value3.isEmpty) {
+    return null;
+  }
+
+  // Put the values into a list, handling potential nulls
+  List<String?> values = [value1, value2, value3];
+
+  // Custom lexicographical sort: Compare each pair manually
+  for (int i = 0; i < values.length - 1; i++) {
+    for (int j = i + 1; j < values.length; j++) {
+      if (values[i] != null &&
+          values[j] != null &&
+          values[i]!.compareTo(values[j]!) > 0) {
+        // Swap if value[i] is lexicographically greater than value[j]
+        String? temp = values[i];
+        values[i] = values[j];
+        values[j] = temp;
+      }
+    }
+  }
+
+  // Filter out nulls and concatenate the non-null values
+  return values.where((v) => v != null).join();
+}
