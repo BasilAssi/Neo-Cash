@@ -351,35 +351,46 @@ int? convertMilliSecondsToSeconds(String? seconds) {
 }
 
 String? lexicographicalOrder(
-  String? value1,
-  String? value2,
-  String? value3,
+  dynamic params,
+  String? body,
+  String? xAuth,
 ) {
-  // If value3 is null, set it to an empty string
-  value3 ??= '';
+  List<String> values = [];
 
-  // Check if all values are null (excluding value3 since it's defaulted to empty string)
-  if (value1 == null && value2 == null && value3.isEmpty) {
+  // Add params' values to the list
+  if (params != null && params is Map<String, dynamic>) {
+    values.addAll(
+        params.values.map((e) => e.toString())); // Convert values to string
+  }
+
+  // Parse body if not null and add its values to the list
+  if (body != null && body.isNotEmpty) {
+    Map<String, dynamic> bodyMap = jsonDecode(body);
+    values.addAll(bodyMap.values.map((e) => e.toString()));
+  }
+
+  // Add xAuth to the list, if not null
+  if (xAuth != null) {
+    values.add(xAuth);
+  }
+
+  // If the values list is empty, return null
+  if (values.isEmpty) {
     return null;
   }
 
-  // Put the values into a list, handling potential nulls
-  List<String?> values = [value1, value2, value3];
-
-  // Custom lexicographical sort: Compare each pair manually
+  // Custom lexicographical sort
   for (int i = 0; i < values.length - 1; i++) {
     for (int j = i + 1; j < values.length; j++) {
-      if (values[i] != null &&
-          values[j] != null &&
-          values[i]!.compareTo(values[j]!) > 0) {
-        // Swap if value[i] is lexicographically greater than value[j]
-        String? temp = values[i];
+      if (values[i].compareTo(values[j]) > 0) {
+        // Swap if values[i] is lexicographically greater than values[j]
+        String temp = values[i];
         values[i] = values[j];
         values[j] = temp;
       }
     }
   }
 
-  // Filter out nulls and concatenate the non-null values
-  return values.where((v) => v != null).join();
+  // Concatenate all sorted values and return
+  return values.join();
 }
