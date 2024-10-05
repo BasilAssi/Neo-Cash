@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
+import 'interceptors.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
@@ -36,6 +37,10 @@ class AuthAndRegisterGroup {
   DeleteUploadedDocumentCall();
   static ForgotPasswordCall forgotPasswordCall = ForgotPasswordCall();
   static SystemSettingsCall systemSettingsCall = SystemSettingsCall();
+
+  static final interceptors = [
+    ExampleInterceptor(),
+  ];
 }
 
 class IsRegisteredCall {
@@ -51,30 +56,29 @@ class IsRegisteredCall {
       msgId: msgId,
     );
 
-    print('idNumber  $idNumber \n ');
-    print('idType  $idType \n ');
-    print('acceptLanguage  $acceptLanguage \n ');
-    print('msgId  $msgId \n ');
-    return ApiManager.instance.makeApiCall(
-      callName: 'isRegistered',
-      apiUrl: '$baseUrl/customer/api/v1/isRegistered',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'Device-Serial': '$deviceSerial',
-      },
-      params: {
-        'msgId': msgId,
-        'idNumber': idNumber,
-        'idType': idType,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'isRegistered',
+        apiUrl: '$baseUrl/customer/api/v1/isRegistered',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'Device-Serial': '$deviceSerial',
+        },
+        params: {
+          'msgId': msgId,
+          'idNumber': idNumber,
+          'idType': idType,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 
@@ -133,23 +137,26 @@ class SendOTPToCustomerCall {
   "destination": "$destination",
   "destinationType": "$destinationType"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Send OTP to customer',
-      apiUrl: '$baseUrl/customer/api/v1/sendOtp',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Send OTP to customer',
+        apiUrl: '$baseUrl/customer/api/v1/sendOtp',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -182,23 +189,26 @@ class VerifyOTPCall {
   "otp":"$otp",
   "setConfirmed":"$setConfirmed"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Verify OTP',
-      apiUrl: '$baseUrl/customer/api/v1/verifyOtp',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Verify OTP',
+        apiUrl: '$baseUrl/customer/api/v1/verifyOtp',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -221,24 +231,26 @@ class SendToApprovalCall {
   "idNumber": "$idNumber",
   "idType": "$idType"
 }''';
-    print('ffApiRequestBody ${ffApiRequestBody}');
-    return ApiManager.instance.makeApiCall(
-      callName: 'Send to Approval',
-      apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Send to Approval',
+        apiUrl: '$baseUrl/customer/api/v1/sendToApproval',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -348,23 +360,26 @@ class RegisterACustomerCall {
   "password": "$password",
   "pin": "$pin"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Register a customer',
-      apiUrl: '$baseUrl/customer/api/v1/register',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Register a customer',
+        apiUrl: '$baseUrl/customer/api/v1/register',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 
@@ -417,23 +432,26 @@ class RegisterACustomerDeviceCall {
   "password": "$password",
   "pin": "$pin"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Register a customer Device',
-      apiUrl: '$baseUrl/customer/api/v1/registerDevice',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Register a customer Device',
+        apiUrl: '$baseUrl/customer/api/v1/registerDevice',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -448,23 +466,26 @@ class ListCustomersCall {
       msgId: msgId,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'list customers',
-      apiUrl: '$baseUrl/customer/api/v1/list',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {
-        'msgId': msgId,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'list customers',
+        apiUrl: '$baseUrl/customer/api/v1/list',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: {
+          'msgId': msgId,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -483,26 +504,29 @@ class LOOKUPsAPIsCall {
       msgId: msgId,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'LOOK UPs APIs',
-      apiUrl: '$baseUrl/lookup/api/v1/listLookups',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {
-        'countryId': countryId,
-        'cityId': cityId,
-        'type': type,
-        'moduleType': moduleType,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'LOOK UPs APIs',
+        apiUrl: '$baseUrl/lookup/api/v1/listLookups',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: {
+          'countryId': countryId,
+          'cityId': cityId,
+          'type': type,
+          'moduleType': moduleType,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 
@@ -526,28 +550,32 @@ class UploadDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-    return ApiManager.instance.makeApiCall(
-      callName: 'Upload Document',
-      apiUrl: '$baseUrl/customer/api/v1/uploadDocument',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {
-        'customerId': customerId,
-        'documentTypeId': documentTypeId,
-        'file': file,
-        'forceUpload': forceUpload,
-        'moduleType': moduleType,
-      },
-      bodyType: BodyType.MULTIPART,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Upload Document',
+        apiUrl: '$baseUrl/customer/api/v1/uploadDocument',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: {
+          'customerId': customerId,
+          'documentTypeId': documentTypeId,
+          'file': file,
+          'forceUpload': forceUpload,
+          'moduleType': moduleType,
+        },
+        bodyType: BodyType.MULTIPART,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -608,22 +636,25 @@ class DeleteUploadedDocumentCall {
       acceptLanguage: acceptLanguage,
       msgId: msgId,
     );
-    print('$baseUrl$deleteURL ${'$baseUrl$deleteURL'}');
-    return ApiManager.instance.makeApiCall(
-      callName: 'Delete Uploaded Document',
-      apiUrl: '$baseUrl$deleteURL',
-      callType: ApiCallType.DELETE,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Delete Uploaded Document',
+        apiUrl: '$baseUrl$deleteURL',
+        callType: ApiCallType.DELETE,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: const {},
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -651,24 +682,27 @@ class ForgotPasswordCall {
   "newPassword": "$newPassword",
   "otp": "$otp"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Forgot Password ',
-      apiUrl: '$baseUrl/customer/api/v1/forgotPassword',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'Device-Serial': '$deviceSerial',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Forgot Password ',
+        apiUrl: '$baseUrl/customer/api/v1/forgotPassword',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'Device-Serial': '$deviceSerial',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 }
@@ -683,23 +717,26 @@ class SystemSettingsCall {
       msgId: msgId,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'System Settings',
-      apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-      },
-      params: {
-        'msgId': msgId,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'System Settings',
+        apiUrl: '$baseUrl/lookup/api/v1/systemSettings',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+        },
+        params: {
+          'msgId': msgId,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      AuthAndRegisterGroup.interceptors,
     );
   }
 
