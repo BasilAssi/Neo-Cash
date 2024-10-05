@@ -355,48 +355,43 @@ String? lexicographicalOrder(
   String? body,
   String? xAuth,
 ) {
+  List<String> values = [];
 
-    // Initialize an empty list to store the values
-    List<String> values = [];
+  // Add params' values to the list
+  if (params != null && params is Map<String, dynamic>) {
+    values.addAll(
+        params.values.map((e) => e.toString())); // Convert values to string
+  }
 
-    // Add params' values to the list
-    if (params != null && params is Map<String, dynamic>) {
-      values.addAll(params.values.map((e) => e.toString()));  // Convert values to string
-    }
-    print('Params values: $values');
+  // Parse body if not null and add its values to the list
+  if (body != null && body.isNotEmpty) {
+    Map<String, dynamic> bodyMap = jsonDecode(body);
+    values.addAll(bodyMap.values.map((e) => e.toString()));
+  }
 
-    // Parse body if not null and add its values to the list
-    if (body != null && body.isNotEmpty) {
-      Map<String, dynamic> bodyMap = jsonDecode(body);
-      values.addAll(bodyMap.values.map((e) => e.toString()));
-    }
-    print('After adding body values: $values');
+  // Add xAuth to the list, if not null
+  if (xAuth != null) {
+    values.add(xAuth);
+  }
 
-    // Add xAuth to the list, if not null
-    if (xAuth != null) {
-      values.add(xAuth);
-    }
-    print('After adding xAuth: $values');
+  // If the values list is empty, return null
+  if (values.isEmpty) {
+    return null;
+  }
 
-    // If the values list is empty, return null
-    if (values.isEmpty) {
-      return null;
-    }
-
-    // Custom lexicographical sort
-    for (int i = 0; i < values.length - 1; i++) {
-      for (int j = i + 1; j < values.length; j++) {
-        if (values[i].compareTo(values[j]) > 0) {
-          // Swap if values[i] is lexicographically greater than values[j]
-          String temp = values[i];
-          values[i] = values[j];
-          values[j] = temp;
-        }
+  // Custom lexicographical sort
+  for (int i = 0; i < values.length - 1; i++) {
+    for (int j = i + 1; j < values.length; j++) {
+      if (values[i].compareTo(values[j]) > 0) {
+        // Swap if values[i] is lexicographically greater than values[j]
+        String temp = values[i];
+        values[i] = values[j];
+        values[j] = temp;
       }
     }
-    print('Sorted values: ${values.join()}');
-
-    // Concatenate all sorted values and return
-    return values.join();
   }
+
+  // Concatenate all sorted values and return
+  return values.join();
+}
 
