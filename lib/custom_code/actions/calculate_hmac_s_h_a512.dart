@@ -10,17 +10,20 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'dart:convert';
-import 'dart:typed_data';
-import 'package:crypto/crypto.dart';
-
-Future<String?> calculateHmacSHA512(String? concatenatedValues) async {
+Future<String?> calculateHmacSHA512(
+  String? concatenatedValues,
+  String? nonce,
+) async {
   // Add your function code here!
-  String? apiSecretKey = 'aaa';
+
+  String? apiSecretKey =
+      '1a3b5d7f9h0j2k4m6n8pAqRsTuVwYxEzbc131400-ad21-422c-89b7-120091bdb5b0$nonce';
   if (concatenatedValues == null) return null;
-  var hmac = Hmac(sha512, utf8.encode(apiSecretKey)); // Create HMAC with SHA512
+  var hmacKey = Uint8List.fromList(
+      md5.convert(utf8.encode(apiSecretKey)).bytes); // Apply MD5 encoding
+  var hmac = Hmac(sha512, hmacKey); // Create HMAC with SHA512
   var digest = hmac.convert(utf8.encode(concatenatedValues));
 
-  // Step 6: Convert the result to a hexadecimal string and return it (in lowercase)
-  return digest.toString().toLowerCase();
+  // Step 6: Convert the HMAC result to uppercase hexadecimal (base 16) string
+  return hex.encode(digest.bytes).toUpperCase();
 }

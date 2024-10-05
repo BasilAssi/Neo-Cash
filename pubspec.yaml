@@ -32,6 +32,7 @@ dependencies:
   cloud_firestore_web: 3.12.3
   collection: 1.18.0
   connectivity_plus: ^6.0.3
+  convert: ^3.0.0
   crypto: ^3.0.3
   csv: 6.0.0
   custom_date_range_picker: ^1.1.0
