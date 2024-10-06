@@ -75,6 +75,8 @@
     	<string>fetch</string>
     	<string>remote-notification</string>
     </array>
+	<key>PermissionGroupNotification</key>
+    <string>This app uses notifications to send you important updates and alerts.</string>
 
 
 	<key>UILaunchStoryboardName</key>
