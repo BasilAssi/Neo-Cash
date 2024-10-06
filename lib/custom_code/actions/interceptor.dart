@@ -31,6 +31,16 @@ class ExampleInterceptor extends FFApiInterceptor {
 
     // Perform any necessary calls or modifications to the [options] before
     // the API call is made.
+    String? concatenatedValues = await lexicographicalOrder(
+        options.params, options.body, options.headers['X-Auth-Token']);
+    String? nonce = options.callType == ApiCallType.GET
+        ? options.params['msgId']
+        : (options.body != null && options.body.isNotEmpty
+            ? jsonDecode(options.body)['msgId']
+            : null);
+
+    String? signature = await calculateHmacSHA512(concatenatedValues, nonce);
+    options.headers['Authorization'] = 'HmacSHA512_O $signature';
     return options;
   }
 
