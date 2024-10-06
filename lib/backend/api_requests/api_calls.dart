@@ -23,6 +23,8 @@ class AuthAndRegisterGroup {
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',
+    'Client-Type': '[Client-Type]',
+    'Client-Version': '[Client-Version]',
   };
   static IsRegisteredCall isRegisteredCall = IsRegisteredCall();
   static SendOTPToCustomerCall sendOTPToCustomerCall = SendOTPToCustomerCall();
@@ -70,6 +72,8 @@ class IsRegisteredCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
           'Device-Serial': '$deviceSerial',
         },
         params: {
@@ -155,6 +159,8 @@ class SendOTPToCustomerCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         body: ffApiRequestBody,
@@ -211,6 +217,8 @@ class VerifyOTPCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         body: ffApiRequestBody,
@@ -257,6 +265,8 @@ class SendToApprovalCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         body: ffApiRequestBody,
@@ -390,6 +400,8 @@ class RegisterACustomerCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         body: ffApiRequestBody,
@@ -466,6 +478,8 @@ class RegisterACustomerDeviceCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         body: ffApiRequestBody,
@@ -504,6 +518,8 @@ class ListCustomersCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: {
           'msgId': msgId,
@@ -546,6 +562,8 @@ class LOOKUPsAPIsCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: {
           'countryId': countryId,
@@ -597,6 +615,8 @@ class UploadDocumentCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: {
           'customerId': customerId,
@@ -644,6 +664,8 @@ class LoginCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
           'Device-Serial': '$deviceSerial',
           'authorization':
               'Basic \${base64Encode(utf8.encode($mobileWithPrefix:$password))}',
@@ -691,6 +713,8 @@ class DeleteUploadedDocumentCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: const {},
         returnBody: true,
@@ -740,6 +764,8 @@ class ForgotPasswordCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
           'Device-Serial': '$deviceSerial',
         },
         params: const {},
@@ -779,6 +805,8 @@ class SystemSettingsCall {
         headers: {
           'Accept-Language': '$acceptLanguage',
           'applicationType': 'BP-V1.0',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
         },
         params: {
           'msgId': msgId,
