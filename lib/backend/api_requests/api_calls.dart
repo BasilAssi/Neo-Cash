@@ -418,9 +418,9 @@ class RegisterACustomerCall {
   }
 
   dynamic customerId(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].encodedId''',
-  );
+        response,
+        r'''$.records[:].encodedId''',
+      );
 }
 
 class RegisterACustomerDeviceCall {
@@ -685,9 +685,9 @@ class LoginCall {
   }
 
   dynamic code(dynamic response) => getJsonField(
-    response,
-    r'''$.code''',
-  );
+        response,
+        r'''$.code''',
+      );
 }
 
 class DeleteUploadedDocumentCall {
@@ -842,29 +842,37 @@ class CardGroup {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) =>
       'http://185.57.122.61:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',
     'X-Auth-Token': '[token]',
+    'Client-Type': '[Client-Type]',
+    'Client-Version': '[Client-Version]',
   };
   static ListCardsCall listCardsCall = ListCardsCall();
   static GetCustomerBalancesCall getCustomerBalancesCall =
-  GetCustomerBalancesCall();
+      GetCustomerBalancesCall();
   static GetCardAccountInfoCall getCardAccountInfoCall =
-  GetCardAccountInfoCall();
+      GetCardAccountInfoCall();
   static ListCardTransactionsCall listCardTransactionsCall =
-  ListCardTransactionsCall();
+      ListCardTransactionsCall();
   static ChangeCardStatusCall changeCardStatusCall = ChangeCardStatusCall();
   static GetCardPINCall getCardPINCall = GetCardPINCall();
   static ValidateCustomerPINCall validateCustomerPINCall =
-  ValidateCustomerPINCall();
+      ValidateCustomerPINCall();
   static ChangePasswordCall changePasswordCall = ChangePasswordCall();
   static ForgotDevicePinCall forgotDevicePinCall = ForgotDevicePinCall();
   static SaveMyProfileCall saveMyProfileCall = SaveMyProfileCall();
   static ListExchangeRateCall listExchangeRateCall = ListExchangeRateCall();
   static ListNotificationsCall listNotificationsCall = ListNotificationsCall();
+
+  static final interceptors = [
+    ExampleInterceptor(),
+  ];
 }
 
 class ListCardsCall {
@@ -875,73 +883,82 @@ class ListCardsCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'List Cards',
-      apiUrl: '$baseUrl/customer/api/v1/cardList',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'idNumber': idNumber,
-        'cardToken': cardToken,
-        'currencyCode': currencyCode,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'List Cards',
+        apiUrl: '$baseUrl/customer/api/v1/cardList',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'idNumber': idNumber,
+          'cardToken': cardToken,
+          'currencyCode': currencyCode,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 
   dynamic cardNumber(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].cardNumber''',
-  );
+        response,
+        r'''$.records[:].cardNumber''',
+      );
   dynamic currencyCode(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].currencyCode''',
-  );
+        response,
+        r'''$.records[:].currencyCode''',
+      );
   dynamic availableBalance(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].availableBalance''',
-  );
+        response,
+        r'''$.records[:].availableBalance''',
+      );
   dynamic cardCvc(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].cardCvc''',
-  );
+        response,
+        r'''$.records[:].cardCvc''',
+      );
   dynamic firstName(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].firstName''',
-  );
+        response,
+        r'''$.records[:].firstName''',
+      );
   dynamic middleName(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].middleName''',
-  );
+        response,
+        r'''$.records[:].middleName''',
+      );
   dynamic lastName(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].lastName''',
-  );
+        response,
+        r'''$.records[:].lastName''',
+      );
   dynamic nameOnCard(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].nameOnCard''',
-  );
+        response,
+        r'''$.records[:].nameOnCard''',
+      );
   dynamic expiryDate(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].expiryDate''',
-  );
+        response,
+        r'''$.records[:].expiryDate''',
+      );
 }
 
 class GetCustomerBalancesCall {
@@ -951,33 +968,42 @@ class GetCustomerBalancesCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'Get Customer Balances',
-      apiUrl: '$baseUrl/customer/api/v1/customerBalances',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'idNumber': idNumber,
-        'currencyCode': currencyCode,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Get Customer Balances',
+        apiUrl: '$baseUrl/customer/api/v1/customerBalances',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'idNumber': idNumber,
+          'currencyCode': currencyCode,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -988,43 +1014,52 @@ class GetCardAccountInfoCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'Get Card Account Info',
-      apiUrl: '$baseUrl/customer/api/v1/cardAccountInfo',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'cardToken': cardToken,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Get Card Account Info',
+        apiUrl: '$baseUrl/customer/api/v1/cardAccountInfo',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'cardToken': cardToken,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 
   dynamic cardBalance(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].availableBalance''',
-  );
+        response,
+        r'''$.records[:].availableBalance''',
+      );
   dynamic currencyCode(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].currencyCode''',
-  );
+        response,
+        r'''$.records[:].currencyCode''',
+      );
 }
 
 class ListCardTransactionsCall {
@@ -1035,36 +1070,43 @@ class ListCardTransactionsCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
-    print('ListCardTransactionsCall card token  ${cardToken}');
-    print('ListCardTransactionsCall dateFrom  ${dateFrom}');
-    print('ListCardTransactionsCall dateTo  ${dateTo}');
-    return ApiManager.instance.makeApiCall(
-      callName: 'List Card Transactions',
-      apiUrl: '$baseUrl/customer/api/v1/cardTransList',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'cardToken': cardToken,
-        'dateFrom': dateFrom,
-        'dateTo': dateTo,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'List Card Transactions',
+        apiUrl: '$baseUrl/customer/api/v1/cardTransList',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'cardToken': cardToken,
+          'dateFrom': dateFrom,
+          'dateTo': dateTo,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -1076,37 +1118,46 @@ class ChangeCardStatusCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
-    print(' ChangeCardStatusCall cardToken ${cardToken}');
+
     final ffApiRequestBody = '''
 {
   "msgId": "$msgId",
   "cardToken": "$cardToken",
   "status": "$status"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Change Card Status',
-      apiUrl: '$baseUrl/customer/api/v1/cardChangeStatus',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Change Card Status',
+        apiUrl: '$baseUrl/customer/api/v1/cardChangeStatus',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -1118,42 +1169,49 @@ class GetCardPINCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
-    print('cardToken ${cardToken}');
-    print('cardCvv2 ${cardCvv2}');
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'Get Card PIN',
-      apiUrl: '$baseUrl/customer/api/v1/cardPin',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'cardToken': cardToken,
-        'cardCvv2': cardCvv2,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Get Card PIN',
+        apiUrl: '$baseUrl/customer/api/v1/cardPin',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'cardToken': cardToken,
+          'cardCvv2': cardCvv2,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 
   dynamic pinBlock(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].pinBlock''',
-  );
+        response,
+        r'''$.records[:].pinBlock''',
+      );
 }
 
 class ValidateCustomerPINCall {
@@ -1163,40 +1221,49 @@ class ValidateCustomerPINCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'Validate Customer PIN',
-      apiUrl: '$baseUrl/customer/api/v1/validatePin',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-        'Device-Serial': '$deviceSerial',
-      },
-      params: {
-        'msgId': msgId,
-        'pin': pin,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Validate Customer PIN',
+        apiUrl: '$baseUrl/customer/api/v1/validatePin',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+          'Device-Serial': '$deviceSerial',
+        },
+        params: {
+          'msgId': msgId,
+          'pin': pin,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 
   dynamic pinBlock(dynamic response) => getJsonField(
-    response,
-    r'''$.records[:].pinBlock''',
-  );
+        response,
+        r'''$.records[:].pinBlock''',
+      );
 }
 
 class ChangePasswordCall {
@@ -1206,11 +1273,15 @@ class ChangePasswordCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -1219,24 +1290,29 @@ class ChangePasswordCall {
   "oldPassword": "$oldPassword",
   "newPassword": "$newPassword"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Change Password',
-      apiUrl: '$baseUrl/customer/api/v1/changePassword',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Change Password',
+        apiUrl: '$baseUrl/customer/api/v1/changePassword',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -1252,11 +1328,15 @@ class ForgotDevicePinCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -1269,24 +1349,29 @@ class ForgotDevicePinCall {
   "newPin": "$newPin",
   "otp": "$otp"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Forgot Device Pin',
-      apiUrl: '$baseUrl/customer/api/v1/forgotPin',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Forgot Device Pin',
+        apiUrl: '$baseUrl/customer/api/v1/forgotPin',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -1298,11 +1383,15 @@ class SaveMyProfileCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
     final ffApiRequestBody = '''
@@ -1310,25 +1399,30 @@ class SaveMyProfileCall {
   "msgId": "$msgId",
   "emailAddress": "$emailAddress"
 }''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Save My Profile',
-      apiUrl: '$baseUrl/customer/api/v1/saveMyProfile',
-      callType: ApiCallType.POST,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-        'Device-Serial': '$deviceSerial',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'Save My Profile',
+        apiUrl: '$baseUrl/customer/api/v1/saveMyProfile',
+        callType: ApiCallType.POST,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+          'Device-Serial': '$deviceSerial',
+        },
+        params: const {},
+        body: ffApiRequestBody,
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
@@ -1339,32 +1433,41 @@ class ListExchangeRateCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'List ExchangeRate',
-      apiUrl: '$baseUrl/lookup/api/v1/exchangeRate',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'exchangeRateDate': exchangeRateDate,
-        'msgId': msgId,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'List ExchangeRate',
+        apiUrl: '$baseUrl/lookup/api/v1/exchangeRate',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'exchangeRateDate': exchangeRateDate,
+          'msgId': msgId,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 
@@ -1382,34 +1485,43 @@ class ListNotificationsCall {
     String? msgId = '',
     String? token = '',
     String? acceptLanguage = 'EN',
+    String? clientType = 'CUS',
+    String? clientVersion = 'a1.0.0',
   }) async {
     final baseUrl = CardGroup.getBaseUrl(
       msgId: msgId,
       token: token,
       acceptLanguage: acceptLanguage,
+      clientType: clientType,
+      clientVersion: clientVersion,
     );
 
-    return ApiManager.instance.makeApiCall(
-      callName: 'List notifications',
-      apiUrl: '$baseUrl/notification/api/v1/listNotifications',
-      callType: ApiCallType.GET,
-      headers: {
-        'Accept-Language': '$acceptLanguage',
-        'applicationType': 'BP-V1.0',
-        'X-Auth-Token': '$token',
-      },
-      params: {
-        'msgId': msgId,
-        'title': title,
-        'body': body,
-        'channel': channel,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
+    return FFApiInterceptor.makeApiCall(
+      ApiCallOptions(
+        callName: 'List notifications',
+        apiUrl: '$baseUrl/notification/api/v1/listNotifications',
+        callType: ApiCallType.GET,
+        headers: {
+          'Accept-Language': '$acceptLanguage',
+          'applicationType': 'BP-V1.0',
+          'X-Auth-Token': '$token',
+          'Client-Type': '$clientType',
+          'Client-Version': '$clientVersion',
+        },
+        params: {
+          'msgId': msgId,
+          'title': title,
+          'body': body,
+          'channel': channel,
+        },
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        isStreamingApi: false,
+        alwaysAllowBody: false,
+      ),
+      CardGroup.interceptors,
     );
   }
 }
