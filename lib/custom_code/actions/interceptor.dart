@@ -18,26 +18,15 @@ class ExampleInterceptor extends FFApiInterceptor {
   Future<ApiCallOptions> onRequest({
     required ApiCallOptions options,
   }) async {
-
-    String? concatenatedValues = await lexicographicalOrder(options.params ,options.body , options.headers['X-Auth-Token']);
-    String? nonce = options.callType == ApiCallType.GET
-        ? options.params['msgId']
-        : (options.body != null && options.body.isNotEmpty
-        ? jsonDecode(options.body)['msgId']
-        : null);
-
-    String? signature = await calculateHmacSHA512(concatenatedValues,nonce );
-    options.headers['Authorization'] = 'HmacSHA512_O $signature'; // Correct way to add a single header key-value pair
-
     // Perform any necessary calls or modifications to the [options] before
     // the API call is made.
     String? concatenatedValues = await lexicographicalOrder(
         options.params, options.body, options.headers['X-Auth-Token']);
     String? nonce = options.callType == ApiCallType.GET
         ? options.params['msgId']
-        : (options.body != null && options.body.isNotEmpty
-            ? jsonDecode(options.body)['msgId']
-            : null);
+        : (options.body != null && options.body?.isNotEmpty == true
+        ? jsonDecode(options.body ?? '')['msgId']
+        : null);
 
     String? signature = await calculateHmacSHA512(concatenatedValues, nonce);
     options.headers['Authorization'] = 'HmacSHA512_O $signature';

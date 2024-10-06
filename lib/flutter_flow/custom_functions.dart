@@ -357,12 +357,14 @@ String? lexicographicalOrder(
 ) {
   List<String> values = [];
 
-  // Add params' values to the list
   if (params != null && params is Map<String, dynamic>) {
-    values.addAll(
-        params.values.map((e) => e.toString())); // Convert values to string
+    params.forEach((key, value) {
+      if (key != 'file') {
+        values.add(value.toString()); // Convert values to string and add to list
+      }
+    });
   }
-
+  print('values: $values');
   // Parse body if not null and add its values to the list
   if (body != null && body.isNotEmpty) {
     Map<String, dynamic> bodyMap = jsonDecode(body);

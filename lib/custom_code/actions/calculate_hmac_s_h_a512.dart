@@ -8,7 +8,10 @@ import 'index.dart'; // Imports other custom actions
 import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
 import 'package:convert/convert.dart'; // Import the convert package to handle hex encoding
-
+import 'dart:convert'; // For utf8 and jsonDecode
+import 'dart:typed_data'; // For Uint8List
+import 'package:crypto/crypto.dart'; // For HMAC, SHA512, and MD5
+import 'package:convert/convert.dart'; // For hex encoding
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 

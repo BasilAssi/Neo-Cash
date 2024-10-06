@@ -19,7 +19,7 @@ class AuthAndRegisterGroup {
     String? clientType = 'CUS',
     String? clientVersion = 'a1.0.0',
   }) =>
-      'http://185.57.122.61:7777';
+      'http://185.57.122.58:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',
@@ -557,7 +557,7 @@ class LOOKUPsAPIsCall {
     return FFApiInterceptor.makeApiCall(
       ApiCallOptions(
         callName: 'LOOK UPs APIs',
-        apiUrl: '$baseUrl/lookup/api/v1/listLookups',
+        apiUrl: '$baseUrl/lookup/api/v1/list',
         callType: ApiCallType.GET,
         headers: {
           'Accept-Language': '$acceptLanguage',
@@ -845,7 +845,7 @@ class CardGroup {
     String? clientType = 'CUS',
     String? clientVersion = 'a1.0.0',
   }) =>
-      'http://185.57.122.61:7777';
+      'http://185.57.122.58:7777';
   static Map<String, String> headers = {
     'Accept-Language': '[acceptLanguage]',
     'applicationType': 'BP-V1.0',

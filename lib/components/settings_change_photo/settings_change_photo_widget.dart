@@ -294,7 +294,7 @@ class _SettingsChangePhotoWidgetState extends State<SettingsChangePhotoWidget> {
                                             forceUpload: 'false',
                                             moduleType: 'PROFILE_PICTURE',
                                           );
-
+                                          print('_model.apiResultUploadDocument ${_model.apiResultUploadDocument?.jsonBody}');
                                           if ((_model.apiResultUploadDocument
                                                   ?.succeeded ??
                                               true)) {
