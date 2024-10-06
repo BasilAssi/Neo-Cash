@@ -13,4 +13,4 @@ export 'show_date_range_picker_action.dart' show showDateRangePickerAction;
 export 'get_f_c_m_token.dart' show getFCMToken;
 export 'save_to_gallary.dart' show saveToGallary;
 export 'calculate_hmac_s_h_a512.dart' show calculateHmacSHA512;
-export 'example_interceptor.dart' show exampleInterceptor;
+export 'interceptor.dart' show interceptor;
