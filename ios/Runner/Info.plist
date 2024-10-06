@@ -64,7 +64,8 @@
     <string>In order to upload data, this app requires permission to access the photo library.</string>
 	<key>NSFaceIDUsageDescription</key>
     <string>This app requires permissions to perform a biometric verification.</string>
-
+	<key>PermissionGroupNotification</key>
+    <string>This app uses notifications to send you important updates and alerts.</string>
 
 
 	<key>UILaunchStoryboardName</key>
