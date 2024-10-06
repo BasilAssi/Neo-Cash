@@ -2506,6 +2506,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
       'en': '',
     },
+    'mqcga6w0': {
+      'ar':
+          'This app uses notifications to send you important updates and alerts.',
+      'en': '',
+    },
     'ai9jriog': {
       'ar': '',
       'en': '',
