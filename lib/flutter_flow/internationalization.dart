@@ -153,7 +153,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mcpocoa4': {
       'ar': 'تغير اللغة الى English',
-      'en': 'Change Language to English',
+      'en': 'Change Language to Arabic',
     },
     'j8pno2ex': {
       'ar': 'تسجيل الخروج',
@@ -1748,11 +1748,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ff3upr4v': {
       'ar': 'كلمة المرور الحالية',
-      'en': 'New password',
+      'en': '  Current password',
     },
     'bpv1pkml': {
       'ar': 'كلمة المرور الجديدة',
-      'en': '',
+      'en': 'New password',
     },
     'xibhd1bs': {
       'ar': 'تأكيد كلمة المرور الجديدة',
@@ -1830,7 +1830,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xyv5l5tm': {
       'ar': 'كلمة المرور الحالية',
-      'en': '',
+      'en': 'Current Password',
     },
     'takmk9lm': {
       'ar': 'التالي',
@@ -1984,11 +1984,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'bgqb2ioh': {
       'ar': 'تأكيد رقم التلفون',
-      'en': '',
+      'en': 'Confirm Phone Number',
     },
     'qm1h1z55': {
       'ar': ' أرسلنالك رمز تحقق على تليفونك  رقم:  ',
-      'en': '',
+      'en': ' We have sent you a verification code on your phone number:   ',
     },
     '9rqdog66': {
       'ar': '\n',
@@ -2000,7 +2000,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fn6f3pzw': {
       'ar': '  الرجاء إدخال الرمز',
-      'en': '',
+      'en': ' Please enter the code',
     },
     'ucahdamy': {
       'ar': 'إعادة إرسال رمز التحقق',
@@ -2015,31 +2015,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'bvpaznti': {
       'ar': '  هويتك الشخصية',
-      'en': '',
+      'en': 'Your Personal ID',
     },
     'ot6z8cbr': {
       'ar': 'الرجاء اختيار نوع وثيقتك  الشخصية ',
-      'en': '',
+      'en': 'Please select your Identification Type',
     },
     '382qm4sy': {
       'ar': 'الهوية  الفلسطينية',
-      'en': '',
+      'en': 'Palestinian ID',
     },
     '1sxsz5bu': {
       'ar': 'هوية القدس',
-      'en': '',
+      'en': 'Jerusalem ID',
     },
     '7b0t6go8': {
       'ar': 'هوية 48',
-      'en': '',
+      'en': ' 48 ID',
     },
     'fti5wvz8': {
       'ar': 'جواز السفر',
-      'en': '',
+      'en': 'Passport',
     },
     '9mp5d3qd': {
       'ar': 'اختيار نوع الهوية ',
-      'en': '',
+      'en': 'Please enter your ID number correctly',
     },
     'vsmxky0m': {
       'ar': 'Search for an item...',
@@ -2047,15 +2047,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'at1quu1z': {
       'ar': 'الرجاء إدخال رقم الوثيقة بشكل صحيح',
-      'en': '',
+      'en': 'Please enter your ID number correctly',
     },
     'lonwiwbb': {
       'ar': ' رقم الوثيقة',
-      'en': '',
+      'en': 'ID number',
     },
     'qge4504d': {
       'ar': 'التالي',
-      'en': '',
+      'en': 'Next',
     },
     'od60cyt0': {
       'ar': 'الحقل لا يمكن ان يكون أقل من 10 خانات',
@@ -2082,11 +2082,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'q3n3vtoe': {
       'ar': 'تأكيد رقم التلفون',
-      'en': '',
+      'en': 'Confirm Phone Number',
     },
     'oqv7ut56': {
       'ar': ' أرسلنالك رمز تحقق على تليفونك  رقم:  ',
-      'en': '',
+      'en': ' We have sent you a verification code on your phone number:   ',
     },
     'wlxozkwp': {
       'ar': '\n',
@@ -2098,7 +2098,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o87lm0cu': {
       'ar': '  الرجاء إدخال الرمز',
-      'en': '',
+      'en': ' Please enter the code',
     },
     'uozvedle': {
       'ar': 'إعادة إرسال رمز التحقق',
@@ -2113,19 +2113,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '2sb6pvno': {
       'ar': 'تغيير كلمة المرور',
-      'en': '',
+      'en': 'Chnage password',
     },
     'edqpsq9u': {
       'ar': 'كلمة المرور الجديدة',
-      'en': '',
+      'en': 'New password',
     },
     'l3y5xzu3': {
       'ar': 'تأكيد كلمة المرور الجديدة',
-      'en': '',
+      'en': 'Confirm password',
     },
     'corv76m6': {
       'ar': 'تأكيد',
-      'en': '',
+      'en': 'Confirm ',
     },
     'kq8nfhqt': {
       'ar': 'Field is required',
@@ -2381,7 +2381,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'l9vp4tx5': {
       'ar': 'لا يوجد أي حركات ',
-      'en': '',
+      'en': 'There are no transactions.',
     },
   },
   // empty_list_of_notification
@@ -2489,7 +2489,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'mmcsxokt': {
       'ar': 'لا يوجد اسعار صرف ',
-      'en': '',
+      'en': 'There are no exchange rates.',
     },
   },
   // Miscellaneous
