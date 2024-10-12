@@ -328,6 +328,7 @@ class _UploadDocumentsComponentWidgetState
                     msgId: functions.messageId(),
                     documentTypeId: widget.encodedId,
                     forceUpload: 'false',
+                    moduleType: 'CUSTOMER_REGISTRATION',
                   );
 
                   if ((_model.apiResultUploadDocument?.succeeded ?? true)) {

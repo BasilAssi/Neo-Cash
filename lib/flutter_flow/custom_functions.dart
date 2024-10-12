@@ -197,13 +197,24 @@ String? spliteExpiryDate(String? expiryDate) {
   return '$month/$year';
 }
 
-String? addSpaceBtnCardNumber(String? cardNumber) {
+String? addSpaceBtnCardNumber(
+  String? cardNumber,
+  String? language,
+) {
   // add space between card number  every 4 characther  401242123226521 must be 4012 5421 2322 6521
   if (cardNumber == null || cardNumber.isEmpty) {
     return '';
   }
   final regex = RegExp(r'.{1,4}');
-  return regex.allMatches(cardNumber).map((match) => match.group(0)).join(' ');
+  String spacedCardNumber =
+      regex.allMatches(cardNumber).map((match) => match.group(0)).join(' ');
+
+  // Reverse the string if the language is Arabic ('ar')
+  if (language == 'ar') {
+    spacedCardNumber = spacedCardNumber.split('').reversed.join('');
+  }
+
+  return spacedCardNumber;
 }
 
 String? getCardToken(

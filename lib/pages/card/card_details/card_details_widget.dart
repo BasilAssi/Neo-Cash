@@ -337,23 +337,27 @@ class _CardDetailsWidgetState extends State<CardDetailsWidget> {
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 4.0),
                                                 child: Text(
-                                                  functions.addSpaceBtnCardNumber(
-                                                      CardGroup.listCardsCall
+                                                  functions
+                                                      .addSpaceBtnCardNumber(
+                                                          CardGroup.listCardsCall
+                                                                      .cardNumber(
+                                                                    (_model.apiResultListCards
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                  ) !=
+                                                                  null
+                                                              ? CardGroup
+                                                                  .listCardsCall
                                                                   .cardNumber(
-                                                                (_model.apiResultListCards
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                              ) !=
-                                                              null
-                                                          ? CardGroup
-                                                              .listCardsCall
-                                                              .cardNumber(
-                                                                (_model.apiResultListCards
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                              )
-                                                              .toString()
-                                                          : '')!,
+                                                                    (_model.apiResultListCards
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                  )
+                                                                  .toString()
+                                                              : '',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode)!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium

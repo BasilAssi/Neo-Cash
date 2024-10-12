@@ -191,9 +191,12 @@ class _OtpPhoneForgotPasswordWidgetState
                                     text: FFAppState()
                                             .forgotPasswordData
                                             .hasMobileNumber()
-                                        ? FFAppState()
-                                            .forgotPasswordData
-                                            .mobileNumber
+                                        ? functions.maskMobileNumber(
+                                            FFAppState()
+                                                .forgotPasswordData
+                                                .mobileNumber,
+                                            FFLocalizations.of(context)
+                                                .languageCode)!
                                         : '',
                                     style: TextStyle(
                                       color:

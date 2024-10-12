@@ -206,7 +206,8 @@ class _TransactionDetailsPageWidgetState
                               ),
                               Text(
                                 functions.addSpaceBtnCardNumber(
-                                    FFAppState().cardData.cardNumber)!,
+                                    FFAppState().cardData.cardNumber,
+                                    FFLocalizations.of(context).languageCode)!,
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(

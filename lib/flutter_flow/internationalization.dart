@@ -2162,39 +2162,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'sbpwr6w5': {
       'ar': '3',
-      'en': '',
+      'en': '3',
     },
     'xqd9clfs': {
       'ar': '2',
-      'en': '',
+      'en': '2',
     },
     '5fhxcvo0': {
       'ar': '1',
-      'en': '',
+      'en': '1',
     },
     'e9c5wdbk': {
       'ar': '6',
-      'en': '',
+      'en': '6',
     },
     '3oj4h2he': {
       'ar': '5',
-      'en': '',
+      'en': '5',
     },
     '5rx752cb': {
       'ar': '4',
-      'en': '',
+      'en': '4',
     },
     '6buto0oh': {
       'ar': '9',
-      'en': '',
+      'en': '9',
     },
     'cn1wslyn': {
       'ar': '8',
-      'en': '',
+      'en': '8',
     },
     '1u9wq6yc': {
       'ar': '7',
-      'en': '',
+      'en': '7',
     },
     '08749mxw': {
       'ar': '',
@@ -2202,7 +2202,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '41v9f6zg': {
       'ar': '0',
-      'en': '',
+      'en': '0',
     },
     'v16kqthu': {
       'ar': '',
