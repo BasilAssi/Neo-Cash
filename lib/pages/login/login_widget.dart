@@ -1210,7 +1210,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   arText:
                                                                       'عملية المصادقة غير صحيحة',
                                                                   enText:
-                                                                      'Sorry, no internet connection.',
+                                                                      'Incorrect credentials.',
                                                                 ),
                                                               );
                                                             } else if (LoginAPIResponseStruct.maybeFromMap(
@@ -1273,7 +1273,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   arText:
                                                                       'عملية المصادقة غير صحيحة',
                                                                   enText:
-                                                                      'Sorry, no internet connection.',
+                                                                      'Incorrect credentials.',
                                                                 ),
                                                               );
                                                             }
