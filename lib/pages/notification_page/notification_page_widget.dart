@@ -124,6 +124,10 @@ class _NotificationPageWidgetState extends State<NotificationPageWidget> {
                     msgId: functions.messageId(),
                     token: FFAppState().AuthenticatedUser.accessToken,
                     channel: 'SMS',
+                    acceptLanguage: FFLocalizations.of(context).getVariableText(
+                      arText: 'AR',
+                      enText: 'EN',
+                    ),
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.

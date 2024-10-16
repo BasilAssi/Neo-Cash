@@ -559,7 +559,7 @@ class _HomePageListCardsComponentWidgetState
                                                       .spaceBetween,
                                               children: [
                                                 Text(
-                                                  '${cardListItem.hasCardNumber() ? functions.getLast4Digits(cardListItem.cardNumber) : ' '} **** ',
+                                                  '${cardListItem.hasCardNumber() ? functions.addSpaceBtnCardNumber(cardListItem.cardNumber, FFLocalizations.of(context).languageCode) : ' '}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

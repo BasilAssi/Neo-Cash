@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/dialog_component/dialog_component_widget.dart';
 import '/components/disable_biometric_component/disable_biometric_component_widget.dart';
 import '/components/enable_biometric_component/enable_biometric_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -540,6 +541,147 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                   },
                                 ),
                               ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Builder(
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: WebViewAware(
+                                        child: GestureDetector(
+                                          onTap: () =>
+                                              FocusScope.of(dialogContext)
+                                                  .unfocus(),
+                                          child: DialogComponentWidget(
+                                            text: FFLocalizations.of(context)
+                                                .getVariableText(
+                                              arText:
+                                                  'هل أنت متأكد أنك تريد حذف حساب NeoCash الخاص بك؟ ستفقد الوصول إلى الحساب ولن تتمكن من إعادة تفعيله إلا عن طريق التواصل مع دعم NeoCash. يرجى التأكيد للمتابعة.',
+                                              enText:
+                                                  'Are you sure you want to delete your NeoCash account? You will lose access to it and will only be able to reactivate it by reaching out to NeoCash support. Please confirm to proceed',
+                                            ),
+                                            firstBtnText:
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              arText: 'نعم',
+                                              enText: 'Yes',
+                                            ),
+                                            secBtoText:
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              arText: 'لا',
+                                              enText: 'No',
+                                            ),
+                                            firstBtnAction: () async {
+                                              Navigator.pop(context);
+                                            },
+                                            secBtnAction: () async {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .iconBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .textFieldBorder,
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(
+                                            Icons.delete_outline,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 32.0,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 12.0, 8.0, 8.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'y4mvi042' /* حذف الحساب  */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .textColor,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 20.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 40.0,
+                                    icon: Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
